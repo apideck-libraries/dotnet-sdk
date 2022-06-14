@@ -1,0 +1,13 @@
+{
+  "name": "@apideck/net",
+  "version": "0.1.0",
+  "description": "Apideck NET SDK",
+  "keywords": [
+    "apideck",
+    "api",
+    "unify",
+    "unified apis"
+  ],
+  "homepage": "https://apideck.com",
+  "author": "Apideck <support@apideck.com> (https://apideck.com/)"
+}

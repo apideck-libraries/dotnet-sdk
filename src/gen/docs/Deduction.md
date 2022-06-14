@@ -1,0 +1,11 @@
+# Apideck.Model.Deduction
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Name** | **string** | The name of the deduction. | [optional] 
+**Amount** | **decimal** | The amount deducted. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
