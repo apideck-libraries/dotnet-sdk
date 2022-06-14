@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  publish:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -23,8 +23,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget
       - name: Install dependencies
-        run: dotnet restore
+        run: dotnet restore ./src/gen
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build ./src/gen --configuration Release --no-restore
       - name: Unit Test
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet test ./src/gen --no-restore
