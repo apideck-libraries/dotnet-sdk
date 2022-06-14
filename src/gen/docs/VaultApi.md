@@ -1,0 +1,1079 @@
+# Apideck.Api.VaultApi
+
+All URIs are relative to *https://unify.apideck.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**ConnectionsAll**](VaultApi.md#connectionsall) | **GET** /vault/connections | Get all connections
+[**ConnectionsDelete**](VaultApi.md#connectionsdelete) | **DELETE** /vault/connections/{unified_api}/{service_id} | Deletes a connection
+[**ConnectionsGetSettings**](VaultApi.md#connectionsgetsettings) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/config | Get resource settings
+[**ConnectionsImport**](VaultApi.md#connectionsimport) | **POST** /vault/connections/{unified_api}/{service_id}/import | Import connection
+[**ConnectionsOne**](VaultApi.md#connectionsone) | **GET** /vault/connections/{unified_api}/{service_id} | Get connection
+[**ConnectionsUpdate**](VaultApi.md#connectionsupdate) | **PATCH** /vault/connections/{unified_api}/{service_id} | Update connection
+[**ConnectionsUpdateSettings**](VaultApi.md#connectionsupdatesettings) | **PATCH** /vault/connections/{unified_api}/{service_id}/{resource}/config | Update settings
+[**ConsumersAll**](VaultApi.md#consumersall) | **GET** /vault/consumers | Get all consumers
+[**ConsumersOne**](VaultApi.md#consumersone) | **GET** /vault/consumers/{consumer_id} | Get consumer
+[**ConsumersRequestCounts**](VaultApi.md#consumersrequestcounts) | **GET** /vault/consumers/{consumer_id}/stats | Consumer request counts
+[**LogsAll**](VaultApi.md#logsall) | **GET** /vault/logs | Get all consumer request logs
+[**SessionsCreate**](VaultApi.md#sessionscreate) | **POST** /vault/sessions | Create Session
+
+
+<a name="connectionsall"></a>
+# **ConnectionsAll**
+> GetConnectionsResponse ConnectionsAll (string consumerId = null, string appId = null, string api = null, bool? configured = null)
+
+Get all connections
+
+This endpoint includes all the configured integrations and contains the required assets to build an integrations page where your users can install integrations. OAuth2 supported integrations will contain authorize and revoke links to handle the authentication flows. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var api = crm;  // string | Scope results to Unified API (optional) 
+            var configured = true;  // bool? | Scopes results to connections that have been configured or not (optional) 
+
+            try
+            {
+                // Get all connections
+                GetConnectionsResponse result = apiInstance.ConnectionsAll(consumerId, appId, api, configured);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **api** | **string**| Scope results to Unified API | [optional] 
+ **configured** | **bool?**| Scopes results to connections that have been configured or not | [optional] 
+
+### Return type
+
+[**GetConnectionsResponse**](GetConnectionsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connections |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="connectionsdelete"></a>
+# **ConnectionsDelete**
+> void ConnectionsDelete (string serviceId, string unifiedApi, string consumerId = null, string appId = null)
+
+Deletes a connection
+
+Deletes a connection
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Deletes a connection
+                apiInstance.ConnectionsDelete(serviceId, unifiedApi, consumerId, appId);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Resource deleted |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="connectionsgetsettings"></a>
+# **ConnectionsGetSettings**
+> GetConnectionResponse ConnectionsGetSettings (string unifiedApi, string serviceId, string resource, string consumerId = null, string appId = null)
+
+Get resource settings
+
+This endpoint returns custom settings and their defaults required by connection for a given resource. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsGetSettingsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var unifiedApi = crm;  // string | Unified API
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var resource = leads;  // string | Resource Name
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Get resource settings
+                GetConnectionResponse result = apiInstance.ConnectionsGetSettings(unifiedApi, serviceId, resource, consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsGetSettings: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unifiedApi** | **string**| Unified API | 
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **resource** | **string**| Resource Name | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**GetConnectionResponse**](GetConnectionResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connection |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="connectionsimport"></a>
+# **ConnectionsImport**
+> CreateConnectionResponse ConnectionsImport (string serviceId, string unifiedApi, ConnectionImportData connectionImportData, string consumerId = null, string appId = null)
+
+Import connection
+
+Import an authorized connection. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsImportExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var connectionImportData = new ConnectionImportData(); // ConnectionImportData | Fields that need to be persisted on the resource
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Import connection
+                CreateConnectionResponse result = apiInstance.ConnectionsImport(serviceId, unifiedApi, connectionImportData, consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsImport: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **connectionImportData** | [**ConnectionImportData**](ConnectionImportData.md)| Fields that need to be persisted on the resource | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**CreateConnectionResponse**](CreateConnectionResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connection created |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="connectionsone"></a>
+# **ConnectionsOne**
+> GetConnectionResponse ConnectionsOne (string serviceId, string unifiedApi, string consumerId = null, string appId = null)
+
+Get connection
+
+Get a connection
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Get connection
+                GetConnectionResponse result = apiInstance.ConnectionsOne(serviceId, unifiedApi, consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**GetConnectionResponse**](GetConnectionResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connection |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="connectionsupdate"></a>
+# **ConnectionsUpdate**
+> UpdateConnectionResponse ConnectionsUpdate (string serviceId, string unifiedApi, Connection connection, string consumerId = null, string appId = null)
+
+Update connection
+
+Update a connection
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var connection = new Connection(); // Connection | Fields that need to be updated on the resource
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Update connection
+                UpdateConnectionResponse result = apiInstance.ConnectionsUpdate(serviceId, unifiedApi, connection, consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **connection** | [**Connection**](Connection.md)| Fields that need to be updated on the resource | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**UpdateConnectionResponse**](UpdateConnectionResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connection updated |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="connectionsupdatesettings"></a>
+# **ConnectionsUpdateSettings**
+> UpdateConnectionResponse ConnectionsUpdateSettings (string serviceId, string unifiedApi, string resource, Connection connection, string consumerId = null, string appId = null)
+
+Update settings
+
+Update default values for a connection's resource settings
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsUpdateSettingsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var resource = leads;  // string | Resource Name
+            var connection = new Connection(); // Connection | Fields that need to be updated on the resource
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Update settings
+                UpdateConnectionResponse result = apiInstance.ConnectionsUpdateSettings(serviceId, unifiedApi, resource, connection, consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsUpdateSettings: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **resource** | **string**| Resource Name | 
+ **connection** | [**Connection**](Connection.md)| Fields that need to be updated on the resource | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**UpdateConnectionResponse**](UpdateConnectionResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connection updated |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="consumersall"></a>
+# **ConsumersAll**
+> GetConsumersResponse ConsumersAll (string appId = null, string cursor = null, int? limit = null)
+
+Get all consumers
+
+This endpoint includes all application consumers, along with an aggregated count of requests made. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConsumersAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
+            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+
+            try
+            {
+                // Get all consumers
+                GetConsumersResponse result = apiInstance.ConsumersAll(appId, cursor, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConsumersAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
+ **limit** | **int?**| Number of records to return | [optional] [default to 20]
+
+### Return type
+
+[**GetConsumersResponse**](GetConsumersResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Consumers |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="consumersone"></a>
+# **ConsumersOne**
+> GetConsumerResponse ConsumersOne (string consumerId, string appId = null)
+
+Get consumer
+
+Consumer detail including their aggregated counts with the connections they have authorized. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConsumersOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var consumerId = test_user_id;  // string | ID of the consumer to return
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Get consumer
+                GetConsumerResponse result = apiInstance.ConsumersOne(consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConsumersOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | **string**| ID of the consumer to return | 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**GetConsumerResponse**](GetConsumerResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Consumer |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="consumersrequestcounts"></a>
+# **ConsumersRequestCounts**
+> ConsumerRequestCountsInDateRangeResponse ConsumersRequestCounts (string consumerId, string startDatetime, string endDatetime, string appId = null)
+
+Consumer request counts
+
+Get consumer request counts within a given datetime range. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConsumersRequestCountsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var consumerId = test_user_id;  // string | ID of the consumer to return
+            var startDatetime = 2021-05-01T12:00:00.000Z;  // string | Scopes results to requests that happened after datetime
+            var endDatetime = 2021-05-30T12:00:00.000Z;  // string | Scopes results to requests that happened before datetime
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Consumer request counts
+                ConsumerRequestCountsInDateRangeResponse result = apiInstance.ConsumersRequestCounts(consumerId, startDatetime, endDatetime, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConsumersRequestCounts: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | **string**| ID of the consumer to return | 
+ **startDatetime** | **string**| Scopes results to requests that happened after datetime | 
+ **endDatetime** | **string**| Scopes results to requests that happened before datetime | 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**ConsumerRequestCountsInDateRangeResponse**](ConsumerRequestCountsInDateRangeResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Consumers Request Counts within Date Range |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="logsall"></a>
+# **LogsAll**
+> GetLogsResponse LogsAll (string appId = null, string consumerId = null, LogsFilter filter = null, string cursor = null, int? limit = null)
+
+Get all consumer request logs
+
+This endpoint includes all consumer request logs. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class LogsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var filter = new LogsFilter(); // LogsFilter | Filter results (optional) 
+            var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
+            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+
+            try
+            {
+                // Get all consumer request logs
+                GetLogsResponse result = apiInstance.LogsAll(appId, consumerId, filter, cursor, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.LogsAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **filter** | [**LogsFilter**](LogsFilter.md)| Filter results | [optional] 
+ **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
+ **limit** | **int?**| Number of records to return | [optional] [default to 20]
+
+### Return type
+
+[**GetLogsResponse**](GetLogsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Logs |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="sessionscreate"></a>
+# **SessionsCreate**
+> CreateSessionResponse SessionsCreate (string consumerId = null, string appId = null, Session session = null)
+
+Create Session
+
+Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned url to allow temporary access to manage their integrations and settings.  Note: This is a short lived token that will expire after 1 hour (TTL: 3600). 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class SessionsCreateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var session = new Session(); // Session | Additional redirect uri and/or consumer metadata (optional) 
+
+            try
+            {
+                // Create Session
+                CreateSessionResponse result = apiInstance.SessionsCreate(consumerId, appId, session);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.SessionsCreate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **session** | [**Session**](Session.md)| Additional redirect uri and/or consumer metadata | [optional] 
+
+### Return type
+
+[**CreateSessionResponse**](CreateSessionResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Session created |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
