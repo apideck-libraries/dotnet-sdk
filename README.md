@@ -51,7 +51,7 @@ to the [docs][2].
 
 ## Example
 
-Retrieving a list of all contacts and updating the first record with a new address.
+Retrieving a list of all companies.
 
 ### Example
 ```csharp
