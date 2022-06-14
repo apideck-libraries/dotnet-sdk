@@ -75,9 +75,9 @@ namespace Example
 
             var apiInstance = new CrmApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional)
+            var appId = "appId_example";  // string | The ID of your Unify application (optional)
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
             try
             {
@@ -103,51 +103,51 @@ The following Apis are currently available:
 
 ### AccountingApi
 
-Read the full documentation of the AccountingApi [here](./src/gen/docs/apis/AccountingApi.md).
+Read the full documentation of the AccountingApi [here](./src/gen/docs/AccountingApi.md).
 
 ### AtsApi
 
-Read the full documentation of the AtsApi [here](./src/gen/docs/apis/AtsApi.md).
+Read the full documentation of the AtsApi [here](./src/gen/docs/AtsApi.md).
 
 ### ConnectorApi
 
-Read the full documentation of the ConnectorApi [here](./src/gen/docs/apis/ConnectorApi.md).
+Read the full documentation of the ConnectorApi [here](./src/gen/docs/ConnectorApi.md).
 
 ### CrmApi
 
-Read the full documentation of the CrmApi [here](./src/gen/docs/apis/CrmApi.md).
+Read the full documentation of the CrmApi [here](./src/gen/docs/CrmApi.md).
 
 ### CustomerSupportApi
 
-Read the full documentation of the CustomerSupportApi [here](./src/gen/docs/apis/CustomerSupportApi.md).
+Read the full documentation of the CustomerSupportApi [here](./src/gen/docs/CustomerSupportApi.md).
 
 ### FileStorageApi
 
-Read the full documentation of the FileStorageApi [here](./src/gen/docs/apis/FileStorageApi.md).
+Read the full documentation of the FileStorageApi [here](./src/gen/docs/FileStorageApi.md).
 
 ### HrisApi
 
-Read the full documentation of the HrisApi [here](./src/gen/docs/apis/HrisApi.md).
+Read the full documentation of the HrisApi [here](./src/gen/docs/HrisApi.md).
 
 ### LeadApi
 
-Read the full documentation of the LeadApi [here](./src/gen/docs/apis/LeadApi.md).
+Read the full documentation of the LeadApi [here](./src/gen/docs/LeadApi.md).
 
 ### PosApi
 
-Read the full documentation of the PosApi [here](./src/gen/docs/apis/PosApi.md).
+Read the full documentation of the PosApi [here](./src/gen/docs/PosApi.md).
 
 ### SmsApi
 
-Read the full documentation of the SmsApi [here](./src/gen/docs/apis/SmsApi.md).
+Read the full documentation of the SmsApi [here](./src/gen/docs/SmsApi.md).
 
 ### VaultApi
 
-Read the full documentation of the VaultApi [here](./src/gen/docs/apis/VaultApi.md).
+Read the full documentation of the VaultApi [here](./src/gen/docs/VaultApi.md).
 
 ### WebhookApi
 
-Read the full documentation of the WebhookApi [here](./src/gen/docs/apis/WebhookApi.md).
+Read the full documentation of the WebhookApi [here](./src/gen/docs/WebhookApi.md).
 
 
 ## Support
