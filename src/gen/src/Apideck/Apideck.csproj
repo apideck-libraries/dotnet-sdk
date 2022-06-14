@@ -6,11 +6,11 @@
     <AssemblyName>Apideck</AssemblyName>
     <PackageId>Apideck</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
-    <Company>OpenAPI</Company>
-    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
-    <Copyright>No Copyright</Copyright>
+    <Authors>Apideck</Authors>
+    <Company>Apideck</Company>
+    <AssemblyTitle>Apideck .NET SDK</AssemblyTitle>
+    <Description>Apideck .NET SDK</Description>
+    <Copyright>APACHE 2.0</Copyright>
     <RootNamespace>Apideck</RootNamespace>
     <Version>0.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Apideck.xml</DocumentationFile>
