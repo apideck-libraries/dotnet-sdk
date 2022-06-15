@@ -9,7 +9,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_VERSION: 0.1.1
+      PACKAGE_VERSION: 0.1.2
     steps:
       - uses: actions/checkout@v3
 
@@ -28,16 +28,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuget
 
-      - name: Install dependencies
-        run: dotnet restore ./src/gen
+      - name: Build
+        run: dotnet build src/gen/src/Apideck/Apideck.csproj --configuration Release
+
+      - name: Package
+        run: dotnet pack -c Release -o . src/gen/src/Apideck/Apideck.csproj
 
       - name: Publish
-        id: publish_nuget
-        uses: brandedoutcast/publish-nuget@v2
-        with:
-          PROJECT_FILE_PATH: src/gen/src/Apideck/Apideck.csproj
-          BUILD_CONFIGURATION: Release
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_KEY }} -s https://api.nuget.org/v3/index.json
 
       - name: Create Release
         id: create_release
