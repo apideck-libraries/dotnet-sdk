@@ -7,7 +7,7 @@
     <PackageId>Apideck</PackageId>
     <OutputType>Library</OutputType>
     <Authors>Apideck</Authors>
-    <Company>Apideck &lt;support@apideck.com&gt; (https://apideck.com/)</Company>
+    <Company>Apideck support@apideck.com (https://apideck.com)</Company>
     <AssemblyTitle>Apideck .NET SDK</AssemblyTitle>
     <Description>Apideck .NET SDK</Description>
     <Copyright>APACHE 2.0</Copyright>

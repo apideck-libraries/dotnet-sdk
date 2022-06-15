@@ -24,9 +24,9 @@ jobs:
         with:
           path: ~/.nuget/packages
           # Look to see if there is a cache hit for the corresponding requirements file
-          key: $-nuget-$
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
-            $-nuget
+            ${{ runner.os }}-nuget
 
       - name: Install dependencies
         run: dotnet restore ./src/gen
@@ -37,11 +37,11 @@ jobs:
         with:
           PROJECT_FILE_PATH: src/gen/src/Apideck/Apideck.csproj
           BUILD_CONFIGURATION: Release
-          NUGET_KEY: $
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
 
       - name: Create Release
         id: create_release
         uses: ncipollo/release-action@v1
         with:
           commit: main
-          tag: $
+          tag: ${{ env.PACKAGE_VERSION }}
