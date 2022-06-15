@@ -8,11 +8,40 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      PACKAGE_VERSION: 0.1.1
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: |
+            3.1.x
+            6.0.x
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          # Look to see if there is a cache hit for the corresponding requirements file
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget
+
+      - name: Install dependencies
+        run: dotnet restore ./src/gen
+
+      - name: Publish
+        id: publish_nuget
+        uses: brandedoutcast/publish-nuget@v2
+        with:
+          PROJECT_FILE_PATH: src/gen/src/Apideck/Apideck.csproj
+          BUILD_CONFIGURATION: Release
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+
       - name: Create Release
         id: create_release
         uses: ncipollo/release-action@v1
         with:
           commit: main
-          tag: 0.1.0
-
+          tag: ${{ env.PACKAGE_VERSION }}
