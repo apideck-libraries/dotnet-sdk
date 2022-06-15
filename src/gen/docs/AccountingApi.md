@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 
 <a name="customersall"></a>
 # **CustomersAll**
-> GetCustomersResponse CustomersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetCustomersResponse CustomersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CustomersFilter filter = null)
 
 List Customers
 
@@ -806,11 +806,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var filter = new CustomersFilter(); // CustomersFilter | Apply filters (beta) (optional) 
 
             try
             {
                 // List Customers
-                GetCustomersResponse result = apiInstance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetCustomersResponse result = apiInstance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -834,6 +835,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **filter** | [**CustomersFilter**](CustomersFilter.md)| Apply filters (beta) | [optional] 
 
 ### Return type
 
