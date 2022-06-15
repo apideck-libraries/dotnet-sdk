@@ -1,7 +1,7 @@
 {
   "name": "@apideck/net",
-  "version": "0.1.0",
-  "description": "Apideck NET SDK",
+  "version": "0.1.1",
+  "description": "Apideck .NET SDK",
   "keywords": [
     "apideck",
     "api",

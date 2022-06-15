@@ -36,11 +36,11 @@ Install with NuGet.exe.
 $ nuget install Apideck
 ```
 
-- Use the Package Manager console for Visual Studio on Windows. In Visual Studio, right-click the project and choose Add NuGet Package. Search for the Square package and install it.
+- Use the Package Manager console for Visual Studio on Windows. In Visual Studio, right-click the project and choose Add NuGet Package. Search for the Apideck package and install it.
 
-- Use the Manage NuGet UI in Visual Studio on a Mac. In Visual Studio, right-click the project Dependencies and choose Manage NuGet Packages. Search for the Square package and install it.
+- Use the Manage NuGet UI in Visual Studio on a Mac. In Visual Studio, right-click the project Dependencies and choose Manage NuGet Packages. Search for the Apideck package and install it.
 
-- In Visual Studio, right-click the project and choose Add NuGet Package. Search for the Square package and install it.
+- In Visual Studio, right-click the project and choose Add NuGet Package. Search for the Apideck package and install it.
 
 
 ## Getting started
