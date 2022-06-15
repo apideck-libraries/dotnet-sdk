@@ -24,7 +24,7 @@ if [ "$git_repo_id" = "" ]; then
 fi
 
 if [ "$release_note" = "" ]; then
-    release_note="Minor update"
+    release_note="Automatic update based on our OpenAPI specifications: For more details, check out the changelog: https://docs.apideck.com/changelog"
     echo "[INFO] No command line input provided. Set \$release_note to $release_note"
 fi
 

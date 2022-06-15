@@ -129,6 +129,7 @@ docs/Currency.md
 docs/CustomField.md
 docs/CustomerSupportApi.md
 docs/CustomerSupportCustomer.md
+docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
 docs/DeleteBillResponse.md
@@ -564,6 +565,7 @@ src/Apideck.Test/Model/CrmEventTypeTests.cs
 src/Apideck.Test/Model/CurrencyTests.cs
 src/Apideck.Test/Model/CustomFieldTests.cs
 src/Apideck.Test/Model/CustomerSupportCustomerTests.cs
+src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
 src/Apideck.Test/Model/DeleteBillResponseTests.cs
@@ -1008,6 +1010,7 @@ src/Apideck/Model/CrmEventType.cs
 src/Apideck/Model/Currency.cs
 src/Apideck/Model/CustomField.cs
 src/Apideck/Model/CustomerSupportCustomer.cs
+src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs
 src/Apideck/Model/DeleteBillResponse.cs

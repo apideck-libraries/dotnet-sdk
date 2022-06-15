@@ -12,19 +12,21 @@
     <Description>Apideck .NET SDK</Description>
     <Copyright>APACHE 2.0</Copyright>
     <RootNamespace>Apideck</RootNamespace>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Apideck.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/apideck-libraries/dotnet-sdk.git</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageReleaseNotes>Automatic update based on our OpenAPI specifications: For more details, check out the changelog: https://docs.apideck.com/changelog</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="RestSharp" Version="106.13.0" />
-    <PackageReference Include="Polly" Version="7.2.2" />
+    <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <None Include="../../../../README.md" Pack="true" PackagePath="/"/>
   </ItemGroup>
 
 </Project>
