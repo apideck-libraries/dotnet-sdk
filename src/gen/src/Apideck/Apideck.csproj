@@ -12,7 +12,7 @@
     <Description>Apideck .NET SDK</Description>
     <Copyright>APACHE 2.0</Copyright>
     <RootNamespace>Apideck</RootNamespace>
-    <Version>0.1.2</Version>
+    <Version>0.1.3</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Apideck.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/apideck-libraries/dotnet-sdk.git</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
