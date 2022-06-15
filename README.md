@@ -55,8 +55,6 @@ Retrieving a list of all companies.
 
 ### Example
 ```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
 using Apideck.Api;
 using Apideck.Client;
 using Apideck.Model;
@@ -69,27 +67,27 @@ namespace Example
         {
             Configuration config = new Configuration();
             // Configure API key authorization: apiKey
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            config.AddApiKey("Authorization", "API_KEY");
+            config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new CrmApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional)
-            var appId = "appId_example";  // string | The ID of your Unify application (optional)
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+            var consumerId = "CONSUMER_ID";  // string | ID of the consumer which you want to get or push data from (optional)
+            var appId = "APP_ID";  // string | The ID of your Unify application (optional)
+            var serviceId = "salesforce";  // string | Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
             try
             {
+                Console.WriteLine("Calling Apideck");
                 // List companies
                 GetCompaniesResponse result = apiInstance.CompaniesAll(raw, consumerId, appId, serviceId);
-                Debug.WriteLine(result);
+                Console.WriteLine("Success", result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
-                Debug.Print("Exception when calling CrmApi.CompaniesAll: " + e.Message );
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print("Detail: " + e.ErrorContent);
+                Console.WriteLine("Exception when calling CrmApi.CompaniesAll: " + e.Message);
+                Console.WriteLine("Status Code: " + e.ErrorCode);
+                Console.WriteLine("Detail: " + e.ErrorContent);
             }
         }
     }
