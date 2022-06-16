@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **LegalName** | **string** | The legal name of the company | [optional] 
 **Country** | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 **SalesTaxNumber** | **string** |  | [optional] 
+**AutomatedSalesTax** | **bool** | Whether sales tax is calculated automatically for the company | [optional] 
 **SalesTaxEnabled** | **bool** | Whether sales tax is enabled for the company | [optional] 
 **DefaultSalesTax** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
