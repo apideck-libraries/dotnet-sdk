@@ -137,6 +137,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'PoNumber'
         }
         /// <summary>
+        /// Test the property 'Reference'
+        /// </summary>
+        [Fact]
+        public void ReferenceTest()
+        {
+            // TODO unit test for the property 'Reference'
+        }
+        /// <summary>
         /// Test the property 'LineItems'
         /// </summary>
         [Fact]

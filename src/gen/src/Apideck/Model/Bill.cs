@@ -112,6 +112,7 @@ namespace Apideck.Model
         /// <param name="dueDate">The due date is the date on which a payment is scheduled to be received by the supplier - YYYY-MM-DD..</param>
         /// <param name="paidDate">The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD..</param>
         /// <param name="poNumber">A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order..</param>
+        /// <param name="reference">Optional invoice reference..</param>
         /// <param name="lineItems">lineItems.</param>
         /// <param name="terms">Terms of payment..</param>
         /// <param name="balance">Balance of bill due..</param>
@@ -124,7 +125,7 @@ namespace Apideck.Model
         /// <param name="status">Invoice status.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
         /// <param name="rowVersion">rowVersion.</param>
-        public Bill(LinkedSupplier supplier = default(LinkedSupplier), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
+        public Bill(LinkedSupplier supplier = default(LinkedSupplier), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
         {
             this.Supplier = supplier;
             this.Currency = currency;
@@ -134,6 +135,7 @@ namespace Apideck.Model
             this.DueDate = dueDate;
             this.PaidDate = paidDate;
             this.PoNumber = poNumber;
+            this.Reference = reference;
             this.LineItems = lineItems;
             this.Terms = terms;
             this.Balance = balance;
@@ -227,6 +229,13 @@ namespace Apideck.Model
         /// <value>A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order.</value>
         [DataMember(Name = "po_number", EmitDefaultValue = true)]
         public string PoNumber { get; set; }
+
+        /// <summary>
+        /// Optional invoice reference.
+        /// </summary>
+        /// <value>Optional invoice reference.</value>
+        [DataMember(Name = "reference", EmitDefaultValue = true)]
+        public string Reference { get; set; }
 
         /// <summary>
         /// Gets or Sets LineItems
@@ -375,6 +384,7 @@ namespace Apideck.Model
             sb.Append("  DueDate: ").Append(DueDate).Append("\n");
             sb.Append("  PaidDate: ").Append(PaidDate).Append("\n");
             sb.Append("  PoNumber: ").Append(PoNumber).Append("\n");
+            sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Terms: ").Append(Terms).Append("\n");
             sb.Append("  Balance: ").Append(Balance).Append("\n");
@@ -474,6 +484,11 @@ namespace Apideck.Model
                     this.PoNumber == input.PoNumber ||
                     (this.PoNumber != null &&
                     this.PoNumber.Equals(input.PoNumber))
+                ) && 
+                (
+                    this.Reference == input.Reference ||
+                    (this.Reference != null &&
+                    this.Reference.Equals(input.Reference))
                 ) && 
                 (
                     this.LineItems == input.LineItems ||
@@ -602,6 +617,10 @@ namespace Apideck.Model
                 if (this.PoNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.PoNumber.GetHashCode();
+                }
+                if (this.Reference != null)
+                {
+                    hashCode = (hashCode * 59) + this.Reference.GetHashCode();
                 }
                 if (this.LineItems != null)
                 {
