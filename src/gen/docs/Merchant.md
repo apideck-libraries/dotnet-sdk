@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **OwnerId** | **string** |  | [optional] 
 **MainLocationId** | **string** | The main location ID of the merchant | [optional] 
 **Status** | **string** | Status of this merchant. | [optional] 
+**ServiceCharges** | [**List&lt;ServiceCharge&gt;**](ServiceCharge.md) |  | [optional] 
 **Language** | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 

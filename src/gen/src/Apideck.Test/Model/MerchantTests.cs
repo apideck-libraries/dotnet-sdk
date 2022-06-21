@@ -105,6 +105,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Status'
         }
         /// <summary>
+        /// Test the property 'ServiceCharges'
+        /// </summary>
+        [Fact]
+        public void ServiceChargesTest()
+        {
+            // TODO unit test for the property 'ServiceCharges'
+        }
+        /// <summary>
         /// Test the property 'Language'
         /// </summary>
         [Fact]

@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **BankAccount** | [**BankAccount**](BankAccount.md) |  | [optional] 
 **Wallet** | [**WalletDetails**](WalletDetails.md) |  | [optional] 
 **ExternalDetails** | [**PosPaymentExternalDetails**](PosPaymentExternalDetails.md) |  | [optional] 
-**ServiceCharges** | **List&lt;Object&gt;** | Optional service charges or gratuity tip applied to the order. | [optional] 
+**ServiceCharges** | [**List&lt;ServiceCharge&gt;**](ServiceCharge.md) | Optional service charges or gratuity tip applied to the order. | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 
 **CreatedBy** | **string** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 

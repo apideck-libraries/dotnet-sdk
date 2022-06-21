@@ -170,8 +170,8 @@ namespace Apideck.Model
         /// <param name="totalDiscount">totalDiscount.</param>
         /// <param name="totalRefund">totalRefund.</param>
         /// <param name="totalServiceCharge">totalServiceCharge.</param>
-        /// <param name="buyerTenderedCashAmount">The amount of cash tendered by the buyer. Only applicable when the tender type is cash..</param>
-        /// <param name="changeBackCashAmount">The amount of cash returned to the buyer. Only applicable when the tender type is cash..</param>
+        /// <param name="buyerTenderedCashAmount">The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash..</param>
+        /// <param name="changeBackCashAmount">The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash..</param>
         /// <param name="card">card.</param>
         /// <param name="cardStatus">The status of the card. Only applicable when the tender type is card..</param>
         /// <param name="cardEntryMethod">The entry method of the card. Only applicable when the tender type is card..</param>
@@ -271,16 +271,16 @@ namespace Apideck.Model
         public decimal? TotalServiceCharge { get; set; }
 
         /// <summary>
-        /// The amount of cash tendered by the buyer. Only applicable when the tender type is cash.
+        /// The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash.
         /// </summary>
-        /// <value>The amount of cash tendered by the buyer. Only applicable when the tender type is cash.</value>
+        /// <value>The amount (in cents) of cash tendered by the buyer. Only applicable when the tender type is cash.</value>
         [DataMember(Name = "buyer_tendered_cash_amount", EmitDefaultValue = true)]
         public decimal? BuyerTenderedCashAmount { get; set; }
 
         /// <summary>
-        /// The amount of cash returned to the buyer. Only applicable when the tender type is cash.
+        /// The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash.
         /// </summary>
-        /// <value>The amount of cash returned to the buyer. Only applicable when the tender type is cash.</value>
+        /// <value>The amount (in cents) of cash returned to the buyer. Only applicable when the tender type is cash.</value>
         [DataMember(Name = "change_back_cash_amount", EmitDefaultValue = true)]
         public decimal? ChangeBackCashAmount { get; set; }
 

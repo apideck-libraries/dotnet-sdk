@@ -360,6 +360,7 @@ docs/PosPaymentExternalDetails.md
 docs/Price.md
 docs/RequestCountAllocation.md
 docs/ResourceStatus.md
+docs/ServiceCharge.md
 docs/Session.md
 docs/SessionSettings.md
 docs/SessionTheme.md
@@ -792,6 +793,7 @@ src/Apideck.Test/Model/PosPaymentTests.cs
 src/Apideck.Test/Model/PriceTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
 src/Apideck.Test/Model/ResourceStatusTests.cs
+src/Apideck.Test/Model/ServiceChargeTests.cs
 src/Apideck.Test/Model/SessionSettingsTests.cs
 src/Apideck.Test/Model/SessionTests.cs
 src/Apideck.Test/Model/SessionThemeTests.cs
@@ -1237,6 +1239,7 @@ src/Apideck/Model/PosPaymentExternalDetails.cs
 src/Apideck/Model/Price.cs
 src/Apideck/Model/RequestCountAllocation.cs
 src/Apideck/Model/ResourceStatus.cs
+src/Apideck/Model/ServiceCharge.cs
 src/Apideck/Model/Session.cs
 src/Apideck/Model/SessionSettings.cs
 src/Apideck/Model/SessionTheme.cs

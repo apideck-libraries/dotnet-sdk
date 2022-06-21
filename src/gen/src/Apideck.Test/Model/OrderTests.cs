@@ -105,14 +105,6 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Status'
         }
         /// <summary>
-        /// Test the property 'State'
-        /// </summary>
-        [Fact]
-        public void StateTest()
-        {
-            // TODO unit test for the property 'State'
-        }
-        /// <summary>
         /// Test the property 'PaymentStatus'
         /// </summary>
         [Fact]

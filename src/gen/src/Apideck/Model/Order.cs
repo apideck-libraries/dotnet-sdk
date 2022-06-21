@@ -32,8 +32,9 @@ namespace Apideck.Model
     public partial class Order : IEquatable<Order>, IValidatableObject
     {
         /// <summary>
-        /// Defines Status
+        /// Order status. Clover specific: If no value is set, the status defaults to hidden, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]()
         /// </summary>
+        /// <value>Order status. Clover specific: If no value is set, the status defaults to hidden, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]()</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -71,14 +72,21 @@ namespace Apideck.Model
             /// Enum Completed for value: completed
             /// </summary>
             [EnumMember(Value = "completed")]
-            Completed = 6
+            Completed = 6,
+
+            /// <summary>
+            /// Enum Hidden for value: hidden
+            /// </summary>
+            [EnumMember(Value = "hidden")]
+            Hidden = 7
 
         }
 
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Order status. Clover specific: If no value is set, the status defaults to hidden, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]()
         /// </summary>
+        /// <value>Order status. Clover specific: If no value is set, the status defaults to hidden, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]()</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -230,8 +238,7 @@ namespace Apideck.Model
         /// <param name="orderDate">orderDate.</param>
         /// <param name="closedDate">closedDate.</param>
         /// <param name="referenceId">An optional user-defined reference ID that associates this record with another entity in an external system. For example, a customer ID from an external customer management system..</param>
-        /// <param name="status">status.</param>
-        /// <param name="state">A string describing the state of the order. Clover specific: If no value is set, the state defaults to null, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]().</param>
+        /// <param name="status">Order status. Clover specific: If no value is set, the status defaults to hidden, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]().</param>
         /// <param name="paymentStatus">Is this order paid or not?.</param>
         /// <param name="currency">currency.</param>
         /// <param name="title">title.</param>
@@ -261,7 +268,7 @@ namespace Apideck.Model
         /// <param name="tenders">tenders.</param>
         /// <param name="voided">voided.</param>
         /// <param name="version">version.</param>
-        public Order(string orderNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? closedDate = default(DateTime?), string referenceId = default(string), StatusEnum? status = default(StatusEnum?), string state = default(string), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), Currency? currency = default(Currency?), string title = default(string), string note = default(string), string merchantId = default(string), string customerId = default(string), string employeeId = default(string), string locationId = default(string), string orderTypeId = default(string), string table = default(string), string seat = default(string), decimal? totalAmount = default(decimal?), decimal? totalTip = default(decimal?), decimal? totalTax = default(decimal?), decimal? totalDiscount = default(decimal?), decimal? totalRefund = default(decimal?), decimal? totalServiceCharge = default(decimal?), bool refunded = default(bool), List<OrderCustomers> customers = default(List<OrderCustomers>), List<OrderFulfillments> fulfillments = default(List<OrderFulfillments>), List<OrderLineItems> lineItems = default(List<OrderLineItems>), List<OrderPayments> payments = default(List<OrderPayments>), List<Object> serviceCharges = default(List<Object>), List<OrderRefunds> refunds = default(List<OrderRefunds>), List<Object> taxes = default(List<Object>), List<OrderDiscounts> discounts = default(List<OrderDiscounts>), List<OrderTenders> tenders = default(List<OrderTenders>), bool voided = default(bool), string version = default(string))
+        public Order(string orderNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? closedDate = default(DateTime?), string referenceId = default(string), StatusEnum? status = default(StatusEnum?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), Currency? currency = default(Currency?), string title = default(string), string note = default(string), string merchantId = default(string), string customerId = default(string), string employeeId = default(string), string locationId = default(string), string orderTypeId = default(string), string table = default(string), string seat = default(string), decimal? totalAmount = default(decimal?), decimal? totalTip = default(decimal?), decimal? totalTax = default(decimal?), decimal? totalDiscount = default(decimal?), decimal? totalRefund = default(decimal?), decimal? totalServiceCharge = default(decimal?), bool refunded = default(bool), List<OrderCustomers> customers = default(List<OrderCustomers>), List<OrderFulfillments> fulfillments = default(List<OrderFulfillments>), List<OrderLineItems> lineItems = default(List<OrderLineItems>), List<OrderPayments> payments = default(List<OrderPayments>), List<ServiceCharge> serviceCharges = default(List<ServiceCharge>), List<OrderRefunds> refunds = default(List<OrderRefunds>), List<Object> taxes = default(List<Object>), List<OrderDiscounts> discounts = default(List<OrderDiscounts>), List<OrderTenders> tenders = default(List<OrderTenders>), bool voided = default(bool), string version = default(string))
         {
             // to ensure "merchantId" is required (not null)
             if (merchantId == null) {
@@ -278,7 +285,6 @@ namespace Apideck.Model
             this.ClosedDate = closedDate;
             this.ReferenceId = referenceId;
             this.Status = status;
-            this.State = state;
             this.PaymentStatus = paymentStatus;
             this.Currency = currency;
             this.Title = title;
@@ -348,13 +354,6 @@ namespace Apideck.Model
         /// <value>An optional user-defined reference ID that associates this record with another entity in an external system. For example, a customer ID from an external customer management system.</value>
         [DataMember(Name = "reference_id", EmitDefaultValue = true)]
         public string ReferenceId { get; set; }
-
-        /// <summary>
-        /// A string describing the state of the order. Clover specific: If no value is set, the state defaults to null, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]()
-        /// </summary>
-        /// <value>A string describing the state of the order. Clover specific: If no value is set, the state defaults to null, which indicates a hidden order. A hidden order is not displayed in user interfaces and can only be retrieved by its id. When creating an order via the REST API the value must be manually set to &#39;open&#39;. More info [https://docs.clover.com/reference/orderupdateorder]()</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
-        public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
@@ -482,7 +481,7 @@ namespace Apideck.Model
         /// </summary>
         /// <value>Optional service charges or gratuity tip applied to the order.</value>
         [DataMember(Name = "service_charges", EmitDefaultValue = false)]
-        public List<Object> ServiceCharges { get; set; }
+        public List<ServiceCharge> ServiceCharges { get; set; }
 
         /// <summary>
         /// Gets or Sets Refunds
@@ -604,7 +603,6 @@ namespace Apideck.Model
             sb.Append("  ClosedDate: ").Append(ClosedDate).Append("\n");
             sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  PaymentStatus: ").Append(PaymentStatus).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
@@ -703,11 +701,6 @@ namespace Apideck.Model
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
                 ) && 
                 (
                     this.PaymentStatus == input.PaymentStatus ||
@@ -920,10 +913,6 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                if (this.State != null)
-                {
-                    hashCode = (hashCode * 59) + this.State.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.PaymentStatus.GetHashCode();
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 if (this.Title != null)
