@@ -8,12 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: |
             3.1.x
             6.0.x
+
       - uses: actions/cache@v3
         with:
           path: ~/.nuget/packages
@@ -21,9 +23,19 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget
+
       - name: Install dependencies
         run: dotnet restore ./src/gen
+
       - name: Build
         run: dotnet build ./src/gen --configuration Release --no-restore
+
       - name: Unit Test
         run: dotnet test ./src/gen --no-restore
+
+      - name: Automerge
+        uses: pascalgn/automerge-action@v0.15.3
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          MERGE_LABELS: ''
+          MERGE_METHOD: squash
