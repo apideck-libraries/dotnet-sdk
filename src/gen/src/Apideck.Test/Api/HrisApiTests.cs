@@ -253,6 +253,22 @@ namespace Apideck.Test.Api
         }
 
         /// <summary>
+        /// Test EmployeeSchedulesAll
+        /// </summary>
+        [Fact]
+        public void EmployeeSchedulesAllTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string employeeId = null;
+            //bool? raw = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //var response = instance.EmployeeSchedulesAll(employeeId, raw, consumerId, appId, serviceId);
+            //Assert.IsType<GetEmployeeSchedulesResponse>(response);
+        }
+
+        /// <summary>
         /// Test EmployeesAdd
         /// </summary>
         [Fact]

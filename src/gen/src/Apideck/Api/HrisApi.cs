@@ -387,6 +387,35 @@ namespace Apideck.Api
         /// <returns>ApiResponse of GetEmployeePayrollResponse</returns>
         ApiResponse<GetEmployeePayrollResponse> EmployeePayrollsOneWithHttpInfo(string payrollId, string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
         /// <summary>
+        /// List Employee Schedules
+        /// </summary>
+        /// <remarks>
+        /// List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>GetEmployeeSchedulesResponse</returns>
+        GetEmployeeSchedulesResponse EmployeeSchedulesAll(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+
+        /// <summary>
+        /// List Employee Schedules
+        /// </summary>
+        /// <remarks>
+        /// List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>ApiResponse of GetEmployeeSchedulesResponse</returns>
+        ApiResponse<GetEmployeeSchedulesResponse> EmployeeSchedulesAllWithHttpInfo(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        /// <summary>
         /// Create Employee
         /// </summary>
         /// <remarks>
@@ -988,6 +1017,37 @@ namespace Apideck.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetEmployeePayrollResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetEmployeePayrollResponse>> EmployeePayrollsOneWithHttpInfoAsync(string payrollId, string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List Employee Schedules
+        /// </summary>
+        /// <remarks>
+        /// List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetEmployeeSchedulesResponse</returns>
+        System.Threading.Tasks.Task<GetEmployeeSchedulesResponse> EmployeeSchedulesAllAsync(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List Employee Schedules
+        /// </summary>
+        /// <remarks>
+        /// List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetEmployeeSchedulesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetEmployeeSchedulesResponse>> EmployeeSchedulesAllWithHttpInfoAsync(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Employee
         /// </summary>
@@ -3719,6 +3779,198 @@ namespace Apideck.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("EmployeePayrollsOne", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Employee Schedules List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>GetEmployeeSchedulesResponse</returns>
+        public GetEmployeeSchedulesResponse EmployeeSchedulesAll(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        {
+            Apideck.Client.ApiResponse<GetEmployeeSchedulesResponse> localVarResponse = EmployeeSchedulesAllWithHttpInfo(employeeId, raw, consumerId, appId, serviceId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Employee Schedules List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>ApiResponse of GetEmployeeSchedulesResponse</returns>
+        public Apideck.Client.ApiResponse<GetEmployeeSchedulesResponse> EmployeeSchedulesAllWithHttpInfo(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        {
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->EmployeeSchedulesAll");
+            }
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetEmployeeSchedulesResponse>("/hris/schedules/employees/{employee_id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EmployeeSchedulesAll", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Employee Schedules List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetEmployeeSchedulesResponse</returns>
+        public async System.Threading.Tasks.Task<GetEmployeeSchedulesResponse> EmployeeSchedulesAllAsync(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Apideck.Client.ApiResponse<GetEmployeeSchedulesResponse> localVarResponse = await EmployeeSchedulesAllWithHttpInfoAsync(employeeId, raw, consumerId, appId, serviceId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Employee Schedules List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetEmployeeSchedulesResponse)</returns>
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetEmployeeSchedulesResponse>> EmployeeSchedulesAllWithHttpInfoAsync(string employeeId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->EmployeeSchedulesAll");
+            }
+
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetEmployeeSchedulesResponse>("/hris/schedules/employees/{employee_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("EmployeeSchedulesAll", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

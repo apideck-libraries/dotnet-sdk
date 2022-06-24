@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**DepartmentsUpdate**](HrisApi.md#departmentsupdate) | **PATCH** /hris/departments/{id} | Update Department
 [**EmployeePayrollsAll**](HrisApi.md#employeepayrollsall) | **GET** /hris/payrolls/employees/{employee_id} | List Employee Payrolls
 [**EmployeePayrollsOne**](HrisApi.md#employeepayrollsone) | **GET** /hris/payrolls/employees/{employee_id}/payrolls/{payroll_id} | Get Employee Payroll
+[**EmployeeSchedulesAll**](HrisApi.md#employeeschedulesall) | **GET** /hris/schedules/employees/{employee_id} | List Employee Schedules
 [**EmployeesAdd**](HrisApi.md#employeesadd) | **POST** /hris/employees | Create Employee
 [**EmployeesAll**](HrisApi.md#employeesall) | **GET** /hris/employees | List Employees
 [**EmployeesDelete**](HrisApi.md#employeesdelete) | **DELETE** /hris/employees/{id} | Delete Employee
@@ -1108,6 +1109,96 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Payrolls |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="employeeschedulesall"></a>
+# **EmployeeSchedulesAll**
+> GetEmployeeSchedulesResponse EmployeeSchedulesAll (string employeeId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+
+List Employee Schedules
+
+List schedules for employee, a schedule is a work pattern, not the actual worked hours, for an employee.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class EmployeeSchedulesAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new HrisApi(config);
+            var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+
+            try
+            {
+                // List Employee Schedules
+                GetEmployeeSchedulesResponse result = apiInstance.EmployeeSchedulesAll(employeeId, raw, consumerId, appId, serviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling HrisApi.EmployeeSchedulesAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **employeeId** | **string**| ID of the employee you are acting upon. | 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+
+### Return type
+
+[**GetEmployeeSchedulesResponse**](GetEmployeeSchedulesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | EmployeeSchedules |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |

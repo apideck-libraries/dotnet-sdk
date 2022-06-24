@@ -174,6 +174,7 @@ docs/EmployeeJobs.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
+docs/EmployeeSchedules.md
 docs/EmployeeSocialLinks.md
 docs/EmployeeTeam.md
 docs/EmployeesFilter.md
@@ -222,6 +223,7 @@ docs/GetDepartmentsResponse.md
 docs/GetEmployeePayrollResponse.md
 docs/GetEmployeePayrollsResponse.md
 docs/GetEmployeeResponse.md
+docs/GetEmployeeSchedulesResponse.md
 docs/GetEmployeesResponse.md
 docs/GetFileResponse.md
 docs/GetFilesResponse.md
@@ -360,6 +362,9 @@ docs/PosPaymentExternalDetails.md
 docs/Price.md
 docs/RequestCountAllocation.md
 docs/ResourceStatus.md
+docs/Schedule.md
+docs/ScheduleWorkPattern.md
+docs/ScheduleWorkPatternOddWeeks.md
 docs/ServiceCharge.md
 docs/Session.md
 docs/SessionSettings.md
@@ -610,6 +615,7 @@ src/Apideck.Test/Model/EmployeeJobsTests.cs
 src/Apideck.Test/Model/EmployeeManagerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
 src/Apideck.Test/Model/EmployeePayrollsTests.cs
+src/Apideck.Test/Model/EmployeeSchedulesTests.cs
 src/Apideck.Test/Model/EmployeeSocialLinksTests.cs
 src/Apideck.Test/Model/EmployeeTeamTests.cs
 src/Apideck.Test/Model/EmployeeTests.cs
@@ -658,6 +664,7 @@ src/Apideck.Test/Model/GetDepartmentsResponseTests.cs
 src/Apideck.Test/Model/GetEmployeePayrollResponseTests.cs
 src/Apideck.Test/Model/GetEmployeePayrollsResponseTests.cs
 src/Apideck.Test/Model/GetEmployeeResponseTests.cs
+src/Apideck.Test/Model/GetEmployeeSchedulesResponseTests.cs
 src/Apideck.Test/Model/GetEmployeesResponseTests.cs
 src/Apideck.Test/Model/GetFileResponseTests.cs
 src/Apideck.Test/Model/GetFilesResponseTests.cs
@@ -793,6 +800,9 @@ src/Apideck.Test/Model/PosPaymentTests.cs
 src/Apideck.Test/Model/PriceTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
 src/Apideck.Test/Model/ResourceStatusTests.cs
+src/Apideck.Test/Model/ScheduleTests.cs
+src/Apideck.Test/Model/ScheduleWorkPatternOddWeeksTests.cs
+src/Apideck.Test/Model/ScheduleWorkPatternTests.cs
 src/Apideck.Test/Model/ServiceChargeTests.cs
 src/Apideck.Test/Model/SessionSettingsTests.cs
 src/Apideck.Test/Model/SessionTests.cs
@@ -1057,6 +1067,7 @@ src/Apideck/Model/EmployeeJobs.cs
 src/Apideck/Model/EmployeeManager.cs
 src/Apideck/Model/EmployeePayroll.cs
 src/Apideck/Model/EmployeePayrolls.cs
+src/Apideck/Model/EmployeeSchedules.cs
 src/Apideck/Model/EmployeeSocialLinks.cs
 src/Apideck/Model/EmployeeTeam.cs
 src/Apideck/Model/EmployeesFilter.cs
@@ -1104,6 +1115,7 @@ src/Apideck/Model/GetDepartmentsResponse.cs
 src/Apideck/Model/GetEmployeePayrollResponse.cs
 src/Apideck/Model/GetEmployeePayrollsResponse.cs
 src/Apideck/Model/GetEmployeeResponse.cs
+src/Apideck/Model/GetEmployeeSchedulesResponse.cs
 src/Apideck/Model/GetEmployeesResponse.cs
 src/Apideck/Model/GetFileResponse.cs
 src/Apideck/Model/GetFilesResponse.cs
@@ -1239,6 +1251,9 @@ src/Apideck/Model/PosPaymentExternalDetails.cs
 src/Apideck/Model/Price.cs
 src/Apideck/Model/RequestCountAllocation.cs
 src/Apideck/Model/ResourceStatus.cs
+src/Apideck/Model/Schedule.cs
+src/Apideck/Model/ScheduleWorkPattern.cs
+src/Apideck/Model/ScheduleWorkPatternOddWeeks.cs
 src/Apideck/Model/ServiceCharge.cs
 src/Apideck/Model/Session.cs
 src/Apideck/Model/SessionSettings.cs
