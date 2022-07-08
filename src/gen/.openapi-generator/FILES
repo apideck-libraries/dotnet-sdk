@@ -172,6 +172,7 @@ docs/EmployeeCompensations.md
 docs/EmployeeEmploymentRole.md
 docs/EmployeeJobs.md
 docs/EmployeeManager.md
+docs/EmployeePartner.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
 docs/EmployeeSchedules.md
@@ -231,6 +232,8 @@ docs/GetFolderResponse.md
 docs/GetFoldersResponse.md
 docs/GetHrisCompaniesResponse.md
 docs/GetHrisCompanyResponse.md
+docs/GetHrisJobResponse.md
+docs/GetHrisJobsResponse.md
 docs/GetInvoiceItemResponse.md
 docs/GetInvoiceItemsResponse.md
 docs/GetInvoiceResponse.md
@@ -287,6 +290,9 @@ docs/GetWebhooksResponse.md
 docs/HrisApi.md
 docs/HrisCompany.md
 docs/HrisEventType.md
+docs/HrisJob.md
+docs/HrisJobLocation.md
+docs/HrisJobs.md
 docs/Invoice.md
 docs/InvoiceItem.md
 docs/InvoiceItemSalesDetails.md
@@ -613,6 +619,7 @@ src/Apideck.Test/Model/EmployeeCompensationsTests.cs
 src/Apideck.Test/Model/EmployeeEmploymentRoleTests.cs
 src/Apideck.Test/Model/EmployeeJobsTests.cs
 src/Apideck.Test/Model/EmployeeManagerTests.cs
+src/Apideck.Test/Model/EmployeePartnerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
 src/Apideck.Test/Model/EmployeePayrollsTests.cs
 src/Apideck.Test/Model/EmployeeSchedulesTests.cs
@@ -672,6 +679,8 @@ src/Apideck.Test/Model/GetFolderResponseTests.cs
 src/Apideck.Test/Model/GetFoldersResponseTests.cs
 src/Apideck.Test/Model/GetHrisCompaniesResponseTests.cs
 src/Apideck.Test/Model/GetHrisCompanyResponseTests.cs
+src/Apideck.Test/Model/GetHrisJobResponseTests.cs
+src/Apideck.Test/Model/GetHrisJobsResponseTests.cs
 src/Apideck.Test/Model/GetInvoiceItemResponseTests.cs
 src/Apideck.Test/Model/GetInvoiceItemsResponseTests.cs
 src/Apideck.Test/Model/GetInvoiceResponseTests.cs
@@ -727,6 +736,9 @@ src/Apideck.Test/Model/GetWebhookResponseTests.cs
 src/Apideck.Test/Model/GetWebhooksResponseTests.cs
 src/Apideck.Test/Model/HrisCompanyTests.cs
 src/Apideck.Test/Model/HrisEventTypeTests.cs
+src/Apideck.Test/Model/HrisJobLocationTests.cs
+src/Apideck.Test/Model/HrisJobTests.cs
+src/Apideck.Test/Model/HrisJobsTests.cs
 src/Apideck.Test/Model/InvoiceItemSalesDetailsTests.cs
 src/Apideck.Test/Model/InvoiceItemTests.cs
 src/Apideck.Test/Model/InvoiceItemsFilterTests.cs
@@ -1065,6 +1077,7 @@ src/Apideck/Model/EmployeeCompensations.cs
 src/Apideck/Model/EmployeeEmploymentRole.cs
 src/Apideck/Model/EmployeeJobs.cs
 src/Apideck/Model/EmployeeManager.cs
+src/Apideck/Model/EmployeePartner.cs
 src/Apideck/Model/EmployeePayroll.cs
 src/Apideck/Model/EmployeePayrolls.cs
 src/Apideck/Model/EmployeeSchedules.cs
@@ -1123,6 +1136,8 @@ src/Apideck/Model/GetFolderResponse.cs
 src/Apideck/Model/GetFoldersResponse.cs
 src/Apideck/Model/GetHrisCompaniesResponse.cs
 src/Apideck/Model/GetHrisCompanyResponse.cs
+src/Apideck/Model/GetHrisJobResponse.cs
+src/Apideck/Model/GetHrisJobsResponse.cs
 src/Apideck/Model/GetInvoiceItemResponse.cs
 src/Apideck/Model/GetInvoiceItemsResponse.cs
 src/Apideck/Model/GetInvoiceResponse.cs
@@ -1178,6 +1193,9 @@ src/Apideck/Model/GetWebhookResponse.cs
 src/Apideck/Model/GetWebhooksResponse.cs
 src/Apideck/Model/HrisCompany.cs
 src/Apideck/Model/HrisEventType.cs
+src/Apideck/Model/HrisJob.cs
+src/Apideck/Model/HrisJobLocation.cs
+src/Apideck/Model/HrisJobs.cs
 src/Apideck/Model/Invoice.cs
 src/Apideck/Model/InvoiceItem.cs
 src/Apideck/Model/InvoiceItemSalesDetails.cs

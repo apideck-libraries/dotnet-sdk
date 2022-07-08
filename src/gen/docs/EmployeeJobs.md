@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **EmployeeId** | **string** |  | [optional] [readonly] 
 **Title** | **string** |  | [optional] 
 **Role** | **string** |  | [optional] 
+**StartDate** | **DateTime?** |  | [optional] 
+**EndDate** | **DateTime?** |  | [optional] 
 **CompensationRate** | **decimal** |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **PaymentUnit** | **PaymentUnit** |  | [optional] 

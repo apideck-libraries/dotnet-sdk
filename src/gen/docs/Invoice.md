@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **BillingAddress** | [**Address**](Address.md) |  | [optional] 
 **ShippingAddress** | [**Address**](Address.md) |  | [optional] 
 **TemplateId** | **string** | Optional invoice template | [optional] 
+**SourceDocumentUrl** | **string** | URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero. | [optional] 
 **RowVersion** | **string** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 
 **CreatedBy** | **string** |  | [optional] [readonly] 
