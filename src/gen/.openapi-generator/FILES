@@ -25,6 +25,7 @@ docs/ApiStatus.md
 docs/ApisFilter.md
 docs/Applicant.md
 docs/ApplicantWebsites.md
+docs/AtsActivity.md
 docs/AtsApi.md
 docs/AuthType.md
 docs/BadRequestResponse.md
@@ -335,6 +336,7 @@ docs/NotFoundResponse.md
 docs/NotImplementedResponse.md
 docs/Note.md
 docs/OAuthGrantType.md
+docs/Offer.md
 docs/OpportunitiesFilter.md
 docs/OpportunitiesSort.md
 docs/Opportunity.md
@@ -487,6 +489,7 @@ src/Apideck.Test/Model/ApiTests.cs
 src/Apideck.Test/Model/ApisFilterTests.cs
 src/Apideck.Test/Model/ApplicantTests.cs
 src/Apideck.Test/Model/ApplicantWebsitesTests.cs
+src/Apideck.Test/Model/AtsActivityTests.cs
 src/Apideck.Test/Model/AuthTypeTests.cs
 src/Apideck.Test/Model/BadRequestResponseTests.cs
 src/Apideck.Test/Model/BalanceSheetAssetsCurrentAssetsAccountsTests.cs
@@ -790,6 +793,7 @@ src/Apideck.Test/Model/NotFoundResponseTests.cs
 src/Apideck.Test/Model/NotImplementedResponseTests.cs
 src/Apideck.Test/Model/NoteTests.cs
 src/Apideck.Test/Model/OAuthGrantTypeTests.cs
+src/Apideck.Test/Model/OfferTests.cs
 src/Apideck.Test/Model/OpportunitiesFilterTests.cs
 src/Apideck.Test/Model/OpportunitiesSortTests.cs
 src/Apideck.Test/Model/OpportunityTests.cs
@@ -954,6 +958,7 @@ src/Apideck/Model/ApiStatus.cs
 src/Apideck/Model/ApisFilter.cs
 src/Apideck/Model/Applicant.cs
 src/Apideck/Model/ApplicantWebsites.cs
+src/Apideck/Model/AtsActivity.cs
 src/Apideck/Model/AuthType.cs
 src/Apideck/Model/BadRequestResponse.cs
 src/Apideck/Model/BalanceSheet.cs
@@ -1257,6 +1262,7 @@ src/Apideck/Model/NotFoundResponse.cs
 src/Apideck/Model/NotImplementedResponse.cs
 src/Apideck/Model/Note.cs
 src/Apideck/Model/OAuthGrantType.cs
+src/Apideck/Model/Offer.cs
 src/Apideck/Model/OpportunitiesFilter.cs
 src/Apideck/Model/OpportunitiesSort.cs
 src/Apideck/Model/Opportunity.cs
