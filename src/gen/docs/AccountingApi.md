@@ -36,7 +36,7 @@ Method | HTTP request | Description
 [**PaymentsDelete**](AccountingApi.md#paymentsdelete) | **DELETE** /accounting/payments/{id} | Delete Payment
 [**PaymentsOne**](AccountingApi.md#paymentsone) | **GET** /accounting/payments/{id} | Get Payment
 [**PaymentsUpdate**](AccountingApi.md#paymentsupdate) | **PATCH** /accounting/payments/{id} | Update Payment
-[**ProfitAndLossOne**](AccountingApi.md#profitandlossone) | **GET** /accounting/profit-and-loss | List Profit and Loss
+[**ProfitAndLossOne**](AccountingApi.md#profitandlossone) | **GET** /accounting/profit-and-loss | Get Profit and Loss
 [**SuppliersAdd**](AccountingApi.md#suppliersadd) | **POST** /accounting/suppliers | Create Supplier
 [**SuppliersAll**](AccountingApi.md#suppliersall) | **GET** /accounting/suppliers | List Suppliers
 [**SuppliersDelete**](AccountingApi.md#suppliersdelete) | **DELETE** /accounting/suppliers/{id} | Delete Supplier
@@ -2959,9 +2959,9 @@ Name | Type | Description  | Notes
 # **ProfitAndLossOne**
 > GetProfitAndLossResponse ProfitAndLossOne (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, ProfitAndLossFilter filter = null)
 
-List Profit and Loss
+Get Profit and Loss
 
-List Profit and Loss
+Get Profit and Loss
 
 ### Example
 ```csharp
@@ -2993,7 +2993,7 @@ namespace Example
 
             try
             {
-                // List Profit and Loss
+                // Get Profit and Loss
                 GetProfitAndLossResponse result = apiInstance.ProfitAndLossOne(raw, consumerId, appId, serviceId, filter);
                 Debug.WriteLine(result);
             }
