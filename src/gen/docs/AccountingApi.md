@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**PaymentsDelete**](AccountingApi.md#paymentsdelete) | **DELETE** /accounting/payments/{id} | Delete Payment
 [**PaymentsOne**](AccountingApi.md#paymentsone) | **GET** /accounting/payments/{id} | Get Payment
 [**PaymentsUpdate**](AccountingApi.md#paymentsupdate) | **PATCH** /accounting/payments/{id} | Update Payment
+[**ProfitAndLossOne**](AccountingApi.md#profitandlossone) | **GET** /accounting/profit-and-loss | List Profit and Loss
 [**SuppliersAdd**](AccountingApi.md#suppliersadd) | **POST** /accounting/suppliers | Create Supplier
 [**SuppliersAll**](AccountingApi.md#suppliersall) | **GET** /accounting/suppliers | List Suppliers
 [**SuppliersDelete**](AccountingApi.md#suppliersdelete) | **DELETE** /accounting/suppliers/{id} | Delete Supplier
@@ -2945,6 +2946,96 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Payment Updated |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="profitandlossone"></a>
+# **ProfitAndLossOne**
+> GetProfitAndLossResponse ProfitAndLossOne (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, ProfitAndLossFilter filter = null)
+
+List Profit and Loss
+
+List Profit and Loss
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ProfitAndLossOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var filter = new ProfitAndLossFilter(); // ProfitAndLossFilter | Apply filters (beta) (optional) 
+
+            try
+            {
+                // List Profit and Loss
+                GetProfitAndLossResponse result = apiInstance.ProfitAndLossOne(raw, consumerId, appId, serviceId, filter);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.ProfitAndLossOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **filter** | [**ProfitAndLossFilter**](ProfitAndLossFilter.md)| Apply filters (beta) | [optional] 
+
+### Return type
+
+[**GetProfitAndLossResponse**](GetProfitAndLossResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Profit &amp; Loss Report |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |
