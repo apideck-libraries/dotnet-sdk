@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] [readonly] 
 **CompanyName** | **string** |  | [optional] 
+**Status** | **string** | Based on the status some functionality is enabled or disabled. | [optional] 
 **LegalName** | **string** | The legal name of the company | [optional] 
 **Country** | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
 **SalesTaxNumber** | **string** |  | [optional] 
