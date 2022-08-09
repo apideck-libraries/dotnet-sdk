@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**DriveId** | **string** | ID of the drive to filter on | [optional] 
 **FolderId** | **string** | ID of the folder to filter on. The root folder has an alias \&quot;root\&quot; | [optional] 
 **Shared** | **bool** | Only return files and folders that are shared | [optional] 
 
