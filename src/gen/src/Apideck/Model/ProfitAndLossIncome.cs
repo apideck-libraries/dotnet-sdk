@@ -41,7 +41,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="total">Total income (required).</param>
         /// <param name="records">records (required).</param>
-        public ProfitAndLossIncome(decimal? total = default(decimal?), List<object records = default(List<object))
+        public ProfitAndLossIncome(decimal? total = default(decimal?), List<object> records = default(List<object>))
         {
             // to ensure "total" is required (not null)
             if (total == null) {
@@ -66,7 +66,7 @@ namespace Apideck.Model
         /// Gets or Sets Records
         /// </summary>
         [DataMember(Name = "records", IsRequired = true, EmitDefaultValue = true)]
-        public List<object Records { get; set; }
+        public List<object> Records { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

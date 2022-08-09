@@ -44,7 +44,7 @@ namespace Apideck.Model
         /// <param name="type">type (required).</param>
         /// <param name="total">total.</param>
         /// <param name="records">records.</param>
-        public ProfitAndLossSection(string id = default(string), string title = default(string), string type = default(string), decimal? total = default(decimal?), List<object records = default(List<object))
+        public ProfitAndLossSection(string id = default(string), string title = default(string), string type = default(string), decimal? total = default(decimal?), List<object> records = default(List<object>))
         {
             // to ensure "type" is required (not null)
             if (type == null) {
@@ -85,7 +85,7 @@ namespace Apideck.Model
         /// Gets or Sets Records
         /// </summary>
         [DataMember(Name = "records", EmitDefaultValue = true)]
-        public List<object Records { get; set; }
+        public List<object> Records { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
