@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] [readonly] 
+**IdempotencyKey** | **string** | A value you specify that uniquely identifies this request among requests you have sent. | [optional] 
 **Name** | **string** |  | 
 **AlternateName** | **string** |  | [optional] 
 **PriceAmount** | **decimal** |  | [optional] 
