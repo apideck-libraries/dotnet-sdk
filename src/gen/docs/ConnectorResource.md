@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **SupportedOperations** | **List&lt;string&gt;** | List of supported operations on the resource. | [optional] 
 **SupportedFilters** | **List&lt;string&gt;** | Supported filters on the list endpoint of the resource. | [optional] 
 **SupportedSortBy** | **List&lt;string&gt;** | Supported sorting properties on the list endpoint of the resource. | [optional] 
-**SupportedFields** | [**List&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields. | [optional] 
+**SupportedFields** | [**List&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields on the detail endpoint. | [optional] 
+**SupportedListFields** | [**List&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields on the list endpoint. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
