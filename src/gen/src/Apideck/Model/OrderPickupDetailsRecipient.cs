@@ -35,12 +35,14 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="OrderPickupDetailsRecipient" /> class.
         /// </summary>
         /// <param name="customerId">customerId.</param>
+        /// <param name="displayName">displayName.</param>
         /// <param name="address">address.</param>
         /// <param name="phoneNumber">phoneNumber.</param>
         /// <param name="email">email.</param>
-        public OrderPickupDetailsRecipient(string customerId = default(string), Address address = default(Address), PhoneNumber phoneNumber = default(PhoneNumber), Email email = default(Email))
+        public OrderPickupDetailsRecipient(string customerId = default(string), string displayName = default(string), Address address = default(Address), PhoneNumber phoneNumber = default(PhoneNumber), Email email = default(Email))
         {
             this.CustomerId = customerId;
+            this.DisplayName = displayName;
             this.Address = address;
             this.PhoneNumber = phoneNumber;
             this.Email = email;
@@ -51,6 +53,12 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "customer_id", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplayName
+        /// </summary>
+        [DataMember(Name = "display_name", EmitDefaultValue = false)]
+        public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
@@ -79,6 +87,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderPickupDetailsRecipient {\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
@@ -123,6 +132,11 @@ namespace Apideck.Model
                     this.CustomerId.Equals(input.CustomerId))
                 ) && 
                 (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
                     this.Address == input.Address ||
                     (this.Address != null &&
                     this.Address.Equals(input.Address))
@@ -151,6 +165,10 @@ namespace Apideck.Model
                 if (this.CustomerId != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomerId.GetHashCode();
+                }
+                if (this.DisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
                 }
                 if (this.Address != null)
                 {

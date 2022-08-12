@@ -44,7 +44,7 @@ namespace Apideck.Model
         /// <param name="appliedTaxes">appliedTaxes.</param>
         /// <param name="appliedDiscounts">appliedDiscounts.</param>
         /// <param name="modifiers">Customizable options – toppings, add-ons, or special requests – create item modifiers. Modifiers that are applied to items will display on your customers’ digital receipts.</param>
-        public OrderLineItems(string name = default(string), Object item = default(Object), decimal? totalTax = default(decimal?), decimal? totalDiscount = default(decimal?), decimal? totalAmount = default(decimal?), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), List<Object> appliedTaxes = default(List<Object>), List<Object> appliedDiscounts = default(List<Object>), List<Object> modifiers = default(List<Object>))
+        public OrderLineItems(string name = default(string), Object item = default(Object), int? totalTax = default(int?), int? totalDiscount = default(int?), int? totalAmount = default(int?), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), List<Object> appliedTaxes = default(List<Object>), List<Object> appliedDiscounts = default(List<Object>), List<Object> modifiers = default(List<Object>))
         {
             this.Name = name;
             this.Item = item;
@@ -88,19 +88,19 @@ namespace Apideck.Model
         /// Gets or Sets TotalTax
         /// </summary>
         [DataMember(Name = "total_tax", EmitDefaultValue = true)]
-        public decimal? TotalTax { get; set; }
+        public int? TotalTax { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalDiscount
         /// </summary>
         [DataMember(Name = "total_discount", EmitDefaultValue = true)]
-        public decimal? TotalDiscount { get; set; }
+        public int? TotalDiscount { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalAmount
         /// </summary>
         [DataMember(Name = "total_amount", EmitDefaultValue = true)]
-        public decimal? TotalAmount { get; set; }
+        public int? TotalAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets Quantity

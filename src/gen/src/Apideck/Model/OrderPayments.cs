@@ -42,7 +42,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="amount">amount.</param>
         /// <param name="currency">currency.</param>
-        public OrderPayments(decimal amount = default(decimal), Currency? currency = default(Currency?))
+        public OrderPayments(int amount = default(int), Currency? currency = default(Currency?))
         {
             this.Amount = amount;
             this.Currency = currency;
@@ -66,7 +66,7 @@ namespace Apideck.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public int Amount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

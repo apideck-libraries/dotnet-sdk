@@ -268,7 +268,7 @@ namespace Apideck.Model
         /// <param name="tenders">tenders.</param>
         /// <param name="voided">voided.</param>
         /// <param name="version">version.</param>
-        public Order(string orderNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? closedDate = default(DateTime?), string referenceId = default(string), StatusEnum? status = default(StatusEnum?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), Currency? currency = default(Currency?), string title = default(string), string note = default(string), string merchantId = default(string), string customerId = default(string), string employeeId = default(string), string locationId = default(string), string orderTypeId = default(string), string table = default(string), string seat = default(string), decimal? totalAmount = default(decimal?), decimal? totalTip = default(decimal?), decimal? totalTax = default(decimal?), decimal? totalDiscount = default(decimal?), decimal? totalRefund = default(decimal?), decimal? totalServiceCharge = default(decimal?), bool refunded = default(bool), List<OrderCustomers> customers = default(List<OrderCustomers>), List<OrderFulfillments> fulfillments = default(List<OrderFulfillments>), List<OrderLineItems> lineItems = default(List<OrderLineItems>), List<OrderPayments> payments = default(List<OrderPayments>), List<ServiceCharge> serviceCharges = default(List<ServiceCharge>), List<OrderRefunds> refunds = default(List<OrderRefunds>), List<Object> taxes = default(List<Object>), List<OrderDiscounts> discounts = default(List<OrderDiscounts>), List<OrderTenders> tenders = default(List<OrderTenders>), bool voided = default(bool), string version = default(string))
+        public Order(string orderNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? closedDate = default(DateTime?), string referenceId = default(string), StatusEnum? status = default(StatusEnum?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), Currency? currency = default(Currency?), string title = default(string), string note = default(string), string merchantId = default(string), string customerId = default(string), string employeeId = default(string), string locationId = default(string), string orderTypeId = default(string), string table = default(string), string seat = default(string), int? totalAmount = default(int?), int? totalTip = default(int?), int? totalTax = default(int?), int? totalDiscount = default(int?), int? totalRefund = default(int?), int? totalServiceCharge = default(int?), bool refunded = default(bool), List<OrderCustomers> customers = default(List<OrderCustomers>), List<OrderFulfillments> fulfillments = default(List<OrderFulfillments>), List<OrderLineItems> lineItems = default(List<OrderLineItems>), List<OrderPayments> payments = default(List<OrderPayments>), List<ServiceCharge> serviceCharges = default(List<ServiceCharge>), List<OrderRefunds> refunds = default(List<OrderRefunds>), List<Object> taxes = default(List<Object>), List<OrderDiscounts> discounts = default(List<OrderDiscounts>), List<OrderTenders> tenders = default(List<OrderTenders>), bool voided = default(bool), string version = default(string))
         {
             // to ensure "merchantId" is required (not null)
             if (merchantId == null) {
@@ -414,37 +414,37 @@ namespace Apideck.Model
         /// Gets or Sets TotalAmount
         /// </summary>
         [DataMember(Name = "total_amount", EmitDefaultValue = true)]
-        public decimal? TotalAmount { get; set; }
+        public int? TotalAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalTip
         /// </summary>
         [DataMember(Name = "total_tip", EmitDefaultValue = true)]
-        public decimal? TotalTip { get; set; }
+        public int? TotalTip { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalTax
         /// </summary>
         [DataMember(Name = "total_tax", EmitDefaultValue = true)]
-        public decimal? TotalTax { get; set; }
+        public int? TotalTax { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalDiscount
         /// </summary>
         [DataMember(Name = "total_discount", EmitDefaultValue = true)]
-        public decimal? TotalDiscount { get; set; }
+        public int? TotalDiscount { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalRefund
         /// </summary>
         [DataMember(Name = "total_refund", EmitDefaultValue = true)]
-        public decimal? TotalRefund { get; set; }
+        public int? TotalRefund { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalServiceCharge
         /// </summary>
         [DataMember(Name = "total_service_charge", EmitDefaultValue = true)]
-        public decimal? TotalServiceCharge { get; set; }
+        public int? TotalServiceCharge { get; set; }
 
         /// <summary>
         /// Gets or Sets Refunded

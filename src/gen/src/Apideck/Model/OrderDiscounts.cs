@@ -38,10 +38,16 @@ namespace Apideck.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum FixedPercentage for value: fixed_percentage
+            /// Enum Percentage for value: percentage
             /// </summary>
-            [EnumMember(Value = "fixed_percentage")]
-            FixedPercentage = 1
+            [EnumMember(Value = "percentage")]
+            Percentage = 1,
+
+            /// <summary>
+            /// Enum FlatFee for value: flat_fee
+            /// </summary>
+            [EnumMember(Value = "flat_fee")]
+            FlatFee = 2
 
         }
 
@@ -91,7 +97,7 @@ namespace Apideck.Model
         /// <param name="amount">amount.</param>
         /// <param name="currency">currency.</param>
         /// <param name="scope">scope.</param>
-        public OrderDiscounts(string name = default(string), TypeEnum? type = default(TypeEnum?), decimal amount = default(decimal), Currency? currency = default(Currency?), ScopeEnum? scope = default(ScopeEnum?))
+        public OrderDiscounts(string name = default(string), TypeEnum? type = default(TypeEnum?), int amount = default(int), Currency? currency = default(Currency?), ScopeEnum? scope = default(ScopeEnum?))
         {
             this.Name = name;
             this.Type = type;
@@ -138,7 +144,7 @@ namespace Apideck.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public int Amount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

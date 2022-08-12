@@ -82,7 +82,7 @@ namespace Apideck.Model
         /// <param name="currency">currency.</param>
         /// <param name="reason">reason.</param>
         /// <param name="status">status.</param>
-        public OrderRefunds(decimal amount = default(decimal), Currency? currency = default(Currency?), string reason = default(string), StatusEnum? status = default(StatusEnum?))
+        public OrderRefunds(int amount = default(int), Currency? currency = default(Currency?), string reason = default(string), StatusEnum? status = default(StatusEnum?))
         {
             this.Amount = amount;
             this.Currency = currency;
@@ -122,7 +122,7 @@ namespace Apideck.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public int Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets Reason

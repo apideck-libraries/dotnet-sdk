@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] [readonly] 
 **LocationId** | **string** |  | [optional] [readonly] 
-**Amount** | **decimal** |  | [optional] 
+**Amount** | **int** |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **Reason** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
