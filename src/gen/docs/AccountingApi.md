@@ -51,7 +51,7 @@ Method | HTTP request | Description
 
 <a name="balancesheetone"></a>
 # **BalanceSheetOne**
-> GetBalanceSheetResponse BalanceSheetOne (string consumerId = null, string appId = null, string serviceId = null, Passthrough passThrough = null, bool? raw = null)
+> GetBalanceSheetResponse BalanceSheetOne (string consumerId = null, string appId = null, string serviceId = null, Passthrough passThrough = null, BalanceSheetFilter filter = null, bool? raw = null)
 
 Get BalanceSheet
 
@@ -83,12 +83,13 @@ namespace Example
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var passThrough = new Passthrough(); // Passthrough | Optional unmapped key/values that will be passed through to downstream as query parameters (optional) 
+            var filter = new BalanceSheetFilter(); // BalanceSheetFilter | Apply filters (beta) (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
             {
                 // Get BalanceSheet
-                GetBalanceSheetResponse result = apiInstance.BalanceSheetOne(consumerId, appId, serviceId, passThrough, raw);
+                GetBalanceSheetResponse result = apiInstance.BalanceSheetOne(consumerId, appId, serviceId, passThrough, filter, raw);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -110,6 +111,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **passThrough** | [**Passthrough**](Passthrough.md)| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional] 
+ **filter** | [**BalanceSheetFilter**](BalanceSheetFilter.md)| Apply filters (beta) | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
 
 ### Return type
