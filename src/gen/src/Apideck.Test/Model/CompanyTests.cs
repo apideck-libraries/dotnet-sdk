@@ -329,6 +329,22 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Deleted'
         }
         /// <summary>
+        /// Test the property 'Salutation'
+        /// </summary>
+        [Fact]
+        public void SalutationTest()
+        {
+            // TODO unit test for the property 'Salutation'
+        }
+        /// <summary>
+        /// Test the property 'Birthday'
+        /// </summary>
+        [Fact]
+        public void BirthdayTest()
+        {
+            // TODO unit test for the property 'Birthday'
+        }
+        /// <summary>
         /// Test the property 'UpdatedBy'
         /// </summary>
         [Fact]
