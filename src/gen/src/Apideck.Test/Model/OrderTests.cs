@@ -65,6 +65,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
+        /// Test the property 'IdempotencyKey'
+        /// </summary>
+        [Fact]
+        public void IdempotencyKeyTest()
+        {
+            // TODO unit test for the property 'IdempotencyKey'
+        }
+        /// <summary>
         /// Test the property 'OrderNumber'
         /// </summary>
         [Fact]

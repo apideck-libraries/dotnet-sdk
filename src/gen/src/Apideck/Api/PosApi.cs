@@ -1079,7 +1079,7 @@ namespace Apideck.Api
         /// Update Order
         /// </summary>
         /// <remarks>
-        /// Update Order
+        /// Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1095,7 +1095,7 @@ namespace Apideck.Api
         /// Update Order
         /// </summary>
         /// <remarks>
-        /// Update Order
+        /// Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -2536,7 +2536,7 @@ namespace Apideck.Api
         /// Update Order
         /// </summary>
         /// <remarks>
-        /// Update Order
+        /// Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -2553,7 +2553,7 @@ namespace Apideck.Api
         /// Update Order
         /// </summary>
         /// <remarks>
-        /// Update Order
+        /// Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -9962,7 +9962,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update Order Update Order
+        /// Update Order Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -9979,7 +9979,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update Order Update Order
+        /// Update Order Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -10066,7 +10066,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update Order Update Order
+        /// Update Order Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -10084,7 +10084,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update Order Update Order
+        /// Update Order Updates an open order by adding, replacing, or deleting fields. Square-only: Orders with a &#x60;completed&#x60; or &#x60;canceled&#x60; status cannot be updated. To pay for an order, use the [payments endpoint](#tag/Payments). 
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
