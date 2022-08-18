@@ -337,8 +337,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets SettingsRequiredForAuthorization
+        /// List of settings that are required to be configured on integration before authorization can occur
         /// </summary>
+        /// <value>List of settings that are required to be configured on integration before authorization can occur</value>
         [DataMember(Name = "settings_required_for_authorization", EmitDefaultValue = false)]
         public List<string> SettingsRequiredForAuthorization { get; private set; }
 

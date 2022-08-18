@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **ConfigurableResources** | **List&lt;string&gt;** |  | [optional] [readonly] 
 **ResourceSchemaSupport** | **List&lt;string&gt;** |  | [optional] [readonly] 
 **ResourceSettingsSupport** | **List&lt;string&gt;** |  | [optional] [readonly] 
-**SettingsRequiredForAuthorization** | **List&lt;string&gt;** |  | [optional] [readonly] 
+**SettingsRequiredForAuthorization** | **List&lt;string&gt;** | List of settings that are required to be configured on integration before authorization can occur | [optional] [readonly] 
 **HasGuide** | **bool** | Whether the connector has a guide available in the developer docs or not (https://docs.apideck.com/connectors/{service_id}/docs/consumer+connection). | [optional] [readonly] 
 **CreatedAt** | **decimal** |  | [optional] [readonly] 
 **UpdatedAt** | **decimal?** |  | [optional] [readonly] 
