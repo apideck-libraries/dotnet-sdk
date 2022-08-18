@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [readonly] 
+**DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **Name** | **string** | The name of the file | 
 **Description** | **string** | Optional description of the file | [optional] 
 **Type** | **FileType** |  | 

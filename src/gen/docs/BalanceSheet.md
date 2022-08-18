@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] [readonly] 
 **ReportName** | **string** | The name of the report | 
 **StartDate** | **string** | The start date of the report | 
+**EndDate** | **string** | The start date of the report | [optional] 
 **Assets** | [**BalanceSheetAssets**](BalanceSheetAssets.md) |  | 
 **Liabilities** | [**BalanceSheetLiabilities**](BalanceSheetLiabilities.md) |  | 
 **Equity** | [**BalanceSheetEquity**](BalanceSheetEquity.md) |  | 

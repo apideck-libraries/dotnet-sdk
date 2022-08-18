@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ProductId** | **string** |  | [optional] [readonly] 
 **Name** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
-**Amount** | **decimal** |  | [optional] 
+**Amount** | **int** |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **Scope** | **string** |  | [optional] 
 

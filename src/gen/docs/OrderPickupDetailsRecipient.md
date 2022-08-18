@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerId** | **string** |  | [optional] 
+**DisplayName** | **string** |  | [optional] 
 **Address** | [**Address**](Address.md) |  | [optional] 
 **PhoneNumber** | [**PhoneNumber**](PhoneNumber.md) |  | [optional] 
 **Email** | [**Email**](Email.md) |  | [optional] 

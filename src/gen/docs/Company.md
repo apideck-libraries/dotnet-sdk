@@ -38,6 +38,8 @@ Name | Type | Description | Notes
 **ReadOnly** | **bool?** |  | [optional] 
 **LastActivityAt** | **DateTime?** |  | [optional] [readonly] 
 **Deleted** | **bool** |  | [optional] [readonly] 
+**Salutation** | **string** |  | [optional] 
+**Birthday** | **DateTime?** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 
 **CreatedBy** | **string** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
