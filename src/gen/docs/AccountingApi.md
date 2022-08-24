@@ -88,7 +88,7 @@ namespace Example
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var passThrough = new Passthrough(); // Passthrough | Optional unmapped key/values that will be passed through to downstream as query parameters (optional) 
-            var filter = new BalanceSheetFilter(); // BalanceSheetFilter | Apply filters (beta) (optional) 
+            var filter = new BalanceSheetFilter(); // BalanceSheetFilter | Apply filters (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **passThrough** | [**Passthrough**](Passthrough.md)| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional] 
- **filter** | [**BalanceSheetFilter**](BalanceSheetFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**BalanceSheetFilter**](BalanceSheetFilter.md)| Apply filters | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
 
 ### Return type
@@ -1268,7 +1268,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
-            var filter = new CustomersFilter(); // CustomersFilter | Apply filters (beta) (optional) 
+            var filter = new CustomersFilter(); // CustomersFilter | Apply filters (optional) 
 
             try
             {
@@ -1297,7 +1297,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
- **filter** | [**CustomersFilter**](CustomersFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**CustomersFilter**](CustomersFilter.md)| Apply filters | [optional] 
 
 ### Return type
 
@@ -1724,7 +1724,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
-            var filter = new InvoiceItemsFilter(); // InvoiceItemsFilter | Apply filters (beta) (optional) 
+            var filter = new InvoiceItemsFilter(); // InvoiceItemsFilter | Apply filters (optional) 
 
             try
             {
@@ -1753,7 +1753,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
- **filter** | [**InvoiceItemsFilter**](InvoiceItemsFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**InvoiceItemsFilter**](InvoiceItemsFilter.md)| Apply filters | [optional] 
 
 ### Return type
 
@@ -2146,7 +2146,7 @@ Name | Type | Description  | Notes
 
 <a name="invoicesall"></a>
 # **InvoicesAll**
-> GetInvoicesResponse InvoicesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetInvoicesResponse InvoicesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, InvoicesSort sort = null)
 
 List Invoices
 
@@ -2180,11 +2180,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var sort = new InvoicesSort(); // InvoicesSort | Apply sorting (optional) 
 
             try
             {
                 // List Invoices
-                GetInvoicesResponse result = apiInstance.InvoicesAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetInvoicesResponse result = apiInstance.InvoicesAll(raw, consumerId, appId, serviceId, cursor, limit, sort);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2208,6 +2209,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **sort** | [**InvoicesSort**](InvoicesSort.md)| Apply sorting | [optional] 
 
 ### Return type
 
@@ -3450,7 +3452,7 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
-            var filter = new ProfitAndLossFilter(); // ProfitAndLossFilter | Apply filters (beta) (optional) 
+            var filter = new ProfitAndLossFilter(); // ProfitAndLossFilter | Apply filters (optional) 
 
             try
             {
@@ -3477,7 +3479,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
- **filter** | [**ProfitAndLossFilter**](ProfitAndLossFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**ProfitAndLossFilter**](ProfitAndLossFilter.md)| Apply filters | [optional] 
 
 ### Return type
 
@@ -4086,7 +4088,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
-            var filter = new TaxRatesFilter(); // TaxRatesFilter | Apply filters (beta) (optional) 
+            var filter = new TaxRatesFilter(); // TaxRatesFilter | Apply filters (optional) 
 
             try
             {
@@ -4115,7 +4117,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
- **filter** | [**TaxRatesFilter**](TaxRatesFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**TaxRatesFilter**](TaxRatesFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

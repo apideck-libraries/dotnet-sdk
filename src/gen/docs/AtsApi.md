@@ -137,7 +137,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
-            var filter = new JobsFilter(); // JobsFilter | Apply filters (beta) (optional) 
+            var filter = new JobsFilter(); // JobsFilter | Apply filters (optional) 
 
             try
             {
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
- **filter** | [**JobsFilter**](JobsFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**JobsFilter**](JobsFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

@@ -321,6 +321,7 @@ docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
 docs/InvoiceLineItem.md
 docs/InvoiceResponse.md
+docs/InvoicesSort.md
 docs/Item.md
 docs/Job.md
 docs/JobSalary.md
@@ -803,6 +804,7 @@ src/Apideck.Test/Model/InvoiceItemsFilterTests.cs
 src/Apideck.Test/Model/InvoiceLineItemTests.cs
 src/Apideck.Test/Model/InvoiceResponseTests.cs
 src/Apideck.Test/Model/InvoiceTests.cs
+src/Apideck.Test/Model/InvoicesSortTests.cs
 src/Apideck.Test/Model/ItemTests.cs
 src/Apideck.Test/Model/JobSalaryTests.cs
 src/Apideck.Test/Model/JobStatusTests.cs
@@ -1296,6 +1298,7 @@ src/Apideck/Model/InvoiceItemSalesDetails.cs
 src/Apideck/Model/InvoiceItemsFilter.cs
 src/Apideck/Model/InvoiceLineItem.cs
 src/Apideck/Model/InvoiceResponse.cs
+src/Apideck/Model/InvoicesSort.cs
 src/Apideck/Model/Item.cs
 src/Apideck/Model/Job.cs
 src/Apideck/Model/JobSalary.cs
