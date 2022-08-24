@@ -121,6 +121,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Birthday'
         }
         /// <summary>
+        /// Test the property 'CoverLetter'
+        /// </summary>
+        [Fact]
+        public void CoverLetterTest()
+        {
+            // TODO unit test for the property 'CoverLetter'
+        }
+        /// <summary>
         /// Test the property 'JobUrl'
         /// </summary>
         [Fact]
@@ -183,6 +191,14 @@ namespace Apideck.Test.Model
         public void WebsitesTest()
         {
             // TODO unit test for the property 'Websites'
+        }
+        /// <summary>
+        /// Test the property 'SocialLinks'
+        /// </summary>
+        [Fact]
+        public void SocialLinksTest()
+        {
+            // TODO unit test for the property 'SocialLinks'
         }
         /// <summary>
         /// Test the property 'StageId'

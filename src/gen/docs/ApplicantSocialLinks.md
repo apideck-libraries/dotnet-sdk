@@ -1,4 +1,4 @@
-# Apideck.Model.EmployeeSocialLinks
+# Apideck.Model.ApplicantSocialLinks
 
 ## Properties
 

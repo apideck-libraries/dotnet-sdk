@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**ApplicantsAdd**](AtsApi.md#applicantsadd) | **POST** /ats/applicants | Create applicant
 [**ApplicantsAll**](AtsApi.md#applicantsall) | **GET** /ats/applicants | List applicants
 [**ApplicantsOne**](AtsApi.md#applicantsone) | **GET** /ats/applicants/{id} | Get applicant
-[**JobsAll**](AtsApi.md#jobsall) | **GET** /ats/jobs | List jobs
-[**JobsOne**](AtsApi.md#jobsone) | **GET** /ats/jobs/{id} | Get job
+[**JobsAll**](AtsApi.md#jobsall) | **GET** /ats/jobs | List Jobs
+[**JobsOne**](AtsApi.md#jobsone) | **GET** /ats/jobs/{id} | Get Job
 
 
 <a name="applicantsadd"></a>
@@ -289,9 +289,9 @@ Name | Type | Description  | Notes
 # **JobsAll**
 > GetJobsResponse JobsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
 
-List jobs
+List Jobs
 
-List jobs
+List Jobs
 
 ### Example
 ```csharp
@@ -324,7 +324,7 @@ namespace Example
 
             try
             {
-                // List jobs
+                // List Jobs
                 GetJobsResponse result = apiInstance.JobsAll(raw, consumerId, appId, serviceId, cursor, limit);
                 Debug.WriteLine(result);
             }
@@ -381,9 +381,9 @@ Name | Type | Description  | Notes
 # **JobsOne**
 > GetJobResponse JobsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
 
-Get job
+Get Job
 
-Get job
+Get Job
 
 ### Example
 ```csharp
@@ -415,7 +415,7 @@ namespace Example
 
             try
             {
-                // Get job
+                // Get Job
                 GetJobResponse result = apiInstance.JobsOne(id, consumerId, appId, serviceId, raw);
                 Debug.WriteLine(result);
             }

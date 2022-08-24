@@ -118,10 +118,10 @@ namespace Apideck.Api
         /// <returns>ApiResponse of GetApplicantResponse</returns>
         ApiResponse<GetApplicantResponse> ApplicantsOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
         /// <summary>
-        /// List jobs
+        /// List Jobs
         /// </summary>
         /// <remarks>
-        /// List jobs
+        /// List Jobs
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -134,10 +134,10 @@ namespace Apideck.Api
         GetJobsResponse JobsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// List jobs
+        /// List Jobs
         /// </summary>
         /// <remarks>
-        /// List jobs
+        /// List Jobs
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -149,10 +149,10 @@ namespace Apideck.Api
         /// <returns>ApiResponse of GetJobsResponse</returns>
         ApiResponse<GetJobsResponse> JobsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
         /// <summary>
-        /// Get job
+        /// Get Job
         /// </summary>
         /// <remarks>
-        /// Get job
+        /// Get Job
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -164,10 +164,10 @@ namespace Apideck.Api
         GetJobResponse JobsOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
 
         /// <summary>
-        /// Get job
+        /// Get Job
         /// </summary>
         /// <remarks>
-        /// Get job
+        /// Get Job
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -284,10 +284,10 @@ namespace Apideck.Api
         /// <returns>Task of ApiResponse (GetApplicantResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetApplicantResponse>> ApplicantsOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// List jobs
+        /// List Jobs
         /// </summary>
         /// <remarks>
-        /// List jobs
+        /// List Jobs
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -301,10 +301,10 @@ namespace Apideck.Api
         System.Threading.Tasks.Task<GetJobsResponse> JobsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// List jobs
+        /// List Jobs
         /// </summary>
         /// <remarks>
-        /// List jobs
+        /// List Jobs
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -317,10 +317,10 @@ namespace Apideck.Api
         /// <returns>Task of ApiResponse (GetJobsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetJobsResponse>> JobsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get job
+        /// Get Job
         /// </summary>
         /// <remarks>
-        /// Get job
+        /// Get Job
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -333,10 +333,10 @@ namespace Apideck.Api
         System.Threading.Tasks.Task<GetJobResponse> JobsOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get job
+        /// Get Job
         /// </summary>
         /// <remarks>
-        /// Get job
+        /// Get Job
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1067,7 +1067,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List jobs List jobs
+        /// List Jobs List Jobs
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -1084,7 +1084,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List jobs List jobs
+        /// List Jobs List Jobs
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -1164,7 +1164,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List jobs List jobs
+        /// List Jobs List Jobs
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -1182,7 +1182,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List jobs List jobs
+        /// List Jobs List Jobs
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
@@ -1265,7 +1265,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get job Get job
+        /// Get Job Get Job
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1281,7 +1281,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get job Get job
+        /// Get Job Get Job
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1359,7 +1359,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get job Get job
+        /// Get Job Get Job
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1376,7 +1376,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get job Get job
+        /// Get Job Get Job
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>

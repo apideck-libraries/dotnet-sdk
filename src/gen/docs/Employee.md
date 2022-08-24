@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-**SocialLinks** | [**List&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
+**SocialLinks** | [**List&lt;ApplicantSocialLinks&gt;**](ApplicantSocialLinks.md) |  | [optional] 
 **TaxCode** | **string** |  | [optional] 
 **TaxId** | **string** |  | [optional] 
 **DietaryPreference** | **string** | Indicate the employee&#39;s dietary preference. | [optional] 
