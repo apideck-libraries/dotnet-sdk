@@ -113,7 +113,13 @@ namespace Apideck.Model
             /// Enum Number for value: number
             /// </summary>
             [EnumMember(Value = "number")]
-            Number = 13
+            Number = 13,
+
+            /// <summary>
+            /// Enum Password for value: password
+            /// </summary>
+            [EnumMember(Value = "password")]
+            Password = 14
 
         }
 
