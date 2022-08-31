@@ -53,6 +53,7 @@ Name | Type | Description | Notes
 **TaxId** | **string** |  | [optional] 
 **DietaryPreference** | **string** | Indicate the employee&#39;s dietary preference. | [optional] 
 **FoodAllergies** | **List&lt;string&gt;** | Indicate the employee&#39;s food allergies. | [optional] 
+**Tags** | **List&lt;string&gt;** |  | [optional] 
 **RowVersion** | **string** |  | [optional] 
 **Deleted** | **bool?** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 

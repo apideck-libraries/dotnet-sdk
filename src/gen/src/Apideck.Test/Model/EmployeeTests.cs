@@ -449,6 +449,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'FoodAllergies'
         }
         /// <summary>
+        /// Test the property 'Tags'
+        /// </summary>
+        [Fact]
+        public void TagsTest()
+        {
+            // TODO unit test for the property 'Tags'
+        }
+        /// <summary>
         /// Test the property 'RowVersion'
         /// </summary>
         [Fact]
