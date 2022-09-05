@@ -42,7 +42,6 @@ docs/BalanceSheetFilter.md
 docs/BalanceSheetLiabilities.md
 docs/BalanceSheetLiabilitiesAccounts.md
 docs/BankAccount.md
-docs/BankAccountAchDetails.md
 docs/Benefit.md
 docs/Bill.md
 docs/BillLineItem.md
@@ -387,6 +386,8 @@ docs/PhoneNumber.md
 docs/Pipeline.md
 docs/PipelineStages.md
 docs/PosApi.md
+docs/PosBankAccount.md
+docs/PosBankAccountAchDetails.md
 docs/PosPayment.md
 docs/PosPaymentCardDetails.md
 docs/PosPaymentExternalDetails.md
@@ -530,7 +531,6 @@ src/Apideck.Test/Model/BalanceSheetFilterTests.cs
 src/Apideck.Test/Model/BalanceSheetLiabilitiesAccountsTests.cs
 src/Apideck.Test/Model/BalanceSheetLiabilitiesTests.cs
 src/Apideck.Test/Model/BalanceSheetTests.cs
-src/Apideck.Test/Model/BankAccountAchDetailsTests.cs
 src/Apideck.Test/Model/BankAccountTests.cs
 src/Apideck.Test/Model/BenefitTests.cs
 src/Apideck.Test/Model/BillLineItemTests.cs
@@ -869,6 +869,8 @@ src/Apideck.Test/Model/PayrollsFilterTests.cs
 src/Apideck.Test/Model/PhoneNumberTests.cs
 src/Apideck.Test/Model/PipelineStagesTests.cs
 src/Apideck.Test/Model/PipelineTests.cs
+src/Apideck.Test/Model/PosBankAccountAchDetailsTests.cs
+src/Apideck.Test/Model/PosBankAccountTests.cs
 src/Apideck.Test/Model/PosPaymentCardDetailsTests.cs
 src/Apideck.Test/Model/PosPaymentExternalDetailsTests.cs
 src/Apideck.Test/Model/PosPaymentTests.cs
@@ -1026,7 +1028,6 @@ src/Apideck/Model/BalanceSheetFilter.cs
 src/Apideck/Model/BalanceSheetLiabilities.cs
 src/Apideck/Model/BalanceSheetLiabilitiesAccounts.cs
 src/Apideck/Model/BankAccount.cs
-src/Apideck/Model/BankAccountAchDetails.cs
 src/Apideck/Model/Benefit.cs
 src/Apideck/Model/Bill.cs
 src/Apideck/Model/BillLineItem.cs
@@ -1364,6 +1365,8 @@ src/Apideck/Model/PayrollsFilter.cs
 src/Apideck/Model/PhoneNumber.cs
 src/Apideck/Model/Pipeline.cs
 src/Apideck/Model/PipelineStages.cs
+src/Apideck/Model/PosBankAccount.cs
+src/Apideck/Model/PosBankAccountAchDetails.cs
 src/Apideck/Model/PosPayment.cs
 src/Apideck/Model/PosPaymentCardDetails.cs
 src/Apideck/Model/PosPaymentExternalDetails.cs
