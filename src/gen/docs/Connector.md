@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **ConfigurableResources** | **List&lt;string&gt;** | List of resources that have settings that can be configured. | [optional] 
 **SupportedEvents** | [**List&lt;ConnectorSupportedEvents&gt;**](ConnectorSupportedEvents.md) | List of events that are supported on the connector. Events are delivered via Webhooks. | [optional] 
 **Docs** | [**List&lt;ConnectorDoc&gt;**](ConnectorDoc.md) |  | [optional] 
+**TlsSupport** | [**ConnectorTlsSupport**](ConnectorTlsSupport.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

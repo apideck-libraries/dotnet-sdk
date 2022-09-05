@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
-**FirstName** | **string** |  | [optional] 
-**LastName** | **string** |  | [optional] 
+**Id** | **string** |  | [readonly] 
+**FirstName** | **string** |  | 
+**LastName** | **string** |  | 
 **MiddleName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
 **PreferredName** | **string** |  | [optional] 

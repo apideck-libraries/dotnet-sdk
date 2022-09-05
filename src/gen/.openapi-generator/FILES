@@ -71,6 +71,7 @@ docs/ConnectorSetting.md
 docs/ConnectorStatus.md
 docs/ConnectorSupportedEvents.md
 docs/ConnectorSupportedResources.md
+docs/ConnectorTlsSupport.md
 docs/ConnectorUnifiedApis.md
 docs/ConnectorsFilter.md
 docs/Consumer.md
@@ -558,6 +559,7 @@ src/Apideck.Test/Model/ConnectorStatusTests.cs
 src/Apideck.Test/Model/ConnectorSupportedEventsTests.cs
 src/Apideck.Test/Model/ConnectorSupportedResourcesTests.cs
 src/Apideck.Test/Model/ConnectorTests.cs
+src/Apideck.Test/Model/ConnectorTlsSupportTests.cs
 src/Apideck.Test/Model/ConnectorUnifiedApisTests.cs
 src/Apideck.Test/Model/ConnectorsFilterTests.cs
 src/Apideck.Test/Model/ConsumerConnectionTests.cs
@@ -1052,6 +1054,7 @@ src/Apideck/Model/ConnectorSetting.cs
 src/Apideck/Model/ConnectorStatus.cs
 src/Apideck/Model/ConnectorSupportedEvents.cs
 src/Apideck/Model/ConnectorSupportedResources.cs
+src/Apideck/Model/ConnectorTlsSupport.cs
 src/Apideck/Model/ConnectorUnifiedApis.cs
 src/Apideck/Model/ConnectorsFilter.cs
 src/Apideck/Model/Consumer.cs
