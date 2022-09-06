@@ -2085,7 +2085,7 @@ namespace Example
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var filter = new ModifierGroupFilter(); // ModifierGroupFilter | Apply filters (beta) (optional) 
+            var filter = new ModifierGroupFilter(); // ModifierGroupFilter | Apply filters (optional) 
 
             try
             {
@@ -2113,7 +2113,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
- **filter** | [**ModifierGroupFilter**](ModifierGroupFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**ModifierGroupFilter**](ModifierGroupFilter.md)| Apply filters | [optional] 
 
 ### Return type
 
@@ -2177,7 +2177,7 @@ namespace Example
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var filter = new ModifierGroupFilter(); // ModifierGroupFilter | Apply filters (beta) (optional) 
+            var filter = new ModifierGroupFilter(); // ModifierGroupFilter | Apply filters (optional) 
 
             try
             {
@@ -2205,7 +2205,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
- **filter** | [**ModifierGroupFilter**](ModifierGroupFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**ModifierGroupFilter**](ModifierGroupFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

@@ -971,7 +971,7 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
-            var filter = new PayrollsFilter(); // PayrollsFilter | Apply filters (beta) (optional) 
+            var filter = new PayrollsFilter(); // PayrollsFilter | Apply filters (optional) 
 
             try
             {
@@ -999,7 +999,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
- **filter** | [**PayrollsFilter**](PayrollsFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**PayrollsFilter**](PayrollsFilter.md)| Apply filters | [optional] 
 
 ### Return type
 
@@ -1336,7 +1336,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
-            var filter = new EmployeesFilter(); // EmployeesFilter | Apply filters (beta) (optional) 
+            var filter = new EmployeesFilter(); // EmployeesFilter | Apply filters (optional) 
 
             try
             {
@@ -1365,7 +1365,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
- **filter** | [**EmployeesFilter**](EmployeesFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**EmployeesFilter**](EmployeesFilter.md)| Apply filters | [optional] 
 
 ### Return type
 
@@ -1882,7 +1882,7 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
-            var filter = new PayrollsFilter(); // PayrollsFilter | Apply filters (beta) (optional) 
+            var filter = new PayrollsFilter(); // PayrollsFilter | Apply filters (optional) 
 
             try
             {
@@ -1909,7 +1909,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
- **filter** | [**PayrollsFilter**](PayrollsFilter.md)| Apply filters (beta) | [optional] 
+ **filter** | [**PayrollsFilter**](PayrollsFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

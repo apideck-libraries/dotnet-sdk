@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **Status** | **string** | Status of this payment. | [optional] 
 **Cash** | [**CashDetails**](CashDetails.md) |  | [optional] 
 **CardDetails** | [**PosPaymentCardDetails**](PosPaymentCardDetails.md) |  | [optional] 
-**BankAccount** | [**BankAccount**](BankAccount.md) |  | [optional] 
+**BankAccount** | [**PosBankAccount**](PosBankAccount.md) |  | [optional] 
 **Wallet** | [**WalletDetails**](WalletDetails.md) |  | [optional] 
 **ExternalDetails** | [**PosPaymentExternalDetails**](PosPaymentExternalDetails.md) |  | [optional] 
 **ServiceCharges** | [**List&lt;ServiceCharge&gt;**](ServiceCharge.md) | Optional service charges or gratuity tip applied to the order. | [optional] 
