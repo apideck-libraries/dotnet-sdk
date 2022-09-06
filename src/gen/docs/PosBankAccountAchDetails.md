@@ -1,4 +1,4 @@
-# Apideck.Model.BankAccountAchDetails
+# Apideck.Model.PosBankAccountAchDetails
 ACH-specific details about `BANK_ACCOUNT` type payments with the `transfer_type` of `ACH`.
 
 ## Properties

@@ -137,8 +137,8 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
-            var filter = new LeadsFilter(); // LeadsFilter | Apply filters (beta) (optional) 
-            var sort = new LeadsSort(); // LeadsSort | Apply sorting (beta) (optional) 
+            var filter = new LeadsFilter(); // LeadsFilter | Apply filters (optional) 
+            var sort = new LeadsSort(); // LeadsSort | Apply sorting (optional) 
 
             try
             {
@@ -167,8 +167,8 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
- **filter** | [**LeadsFilter**](LeadsFilter.md)| Apply filters (beta) | [optional] 
- **sort** | [**LeadsSort**](LeadsSort.md)| Apply sorting (beta) | [optional] 
+ **filter** | [**LeadsFilter**](LeadsFilter.md)| Apply filters | [optional] 
+ **sort** | [**LeadsSort**](LeadsSort.md)| Apply sorting | [optional] 
 
 ### Return type
 

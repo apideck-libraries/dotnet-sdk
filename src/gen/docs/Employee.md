@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
-**FirstName** | **string** |  | [optional] 
-**LastName** | **string** |  | [optional] 
+**Id** | **string** |  | [readonly] 
+**FirstName** | **string** |  | 
+**LastName** | **string** |  | 
 **MiddleName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
 **PreferredName** | **string** |  | [optional] 
@@ -48,11 +48,12 @@ Name | Type | Description | Notes
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-**SocialLinks** | [**List&lt;EmployeeSocialLinks&gt;**](EmployeeSocialLinks.md) |  | [optional] 
+**SocialLinks** | [**List&lt;ApplicantSocialLinks&gt;**](ApplicantSocialLinks.md) |  | [optional] 
 **TaxCode** | **string** |  | [optional] 
 **TaxId** | **string** |  | [optional] 
 **DietaryPreference** | **string** | Indicate the employee&#39;s dietary preference. | [optional] 
 **FoodAllergies** | **List&lt;string&gt;** | Indicate the employee&#39;s food allergies. | [optional] 
+**Tags** | **List&lt;string&gt;** |  | [optional] 
 **RowVersion** | **string** |  | [optional] 
 **Deleted** | **bool?** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 
