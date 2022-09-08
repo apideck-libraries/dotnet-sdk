@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [readonly] 
-**FirstName** | **string** |  | 
-**LastName** | **string** |  | 
+**FirstName** | **string** |  | [optional] 
+**LastName** | **string** |  | [optional] 
 **MiddleName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
 **PreferredName** | **string** |  | [optional] 
