@@ -4370,6 +4370,30 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[company_id]", filter.CompanyId));
                 }
+                if (filter.Email != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[email]", filter.Email));
+                }
+                if (filter.FirstName != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[first_name]", filter.FirstName));
+                }
+                if (filter.Title != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[title]", filter.Title));
+                }
+                if (filter.LastName != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[last_name]", filter.LastName));
+                }
+                if (filter.ManagerId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[manager_id]", filter.ManagerId));
+                }
+                if (filter.EmploymentStatus != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[employment_status]", filter.EmploymentStatus));
+                }
             }
             if (consumerId != null)
             {
