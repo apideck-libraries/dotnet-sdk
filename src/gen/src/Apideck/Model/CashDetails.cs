@@ -34,11 +34,20 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CashDetails" /> class.
         /// </summary>
+        /// <param name="amount">The amount of cash given by the customer..</param>
         /// <param name="chargeBackAmount">The amount of change due back to the buyer. For Square: this read-only field is calculated from the amount_money and buyer_supplied_money fields..</param>
-        public CashDetails(Object chargeBackAmount = default(Object))
+        public CashDetails(Object amount = default(Object), Object chargeBackAmount = default(Object))
         {
+            this.Amount = amount;
             this.ChargeBackAmount = chargeBackAmount;
         }
+
+        /// <summary>
+        /// The amount of cash given by the customer.
+        /// </summary>
+        /// <value>The amount of cash given by the customer.</value>
+        [DataMember(Name = "amount", EmitDefaultValue = true)]
+        public Object Amount { get; set; }
 
         /// <summary>
         /// The amount of change due back to the buyer. For Square: this read-only field is calculated from the amount_money and buyer_supplied_money fields.
@@ -55,6 +64,7 @@ namespace Apideck.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class CashDetails {\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  ChargeBackAmount: ").Append(ChargeBackAmount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -92,6 +102,11 @@ namespace Apideck.Model
             }
             return 
                 (
+                    this.Amount == input.Amount ||
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
+                ) && 
+                (
                     this.ChargeBackAmount == input.ChargeBackAmount ||
                     (this.ChargeBackAmount != null &&
                     this.ChargeBackAmount.Equals(input.ChargeBackAmount))
@@ -107,6 +122,10 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Amount != null)
+                {
+                    hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                }
                 if (this.ChargeBackAmount != null)
                 {
                     hashCode = (hashCode * 59) + this.ChargeBackAmount.GetHashCode();

@@ -5,6 +5,7 @@ Cash details for this payment
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Amount** | **Object** | The amount of cash given by the customer. | [optional] 
 **ChargeBackAmount** | **Object** | The amount of change due back to the buyer. For Square: this read-only field is calculated from the amount_money and buyer_supplied_money fields. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
