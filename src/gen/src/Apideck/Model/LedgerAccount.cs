@@ -447,7 +447,7 @@ namespace Apideck.Model
         /// </summary>
         /// <value>The categories of the account.</value>
         [DataMember(Name = "categories", EmitDefaultValue = false)]
-        public List<Object> Categories { get; private set; }
+        public List<LedgerAccountCategories> Categories { get; private set; }
 
         /// <summary>
         /// Returns false as Categories should not be serialized given that it's read-only.

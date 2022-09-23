@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Reconciled** | **bool** | Payment has been reconciled | [optional] 
 **Status** | **string** | Status of payment | [optional] 
 **Type** | **string** | Type of payment | [optional] 
-**Allocations** | **List&lt;Object&gt;** |  | [optional] 
+**Allocations** | [**List&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 **Note** | **string** | Optional note to be associated with the payment. | [optional] 
 **RowVersion** | **string** |  | [optional] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 

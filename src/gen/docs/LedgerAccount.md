@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **Status** | **string** | The status of the account. | [optional] 
 **Header** | **bool?** | Whether the account is a header or not. | [optional] 
 **BankAccount** | [**BankAccount**](BankAccount.md) |  | [optional] 
-**Categories** | **List&lt;Object&gt;** | The categories of the account. | [optional] [readonly] 
+**Categories** | [**List&lt;LedgerAccountCategories&gt;**](LedgerAccountCategories.md) | The categories of the account. | [optional] [readonly] 
 **ParentAccount** | [**LedgerAccountParentAccount**](LedgerAccountParentAccount.md) |  | [optional] 
 **SubAccount** | **bool?** | Whether the account is a sub account or not. | [optional] 
 **SubAccounts** | **List&lt;Object&gt;** | The sub accounts of the account. | [optional] [readonly] 

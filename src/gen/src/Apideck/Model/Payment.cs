@@ -166,7 +166,7 @@ namespace Apideck.Model
         /// <param name="allocations">allocations.</param>
         /// <param name="note">Optional note to be associated with the payment..</param>
         /// <param name="rowVersion">rowVersion.</param>
-        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<Object> allocations = default(List<Object>), string note = default(string), string rowVersion = default(string))
+        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string rowVersion = default(string))
         {
             this.TotalAmount = totalAmount;
             this.TransactionDate = transactionDate;
@@ -283,7 +283,7 @@ namespace Apideck.Model
         /// Gets or Sets Allocations
         /// </summary>
         [DataMember(Name = "allocations", EmitDefaultValue = false)]
-        public List<Object> Allocations { get; set; }
+        public List<PaymentAllocations> Allocations { get; set; }
 
         /// <summary>
         /// Optional note to be associated with the payment.
