@@ -125,6 +125,7 @@ docs/CreateSharedLinkResponse.md
 docs/CreateSupplierResponse.md
 docs/CreateTaxRateResponse.md
 docs/CreateTenderResponse.md
+docs/CreateTimeOffRequestResponse.md
 docs/CreateUploadSessionRequest.md
 docs/CreateUploadSessionResponse.md
 docs/CreateUserResponse.md
@@ -174,6 +175,7 @@ docs/DeleteSharedLinkResponse.md
 docs/DeleteSupplierResponse.md
 docs/DeleteTaxRateResponse.md
 docs/DeleteTenderResponse.md
+docs/DeleteTimeOffRequestResponse.md
 docs/DeleteUploadSessionResponse.md
 docs/DeleteUserResponse.md
 docs/DeleteWebhookResponse.md
@@ -303,6 +305,8 @@ docs/GetTaxRateResponse.md
 docs/GetTaxRatesResponse.md
 docs/GetTenderResponse.md
 docs/GetTendersResponse.md
+docs/GetTimeOffRequestResponse.md
+docs/GetTimeOffRequestsResponse.md
 docs/GetUploadSessionResponse.md
 docs/GetUserResponse.md
 docs/GetUsersResponse.md
@@ -422,6 +426,9 @@ docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
 docs/Tender.md
+docs/TimeOffRequest.md
+docs/TimeOffRequestNotes.md
+docs/TimeOffRequestsFilter.md
 docs/TooManyRequestsResponse.md
 docs/TooManyRequestsResponseDetail.md
 docs/UnauthorizedResponse.md
@@ -468,6 +475,7 @@ docs/UpdateSharedLinkResponse.md
 docs/UpdateSupplierResponse.md
 docs/UpdateTaxRateResponse.md
 docs/UpdateTenderResponse.md
+docs/UpdateTimeOffRequestResponse.md
 docs/UpdateUploadSessionResponse.md
 docs/UpdateUserResponse.md
 docs/UpdateWebhookRequest.md
@@ -614,6 +622,7 @@ src/Apideck.Test/Model/CreateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/CreateSupplierResponseTests.cs
 src/Apideck.Test/Model/CreateTaxRateResponseTests.cs
 src/Apideck.Test/Model/CreateTenderResponseTests.cs
+src/Apideck.Test/Model/CreateTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/CreateUploadSessionRequestTests.cs
 src/Apideck.Test/Model/CreateUploadSessionResponseTests.cs
 src/Apideck.Test/Model/CreateUserResponseTests.cs
@@ -661,6 +670,7 @@ src/Apideck.Test/Model/DeleteSharedLinkResponseTests.cs
 src/Apideck.Test/Model/DeleteSupplierResponseTests.cs
 src/Apideck.Test/Model/DeleteTaxRateResponseTests.cs
 src/Apideck.Test/Model/DeleteTenderResponseTests.cs
+src/Apideck.Test/Model/DeleteTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/DeleteUploadSessionResponseTests.cs
 src/Apideck.Test/Model/DeleteUserResponseTests.cs
 src/Apideck.Test/Model/DeleteWebhookResponseTests.cs
@@ -789,6 +799,8 @@ src/Apideck.Test/Model/GetTaxRateResponseTests.cs
 src/Apideck.Test/Model/GetTaxRatesResponseTests.cs
 src/Apideck.Test/Model/GetTenderResponseTests.cs
 src/Apideck.Test/Model/GetTendersResponseTests.cs
+src/Apideck.Test/Model/GetTimeOffRequestResponseTests.cs
+src/Apideck.Test/Model/GetTimeOffRequestsResponseTests.cs
 src/Apideck.Test/Model/GetUploadSessionResponseTests.cs
 src/Apideck.Test/Model/GetUserResponseTests.cs
 src/Apideck.Test/Model/GetUsersResponseTests.cs
@@ -904,6 +916,9 @@ src/Apideck.Test/Model/TaxRateTests.cs
 src/Apideck.Test/Model/TaxRatesFilterTests.cs
 src/Apideck.Test/Model/TaxTests.cs
 src/Apideck.Test/Model/TenderTests.cs
+src/Apideck.Test/Model/TimeOffRequestNotesTests.cs
+src/Apideck.Test/Model/TimeOffRequestTests.cs
+src/Apideck.Test/Model/TimeOffRequestsFilterTests.cs
 src/Apideck.Test/Model/TooManyRequestsResponseDetailTests.cs
 src/Apideck.Test/Model/TooManyRequestsResponseTests.cs
 src/Apideck.Test/Model/UnauthorizedResponseTests.cs
@@ -950,6 +965,7 @@ src/Apideck.Test/Model/UpdateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/UpdateSupplierResponseTests.cs
 src/Apideck.Test/Model/UpdateTaxRateResponseTests.cs
 src/Apideck.Test/Model/UpdateTenderResponseTests.cs
+src/Apideck.Test/Model/UpdateTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/UpdateUploadSessionResponseTests.cs
 src/Apideck.Test/Model/UpdateUserResponseTests.cs
 src/Apideck.Test/Model/UpdateWebhookRequestTests.cs
@@ -1110,6 +1126,7 @@ src/Apideck/Model/CreateSharedLinkResponse.cs
 src/Apideck/Model/CreateSupplierResponse.cs
 src/Apideck/Model/CreateTaxRateResponse.cs
 src/Apideck/Model/CreateTenderResponse.cs
+src/Apideck/Model/CreateTimeOffRequestResponse.cs
 src/Apideck/Model/CreateUploadSessionRequest.cs
 src/Apideck/Model/CreateUploadSessionResponse.cs
 src/Apideck/Model/CreateUserResponse.cs
@@ -1157,6 +1174,7 @@ src/Apideck/Model/DeleteSharedLinkResponse.cs
 src/Apideck/Model/DeleteSupplierResponse.cs
 src/Apideck/Model/DeleteTaxRateResponse.cs
 src/Apideck/Model/DeleteTenderResponse.cs
+src/Apideck/Model/DeleteTimeOffRequestResponse.cs
 src/Apideck/Model/DeleteUploadSessionResponse.cs
 src/Apideck/Model/DeleteUserResponse.cs
 src/Apideck/Model/DeleteWebhookResponse.cs
@@ -1285,6 +1303,8 @@ src/Apideck/Model/GetTaxRateResponse.cs
 src/Apideck/Model/GetTaxRatesResponse.cs
 src/Apideck/Model/GetTenderResponse.cs
 src/Apideck/Model/GetTendersResponse.cs
+src/Apideck/Model/GetTimeOffRequestResponse.cs
+src/Apideck/Model/GetTimeOffRequestsResponse.cs
 src/Apideck/Model/GetUploadSessionResponse.cs
 src/Apideck/Model/GetUserResponse.cs
 src/Apideck/Model/GetUsersResponse.cs
@@ -1400,6 +1420,9 @@ src/Apideck/Model/Tax.cs
 src/Apideck/Model/TaxRate.cs
 src/Apideck/Model/TaxRatesFilter.cs
 src/Apideck/Model/Tender.cs
+src/Apideck/Model/TimeOffRequest.cs
+src/Apideck/Model/TimeOffRequestNotes.cs
+src/Apideck/Model/TimeOffRequestsFilter.cs
 src/Apideck/Model/TooManyRequestsResponse.cs
 src/Apideck/Model/TooManyRequestsResponseDetail.cs
 src/Apideck/Model/UnauthorizedResponse.cs
@@ -1446,6 +1469,7 @@ src/Apideck/Model/UpdateSharedLinkResponse.cs
 src/Apideck/Model/UpdateSupplierResponse.cs
 src/Apideck/Model/UpdateTaxRateResponse.cs
 src/Apideck/Model/UpdateTenderResponse.cs
+src/Apideck/Model/UpdateTimeOffRequestResponse.cs
 src/Apideck/Model/UpdateUploadSessionResponse.cs
 src/Apideck/Model/UpdateUserResponse.cs
 src/Apideck/Model/UpdateWebhookRequest.cs
