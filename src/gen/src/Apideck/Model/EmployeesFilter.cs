@@ -81,7 +81,8 @@ namespace Apideck.Model
         /// <param name="lastName">Last Name to filter on.</param>
         /// <param name="managerId">Manager id to filter on.</param>
         /// <param name="employmentStatus">Employment status to filter on.</param>
-        public EmployeesFilter(string companyId = default(string), string email = default(string), string firstName = default(string), string title = default(string), string lastName = default(string), string managerId = default(string), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?))
+        /// <param name="employeeNumber">Employee number to filter on.</param>
+        public EmployeesFilter(string companyId = default(string), string email = default(string), string firstName = default(string), string title = default(string), string lastName = default(string), string managerId = default(string), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?), string employeeNumber = default(string))
         {
             this.CompanyId = companyId;
             this.Email = email;
@@ -90,6 +91,7 @@ namespace Apideck.Model
             this.LastName = lastName;
             this.ManagerId = managerId;
             this.EmploymentStatus = employmentStatus;
+            this.EmployeeNumber = employeeNumber;
         }
 
         /// <summary>
@@ -135,6 +137,13 @@ namespace Apideck.Model
         public string ManagerId { get; set; }
 
         /// <summary>
+        /// Employee number to filter on
+        /// </summary>
+        /// <value>Employee number to filter on</value>
+        [DataMember(Name = "employee_number", EmitDefaultValue = false)]
+        public string EmployeeNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -149,6 +158,7 @@ namespace Apideck.Model
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  ManagerId: ").Append(ManagerId).Append("\n");
             sb.Append("  EmploymentStatus: ").Append(EmploymentStatus).Append("\n");
+            sb.Append("  EmployeeNumber: ").Append(EmployeeNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -217,6 +227,11 @@ namespace Apideck.Model
                 (
                     this.EmploymentStatus == input.EmploymentStatus ||
                     this.EmploymentStatus.Equals(input.EmploymentStatus)
+                ) && 
+                (
+                    this.EmployeeNumber == input.EmployeeNumber ||
+                    (this.EmployeeNumber != null &&
+                    this.EmployeeNumber.Equals(input.EmployeeNumber))
                 );
         }
 
@@ -254,6 +269,10 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.ManagerId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.EmploymentStatus.GetHashCode();
+                if (this.EmployeeNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployeeNumber.GetHashCode();
+                }
                 return hashCode;
             }
         }

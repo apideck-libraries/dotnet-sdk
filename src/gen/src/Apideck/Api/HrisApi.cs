@@ -4706,6 +4706,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[employment_status]", filter.EmploymentStatus));
                 }
+                if (filter.EmployeeNumber != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[employee_number]", filter.EmployeeNumber));
+                }
             }
             if (consumerId != null)
             {
