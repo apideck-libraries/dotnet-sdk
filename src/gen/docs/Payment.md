@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **Allocations** | [**List&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 **Note** | **string** | Optional note to be associated with the payment. | [optional] 
 **RowVersion** | **string** |  | [optional] 
+**DisplayId** | **string** | Payment id to be displayed. | [optional] 
+**UpdatedBy** | **string** |  | [optional] [readonly] 
+**CreatedBy** | **string** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
 

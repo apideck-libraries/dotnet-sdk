@@ -166,7 +166,8 @@ namespace Apideck.Model
         /// <param name="allocations">allocations.</param>
         /// <param name="note">Optional note to be associated with the payment..</param>
         /// <param name="rowVersion">rowVersion.</param>
-        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string rowVersion = default(string))
+        /// <param name="displayId">Payment id to be displayed..</param>
+        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string rowVersion = default(string), string displayId = default(string))
         {
             this.TotalAmount = totalAmount;
             this.TransactionDate = transactionDate;
@@ -185,6 +186,7 @@ namespace Apideck.Model
             this.Allocations = allocations;
             this.Note = note;
             this.RowVersion = rowVersion;
+            this.DisplayId = displayId;
         }
 
         /// <summary>
@@ -299,6 +301,41 @@ namespace Apideck.Model
         public string RowVersion { get; set; }
 
         /// <summary>
+        /// Payment id to be displayed.
+        /// </summary>
+        /// <value>Payment id to be displayed.</value>
+        [DataMember(Name = "display_id", EmitDefaultValue = true)]
+        public string DisplayId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdatedBy
+        /// </summary>
+        [DataMember(Name = "updated_by", EmitDefaultValue = true)]
+        public string UpdatedBy { get; private set; }
+
+        /// <summary>
+        /// Returns false as UpdatedBy should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeUpdatedBy()
+        {
+            return false;
+        }
+        /// <summary>
+        /// Gets or Sets CreatedBy
+        /// </summary>
+        [DataMember(Name = "created_by", EmitDefaultValue = true)]
+        public string CreatedBy { get; private set; }
+
+        /// <summary>
+        /// Returns false as CreatedBy should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCreatedBy()
+        {
+            return false;
+        }
+        /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
@@ -352,6 +389,9 @@ namespace Apideck.Model
             sb.Append("  Allocations: ").Append(Allocations).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
+            sb.Append("  DisplayId: ").Append(DisplayId).Append("\n");
+            sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -476,6 +516,21 @@ namespace Apideck.Model
                     this.RowVersion.Equals(input.RowVersion))
                 ) && 
                 (
+                    this.DisplayId == input.DisplayId ||
+                    (this.DisplayId != null &&
+                    this.DisplayId.Equals(input.DisplayId))
+                ) && 
+                (
+                    this.UpdatedBy == input.UpdatedBy ||
+                    (this.UpdatedBy != null &&
+                    this.UpdatedBy.Equals(input.UpdatedBy))
+                ) && 
+                (
+                    this.CreatedBy == input.CreatedBy ||
+                    (this.CreatedBy != null &&
+                    this.CreatedBy.Equals(input.CreatedBy))
+                ) && 
+                (
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
@@ -552,6 +607,18 @@ namespace Apideck.Model
                 if (this.RowVersion != null)
                 {
                     hashCode = (hashCode * 59) + this.RowVersion.GetHashCode();
+                }
+                if (this.DisplayId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayId.GetHashCode();
+                }
+                if (this.UpdatedBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdatedBy.GetHashCode();
+                }
+                if (this.CreatedBy != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
                 }
                 if (this.CreatedAt != null)
                 {

@@ -201,6 +201,30 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'RowVersion'
         }
         /// <summary>
+        /// Test the property 'DisplayId'
+        /// </summary>
+        [Fact]
+        public void DisplayIdTest()
+        {
+            // TODO unit test for the property 'DisplayId'
+        }
+        /// <summary>
+        /// Test the property 'UpdatedBy'
+        /// </summary>
+        [Fact]
+        public void UpdatedByTest()
+        {
+            // TODO unit test for the property 'UpdatedBy'
+        }
+        /// <summary>
+        /// Test the property 'CreatedBy'
+        /// </summary>
+        [Fact]
+        public void CreatedByTest()
+        {
+            // TODO unit test for the property 'CreatedBy'
+        }
+        /// <summary>
         /// Test the property 'CreatedAt'
         /// </summary>
         [Fact]
