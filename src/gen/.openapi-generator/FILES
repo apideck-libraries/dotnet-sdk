@@ -18,7 +18,6 @@ docs/Api.md
 docs/ApiResource.md
 docs/ApiResourceCoverage.md
 docs/ApiResourceCoverageCoverage.md
-docs/ApiResourceCoverageSupportedFields.md
 docs/ApiResourceLinkedResources.md
 docs/ApiResources.md
 docs/ApiStatus.md
@@ -424,6 +423,8 @@ docs/SocialLink.md
 docs/SortDirection.md
 docs/Status.md
 docs/Supplier.md
+docs/SupportedProperty.md
+docs/SupportedPropertyChildProperties.md
 docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
@@ -516,7 +517,6 @@ src/Apideck.Test/Model/ActivityAttendeeTests.cs
 src/Apideck.Test/Model/ActivityTests.cs
 src/Apideck.Test/Model/AddressTests.cs
 src/Apideck.Test/Model/ApiResourceCoverageCoverageTests.cs
-src/Apideck.Test/Model/ApiResourceCoverageSupportedFieldsTests.cs
 src/Apideck.Test/Model/ApiResourceCoverageTests.cs
 src/Apideck.Test/Model/ApiResourceLinkedResourcesTests.cs
 src/Apideck.Test/Model/ApiResourceTests.cs
@@ -916,6 +916,8 @@ src/Apideck.Test/Model/SocialLinkTests.cs
 src/Apideck.Test/Model/SortDirectionTests.cs
 src/Apideck.Test/Model/StatusTests.cs
 src/Apideck.Test/Model/SupplierTests.cs
+src/Apideck.Test/Model/SupportedPropertyChildPropertiesTests.cs
+src/Apideck.Test/Model/SupportedPropertyTests.cs
 src/Apideck.Test/Model/TaxRateTests.cs
 src/Apideck.Test/Model/TaxRatesFilterTests.cs
 src/Apideck.Test/Model/TaxTests.cs
@@ -1025,7 +1027,6 @@ src/Apideck/Model/Api.cs
 src/Apideck/Model/ApiResource.cs
 src/Apideck/Model/ApiResourceCoverage.cs
 src/Apideck/Model/ApiResourceCoverageCoverage.cs
-src/Apideck/Model/ApiResourceCoverageSupportedFields.cs
 src/Apideck/Model/ApiResourceLinkedResources.cs
 src/Apideck/Model/ApiResources.cs
 src/Apideck/Model/ApiStatus.cs
@@ -1422,6 +1423,8 @@ src/Apideck/Model/SocialLink.cs
 src/Apideck/Model/SortDirection.cs
 src/Apideck/Model/Status.cs
 src/Apideck/Model/Supplier.cs
+src/Apideck/Model/SupportedProperty.cs
+src/Apideck/Model/SupportedPropertyChildProperties.cs
 src/Apideck/Model/Tax.cs
 src/Apideck/Model/TaxRate.cs
 src/Apideck/Model/TaxRatesFilter.cs
