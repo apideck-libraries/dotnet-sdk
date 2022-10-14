@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Quantity** | **decimal?** |  | [optional] 
 **UnitPrice** | **decimal?** |  | [optional] 
 **UnitOfMeasure** | **string** | Description of the unit type the item is sold as, ie: kg, hour. | [optional] 
-**DiscountPercentage** | **decimal?** | Discount percentage | [optional] 
+**DiscountPercentage** | **decimal?** | Discount percentage applied to the line item when supported downstream. | [optional] 
 **Item** | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 **TaxRate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 

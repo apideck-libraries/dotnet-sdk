@@ -378,6 +378,7 @@ docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
 docs/Owner.md
+docs/PaginationCoverage.md
 docs/Passthrough.md
 docs/Payment.md
 docs/PaymentAllocations.md
@@ -873,6 +874,7 @@ src/Apideck.Test/Model/OrderTendersTests.cs
 src/Apideck.Test/Model/OrderTests.cs
 src/Apideck.Test/Model/OrderTypeTests.cs
 src/Apideck.Test/Model/OwnerTests.cs
+src/Apideck.Test/Model/PaginationCoverageTests.cs
 src/Apideck.Test/Model/PassthroughTests.cs
 src/Apideck.Test/Model/PaymentAllocationsTests.cs
 src/Apideck.Test/Model/PaymentCardTests.cs
@@ -1380,6 +1382,7 @@ src/Apideck/Model/OrderRefunds.cs
 src/Apideck/Model/OrderTenders.cs
 src/Apideck/Model/OrderType.cs
 src/Apideck/Model/Owner.cs
+src/Apideck/Model/PaginationCoverage.cs
 src/Apideck/Model/Passthrough.cs
 src/Apideck/Model/Payment.cs
 src/Apideck/Model/PaymentAllocations.cs
