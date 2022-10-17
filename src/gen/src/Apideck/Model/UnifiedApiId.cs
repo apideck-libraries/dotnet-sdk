@@ -123,58 +123,52 @@ namespace Apideck.Model
         TransactionalEmail = 15,
 
         /// <summary>
-        /// Enum Hcm for value: hcm
-        /// </summary>
-        [EnumMember(Value = "hcm")]
-        Hcm = 16,
-
-        /// <summary>
         /// Enum Form for value: form
         /// </summary>
         [EnumMember(Value = "form")]
-        Form = 17,
+        Form = 16,
 
         /// <summary>
         /// Enum Csp for value: csp
         /// </summary>
         [EnumMember(Value = "csp")]
-        Csp = 18,
+        Csp = 17,
 
         /// <summary>
         /// Enum EmailMarketing for value: email-marketing
         /// </summary>
         [EnumMember(Value = "email-marketing")]
-        EmailMarketing = 19,
+        EmailMarketing = 18,
 
         /// <summary>
         /// Enum Ats for value: ats
         /// </summary>
         [EnumMember(Value = "ats")]
-        Ats = 20,
+        Ats = 19,
 
         /// <summary>
         /// Enum Hris for value: hris
         /// </summary>
         [EnumMember(Value = "hris")]
-        Hris = 21,
+        Hris = 20,
 
         /// <summary>
         /// Enum Pos for value: pos
         /// </summary>
         [EnumMember(Value = "pos")]
-        Pos = 22,
+        Pos = 21,
 
         /// <summary>
         /// Enum ProjectManagement for value: project-management
         /// </summary>
         [EnumMember(Value = "project-management")]
-        ProjectManagement = 23,
+        ProjectManagement = 22,
 
         /// <summary>
         /// Enum ExpenseManagement for value: expense-management
         /// </summary>
         [EnumMember(Value = "expense-management")]
-        ExpenseManagement = 24
+        ExpenseManagement = 23
 
     }
 
