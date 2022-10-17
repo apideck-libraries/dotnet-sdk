@@ -136,8 +136,8 @@ namespace Apideck.Api
         /// <param name="id">ID of the record you are acting upon.</param>
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
-        /// <returns>GetConnectorResponse</returns>
-        GetConnectorResponse ConnectorDocsOne(string id, string docId, string appId = default(string));
+        /// <returns>string</returns>
+        string ConnectorDocsOne(string id, string docId, string appId = default(string));
 
         /// <summary>
         /// Get Connector Doc content
@@ -149,8 +149,8 @@ namespace Apideck.Api
         /// <param name="id">ID of the record you are acting upon.</param>
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
-        /// <returns>ApiResponse of GetConnectorResponse</returns>
-        ApiResponse<GetConnectorResponse> ConnectorDocsOneWithHttpInfo(string id, string docId, string appId = default(string));
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> ConnectorDocsOneWithHttpInfo(string id, string docId, string appId = default(string));
         /// <summary>
         /// Get Connector Resource
         /// </summary>
@@ -354,8 +354,8 @@ namespace Apideck.Api
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetConnectorResponse</returns>
-        System.Threading.Tasks.Task<GetConnectorResponse> ConnectorDocsOneAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> ConnectorDocsOneAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Connector Doc content
@@ -368,8 +368,8 @@ namespace Apideck.Api
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetConnectorResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetConnectorResponse>> ConnectorDocsOneWithHttpInfoAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> ConnectorDocsOneWithHttpInfoAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Connector Resource
         /// </summary>
@@ -1259,10 +1259,10 @@ namespace Apideck.Api
         /// <param name="id">ID of the record you are acting upon.</param>
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
-        /// <returns>GetConnectorResponse</returns>
-        public GetConnectorResponse ConnectorDocsOne(string id, string docId, string appId = default(string))
+        /// <returns>string</returns>
+        public string ConnectorDocsOne(string id, string docId, string appId = default(string))
         {
-            Apideck.Client.ApiResponse<GetConnectorResponse> localVarResponse = ConnectorDocsOneWithHttpInfo(id, docId, appId);
+            Apideck.Client.ApiResponse<string> localVarResponse = ConnectorDocsOneWithHttpInfo(id, docId, appId);
             return localVarResponse.Data;
         }
 
@@ -1273,8 +1273,8 @@ namespace Apideck.Api
         /// <param name="id">ID of the record you are acting upon.</param>
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
-        /// <returns>ApiResponse of GetConnectorResponse</returns>
-        public Apideck.Client.ApiResponse<GetConnectorResponse> ConnectorDocsOneWithHttpInfo(string id, string docId, string appId = default(string))
+        /// <returns>ApiResponse of string</returns>
+        public Apideck.Client.ApiResponse<string> ConnectorDocsOneWithHttpInfo(string id, string docId, string appId = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1295,6 +1295,7 @@ namespace Apideck.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "text/markdown",
                 "application/json"
             };
 
@@ -1324,7 +1325,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetConnectorResponse>("/connector/connectors/{id}/docs/{doc_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<string>("/connector/connectors/{id}/docs/{doc_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ConnectorDocsOne", localVarResponse);
@@ -1345,10 +1346,10 @@ namespace Apideck.Api
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetConnectorResponse</returns>
-        public async System.Threading.Tasks.Task<GetConnectorResponse> ConnectorDocsOneAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> ConnectorDocsOneAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetConnectorResponse> localVarResponse = await ConnectorDocsOneWithHttpInfoAsync(id, docId, appId, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<string> localVarResponse = await ConnectorDocsOneWithHttpInfoAsync(id, docId, appId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1360,8 +1361,8 @@ namespace Apideck.Api
         /// <param name="docId">ID of the Doc</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetConnectorResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetConnectorResponse>> ConnectorDocsOneWithHttpInfoAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<string>> ConnectorDocsOneWithHttpInfoAsync(string id, string docId, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1383,6 +1384,7 @@ namespace Apideck.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "text/markdown",
                 "application/json"
             };
 
@@ -1412,7 +1414,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetConnectorResponse>("/connector/connectors/{id}/docs/{doc_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/connector/connectors/{id}/docs/{doc_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -121,7 +121,7 @@ namespace Apideck.Test.Api
             //string docId = null;
             //string appId = null;
             //var response = instance.ConnectorDocsOne(id, docId, appId);
-            //Assert.IsType<GetConnectorResponse>(response);
+            //Assert.IsType<string>(response);
         }
 
         /// <summary>

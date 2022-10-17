@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="connectordocsone"></a>
 # **ConnectorDocsOne**
-> GetConnectorResponse ConnectorDocsOne (string id, string docId, string appId = null)
+> string ConnectorDocsOne (string id, string docId, string appId = null)
 
 Get Connector Doc content
 
@@ -387,7 +387,7 @@ namespace Example
             try
             {
                 // Get Connector Doc content
-                GetConnectorResponse result = apiInstance.ConnectorDocsOne(id, docId, appId);
+                string result = apiInstance.ConnectorDocsOne(id, docId, appId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConnectorResponse**](GetConnectorResponse.md)
+**string**
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/markdown, application/json
 
 
 ### HTTP response details
