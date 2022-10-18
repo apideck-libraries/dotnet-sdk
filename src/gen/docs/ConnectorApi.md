@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 <a name="connectorresourcesone"></a>
 # **ConnectorResourcesOne**
-> GetConnectorResourceResponse ConnectorResourcesOne (string id, string resourceId, string appId = null)
+> GetConnectorResourceResponse ConnectorResourcesOne (string id, string resourceId, string appId = null, UnifiedApiId? unifiedApi = null)
 
 Get Connector Resource
 
@@ -467,11 +467,12 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var resourceId = "resourceId_example";  // string | ID of the resource you are acting upon.
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var unifiedApi = (UnifiedApiId) "vault";  // UnifiedApiId? | ID of the Doc (optional) 
 
             try
             {
                 // Get Connector Resource
-                GetConnectorResourceResponse result = apiInstance.ConnectorResourcesOne(id, resourceId, appId);
+                GetConnectorResourceResponse result = apiInstance.ConnectorResourcesOne(id, resourceId, appId, unifiedApi);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -492,6 +493,7 @@ Name | Type | Description  | Notes
  **id** | **string**| ID of the record you are acting upon. | 
  **resourceId** | **string**| ID of the resource you are acting upon. | 
  **appId** | **string**| The ID of your Unify application | [optional] 
+ **unifiedApi** | **UnifiedApiId?**| ID of the Doc | [optional] 
 
 ### Return type
 
