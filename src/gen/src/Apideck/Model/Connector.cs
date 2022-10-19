@@ -109,7 +109,13 @@ namespace Apideck.Model
             /// Enum ClientCredentials for value: client_credentials
             /// </summary>
             [EnumMember(Value = "client_credentials")]
-            ClientCredentials = 2
+            ClientCredentials = 2,
+
+            /// <summary>
+            /// Enum Password for value: password
+            /// </summary>
+            [EnumMember(Value = "password")]
+            Password = 3
 
         }
 
