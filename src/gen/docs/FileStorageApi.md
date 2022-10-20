@@ -2493,7 +2493,7 @@ Name | Type | Description  | Notes
 
 Finish Upload Session
 
-Finish Upload Session
+Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
 
 ### Example
 ```csharp

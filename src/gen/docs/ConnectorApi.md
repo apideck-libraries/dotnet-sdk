@@ -467,7 +467,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var resourceId = "resourceId_example";  // string | ID of the resource you are acting upon.
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
-            var unifiedApi = (UnifiedApiId) "vault";  // UnifiedApiId? | ID of the Doc (optional) 
+            var unifiedApi = (UnifiedApiId) "vault";  // UnifiedApiId? | Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs (optional) 
 
             try
             {
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
  **id** | **string**| ID of the record you are acting upon. | 
  **resourceId** | **string**| ID of the resource you are acting upon. | 
  **appId** | **string**| The ID of your Unify application | [optional] 
- **unifiedApi** | **UnifiedApiId?**| ID of the Doc | [optional] 
+ **unifiedApi** | **UnifiedApiId?**| Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs | [optional] 
 
 ### Return type
 

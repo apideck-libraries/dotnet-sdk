@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Notes** | **string** |  | [optional] 
 **Status** | **string** | Invoice status | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+**BillNumber** | **string** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 
 **CreatedBy** | **string** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
