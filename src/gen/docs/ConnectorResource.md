@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Pagination** | [**PaginationCoverage**](PaginationCoverage.md) |  | [optional] 
 **CustomFieldsSupported** | **bool** | Indicates if custom fields are supported on this resource. | [optional] 
 **SupportedOperations** | **List&lt;string&gt;** | List of supported operations on the resource. | [optional] 
+**DownstreamUnsupportedOperations** | **List&lt;string&gt;** | List of operations that are not supported on the downstream. | [optional] 
 **SupportedFilters** | **List&lt;string&gt;** | Supported filters on the list endpoint of the resource. | [optional] 
 **SupportedSortBy** | **List&lt;string&gt;** | Supported sorting properties on the list endpoint of the resource. | [optional] 
 **SupportedFields** | [**List&lt;SupportedProperty&gt;**](SupportedProperty.md) | Supported fields on the detail endpoint. | [optional] 
