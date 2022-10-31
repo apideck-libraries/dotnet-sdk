@@ -60,6 +60,7 @@ docs/ConnectionImportData.md
 docs/ConnectionImportDataCredentials.md
 docs/ConnectionMetadata.md
 docs/ConnectionState.md
+docs/ConnectionWebhook.md
 docs/Connector.md
 docs/ConnectorApi.md
 docs/ConnectorDoc.md
@@ -71,13 +72,13 @@ docs/ConnectorSetting.md
 docs/ConnectorStatus.md
 docs/ConnectorTlsSupport.md
 docs/ConnectorUnifiedApis.md
+docs/ConnectorWebhookSupportType.md
 docs/ConnectorsFilter.md
 docs/Consumer.md
 docs/ConsumerConnection.md
 docs/ConsumerMetadata.md
 docs/ConsumerRequestCountsInDateRangeResponse.md
 docs/ConsumerRequestCountsInDateRangeResponseData.md
-docs/ConsumerWebhook.md
 docs/Contact.md
 docs/ContactsFilter.md
 docs/ContactsSort.md
@@ -498,6 +499,7 @@ docs/WebhookEventLogService.md
 docs/WebhookEventLogsFilter.md
 docs/WebhookEventLogsFilterService.md
 docs/WebhookEventType.md
+docs/WebhookSubscription.md
 docs/Website.md
 git_push.sh
 src/Apideck.Test/Api/AccountingApiTests.cs
@@ -563,6 +565,7 @@ src/Apideck.Test/Model/ConnectionImportDataTests.cs
 src/Apideck.Test/Model/ConnectionMetadataTests.cs
 src/Apideck.Test/Model/ConnectionStateTests.cs
 src/Apideck.Test/Model/ConnectionTests.cs
+src/Apideck.Test/Model/ConnectionWebhookTests.cs
 src/Apideck.Test/Model/ConnectorDocTests.cs
 src/Apideck.Test/Model/ConnectorEventTests.cs
 src/Apideck.Test/Model/ConnectorOauthScopes1Tests.cs
@@ -573,13 +576,13 @@ src/Apideck.Test/Model/ConnectorStatusTests.cs
 src/Apideck.Test/Model/ConnectorTests.cs
 src/Apideck.Test/Model/ConnectorTlsSupportTests.cs
 src/Apideck.Test/Model/ConnectorUnifiedApisTests.cs
+src/Apideck.Test/Model/ConnectorWebhookSupportTypeTests.cs
 src/Apideck.Test/Model/ConnectorsFilterTests.cs
 src/Apideck.Test/Model/ConsumerConnectionTests.cs
 src/Apideck.Test/Model/ConsumerMetadataTests.cs
 src/Apideck.Test/Model/ConsumerRequestCountsInDateRangeResponseDataTests.cs
 src/Apideck.Test/Model/ConsumerRequestCountsInDateRangeResponseTests.cs
 src/Apideck.Test/Model/ConsumerTests.cs
-src/Apideck.Test/Model/ConsumerWebhookTests.cs
 src/Apideck.Test/Model/ContactTests.cs
 src/Apideck.Test/Model/ContactsFilterTests.cs
 src/Apideck.Test/Model/ContactsSortTests.cs
@@ -990,6 +993,7 @@ src/Apideck.Test/Model/WebhookEventLogTests.cs
 src/Apideck.Test/Model/WebhookEventLogsFilterServiceTests.cs
 src/Apideck.Test/Model/WebhookEventLogsFilterTests.cs
 src/Apideck.Test/Model/WebhookEventTypeTests.cs
+src/Apideck.Test/Model/WebhookSubscriptionTests.cs
 src/Apideck.Test/Model/WebhookTests.cs
 src/Apideck.Test/Model/WebsiteTests.cs
 src/Apideck/Api/AccountingApi.cs
@@ -1072,6 +1076,7 @@ src/Apideck/Model/ConnectionImportData.cs
 src/Apideck/Model/ConnectionImportDataCredentials.cs
 src/Apideck/Model/ConnectionMetadata.cs
 src/Apideck/Model/ConnectionState.cs
+src/Apideck/Model/ConnectionWebhook.cs
 src/Apideck/Model/Connector.cs
 src/Apideck/Model/ConnectorDoc.cs
 src/Apideck/Model/ConnectorEvent.cs
@@ -1082,13 +1087,13 @@ src/Apideck/Model/ConnectorSetting.cs
 src/Apideck/Model/ConnectorStatus.cs
 src/Apideck/Model/ConnectorTlsSupport.cs
 src/Apideck/Model/ConnectorUnifiedApis.cs
+src/Apideck/Model/ConnectorWebhookSupportType.cs
 src/Apideck/Model/ConnectorsFilter.cs
 src/Apideck/Model/Consumer.cs
 src/Apideck/Model/ConsumerConnection.cs
 src/Apideck/Model/ConsumerMetadata.cs
 src/Apideck/Model/ConsumerRequestCountsInDateRangeResponse.cs
 src/Apideck/Model/ConsumerRequestCountsInDateRangeResponseData.cs
-src/Apideck/Model/ConsumerWebhook.cs
 src/Apideck/Model/Contact.cs
 src/Apideck/Model/ContactsFilter.cs
 src/Apideck/Model/ContactsSort.cs
@@ -1500,4 +1505,5 @@ src/Apideck/Model/WebhookEventLogService.cs
 src/Apideck/Model/WebhookEventLogsFilter.cs
 src/Apideck/Model/WebhookEventLogsFilterService.cs
 src/Apideck/Model/WebhookEventType.cs
+src/Apideck/Model/WebhookSubscription.cs
 src/Apideck/Model/Website.cs

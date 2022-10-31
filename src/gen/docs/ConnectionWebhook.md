@@ -1,4 +1,4 @@
-# Apideck.Model.ConsumerWebhook
+# Apideck.Model.ConnectionWebhook
 
 ## Properties
 

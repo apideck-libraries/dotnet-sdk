@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **AuthType** | **string** | Type of authorization used by the connector | [optional] [readonly] 
 **AuthOnly** | **bool** | Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API | [optional] [readonly] 
 **BlindMapped** | **bool** | Set to &#x60;true&#x60; when connector was implemented from downstream docs only and without API access. This state indicates that integration will require Apideck support, and access to downstream API to validate mapping quality. | [optional] [readonly] 
+**WebhookSupportType** | [**ConnectorWebhookSupportType**](ConnectorWebhookSupportType.md) |  | [optional] 
 **OauthGrantType** | **string** | OAuth grant type used by the connector. More info: https://oauth.net/2/grant-types | [optional] [readonly] 
 **OauthCredentialsSource** | **string** | Location of the OAuth client credentials. For most connectors the OAuth client credentials are stored on integration and managed by the application owner. For others they are stored on connection and managed by the consumer in Vault. | [optional] [readonly] 
 **OauthScopes** | [**List&lt;ConnectorOauthScopes&gt;**](ConnectorOauthScopes.md) | List of OAuth Scopes available for this connector. | [optional] 
