@@ -410,6 +410,7 @@ docs/ProfitAndLossNetOperatingIncome.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossSection.md
 docs/RequestCountAllocation.md
+docs/ResolveWebhookResponse.md
 docs/ResourceStatus.md
 docs/Schedule.md
 docs/ScheduleWorkPattern.md
@@ -908,6 +909,7 @@ src/Apideck.Test/Model/ProfitAndLossRecordTests.cs
 src/Apideck.Test/Model/ProfitAndLossSectionTests.cs
 src/Apideck.Test/Model/ProfitAndLossTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
+src/Apideck.Test/Model/ResolveWebhookResponseTests.cs
 src/Apideck.Test/Model/ResourceStatusTests.cs
 src/Apideck.Test/Model/ScheduleTests.cs
 src/Apideck.Test/Model/ScheduleWorkPatternOddWeeksTests.cs
@@ -1419,6 +1421,7 @@ src/Apideck/Model/ProfitAndLossNetOperatingIncome.cs
 src/Apideck/Model/ProfitAndLossRecord.cs
 src/Apideck/Model/ProfitAndLossSection.cs
 src/Apideck/Model/RequestCountAllocation.cs
+src/Apideck/Model/ResolveWebhookResponse.cs
 src/Apideck/Model/ResourceStatus.cs
 src/Apideck/Model/Schedule.cs
 src/Apideck/Model/ScheduleWorkPattern.cs
