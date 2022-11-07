@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **OauthGrantType** | **string** | OAuth grant type used by the connector. More info: https://oauth.net/2/grant-types | [optional] [readonly] 
 **OauthCredentialsSource** | **string** | Location of the OAuth client credentials. For most connectors the OAuth client credentials are stored on integration and managed by the application owner. For others they are stored on connection and managed by the consumer in Vault. | [optional] [readonly] 
 **OauthScopes** | [**List&lt;ConnectorOauthScopes&gt;**](ConnectorOauthScopes.md) | List of OAuth Scopes available for this connector. | [optional] 
+**CustomScopes** | **bool** | Set to &#x60;true&#x60; when connector allows the definition of custom scopes. | [optional] [readonly] 
 **HasSandboxCredentials** | **bool** | Indicates whether Apideck Sandbox OAuth credentials are available. | [optional] 
 **Settings** | [**List&lt;ConnectorSetting&gt;**](ConnectorSetting.md) |  | [optional] 
 **ServiceId** | **string** | Service provider identifier | [optional] 

@@ -306,6 +306,21 @@ namespace Apideck.Model
         public List<ConnectorOauthScopes> OauthScopes { get; set; }
 
         /// <summary>
+        /// Set to &#x60;true&#x60; when connector allows the definition of custom scopes.
+        /// </summary>
+        /// <value>Set to &#x60;true&#x60; when connector allows the definition of custom scopes.</value>
+        [DataMember(Name = "custom_scopes", EmitDefaultValue = true)]
+        public bool CustomScopes { get; private set; }
+
+        /// <summary>
+        /// Returns false as CustomScopes should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomScopes()
+        {
+            return false;
+        }
+        /// <summary>
         /// Indicates whether Apideck Sandbox OAuth credentials are available.
         /// </summary>
         /// <value>Indicates whether Apideck Sandbox OAuth credentials are available.</value>
@@ -387,6 +402,7 @@ namespace Apideck.Model
             sb.Append("  OauthGrantType: ").Append(OauthGrantType).Append("\n");
             sb.Append("  OauthCredentialsSource: ").Append(OauthCredentialsSource).Append("\n");
             sb.Append("  OauthScopes: ").Append(OauthScopes).Append("\n");
+            sb.Append("  CustomScopes: ").Append(CustomScopes).Append("\n");
             sb.Append("  HasSandboxCredentials: ").Append(HasSandboxCredentials).Append("\n");
             sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("  ServiceId: ").Append(ServiceId).Append("\n");
@@ -497,6 +513,10 @@ namespace Apideck.Model
                     this.OauthScopes.SequenceEqual(input.OauthScopes)
                 ) && 
                 (
+                    this.CustomScopes == input.CustomScopes ||
+                    this.CustomScopes.Equals(input.CustomScopes)
+                ) && 
+                (
                     this.HasSandboxCredentials == input.HasSandboxCredentials ||
                     this.HasSandboxCredentials.Equals(input.HasSandboxCredentials)
                 ) && 
@@ -595,6 +615,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.OauthScopes.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.CustomScopes.GetHashCode();
                 hashCode = (hashCode * 59) + this.HasSandboxCredentials.GetHashCode();
                 if (this.Settings != null)
                 {

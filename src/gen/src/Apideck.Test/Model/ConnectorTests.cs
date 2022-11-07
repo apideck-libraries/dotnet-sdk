@@ -169,6 +169,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'OauthScopes'
         }
         /// <summary>
+        /// Test the property 'CustomScopes'
+        /// </summary>
+        [Fact]
+        public void CustomScopesTest()
+        {
+            // TODO unit test for the property 'CustomScopes'
+        }
+        /// <summary>
         /// Test the property 'HasSandboxCredentials'
         /// </summary>
         [Fact]

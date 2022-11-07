@@ -174,7 +174,13 @@ namespace Apideck.Model
         /// Enum Calendar for value: calendar
         /// </summary>
         [EnumMember(Value = "calendar")]
-        Calendar = 24
+        Calendar = 24,
+
+        /// <summary>
+        /// Enum Procurement for value: procurement
+        /// </summary>
+        [EnumMember(Value = "procurement")]
+        Procurement = 25
 
     }
 
