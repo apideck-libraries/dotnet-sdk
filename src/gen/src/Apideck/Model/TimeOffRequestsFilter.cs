@@ -36,10 +36,12 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="startDate">Start date.</param>
         /// <param name="endDate">End date.</param>
-        public TimeOffRequestsFilter(string startDate = default(string), string endDate = default(string))
+        /// <param name="employeeId">Employee ID.</param>
+        public TimeOffRequestsFilter(string startDate = default(string), string endDate = default(string), string employeeId = default(string))
         {
             this.StartDate = startDate;
             this.EndDate = endDate;
+            this.EmployeeId = employeeId;
         }
 
         /// <summary>
@@ -57,6 +59,13 @@ namespace Apideck.Model
         public string EndDate { get; set; }
 
         /// <summary>
+        /// Employee ID
+        /// </summary>
+        /// <value>Employee ID</value>
+        [DataMember(Name = "employee_id", EmitDefaultValue = false)]
+        public string EmployeeId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +75,7 @@ namespace Apideck.Model
             sb.Append("class TimeOffRequestsFilter {\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  EmployeeId: ").Append(EmployeeId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,6 +120,11 @@ namespace Apideck.Model
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
+                ) && 
+                (
+                    this.EmployeeId == input.EmployeeId ||
+                    (this.EmployeeId != null &&
+                    this.EmployeeId.Equals(input.EmployeeId))
                 );
         }
 
@@ -129,6 +144,10 @@ namespace Apideck.Model
                 if (this.EndDate != null)
                 {
                     hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
+                }
+                if (this.EmployeeId != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployeeId.GetHashCode();
                 }
                 return hashCode;
             }
