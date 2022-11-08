@@ -91,10 +91,10 @@ namespace Apideck.Model
         public enum RequestTypeEnum
         {
             /// <summary>
-            /// Enum Vacaction for value: vacaction
+            /// Enum Vacation for value: vacation
             /// </summary>
-            [EnumMember(Value = "vacaction")]
-            Vacaction = 1,
+            [EnumMember(Value = "vacation")]
+            Vacation = 1,
 
             /// <summary>
             /// Enum Sick for value: sick
