@@ -25,6 +25,7 @@ docs/ApisFilter.md
 docs/Applicant.md
 docs/ApplicantSocialLinks.md
 docs/ApplicantWebsites.md
+docs/ApplicantsFilter.md
 docs/AtsActivity.md
 docs/AtsApi.md
 docs/AtsEventType.md
@@ -532,6 +533,7 @@ src/Apideck.Test/Model/ApisFilterTests.cs
 src/Apideck.Test/Model/ApplicantSocialLinksTests.cs
 src/Apideck.Test/Model/ApplicantTests.cs
 src/Apideck.Test/Model/ApplicantWebsitesTests.cs
+src/Apideck.Test/Model/ApplicantsFilterTests.cs
 src/Apideck.Test/Model/AtsActivityTests.cs
 src/Apideck.Test/Model/AtsEventTypeTests.cs
 src/Apideck.Test/Model/AuthTypeTests.cs
@@ -1044,6 +1046,7 @@ src/Apideck/Model/ApisFilter.cs
 src/Apideck/Model/Applicant.cs
 src/Apideck/Model/ApplicantSocialLinks.cs
 src/Apideck/Model/ApplicantWebsites.cs
+src/Apideck/Model/ApplicantsFilter.cs
 src/Apideck/Model/AtsActivity.cs
 src/Apideck/Model/AtsEventType.cs
 src/Apideck/Model/AuthType.cs
