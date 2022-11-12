@@ -42,6 +42,8 @@ Name | Type | Description | Notes
 **Deleted** | **bool?** |  | [optional] 
 **DeletedBy** | **string** |  | [optional] [readonly] 
 **DeletedAt** | **DateTime?** |  | [optional] [readonly] 
+**UpdatedBy** | **string** |  | [optional] [readonly] 
+**CreatedBy** | **string** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 
 
