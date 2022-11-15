@@ -1,5 +1,4 @@
-# Apideck.Model.ConnectorWebhookSupportType
-Describes the configurations webhook support of the connector.
+# Apideck.Model.WebhookSupport
 
 ## Properties
 

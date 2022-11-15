@@ -73,7 +73,6 @@ docs/ConnectorSetting.md
 docs/ConnectorStatus.md
 docs/ConnectorTlsSupport.md
 docs/ConnectorUnifiedApis.md
-docs/ConnectorWebhookSupportType.md
 docs/ConnectorsFilter.md
 docs/Consumer.md
 docs/ConsumerConnection.md
@@ -502,6 +501,7 @@ docs/WebhookEventLogsFilter.md
 docs/WebhookEventLogsFilterService.md
 docs/WebhookEventType.md
 docs/WebhookSubscription.md
+docs/WebhookSupport.md
 docs/Website.md
 git_push.sh
 src/Apideck.Test/Api/AccountingApiTests.cs
@@ -579,7 +579,6 @@ src/Apideck.Test/Model/ConnectorStatusTests.cs
 src/Apideck.Test/Model/ConnectorTests.cs
 src/Apideck.Test/Model/ConnectorTlsSupportTests.cs
 src/Apideck.Test/Model/ConnectorUnifiedApisTests.cs
-src/Apideck.Test/Model/ConnectorWebhookSupportTypeTests.cs
 src/Apideck.Test/Model/ConnectorsFilterTests.cs
 src/Apideck.Test/Model/ConsumerConnectionTests.cs
 src/Apideck.Test/Model/ConsumerMetadataTests.cs
@@ -998,6 +997,7 @@ src/Apideck.Test/Model/WebhookEventLogsFilterServiceTests.cs
 src/Apideck.Test/Model/WebhookEventLogsFilterTests.cs
 src/Apideck.Test/Model/WebhookEventTypeTests.cs
 src/Apideck.Test/Model/WebhookSubscriptionTests.cs
+src/Apideck.Test/Model/WebhookSupportTests.cs
 src/Apideck.Test/Model/WebhookTests.cs
 src/Apideck.Test/Model/WebsiteTests.cs
 src/Apideck/Api/AccountingApi.cs
@@ -1092,7 +1092,6 @@ src/Apideck/Model/ConnectorSetting.cs
 src/Apideck/Model/ConnectorStatus.cs
 src/Apideck/Model/ConnectorTlsSupport.cs
 src/Apideck/Model/ConnectorUnifiedApis.cs
-src/Apideck/Model/ConnectorWebhookSupportType.cs
 src/Apideck/Model/ConnectorsFilter.cs
 src/Apideck/Model/Consumer.cs
 src/Apideck/Model/ConsumerConnection.cs
@@ -1512,4 +1511,5 @@ src/Apideck/Model/WebhookEventLogsFilter.cs
 src/Apideck/Model/WebhookEventLogsFilterService.cs
 src/Apideck/Model/WebhookEventType.cs
 src/Apideck/Model/WebhookSubscription.cs
+src/Apideck/Model/WebhookSupport.cs
 src/Apideck/Model/Website.cs
