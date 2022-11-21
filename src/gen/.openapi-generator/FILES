@@ -199,6 +199,7 @@ docs/EmployeesFilter.md
 docs/Error.md
 docs/ExecuteWebhookResponse.md
 docs/FileStorageApi.md
+docs/FileStorageEventType.md
 docs/FileType.md
 docs/FilesFilter.md
 docs/FilesSearch.md
@@ -702,6 +703,7 @@ src/Apideck.Test/Model/EmployeeTests.cs
 src/Apideck.Test/Model/EmployeesFilterTests.cs
 src/Apideck.Test/Model/ErrorTests.cs
 src/Apideck.Test/Model/ExecuteWebhookResponseTests.cs
+src/Apideck.Test/Model/FileStorageEventTypeTests.cs
 src/Apideck.Test/Model/FileTypeTests.cs
 src/Apideck.Test/Model/FilesFilterTests.cs
 src/Apideck.Test/Model/FilesSearchTests.cs
@@ -1215,6 +1217,7 @@ src/Apideck/Model/EmployeeTeam.cs
 src/Apideck/Model/EmployeesFilter.cs
 src/Apideck/Model/Error.cs
 src/Apideck/Model/ExecuteWebhookResponse.cs
+src/Apideck/Model/FileStorageEventType.cs
 src/Apideck/Model/FileType.cs
 src/Apideck/Model/FilesFilter.cs
 src/Apideck/Model/FilesSearch.cs

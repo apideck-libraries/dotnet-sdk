@@ -557,7 +557,25 @@ namespace Apideck.Model
         /// Enum HrisCompanyDeleted for value: hris.company.deleted
         /// </summary>
         [EnumMember(Value = "hris.company.deleted")]
-        HrisCompanyDeleted = 88
+        HrisCompanyDeleted = 88,
+
+        /// <summary>
+        /// Enum FileStorageFileCreated for value: file-storage.file.created
+        /// </summary>
+        [EnumMember(Value = "file-storage.file.created")]
+        FileStorageFileCreated = 89,
+
+        /// <summary>
+        /// Enum FileStorageFileUpdated for value: file-storage.file.updated
+        /// </summary>
+        [EnumMember(Value = "file-storage.file.updated")]
+        FileStorageFileUpdated = 90,
+
+        /// <summary>
+        /// Enum FileStorageFileDeleted for value: file-storage.file.deleted
+        /// </summary>
+        [EnumMember(Value = "file-storage.file.deleted")]
+        FileStorageFileDeleted = 91
 
     }
 
