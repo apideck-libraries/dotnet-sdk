@@ -50,8 +50,9 @@ namespace Apideck.Model
         [DataMember(Name = "oauth_grant_type", EmitDefaultValue = false)]
         public OAuthGrantType? OauthGrantType { get; set; }
         /// <summary>
-        /// Defines Status
+        /// Status of the connection.
         /// </summary>
+        /// <value>Status of the connection.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -77,8 +78,9 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Status of the connection.
         /// </summary>
+        /// <value>Status of the connection.</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
 
@@ -112,8 +114,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The unique identifier of the connection.
         /// </summary>
+        /// <value>The unique identifier of the connection.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -126,8 +129,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets ServiceId
+        /// The ID of the service this connection belongs to.
         /// </summary>
+        /// <value>The ID of the service this connection belongs to.</value>
         [DataMember(Name = "service_id", EmitDefaultValue = false)]
         public string ServiceId { get; private set; }
 
@@ -140,8 +144,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the connection
         /// </summary>
+        /// <value>The name of the connection</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; private set; }
 
@@ -168,8 +173,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UnifiedApi
+        /// The unified API category where the connection belongs to.
         /// </summary>
+        /// <value>The unified API category where the connection belongs to.</value>
         [DataMember(Name = "unified_api", EmitDefaultValue = false)]
         public string UnifiedApi { get; private set; }
 
@@ -189,8 +195,9 @@ namespace Apideck.Model
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets Website
+        /// The website URL of the connection
         /// </summary>
+        /// <value>The website URL of the connection</value>
         [DataMember(Name = "website", EmitDefaultValue = false)]
         public string Website { get; private set; }
 
@@ -203,8 +210,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Icon
+        /// A visual icon of the connection, that will be shown in the Vault
         /// </summary>
+        /// <value>A visual icon of the connection, that will be shown in the Vault</value>
         [DataMember(Name = "icon", EmitDefaultValue = false)]
         public string Icon { get; private set; }
 
@@ -217,8 +225,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Logo
+        /// The logo of the connection, that will be shown in the Vault
         /// </summary>
+        /// <value>The logo of the connection, that will be shown in the Vault</value>
         [DataMember(Name = "logo", EmitDefaultValue = false)]
         public string Logo { get; private set; }
 
@@ -275,8 +284,9 @@ namespace Apideck.Model
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
-        /// Gets or Sets FormFields
+        /// The settings that are wanted to create a connection.
         /// </summary>
+        /// <value>The settings that are wanted to create a connection.</value>
         [DataMember(Name = "form_fields", EmitDefaultValue = false)]
         public List<FormField> FormFields { get; private set; }
 

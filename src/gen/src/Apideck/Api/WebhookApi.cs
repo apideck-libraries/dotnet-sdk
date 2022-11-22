@@ -57,7 +57,7 @@ namespace Apideck.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create webhook
+        /// Create a webhook subscription to receive events
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -69,7 +69,7 @@ namespace Apideck.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create webhook
+        /// Create a webhook subscription to receive events
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -80,7 +80,7 @@ namespace Apideck.Api
         /// List webhooks
         /// </summary>
         /// <remarks>
-        /// List webhooks
+        /// List all webhook subscriptions
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -93,7 +93,7 @@ namespace Apideck.Api
         /// List webhooks
         /// </summary>
         /// <remarks>
-        /// List webhooks
+        /// List all webhook subscriptions
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -105,7 +105,7 @@ namespace Apideck.Api
         /// Delete webhook
         /// </summary>
         /// <remarks>
-        /// Delete webhook
+        /// Delete a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -117,7 +117,7 @@ namespace Apideck.Api
         /// Delete webhook
         /// </summary>
         /// <remarks>
-        /// Delete webhook
+        /// Delete a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -128,7 +128,7 @@ namespace Apideck.Api
         /// Get webhook
         /// </summary>
         /// <remarks>
-        /// Get webhook
+        /// Get the webhook subscription details
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -140,7 +140,7 @@ namespace Apideck.Api
         /// Get webhook
         /// </summary>
         /// <remarks>
-        /// Get webhook
+        /// Get the webhook subscription details
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -151,7 +151,7 @@ namespace Apideck.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update webhook
+        /// Update a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -164,7 +164,7 @@ namespace Apideck.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update webhook
+        /// Update a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -214,7 +214,7 @@ namespace Apideck.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create webhook
+        /// Create a webhook subscription to receive events
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -227,7 +227,7 @@ namespace Apideck.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create webhook
+        /// Create a webhook subscription to receive events
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -239,7 +239,7 @@ namespace Apideck.Api
         /// List webhooks
         /// </summary>
         /// <remarks>
-        /// List webhooks
+        /// List all webhook subscriptions
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -253,7 +253,7 @@ namespace Apideck.Api
         /// List webhooks
         /// </summary>
         /// <remarks>
-        /// List webhooks
+        /// List all webhook subscriptions
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -266,7 +266,7 @@ namespace Apideck.Api
         /// Delete webhook
         /// </summary>
         /// <remarks>
-        /// Delete webhook
+        /// Delete a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -279,7 +279,7 @@ namespace Apideck.Api
         /// Delete webhook
         /// </summary>
         /// <remarks>
-        /// Delete webhook
+        /// Delete a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -291,7 +291,7 @@ namespace Apideck.Api
         /// Get webhook
         /// </summary>
         /// <remarks>
-        /// Get webhook
+        /// Get the webhook subscription details
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -304,7 +304,7 @@ namespace Apideck.Api
         /// Get webhook
         /// </summary>
         /// <remarks>
-        /// Get webhook
+        /// Get the webhook subscription details
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -316,7 +316,7 @@ namespace Apideck.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update webhook
+        /// Update a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -330,7 +330,7 @@ namespace Apideck.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update webhook
+        /// Update a webhook subscription
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -653,7 +653,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create webhook
+        /// Create webhook Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -666,7 +666,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create webhook
+        /// Create webhook Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -730,7 +730,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create webhook
+        /// Create webhook Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -744,7 +744,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create webhook
+        /// Create webhook Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -811,7 +811,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List webhooks
+        /// List webhooks List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -825,7 +825,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List webhooks
+        /// List webhooks List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -890,7 +890,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List webhooks
+        /// List webhooks List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -905,7 +905,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List webhooks
+        /// List webhooks List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -973,7 +973,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete webhook
+        /// Delete webhook Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -986,7 +986,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete webhook
+        /// Delete webhook Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1049,7 +1049,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete webhook
+        /// Delete webhook Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1063,7 +1063,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete webhook
+        /// Delete webhook Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1129,7 +1129,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get webhook
+        /// Get webhook Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1142,7 +1142,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get webhook
+        /// Get webhook Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1205,7 +1205,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get webhook
+        /// Get webhook Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1219,7 +1219,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get webhook
+        /// Get webhook Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1285,7 +1285,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update webhook
+        /// Update webhook Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1299,7 +1299,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update webhook
+        /// Update webhook Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1371,7 +1371,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update webhook
+        /// Update webhook Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1386,7 +1386,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update webhook
+        /// Update webhook Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>

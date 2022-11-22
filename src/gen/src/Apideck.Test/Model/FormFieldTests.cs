@@ -129,6 +129,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Disabled'
         }
         /// <summary>
+        /// Test the property 'Hidden'
+        /// </summary>
+        [Fact]
+        public void HiddenTest()
+        {
+            // TODO unit test for the property 'Hidden'
+        }
+        /// <summary>
         /// Test the property 'Sensitive'
         /// </summary>
         [Fact]

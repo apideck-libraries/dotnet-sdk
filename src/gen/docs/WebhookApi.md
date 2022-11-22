@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 Create webhook
 
-Create webhook
+Create a webhook subscription to receive events
 
 ### Example
 ```csharp
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 List webhooks
 
-List webhooks
+List all webhook subscriptions
 
 ### Example
 ```csharp
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 Delete webhook
 
-Delete webhook
+Delete a webhook subscription
 
 ### Example
 ```csharp
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 Get webhook
 
-Get webhook
+Get the webhook subscription details
 
 ### Example
 ```csharp
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 Update webhook
 
-Update webhook
+Update a webhook subscription
 
 ### Example
 ```csharp
