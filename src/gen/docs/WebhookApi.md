@@ -5,11 +5,11 @@ All URIs are relative to *https://unify.apideck.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**EventLogsAll**](WebhookApi.md#eventlogsall) | **GET** /webhook/logs | List event logs
-[**WebhooksAdd**](WebhookApi.md#webhooksadd) | **POST** /webhook/webhooks | Create webhook
-[**WebhooksAll**](WebhookApi.md#webhooksall) | **GET** /webhook/webhooks | List webhooks
-[**WebhooksDelete**](WebhookApi.md#webhooksdelete) | **DELETE** /webhook/webhooks/{id} | Delete webhook
-[**WebhooksOne**](WebhookApi.md#webhooksone) | **GET** /webhook/webhooks/{id} | Get webhook
-[**WebhooksUpdate**](WebhookApi.md#webhooksupdate) | **PATCH** /webhook/webhooks/{id} | Update webhook
+[**WebhooksAdd**](WebhookApi.md#webhooksadd) | **POST** /webhook/webhooks | Create webhook subscription
+[**WebhooksAll**](WebhookApi.md#webhooksall) | **GET** /webhook/webhooks | List webhook subscriptions
+[**WebhooksDelete**](WebhookApi.md#webhooksdelete) | **DELETE** /webhook/webhooks/{id} | Delete webhook subscription
+[**WebhooksOne**](WebhookApi.md#webhooksone) | **GET** /webhook/webhooks/{id} | Get webhook subscription
+[**WebhooksUpdate**](WebhookApi.md#webhooksupdate) | **PATCH** /webhook/webhooks/{id} | Update webhook subscription
 
 
 <a name="eventlogsall"></a>
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 # **WebhooksAdd**
 > CreateWebhookResponse WebhooksAdd (CreateWebhookRequest createWebhookRequest, string appId = null)
 
-Create webhook
+Create webhook subscription
 
 Create a webhook subscription to receive events
 
@@ -135,7 +135,7 @@ namespace Example
 
             try
             {
-                // Create webhook
+                // Create webhook subscription
                 CreateWebhookResponse result = apiInstance.WebhooksAdd(createWebhookRequest, appId);
                 Debug.WriteLine(result);
             }
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 # **WebhooksAll**
 > GetWebhooksResponse WebhooksAll (string appId = null, string cursor = null, int? limit = null)
 
-List webhooks
+List webhook subscriptions
 
 List all webhook subscriptions
 
@@ -220,7 +220,7 @@ namespace Example
 
             try
             {
-                // List webhooks
+                // List webhook subscriptions
                 GetWebhooksResponse result = apiInstance.WebhooksAll(appId, cursor, limit);
                 Debug.WriteLine(result);
             }
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 # **WebhooksDelete**
 > DeleteWebhookResponse WebhooksDelete (string id, string appId = null)
 
-Delete webhook
+Delete webhook subscription
 
 Delete a webhook subscription
 
@@ -305,7 +305,7 @@ namespace Example
 
             try
             {
-                // Delete webhook
+                // Delete webhook subscription
                 DeleteWebhookResponse result = apiInstance.WebhooksDelete(id, appId);
                 Debug.WriteLine(result);
             }
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 # **WebhooksOne**
 > GetWebhookResponse WebhooksOne (string id, string appId = null)
 
-Get webhook
+Get webhook subscription
 
 Get the webhook subscription details
 
@@ -389,7 +389,7 @@ namespace Example
 
             try
             {
-                // Get webhook
+                // Get webhook subscription
                 GetWebhookResponse result = apiInstance.WebhooksOne(id, appId);
                 Debug.WriteLine(result);
             }
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 # **WebhooksUpdate**
 > UpdateWebhookResponse WebhooksUpdate (string id, UpdateWebhookRequest updateWebhookRequest, string appId = null)
 
-Update webhook
+Update webhook subscription
 
 Update a webhook subscription
 
@@ -474,7 +474,7 @@ namespace Example
 
             try
             {
-                // Update webhook
+                // Update webhook subscription
                 UpdateWebhookResponse result = apiInstance.WebhooksUpdate(id, updateWebhookRequest, appId);
                 Debug.WriteLine(result);
             }

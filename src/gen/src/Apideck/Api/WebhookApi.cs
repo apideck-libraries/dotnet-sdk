@@ -54,7 +54,7 @@ namespace Apideck.Api
         /// <returns>ApiResponse of GetWebhookEventLogsResponse</returns>
         ApiResponse<GetWebhookEventLogsResponse> EventLogsAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?), WebhookEventLogsFilter filter = default(WebhookEventLogsFilter));
         /// <summary>
-        /// Create webhook
+        /// Create webhook subscription
         /// </summary>
         /// <remarks>
         /// Create a webhook subscription to receive events
@@ -66,7 +66,7 @@ namespace Apideck.Api
         CreateWebhookResponse WebhooksAdd(CreateWebhookRequest createWebhookRequest, string appId = default(string));
 
         /// <summary>
-        /// Create webhook
+        /// Create webhook subscription
         /// </summary>
         /// <remarks>
         /// Create a webhook subscription to receive events
@@ -77,7 +77,7 @@ namespace Apideck.Api
         /// <returns>ApiResponse of CreateWebhookResponse</returns>
         ApiResponse<CreateWebhookResponse> WebhooksAddWithHttpInfo(CreateWebhookRequest createWebhookRequest, string appId = default(string));
         /// <summary>
-        /// List webhooks
+        /// List webhook subscriptions
         /// </summary>
         /// <remarks>
         /// List all webhook subscriptions
@@ -90,7 +90,7 @@ namespace Apideck.Api
         GetWebhooksResponse WebhooksAll(string appId = default(string), string cursor = default(string), int? limit = default(int?));
 
         /// <summary>
-        /// List webhooks
+        /// List webhook subscriptions
         /// </summary>
         /// <remarks>
         /// List all webhook subscriptions
@@ -102,7 +102,7 @@ namespace Apideck.Api
         /// <returns>ApiResponse of GetWebhooksResponse</returns>
         ApiResponse<GetWebhooksResponse> WebhooksAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?));
         /// <summary>
-        /// Delete webhook
+        /// Delete webhook subscription
         /// </summary>
         /// <remarks>
         /// Delete a webhook subscription
@@ -114,7 +114,7 @@ namespace Apideck.Api
         DeleteWebhookResponse WebhooksDelete(string id, string appId = default(string));
 
         /// <summary>
-        /// Delete webhook
+        /// Delete webhook subscription
         /// </summary>
         /// <remarks>
         /// Delete a webhook subscription
@@ -125,7 +125,7 @@ namespace Apideck.Api
         /// <returns>ApiResponse of DeleteWebhookResponse</returns>
         ApiResponse<DeleteWebhookResponse> WebhooksDeleteWithHttpInfo(string id, string appId = default(string));
         /// <summary>
-        /// Get webhook
+        /// Get webhook subscription
         /// </summary>
         /// <remarks>
         /// Get the webhook subscription details
@@ -137,7 +137,7 @@ namespace Apideck.Api
         GetWebhookResponse WebhooksOne(string id, string appId = default(string));
 
         /// <summary>
-        /// Get webhook
+        /// Get webhook subscription
         /// </summary>
         /// <remarks>
         /// Get the webhook subscription details
@@ -148,7 +148,7 @@ namespace Apideck.Api
         /// <returns>ApiResponse of GetWebhookResponse</returns>
         ApiResponse<GetWebhookResponse> WebhooksOneWithHttpInfo(string id, string appId = default(string));
         /// <summary>
-        /// Update webhook
+        /// Update webhook subscription
         /// </summary>
         /// <remarks>
         /// Update a webhook subscription
@@ -161,7 +161,7 @@ namespace Apideck.Api
         UpdateWebhookResponse WebhooksUpdate(string id, UpdateWebhookRequest updateWebhookRequest, string appId = default(string));
 
         /// <summary>
-        /// Update webhook
+        /// Update webhook subscription
         /// </summary>
         /// <remarks>
         /// Update a webhook subscription
@@ -211,7 +211,7 @@ namespace Apideck.Api
         /// <returns>Task of ApiResponse (GetWebhookEventLogsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWebhookEventLogsResponse>> EventLogsAllWithHttpInfoAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), WebhookEventLogsFilter filter = default(WebhookEventLogsFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Create webhook
+        /// Create webhook subscription
         /// </summary>
         /// <remarks>
         /// Create a webhook subscription to receive events
@@ -224,7 +224,7 @@ namespace Apideck.Api
         System.Threading.Tasks.Task<CreateWebhookResponse> WebhooksAddAsync(CreateWebhookRequest createWebhookRequest, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Create webhook
+        /// Create webhook subscription
         /// </summary>
         /// <remarks>
         /// Create a webhook subscription to receive events
@@ -236,7 +236,7 @@ namespace Apideck.Api
         /// <returns>Task of ApiResponse (CreateWebhookResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateWebhookResponse>> WebhooksAddWithHttpInfoAsync(CreateWebhookRequest createWebhookRequest, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// List webhooks
+        /// List webhook subscriptions
         /// </summary>
         /// <remarks>
         /// List all webhook subscriptions
@@ -250,7 +250,7 @@ namespace Apideck.Api
         System.Threading.Tasks.Task<GetWebhooksResponse> WebhooksAllAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// List webhooks
+        /// List webhook subscriptions
         /// </summary>
         /// <remarks>
         /// List all webhook subscriptions
@@ -263,7 +263,7 @@ namespace Apideck.Api
         /// <returns>Task of ApiResponse (GetWebhooksResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWebhooksResponse>> WebhooksAllWithHttpInfoAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Delete webhook
+        /// Delete webhook subscription
         /// </summary>
         /// <remarks>
         /// Delete a webhook subscription
@@ -276,7 +276,7 @@ namespace Apideck.Api
         System.Threading.Tasks.Task<DeleteWebhookResponse> WebhooksDeleteAsync(string id, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Delete webhook
+        /// Delete webhook subscription
         /// </summary>
         /// <remarks>
         /// Delete a webhook subscription
@@ -288,7 +288,7 @@ namespace Apideck.Api
         /// <returns>Task of ApiResponse (DeleteWebhookResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteWebhookResponse>> WebhooksDeleteWithHttpInfoAsync(string id, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Get webhook
+        /// Get webhook subscription
         /// </summary>
         /// <remarks>
         /// Get the webhook subscription details
@@ -301,7 +301,7 @@ namespace Apideck.Api
         System.Threading.Tasks.Task<GetWebhookResponse> WebhooksOneAsync(string id, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Get webhook
+        /// Get webhook subscription
         /// </summary>
         /// <remarks>
         /// Get the webhook subscription details
@@ -313,7 +313,7 @@ namespace Apideck.Api
         /// <returns>Task of ApiResponse (GetWebhookResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWebhookResponse>> WebhooksOneWithHttpInfoAsync(string id, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
-        /// Update webhook
+        /// Update webhook subscription
         /// </summary>
         /// <remarks>
         /// Update a webhook subscription
@@ -327,7 +327,7 @@ namespace Apideck.Api
         System.Threading.Tasks.Task<UpdateWebhookResponse> WebhooksUpdateAsync(string id, UpdateWebhookRequest updateWebhookRequest, string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// Update webhook
+        /// Update webhook subscription
         /// </summary>
         /// <remarks>
         /// Update a webhook subscription
@@ -653,7 +653,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create a webhook subscription to receive events
+        /// Create webhook subscription Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -666,7 +666,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create a webhook subscription to receive events
+        /// Create webhook subscription Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -730,7 +730,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create a webhook subscription to receive events
+        /// Create webhook subscription Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -744,7 +744,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Create webhook Create a webhook subscription to receive events
+        /// Create webhook subscription Create a webhook subscription to receive events
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookRequest"></param>
@@ -811,7 +811,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List all webhook subscriptions
+        /// List webhook subscriptions List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -825,7 +825,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List all webhook subscriptions
+        /// List webhook subscriptions List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -890,7 +890,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List all webhook subscriptions
+        /// List webhook subscriptions List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -905,7 +905,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// List webhooks List all webhook subscriptions
+        /// List webhook subscriptions List all webhook subscriptions
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -973,7 +973,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete a webhook subscription
+        /// Delete webhook subscription Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -986,7 +986,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete a webhook subscription
+        /// Delete webhook subscription Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1049,7 +1049,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete a webhook subscription
+        /// Delete webhook subscription Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1063,7 +1063,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Delete webhook Delete a webhook subscription
+        /// Delete webhook subscription Delete a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1129,7 +1129,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get the webhook subscription details
+        /// Get webhook subscription Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1142,7 +1142,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get the webhook subscription details
+        /// Get webhook subscription Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1205,7 +1205,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get the webhook subscription details
+        /// Get webhook subscription Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1219,7 +1219,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get webhook Get the webhook subscription details
+        /// Get webhook subscription Get the webhook subscription details
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1285,7 +1285,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update a webhook subscription
+        /// Update webhook subscription Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1299,7 +1299,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update a webhook subscription
+        /// Update webhook subscription Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1371,7 +1371,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update a webhook subscription
+        /// Update webhook subscription Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
@@ -1386,7 +1386,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Update webhook Update a webhook subscription
+        /// Update webhook subscription Update a webhook subscription
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.</param>
