@@ -65,6 +65,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'EventType'
         }
         /// <summary>
+        /// Test the property 'EventSource'
+        /// </summary>
+        [Fact]
+        public void EventSourceTest()
+        {
+            // TODO unit test for the property 'EventSource'
+        }
+        /// <summary>
         /// Test the property 'DownstreamEventType'
         /// </summary>
         [Fact]

@@ -6,6 +6,7 @@ Unify event that is supported on the connector. Events are delivered via Webhook
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EventType** | **string** | Unify event type | [optional] 
+**EventSource** | **string** | Unify event source | [optional] 
 **DownstreamEventType** | **string** | Downstream event type | [optional] 
 **Resource** | **string** | ID of the resource, typically a lowercased version of name. | [optional] 
 

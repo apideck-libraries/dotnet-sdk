@@ -32,14 +32,44 @@ namespace Apideck.Model
     public partial class ConnectorEvent : IEquatable<ConnectorEvent>, IValidatableObject
     {
         /// <summary>
+        /// Unify event source
+        /// </summary>
+        /// <value>Unify event source</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum EventSourceEnum
+        {
+            /// <summary>
+            /// Enum Native for value: native
+            /// </summary>
+            [EnumMember(Value = "native")]
+            Native = 1,
+
+            /// <summary>
+            /// Enum Virtual for value: virtual
+            /// </summary>
+            [EnumMember(Value = "virtual")]
+            Virtual = 2
+
+        }
+
+
+        /// <summary>
+        /// Unify event source
+        /// </summary>
+        /// <value>Unify event source</value>
+        [DataMember(Name = "event_source", EmitDefaultValue = false)]
+        public EventSourceEnum? EventSource { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="ConnectorEvent" /> class.
         /// </summary>
         /// <param name="eventType">Unify event type.</param>
+        /// <param name="eventSource">Unify event source.</param>
         /// <param name="downstreamEventType">Downstream event type.</param>
         /// <param name="resource">ID of the resource, typically a lowercased version of name..</param>
-        public ConnectorEvent(string eventType = default(string), string downstreamEventType = default(string), string resource = default(string))
+        public ConnectorEvent(string eventType = default(string), EventSourceEnum? eventSource = default(EventSourceEnum?), string downstreamEventType = default(string), string resource = default(string))
         {
             this.EventType = eventType;
+            this.EventSource = eventSource;
             this.DownstreamEventType = downstreamEventType;
             this.Resource = resource;
         }
@@ -74,6 +104,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ConnectorEvent {\n");
             sb.Append("  EventType: ").Append(EventType).Append("\n");
+            sb.Append("  EventSource: ").Append(EventSource).Append("\n");
             sb.Append("  DownstreamEventType: ").Append(DownstreamEventType).Append("\n");
             sb.Append("  Resource: ").Append(Resource).Append("\n");
             sb.Append("}\n");
@@ -117,6 +148,10 @@ namespace Apideck.Model
                     this.EventType.Equals(input.EventType))
                 ) && 
                 (
+                    this.EventSource == input.EventSource ||
+                    this.EventSource.Equals(input.EventSource)
+                ) && 
+                (
                     this.DownstreamEventType == input.DownstreamEventType ||
                     (this.DownstreamEventType != null &&
                     this.DownstreamEventType.Equals(input.DownstreamEventType))
@@ -141,6 +176,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.EventType.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.EventSource.GetHashCode();
                 if (this.DownstreamEventType != null)
                 {
                     hashCode = (hashCode * 59) + this.DownstreamEventType.GetHashCode();
