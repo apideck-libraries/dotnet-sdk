@@ -49,9 +49,11 @@ namespace Apideck.Model
         /// <param name="name">name (required).</param>
         /// <param name="currency">currency.</param>
         /// <param name="archived">archived.</param>
+        /// <param name="active">active.</param>
         /// <param name="displayOrder">displayOrder.</param>
+        /// <param name="winProbabilityEnabled">winProbabilityEnabled.</param>
         /// <param name="stages">stages.</param>
-        public Pipeline(string id = default(string), string name = default(string), Currency? currency = default(Currency?), bool archived = default(bool), int displayOrder = default(int), List<PipelineStages> stages = default(List<PipelineStages>))
+        public Pipeline(string id = default(string), string name = default(string), Currency? currency = default(Currency?), bool archived = default(bool), bool active = default(bool), int displayOrder = default(int), bool winProbabilityEnabled = default(bool), List<PipelineStages> stages = default(List<PipelineStages>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -61,7 +63,9 @@ namespace Apideck.Model
             this.Id = id;
             this.Currency = currency;
             this.Archived = archived;
+            this.Active = active;
             this.DisplayOrder = displayOrder;
+            this.WinProbabilityEnabled = winProbabilityEnabled;
             this.Stages = stages;
         }
 
@@ -84,10 +88,22 @@ namespace Apideck.Model
         public bool Archived { get; set; }
 
         /// <summary>
+        /// Gets or Sets Active
+        /// </summary>
+        [DataMember(Name = "active", EmitDefaultValue = true)]
+        public bool Active { get; set; }
+
+        /// <summary>
         /// Gets or Sets DisplayOrder
         /// </summary>
         [DataMember(Name = "display_order", EmitDefaultValue = false)]
         public int DisplayOrder { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WinProbabilityEnabled
+        /// </summary>
+        [DataMember(Name = "win_probability_enabled", EmitDefaultValue = true)]
+        public bool WinProbabilityEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Stages
@@ -135,7 +151,9 @@ namespace Apideck.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  Archived: ").Append(Archived).Append("\n");
+            sb.Append("  Active: ").Append(Active).Append("\n");
             sb.Append("  DisplayOrder: ").Append(DisplayOrder).Append("\n");
+            sb.Append("  WinProbabilityEnabled: ").Append(WinProbabilityEnabled).Append("\n");
             sb.Append("  Stages: ").Append(Stages).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -193,8 +211,16 @@ namespace Apideck.Model
                     this.Archived.Equals(input.Archived)
                 ) && 
                 (
+                    this.Active == input.Active ||
+                    this.Active.Equals(input.Active)
+                ) && 
+                (
                     this.DisplayOrder == input.DisplayOrder ||
                     this.DisplayOrder.Equals(input.DisplayOrder)
+                ) && 
+                (
+                    this.WinProbabilityEnabled == input.WinProbabilityEnabled ||
+                    this.WinProbabilityEnabled.Equals(input.WinProbabilityEnabled)
                 ) && 
                 (
                     this.Stages == input.Stages ||
@@ -233,7 +259,9 @@ namespace Apideck.Model
                 }
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 hashCode = (hashCode * 59) + this.Archived.GetHashCode();
+                hashCode = (hashCode * 59) + this.Active.GetHashCode();
                 hashCode = (hashCode * 59) + this.DisplayOrder.GetHashCode();
+                hashCode = (hashCode * 59) + this.WinProbabilityEnabled.GetHashCode();
                 if (this.Stages != null)
                 {
                     hashCode = (hashCode * 59) + this.Stages.GetHashCode();

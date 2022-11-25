@@ -89,12 +89,28 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Archived'
         }
         /// <summary>
+        /// Test the property 'Active'
+        /// </summary>
+        [Fact]
+        public void ActiveTest()
+        {
+            // TODO unit test for the property 'Active'
+        }
+        /// <summary>
         /// Test the property 'DisplayOrder'
         /// </summary>
         [Fact]
         public void DisplayOrderTest()
         {
             // TODO unit test for the property 'DisplayOrder'
+        }
+        /// <summary>
+        /// Test the property 'WinProbabilityEnabled'
+        /// </summary>
+        [Fact]
+        public void WinProbabilityEnabledTest()
+        {
+            // TODO unit test for the property 'WinProbabilityEnabled'
         }
         /// <summary>
         /// Test the property 'Stages'
