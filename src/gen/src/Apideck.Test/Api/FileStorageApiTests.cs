@@ -509,8 +509,9 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
+            //string digest = null;
             //Object body = null;
-            //var response = instance.UploadSessionsFinish(id, raw, consumerId, appId, serviceId, body);
+            //var response = instance.UploadSessionsFinish(id, raw, consumerId, appId, serviceId, digest, body);
             //Assert.IsType<GetFileResponse>(response);
         }
 

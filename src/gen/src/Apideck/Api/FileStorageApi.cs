@@ -777,7 +777,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start Upload Session
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -792,7 +792,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start Upload Session
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -843,9 +843,10 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>GetFileResponse</returns>
-        GetFileResponse UploadSessionsFinish(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object));
+        GetFileResponse UploadSessionsFinish(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object));
 
         /// <summary>
         /// Finish Upload Session
@@ -859,14 +860,15 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of GetFileResponse</returns>
-        ApiResponse<GetFileResponse> UploadSessionsFinishWithHttpInfo(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object));
+        ApiResponse<GetFileResponse> UploadSessionsFinishWithHttpInfo(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object));
         /// <summary>
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -881,7 +883,7 @@ namespace Apideck.Api
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1701,7 +1703,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start Upload Session
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -1717,7 +1719,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start Upload Session
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -1771,10 +1773,11 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFileResponse</returns>
-        System.Threading.Tasks.Task<GetFileResponse> UploadSessionsFinishAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetFileResponse> UploadSessionsFinishAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Finish Upload Session
@@ -1788,15 +1791,16 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFileResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFileResponse>> UploadSessionsFinishWithHttpInfoAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetFileResponse>> UploadSessionsFinishWithHttpInfoAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1812,7 +1816,7 @@ namespace Apideck.Api
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -6928,7 +6932,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start Upload Session
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -6944,7 +6948,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start Upload Session
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -7023,7 +7027,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start Upload Session
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -7040,7 +7044,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start Upload Session
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -7322,11 +7326,12 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>GetFileResponse</returns>
-        public GetFileResponse UploadSessionsFinish(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object))
+        public GetFileResponse UploadSessionsFinish(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object))
         {
-            Apideck.Client.ApiResponse<GetFileResponse> localVarResponse = UploadSessionsFinishWithHttpInfo(id, raw, consumerId, appId, serviceId, body);
+            Apideck.Client.ApiResponse<GetFileResponse> localVarResponse = UploadSessionsFinishWithHttpInfo(id, raw, consumerId, appId, serviceId, digest, body);
             return localVarResponse.Data;
         }
 
@@ -7339,9 +7344,10 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of GetFileResponse</returns>
-        public Apideck.Client.ApiResponse<GetFileResponse> UploadSessionsFinishWithHttpInfo(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object))
+        public Apideck.Client.ApiResponse<GetFileResponse> UploadSessionsFinishWithHttpInfo(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7388,6 +7394,10 @@ namespace Apideck.Api
             if (serviceId != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+            if (digest != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("digest", Apideck.Client.ClientUtils.ParameterToString(digest)); // header parameter
             }
             localVarRequestOptions.Data = body;
 
@@ -7420,12 +7430,13 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFileResponse</returns>
-        public async System.Threading.Tasks.Task<GetFileResponse> UploadSessionsFinishAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetFileResponse> UploadSessionsFinishAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetFileResponse> localVarResponse = await UploadSessionsFinishWithHttpInfoAsync(id, raw, consumerId, appId, serviceId, body, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetFileResponse> localVarResponse = await UploadSessionsFinishWithHttpInfoAsync(id, raw, consumerId, appId, serviceId, digest, body, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7438,10 +7449,11 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="digest">The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional)</param>
         /// <param name="body"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFileResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetFileResponse>> UploadSessionsFinishWithHttpInfoAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetFileResponse>> UploadSessionsFinishWithHttpInfoAsync(string id, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string digest = default(string), Object body = default(Object), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7490,6 +7502,10 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
+            if (digest != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("digest", Apideck.Client.ClientUtils.ParameterToString(digest)); // header parameter
+            }
             localVarRequestOptions.Data = body;
 
             // authentication (apiKey) required
@@ -7514,7 +7530,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7530,7 +7546,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7608,7 +7624,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7625,7 +7641,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>

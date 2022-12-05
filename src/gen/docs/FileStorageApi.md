@@ -2313,7 +2313,7 @@ Name | Type | Description  | Notes
 
 Start Upload Session
 
-Start Upload Session
+Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
 
 ### Example
 ```csharp
@@ -2489,7 +2489,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadsessionsfinish"></a>
 # **UploadSessionsFinish**
-> GetFileResponse UploadSessionsFinish (string id, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, Object body = null)
+> GetFileResponse UploadSessionsFinish (string id, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string digest = null, Object body = null)
 
 Finish Upload Session
 
@@ -2522,12 +2522,13 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = "appId_example";  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var digest = sha=fpRyg5eVQletdZqEKaFlqwBXJzM=;  // string | The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional) 
             var body = null;  // Object |  (optional) 
 
             try
             {
                 // Finish Upload Session
-                GetFileResponse result = apiInstance.UploadSessionsFinish(id, raw, consumerId, appId, serviceId, body);
+                GetFileResponse result = apiInstance.UploadSessionsFinish(id, raw, consumerId, appId, serviceId, digest, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2550,6 +2551,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **digest** | **string**| The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) | [optional] 
  **body** | **Object**|  | [optional] 
 
 ### Return type
@@ -2585,7 +2587,7 @@ Name | Type | Description  | Notes
 
 Get Upload Session
 
-Get Upload Session
+Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
 
 ### Example
 ```csharp
