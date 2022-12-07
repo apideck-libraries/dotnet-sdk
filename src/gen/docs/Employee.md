@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **MaritalStatus** | **string** |  | [optional] 
 **Partner** | [**EmployeePartner**](EmployeePartner.md) |  | [optional] 
 **Division** | **string** | The division the user is currently in. | [optional] 
+**DivisionId** | **string** | Unique identifier of the division this employee belongs to. | [optional] 
 **Department** | **string** | The department the user is currently in. | [optional] 
 **DepartmentId** | **string** | Unique identifier of the department ID this employee belongs to. | [optional] 
 **Team** | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 

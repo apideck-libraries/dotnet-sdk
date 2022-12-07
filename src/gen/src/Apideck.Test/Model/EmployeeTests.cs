@@ -153,6 +153,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Division'
         }
         /// <summary>
+        /// Test the property 'DivisionId'
+        /// </summary>
+        [Fact]
+        public void DivisionIdTest()
+        {
+            // TODO unit test for the property 'DivisionId'
+        }
+        /// <summary>
         /// Test the property 'Department'
         /// </summary>
         [Fact]
