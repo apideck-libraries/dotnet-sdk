@@ -32,6 +32,46 @@ namespace Apideck.Model
     public partial class Employee : IEquatable<Employee>, IValidatableObject
     {
         /// <summary>
+        /// The reason because the employment ended
+        /// </summary>
+        /// <value>The reason because the employment ended</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LeavingReasonEnum
+        {
+            /// <summary>
+            /// Enum Dismissed for value: dismissed
+            /// </summary>
+            [EnumMember(Value = "dismissed")]
+            Dismissed = 1,
+
+            /// <summary>
+            /// Enum Resigned for value: resigned
+            /// </summary>
+            [EnumMember(Value = "resigned")]
+            Resigned = 2,
+
+            /// <summary>
+            /// Enum Redundancy for value: redundancy
+            /// </summary>
+            [EnumMember(Value = "redundancy")]
+            Redundancy = 3,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 4
+
+        }
+
+
+        /// <summary>
+        /// The reason because the employment ended
+        /// </summary>
+        /// <value>The reason because the employment ended</value>
+        [DataMember(Name = "leaving_reason", EmitDefaultValue = true)]
+        public LeavingReasonEnum? LeavingReason { get; set; }
+        /// <summary>
         /// Defines EmploymentStatus
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -102,6 +142,7 @@ namespace Apideck.Model
         /// <param name="companyName">companyName.</param>
         /// <param name="employmentStartDate">A Start Date is the date that the employee started working at the company.</param>
         /// <param name="employmentEndDate">A Start Date is the date that the employee ended working at the company.</param>
+        /// <param name="leavingReason">The reason because the employment ended.</param>
         /// <param name="employeeNumber">An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company..</param>
         /// <param name="employmentStatus">employmentStatus.</param>
         /// <param name="employmentRole">employmentRole.</param>
@@ -137,7 +178,7 @@ namespace Apideck.Model
         /// <param name="tags">tags.</param>
         /// <param name="rowVersion">rowVersion.</param>
         /// <param name="deleted">deleted.</param>
-        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), EmployeePartner partner = default(EmployeePartner), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), EmployeeTeam team = default(EmployeeTeam), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), string employeeNumber = default(string), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJobs> jobs = default(List<EmployeeJobs>), List<EmployeeCompensations> compensations = default(List<EmployeeCompensations>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
+        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), EmployeePartner partner = default(EmployeePartner), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), EmployeeTeam team = default(EmployeeTeam), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJobs> jobs = default(List<EmployeeJobs>), List<EmployeeCompensations> compensations = default(List<EmployeeCompensations>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -158,6 +199,7 @@ namespace Apideck.Model
             this.CompanyName = companyName;
             this.EmploymentStartDate = employmentStartDate;
             this.EmploymentEndDate = employmentEndDate;
+            this.LeavingReason = leavingReason;
             this.EmployeeNumber = employeeNumber;
             this.EmploymentStatus = employmentStatus;
             this.EmploymentRole = employmentRole;
@@ -621,6 +663,7 @@ namespace Apideck.Model
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  EmploymentStartDate: ").Append(EmploymentStartDate).Append("\n");
             sb.Append("  EmploymentEndDate: ").Append(EmploymentEndDate).Append("\n");
+            sb.Append("  LeavingReason: ").Append(LeavingReason).Append("\n");
             sb.Append("  EmployeeNumber: ").Append(EmployeeNumber).Append("\n");
             sb.Append("  EmploymentStatus: ").Append(EmploymentStatus).Append("\n");
             sb.Append("  EmploymentRole: ").Append(EmploymentRole).Append("\n");
@@ -794,6 +837,10 @@ namespace Apideck.Model
                     this.EmploymentEndDate == input.EmploymentEndDate ||
                     (this.EmploymentEndDate != null &&
                     this.EmploymentEndDate.Equals(input.EmploymentEndDate))
+                ) && 
+                (
+                    this.LeavingReason == input.LeavingReason ||
+                    this.LeavingReason.Equals(input.LeavingReason)
                 ) && 
                 (
                     this.EmployeeNumber == input.EmployeeNumber ||
@@ -1091,6 +1138,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.EmploymentEndDate.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.LeavingReason.GetHashCode();
                 if (this.EmployeeNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.EmployeeNumber.GetHashCode();

@@ -217,6 +217,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'EmploymentEndDate'
         }
         /// <summary>
+        /// Test the property 'LeavingReason'
+        /// </summary>
+        [Fact]
+        public void LeavingReasonTest()
+        {
+            // TODO unit test for the property 'LeavingReason'
+        }
+        /// <summary>
         /// Test the property 'EmployeeNumber'
         /// </summary>
         [Fact]

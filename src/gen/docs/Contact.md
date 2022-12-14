@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **SocialLinks** | [**List&lt;SocialLink&gt;**](SocialLink.md) |  | [optional] 
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
+**EmailDomain** | **string** |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **Tags** | **List&lt;string&gt;** |  | [optional] 
 **FirstCallAt** | **DateTime?** |  | [optional] [readonly] 

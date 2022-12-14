@@ -297,6 +297,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Emails'
         }
         /// <summary>
+        /// Test the property 'EmailDomain'
+        /// </summary>
+        [Fact]
+        public void EmailDomainTest()
+        {
+            // TODO unit test for the property 'EmailDomain'
+        }
+        /// <summary>
         /// Test the property 'CustomFields'
         /// </summary>
         [Fact]

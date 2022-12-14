@@ -138,9 +138,10 @@ namespace Apideck.Model
         /// <param name="socialLinks">socialLinks.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails.</param>
+        /// <param name="emailDomain">emailDomain.</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="tags">tags.</param>
-        public Contact(string name = default(string), string ownerId = default(string), TypeEnum? type = default(TypeEnum?), string companyId = default(string), string companyName = default(string), string leadId = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string prefix = default(string), string suffix = default(string), string title = default(string), string department = default(string), string language = default(string), GenderEnum? gender = default(GenderEnum?), string birthday = default(string), string image = default(string), string photoUrl = default(string), string leadSource = default(string), string fax = default(string), string description = default(string), decimal? currentBalance = default(decimal?), string status = default(string), bool? active = default(bool?), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>))
+        public Contact(string name = default(string), string ownerId = default(string), TypeEnum? type = default(TypeEnum?), string companyId = default(string), string companyName = default(string), string leadId = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string prefix = default(string), string suffix = default(string), string title = default(string), string department = default(string), string language = default(string), GenderEnum? gender = default(GenderEnum?), string birthday = default(string), string image = default(string), string photoUrl = default(string), string leadSource = default(string), string fax = default(string), string description = default(string), decimal? currentBalance = default(decimal?), string status = default(string), bool? active = default(bool?), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), string emailDomain = default(string), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -175,6 +176,7 @@ namespace Apideck.Model
             this.SocialLinks = socialLinks;
             this.PhoneNumbers = phoneNumbers;
             this.Emails = emails;
+            this.EmailDomain = emailDomain;
             this.CustomFields = customFields;
             this.Tags = tags;
         }
@@ -358,6 +360,12 @@ namespace Apideck.Model
         public List<Email> Emails { get; set; }
 
         /// <summary>
+        /// Gets or Sets EmailDomain
+        /// </summary>
+        [DataMember(Name = "email_domain", EmitDefaultValue = true)]
+        public string EmailDomain { get; set; }
+
+        /// <summary>
         /// Gets or Sets CustomFields
         /// </summary>
         [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
@@ -477,6 +485,7 @@ namespace Apideck.Model
             sb.Append("  SocialLinks: ").Append(SocialLinks).Append("\n");
             sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
             sb.Append("  Emails: ").Append(Emails).Append("\n");
+            sb.Append("  EmailDomain: ").Append(EmailDomain).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  FirstCallAt: ").Append(FirstCallAt).Append("\n");
@@ -673,6 +682,11 @@ namespace Apideck.Model
                     this.Emails.SequenceEqual(input.Emails)
                 ) && 
                 (
+                    this.EmailDomain == input.EmailDomain ||
+                    (this.EmailDomain != null &&
+                    this.EmailDomain.Equals(input.EmailDomain))
+                ) && 
+                (
                     this.CustomFields == input.CustomFields ||
                     this.CustomFields != null &&
                     input.CustomFields != null &&
@@ -833,6 +847,10 @@ namespace Apideck.Model
                 if (this.Emails != null)
                 {
                     hashCode = (hashCode * 59) + this.Emails.GetHashCode();
+                }
+                if (this.EmailDomain != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmailDomain.GetHashCode();
                 }
                 if (this.CustomFields != null)
                 {
