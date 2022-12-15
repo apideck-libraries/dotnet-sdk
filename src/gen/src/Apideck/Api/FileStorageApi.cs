@@ -777,7 +777,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -792,7 +792,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -806,7 +806,7 @@ namespace Apideck.Api
         /// Abort Upload Session
         /// </summary>
         /// <remarks>
-        /// Abort Upload Session
+        /// Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -821,7 +821,7 @@ namespace Apideck.Api
         /// Abort Upload Session
         /// </summary>
         /// <remarks>
-        /// Abort Upload Session
+        /// Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -835,7 +835,7 @@ namespace Apideck.Api
         /// Finish Upload Session
         /// </summary>
         /// <remarks>
-        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -852,7 +852,7 @@ namespace Apideck.Api
         /// Finish Upload Session
         /// </summary>
         /// <remarks>
-        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -868,7 +868,7 @@ namespace Apideck.Api
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -883,7 +883,7 @@ namespace Apideck.Api
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1703,7 +1703,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -1719,7 +1719,7 @@ namespace Apideck.Api
         /// Start Upload Session
         /// </summary>
         /// <remarks>
-        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -1734,7 +1734,7 @@ namespace Apideck.Api
         /// Abort Upload Session
         /// </summary>
         /// <remarks>
-        /// Abort Upload Session
+        /// Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1750,7 +1750,7 @@ namespace Apideck.Api
         /// Abort Upload Session
         /// </summary>
         /// <remarks>
-        /// Abort Upload Session
+        /// Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1765,7 +1765,7 @@ namespace Apideck.Api
         /// Finish Upload Session
         /// </summary>
         /// <remarks>
-        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1783,7 +1783,7 @@ namespace Apideck.Api
         /// Finish Upload Session
         /// </summary>
         /// <remarks>
-        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1800,7 +1800,7 @@ namespace Apideck.Api
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -1816,7 +1816,7 @@ namespace Apideck.Api
         /// Get Upload Session
         /// </summary>
         /// <remarks>
-        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -6932,7 +6932,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -6948,7 +6948,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -7027,7 +7027,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -7044,7 +7044,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+        /// Start Upload Session Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createUploadSessionRequest"></param>
@@ -7126,7 +7126,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Abort Upload Session Abort Upload Session
+        /// Abort Upload Session Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7142,7 +7142,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Abort Upload Session Abort Upload Session
+        /// Abort Upload Session Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7220,7 +7220,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Abort Upload Session Abort Upload Session
+        /// Abort Upload Session Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7237,7 +7237,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Abort Upload Session Abort Upload Session
+        /// Abort Upload Session Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7318,7 +7318,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7336,7 +7336,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7422,7 +7422,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7441,7 +7441,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+        /// Finish Upload Session Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7530,7 +7530,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7546,7 +7546,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7624,7 +7624,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
@@ -7641,7 +7641,7 @@ namespace Apideck.Api
         }
 
         /// <summary>
-        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+        /// Get Upload Session Get Upload Session. Use the &#x60;part_size&#x60; to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>

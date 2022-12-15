@@ -2313,7 +2313,7 @@ Name | Type | Description  | Notes
 
 Start Upload Session
 
-Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB).
+Start an Upload Session. Upload sessions are used to upload large files, use the [Upload File](#operation/filesUpload) endpoint to upload smaller files (up to 100MB). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
 
 ### Example
 ```csharp
@@ -2403,7 +2403,7 @@ Name | Type | Description  | Notes
 
 Abort Upload Session
 
-Abort Upload Session
+Abort Upload Session. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
 
 ### Example
 ```csharp
@@ -2493,7 +2493,7 @@ Name | Type | Description  | Notes
 
 Finish Upload Session
 
-Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload).
+Finish Upload Session. Only call this endpoint after all File parts have been uploaded to [Upload part of File](#operation/uploadSessionsUpload). Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
 
 ### Example
 ```csharp
@@ -2587,7 +2587,7 @@ Name | Type | Description  | Notes
 
 Get Upload Session
 
-Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint.
+Get Upload Session. Use the `part_size` to split your file into parts. Upload the parts to the [Upload part of File](#operation/uploadSessionsUpload) endpoint. Note that the base URL is upload.apideck.com instead of unify.apideck.com. For more information on uploads, refer to the [file upload guide](guides/file-upload).
 
 ### Example
 ```csharp
