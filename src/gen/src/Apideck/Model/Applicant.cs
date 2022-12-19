@@ -46,6 +46,7 @@ namespace Apideck.Model
         /// <param name="headline">Typically a list of previous companies where the contact has worked or schools that the contact has attended.</param>
         /// <param name="title">title.</param>
         /// <param name="emails">emails.</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="addresses">addresses.</param>
         /// <param name="websites">websites.</param>
@@ -63,7 +64,7 @@ namespace Apideck.Model
         /// <param name="ownerId">ownerId.</param>
         /// <param name="recordUrl">recordUrl.</param>
         /// <param name="deleted">deleted.</param>
-        public Applicant(string positionId = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool archived = default(bool), string ownerId = default(string), string recordUrl = default(string), bool? deleted = default(bool?))
+        public Applicant(string positionId = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool archived = default(bool), string ownerId = default(string), string recordUrl = default(string), bool? deleted = default(bool?))
         {
             this.PositionId = positionId;
             this.Name = name;
@@ -77,6 +78,7 @@ namespace Apideck.Model
             this.Headline = headline;
             this.Title = title;
             this.Emails = emails;
+            this.CustomFields = customFields;
             this.PhoneNumbers = phoneNumbers;
             this.Addresses = addresses;
             this.Websites = websites;
@@ -199,6 +201,12 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "emails", EmitDefaultValue = false)]
         public List<Email> Emails { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
 
         /// <summary>
         /// Gets or Sets PhoneNumbers
@@ -478,6 +486,7 @@ namespace Apideck.Model
             sb.Append("  Headline: ").Append(Headline).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Emails: ").Append(Emails).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
             sb.Append("  Websites: ").Append(Websites).Append("\n");
@@ -611,6 +620,12 @@ namespace Apideck.Model
                     this.Emails != null &&
                     input.Emails != null &&
                     this.Emails.SequenceEqual(input.Emails)
+                ) && 
+                (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
                 ) && 
                 (
                     this.PhoneNumbers == input.PhoneNumbers ||
@@ -823,6 +838,10 @@ namespace Apideck.Model
                 if (this.Emails != null)
                 {
                     hashCode = (hashCode * 59) + this.Emails.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.PhoneNumbers != null)
                 {

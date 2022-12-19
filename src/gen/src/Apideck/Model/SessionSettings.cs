@@ -34,8 +34,8 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SessionSettings" /> class.
         /// </summary>
-        /// <param name="unifiedApis">Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omiting this field will show all Unified APIs..</param>
-        /// <param name="hideResourceSettings">hideResourceSettings (default to false).</param>
+        /// <param name="unifiedApis">Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omitting this field will show all Unified APIs..</param>
+        /// <param name="hideResourceSettings">A boolean that controls the display of the configurable resources for an integration. When set to true, the resource configuration options will be hidden and not shown to the user. When set to false, the resource configuration options will be displayed to the user. (default to false).</param>
         /// <param name="sandboxMode">Configure [Vault](/apis/vault/reference#section/Get-Started) to show a banner informing the logged in user is in a test environment. (default to false).</param>
         /// <param name="isolationMode">Configure [Vault](/apis/vault/reference#section/Get-Started) to run in isolation mode, meaning it only shows the connection settings and hides the navigation items. (default to false).</param>
         /// <param name="sessionLength">The duration of time the session is valid for (maximum 1 week). (default to &quot;1h&quot;).</param>
@@ -58,15 +58,16 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omiting this field will show all Unified APIs.
+        /// Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omitting this field will show all Unified APIs.
         /// </summary>
-        /// <value>Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omiting this field will show all Unified APIs.</value>
+        /// <value>Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omitting this field will show all Unified APIs.</value>
         [DataMember(Name = "unified_apis", EmitDefaultValue = false)]
         public List<UnifiedApiId> UnifiedApis { get; set; }
 
         /// <summary>
-        /// Gets or Sets HideResourceSettings
+        /// A boolean that controls the display of the configurable resources for an integration. When set to true, the resource configuration options will be hidden and not shown to the user. When set to false, the resource configuration options will be displayed to the user.
         /// </summary>
+        /// <value>A boolean that controls the display of the configurable resources for an integration. When set to true, the resource configuration options will be hidden and not shown to the user. When set to false, the resource configuration options will be displayed to the user.</value>
         [DataMember(Name = "hide_resource_settings", EmitDefaultValue = true)]
         public bool HideResourceSettings { get; set; }
 
