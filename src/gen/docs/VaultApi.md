@@ -52,7 +52,7 @@ namespace Example
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var resource = leads;  // string | Resource Name
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -143,7 +143,7 @@ namespace Example
             var resource = leads;  // string | Resource Name
             var connection = new Connection(); // Connection | Fields that need to be updated on the resource
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -231,7 +231,7 @@ namespace Example
 
             var apiInstance = new VaultApi(config);
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var api = crm;  // string | Scope results to Unified API (optional) 
             var configured = true;  // bool? | Scopes results to connections that have been configured or not (optional) 
 
@@ -321,7 +321,7 @@ namespace Example
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -409,7 +409,7 @@ namespace Example
             var unifiedApi = crm;  // string | Unified API
             var connectionImportData = new ConnectionImportData(); // ConnectionImportData | Fields that need to be persisted on the resource
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -498,7 +498,7 @@ namespace Example
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -587,7 +587,7 @@ namespace Example
             var unifiedApi = crm;  // string | Unified API
             var connection = new Connection(); // Connection | Fields that need to be updated on the resource
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -676,7 +676,7 @@ namespace Example
             var consumerId = test_user_id;  // string | ID of the consumer to return
             var startDatetime = 2021-05-01T12:00:00.000Z;  // string | Scopes results to requests that happened after datetime
             var endDatetime = 2021-05-30T12:00:00.000Z;  // string | Scopes results to requests that happened before datetime
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -761,7 +761,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new VaultApi(config);
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
 
@@ -848,7 +848,7 @@ namespace Example
 
             var apiInstance = new VaultApi(config);
             var consumerId = test_user_id;  // string | ID of the consumer to return
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -931,7 +931,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new VaultApi(config);
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var filter = new LogsFilter(); // LogsFilter | Filter results (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
@@ -1022,7 +1022,7 @@ namespace Example
 
             var apiInstance = new VaultApi(config);
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var session = new Session(); // Session | Additional redirect uri and/or consumer metadata (optional) 
 
             try

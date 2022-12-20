@@ -68,7 +68,7 @@ namespace Example
             var driveGroup = new DriveGroup(); // DriveGroup | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -157,7 +157,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -251,7 +251,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -341,7 +341,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -432,7 +432,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var driveGroup = new DriveGroup(); // DriveGroup | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -524,7 +524,7 @@ namespace Example
             var drive = new Drive(); // Drive | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -613,7 +613,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -707,7 +707,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -797,7 +797,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -888,7 +888,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var drive = new Drive(); // Drive | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -979,7 +979,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -1075,7 +1075,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1165,7 +1165,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1253,7 +1253,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1343,7 +1343,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var filesSearch = new FilesSearch(); // FilesSearch | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1432,7 +1432,7 @@ namespace Example
             var createFolderRequest = new CreateFolderRequest(); // CreateFolderRequest | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1522,7 +1522,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var copyFolderRequest = new CopyFolderRequest(); // CopyFolderRequest | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1613,7 +1613,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1703,7 +1703,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1794,7 +1794,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var updateFolderRequest = new UpdateFolderRequest(); // UpdateFolderRequest | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1886,7 +1886,7 @@ namespace Example
             var sharedLink = new SharedLink(); // SharedLink | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1975,7 +1975,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -2067,7 +2067,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -2157,7 +2157,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -2248,7 +2248,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var sharedLink = new SharedLink(); // SharedLink | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -2340,7 +2340,7 @@ namespace Example
             var createUploadSessionRequest = new CreateUploadSessionRequest(); // CreateUploadSessionRequest | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -2429,7 +2429,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -2520,7 +2520,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var digest = sha=fpRyg5eVQletdZqEKaFlqwBXJzM=;  // string | The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional) 
             var body = null;  // Object |  (optional) 
@@ -2613,7 +2613,7 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 

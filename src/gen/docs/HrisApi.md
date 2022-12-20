@@ -66,7 +66,7 @@ namespace Example
             var hrisCompany = new HrisCompany(); // HrisCompany | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -155,7 +155,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -247,7 +247,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -337,7 +337,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -428,7 +428,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var hrisCompany = new HrisCompany(); // HrisCompany | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -520,7 +520,7 @@ namespace Example
             var department = new Department(); // Department | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -609,7 +609,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -701,7 +701,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -791,7 +791,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -882,7 +882,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var department = new Department(); // Department | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -974,7 +974,7 @@ namespace Example
             var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var filter = new PayrollsFilter(); // PayrollsFilter | Apply filters (optional) 
 
@@ -1067,7 +1067,7 @@ namespace Example
             var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1158,7 +1158,7 @@ namespace Example
             var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1248,7 +1248,7 @@ namespace Example
             var employee = new Employee(); // Employee | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1337,7 +1337,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -1431,7 +1431,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1521,7 +1521,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1612,7 +1612,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var employee = new Employee(); // Employee | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -1704,7 +1704,7 @@ namespace Example
             var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1795,7 +1795,7 @@ namespace Example
             var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -1885,7 +1885,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var filter = new PayrollsFilter(); // PayrollsFilter | Apply filters (optional) 
 
@@ -1976,7 +1976,7 @@ namespace Example
             var payrollId = "payrollId_example";  // string | ID of the payroll you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -2066,7 +2066,7 @@ namespace Example
             var timeOffRequest = new TimeOffRequest(); // TimeOffRequest | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
@@ -2155,7 +2155,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
@@ -2249,7 +2249,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -2339,7 +2339,7 @@ namespace Example
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -2430,7 +2430,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var timeOffRequest = new TimeOffRequest(); // TimeOffRequest | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
