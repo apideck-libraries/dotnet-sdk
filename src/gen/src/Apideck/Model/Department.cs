@@ -59,6 +59,21 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// Parent ID
+        /// </summary>
+        /// <value>Parent ID</value>
+        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        public string ParentId { get; private set; }
+
+        /// <summary>
+        /// Returns false as ParentId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeParentId()
+        {
+            return false;
+        }
+        /// <summary>
         /// Department name
         /// </summary>
         /// <value>Department name</value>
@@ -142,6 +157,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Department {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -188,6 +204,11 @@ namespace Apideck.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.ParentId == input.ParentId ||
+                    (this.ParentId != null &&
+                    this.ParentId.Equals(input.ParentId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -238,6 +259,10 @@ namespace Apideck.Model
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.ParentId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ParentId.GetHashCode();
                 }
                 if (this.Name != null)
                 {
