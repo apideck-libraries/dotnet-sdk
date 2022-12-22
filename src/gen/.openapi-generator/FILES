@@ -1,4 +1,5 @@
 ../../.github/workflows/release.yml
+../../.github/workflows/sync.yml
 ../../.github/workflows/test.yml
 ../../.gitignore
 ../../LICENSE
@@ -18,7 +19,6 @@ docs/Api.md
 docs/ApiResource.md
 docs/ApiResourceCoverage.md
 docs/ApiResourceCoverageCoverage.md
-docs/ApiResourceCoverageSupportedFields.md
 docs/ApiResourceLinkedResources.md
 docs/ApiResources.md
 docs/ApiStatus.md
@@ -26,8 +26,10 @@ docs/ApisFilter.md
 docs/Applicant.md
 docs/ApplicantSocialLinks.md
 docs/ApplicantWebsites.md
+docs/ApplicantsFilter.md
 docs/AtsActivity.md
 docs/AtsApi.md
+docs/AtsEventType.md
 docs/AuthType.md
 docs/BadRequestResponse.md
 docs/BalanceSheet.md
@@ -60,16 +62,16 @@ docs/ConnectionImportData.md
 docs/ConnectionImportDataCredentials.md
 docs/ConnectionMetadata.md
 docs/ConnectionState.md
+docs/ConnectionWebhook.md
 docs/Connector.md
 docs/ConnectorApi.md
 docs/ConnectorDoc.md
+docs/ConnectorEvent.md
 docs/ConnectorOauthScopes.md
 docs/ConnectorOauthScopes1.md
 docs/ConnectorResource.md
 docs/ConnectorSetting.md
 docs/ConnectorStatus.md
-docs/ConnectorSupportedEvents.md
-docs/ConnectorSupportedResources.md
 docs/ConnectorTlsSupport.md
 docs/ConnectorUnifiedApis.md
 docs/ConnectorsFilter.md
@@ -78,7 +80,6 @@ docs/ConsumerConnection.md
 docs/ConsumerMetadata.md
 docs/ConsumerRequestCountsInDateRangeResponse.md
 docs/ConsumerRequestCountsInDateRangeResponseData.md
-docs/ConsumerWebhook.md
 docs/Contact.md
 docs/ContactsFilter.md
 docs/ContactsSort.md
@@ -125,6 +126,7 @@ docs/CreateSharedLinkResponse.md
 docs/CreateSupplierResponse.md
 docs/CreateTaxRateResponse.md
 docs/CreateTenderResponse.md
+docs/CreateTimeOffRequestResponse.md
 docs/CreateUploadSessionRequest.md
 docs/CreateUploadSessionResponse.md
 docs/CreateUserResponse.md
@@ -174,6 +176,7 @@ docs/DeleteSharedLinkResponse.md
 docs/DeleteSupplierResponse.md
 docs/DeleteTaxRateResponse.md
 docs/DeleteTenderResponse.md
+docs/DeleteTimeOffRequestResponse.md
 docs/DeleteUploadSessionResponse.md
 docs/DeleteUserResponse.md
 docs/DeleteWebhookResponse.md
@@ -197,6 +200,7 @@ docs/EmployeesFilter.md
 docs/Error.md
 docs/ExecuteWebhookResponse.md
 docs/FileStorageApi.md
+docs/FileStorageEventType.md
 docs/FileType.md
 docs/FilesFilter.md
 docs/FilesSearch.md
@@ -303,6 +307,8 @@ docs/GetTaxRateResponse.md
 docs/GetTaxRatesResponse.md
 docs/GetTenderResponse.md
 docs/GetTendersResponse.md
+docs/GetTimeOffRequestResponse.md
+docs/GetTimeOffRequestsResponse.md
 docs/GetUploadSessionResponse.md
 docs/GetUserResponse.md
 docs/GetUsersResponse.md
@@ -333,7 +339,9 @@ docs/LeadEventType.md
 docs/LeadsFilter.md
 docs/LeadsSort.md
 docs/LedgerAccount.md
+docs/LedgerAccountCategories.md
 docs/LedgerAccountParentAccount.md
+docs/LinkedConnectorResource.md
 docs/LinkedCustomer.md
 docs/LinkedFolder.md
 docs/LinkedInvoiceItem.md
@@ -374,8 +382,10 @@ docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
 docs/Owner.md
+docs/PaginationCoverage.md
 docs/Passthrough.md
 docs/Payment.md
+docs/PaymentAllocations.md
 docs/PaymentCard.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
@@ -402,6 +412,7 @@ docs/ProfitAndLossNetOperatingIncome.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossSection.md
 docs/RequestCountAllocation.md
+docs/ResolveWebhookResponse.md
 docs/ResourceStatus.md
 docs/Schedule.md
 docs/ScheduleWorkPattern.md
@@ -418,10 +429,15 @@ docs/SocialLink.md
 docs/SortDirection.md
 docs/Status.md
 docs/Supplier.md
+docs/SupportedProperty.md
+docs/SupportedPropertyChildProperties.md
 docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
 docs/Tender.md
+docs/TimeOffRequest.md
+docs/TimeOffRequestNotes.md
+docs/TimeOffRequestsFilter.md
 docs/TooManyRequestsResponse.md
 docs/TooManyRequestsResponseDetail.md
 docs/UnauthorizedResponse.md
@@ -468,6 +484,7 @@ docs/UpdateSharedLinkResponse.md
 docs/UpdateSupplierResponse.md
 docs/UpdateTaxRateResponse.md
 docs/UpdateTenderResponse.md
+docs/UpdateTimeOffRequestResponse.md
 docs/UpdateUploadSessionResponse.md
 docs/UpdateUserResponse.md
 docs/UpdateWebhookRequest.md
@@ -485,6 +502,8 @@ docs/WebhookEventLogService.md
 docs/WebhookEventLogsFilter.md
 docs/WebhookEventLogsFilterService.md
 docs/WebhookEventType.md
+docs/WebhookSubscription.md
+docs/WebhookSupport.md
 docs/Website.md
 git_push.sh
 src/Apideck.Test/Api/AccountingApiTests.cs
@@ -506,7 +525,6 @@ src/Apideck.Test/Model/ActivityAttendeeTests.cs
 src/Apideck.Test/Model/ActivityTests.cs
 src/Apideck.Test/Model/AddressTests.cs
 src/Apideck.Test/Model/ApiResourceCoverageCoverageTests.cs
-src/Apideck.Test/Model/ApiResourceCoverageSupportedFieldsTests.cs
 src/Apideck.Test/Model/ApiResourceCoverageTests.cs
 src/Apideck.Test/Model/ApiResourceLinkedResourcesTests.cs
 src/Apideck.Test/Model/ApiResourceTests.cs
@@ -517,7 +535,9 @@ src/Apideck.Test/Model/ApisFilterTests.cs
 src/Apideck.Test/Model/ApplicantSocialLinksTests.cs
 src/Apideck.Test/Model/ApplicantTests.cs
 src/Apideck.Test/Model/ApplicantWebsitesTests.cs
+src/Apideck.Test/Model/ApplicantsFilterTests.cs
 src/Apideck.Test/Model/AtsActivityTests.cs
+src/Apideck.Test/Model/AtsEventTypeTests.cs
 src/Apideck.Test/Model/AuthTypeTests.cs
 src/Apideck.Test/Model/BadRequestResponseTests.cs
 src/Apideck.Test/Model/BalanceSheetAssetsCurrentAssetsAccountsTests.cs
@@ -550,14 +570,14 @@ src/Apideck.Test/Model/ConnectionImportDataTests.cs
 src/Apideck.Test/Model/ConnectionMetadataTests.cs
 src/Apideck.Test/Model/ConnectionStateTests.cs
 src/Apideck.Test/Model/ConnectionTests.cs
+src/Apideck.Test/Model/ConnectionWebhookTests.cs
 src/Apideck.Test/Model/ConnectorDocTests.cs
+src/Apideck.Test/Model/ConnectorEventTests.cs
 src/Apideck.Test/Model/ConnectorOauthScopes1Tests.cs
 src/Apideck.Test/Model/ConnectorOauthScopesTests.cs
 src/Apideck.Test/Model/ConnectorResourceTests.cs
 src/Apideck.Test/Model/ConnectorSettingTests.cs
 src/Apideck.Test/Model/ConnectorStatusTests.cs
-src/Apideck.Test/Model/ConnectorSupportedEventsTests.cs
-src/Apideck.Test/Model/ConnectorSupportedResourcesTests.cs
 src/Apideck.Test/Model/ConnectorTests.cs
 src/Apideck.Test/Model/ConnectorTlsSupportTests.cs
 src/Apideck.Test/Model/ConnectorUnifiedApisTests.cs
@@ -567,7 +587,6 @@ src/Apideck.Test/Model/ConsumerMetadataTests.cs
 src/Apideck.Test/Model/ConsumerRequestCountsInDateRangeResponseDataTests.cs
 src/Apideck.Test/Model/ConsumerRequestCountsInDateRangeResponseTests.cs
 src/Apideck.Test/Model/ConsumerTests.cs
-src/Apideck.Test/Model/ConsumerWebhookTests.cs
 src/Apideck.Test/Model/ContactTests.cs
 src/Apideck.Test/Model/ContactsFilterTests.cs
 src/Apideck.Test/Model/ContactsSortTests.cs
@@ -614,6 +633,7 @@ src/Apideck.Test/Model/CreateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/CreateSupplierResponseTests.cs
 src/Apideck.Test/Model/CreateTaxRateResponseTests.cs
 src/Apideck.Test/Model/CreateTenderResponseTests.cs
+src/Apideck.Test/Model/CreateTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/CreateUploadSessionRequestTests.cs
 src/Apideck.Test/Model/CreateUploadSessionResponseTests.cs
 src/Apideck.Test/Model/CreateUserResponseTests.cs
@@ -661,6 +681,7 @@ src/Apideck.Test/Model/DeleteSharedLinkResponseTests.cs
 src/Apideck.Test/Model/DeleteSupplierResponseTests.cs
 src/Apideck.Test/Model/DeleteTaxRateResponseTests.cs
 src/Apideck.Test/Model/DeleteTenderResponseTests.cs
+src/Apideck.Test/Model/DeleteTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/DeleteUploadSessionResponseTests.cs
 src/Apideck.Test/Model/DeleteUserResponseTests.cs
 src/Apideck.Test/Model/DeleteWebhookResponseTests.cs
@@ -683,6 +704,7 @@ src/Apideck.Test/Model/EmployeeTests.cs
 src/Apideck.Test/Model/EmployeesFilterTests.cs
 src/Apideck.Test/Model/ErrorTests.cs
 src/Apideck.Test/Model/ExecuteWebhookResponseTests.cs
+src/Apideck.Test/Model/FileStorageEventTypeTests.cs
 src/Apideck.Test/Model/FileTypeTests.cs
 src/Apideck.Test/Model/FilesFilterTests.cs
 src/Apideck.Test/Model/FilesSearchTests.cs
@@ -789,6 +811,8 @@ src/Apideck.Test/Model/GetTaxRateResponseTests.cs
 src/Apideck.Test/Model/GetTaxRatesResponseTests.cs
 src/Apideck.Test/Model/GetTenderResponseTests.cs
 src/Apideck.Test/Model/GetTendersResponseTests.cs
+src/Apideck.Test/Model/GetTimeOffRequestResponseTests.cs
+src/Apideck.Test/Model/GetTimeOffRequestsResponseTests.cs
 src/Apideck.Test/Model/GetUploadSessionResponseTests.cs
 src/Apideck.Test/Model/GetUserResponseTests.cs
 src/Apideck.Test/Model/GetUsersResponseTests.cs
@@ -816,8 +840,10 @@ src/Apideck.Test/Model/LeadEventTypeTests.cs
 src/Apideck.Test/Model/LeadTests.cs
 src/Apideck.Test/Model/LeadsFilterTests.cs
 src/Apideck.Test/Model/LeadsSortTests.cs
+src/Apideck.Test/Model/LedgerAccountCategoriesTests.cs
 src/Apideck.Test/Model/LedgerAccountParentAccountTests.cs
 src/Apideck.Test/Model/LedgerAccountTests.cs
+src/Apideck.Test/Model/LinkedConnectorResourceTests.cs
 src/Apideck.Test/Model/LinkedCustomerTests.cs
 src/Apideck.Test/Model/LinkedFolderTests.cs
 src/Apideck.Test/Model/LinkedInvoiceItemTests.cs
@@ -858,7 +884,9 @@ src/Apideck.Test/Model/OrderTendersTests.cs
 src/Apideck.Test/Model/OrderTests.cs
 src/Apideck.Test/Model/OrderTypeTests.cs
 src/Apideck.Test/Model/OwnerTests.cs
+src/Apideck.Test/Model/PaginationCoverageTests.cs
 src/Apideck.Test/Model/PassthroughTests.cs
+src/Apideck.Test/Model/PaymentAllocationsTests.cs
 src/Apideck.Test/Model/PaymentCardTests.cs
 src/Apideck.Test/Model/PaymentRequiredResponseTests.cs
 src/Apideck.Test/Model/PaymentTests.cs
@@ -885,6 +913,7 @@ src/Apideck.Test/Model/ProfitAndLossRecordTests.cs
 src/Apideck.Test/Model/ProfitAndLossSectionTests.cs
 src/Apideck.Test/Model/ProfitAndLossTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
+src/Apideck.Test/Model/ResolveWebhookResponseTests.cs
 src/Apideck.Test/Model/ResourceStatusTests.cs
 src/Apideck.Test/Model/ScheduleTests.cs
 src/Apideck.Test/Model/ScheduleWorkPatternOddWeeksTests.cs
@@ -900,10 +929,15 @@ src/Apideck.Test/Model/SocialLinkTests.cs
 src/Apideck.Test/Model/SortDirectionTests.cs
 src/Apideck.Test/Model/StatusTests.cs
 src/Apideck.Test/Model/SupplierTests.cs
+src/Apideck.Test/Model/SupportedPropertyChildPropertiesTests.cs
+src/Apideck.Test/Model/SupportedPropertyTests.cs
 src/Apideck.Test/Model/TaxRateTests.cs
 src/Apideck.Test/Model/TaxRatesFilterTests.cs
 src/Apideck.Test/Model/TaxTests.cs
 src/Apideck.Test/Model/TenderTests.cs
+src/Apideck.Test/Model/TimeOffRequestNotesTests.cs
+src/Apideck.Test/Model/TimeOffRequestTests.cs
+src/Apideck.Test/Model/TimeOffRequestsFilterTests.cs
 src/Apideck.Test/Model/TooManyRequestsResponseDetailTests.cs
 src/Apideck.Test/Model/TooManyRequestsResponseTests.cs
 src/Apideck.Test/Model/UnauthorizedResponseTests.cs
@@ -950,6 +984,7 @@ src/Apideck.Test/Model/UpdateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/UpdateSupplierResponseTests.cs
 src/Apideck.Test/Model/UpdateTaxRateResponseTests.cs
 src/Apideck.Test/Model/UpdateTenderResponseTests.cs
+src/Apideck.Test/Model/UpdateTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/UpdateUploadSessionResponseTests.cs
 src/Apideck.Test/Model/UpdateUserResponseTests.cs
 src/Apideck.Test/Model/UpdateWebhookRequestTests.cs
@@ -964,6 +999,8 @@ src/Apideck.Test/Model/WebhookEventLogTests.cs
 src/Apideck.Test/Model/WebhookEventLogsFilterServiceTests.cs
 src/Apideck.Test/Model/WebhookEventLogsFilterTests.cs
 src/Apideck.Test/Model/WebhookEventTypeTests.cs
+src/Apideck.Test/Model/WebhookSubscriptionTests.cs
+src/Apideck.Test/Model/WebhookSupportTests.cs
 src/Apideck.Test/Model/WebhookTests.cs
 src/Apideck.Test/Model/WebsiteTests.cs
 src/Apideck/Api/AccountingApi.cs
@@ -1005,7 +1042,6 @@ src/Apideck/Model/Api.cs
 src/Apideck/Model/ApiResource.cs
 src/Apideck/Model/ApiResourceCoverage.cs
 src/Apideck/Model/ApiResourceCoverageCoverage.cs
-src/Apideck/Model/ApiResourceCoverageSupportedFields.cs
 src/Apideck/Model/ApiResourceLinkedResources.cs
 src/Apideck/Model/ApiResources.cs
 src/Apideck/Model/ApiStatus.cs
@@ -1013,7 +1049,9 @@ src/Apideck/Model/ApisFilter.cs
 src/Apideck/Model/Applicant.cs
 src/Apideck/Model/ApplicantSocialLinks.cs
 src/Apideck/Model/ApplicantWebsites.cs
+src/Apideck/Model/ApplicantsFilter.cs
 src/Apideck/Model/AtsActivity.cs
+src/Apideck/Model/AtsEventType.cs
 src/Apideck/Model/AuthType.cs
 src/Apideck/Model/BadRequestResponse.cs
 src/Apideck/Model/BalanceSheet.cs
@@ -1046,15 +1084,15 @@ src/Apideck/Model/ConnectionImportData.cs
 src/Apideck/Model/ConnectionImportDataCredentials.cs
 src/Apideck/Model/ConnectionMetadata.cs
 src/Apideck/Model/ConnectionState.cs
+src/Apideck/Model/ConnectionWebhook.cs
 src/Apideck/Model/Connector.cs
 src/Apideck/Model/ConnectorDoc.cs
+src/Apideck/Model/ConnectorEvent.cs
 src/Apideck/Model/ConnectorOauthScopes.cs
 src/Apideck/Model/ConnectorOauthScopes1.cs
 src/Apideck/Model/ConnectorResource.cs
 src/Apideck/Model/ConnectorSetting.cs
 src/Apideck/Model/ConnectorStatus.cs
-src/Apideck/Model/ConnectorSupportedEvents.cs
-src/Apideck/Model/ConnectorSupportedResources.cs
 src/Apideck/Model/ConnectorTlsSupport.cs
 src/Apideck/Model/ConnectorUnifiedApis.cs
 src/Apideck/Model/ConnectorsFilter.cs
@@ -1063,7 +1101,6 @@ src/Apideck/Model/ConsumerConnection.cs
 src/Apideck/Model/ConsumerMetadata.cs
 src/Apideck/Model/ConsumerRequestCountsInDateRangeResponse.cs
 src/Apideck/Model/ConsumerRequestCountsInDateRangeResponseData.cs
-src/Apideck/Model/ConsumerWebhook.cs
 src/Apideck/Model/Contact.cs
 src/Apideck/Model/ContactsFilter.cs
 src/Apideck/Model/ContactsSort.cs
@@ -1110,6 +1147,7 @@ src/Apideck/Model/CreateSharedLinkResponse.cs
 src/Apideck/Model/CreateSupplierResponse.cs
 src/Apideck/Model/CreateTaxRateResponse.cs
 src/Apideck/Model/CreateTenderResponse.cs
+src/Apideck/Model/CreateTimeOffRequestResponse.cs
 src/Apideck/Model/CreateUploadSessionRequest.cs
 src/Apideck/Model/CreateUploadSessionResponse.cs
 src/Apideck/Model/CreateUserResponse.cs
@@ -1157,6 +1195,7 @@ src/Apideck/Model/DeleteSharedLinkResponse.cs
 src/Apideck/Model/DeleteSupplierResponse.cs
 src/Apideck/Model/DeleteTaxRateResponse.cs
 src/Apideck/Model/DeleteTenderResponse.cs
+src/Apideck/Model/DeleteTimeOffRequestResponse.cs
 src/Apideck/Model/DeleteUploadSessionResponse.cs
 src/Apideck/Model/DeleteUserResponse.cs
 src/Apideck/Model/DeleteWebhookResponse.cs
@@ -1179,6 +1218,7 @@ src/Apideck/Model/EmployeeTeam.cs
 src/Apideck/Model/EmployeesFilter.cs
 src/Apideck/Model/Error.cs
 src/Apideck/Model/ExecuteWebhookResponse.cs
+src/Apideck/Model/FileStorageEventType.cs
 src/Apideck/Model/FileType.cs
 src/Apideck/Model/FilesFilter.cs
 src/Apideck/Model/FilesSearch.cs
@@ -1285,6 +1325,8 @@ src/Apideck/Model/GetTaxRateResponse.cs
 src/Apideck/Model/GetTaxRatesResponse.cs
 src/Apideck/Model/GetTenderResponse.cs
 src/Apideck/Model/GetTendersResponse.cs
+src/Apideck/Model/GetTimeOffRequestResponse.cs
+src/Apideck/Model/GetTimeOffRequestsResponse.cs
 src/Apideck/Model/GetUploadSessionResponse.cs
 src/Apideck/Model/GetUserResponse.cs
 src/Apideck/Model/GetUsersResponse.cs
@@ -1313,7 +1355,9 @@ src/Apideck/Model/LeadEventType.cs
 src/Apideck/Model/LeadsFilter.cs
 src/Apideck/Model/LeadsSort.cs
 src/Apideck/Model/LedgerAccount.cs
+src/Apideck/Model/LedgerAccountCategories.cs
 src/Apideck/Model/LedgerAccountParentAccount.cs
+src/Apideck/Model/LinkedConnectorResource.cs
 src/Apideck/Model/LinkedCustomer.cs
 src/Apideck/Model/LinkedFolder.cs
 src/Apideck/Model/LinkedInvoiceItem.cs
@@ -1354,8 +1398,10 @@ src/Apideck/Model/OrderRefunds.cs
 src/Apideck/Model/OrderTenders.cs
 src/Apideck/Model/OrderType.cs
 src/Apideck/Model/Owner.cs
+src/Apideck/Model/PaginationCoverage.cs
 src/Apideck/Model/Passthrough.cs
 src/Apideck/Model/Payment.cs
+src/Apideck/Model/PaymentAllocations.cs
 src/Apideck/Model/PaymentCard.cs
 src/Apideck/Model/PaymentRequiredResponse.cs
 src/Apideck/Model/PaymentUnit.cs
@@ -1381,6 +1427,7 @@ src/Apideck/Model/ProfitAndLossNetOperatingIncome.cs
 src/Apideck/Model/ProfitAndLossRecord.cs
 src/Apideck/Model/ProfitAndLossSection.cs
 src/Apideck/Model/RequestCountAllocation.cs
+src/Apideck/Model/ResolveWebhookResponse.cs
 src/Apideck/Model/ResourceStatus.cs
 src/Apideck/Model/Schedule.cs
 src/Apideck/Model/ScheduleWorkPattern.cs
@@ -1396,10 +1443,15 @@ src/Apideck/Model/SocialLink.cs
 src/Apideck/Model/SortDirection.cs
 src/Apideck/Model/Status.cs
 src/Apideck/Model/Supplier.cs
+src/Apideck/Model/SupportedProperty.cs
+src/Apideck/Model/SupportedPropertyChildProperties.cs
 src/Apideck/Model/Tax.cs
 src/Apideck/Model/TaxRate.cs
 src/Apideck/Model/TaxRatesFilter.cs
 src/Apideck/Model/Tender.cs
+src/Apideck/Model/TimeOffRequest.cs
+src/Apideck/Model/TimeOffRequestNotes.cs
+src/Apideck/Model/TimeOffRequestsFilter.cs
 src/Apideck/Model/TooManyRequestsResponse.cs
 src/Apideck/Model/TooManyRequestsResponseDetail.cs
 src/Apideck/Model/UnauthorizedResponse.cs
@@ -1446,6 +1498,7 @@ src/Apideck/Model/UpdateSharedLinkResponse.cs
 src/Apideck/Model/UpdateSupplierResponse.cs
 src/Apideck/Model/UpdateTaxRateResponse.cs
 src/Apideck/Model/UpdateTenderResponse.cs
+src/Apideck/Model/UpdateTimeOffRequestResponse.cs
 src/Apideck/Model/UpdateUploadSessionResponse.cs
 src/Apideck/Model/UpdateUserResponse.cs
 src/Apideck/Model/UpdateWebhookRequest.cs
@@ -1461,4 +1514,6 @@ src/Apideck/Model/WebhookEventLogService.cs
 src/Apideck/Model/WebhookEventLogsFilter.cs
 src/Apideck/Model/WebhookEventLogsFilterService.cs
 src/Apideck/Model/WebhookEventType.cs
+src/Apideck/Model/WebhookSubscription.cs
+src/Apideck/Model/WebhookSupport.cs
 src/Apideck/Model/Website.cs

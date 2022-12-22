@@ -21,12 +21,15 @@ Name | Type | Description | Notes
 **DateIssued** | **DateTime** | Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
 **DatePaid** | **DateTime?** | Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD | [optional] 
 **Type** | **string** | Type of payment | [optional] 
+**Account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **LineItems** | [**List&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 **Allocations** | **List&lt;Object&gt;** |  | [optional] 
 **Note** | **string** | Optional note to be associated with the credit note. | [optional] 
 **RowVersion** | **string** |  | [optional] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedBy** | **string** |  | [optional] [readonly] 
+**CreatedBy** | **string** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
+**CreatedAt** | **DateTime** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -46,7 +46,7 @@ namespace Example
             var apiInstance = new ConnectorApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var resourceId = "resourceId_example";  // string | ID of the resource you are acting upon.
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -130,7 +130,7 @@ namespace Example
             var apiInstance = new ConnectorApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var resourceId = "resourceId_example";  // string | ID of the resource you are acting upon.
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -212,7 +212,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ConnectorApi(config);
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
             var filter = new ApisFilter(); // ApisFilter | Apply filters (optional) 
@@ -299,7 +299,7 @@ namespace Example
 
             var apiInstance = new ConnectorApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="connectordocsone"></a>
 # **ConnectorDocsOne**
-> GetConnectorResponse ConnectorDocsOne (string id, string docId, string appId = null)
+> string ConnectorDocsOne (string id, string docId, string appId = null)
 
 Get Connector Doc content
 
@@ -382,12 +382,12 @@ namespace Example
             var apiInstance = new ConnectorApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var docId = "docId_example";  // string | ID of the Doc
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
                 // Get Connector Doc content
-                GetConnectorResponse result = apiInstance.ConnectorDocsOne(id, docId, appId);
+                string result = apiInstance.ConnectorDocsOne(id, docId, appId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetConnectorResponse**](GetConnectorResponse.md)
+**string**
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/markdown, application/json
 
 
 ### HTTP response details
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 <a name="connectorresourcesone"></a>
 # **ConnectorResourcesOne**
-> GetConnectorResourceResponse ConnectorResourcesOne (string id, string resourceId, string appId = null)
+> GetConnectorResourceResponse ConnectorResourcesOne (string id, string resourceId, string appId = null, UnifiedApiId? unifiedApi = null)
 
 Get Connector Resource
 
@@ -466,12 +466,13 @@ namespace Example
             var apiInstance = new ConnectorApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var resourceId = "resourceId_example";  // string | ID of the resource you are acting upon.
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var unifiedApi = (UnifiedApiId) "vault";  // UnifiedApiId? | Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs (optional) 
 
             try
             {
                 // Get Connector Resource
-                GetConnectorResourceResponse result = apiInstance.ConnectorResourcesOne(id, resourceId, appId);
+                GetConnectorResourceResponse result = apiInstance.ConnectorResourcesOne(id, resourceId, appId, unifiedApi);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -492,6 +493,7 @@ Name | Type | Description  | Notes
  **id** | **string**| ID of the record you are acting upon. | 
  **resourceId** | **string**| ID of the resource you are acting upon. | 
  **appId** | **string**| The ID of your Unify application | [optional] 
+ **unifiedApi** | **UnifiedApiId?**| Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs | [optional] 
 
 ### Return type
 
@@ -548,7 +550,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ConnectorApi(config);
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
             var filter = new ConnectorsFilter(); // ConnectorsFilter | Apply filters (optional) 
@@ -635,7 +637,7 @@ namespace Example
 
             var apiInstance = new ConnectorApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {

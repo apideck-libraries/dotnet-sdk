@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [readonly] 
-**FirstName** | **string** |  | 
-**LastName** | **string** |  | 
+**FirstName** | **string** |  | [optional] 
+**LastName** | **string** |  | [optional] 
 **MiddleName** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
 **PreferredName** | **string** |  | [optional] 
@@ -16,12 +16,15 @@ Name | Type | Description | Notes
 **MaritalStatus** | **string** |  | [optional] 
 **Partner** | [**EmployeePartner**](EmployeePartner.md) |  | [optional] 
 **Division** | **string** | The division the user is currently in. | [optional] 
+**DivisionId** | **string** | Unique identifier of the division this employee belongs to. | [optional] 
 **Department** | **string** | The department the user is currently in. | [optional] 
+**DepartmentId** | **string** | Unique identifier of the department ID this employee belongs to. | [optional] 
 **Team** | [**EmployeeTeam**](EmployeeTeam.md) |  | [optional] 
 **CompanyId** | **string** |  | [optional] 
 **CompanyName** | **string** |  | [optional] 
 **EmploymentStartDate** | **string** | A Start Date is the date that the employee started working at the company | [optional] 
 **EmploymentEndDate** | **string** | A Start Date is the date that the employee ended working at the company | [optional] 
+**LeavingReason** | **string** | The reason because the employment ended | [optional] 
 **EmployeeNumber** | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 **EmploymentStatus** | **string** |  | [optional] 
 **EmploymentRole** | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
@@ -39,8 +42,9 @@ Name | Type | Description | Notes
 **Nationalities** | **List&lt;string&gt;** |  | [optional] 
 **PhotoUrl** | **string** |  | [optional] 
 **Timezone** | **string** |  | [optional] 
-**Source** | **string** |  | [optional] 
-**SourceId** | **string** |  | [optional] 
+**Source** | **string** | When the employee is imported as a new hire, this field indicates what system (e.g. the name of the ATS) this employee was imported from. | [optional] 
+**SourceId** | **string** | Unique identifier of the employee in the system this employee was imported from (e.g. the ID in the ATS). | [optional] 
+**RecordUrl** | **string** |  | [optional] 
 **Jobs** | [**List&lt;EmployeeJobs&gt;**](EmployeeJobs.md) |  | [optional] 
 **Compensations** | [**List&lt;EmployeeCompensations&gt;**](EmployeeCompensations.md) |  | [optional] 
 **WorksRemote** | **bool?** | Indicates whether the employee works remote | [optional] 

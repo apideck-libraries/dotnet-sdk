@@ -5,11 +5,11 @@ All URIs are relative to *https://unify.apideck.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**EventLogsAll**](WebhookApi.md#eventlogsall) | **GET** /webhook/logs | List event logs
-[**WebhooksAdd**](WebhookApi.md#webhooksadd) | **POST** /webhook/webhooks | Create webhook
-[**WebhooksAll**](WebhookApi.md#webhooksall) | **GET** /webhook/webhooks | List webhooks
-[**WebhooksDelete**](WebhookApi.md#webhooksdelete) | **DELETE** /webhook/webhooks/{id} | Delete webhook
-[**WebhooksOne**](WebhookApi.md#webhooksone) | **GET** /webhook/webhooks/{id} | Get webhook
-[**WebhooksUpdate**](WebhookApi.md#webhooksupdate) | **PATCH** /webhook/webhooks/{id} | Update webhook
+[**WebhooksAdd**](WebhookApi.md#webhooksadd) | **POST** /webhook/webhooks | Create webhook subscription
+[**WebhooksAll**](WebhookApi.md#webhooksall) | **GET** /webhook/webhooks | List webhook subscriptions
+[**WebhooksDelete**](WebhookApi.md#webhooksdelete) | **DELETE** /webhook/webhooks/{id} | Delete webhook subscription
+[**WebhooksOne**](WebhookApi.md#webhooksone) | **GET** /webhook/webhooks/{id} | Get webhook subscription
+[**WebhooksUpdate**](WebhookApi.md#webhooksupdate) | **PATCH** /webhook/webhooks/{id} | Update webhook subscription
 
 
 <a name="eventlogsall"></a>
@@ -42,7 +42,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new WebhookApi(config);
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
             var filter = new WebhookEventLogsFilter(); // WebhookEventLogsFilter | Filter results (optional) 
@@ -104,9 +104,9 @@ Name | Type | Description  | Notes
 # **WebhooksAdd**
 > CreateWebhookResponse WebhooksAdd (CreateWebhookRequest createWebhookRequest, string appId = null)
 
-Create webhook
+Create webhook subscription
 
-Create webhook
+Create a webhook subscription to receive events
 
 ### Example
 ```csharp
@@ -131,11 +131,11 @@ namespace Example
 
             var apiInstance = new WebhookApi(config);
             var createWebhookRequest = new CreateWebhookRequest(); // CreateWebhookRequest | 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
-                // Create webhook
+                // Create webhook subscription
                 CreateWebhookResponse result = apiInstance.WebhooksAdd(createWebhookRequest, appId);
                 Debug.WriteLine(result);
             }
@@ -188,9 +188,9 @@ Name | Type | Description  | Notes
 # **WebhooksAll**
 > GetWebhooksResponse WebhooksAll (string appId = null, string cursor = null, int? limit = null)
 
-List webhooks
+List webhook subscriptions
 
-List webhooks
+List all webhook subscriptions
 
 ### Example
 ```csharp
@@ -214,13 +214,13 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new WebhookApi(config);
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
 
             try
             {
-                // List webhooks
+                // List webhook subscriptions
                 GetWebhooksResponse result = apiInstance.WebhooksAll(appId, cursor, limit);
                 Debug.WriteLine(result);
             }
@@ -274,9 +274,9 @@ Name | Type | Description  | Notes
 # **WebhooksDelete**
 > DeleteWebhookResponse WebhooksDelete (string id, string appId = null)
 
-Delete webhook
+Delete webhook subscription
 
-Delete webhook
+Delete a webhook subscription
 
 ### Example
 ```csharp
@@ -301,11 +301,11 @@ namespace Example
 
             var apiInstance = new WebhookApi(config);
             var id = "id_example";  // string | JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
-                // Delete webhook
+                // Delete webhook subscription
                 DeleteWebhookResponse result = apiInstance.WebhooksDelete(id, appId);
                 Debug.WriteLine(result);
             }
@@ -358,9 +358,9 @@ Name | Type | Description  | Notes
 # **WebhooksOne**
 > GetWebhookResponse WebhooksOne (string id, string appId = null)
 
-Get webhook
+Get webhook subscription
 
-Get webhook
+Get the webhook subscription details
 
 ### Example
 ```csharp
@@ -385,11 +385,11 @@ namespace Example
 
             var apiInstance = new WebhookApi(config);
             var id = "id_example";  // string | JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
-                // Get webhook
+                // Get webhook subscription
                 GetWebhookResponse result = apiInstance.WebhooksOne(id, appId);
                 Debug.WriteLine(result);
             }
@@ -442,9 +442,9 @@ Name | Type | Description  | Notes
 # **WebhooksUpdate**
 > UpdateWebhookResponse WebhooksUpdate (string id, UpdateWebhookRequest updateWebhookRequest, string appId = null)
 
-Update webhook
+Update webhook subscription
 
-Update webhook
+Update a webhook subscription
 
 ### Example
 ```csharp
@@ -470,11 +470,11 @@ namespace Example
             var apiInstance = new WebhookApi(config);
             var id = "id_example";  // string | JWT Webhook token that represents the unifiedApi and applicationId associated to the event source.
             var updateWebhookRequest = new UpdateWebhookRequest(); // UpdateWebhookRequest | 
-            var appId = "appId_example";  // string | The ID of your Unify application (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
-                // Update webhook
+                // Update webhook subscription
                 UpdateWebhookResponse result = apiInstance.WebhooksUpdate(id, updateWebhookRequest, appId);
                 Debug.WriteLine(result);
             }

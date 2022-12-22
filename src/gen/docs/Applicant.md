@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Headline** | **string** | Typically a list of previous companies where the contact has worked or schools that the contact has attended | [optional] 
 **Title** | **string** |  | [optional] 
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
+**CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 **Addresses** | [**List&lt;Address&gt;**](Address.md) |  | [optional] 
 **Websites** | [**List&lt;ApplicantWebsites&gt;**](ApplicantWebsites.md) |  | [optional] 
@@ -42,6 +43,8 @@ Name | Type | Description | Notes
 **Deleted** | **bool?** |  | [optional] 
 **DeletedBy** | **string** |  | [optional] [readonly] 
 **DeletedAt** | **DateTime?** |  | [optional] [readonly] 
+**UpdatedBy** | **string** |  | [optional] [readonly] 
+**CreatedBy** | **string** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 
 

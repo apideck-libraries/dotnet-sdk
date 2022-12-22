@@ -15,11 +15,17 @@ Name | Type | Description | Notes
 **Quantity** | **decimal?** |  | [optional] 
 **UnitPrice** | **decimal?** |  | [optional] 
 **UnitOfMeasure** | **string** | Description of the unit type the item is sold as, ie: kg, hour. | [optional] 
-**DiscountPercentage** | **decimal?** | Discount percentage | [optional] 
+**DiscountPercentage** | **decimal?** | Discount percentage applied to the line item when supported downstream. | [optional] 
+**LocationId** | **string** | Location id | [optional] 
+**DepartmentId** | **string** | Department id | [optional] 
 **Item** | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 **TaxRate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **RowVersion** | **string** |  | [optional] 
+**UpdatedBy** | **string** |  | [optional] [readonly] 
+**CreatedBy** | **string** |  | [optional] [readonly] 
+**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedAt** | **DateTime** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

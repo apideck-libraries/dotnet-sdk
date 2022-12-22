@@ -1,4 +1,4 @@
-# Apideck.Model.ConnectorSupportedResources
+# Apideck.Model.LinkedConnectorResource
 
 ## Properties
 

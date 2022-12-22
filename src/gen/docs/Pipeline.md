@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Currency** | **Currency** |  | [optional] 
 **Archived** | **bool** |  | [optional] 
+**Active** | **bool** |  | [optional] 
 **DisplayOrder** | **int** |  | [optional] 
+**WinProbabilityEnabled** | **bool** |  | [optional] 
 **Stages** | [**List&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 

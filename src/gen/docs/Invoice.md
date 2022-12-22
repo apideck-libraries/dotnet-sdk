@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **SubTotal** | **decimal?** | Sub-total amount, normally before tax. | [optional] 
 **TotalTax** | **decimal?** | Total tax amount applied to this invoice. | [optional] 
 **TaxCode** | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
+**DiscountPercentage** | **decimal?** | Discount percentage applied to this invoice. | [optional] 
 **Total** | **decimal?** | Total amount of invoice, including tax. | [optional] 
 **Balance** | **decimal?** | Balance of invoice due. | [optional] 
 **Deposit** | **decimal?** | Amount of deposit made to this invoice. | [optional] 

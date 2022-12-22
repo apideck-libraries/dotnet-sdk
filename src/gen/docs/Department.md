@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] [readonly] 
+**ParentId** | **string** | Parent ID | [optional] [readonly] 
 **Name** | **string** | Department name | [optional] 
 **Code** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 

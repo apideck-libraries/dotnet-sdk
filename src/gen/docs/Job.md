@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | [optional] 
 **Title** | **string** |  | [optional] 
 **Sequence** | **int** | Sequence in relation to other jobs. | [optional] 
-**Visibility** | **List&lt;string&gt;** |  | [optional] 
+**Visibility** | **string** | The visibility of the job | [optional] 
 **Status** | **JobStatus** |  | [optional] 
 **Code** | **string** | The code of the job. | [optional] 
 **Language** | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 

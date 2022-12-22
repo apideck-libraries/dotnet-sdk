@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Unique identifier representing the entity | [optional] [readonly] 
+**DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **TotalAmount** | **decimal** | Amount of payment | 
@@ -16,12 +17,16 @@ Name | Type | Description | Notes
 **Account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **TransactionDate** | **DateTime** | Date transaction was entered - YYYY:MM::DDThh:mm:ss.sTZD | 
 **Customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+**Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 **Reconciled** | **bool** | Payment has been reconciled | [optional] 
 **Status** | **string** | Status of payment | [optional] 
 **Type** | **string** | Type of payment | [optional] 
-**Allocations** | **List&lt;Object&gt;** |  | [optional] 
+**Allocations** | [**List&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 **Note** | **string** | Optional note to be associated with the payment. | [optional] 
 **RowVersion** | **string** |  | [optional] 
+**DisplayId** | **string** | Payment id to be displayed. | [optional] 
+**UpdatedBy** | **string** |  | [optional] [readonly] 
+**CreatedBy** | **string** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime** |  | [optional] [readonly] 
 

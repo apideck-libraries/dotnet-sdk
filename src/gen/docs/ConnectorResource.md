@@ -10,11 +10,14 @@ Name | Type | Description | Notes
 **DownstreamName** | **string** | Name of the resource in the Connector&#39;s API (downstream) | [optional] 
 **Status** | **ResourceStatus** |  | [optional] 
 **PaginationSupported** | **bool** | Indicates if pagination (cursor and limit parameters) is supported on the list endpoint of the resource. | [optional] 
+**Pagination** | [**PaginationCoverage**](PaginationCoverage.md) |  | [optional] 
+**CustomFieldsSupported** | **bool** | Indicates if custom fields are supported on this resource. | [optional] 
 **SupportedOperations** | **List&lt;string&gt;** | List of supported operations on the resource. | [optional] 
+**DownstreamUnsupportedOperations** | **List&lt;string&gt;** | List of operations that are not supported on the downstream. | [optional] 
 **SupportedFilters** | **List&lt;string&gt;** | Supported filters on the list endpoint of the resource. | [optional] 
 **SupportedSortBy** | **List&lt;string&gt;** | Supported sorting properties on the list endpoint of the resource. | [optional] 
-**SupportedFields** | [**List&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields on the detail endpoint. | [optional] 
-**SupportedListFields** | [**List&lt;ApiResourceCoverageSupportedFields&gt;**](ApiResourceCoverageSupportedFields.md) | Supported fields on the list endpoint. | [optional] 
+**SupportedFields** | [**List&lt;SupportedProperty&gt;**](SupportedProperty.md) | Supported fields on the detail endpoint. | [optional] 
+**SupportedListFields** | [**List&lt;SupportedProperty&gt;**](SupportedProperty.md) | Supported fields on the list endpoint. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
