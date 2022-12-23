@@ -66,17 +66,17 @@ namespace Apideck.Model
         [DataMember(Name = "mode", EmitDefaultValue = false)]
         public ModeEnum? Mode { get; set; }
         /// <summary>
-        /// Received events are scoped to consumer or across integration.
+        /// Received events are scoped to connection or across integration.
         /// </summary>
-        /// <value>Received events are scoped to consumer or across integration.</value>
+        /// <value>Received events are scoped to connection or across integration.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SubscriptionLevelEnum
         {
             /// <summary>
-            /// Enum Consumer for value: consumer
+            /// Enum Connection for value: connection
             /// </summary>
-            [EnumMember(Value = "consumer")]
-            Consumer = 1,
+            [EnumMember(Value = "connection")]
+            Connection = 1,
 
             /// <summary>
             /// Enum Integration for value: integration
@@ -88,9 +88,9 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Received events are scoped to consumer or across integration.
+        /// Received events are scoped to connection or across integration.
         /// </summary>
-        /// <value>Received events are scoped to consumer or across integration.</value>
+        /// <value>Received events are scoped to connection or across integration.</value>
         [DataMember(Name = "subscription_level", EmitDefaultValue = false)]
         public SubscriptionLevelEnum? SubscriptionLevel { get; set; }
         /// <summary>
@@ -125,14 +125,22 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="WebhookSupport" /> class.
         /// </summary>
         /// <param name="mode">Mode of the webhook support..</param>
-        /// <param name="subscriptionLevel">Received events are scoped to consumer or across integration..</param>
+        /// <param name="subscriptionLevel">Received events are scoped to connection or across integration..</param>
         /// <param name="managedVia">How the subscription is managed in the downstream..</param>
-        public WebhookSupport(ModeEnum? mode = default(ModeEnum?), SubscriptionLevelEnum? subscriptionLevel = default(SubscriptionLevelEnum?), ManagedViaEnum? managedVia = default(ManagedViaEnum?))
+        /// <param name="virtualWebhooks">virtualWebhooks.</param>
+        public WebhookSupport(ModeEnum? mode = default(ModeEnum?), SubscriptionLevelEnum? subscriptionLevel = default(SubscriptionLevelEnum?), ManagedViaEnum? managedVia = default(ManagedViaEnum?), VirtualWebhooks virtualWebhooks = default(VirtualWebhooks))
         {
             this.Mode = mode;
             this.SubscriptionLevel = subscriptionLevel;
             this.ManagedVia = managedVia;
+            this.VirtualWebhooks = virtualWebhooks;
         }
+
+        /// <summary>
+        /// Gets or Sets VirtualWebhooks
+        /// </summary>
+        [DataMember(Name = "virtual_webhooks", EmitDefaultValue = false)]
+        public VirtualWebhooks VirtualWebhooks { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -145,6 +153,7 @@ namespace Apideck.Model
             sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("  SubscriptionLevel: ").Append(SubscriptionLevel).Append("\n");
             sb.Append("  ManagedVia: ").Append(ManagedVia).Append("\n");
+            sb.Append("  VirtualWebhooks: ").Append(VirtualWebhooks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -191,6 +200,11 @@ namespace Apideck.Model
                 (
                     this.ManagedVia == input.ManagedVia ||
                     this.ManagedVia.Equals(input.ManagedVia)
+                ) && 
+                (
+                    this.VirtualWebhooks == input.VirtualWebhooks ||
+                    (this.VirtualWebhooks != null &&
+                    this.VirtualWebhooks.Equals(input.VirtualWebhooks))
                 );
         }
 
@@ -206,6 +220,10 @@ namespace Apideck.Model
                 hashCode = (hashCode * 59) + this.Mode.GetHashCode();
                 hashCode = (hashCode * 59) + this.SubscriptionLevel.GetHashCode();
                 hashCode = (hashCode * 59) + this.ManagedVia.GetHashCode();
+                if (this.VirtualWebhooks != null)
+                {
+                    hashCode = (hashCode * 59) + this.VirtualWebhooks.GetHashCode();
+                }
                 return hashCode;
             }
         }

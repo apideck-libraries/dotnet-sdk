@@ -412,6 +412,7 @@ docs/ProfitAndLossNetOperatingIncome.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossSection.md
 docs/RequestCountAllocation.md
+docs/RequestRate.md
 docs/ResolveWebhookResponse.md
 docs/ResourceStatus.md
 docs/Schedule.md
@@ -493,6 +494,7 @@ docs/UploadSession.md
 docs/User.md
 docs/VaultApi.md
 docs/VaultEventType.md
+docs/VirtualWebhooks.md
 docs/WalletDetails.md
 docs/Webhook.md
 docs/WebhookApi.md
@@ -913,6 +915,7 @@ src/Apideck.Test/Model/ProfitAndLossRecordTests.cs
 src/Apideck.Test/Model/ProfitAndLossSectionTests.cs
 src/Apideck.Test/Model/ProfitAndLossTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
+src/Apideck.Test/Model/RequestRateTests.cs
 src/Apideck.Test/Model/ResolveWebhookResponseTests.cs
 src/Apideck.Test/Model/ResourceStatusTests.cs
 src/Apideck.Test/Model/ScheduleTests.cs
@@ -992,6 +995,7 @@ src/Apideck.Test/Model/UpdateWebhookResponseTests.cs
 src/Apideck.Test/Model/UploadSessionTests.cs
 src/Apideck.Test/Model/UserTests.cs
 src/Apideck.Test/Model/VaultEventTypeTests.cs
+src/Apideck.Test/Model/VirtualWebhooksTests.cs
 src/Apideck.Test/Model/WalletDetailsTests.cs
 src/Apideck.Test/Model/WebhookEventLogAttemptsTests.cs
 src/Apideck.Test/Model/WebhookEventLogServiceTests.cs
@@ -1427,6 +1431,7 @@ src/Apideck/Model/ProfitAndLossNetOperatingIncome.cs
 src/Apideck/Model/ProfitAndLossRecord.cs
 src/Apideck/Model/ProfitAndLossSection.cs
 src/Apideck/Model/RequestCountAllocation.cs
+src/Apideck/Model/RequestRate.cs
 src/Apideck/Model/ResolveWebhookResponse.cs
 src/Apideck/Model/ResourceStatus.cs
 src/Apideck/Model/Schedule.cs
@@ -1506,6 +1511,7 @@ src/Apideck/Model/UpdateWebhookResponse.cs
 src/Apideck/Model/UploadSession.cs
 src/Apideck/Model/User.cs
 src/Apideck/Model/VaultEventType.cs
+src/Apideck/Model/VirtualWebhooks.cs
 src/Apideck/Model/WalletDetails.cs
 src/Apideck/Model/Webhook.cs
 src/Apideck/Model/WebhookEventLog.cs

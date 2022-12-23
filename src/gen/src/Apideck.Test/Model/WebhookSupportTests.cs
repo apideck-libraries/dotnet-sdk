@@ -80,6 +80,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'ManagedVia'
         }
+        /// <summary>
+        /// Test the property 'VirtualWebhooks'
+        /// </summary>
+        [Fact]
+        public void VirtualWebhooksTest()
+        {
+            // TODO unit test for the property 'VirtualWebhooks'
+        }
 
     }
 
