@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// WebhookSupport
+    /// How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.
     /// </summary>
     [DataContract(Name = "WebhookSupport")]
     public partial class WebhookSupport : IEquatable<WebhookSupport>, IValidatableObject

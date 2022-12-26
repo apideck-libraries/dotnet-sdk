@@ -191,10 +191,10 @@ namespace Apideck.Model
         /// <param name="supportedResources">List of resources that are supported on the connector..</param>
         /// <param name="configurableResources">List of resources that have settings that can be configured..</param>
         /// <param name="supportedEvents">List of events that are supported on the connector across all Unified APIs..</param>
-        /// <param name="webhookSupport">How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling..</param>
+        /// <param name="webhookSupport">webhookSupport.</param>
         /// <param name="docs">docs.</param>
         /// <param name="tlsSupport">tlsSupport.</param>
-        public Connector(string name = default(string), ConnectorStatus? status = default(ConnectorStatus?), string description = default(string), string iconUrl = default(string), string logoUrl = default(string), string websiteUrl = default(string), string signupUrl = default(string), bool freeTrialAvailable = default(bool), List<ConnectorOauthScopes> oauthScopes = default(List<ConnectorOauthScopes>), bool hasSandboxCredentials = default(bool), List<ConnectorSetting> settings = default(List<ConnectorSetting>), string serviceId = default(string), List<ConnectorUnifiedApis> unifiedApis = default(List<ConnectorUnifiedApis>), List<LinkedConnectorResource> supportedResources = default(List<LinkedConnectorResource>), List<string> configurableResources = default(List<string>), List<ConnectorEvent> supportedEvents = default(List<ConnectorEvent>), List<WebhookSupport> webhookSupport = default(List<WebhookSupport>), List<ConnectorDoc> docs = default(List<ConnectorDoc>), ConnectorTlsSupport tlsSupport = default(ConnectorTlsSupport))
+        public Connector(string name = default(string), ConnectorStatus? status = default(ConnectorStatus?), string description = default(string), string iconUrl = default(string), string logoUrl = default(string), string websiteUrl = default(string), string signupUrl = default(string), bool freeTrialAvailable = default(bool), List<ConnectorOauthScopes> oauthScopes = default(List<ConnectorOauthScopes>), bool hasSandboxCredentials = default(bool), List<ConnectorSetting> settings = default(List<ConnectorSetting>), string serviceId = default(string), List<ConnectorUnifiedApis> unifiedApis = default(List<ConnectorUnifiedApis>), List<LinkedConnectorResource> supportedResources = default(List<LinkedConnectorResource>), List<string> configurableResources = default(List<string>), List<ConnectorEvent> supportedEvents = default(List<ConnectorEvent>), WebhookSupport webhookSupport = default(WebhookSupport), List<ConnectorDoc> docs = default(List<ConnectorDoc>), ConnectorTlsSupport tlsSupport = default(ConnectorTlsSupport))
         {
             this.Name = name;
             this.Status = status;
@@ -381,11 +381,10 @@ namespace Apideck.Model
         public List<ConnectorEvent> SupportedEvents { get; set; }
 
         /// <summary>
-        /// How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.
+        /// Gets or Sets WebhookSupport
         /// </summary>
-        /// <value>How webhooks are supported for the connector. Sometimes the connector natively supports webhooks, other times Apideck virtualizes them based on polling.</value>
         [DataMember(Name = "webhook_support", EmitDefaultValue = false)]
-        public List<WebhookSupport> WebhookSupport { get; set; }
+        public WebhookSupport WebhookSupport { get; set; }
 
         /// <summary>
         /// Gets or Sets Docs
@@ -582,9 +581,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.WebhookSupport == input.WebhookSupport ||
-                    this.WebhookSupport != null &&
-                    input.WebhookSupport != null &&
-                    this.WebhookSupport.SequenceEqual(input.WebhookSupport)
+                    (this.WebhookSupport != null &&
+                    this.WebhookSupport.Equals(input.WebhookSupport))
                 ) && 
                 (
                     this.Docs == input.Docs ||
