@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **AllowsTipping** | **bool** | Allow tipping on payment from tender | [optional] [default to true]
 **UpdatedBy** | **string** |  | [optional] [readonly] 
 **CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **BillNumber** | **string** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 
 **CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 
 **RowVersion** | **string** |  | [optional] 
 

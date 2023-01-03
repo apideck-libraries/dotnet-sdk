@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **DisplayOrder** | **int** |  | [optional] 
 **WinProbabilityEnabled** | **bool** |  | [optional] 
 **Stages** | [**List&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
-**UpdatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
 **CreatedAt** | **DateTime** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

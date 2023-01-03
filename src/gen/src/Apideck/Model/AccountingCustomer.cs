@@ -287,8 +287,8 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
-        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
-        public DateTime UpdatedAt { get; private set; }
+        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
+        public DateTime? UpdatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as UpdatedAt should not be serialized given that it's read-only.
