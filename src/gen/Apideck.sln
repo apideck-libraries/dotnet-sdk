@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apideck", "src\Apideck\Apideck.csproj", "{A37A72F1-F32E-40B9-828F-D6FB8B9CE330}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apideck", "src\Apideck\Apideck.csproj", "{95879390-2431-4602-A4A3-F8D97D902EA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apideck.Test", "src\Apideck.Test\Apideck.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A37A72F1-F32E-40B9-828F-D6FB8B9CE330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A37A72F1-F32E-40B9-828F-D6FB8B9CE330}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A37A72F1-F32E-40B9-828F-D6FB8B9CE330}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A37A72F1-F32E-40B9-828F-D6FB8B9CE330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95879390-2431-4602-A4A3-F8D97D902EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95879390-2431-4602-A4A3-F8D97D902EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95879390-2431-4602-A4A3-F8D97D902EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95879390-2431-4602-A4A3-F8D97D902EA6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
