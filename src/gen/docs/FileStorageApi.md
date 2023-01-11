@@ -949,7 +949,7 @@ Name | Type | Description  | Notes
 
 <a name="filesall"></a>
 # **FilesAll**
-> GetFilesResponse FilesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, FilesFilter filter = null, FilesSort sort = null)
+> GetFilesResponse FilesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, FilesFilter filter = null, FilesSort sort = null, Dictionary<string, Object> passThrough = null)
 
 List Files
 
@@ -985,11 +985,12 @@ namespace Example
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
             var filter = new FilesFilter(); // FilesFilter | Apply filters (optional) 
             var sort = new FilesSort(); // FilesSort | Apply sorting (optional) 
+            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters (optional) 
 
             try
             {
                 // List Files
-                GetFilesResponse result = apiInstance.FilesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
+                GetFilesResponse result = apiInstance.FilesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1015,6 +1016,7 @@ Name | Type | Description  | Notes
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
  **filter** | [**FilesFilter**](FilesFilter.md)| Apply filters | [optional] 
  **sort** | [**FilesSort**](FilesSort.md)| Apply sorting | [optional] 
+ **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional] 
 
 ### Return type
 
@@ -1313,7 +1315,7 @@ Name | Type | Description  | Notes
 
 <a name="filessearch"></a>
 # **FilesSearch**
-> GetFilesResponse FilesSearch (FilesSearch filesSearch, string consumerId = null, string appId = null, string serviceId = null)
+> GetFilesResponse FilesSearch (FilesSearch filesSearch, string consumerId = null, string appId = null, string serviceId = null, Dictionary<string, Object> passThrough = null)
 
 Search Files
 
@@ -1345,11 +1347,12 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters (optional) 
 
             try
             {
                 // Search Files
-                GetFilesResponse result = apiInstance.FilesSearch(filesSearch, consumerId, appId, serviceId);
+                GetFilesResponse result = apiInstance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1371,6 +1374,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional] 
 
 ### Return type
 

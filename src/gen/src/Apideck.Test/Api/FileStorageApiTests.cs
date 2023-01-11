@@ -235,7 +235,8 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //FilesFilter filter = null;
             //FilesSort sort = null;
-            //var response = instance.FilesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
+            //Dictionary<string, Object> passThrough = null;
+            //var response = instance.FilesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough);
             //Assert.IsType<GetFilesResponse>(response);
         }
 
@@ -297,7 +298,8 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.FilesSearch(filesSearch, consumerId, appId, serviceId);
+            //Dictionary<string, Object> passThrough = null;
+            //var response = instance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough);
             //Assert.IsType<GetFilesResponse>(response);
         }
 

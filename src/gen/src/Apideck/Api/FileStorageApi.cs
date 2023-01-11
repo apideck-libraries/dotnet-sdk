@@ -343,8 +343,9 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>GetFilesResponse</returns>
-        GetFilesResponse FilesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort));
+        GetFilesResponse FilesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>));
 
         /// <summary>
         /// List Files
@@ -361,8 +362,9 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>ApiResponse of GetFilesResponse</returns>
-        ApiResponse<GetFilesResponse> FilesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort));
+        ApiResponse<GetFilesResponse> FilesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>));
         /// <summary>
         /// Delete File
         /// </summary>
@@ -459,8 +461,9 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>GetFilesResponse</returns>
-        GetFilesResponse FilesSearch(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        GetFilesResponse FilesSearch(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>));
 
         /// <summary>
         /// Search Files
@@ -473,8 +476,9 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>ApiResponse of GetFilesResponse</returns>
-        ApiResponse<GetFilesResponse> FilesSearchWithHttpInfo(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        ApiResponse<GetFilesResponse> FilesSearchWithHttpInfo(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>));
         /// <summary>
         /// Create Folder
         /// </summary>
@@ -1239,9 +1243,10 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFilesResponse</returns>
-        System.Threading.Tasks.Task<GetFilesResponse> FilesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetFilesResponse> FilesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Files
@@ -1258,9 +1263,10 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFilesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFilesResponse>> FilesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetFilesResponse>> FilesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete File
         /// </summary>
@@ -1363,9 +1369,10 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFilesResponse</returns>
-        System.Threading.Tasks.Task<GetFilesResponse> FilesSearchAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetFilesResponse> FilesSearchAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Search Files
@@ -1378,9 +1385,10 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFilesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetFilesResponse>> FilesSearchWithHttpInfoAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetFilesResponse>> FilesSearchWithHttpInfoAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Folder
         /// </summary>
@@ -3965,10 +3973,11 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>GetFilesResponse</returns>
-        public GetFilesResponse FilesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort))
+        public GetFilesResponse FilesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>))
         {
-            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = FilesAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
+            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = FilesAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough);
             return localVarResponse.Data;
         }
 
@@ -3984,8 +3993,9 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>ApiResponse of GetFilesResponse</returns>
-        public Apideck.Client.ApiResponse<GetFilesResponse> FilesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort))
+        public Apideck.Client.ApiResponse<GetFilesResponse> FilesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -4047,6 +4057,10 @@ namespace Apideck.Api
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort[direction]", sort.Direction));
                 }
             }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
+            }
             if (consumerId != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
@@ -4092,11 +4106,12 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFilesResponse</returns>
-        public async System.Threading.Tasks.Task<GetFilesResponse> FilesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetFilesResponse> FilesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = await FilesAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = await FilesAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4112,9 +4127,10 @@ namespace Apideck.Api
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFilesResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetFilesResponse>> FilesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetFilesResponse>> FilesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), FilesFilter filter = default(FilesFilter), FilesSort sort = default(FilesSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -4158,6 +4174,10 @@ namespace Apideck.Api
             if (sort != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (consumerId != null)
             {
@@ -4767,10 +4787,11 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>GetFilesResponse</returns>
-        public GetFilesResponse FilesSearch(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        public GetFilesResponse FilesSearch(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>))
         {
-            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = FilesSearchWithHttpInfo(filesSearch, consumerId, appId, serviceId);
+            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = FilesSearchWithHttpInfo(filesSearch, consumerId, appId, serviceId, passThrough);
             return localVarResponse.Data;
         }
 
@@ -4782,8 +4803,9 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <returns>ApiResponse of GetFilesResponse</returns>
-        public Apideck.Client.ApiResponse<GetFilesResponse> FilesSearchWithHttpInfo(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        public Apideck.Client.ApiResponse<GetFilesResponse> FilesSearchWithHttpInfo(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>))
         {
             // verify the required parameter 'filesSearch' is set
             if (filesSearch == null)
@@ -4814,6 +4836,10 @@ namespace Apideck.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
+            }
             if (consumerId != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
@@ -4856,11 +4882,12 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetFilesResponse</returns>
-        public async System.Threading.Tasks.Task<GetFilesResponse> FilesSearchAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetFilesResponse> FilesSearchAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = await FilesSearchWithHttpInfoAsync(filesSearch, consumerId, appId, serviceId, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetFilesResponse> localVarResponse = await FilesSearchWithHttpInfoAsync(filesSearch, consumerId, appId, serviceId, passThrough, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4872,9 +4899,10 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFilesResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetFilesResponse>> FilesSearchWithHttpInfoAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetFilesResponse>> FilesSearchWithHttpInfoAsync(FilesSearch filesSearch, string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'filesSearch' is set
             if (filesSearch == null)
@@ -4906,6 +4934,10 @@ namespace Apideck.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
+            }
             if (consumerId != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
