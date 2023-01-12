@@ -89,6 +89,7 @@ docs/CreateApplicantResponse.md
 docs/CreateBillResponse.md
 docs/CreateCompanyResponse.md
 docs/CreateConnectionResponse.md
+docs/CreateConsumerResponse.md
 docs/CreateContactResponse.md
 docs/CreateCreditNoteResponse.md
 docs/CreateCustomerResponse.md
@@ -144,6 +145,7 @@ docs/Deduction.md
 docs/DeleteActivityResponse.md
 docs/DeleteBillResponse.md
 docs/DeleteCompanyResponse.md
+docs/DeleteConsumerResponse.md
 docs/DeleteContactResponse.md
 docs/DeleteCreditNoteResponse.md
 docs/DeleteCustomerResponse.md
@@ -451,6 +453,8 @@ docs/UpdateActivityResponse.md
 docs/UpdateBillResponse.md
 docs/UpdateCompanyResponse.md
 docs/UpdateConnectionResponse.md
+docs/UpdateConsumerRequest.md
+docs/UpdateConsumerResponse.md
 docs/UpdateContactResponse.md
 docs/UpdateCreditNoteResponse.md
 docs/UpdateCustomerResponse.md
@@ -598,6 +602,7 @@ src/Apideck.Test/Model/CreateApplicantResponseTests.cs
 src/Apideck.Test/Model/CreateBillResponseTests.cs
 src/Apideck.Test/Model/CreateCompanyResponseTests.cs
 src/Apideck.Test/Model/CreateConnectionResponseTests.cs
+src/Apideck.Test/Model/CreateConsumerResponseTests.cs
 src/Apideck.Test/Model/CreateContactResponseTests.cs
 src/Apideck.Test/Model/CreateCreditNoteResponseTests.cs
 src/Apideck.Test/Model/CreateCustomerResponseTests.cs
@@ -651,6 +656,7 @@ src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
 src/Apideck.Test/Model/DeleteBillResponseTests.cs
 src/Apideck.Test/Model/DeleteCompanyResponseTests.cs
+src/Apideck.Test/Model/DeleteConsumerResponseTests.cs
 src/Apideck.Test/Model/DeleteContactResponseTests.cs
 src/Apideck.Test/Model/DeleteCreditNoteResponseTests.cs
 src/Apideck.Test/Model/DeleteCustomerResponseTests.cs
@@ -953,6 +959,8 @@ src/Apideck.Test/Model/UpdateActivityResponseTests.cs
 src/Apideck.Test/Model/UpdateBillResponseTests.cs
 src/Apideck.Test/Model/UpdateCompanyResponseTests.cs
 src/Apideck.Test/Model/UpdateConnectionResponseTests.cs
+src/Apideck.Test/Model/UpdateConsumerRequestTests.cs
+src/Apideck.Test/Model/UpdateConsumerResponseTests.cs
 src/Apideck.Test/Model/UpdateContactResponseTests.cs
 src/Apideck.Test/Model/UpdateCreditNoteResponseTests.cs
 src/Apideck.Test/Model/UpdateCustomerResponseTests.cs
@@ -1114,6 +1122,7 @@ src/Apideck/Model/CreateApplicantResponse.cs
 src/Apideck/Model/CreateBillResponse.cs
 src/Apideck/Model/CreateCompanyResponse.cs
 src/Apideck/Model/CreateConnectionResponse.cs
+src/Apideck/Model/CreateConsumerResponse.cs
 src/Apideck/Model/CreateContactResponse.cs
 src/Apideck/Model/CreateCreditNoteResponse.cs
 src/Apideck/Model/CreateCustomerResponse.cs
@@ -1167,6 +1176,7 @@ src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs
 src/Apideck/Model/DeleteBillResponse.cs
 src/Apideck/Model/DeleteCompanyResponse.cs
+src/Apideck/Model/DeleteConsumerResponse.cs
 src/Apideck/Model/DeleteContactResponse.cs
 src/Apideck/Model/DeleteCreditNoteResponse.cs
 src/Apideck/Model/DeleteCustomerResponse.cs
@@ -1469,6 +1479,8 @@ src/Apideck/Model/UpdateActivityResponse.cs
 src/Apideck/Model/UpdateBillResponse.cs
 src/Apideck/Model/UpdateCompanyResponse.cs
 src/Apideck/Model/UpdateConnectionResponse.cs
+src/Apideck/Model/UpdateConsumerRequest.cs
+src/Apideck/Model/UpdateConsumerResponse.cs
 src/Apideck/Model/UpdateContactResponse.cs
 src/Apideck/Model/UpdateCreditNoteResponse.cs
 src/Apideck/Model/UpdateCustomerResponse.cs

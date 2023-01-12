@@ -12,8 +12,11 @@ Method | HTTP request | Description
 [**ConnectionsOne**](VaultApi.md#connectionsone) | **GET** /vault/connections/{unified_api}/{service_id} | Get connection
 [**ConnectionsUpdate**](VaultApi.md#connectionsupdate) | **PATCH** /vault/connections/{unified_api}/{service_id} | Update connection
 [**ConsumerRequestCountsAll**](VaultApi.md#consumerrequestcountsall) | **GET** /vault/consumers/{consumer_id}/stats | Consumer request counts
+[**ConsumersAdd**](VaultApi.md#consumersadd) | **POST** /vault/consumers | Create consumer
 [**ConsumersAll**](VaultApi.md#consumersall) | **GET** /vault/consumers | Get all consumers
+[**ConsumersDelete**](VaultApi.md#consumersdelete) | **DELETE** /vault/consumers/{consumer_id} | Delete consumer
 [**ConsumersOne**](VaultApi.md#consumersone) | **GET** /vault/consumers/{consumer_id} | Get consumer
+[**ConsumersUpdate**](VaultApi.md#consumersupdate) | **PATCH** /vault/consumers/{consumer_id} | Update consumer
 [**LogsAll**](VaultApi.md#logsall) | **GET** /vault/logs | Get all consumer request logs
 [**SessionsCreate**](VaultApi.md#sessionscreate) | **POST** /vault/sessions | Create Session
 
@@ -731,6 +734,90 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="consumersadd"></a>
+# **ConsumersAdd**
+> CreateConsumerResponse ConsumersAdd (Consumer consumer, string appId = null)
+
+Create consumer
+
+Create a consumer
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConsumersAddExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var consumer = new Consumer(); // Consumer | 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Create consumer
+                CreateConsumerResponse result = apiInstance.ConsumersAdd(consumer, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConsumersAdd: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumer** | [**Consumer**](Consumer.md)|  | 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**CreateConsumerResponse**](CreateConsumerResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Consumer created |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="consumersall"></a>
 # **ConsumersAll**
 > GetConsumersResponse ConsumersAll (string appId = null, string cursor = null, int? limit = null)
@@ -817,6 +904,90 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="consumersdelete"></a>
+# **ConsumersDelete**
+> DeleteConsumerResponse ConsumersDelete (string consumerId, string appId = null)
+
+Delete consumer
+
+Delete consumer and all their connections, including credentials.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConsumersDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var consumerId = test_user_id;  // string | ID of the consumer to return
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Delete consumer
+                DeleteConsumerResponse result = apiInstance.ConsumersDelete(consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConsumersDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | **string**| ID of the consumer to return | 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**DeleteConsumerResponse**](DeleteConsumerResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Consumer deleted |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="consumersone"></a>
 # **ConsumersOne**
 > GetConsumerResponse ConsumersOne (string consumerId, string appId = null)
@@ -892,6 +1063,92 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Consumer |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="consumersupdate"></a>
+# **ConsumersUpdate**
+> UpdateConsumerResponse ConsumersUpdate (string consumerId, UpdateConsumerRequest updateConsumerRequest, string appId = null)
+
+Update consumer
+
+Update consumer metadata such as name and email.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConsumersUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var consumerId = test_user_id;  // string | ID of the consumer to return
+            var updateConsumerRequest = new UpdateConsumerRequest(); // UpdateConsumerRequest | 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Update consumer
+                UpdateConsumerResponse result = apiInstance.ConsumersUpdate(consumerId, updateConsumerRequest, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConsumersUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consumerId** | **string**| ID of the consumer to return | 
+ **updateConsumerRequest** | [**UpdateConsumerRequest**](UpdateConsumerRequest.md)|  | 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**UpdateConsumerResponse**](UpdateConsumerResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Consumer updated |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |
@@ -997,7 +1254,7 @@ Name | Type | Description  | Notes
 
 Create Session
 
-Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned url to allow temporary access to manage their integrations and settings.  Note: This is a short lived token that will expire after 1 hour (TTL: 3600). 
+Making a POST request to this endpoint will initiate a Hosted Vault session. Redirect the consumer to the returned URL to allow temporary access to manage their integrations and settings.  Note: This is a short lived token that will expire after 1 hour (TTL: 3600). 
 
 ### Example
 ```csharp
