@@ -141,7 +141,7 @@ namespace Apideck.Model
         /// <param name="companyId">companyId.</param>
         /// <param name="companyName">companyName.</param>
         /// <param name="employmentStartDate">A Start Date is the date that the employee started working at the company.</param>
-        /// <param name="employmentEndDate">A Start Date is the date that the employee ended working at the company.</param>
+        /// <param name="employmentEndDate">An End Date is the date that the employee ended working at the company.</param>
         /// <param name="leavingReason">The reason because the employment ended.</param>
         /// <param name="employeeNumber">An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company..</param>
         /// <param name="employmentStatus">employmentStatus.</param>
@@ -365,9 +365,9 @@ namespace Apideck.Model
         public string EmploymentStartDate { get; set; }
 
         /// <summary>
-        /// A Start Date is the date that the employee ended working at the company
+        /// An End Date is the date that the employee ended working at the company
         /// </summary>
-        /// <value>A Start Date is the date that the employee ended working at the company</value>
+        /// <value>An End Date is the date that the employee ended working at the company</value>
         [DataMember(Name = "employment_end_date", EmitDefaultValue = true)]
         public string EmploymentEndDate { get; set; }
 
