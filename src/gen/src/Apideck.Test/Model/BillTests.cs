@@ -73,6 +73,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'DownstreamId'
         }
         /// <summary>
+        /// Test the property 'BillNumber'
+        /// </summary>
+        [Fact]
+        public void BillNumberTest()
+        {
+            // TODO unit test for the property 'BillNumber'
+        }
+        /// <summary>
         /// Test the property 'Supplier'
         /// </summary>
         [Fact]
@@ -231,14 +239,6 @@ namespace Apideck.Test.Model
         public void LedgerAccountTest()
         {
             // TODO unit test for the property 'LedgerAccount'
-        }
-        /// <summary>
-        /// Test the property 'BillNumber'
-        /// </summary>
-        [Fact]
-        public void BillNumberTest()
-        {
-            // TODO unit test for the property 'BillNumber'
         }
         /// <summary>
         /// Test the property 'UpdatedBy'

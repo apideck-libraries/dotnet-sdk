@@ -104,6 +104,7 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Bill" /> class.
         /// </summary>
+        /// <param name="billNumber">billNumber.</param>
         /// <param name="supplier">supplier.</param>
         /// <param name="currency">currency.</param>
         /// <param name="currencyRate">Currency Exchange Rate at the time entity was recorded/generated..</param>
@@ -124,10 +125,10 @@ namespace Apideck.Model
         /// <param name="notes">notes.</param>
         /// <param name="status">Invoice status.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
-        /// <param name="billNumber">billNumber.</param>
         /// <param name="rowVersion">rowVersion.</param>
-        public Bill(LinkedSupplier supplier = default(LinkedSupplier), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string billNumber = default(string), string rowVersion = default(string))
+        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
         {
+            this.BillNumber = billNumber;
             this.Supplier = supplier;
             this.Currency = currency;
             this.CurrencyRate = currencyRate;
@@ -148,7 +149,6 @@ namespace Apideck.Model
             this.Notes = notes;
             this.Status = status;
             this.LedgerAccount = ledgerAccount;
-            this.BillNumber = billNumber;
             this.RowVersion = rowVersion;
         }
 
@@ -181,6 +181,12 @@ namespace Apideck.Model
         {
             return false;
         }
+        /// <summary>
+        /// Gets or Sets BillNumber
+        /// </summary>
+        [DataMember(Name = "bill_number", EmitDefaultValue = true)]
+        public string BillNumber { get; set; }
+
         /// <summary>
         /// Gets or Sets Supplier
         /// </summary>
@@ -307,12 +313,6 @@ namespace Apideck.Model
         public LinkedLedgerAccount LedgerAccount { get; set; }
 
         /// <summary>
-        /// Gets or Sets BillNumber
-        /// </summary>
-        [DataMember(Name = "bill_number", EmitDefaultValue = true)]
-        public string BillNumber { get; set; }
-
-        /// <summary>
         /// Gets or Sets UpdatedBy
         /// </summary>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
@@ -384,6 +384,7 @@ namespace Apideck.Model
             sb.Append("class Bill {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DownstreamId: ").Append(DownstreamId).Append("\n");
+            sb.Append("  BillNumber: ").Append(BillNumber).Append("\n");
             sb.Append("  Supplier: ").Append(Supplier).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  CurrencyRate: ").Append(CurrencyRate).Append("\n");
@@ -404,7 +405,6 @@ namespace Apideck.Model
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  LedgerAccount: ").Append(LedgerAccount).Append("\n");
-            sb.Append("  BillNumber: ").Append(BillNumber).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -454,6 +454,11 @@ namespace Apideck.Model
                     this.DownstreamId == input.DownstreamId ||
                     (this.DownstreamId != null &&
                     this.DownstreamId.Equals(input.DownstreamId))
+                ) && 
+                (
+                    this.BillNumber == input.BillNumber ||
+                    (this.BillNumber != null &&
+                    this.BillNumber.Equals(input.BillNumber))
                 ) && 
                 (
                     this.Supplier == input.Supplier ||
@@ -555,11 +560,6 @@ namespace Apideck.Model
                     this.LedgerAccount.Equals(input.LedgerAccount))
                 ) && 
                 (
-                    this.BillNumber == input.BillNumber ||
-                    (this.BillNumber != null &&
-                    this.BillNumber.Equals(input.BillNumber))
-                ) && 
-                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -602,6 +602,10 @@ namespace Apideck.Model
                 if (this.DownstreamId != null)
                 {
                     hashCode = (hashCode * 59) + this.DownstreamId.GetHashCode();
+                }
+                if (this.BillNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.BillNumber.GetHashCode();
                 }
                 if (this.Supplier != null)
                 {
@@ -676,10 +680,6 @@ namespace Apideck.Model
                 if (this.LedgerAccount != null)
                 {
                     hashCode = (hashCode * 59) + this.LedgerAccount.GetHashCode();
-                }
-                if (this.BillNumber != null)
-                {
-                    hashCode = (hashCode * 59) + this.BillNumber.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

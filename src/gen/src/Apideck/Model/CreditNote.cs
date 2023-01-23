@@ -38,9 +38,9 @@ namespace Apideck.Model
         [DataMember(Name = "currency", EmitDefaultValue = true)]
         public Currency? Currency { get; set; }
         /// <summary>
-        /// Status of payment
+        /// Status of credit notes
         /// </summary>
-        /// <value>Status of payment</value>
+        /// <value>Status of credit notes</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -78,9 +78,9 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Status of payment
+        /// Status of credit notes
         /// </summary>
-        /// <value>Status of payment</value>
+        /// <value>Status of credit notes</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
@@ -130,7 +130,7 @@ namespace Apideck.Model
         /// <param name="taxCode">Applicable tax id/code override if tax is not supplied on a line item basis..</param>
         /// <param name="balance">The balance reflecting any payments made against the transaction..</param>
         /// <param name="remainingCredit">Indicates the total credit amount still available to apply towards the payment..</param>
-        /// <param name="status">Status of payment.</param>
+        /// <param name="status">Status of credit notes.</param>
         /// <param name="reference">Optional reference message ie: Debit remittance detail..</param>
         /// <param name="dateIssued">Date credit note issued - YYYY:MM::DDThh:mm:ss.sTZD.</param>
         /// <param name="datePaid">Date credit note paid - YYYY:MM::DDThh:mm:ss.sTZD.</param>

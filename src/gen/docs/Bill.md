@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
+**BillNumber** | **string** |  | [optional] 
 **Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
@@ -26,7 +27,6 @@ Name | Type | Description | Notes
 **Notes** | **string** |  | [optional] 
 **Status** | **string** | Invoice status | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
-**BillNumber** | **string** |  | [optional] 
 **UpdatedBy** | **string** |  | [optional] [readonly] 
 **CreatedBy** | **string** |  | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
