@@ -298,7 +298,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //EmployeesFilter filter = null;
-            //var response = instance.EmployeesAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //EmployeesSort sort = null;
+            //var response = instance.EmployeesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
             //Assert.IsType<GetEmployeesResponse>(response);
         }
 

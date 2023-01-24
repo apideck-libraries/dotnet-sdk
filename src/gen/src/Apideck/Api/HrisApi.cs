@@ -458,8 +458,9 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <returns>GetEmployeesResponse</returns>
-        GetEmployeesResponse EmployeesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter));
+        GetEmployeesResponse EmployeesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort));
 
         /// <summary>
         /// List Employees
@@ -475,8 +476,9 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <returns>ApiResponse of GetEmployeesResponse</returns>
-        ApiResponse<GetEmployeesResponse> EmployeesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter));
+        ApiResponse<GetEmployeesResponse> EmployeesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort));
         /// <summary>
         /// Delete Employee
         /// </summary>
@@ -1304,9 +1306,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetEmployeesResponse</returns>
-        System.Threading.Tasks.Task<GetEmployeesResponse> EmployeesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetEmployeesResponse> EmployeesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Employees
@@ -1322,9 +1325,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetEmployeesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetEmployeesResponse>> EmployeesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetEmployeesResponse>> EmployeesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Employee
         /// </summary>
@@ -4621,10 +4625,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <returns>GetEmployeesResponse</returns>
-        public GetEmployeesResponse EmployeesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter))
+        public GetEmployeesResponse EmployeesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort))
         {
-            Apideck.Client.ApiResponse<GetEmployeesResponse> localVarResponse = EmployeesAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            Apideck.Client.ApiResponse<GetEmployeesResponse> localVarResponse = EmployeesAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
             return localVarResponse.Data;
         }
 
@@ -4639,8 +4644,9 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <returns>ApiResponse of GetEmployeesResponse</returns>
-        public Apideck.Client.ApiResponse<GetEmployeesResponse> EmployeesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter))
+        public Apideck.Client.ApiResponse<GetEmployeesResponse> EmployeesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -4711,6 +4717,17 @@ namespace Apideck.Api
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[employee_number]", filter.EmployeeNumber));
                 }
             }
+            if (sort != null)
+            {
+                if (sort.By != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort[by]", sort.By));
+                }
+                if (sort.Direction != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort[direction]", sort.Direction));
+                }
+            }
             if (consumerId != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
@@ -4755,11 +4772,12 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetEmployeesResponse</returns>
-        public async System.Threading.Tasks.Task<GetEmployeesResponse> EmployeesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetEmployeesResponse> EmployeesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetEmployeesResponse> localVarResponse = await EmployeesAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetEmployeesResponse> localVarResponse = await EmployeesAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4774,9 +4792,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetEmployeesResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetEmployeesResponse>> EmployeesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetEmployeesResponse>> EmployeesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), EmployeesFilter filter = default(EmployeesFilter), EmployeesSort sort = default(EmployeesSort), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -4816,6 +4835,10 @@ namespace Apideck.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
             }
             if (consumerId != null)
             {

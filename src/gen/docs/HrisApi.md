@@ -1307,7 +1307,7 @@ Name | Type | Description  | Notes
 
 <a name="employeesall"></a>
 # **EmployeesAll**
-> GetEmployeesResponse EmployeesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, EmployeesFilter filter = null)
+> GetEmployeesResponse EmployeesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, EmployeesFilter filter = null, EmployeesSort sort = null)
 
 List Employees
 
@@ -1342,11 +1342,12 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
             var filter = new EmployeesFilter(); // EmployeesFilter | Apply filters (optional) 
+            var sort = new EmployeesSort(); // EmployeesSort | Apply sorting (optional) 
 
             try
             {
                 // List Employees
-                GetEmployeesResponse result = apiInstance.EmployeesAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+                GetEmployeesResponse result = apiInstance.EmployeesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1371,6 +1372,7 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
  **filter** | [**EmployeesFilter**](EmployeesFilter.md)| Apply filters | [optional] 
+ **sort** | [**EmployeesSort**](EmployeesSort.md)| Apply sorting | [optional] 
 
 ### Return type
 
