@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 <a name="activitiesall"></a>
 # **ActivitiesAll**
-> GetActivitiesResponse ActivitiesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetActivitiesResponse ActivitiesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, ActivitiesFilter filter = null)
 
 List activities
 
@@ -172,11 +172,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var filter = new ActivitiesFilter(); // ActivitiesFilter | Apply filters (optional) 
 
             try
             {
                 // List activities
-                GetActivitiesResponse result = apiInstance.ActivitiesAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetActivitiesResponse result = apiInstance.ActivitiesAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -200,6 +201,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **filter** | [**ActivitiesFilter**](ActivitiesFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

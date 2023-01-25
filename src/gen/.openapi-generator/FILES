@@ -12,6 +12,7 @@ appveyor.yml
 docs/AccountingApi.md
 docs/AccountingCustomer.md
 docs/AccountingEventType.md
+docs/ActivitiesFilter.md
 docs/Activity.md
 docs/ActivityAttendee.md
 docs/Address.md
@@ -528,6 +529,7 @@ src/Apideck.Test/Api/WebhookApiTests.cs
 src/Apideck.Test/Apideck.Test.csproj
 src/Apideck.Test/Model/AccountingCustomerTests.cs
 src/Apideck.Test/Model/AccountingEventTypeTests.cs
+src/Apideck.Test/Model/ActivitiesFilterTests.cs
 src/Apideck.Test/Model/ActivityAttendeeTests.cs
 src/Apideck.Test/Model/ActivityTests.cs
 src/Apideck.Test/Model/AddressTests.cs
@@ -1049,6 +1051,7 @@ src/Apideck/Client/RetryConfiguration.cs
 src/Apideck/Model/AbstractOpenAPISchema.cs
 src/Apideck/Model/AccountingCustomer.cs
 src/Apideck/Model/AccountingEventType.cs
+src/Apideck/Model/ActivitiesFilter.cs
 src/Apideck/Model/Activity.cs
 src/Apideck/Model/ActivityAttendee.cs
 src/Apideck/Model/Address.cs
