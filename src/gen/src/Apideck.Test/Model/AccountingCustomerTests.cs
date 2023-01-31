@@ -65,6 +65,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Id'
         }
         /// <summary>
+        /// Test the property 'DownstreamId'
+        /// </summary>
+        [Fact]
+        public void DownstreamIdTest()
+        {
+            // TODO unit test for the property 'DownstreamId'
+        }
+        /// <summary>
         /// Test the property 'DisplayId'
         /// </summary>
         [Fact]
@@ -145,14 +153,6 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Addresses'
         }
         /// <summary>
-        /// Test the property 'Notes'
-        /// </summary>
-        [Fact]
-        public void NotesTest()
-        {
-            // TODO unit test for the property 'Notes'
-        }
-        /// <summary>
         /// Test the property 'PhoneNumbers'
         /// </summary>
         [Fact]
@@ -175,6 +175,22 @@ namespace Apideck.Test.Model
         public void WebsitesTest()
         {
             // TODO unit test for the property 'Websites'
+        }
+        /// <summary>
+        /// Test the property 'BankAccounts'
+        /// </summary>
+        [Fact]
+        public void BankAccountsTest()
+        {
+            // TODO unit test for the property 'BankAccounts'
+        }
+        /// <summary>
+        /// Test the property 'Notes'
+        /// </summary>
+        [Fact]
+        public void NotesTest()
+        {
+            // TODO unit test for the property 'Notes'
         }
         /// <summary>
         /// Test the property 'TaxRate'
@@ -201,12 +217,12 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Currency'
         }
         /// <summary>
-        /// Test the property 'BankAccounts'
+        /// Test the property 'Account'
         /// </summary>
         [Fact]
-        public void BankAccountsTest()
+        public void AccountTest()
         {
-            // TODO unit test for the property 'BankAccounts'
+            // TODO unit test for the property 'Account'
         }
         /// <summary>
         /// Test the property 'Status'
@@ -215,14 +231,6 @@ namespace Apideck.Test.Model
         public void StatusTest()
         {
             // TODO unit test for the property 'Status'
-        }
-        /// <summary>
-        /// Test the property 'RowVersion'
-        /// </summary>
-        [Fact]
-        public void RowVersionTest()
-        {
-            // TODO unit test for the property 'RowVersion'
         }
         /// <summary>
         /// Test the property 'UpdatedBy'
@@ -255,6 +263,14 @@ namespace Apideck.Test.Model
         public void CreatedAtTest()
         {
             // TODO unit test for the property 'CreatedAt'
+        }
+        /// <summary>
+        /// Test the property 'RowVersion'
+        /// </summary>
+        [Fact]
+        public void RowVersionTest()
+        {
+            // TODO unit test for the property 'RowVersion'
         }
 
     }

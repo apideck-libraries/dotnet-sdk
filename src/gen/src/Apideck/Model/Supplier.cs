@@ -38,9 +38,9 @@ namespace Apideck.Model
         [DataMember(Name = "currency", EmitDefaultValue = true)]
         public Currency? Currency { get; set; }
         /// <summary>
-        /// Customer status
+        /// Supplier status
         /// </summary>
-        /// <value>Customer status</value>
+        /// <value>Supplier status</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -78,48 +78,52 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Customer status
+        /// Supplier status
         /// </summary>
-        /// <value>Customer status</value>
+        /// <value>Supplier status</value>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Supplier" /> class.
         /// </summary>
+        /// <param name="displayId">Display ID.</param>
+        /// <param name="displayName">Display name.</param>
         /// <param name="companyName">companyName.</param>
-        /// <param name="displayName">Display name of supplier..</param>
         /// <param name="title">title.</param>
         /// <param name="firstName">firstName.</param>
         /// <param name="middleName">middleName.</param>
         /// <param name="lastName">lastName.</param>
         /// <param name="suffix">suffix.</param>
+        /// <param name="individual">Is this an individual or business supplier.</param>
         /// <param name="addresses">addresses.</param>
-        /// <param name="notes">notes.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails.</param>
         /// <param name="websites">websites.</param>
         /// <param name="bankAccounts">bankAccounts.</param>
+        /// <param name="notes">Some notes about this supplier.</param>
         /// <param name="taxRate">taxRate.</param>
         /// <param name="taxNumber">taxNumber.</param>
         /// <param name="currency">currency.</param>
         /// <param name="account">account.</param>
-        /// <param name="status">Customer status.</param>
+        /// <param name="status">Supplier status.</param>
         /// <param name="rowVersion">rowVersion.</param>
-        public Supplier(string companyName = default(string), string displayName = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), List<Address> addresses = default(List<Address>), string notes = default(string), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string))
+        public Supplier(string displayId = default(string), string displayName = default(string), string companyName = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), bool? individual = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), string notes = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string))
         {
-            this.CompanyName = companyName;
+            this.DisplayId = displayId;
             this.DisplayName = displayName;
+            this.CompanyName = companyName;
             this.Title = title;
             this.FirstName = firstName;
             this.MiddleName = middleName;
             this.LastName = lastName;
             this.Suffix = suffix;
+            this.Individual = individual;
             this.Addresses = addresses;
-            this.Notes = notes;
             this.PhoneNumbers = phoneNumbers;
             this.Emails = emails;
             this.Websites = websites;
             this.BankAccounts = bankAccounts;
+            this.Notes = notes;
             this.TaxRate = taxRate;
             this.TaxNumber = taxNumber;
             this.Currency = currency;
@@ -158,17 +162,24 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// Display ID
+        /// </summary>
+        /// <value>Display ID</value>
+        [DataMember(Name = "display_id", EmitDefaultValue = true)]
+        public string DisplayId { get; set; }
+
+        /// <summary>
+        /// Display name
+        /// </summary>
+        /// <value>Display name</value>
+        [DataMember(Name = "display_name", EmitDefaultValue = true)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
         /// Gets or Sets CompanyName
         /// </summary>
         [DataMember(Name = "company_name", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
-
-        /// <summary>
-        /// Display name of supplier.
-        /// </summary>
-        /// <value>Display name of supplier.</value>
-        [DataMember(Name = "display_name", EmitDefaultValue = true)]
-        public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
@@ -201,16 +212,17 @@ namespace Apideck.Model
         public string Suffix { get; set; }
 
         /// <summary>
+        /// Is this an individual or business supplier
+        /// </summary>
+        /// <value>Is this an individual or business supplier</value>
+        [DataMember(Name = "individual", EmitDefaultValue = true)]
+        public bool? Individual { get; set; }
+
+        /// <summary>
         /// Gets or Sets Addresses
         /// </summary>
         [DataMember(Name = "addresses", EmitDefaultValue = false)]
         public List<Address> Addresses { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Notes
-        /// </summary>
-        [DataMember(Name = "notes", EmitDefaultValue = true)]
-        public string Notes { get; set; }
 
         /// <summary>
         /// Gets or Sets PhoneNumbers
@@ -235,6 +247,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "bank_accounts", EmitDefaultValue = false)]
         public List<BankAccount> BankAccounts { get; set; }
+
+        /// <summary>
+        /// Some notes about this supplier
+        /// </summary>
+        /// <value>Some notes about this supplier</value>
+        [DataMember(Name = "notes", EmitDefaultValue = true)]
+        public string Notes { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxRate
@@ -326,19 +345,21 @@ namespace Apideck.Model
             sb.Append("class Supplier {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DownstreamId: ").Append(DownstreamId).Append("\n");
-            sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
+            sb.Append("  DisplayId: ").Append(DisplayId).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  MiddleName: ").Append(MiddleName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Suffix: ").Append(Suffix).Append("\n");
+            sb.Append("  Individual: ").Append(Individual).Append("\n");
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
-            sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
             sb.Append("  Emails: ").Append(Emails).Append("\n");
             sb.Append("  Websites: ").Append(Websites).Append("\n");
             sb.Append("  BankAccounts: ").Append(BankAccounts).Append("\n");
+            sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("  TaxNumber: ").Append(TaxNumber).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
@@ -395,14 +416,19 @@ namespace Apideck.Model
                     this.DownstreamId.Equals(input.DownstreamId))
                 ) && 
                 (
-                    this.CompanyName == input.CompanyName ||
-                    (this.CompanyName != null &&
-                    this.CompanyName.Equals(input.CompanyName))
+                    this.DisplayId == input.DisplayId ||
+                    (this.DisplayId != null &&
+                    this.DisplayId.Equals(input.DisplayId))
                 ) && 
                 (
                     this.DisplayName == input.DisplayName ||
                     (this.DisplayName != null &&
                     this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
+                    this.CompanyName == input.CompanyName ||
+                    (this.CompanyName != null &&
+                    this.CompanyName.Equals(input.CompanyName))
                 ) && 
                 (
                     this.Title == input.Title ||
@@ -430,15 +456,15 @@ namespace Apideck.Model
                     this.Suffix.Equals(input.Suffix))
                 ) && 
                 (
+                    this.Individual == input.Individual ||
+                    (this.Individual != null &&
+                    this.Individual.Equals(input.Individual))
+                ) && 
+                (
                     this.Addresses == input.Addresses ||
                     this.Addresses != null &&
                     input.Addresses != null &&
                     this.Addresses.SequenceEqual(input.Addresses)
-                ) && 
-                (
-                    this.Notes == input.Notes ||
-                    (this.Notes != null &&
-                    this.Notes.Equals(input.Notes))
                 ) && 
                 (
                     this.PhoneNumbers == input.PhoneNumbers ||
@@ -463,6 +489,11 @@ namespace Apideck.Model
                     this.BankAccounts != null &&
                     input.BankAccounts != null &&
                     this.BankAccounts.SequenceEqual(input.BankAccounts)
+                ) && 
+                (
+                    this.Notes == input.Notes ||
+                    (this.Notes != null &&
+                    this.Notes.Equals(input.Notes))
                 ) && 
                 (
                     this.TaxRate == input.TaxRate ||
@@ -531,13 +562,17 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.DownstreamId.GetHashCode();
                 }
-                if (this.CompanyName != null)
+                if (this.DisplayId != null)
                 {
-                    hashCode = (hashCode * 59) + this.CompanyName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DisplayId.GetHashCode();
                 }
                 if (this.DisplayName != null)
                 {
                     hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
+                }
+                if (this.CompanyName != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyName.GetHashCode();
                 }
                 if (this.Title != null)
                 {
@@ -559,13 +594,13 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Suffix.GetHashCode();
                 }
+                if (this.Individual != null)
+                {
+                    hashCode = (hashCode * 59) + this.Individual.GetHashCode();
+                }
                 if (this.Addresses != null)
                 {
                     hashCode = (hashCode * 59) + this.Addresses.GetHashCode();
-                }
-                if (this.Notes != null)
-                {
-                    hashCode = (hashCode * 59) + this.Notes.GetHashCode();
                 }
                 if (this.PhoneNumbers != null)
                 {
@@ -582,6 +617,10 @@ namespace Apideck.Model
                 if (this.BankAccounts != null)
                 {
                     hashCode = (hashCode * 59) + this.BankAccounts.GetHashCode();
+                }
+                if (this.Notes != null)
+                {
+                    hashCode = (hashCode * 59) + this.Notes.GetHashCode();
                 }
                 if (this.TaxRate != null)
                 {

@@ -119,6 +119,10 @@ Read the full documentation of the CrmApi [here](./src/gen/docs/CrmApi.md).
 
 Read the full documentation of the CustomerSupportApi [here](./src/gen/docs/CustomerSupportApi.md).
 
+### EcommerceApi
+
+Read the full documentation of the EcommerceApi [here](./src/gen/docs/EcommerceApi.md).
+
 ### FileStorageApi
 
 Read the full documentation of the FileStorageApi [here](./src/gen/docs/FileStorageApi.md).
