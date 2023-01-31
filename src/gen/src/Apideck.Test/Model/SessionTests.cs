@@ -65,14 +65,6 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'ConsumerMetadata'
         }
         /// <summary>
-        /// Test the property 'CustomConsumerSettings'
-        /// </summary>
-        [Fact]
-        public void CustomConsumerSettingsTest()
-        {
-            // TODO unit test for the property 'CustomConsumerSettings'
-        }
-        /// <summary>
         /// Test the property 'RedirectUri'
         /// </summary>
         [Fact]
@@ -95,6 +87,14 @@ namespace Apideck.Test.Model
         public void ThemeTest()
         {
             // TODO unit test for the property 'Theme'
+        }
+        /// <summary>
+        /// Test the property 'CustomConsumerSettings'
+        /// </summary>
+        [Fact]
+        public void CustomConsumerSettingsTest()
+        {
+            // TODO unit test for the property 'CustomConsumerSettings'
         }
 
     }

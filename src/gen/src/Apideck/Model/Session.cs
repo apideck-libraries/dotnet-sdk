@@ -35,17 +35,17 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="Session" /> class.
         /// </summary>
         /// <param name="consumerMetadata">consumerMetadata.</param>
-        /// <param name="customConsumerSettings">Custom consumer settings that are passed as part of the session..</param>
-        /// <param name="redirectUri">redirectUri.</param>
+        /// <param name="redirectUri">The URL to redirect the user to after the session has been configured..</param>
         /// <param name="settings">settings.</param>
         /// <param name="theme">theme.</param>
-        public Session(ConsumerMetadata consumerMetadata = default(ConsumerMetadata), Dictionary<string, Object> customConsumerSettings = default(Dictionary<string, Object>), string redirectUri = default(string), SessionSettings settings = default(SessionSettings), SessionTheme theme = default(SessionTheme))
+        /// <param name="customConsumerSettings">Custom consumer settings that are passed as part of the session..</param>
+        public Session(ConsumerMetadata consumerMetadata = default(ConsumerMetadata), string redirectUri = default(string), SessionSettings settings = default(SessionSettings), SessionTheme theme = default(SessionTheme), Dictionary<string, Object> customConsumerSettings = default(Dictionary<string, Object>))
         {
             this.ConsumerMetadata = consumerMetadata;
-            this.CustomConsumerSettings = customConsumerSettings;
             this.RedirectUri = redirectUri;
             this.Settings = settings;
             this.Theme = theme;
+            this.CustomConsumerSettings = customConsumerSettings;
         }
 
         /// <summary>
@@ -55,15 +55,9 @@ namespace Apideck.Model
         public ConsumerMetadata ConsumerMetadata { get; set; }
 
         /// <summary>
-        /// Custom consumer settings that are passed as part of the session.
+        /// The URL to redirect the user to after the session has been configured.
         /// </summary>
-        /// <value>Custom consumer settings that are passed as part of the session.</value>
-        [DataMember(Name = "custom_consumer_settings", EmitDefaultValue = false)]
-        public Dictionary<string, Object> CustomConsumerSettings { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RedirectUri
-        /// </summary>
+        /// <value>The URL to redirect the user to after the session has been configured.</value>
         [DataMember(Name = "redirect_uri", EmitDefaultValue = false)]
         public string RedirectUri { get; set; }
 
@@ -80,6 +74,13 @@ namespace Apideck.Model
         public SessionTheme Theme { get; set; }
 
         /// <summary>
+        /// Custom consumer settings that are passed as part of the session.
+        /// </summary>
+        /// <value>Custom consumer settings that are passed as part of the session.</value>
+        [DataMember(Name = "custom_consumer_settings", EmitDefaultValue = false)]
+        public Dictionary<string, Object> CustomConsumerSettings { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -88,10 +89,10 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Session {\n");
             sb.Append("  ConsumerMetadata: ").Append(ConsumerMetadata).Append("\n");
-            sb.Append("  CustomConsumerSettings: ").Append(CustomConsumerSettings).Append("\n");
             sb.Append("  RedirectUri: ").Append(RedirectUri).Append("\n");
             sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("  Theme: ").Append(Theme).Append("\n");
+            sb.Append("  CustomConsumerSettings: ").Append(CustomConsumerSettings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,12 +134,6 @@ namespace Apideck.Model
                     this.ConsumerMetadata.Equals(input.ConsumerMetadata))
                 ) && 
                 (
-                    this.CustomConsumerSettings == input.CustomConsumerSettings ||
-                    this.CustomConsumerSettings != null &&
-                    input.CustomConsumerSettings != null &&
-                    this.CustomConsumerSettings.SequenceEqual(input.CustomConsumerSettings)
-                ) && 
-                (
                     this.RedirectUri == input.RedirectUri ||
                     (this.RedirectUri != null &&
                     this.RedirectUri.Equals(input.RedirectUri))
@@ -152,6 +147,12 @@ namespace Apideck.Model
                     this.Theme == input.Theme ||
                     (this.Theme != null &&
                     this.Theme.Equals(input.Theme))
+                ) && 
+                (
+                    this.CustomConsumerSettings == input.CustomConsumerSettings ||
+                    this.CustomConsumerSettings != null &&
+                    input.CustomConsumerSettings != null &&
+                    this.CustomConsumerSettings.SequenceEqual(input.CustomConsumerSettings)
                 );
         }
 
@@ -168,10 +169,6 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.ConsumerMetadata.GetHashCode();
                 }
-                if (this.CustomConsumerSettings != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomConsumerSettings.GetHashCode();
-                }
                 if (this.RedirectUri != null)
                 {
                     hashCode = (hashCode * 59) + this.RedirectUri.GetHashCode();
@@ -183,6 +180,10 @@ namespace Apideck.Model
                 if (this.Theme != null)
                 {
                     hashCode = (hashCode * 59) + this.Theme.GetHashCode();
+                }
+                if (this.CustomConsumerSettings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomConsumerSettings.GetHashCode();
                 }
                 return hashCode;
             }

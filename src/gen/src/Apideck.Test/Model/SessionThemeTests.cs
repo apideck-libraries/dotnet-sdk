@@ -73,14 +73,6 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'PrimaryColor'
         }
         /// <summary>
-        /// Test the property 'PrivacyUrl'
-        /// </summary>
-        [Fact]
-        public void PrivacyUrlTest()
-        {
-            // TODO unit test for the property 'PrivacyUrl'
-        }
-        /// <summary>
         /// Test the property 'SidepanelBackgroundColor'
         /// </summary>
         [Fact]
@@ -97,20 +89,28 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'SidepanelTextColor'
         }
         /// <summary>
-        /// Test the property 'TermsUrl'
-        /// </summary>
-        [Fact]
-        public void TermsUrlTest()
-        {
-            // TODO unit test for the property 'TermsUrl'
-        }
-        /// <summary>
         /// Test the property 'VaultName'
         /// </summary>
         [Fact]
         public void VaultNameTest()
         {
             // TODO unit test for the property 'VaultName'
+        }
+        /// <summary>
+        /// Test the property 'PrivacyUrl'
+        /// </summary>
+        [Fact]
+        public void PrivacyUrlTest()
+        {
+            // TODO unit test for the property 'PrivacyUrl'
+        }
+        /// <summary>
+        /// Test the property 'TermsUrl'
+        /// </summary>
+        [Fact]
+        public void TermsUrlTest()
+        {
+            // TODO unit test for the property 'TermsUrl'
         }
 
     }

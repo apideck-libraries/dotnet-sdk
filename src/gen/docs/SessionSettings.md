@@ -1,4 +1,5 @@
 # Apideck.Model.SessionSettings
+Settings to change the way the Vault is displayed.
 
 ## Properties
 

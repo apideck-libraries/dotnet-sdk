@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// ConsumerMetadata
+    /// The metadata of the consumer. This is used to display the consumer in the sidebar. This is optional, but recommended.
     /// </summary>
     [DataContract(Name = "ConsumerMetadata")]
     public partial class ConsumerMetadata : IEquatable<ConsumerMetadata>, IValidatableObject
@@ -34,10 +34,10 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsumerMetadata" /> class.
         /// </summary>
-        /// <param name="accountName">accountName.</param>
-        /// <param name="userName">userName.</param>
-        /// <param name="email">email.</param>
-        /// <param name="image">image.</param>
+        /// <param name="accountName">The name of the account as shown in the sidebar..</param>
+        /// <param name="userName">The name of the user as shown in the sidebar..</param>
+        /// <param name="email">The email of the user as shown in the sidebar..</param>
+        /// <param name="image">The avatar of the user in the sidebar. Must be a valid URL.</param>
         public ConsumerMetadata(string accountName = default(string), string userName = default(string), string email = default(string), string image = default(string))
         {
             this.AccountName = accountName;
@@ -47,26 +47,30 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets AccountName
+        /// The name of the account as shown in the sidebar.
         /// </summary>
+        /// <value>The name of the account as shown in the sidebar.</value>
         [DataMember(Name = "account_name", EmitDefaultValue = false)]
         public string AccountName { get; set; }
 
         /// <summary>
-        /// Gets or Sets UserName
+        /// The name of the user as shown in the sidebar.
         /// </summary>
+        /// <value>The name of the user as shown in the sidebar.</value>
         [DataMember(Name = "user_name", EmitDefaultValue = false)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Email
+        /// The email of the user as shown in the sidebar.
         /// </summary>
+        /// <value>The email of the user as shown in the sidebar.</value>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or Sets Image
+        /// The avatar of the user in the sidebar. Must be a valid URL
         /// </summary>
+        /// <value>The avatar of the user in the sidebar. Must be a valid URL</value>
         [DataMember(Name = "image", EmitDefaultValue = false)]
         public string Image { get; set; }
 

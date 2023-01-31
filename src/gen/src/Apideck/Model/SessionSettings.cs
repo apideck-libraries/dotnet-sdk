@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// SessionSettings
+    /// Settings to change the way the Vault is displayed.
     /// </summary>
     [DataContract(Name = "Session_settings")]
     public partial class SessionSettings : IEquatable<SessionSettings>, IValidatableObject
