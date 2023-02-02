@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
-**CompanyName** | **string** |  | [optional] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**CompanyName** | **string** | The name of the company. | [optional] 
 **Status** | **string** | Based on the status some functionality is enabled or disabled. | [optional] 
 **LegalName** | **string** | The legal name of the company | [optional] 
 **Country** | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
@@ -20,11 +20,11 @@ Name | Type | Description | Notes
 **Addresses** | [**List&lt;Address&gt;**](Address.md) |  | [optional] 
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
-**RowVersion** | **string** |  | [optional] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

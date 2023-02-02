@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Name** | **string** | The type of the equity | [optional] 
 **Value** | **decimal** | The equity amount | [optional] 
 

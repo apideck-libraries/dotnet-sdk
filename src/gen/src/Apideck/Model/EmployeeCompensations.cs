@@ -90,7 +90,7 @@ namespace Apideck.Model
         /// <param name="paymentUnit">paymentUnit.</param>
         /// <param name="currency">currency.</param>
         /// <param name="flsaStatus">The FLSA status for this compensation..</param>
-        /// <param name="effectiveDate">The effective date for this compensation..</param>
+        /// <param name="effectiveDate">The date on which a change to an employee&#39;s compensation takes effect..</param>
         public EmployeeCompensations(decimal rate = default(decimal), PaymentUnit? paymentUnit = default(PaymentUnit?), Currency? currency = default(Currency?), FlsaStatusEnum? flsaStatus = default(FlsaStatusEnum?), string effectiveDate = default(string))
         {
             this.Rate = rate;
@@ -101,8 +101,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -137,9 +138,9 @@ namespace Apideck.Model
         public decimal Rate { get; set; }
 
         /// <summary>
-        /// The effective date for this compensation.
+        /// The date on which a change to an employee&#39;s compensation takes effect.
         /// </summary>
-        /// <value>The effective date for this compensation.</value>
+        /// <value>The date on which a change to an employee&#39;s compensation takes effect.</value>
         [DataMember(Name = "effective_date", EmitDefaultValue = false)]
         public string EffectiveDate { get; set; }
 

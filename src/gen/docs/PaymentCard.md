@@ -5,7 +5,7 @@ A card's non-confidential details.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Bin** | **string** | The first six digits of the card number, known as the Bank Identification Number (BIN). | [optional] 
 **CardBrand** | **string** | The first six digits of the card number, known as the Bank Identification Number (BIN). | [optional] 
 **CardType** | **string** |  | [optional] 

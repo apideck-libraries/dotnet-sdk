@@ -182,7 +182,7 @@ namespace Apideck.Model
         /// <param name="shippingAddress">shippingAddress.</param>
         /// <param name="templateId">Optional invoice template.</param>
         /// <param name="sourceDocumentUrl">URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero..</param>
-        /// <param name="rowVersion">rowVersion.</param>
+        /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string rowVersion = default(string))
         {
             this.Type = type;
@@ -215,8 +215,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -403,14 +404,16 @@ namespace Apideck.Model
         public string SourceDocumentUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets RowVersion
+        /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
+        /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
         [DataMember(Name = "row_version", EmitDefaultValue = true)]
         public string RowVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedBy
+        /// The user who last updated the object.
         /// </summary>
+        /// <value>The user who last updated the object.</value>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
         public string UpdatedBy { get; private set; }
 
@@ -423,8 +426,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// The user who created the object.
         /// </summary>
+        /// <value>The user who created the object.</value>
         [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; private set; }
 
@@ -437,8 +441,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the object was last updated.
         /// </summary>
+        /// <value>The date and time when the object was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public DateTime? UpdatedAt { get; private set; }
 
@@ -451,8 +456,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the object was created.
         /// </summary>
+        /// <value>The date and time when the object was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime CreatedAt { get; private set; }
 

@@ -1,13 +1,13 @@
-# Apideck.Model.EmployeePartner
+# Apideck.Model.Person
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
-**FirstName** | **string** |  | [optional] 
-**LastName** | **string** |  | [optional] 
-**MiddleName** | **string** |  | [optional] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**FirstName** | **string** | The first name of the person. | [optional] 
+**LastName** | **string** | The last name of the person. | [optional] 
+**MiddleName** | **string** | Middle name of the person. | [optional] 
 **Gender** | **Gender** |  | [optional] 
 **Initials** | **string** |  | [optional] 
 **Birthday** | **DateTime?** |  | [optional] 

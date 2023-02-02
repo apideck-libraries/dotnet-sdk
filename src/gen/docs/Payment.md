@@ -23,12 +23,12 @@ Name | Type | Description | Notes
 **Type** | **string** | Type of payment | [optional] 
 **Allocations** | [**List&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 **Note** | **string** | Optional note to be associated with the payment. | [optional] 
-**RowVersion** | **string** |  | [optional] 
+**RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **DisplayId** | **string** | Payment id to be displayed. | [optional] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

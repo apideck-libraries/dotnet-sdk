@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | **string** |  | [optional] 
+**Description** | **string** | A description of the object. | [optional] 
 **UnifiedApi** | **UnifiedApiId** |  | 
 **Status** | **Status** |  | 
 **DeliveryUrl** | **string** | The delivery url of the webhook endpoint. | 

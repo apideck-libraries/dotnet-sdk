@@ -177,7 +177,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="name">Name of the connector..</param>
         /// <param name="status">status.</param>
-        /// <param name="description">description.</param>
+        /// <param name="description">A description of the object..</param>
         /// <param name="iconUrl">Link to a small square icon for the connector..</param>
         /// <param name="logoUrl">Link to the full logo for the connector..</param>
         /// <param name="websiteUrl">Link to the connector&#39;s website..</param>
@@ -240,8 +240,9 @@ namespace Apideck.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// A description of the object.
         /// </summary>
+        /// <value>A description of the object.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 

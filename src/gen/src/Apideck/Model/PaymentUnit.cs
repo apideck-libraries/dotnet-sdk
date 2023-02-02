@@ -26,8 +26,9 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// Defines PaymentUnit
+    /// Unit of measurement for employee compensation.
     /// </summary>
+    /// <value>Unit of measurement for employee compensation.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum PaymentUnit
     {

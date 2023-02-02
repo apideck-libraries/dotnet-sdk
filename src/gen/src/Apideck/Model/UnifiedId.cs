@@ -40,8 +40,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The unique identifier of the resource
         /// </summary>
+        /// <value>The unique identifier of the resource</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
         public string Id { get; private set; }
 

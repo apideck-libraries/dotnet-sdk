@@ -26,8 +26,9 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// Defines Gender
+    /// The gender represents the gender identity of a person.
     /// </summary>
+    /// <value>The gender represents the gender identity of a person.</value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum Gender
     {

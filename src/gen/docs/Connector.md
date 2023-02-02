@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | ID of the connector. | [optional] [readonly] 
 **Name** | **string** | Name of the connector. | [optional] 
 **Status** | **ConnectorStatus** |  | [optional] 
-**Description** | **string** |  | [optional] 
+**Description** | **string** | A description of the object. | [optional] 
 **IconUrl** | **string** | Link to a small square icon for the connector. | [optional] 
 **LogoUrl** | **string** | Link to the full logo for the connector. | [optional] 
 **WebsiteUrl** | **string** | Link to the connector&#39;s website. | [optional] 

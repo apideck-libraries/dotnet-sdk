@@ -126,7 +126,7 @@ namespace Apideck.Model
         /// <param name="gender">gender.</param>
         /// <param name="birthday">birthday.</param>
         /// <param name="image">image.</param>
-        /// <param name="photoUrl">photoUrl.</param>
+        /// <param name="photoUrl">The URL of the photo of a person..</param>
         /// <param name="leadSource">leadSource.</param>
         /// <param name="fax">fax.</param>
         /// <param name="description">description.</param>
@@ -288,8 +288,9 @@ namespace Apideck.Model
         public string Image { get; set; }
 
         /// <summary>
-        /// Gets or Sets PhotoUrl
+        /// The URL of the photo of a person.
         /// </summary>
+        /// <value>The URL of the photo of a person.</value>
         [DataMember(Name = "photo_url", EmitDefaultValue = true)]
         public string PhotoUrl { get; set; }
 

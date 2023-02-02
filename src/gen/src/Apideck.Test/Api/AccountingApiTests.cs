@@ -64,7 +64,7 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //Passthrough passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //BalanceSheetFilter filter = null;
             //bool? raw = null;
             //var response = instance.BalanceSheetOne(consumerId, appId, serviceId, passThrough, filter, raw);

@@ -54,8 +54,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets EmployeeId
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "employee_id", IsRequired = true, EmitDefaultValue = false)]
         public string EmployeeId { get; private set; }
 

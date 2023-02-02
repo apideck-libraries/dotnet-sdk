@@ -62,8 +62,8 @@ namespace Apideck.Model
         /// <param name="abnOrTfn">An ABN is necessary for operating a business, while a TFN (Tax File Number) is required for any person working in Australia..</param>
         /// <param name="abnBranch">An ABN Branch (also known as a GST Branch) is used if part of your business needs to account for GST separately from its parent entity..</param>
         /// <param name="acn">The Australian Company Number (ACN) is a nine digit number with the last digit being a check digit calculated using a modified modulus 10 calculation. ASIC has adopted a convention of always printing and displaying the ACN in the format XXX XXX XXX; three blocks of three characters, each block separated by a blank..</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
+        /// <param name="firstName">The first name of the person..</param>
+        /// <param name="lastName">The last name of the person..</param>
         /// <param name="bankAccounts">bankAccounts.</param>
         /// <param name="websites">websites.</param>
         /// <param name="addresses">addresses.</param>
@@ -74,8 +74,8 @@ namespace Apideck.Model
         /// <param name="customFields">customFields.</param>
         /// <param name="tags">tags.</param>
         /// <param name="readOnly">readOnly.</param>
-        /// <param name="salutation">salutation.</param>
-        /// <param name="birthday">birthday.</param>
+        /// <param name="salutation">A formal salutation for the person. For example, &#39;Mr&#39;, &#39;Mrs&#39;.</param>
+        /// <param name="birthday">The date of birth of the person..</param>
         public Company(string name = default(string), string ownerId = default(string), string image = default(string), string description = default(string), string vatNumber = default(string), Currency? currency = default(Currency?), string status = default(string), string fax = default(string), string annualRevenue = default(string), string numberOfEmployees = default(string), string industry = default(string), string ownership = default(string), string salesTaxNumber = default(string), string payeeNumber = default(string), string abnOrTfn = default(string), string abnBranch = default(string), string acn = default(string), string firstName = default(string), string lastName = default(string), List<BankAccount> bankAccounts = default(List<BankAccount>), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), CompanyRowType rowType = default(CompanyRowType), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>), bool? readOnly = default(bool?), string salutation = default(string), DateTime? birthday = default(DateTime?))
         {
             // to ensure "name" is required (not null)
@@ -248,14 +248,16 @@ namespace Apideck.Model
         public string Acn { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// The first name of the person.
         /// </summary>
+        /// <value>The first name of the person.</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// The last name of the person.
         /// </summary>
+        /// <value>The last name of the person.</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
@@ -363,14 +365,16 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Salutation
+        /// A formal salutation for the person. For example, &#39;Mr&#39;, &#39;Mrs&#39;
         /// </summary>
+        /// <value>A formal salutation for the person. For example, &#39;Mr&#39;, &#39;Mrs&#39;</value>
         [DataMember(Name = "salutation", EmitDefaultValue = true)]
         public string Salutation { get; set; }
 
         /// <summary>
-        /// Gets or Sets Birthday
+        /// The date of birth of the person.
         /// </summary>
+        /// <value>The date of birth of the person.</value>
         [DataMember(Name = "birthday", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateTime? Birthday { get; set; }

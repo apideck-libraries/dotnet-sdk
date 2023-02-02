@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [readonly] 
+**Id** | **string** | A unique identifier for an object. | [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **Name** | **string** | The name of the file | 
 **Description** | **string** | Optional description of the file | [optional] 
@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **Owner** | [**Owner**](Owner.md) |  | [optional] 
 **ParentFolders** | [**List&lt;LinkedFolder&gt;**](LinkedFolder.md) | The parent folders of the file, starting from the root | [optional] 
 **ParentFoldersComplete** | **bool** | Whether the list of parent folder is complete. Some connectors only return the direct parent of a file | [optional] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

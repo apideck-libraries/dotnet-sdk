@@ -38,7 +38,7 @@ namespace Apideck.Model
         /// <param name="transferType">The type of the bank transfer. The type can be &#x60;ACH&#x60; or &#x60;UNKNOWN&#x60;..</param>
         /// <param name="accountOwnershipType">The ownership type of the bank account performing the transfer. The type can be &#x60;INDIVIDUAL&#x60;, &#x60;COMPANY&#x60;, or &#x60;UNKNOWN&#x60;..</param>
         /// <param name="fingerprint">Uniquely identifies the bank account for this seller and can be used to determine if payments are from the same bank account..</param>
-        /// <param name="country">country code according to ISO 3166-1 alpha-2..</param>
+        /// <param name="country">Country code according to ISO 3166-1 alpha-2..</param>
         /// <param name="statementDescription">The statement description as sent to the bank..</param>
         /// <param name="achDetails">achDetails.</param>
         public PosBankAccount(string bankName = default(string), string transferType = default(string), string accountOwnershipType = default(string), string fingerprint = default(string), string country = default(string), string statementDescription = default(string), PosBankAccountAchDetails achDetails = default(PosBankAccountAchDetails))
@@ -81,9 +81,9 @@ namespace Apideck.Model
         public string Fingerprint { get; set; }
 
         /// <summary>
-        /// country code according to ISO 3166-1 alpha-2.
+        /// Country code according to ISO 3166-1 alpha-2.
         /// </summary>
-        /// <value>country code according to ISO 3166-1 alpha-2.</value>
+        /// <value>Country code according to ISO 3166-1 alpha-2.</value>
         [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
 

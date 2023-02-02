@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
-**CompanyName** | **string** |  | [optional] 
-**FirstName** | **string** |  | [optional] 
-**LastName** | **string** |  | [optional] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**CompanyName** | **string** | The name of the company. | [optional] 
+**FirstName** | **string** | The first name of the person. | [optional] 
+**LastName** | **string** | The last name of the person. | [optional] 
 **Individual** | **bool?** |  | [optional] 
 **Addresses** | [**List&lt;Address&gt;**](Address.md) |  | [optional] 
 **Notes** | **string** |  | [optional] 
@@ -17,10 +17,10 @@ Name | Type | Description | Notes
 **Currency** | **Currency** |  | [optional] 
 **BankAccounts** | [**BankAccount**](BankAccount.md) |  | [optional] 
 **Status** | **string** | Customer status | [optional] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

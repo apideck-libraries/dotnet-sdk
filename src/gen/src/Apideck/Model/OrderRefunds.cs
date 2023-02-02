@@ -91,8 +91,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -105,8 +106,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets LocationId
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "location_id", EmitDefaultValue = false)]
         public string LocationId { get; private set; }
 
@@ -131,8 +133,9 @@ namespace Apideck.Model
         public string Reason { get; set; }
 
         /// <summary>
-        /// Gets or Sets TenderId
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "tender_id", EmitDefaultValue = false)]
         public string TenderId { get; private set; }
 
@@ -145,8 +148,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets TransactionId
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "transaction_id", EmitDefaultValue = false)]
         public string TransactionId { get; private set; }
 

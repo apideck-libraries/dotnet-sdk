@@ -157,8 +157,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the object was last updated.
         /// </summary>
+        /// <value>The date and time when the object was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public DateTime? UpdatedAt { get; private set; }
 
@@ -171,8 +172,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the object was created.
         /// </summary>
+        /// <value>The date and time when the object was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime CreatedAt { get; private set; }
 

@@ -40,7 +40,7 @@ namespace Apideck.Api
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>GetBalanceSheetResponse</returns>
-        GetBalanceSheetResponse BalanceSheetOne(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?));
+        GetBalanceSheetResponse BalanceSheetOne(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?));
 
         /// <summary>
         /// Get BalanceSheet
@@ -56,7 +56,7 @@ namespace Apideck.Api
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of GetBalanceSheetResponse</returns>
-        ApiResponse<GetBalanceSheetResponse> BalanceSheetOneWithHttpInfo(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?));
+        ApiResponse<GetBalanceSheetResponse> BalanceSheetOneWithHttpInfo(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?));
         /// <summary>
         /// Create Bill
         /// </summary>
@@ -1486,7 +1486,7 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBalanceSheetResponse</returns>
-        System.Threading.Tasks.Task<GetBalanceSheetResponse> BalanceSheetOneAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetBalanceSheetResponse> BalanceSheetOneAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get BalanceSheet
@@ -1503,7 +1503,7 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBalanceSheetResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetBalanceSheetResponse>> BalanceSheetOneWithHttpInfoAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetBalanceSheetResponse>> BalanceSheetOneWithHttpInfoAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Bill
         /// </summary>
@@ -3134,7 +3134,7 @@ namespace Apideck.Api
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>GetBalanceSheetResponse</returns>
-        public GetBalanceSheetResponse BalanceSheetOne(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?))
+        public GetBalanceSheetResponse BalanceSheetOne(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?))
         {
             Apideck.Client.ApiResponse<GetBalanceSheetResponse> localVarResponse = BalanceSheetOneWithHttpInfo(consumerId, appId, serviceId, passThrough, filter, raw);
             return localVarResponse.Data;
@@ -3151,7 +3151,7 @@ namespace Apideck.Api
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of GetBalanceSheetResponse</returns>
-        public Apideck.Client.ApiResponse<GetBalanceSheetResponse> BalanceSheetOneWithHttpInfo(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?))
+        public Apideck.Client.ApiResponse<GetBalanceSheetResponse> BalanceSheetOneWithHttpInfo(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -3177,10 +3177,7 @@ namespace Apideck.Api
 
             if (passThrough != null)
             {
-                if (passThrough.ExampleDownstreamProperty != null)
-                {
-                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through[example_downstream_property]", passThrough.ExampleDownstreamProperty));
-                }
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
             }
             if (filter != null)
             {
@@ -3242,7 +3239,7 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBalanceSheetResponse</returns>
-        public async System.Threading.Tasks.Task<GetBalanceSheetResponse> BalanceSheetOneAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetBalanceSheetResponse> BalanceSheetOneAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Apideck.Client.ApiResponse<GetBalanceSheetResponse> localVarResponse = await BalanceSheetOneWithHttpInfoAsync(consumerId, appId, serviceId, passThrough, filter, raw, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3260,7 +3257,7 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBalanceSheetResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetBalanceSheetResponse>> BalanceSheetOneWithHttpInfoAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Passthrough passThrough = default(Passthrough), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetBalanceSheetResponse>> BalanceSheetOneWithHttpInfoAsync(string consumerId = default(string), string appId = default(string), string serviceId = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), BalanceSheetFilter filter = default(BalanceSheetFilter), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();

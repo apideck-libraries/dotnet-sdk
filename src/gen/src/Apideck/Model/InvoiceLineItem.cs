@@ -90,7 +90,7 @@ namespace Apideck.Model
         /// <param name="item">item.</param>
         /// <param name="taxRate">taxRate.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
-        /// <param name="rowVersion">rowVersion.</param>
+        /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         public InvoiceLineItem(string rowId = default(string), string code = default(string), int? lineNumber = default(int?), string description = default(string), TypeEnum? type = default(TypeEnum?), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), string unitOfMeasure = default(string), decimal? discountPercentage = default(decimal?), string locationId = default(string), string departmentId = default(string), LinkedInvoiceItem item = default(LinkedInvoiceItem), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
         {
             this.RowId = rowId;
@@ -113,8 +113,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -227,14 +228,16 @@ namespace Apideck.Model
         public LinkedLedgerAccount LedgerAccount { get; set; }
 
         /// <summary>
-        /// Gets or Sets RowVersion
+        /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
+        /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
         [DataMember(Name = "row_version", EmitDefaultValue = true)]
         public string RowVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedBy
+        /// The user who last updated the object.
         /// </summary>
+        /// <value>The user who last updated the object.</value>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
         public string UpdatedBy { get; private set; }
 
@@ -247,8 +250,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// The user who created the object.
         /// </summary>
+        /// <value>The user who created the object.</value>
         [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; private set; }
 
@@ -261,8 +265,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the object was created.
         /// </summary>
+        /// <value>The date and time when the object was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime CreatedAt { get; private set; }
 
@@ -275,8 +280,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the object was last updated.
         /// </summary>
+        /// <value>The date and time when the object was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public DateTime? UpdatedAt { get; private set; }
 

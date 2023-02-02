@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **PasswordProtected** | **bool** | Indicated if the shared link is password protected. | [optional] [readonly] 
 **Password** | **string** | Optional password for the shared link. | [optional] 
 **ExpiresAt** | **DateTime** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -217,7 +217,6 @@ docs/EmployeeCompensations.md
 docs/EmployeeEmploymentRole.md
 docs/EmployeeJobs.md
 docs/EmployeeManager.md
-docs/EmployeePartner.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
 docs/EmployeeSchedules.md
@@ -420,7 +419,6 @@ docs/OrderTenders.md
 docs/OrderType.md
 docs/Owner.md
 docs/PaginationCoverage.md
-docs/Passthrough.md
 docs/Payment.md
 docs/PaymentAllocations.md
 docs/PaymentCard.md
@@ -429,6 +427,7 @@ docs/PaymentUnit.md
 docs/Payroll.md
 docs/PayrollTotals.md
 docs/PayrollsFilter.md
+docs/Person.md
 docs/PhoneNumber.md
 docs/Pipeline.md
 docs/PipelineStages.md
@@ -765,7 +764,6 @@ src/Apideck.Test/Model/EmployeeCompensationsTests.cs
 src/Apideck.Test/Model/EmployeeEmploymentRoleTests.cs
 src/Apideck.Test/Model/EmployeeJobsTests.cs
 src/Apideck.Test/Model/EmployeeManagerTests.cs
-src/Apideck.Test/Model/EmployeePartnerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
 src/Apideck.Test/Model/EmployeePayrollsTests.cs
 src/Apideck.Test/Model/EmployeeSchedulesTests.cs
@@ -966,7 +964,6 @@ src/Apideck.Test/Model/OrderTests.cs
 src/Apideck.Test/Model/OrderTypeTests.cs
 src/Apideck.Test/Model/OwnerTests.cs
 src/Apideck.Test/Model/PaginationCoverageTests.cs
-src/Apideck.Test/Model/PassthroughTests.cs
 src/Apideck.Test/Model/PaymentAllocationsTests.cs
 src/Apideck.Test/Model/PaymentCardTests.cs
 src/Apideck.Test/Model/PaymentRequiredResponseTests.cs
@@ -975,6 +972,7 @@ src/Apideck.Test/Model/PaymentUnitTests.cs
 src/Apideck.Test/Model/PayrollTests.cs
 src/Apideck.Test/Model/PayrollTotalsTests.cs
 src/Apideck.Test/Model/PayrollsFilterTests.cs
+src/Apideck.Test/Model/PersonTests.cs
 src/Apideck.Test/Model/PhoneNumberTests.cs
 src/Apideck.Test/Model/PipelineStagesTests.cs
 src/Apideck.Test/Model/PipelineTests.cs
@@ -1324,7 +1322,6 @@ src/Apideck/Model/EmployeeCompensations.cs
 src/Apideck/Model/EmployeeEmploymentRole.cs
 src/Apideck/Model/EmployeeJobs.cs
 src/Apideck/Model/EmployeeManager.cs
-src/Apideck/Model/EmployeePartner.cs
 src/Apideck/Model/EmployeePayroll.cs
 src/Apideck/Model/EmployeePayrolls.cs
 src/Apideck/Model/EmployeeSchedules.cs
@@ -1524,7 +1521,6 @@ src/Apideck/Model/OrderTenders.cs
 src/Apideck/Model/OrderType.cs
 src/Apideck/Model/Owner.cs
 src/Apideck/Model/PaginationCoverage.cs
-src/Apideck/Model/Passthrough.cs
 src/Apideck/Model/Payment.cs
 src/Apideck/Model/PaymentAllocations.cs
 src/Apideck/Model/PaymentCard.cs
@@ -1533,6 +1529,7 @@ src/Apideck/Model/PaymentUnit.cs
 src/Apideck/Model/Payroll.cs
 src/Apideck/Model/PayrollTotals.cs
 src/Apideck/Model/PayrollsFilter.cs
+src/Apideck/Model/Person.cs
 src/Apideck/Model/PhoneNumber.cs
 src/Apideck/Model/Pipeline.cs
 src/Apideck/Model/PipelineStages.cs

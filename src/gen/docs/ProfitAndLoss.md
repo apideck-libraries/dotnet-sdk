@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **ReportName** | **string** | The name of the report | 
 **StartDate** | **string** | The start date of the report | [optional] 
 **EndDate** | **string** | The start date of the report | [optional] 

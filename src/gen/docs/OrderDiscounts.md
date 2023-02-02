@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
-**ProductId** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**ProductId** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Name** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Amount** | **int** |  | [optional] 

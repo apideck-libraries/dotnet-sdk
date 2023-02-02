@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **DisplayId** | **string** | Display ID | [optional] 
 **DisplayName** | **string** | Display name | [optional] 
-**CompanyName** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
-**FirstName** | **string** |  | [optional] 
-**MiddleName** | **string** |  | [optional] 
-**LastName** | **string** |  | [optional] 
+**CompanyName** | **string** | The name of the company. | [optional] 
+**Title** | **string** | The job title of the person. | [optional] 
+**FirstName** | **string** | The first name of the person. | [optional] 
+**MiddleName** | **string** | Middle name of the person. | [optional] 
+**LastName** | **string** | The last name of the person. | [optional] 
 **Suffix** | **string** |  | [optional] 
 **Individual** | **bool?** | Is this an individual or business supplier | [optional] 
 **Addresses** | [**List&lt;Address&gt;**](Address.md) |  | [optional] 
@@ -26,11 +26,11 @@ Name | Type | Description | Notes
 **Currency** | **Currency** |  | [optional] 
 **Account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **Status** | **string** | Supplier status | [optional] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
-**RowVersion** | **string** |  | [optional] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

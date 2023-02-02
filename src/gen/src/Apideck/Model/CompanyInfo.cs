@@ -156,7 +156,7 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CompanyInfo" /> class.
         /// </summary>
-        /// <param name="companyName">companyName.</param>
+        /// <param name="companyName">The name of the company..</param>
         /// <param name="status">Based on the status some functionality is enabled or disabled..</param>
         /// <param name="legalName">The legal name of the company.</param>
         /// <param name="country">country code according to ISO 3166-1 alpha-2..</param>
@@ -171,7 +171,7 @@ namespace Apideck.Model
         /// <param name="addresses">addresses.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails.</param>
-        /// <param name="rowVersion">rowVersion.</param>
+        /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         public CompanyInfo(string companyName = default(string), StatusEnum? status = default(StatusEnum?), string legalName = default(string), string country = default(string), string salesTaxNumber = default(string), bool automatedSalesTax = default(bool), bool salesTaxEnabled = default(bool), LinkedTaxRate defaultSalesTax = default(LinkedTaxRate), Currency? currency = default(Currency?), string language = default(string), FiscalYearStartMonthEnum? fiscalYearStartMonth = default(FiscalYearStartMonthEnum?), DateTime companyStartDate = default(DateTime), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), string rowVersion = default(string))
         {
             this.CompanyName = companyName;
@@ -193,8 +193,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -207,8 +208,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CompanyName
+        /// The name of the company.
         /// </summary>
+        /// <value>The name of the company.</value>
         [DataMember(Name = "company_name", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
@@ -286,14 +288,16 @@ namespace Apideck.Model
         public List<Email> Emails { get; set; }
 
         /// <summary>
-        /// Gets or Sets RowVersion
+        /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
+        /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
         [DataMember(Name = "row_version", EmitDefaultValue = true)]
         public string RowVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedBy
+        /// The user who last updated the object.
         /// </summary>
+        /// <value>The user who last updated the object.</value>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
         public string UpdatedBy { get; private set; }
 
@@ -306,8 +310,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// The user who created the object.
         /// </summary>
+        /// <value>The user who created the object.</value>
         [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; private set; }
 
@@ -320,8 +325,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the object was last updated.
         /// </summary>
+        /// <value>The date and time when the object was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public DateTime? UpdatedAt { get; private set; }
 
@@ -334,8 +340,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the object was created.
         /// </summary>
+        /// <value>The date and time when the object was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime CreatedAt { get; private set; }
 

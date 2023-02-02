@@ -73,7 +73,7 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="HrisJob" /> class.
         /// </summary>
         /// <param name="employeeId">Id of the employee.</param>
-        /// <param name="title">title.</param>
+        /// <param name="title">The job title of the person..</param>
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
         /// <param name="employmentStatus">employmentStatus.</param>
@@ -91,8 +91,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -112,8 +113,9 @@ namespace Apideck.Model
         public string EmployeeId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// The job title of the person.
         /// </summary>
+        /// <value>The job title of the person.</value>
         [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 

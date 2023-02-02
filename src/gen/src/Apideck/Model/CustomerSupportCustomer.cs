@@ -80,9 +80,9 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerSupportCustomer" /> class.
         /// </summary>
-        /// <param name="companyName">companyName.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
+        /// <param name="companyName">The name of the company..</param>
+        /// <param name="firstName">The first name of the person..</param>
+        /// <param name="lastName">The last name of the person..</param>
         /// <param name="individual">individual.</param>
         /// <param name="addresses">addresses.</param>
         /// <param name="notes">notes.</param>
@@ -109,8 +109,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -123,20 +124,23 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CompanyName
+        /// The name of the company.
         /// </summary>
+        /// <value>The name of the company.</value>
         [DataMember(Name = "company_name", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// The first name of the person.
         /// </summary>
+        /// <value>The first name of the person.</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// The last name of the person.
         /// </summary>
+        /// <value>The last name of the person.</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
@@ -183,8 +187,9 @@ namespace Apideck.Model
         public BankAccount BankAccounts { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedBy
+        /// The user who last updated the object.
         /// </summary>
+        /// <value>The user who last updated the object.</value>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
         public string UpdatedBy { get; private set; }
 
@@ -197,8 +202,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// The user who created the object.
         /// </summary>
+        /// <value>The user who created the object.</value>
         [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; private set; }
 
@@ -211,8 +217,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the object was last updated.
         /// </summary>
+        /// <value>The date and time when the object was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public DateTime? UpdatedAt { get; private set; }
 
@@ -225,8 +232,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the object was created.
         /// </summary>
+        /// <value>The date and time when the object was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime CreatedAt { get; private set; }
 

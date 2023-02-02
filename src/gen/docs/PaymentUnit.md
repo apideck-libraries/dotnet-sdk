@@ -1,4 +1,5 @@
 # Apideck.Model.PaymentUnit
+Unit of measurement for employee compensation.
 
 ## Properties
 

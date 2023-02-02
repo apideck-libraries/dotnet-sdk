@@ -36,15 +36,15 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="positionId">The PositionId the applicant applied for..</param>
         /// <param name="name">The name of an applicant..</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="middleName">middleName.</param>
-        /// <param name="initials">initials.</param>
-        /// <param name="birthday">birthday.</param>
+        /// <param name="firstName">The first name of the person..</param>
+        /// <param name="lastName">The last name of the person..</param>
+        /// <param name="middleName">Middle name of the person..</param>
+        /// <param name="initials">The initials of the person, usually derived from their first, middle, and last names..</param>
+        /// <param name="birthday">The date of birth of the person..</param>
         /// <param name="coverLetter">coverLetter.</param>
-        /// <param name="photoUrl">photoUrl.</param>
+        /// <param name="photoUrl">The URL of the photo of a person..</param>
         /// <param name="headline">Typically a list of previous companies where the contact has worked or schools that the contact has attended.</param>
-        /// <param name="title">title.</param>
+        /// <param name="title">The job title of the person..</param>
         /// <param name="emails">emails.</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
@@ -99,8 +99,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -127,32 +128,37 @@ namespace Apideck.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// The first name of the person.
         /// </summary>
+        /// <value>The first name of the person.</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// The last name of the person.
         /// </summary>
+        /// <value>The last name of the person.</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets MiddleName
+        /// Middle name of the person.
         /// </summary>
+        /// <value>Middle name of the person.</value>
         [DataMember(Name = "middle_name", EmitDefaultValue = true)]
         public string MiddleName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Initials
+        /// The initials of the person, usually derived from their first, middle, and last names.
         /// </summary>
+        /// <value>The initials of the person, usually derived from their first, middle, and last names.</value>
         [DataMember(Name = "initials", EmitDefaultValue = true)]
         public string Initials { get; set; }
 
         /// <summary>
-        /// Gets or Sets Birthday
+        /// The date of birth of the person.
         /// </summary>
+        /// <value>The date of birth of the person.</value>
         [DataMember(Name = "birthday", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateTime? Birthday { get; set; }
@@ -178,8 +184,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets PhotoUrl
+        /// The URL of the photo of a person.
         /// </summary>
+        /// <value>The URL of the photo of a person.</value>
         [DataMember(Name = "photo_url", EmitDefaultValue = true)]
         public string PhotoUrl { get; set; }
 
@@ -191,8 +198,9 @@ namespace Apideck.Model
         public string Headline { get; set; }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// The job title of the person.
         /// </summary>
+        /// <value>The job title of the person.</value>
         [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
@@ -381,8 +389,9 @@ namespace Apideck.Model
         public bool? Deleted { get; set; }
 
         /// <summary>
-        /// Gets or Sets DeletedBy
+        /// The user who deleted the object.
         /// </summary>
+        /// <value>The user who deleted the object.</value>
         [DataMember(Name = "deleted_by", EmitDefaultValue = true)]
         public string DeletedBy { get; private set; }
 
@@ -395,8 +404,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets DeletedAt
+        /// The time at which the object was deleted.
         /// </summary>
+        /// <value>The time at which the object was deleted.</value>
         [DataMember(Name = "deleted_at", EmitDefaultValue = true)]
         public DateTime? DeletedAt { get; private set; }
 
@@ -409,8 +419,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedBy
+        /// The user who last updated the object.
         /// </summary>
+        /// <value>The user who last updated the object.</value>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
         public string UpdatedBy { get; private set; }
 
@@ -423,8 +434,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// The user who created the object.
         /// </summary>
+        /// <value>The user who created the object.</value>
         [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; private set; }
 
@@ -437,8 +449,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the object was last updated.
         /// </summary>
+        /// <value>The date and time when the object was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public DateTime? UpdatedAt { get; private set; }
 
@@ -451,8 +464,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the object was created.
         /// </summary>
+        /// <value>The date and time when the object was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime CreatedAt { get; private set; }
 

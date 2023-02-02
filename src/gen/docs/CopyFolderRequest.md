@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Name** | **string** | The name of the folder. | [optional] 
 **ParentFolderId** | **string** | The parent folder to create the new file within. | 
 

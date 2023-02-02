@@ -26,10 +26,10 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// EmployeePartner
+    /// Person
     /// </summary>
-    [DataContract(Name = "Employee_partner")]
-    public partial class EmployeePartner : IEquatable<EmployeePartner>, IValidatableObject
+    [DataContract(Name = "Person")]
+    public partial class Person : IEquatable<Person>, IValidatableObject
     {
 
         /// <summary>
@@ -38,16 +38,16 @@ namespace Apideck.Model
         [DataMember(Name = "gender", EmitDefaultValue = true)]
         public Gender? Gender { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmployeePartner" /> class.
+        /// Initializes a new instance of the <see cref="Person" /> class.
         /// </summary>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="middleName">middleName.</param>
+        /// <param name="firstName">The first name of the person..</param>
+        /// <param name="lastName">The last name of the person..</param>
+        /// <param name="middleName">Middle name of the person..</param>
         /// <param name="gender">gender.</param>
         /// <param name="initials">initials.</param>
         /// <param name="birthday">birthday.</param>
         /// <param name="deceasedOn">deceasedOn.</param>
-        public EmployeePartner(string firstName = default(string), string lastName = default(string), string middleName = default(string), Gender? gender = default(Gender?), string initials = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?))
+        public Person(string firstName = default(string), string lastName = default(string), string middleName = default(string), Gender? gender = default(Gender?), string initials = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -59,8 +59,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -73,20 +74,23 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets FirstName
+        /// The first name of the person.
         /// </summary>
+        /// <value>The first name of the person.</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// The last name of the person.
         /// </summary>
+        /// <value>The last name of the person.</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets MiddleName
+        /// Middle name of the person.
         /// </summary>
+        /// <value>Middle name of the person.</value>
         [DataMember(Name = "middle_name", EmitDefaultValue = true)]
         public string MiddleName { get; set; }
 
@@ -117,7 +121,7 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class EmployeePartner {\n");
+            sb.Append("class Person {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
@@ -146,15 +150,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EmployeePartner);
+            return this.Equals(input as Person);
         }
 
         /// <summary>
-        /// Returns true if EmployeePartner instances are equal
+        /// Returns true if Person instances are equal
         /// </summary>
-        /// <param name="input">Instance of EmployeePartner to be compared</param>
+        /// <param name="input">Instance of Person to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EmployeePartner input)
+        public bool Equals(Person input)
         {
             if (input == null)
             {

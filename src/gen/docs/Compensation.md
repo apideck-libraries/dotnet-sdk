@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmployeeId** | **string** |  | [readonly] 
+**EmployeeId** | **string** | A unique identifier for an object. | [readonly] 
 **NetPay** | **decimal** | The employee&#39;s net pay. Only available when payroll has been processed | [optional] 
 **GrossPay** | **decimal** | The employee&#39;s gross pay. Only available when payroll has been processed | [optional] 
 **Taxes** | [**List&lt;Tax&gt;**](Tax.md) | An array of employer and employee taxes for the pay period. | [optional] 

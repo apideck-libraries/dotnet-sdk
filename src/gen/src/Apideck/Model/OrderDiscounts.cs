@@ -107,8 +107,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -121,8 +122,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets ProductId
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "product_id", EmitDefaultValue = false)]
         public string ProductId { get; private set; }
 

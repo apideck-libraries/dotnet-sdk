@@ -56,7 +56,7 @@ Method | HTTP request | Description
 
 <a name="balancesheetone"></a>
 # **BalanceSheetOne**
-> GetBalanceSheetResponse BalanceSheetOne (string consumerId = null, string appId = null, string serviceId = null, Passthrough passThrough = null, BalanceSheetFilter filter = null, bool? raw = null)
+> GetBalanceSheetResponse BalanceSheetOne (string consumerId = null, string appId = null, string serviceId = null, Dictionary<string, Object> passThrough = null, BalanceSheetFilter filter = null, bool? raw = null)
 
 Get BalanceSheet
 
@@ -87,7 +87,7 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
-            var passThrough = new Passthrough(); // Passthrough | Optional unmapped key/values that will be passed through to downstream as query parameters (optional) 
+            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters (optional) 
             var filter = new BalanceSheetFilter(); // BalanceSheetFilter | Apply filters (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
- **passThrough** | [**Passthrough**](Passthrough.md)| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional] 
+ **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters | [optional] 
  **filter** | [**BalanceSheetFilter**](BalanceSheetFilter.md)| Apply filters | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
 

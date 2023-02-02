@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [readonly] 
-**CompanyId** | **string** |  | [optional] 
+**Id** | **string** | A unique identifier for an object. | [readonly] 
+**CompanyId** | **string** | The unique identifier of the company. | [optional] 
 **Processed** | **bool** | Whether or not the payroll has been successfully processed. Note that processed payrolls cannot be updated. | 
 **ProcessedDate** | **string** | The date the payroll was processed. | [optional] 
 **CheckDate** | **string** | The date on which employees will be paid for the payroll. | 

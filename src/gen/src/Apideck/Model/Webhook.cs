@@ -79,7 +79,7 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Webhook" /> class.
         /// </summary>
-        /// <param name="description">description.</param>
+        /// <param name="description">A description of the object..</param>
         /// <param name="unifiedApi">unifiedApi (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="disabledReason">Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it&#39;s plan..</param>
@@ -118,8 +118,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Description
+        /// A description of the object.
         /// </summary>
+        /// <value>A description of the object.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
@@ -153,8 +154,9 @@ namespace Apideck.Model
         public List<WebhookEventType> Events { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the object was last updated.
         /// </summary>
+        /// <value>The date and time when the object was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public DateTime? UpdatedAt { get; private set; }
 
@@ -167,8 +169,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the object was created.
         /// </summary>
+        /// <value>The date and time when the object was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = false)]
         public DateTime CreatedAt { get; private set; }
 

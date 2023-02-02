@@ -5,7 +5,7 @@ The order this entity is linked to.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Total** | **string** | The total amount of the order. | [optional] 
 **OrderStatus** | **EcommerceOrderStatus** |  | [optional] 
 

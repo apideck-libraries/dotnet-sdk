@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Name** | **string** | Service charge name | [optional] 
 **Amount** | **decimal** |  | [optional] 
 **Percentage** | **decimal** | Service charge percentage. Use this field to calculate the amount of the service charge. Pass a percentage and amount at the same time. | [optional] 

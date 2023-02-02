@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Slug** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
+**Title** | **string** | The job title of the person. | [optional] 
 **Sequence** | **int** | Sequence in relation to other jobs. | [optional] 
 **Visibility** | **string** | The visibility of the job | [optional] 
 **Status** | **JobStatus** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Recruiters** | **List&lt;string&gt;** | The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant | [optional] 
 **HiringManagers** | **List&lt;Object&gt;** |  | [optional] 
 **Followers** | **List&lt;string&gt;** |  | [optional] 
-**Description** | **string** |  | [optional] 
+**Description** | **string** | A description of the object. | [optional] 
 **DescriptionHtml** | **string** | The job description in HTML format | [optional] 
 **Blocks** | **List&lt;Object&gt;** |  | [optional] 
 **Closing** | **string** |  | [optional] 
@@ -38,10 +38,10 @@ Name | Type | Description | Notes
 **Deleted** | **bool?** |  | [optional] 
 **OwnerId** | **string** |  | [optional] 
 **PublishedAt** | **DateTime** |  | [optional] [readonly] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime?** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -41,14 +41,14 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="parentId">parentId.</param>
         /// <param name="username">username.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="title">title.</param>
-        /// <param name="division">The division the user is currently in..</param>
-        /// <param name="department">The department the user is currently in..</param>
-        /// <param name="companyName">companyName.</param>
+        /// <param name="firstName">The first name of the person..</param>
+        /// <param name="lastName">The last name of the person..</param>
+        /// <param name="title">The job title of the person..</param>
+        /// <param name="division">The division the person is currently in. Usually a collection of departments or teams or regions..</param>
+        /// <param name="department">The department the person is currently in..</param>
+        /// <param name="companyName">The name of the company..</param>
         /// <param name="employeeNumber">An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company..</param>
-        /// <param name="description">description.</param>
+        /// <param name="description">A description of the object..</param>
         /// <param name="image">image.</param>
         /// <param name="language">language code according to ISO 639-1. For the United States - EN.</param>
         /// <param name="status">status.</param>
@@ -108,40 +108,44 @@ namespace Apideck.Model
         public string Username { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// The first name of the person.
         /// </summary>
+        /// <value>The first name of the person.</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// The last name of the person.
         /// </summary>
+        /// <value>The last name of the person.</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// The job title of the person.
         /// </summary>
+        /// <value>The job title of the person.</value>
         [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
-        /// The division the user is currently in.
+        /// The division the person is currently in. Usually a collection of departments or teams or regions.
         /// </summary>
-        /// <value>The division the user is currently in.</value>
+        /// <value>The division the person is currently in. Usually a collection of departments or teams or regions.</value>
         [DataMember(Name = "division", EmitDefaultValue = true)]
         public string Division { get; set; }
 
         /// <summary>
-        /// The department the user is currently in.
+        /// The department the person is currently in.
         /// </summary>
-        /// <value>The department the user is currently in.</value>
+        /// <value>The department the person is currently in.</value>
         [DataMember(Name = "department", EmitDefaultValue = true)]
         public string Department { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompanyName
+        /// The name of the company.
         /// </summary>
+        /// <value>The name of the company.</value>
         [DataMember(Name = "company_name", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
@@ -153,8 +157,9 @@ namespace Apideck.Model
         public string EmployeeNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// A description of the object.
         /// </summary>
+        /// <value>A description of the object.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 

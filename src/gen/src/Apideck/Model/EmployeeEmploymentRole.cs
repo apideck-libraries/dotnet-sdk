@@ -32,8 +32,9 @@ namespace Apideck.Model
     public partial class EmployeeEmploymentRole : IEquatable<EmployeeEmploymentRole>, IValidatableObject
     {
         /// <summary>
-        /// Defines Type
+        /// The type of employment relationship the employee has with the organization.
         /// </summary>
+        /// <value>The type of employment relationship the employee has with the organization.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -62,10 +63,10 @@ namespace Apideck.Model
             Temp = 4,
 
             /// <summary>
-            /// Enum Intership for value: intership
+            /// Enum Internship for value: internship
             /// </summary>
-            [EnumMember(Value = "intership")]
-            Intership = 5,
+            [EnumMember(Value = "internship")]
+            Internship = 5,
 
             /// <summary>
             /// Enum Other for value: other
@@ -77,13 +78,15 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Gets or Sets Type
+        /// The type of employment relationship the employee has with the organization.
         /// </summary>
+        /// <value>The type of employment relationship the employee has with the organization.</value>
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// Defines SubType
+        /// The work schedule of the employee.
         /// </summary>
+        /// <value>The work schedule of the employee.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SubTypeEnum
         {
@@ -109,15 +112,16 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Gets or Sets SubType
+        /// The work schedule of the employee.
         /// </summary>
+        /// <value>The work schedule of the employee.</value>
         [DataMember(Name = "sub_type", EmitDefaultValue = true)]
         public SubTypeEnum? SubType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeEmploymentRole" /> class.
         /// </summary>
-        /// <param name="type">type.</param>
-        /// <param name="subType">subType.</param>
+        /// <param name="type">The type of employment relationship the employee has with the organization..</param>
+        /// <param name="subType">The work schedule of the employee..</param>
         public EmployeeEmploymentRole(TypeEnum? type = default(TypeEnum?), SubTypeEnum? subType = default(SubTypeEnum?))
         {
             this.Type = type;

@@ -51,7 +51,7 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWebhookRequest" /> class.
         /// </summary>
-        /// <param name="description">description.</param>
+        /// <param name="description">A description of the object..</param>
         /// <param name="unifiedApi">unifiedApi (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="deliveryUrl">The delivery url of the webhook endpoint. (required).</param>
@@ -74,8 +74,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// A description of the object.
         /// </summary>
+        /// <value>A description of the object.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 

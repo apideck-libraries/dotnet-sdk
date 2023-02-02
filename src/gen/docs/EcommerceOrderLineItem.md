@@ -5,7 +5,7 @@ A single line item of an ecommerce order, representing a product or variant with
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **ProductId** | **string** | A unique identifier for the product associated with the line item. | [optional] 
 **VariantId** | **string** | A unique identifier for the variant of the product associated with the line item, if applicable. | [optional] 
 **Sku** | **string** | The SKU of the product or variant associated with the line item. | [optional] 

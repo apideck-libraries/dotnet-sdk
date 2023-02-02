@@ -34,10 +34,10 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeManager" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="email">email.</param>
+        /// <param name="name">The name of the manager, often a combination of their first and last names..</param>
+        /// <param name="firstName">The first name of the person..</param>
+        /// <param name="lastName">The last name of the person..</param>
+        /// <param name="email">The email address of the manager..</param>
         public EmployeeManager(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string))
         {
             this.Name = name;
@@ -47,8 +47,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
+        /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -61,26 +62,30 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the manager, often a combination of their first and last names.
         /// </summary>
+        /// <value>The name of the manager, often a combination of their first and last names.</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// The first name of the person.
         /// </summary>
+        /// <value>The first name of the person.</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// The last name of the person.
         /// </summary>
+        /// <value>The last name of the person.</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Email
+        /// The email address of the manager.
         /// </summary>
+        /// <value>The email address of the manager.</value>
         [DataMember(Name = "email", EmitDefaultValue = true)]
         public string Email { get; set; }
 
