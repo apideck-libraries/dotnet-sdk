@@ -31,44 +31,12 @@ namespace Apideck.Model
     [DataContract(Name = "HrisJob")]
     public partial class HrisJob : IEquatable<HrisJob>, IValidatableObject
     {
-        /// <summary>
-        /// Defines EmploymentStatus
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EmploymentStatusEnum
-        {
-            /// <summary>
-            /// Enum Active for value: active
-            /// </summary>
-            [EnumMember(Value = "active")]
-            Active = 1,
-
-            /// <summary>
-            /// Enum Inactive for value: inactive
-            /// </summary>
-            [EnumMember(Value = "inactive")]
-            Inactive = 2,
-
-            /// <summary>
-            /// Enum Terminated for value: terminated
-            /// </summary>
-            [EnumMember(Value = "terminated")]
-            Terminated = 3,
-
-            /// <summary>
-            /// Enum Other for value: other
-            /// </summary>
-            [EnumMember(Value = "other")]
-            Other = 4
-
-        }
-
 
         /// <summary>
         /// Gets or Sets EmploymentStatus
         /// </summary>
         [DataMember(Name = "employment_status", EmitDefaultValue = true)]
-        public EmploymentStatusEnum? EmploymentStatus { get; set; }
+        public EmploymentStatus? EmploymentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="HrisJob" /> class.
         /// </summary>
@@ -79,7 +47,7 @@ namespace Apideck.Model
         /// <param name="employmentStatus">employmentStatus.</param>
         /// <param name="department">Department name.</param>
         /// <param name="location">location.</param>
-        public HrisJob(string employeeId = default(string), string title = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?), string department = default(string), HrisJobLocation location = default(HrisJobLocation))
+        public HrisJob(string employeeId = default(string), string title = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), EmploymentStatus? employmentStatus = default(EmploymentStatus?), string department = default(string), HrisJobLocation location = default(HrisJobLocation))
         {
             this.EmployeeId = employeeId;
             this.Title = title;

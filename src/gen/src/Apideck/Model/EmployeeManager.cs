@@ -31,6 +31,12 @@ namespace Apideck.Model
     [DataContract(Name = "Employee_manager")]
     public partial class EmployeeManager : IEquatable<EmployeeManager>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets EmploymentStatus
+        /// </summary>
+        [DataMember(Name = "employment_status", EmitDefaultValue = true)]
+        public EmploymentStatus? EmploymentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeManager" /> class.
         /// </summary>
@@ -38,12 +44,14 @@ namespace Apideck.Model
         /// <param name="firstName">The first name of the person..</param>
         /// <param name="lastName">The last name of the person..</param>
         /// <param name="email">The email address of the manager..</param>
-        public EmployeeManager(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string))
+        /// <param name="employmentStatus">employmentStatus.</param>
+        public EmployeeManager(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?))
         {
             this.Name = name;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
+            this.EmploymentStatus = employmentStatus;
         }
 
         /// <summary>
@@ -102,6 +110,7 @@ namespace Apideck.Model
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  EmploymentStatus: ").Append(EmploymentStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -161,6 +170,10 @@ namespace Apideck.Model
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
+                ) && 
+                (
+                    this.EmploymentStatus == input.EmploymentStatus ||
+                    this.EmploymentStatus.Equals(input.EmploymentStatus)
                 );
         }
 
@@ -193,6 +206,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Email.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.EmploymentStatus.GetHashCode();
                 return hashCode;
             }
         }

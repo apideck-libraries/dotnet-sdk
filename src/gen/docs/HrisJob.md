@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Title** | **string** | The job title of the person. | [optional] 
 **StartDate** | **DateTime?** |  | [optional] 
 **EndDate** | **DateTime?** |  | [optional] 
-**EmploymentStatus** | **string** |  | [optional] 
+**EmploymentStatus** | **EmploymentStatus** |  | [optional] 
 **Department** | **string** | Department name | [optional] 
 **Location** | [**HrisJobLocation**](HrisJobLocation.md) |  | [optional] 
 

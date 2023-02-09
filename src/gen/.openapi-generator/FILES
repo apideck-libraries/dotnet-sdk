@@ -223,6 +223,7 @@ docs/EmployeeSchedules.md
 docs/EmployeeTeam.md
 docs/EmployeesFilter.md
 docs/EmployeesSort.md
+docs/EmploymentStatus.md
 docs/Error.md
 docs/ExecuteWebhookResponse.md
 docs/FileStorageApi.md
@@ -771,6 +772,7 @@ src/Apideck.Test/Model/EmployeeTeamTests.cs
 src/Apideck.Test/Model/EmployeeTests.cs
 src/Apideck.Test/Model/EmployeesFilterTests.cs
 src/Apideck.Test/Model/EmployeesSortTests.cs
+src/Apideck.Test/Model/EmploymentStatusTests.cs
 src/Apideck.Test/Model/ErrorTests.cs
 src/Apideck.Test/Model/ExecuteWebhookResponseTests.cs
 src/Apideck.Test/Model/FileStorageEventTypeTests.cs
@@ -1328,6 +1330,7 @@ src/Apideck/Model/EmployeeSchedules.cs
 src/Apideck/Model/EmployeeTeam.cs
 src/Apideck/Model/EmployeesFilter.cs
 src/Apideck/Model/EmployeesSort.cs
+src/Apideck/Model/EmploymentStatus.cs
 src/Apideck/Model/Error.cs
 src/Apideck/Model/ExecuteWebhookResponse.cs
 src/Apideck/Model/FileStorageEventType.cs

@@ -71,46 +71,12 @@ namespace Apideck.Model
         /// <value>The reason because the employment ended.</value>
         [DataMember(Name = "leaving_reason", EmitDefaultValue = true)]
         public LeavingReasonEnum? LeavingReason { get; set; }
-        /// <summary>
-        /// The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status.
-        /// </summary>
-        /// <value>The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EmploymentStatusEnum
-        {
-            /// <summary>
-            /// Enum Active for value: active
-            /// </summary>
-            [EnumMember(Value = "active")]
-            Active = 1,
-
-            /// <summary>
-            /// Enum Inactive for value: inactive
-            /// </summary>
-            [EnumMember(Value = "inactive")]
-            Inactive = 2,
-
-            /// <summary>
-            /// Enum Terminated for value: terminated
-            /// </summary>
-            [EnumMember(Value = "terminated")]
-            Terminated = 3,
-
-            /// <summary>
-            /// Enum Other for value: other
-            /// </summary>
-            [EnumMember(Value = "other")]
-            Other = 4
-
-        }
-
 
         /// <summary>
-        /// The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status.
+        /// Gets or Sets EmploymentStatus
         /// </summary>
-        /// <value>The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status.</value>
         [DataMember(Name = "employment_status", EmitDefaultValue = true)]
-        public EmploymentStatusEnum? EmploymentStatus { get; set; }
+        public EmploymentStatus? EmploymentStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets Gender
@@ -146,7 +112,7 @@ namespace Apideck.Model
         /// <param name="employmentEndDate">An End Date is the date that the employee ended working at the company.</param>
         /// <param name="leavingReason">The reason because the employment ended..</param>
         /// <param name="employeeNumber">An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company..</param>
-        /// <param name="employmentStatus">The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status..</param>
+        /// <param name="employmentStatus">employmentStatus.</param>
         /// <param name="employmentRole">employmentRole.</param>
         /// <param name="manager">manager.</param>
         /// <param name="directReports">The direct reports refer to the individuals who report directly to a person in the organizational hierarchy..</param>
@@ -180,7 +146,7 @@ namespace Apideck.Model
         /// <param name="tags">tags.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="deleted">deleted.</param>
-        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), EmployeeTeam team = default(EmployeeTeam), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJobs> jobs = default(List<EmployeeJobs>), List<EmployeeCompensations> compensations = default(List<EmployeeCompensations>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
+        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), EmployeeTeam team = default(EmployeeTeam), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJobs> jobs = default(List<EmployeeJobs>), List<EmployeeCompensations> compensations = default(List<EmployeeCompensations>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;

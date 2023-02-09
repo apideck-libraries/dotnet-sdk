@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **FirstName** | **string** | The first name of the person. | [optional] 
 **LastName** | **string** | The last name of the person. | [optional] 
 **Email** | **string** | The email address of the manager. | [optional] 
+**EmploymentStatus** | **EmploymentStatus** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

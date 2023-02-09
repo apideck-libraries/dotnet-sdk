@@ -96,6 +96,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'Email'
         }
+        /// <summary>
+        /// Test the property 'EmploymentStatus'
+        /// </summary>
+        [Fact]
+        public void EmploymentStatusTest()
+        {
+            // TODO unit test for the property 'EmploymentStatus'
+        }
 
     }
 

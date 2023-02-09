@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **EmploymentEndDate** | **string** | An End Date is the date that the employee ended working at the company | [optional] 
 **LeavingReason** | **string** | The reason because the employment ended. | [optional] 
 **EmployeeNumber** | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
-**EmploymentStatus** | **string** | The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status. | [optional] 
+**EmploymentStatus** | **EmploymentStatus** |  | [optional] 
 **EmploymentRole** | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
 **Manager** | [**EmployeeManager**](EmployeeManager.md) |  | [optional] 
 **DirectReports** | **List&lt;string&gt;** | The direct reports refer to the individuals who report directly to a person in the organizational hierarchy. | [optional] 
