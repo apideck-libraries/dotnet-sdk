@@ -31,6 +31,11 @@ Method | HTTP request | Description
 [**InvoicesDelete**](AccountingApi.md#invoicesdelete) | **DELETE** /accounting/invoices/{id} | Delete Invoice
 [**InvoicesOne**](AccountingApi.md#invoicesone) | **GET** /accounting/invoices/{id} | Get Invoice
 [**InvoicesUpdate**](AccountingApi.md#invoicesupdate) | **PATCH** /accounting/invoices/{id} | Update Invoice
+[**JournalEntriesAdd**](AccountingApi.md#journalentriesadd) | **POST** /accounting/journal-entries | Create Journal Entry
+[**JournalEntriesAll**](AccountingApi.md#journalentriesall) | **GET** /accounting/journal-entries | List Journal Entries
+[**JournalEntriesDelete**](AccountingApi.md#journalentriesdelete) | **DELETE** /accounting/journal-entries/{id} | Delete Journal Entry
+[**JournalEntriesOne**](AccountingApi.md#journalentriesone) | **GET** /accounting/journal-entries/{id} | Get Journal Entry
+[**JournalEntriesUpdate**](AccountingApi.md#journalentriesupdate) | **PATCH** /accounting/journal-entries/{id} | Update Journal Entry
 [**LedgerAccountsAdd**](AccountingApi.md#ledgeraccountsadd) | **POST** /accounting/ledger-accounts | Create Ledger Account
 [**LedgerAccountsAll**](AccountingApi.md#ledgeraccountsall) | **GET** /accounting/ledger-accounts | List Ledger Accounts
 [**LedgerAccountsDelete**](AccountingApi.md#ledgeraccountsdelete) | **DELETE** /accounting/ledger-accounts/{id} | Delete Ledger Account
@@ -2501,6 +2506,460 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Invoice updated |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="journalentriesadd"></a>
+# **JournalEntriesAdd**
+> CreateJournalEntryResponse JournalEntriesAdd (JournalEntry journalEntry, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+
+Create Journal Entry
+
+Create Journal Entry
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class JournalEntriesAddExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var journalEntry = new JournalEntry(); // JournalEntry | 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+
+            try
+            {
+                // Create Journal Entry
+                CreateJournalEntryResponse result = apiInstance.JournalEntriesAdd(journalEntry, raw, consumerId, appId, serviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.JournalEntriesAdd: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **journalEntry** | [**JournalEntry**](JournalEntry.md)|  | 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+
+### Return type
+
+[**CreateJournalEntryResponse**](CreateJournalEntryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | JournalEntries |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="journalentriesall"></a>
+# **JournalEntriesAll**
+> GetJournalEntriesResponse JournalEntriesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+
+List Journal Entries
+
+List Journal Entries
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class JournalEntriesAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
+            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+
+            try
+            {
+                // List Journal Entries
+                GetJournalEntriesResponse result = apiInstance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.JournalEntriesAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
+ **limit** | **int?**| Number of records to return | [optional] [default to 20]
+
+### Return type
+
+[**GetJournalEntriesResponse**](GetJournalEntriesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | JournalEntry |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="journalentriesdelete"></a>
+# **JournalEntriesDelete**
+> DeleteJournalEntryResponse JournalEntriesDelete (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Delete Journal Entry
+
+Delete Journal Entry
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class JournalEntriesDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Delete Journal Entry
+                DeleteJournalEntryResponse result = apiInstance.JournalEntriesDelete(id, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.JournalEntriesDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**DeleteJournalEntryResponse**](DeleteJournalEntryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | JournalEntries |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="journalentriesone"></a>
+# **JournalEntriesOne**
+> GetJournalEntryResponse JournalEntriesOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Get Journal Entry
+
+Get Journal Entry
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class JournalEntriesOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Get Journal Entry
+                GetJournalEntryResponse result = apiInstance.JournalEntriesOne(id, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.JournalEntriesOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**GetJournalEntryResponse**](GetJournalEntryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | JournalEntries |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="journalentriesupdate"></a>
+# **JournalEntriesUpdate**
+> UpdateJournalEntryResponse JournalEntriesUpdate (string id, JournalEntry journalEntry, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Update Journal Entry
+
+Update Journal Entry
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class JournalEntriesUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var journalEntry = new JournalEntry(); // JournalEntry | 
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Update Journal Entry
+                UpdateJournalEntryResponse result = apiInstance.JournalEntriesUpdate(id, journalEntry, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.JournalEntriesUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **journalEntry** | [**JournalEntry**](JournalEntry.md)|  | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**UpdateJournalEntryResponse**](UpdateJournalEntryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | JournalEntries |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |

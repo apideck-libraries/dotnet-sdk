@@ -110,6 +110,7 @@ docs/CreateInvoiceItemResponse.md
 docs/CreateInvoiceResponse.md
 docs/CreateItemResponse.md
 docs/CreateJobResponse.md
+docs/CreateJournalEntryResponse.md
 docs/CreateLeadResponse.md
 docs/CreateLedgerAccountResponse.md
 docs/CreateLocationResponse.md
@@ -166,6 +167,7 @@ docs/DeleteHrisCompanyResponse.md
 docs/DeleteInvoiceResponse.md
 docs/DeleteItemResponse.md
 docs/DeleteJobResponse.md
+docs/DeleteJournalEntryResponse.md
 docs/DeleteLeadResponse.md
 docs/DeleteLedgerAccountResponse.md
 docs/DeleteLocationResponse.md
@@ -298,6 +300,8 @@ docs/GetItemResponse.md
 docs/GetItemsResponse.md
 docs/GetJobResponse.md
 docs/GetJobsResponse.md
+docs/GetJournalEntriesResponse.md
+docs/GetJournalEntryResponse.md
 docs/GetLeadResponse.md
 docs/GetLeadsResponse.md
 docs/GetLedgerAccountResponse.md
@@ -368,6 +372,8 @@ docs/Job.md
 docs/JobSalary.md
 docs/JobStatus.md
 docs/JobsFilter.md
+docs/JournalEntry.md
+docs/JournalEntryLineItem.md
 docs/Lead.md
 docs/LeadApi.md
 docs/LeadEventType.md
@@ -385,6 +391,7 @@ docs/LinkedInvoiceItem.md
 docs/LinkedLedgerAccount.md
 docs/LinkedSupplier.md
 docs/LinkedTaxRate.md
+docs/LinkedTrackingCategory.md
 docs/Links.md
 docs/Location.md
 docs/Log.md
@@ -508,6 +515,7 @@ docs/UpdateInvoiceItemsResponse.md
 docs/UpdateInvoiceResponse.md
 docs/UpdateItemResponse.md
 docs/UpdateJobResponse.md
+docs/UpdateJournalEntryResponse.md
 docs/UpdateLeadResponse.md
 docs/UpdateLedgerAccountResponse.md
 docs/UpdateLocationResponse.md
@@ -662,6 +670,7 @@ src/Apideck.Test/Model/CreateInvoiceItemResponseTests.cs
 src/Apideck.Test/Model/CreateInvoiceResponseTests.cs
 src/Apideck.Test/Model/CreateItemResponseTests.cs
 src/Apideck.Test/Model/CreateJobResponseTests.cs
+src/Apideck.Test/Model/CreateJournalEntryResponseTests.cs
 src/Apideck.Test/Model/CreateLeadResponseTests.cs
 src/Apideck.Test/Model/CreateLedgerAccountResponseTests.cs
 src/Apideck.Test/Model/CreateLocationResponseTests.cs
@@ -716,6 +725,7 @@ src/Apideck.Test/Model/DeleteHrisCompanyResponseTests.cs
 src/Apideck.Test/Model/DeleteInvoiceResponseTests.cs
 src/Apideck.Test/Model/DeleteItemResponseTests.cs
 src/Apideck.Test/Model/DeleteJobResponseTests.cs
+src/Apideck.Test/Model/DeleteJournalEntryResponseTests.cs
 src/Apideck.Test/Model/DeleteLeadResponseTests.cs
 src/Apideck.Test/Model/DeleteLedgerAccountResponseTests.cs
 src/Apideck.Test/Model/DeleteLocationResponseTests.cs
@@ -846,6 +856,8 @@ src/Apideck.Test/Model/GetItemResponseTests.cs
 src/Apideck.Test/Model/GetItemsResponseTests.cs
 src/Apideck.Test/Model/GetJobResponseTests.cs
 src/Apideck.Test/Model/GetJobsResponseTests.cs
+src/Apideck.Test/Model/GetJournalEntriesResponseTests.cs
+src/Apideck.Test/Model/GetJournalEntryResponseTests.cs
 src/Apideck.Test/Model/GetLeadResponseTests.cs
 src/Apideck.Test/Model/GetLeadsResponseTests.cs
 src/Apideck.Test/Model/GetLedgerAccountResponseTests.cs
@@ -915,6 +927,8 @@ src/Apideck.Test/Model/JobSalaryTests.cs
 src/Apideck.Test/Model/JobStatusTests.cs
 src/Apideck.Test/Model/JobTests.cs
 src/Apideck.Test/Model/JobsFilterTests.cs
+src/Apideck.Test/Model/JournalEntryLineItemTests.cs
+src/Apideck.Test/Model/JournalEntryTests.cs
 src/Apideck.Test/Model/LeadEventTypeTests.cs
 src/Apideck.Test/Model/LeadTests.cs
 src/Apideck.Test/Model/LeadsFilterTests.cs
@@ -931,6 +945,7 @@ src/Apideck.Test/Model/LinkedInvoiceItemTests.cs
 src/Apideck.Test/Model/LinkedLedgerAccountTests.cs
 src/Apideck.Test/Model/LinkedSupplierTests.cs
 src/Apideck.Test/Model/LinkedTaxRateTests.cs
+src/Apideck.Test/Model/LinkedTrackingCategoryTests.cs
 src/Apideck.Test/Model/LinksTests.cs
 src/Apideck.Test/Model/LocationTests.cs
 src/Apideck.Test/Model/LogOperationTests.cs
@@ -1052,6 +1067,7 @@ src/Apideck.Test/Model/UpdateInvoiceItemsResponseTests.cs
 src/Apideck.Test/Model/UpdateInvoiceResponseTests.cs
 src/Apideck.Test/Model/UpdateItemResponseTests.cs
 src/Apideck.Test/Model/UpdateJobResponseTests.cs
+src/Apideck.Test/Model/UpdateJournalEntryResponseTests.cs
 src/Apideck.Test/Model/UpdateLeadResponseTests.cs
 src/Apideck.Test/Model/UpdateLedgerAccountResponseTests.cs
 src/Apideck.Test/Model/UpdateLocationResponseTests.cs
@@ -1220,6 +1236,7 @@ src/Apideck/Model/CreateInvoiceItemResponse.cs
 src/Apideck/Model/CreateInvoiceResponse.cs
 src/Apideck/Model/CreateItemResponse.cs
 src/Apideck/Model/CreateJobResponse.cs
+src/Apideck/Model/CreateJournalEntryResponse.cs
 src/Apideck/Model/CreateLeadResponse.cs
 src/Apideck/Model/CreateLedgerAccountResponse.cs
 src/Apideck/Model/CreateLocationResponse.cs
@@ -1274,6 +1291,7 @@ src/Apideck/Model/DeleteHrisCompanyResponse.cs
 src/Apideck/Model/DeleteInvoiceResponse.cs
 src/Apideck/Model/DeleteItemResponse.cs
 src/Apideck/Model/DeleteJobResponse.cs
+src/Apideck/Model/DeleteJournalEntryResponse.cs
 src/Apideck/Model/DeleteLeadResponse.cs
 src/Apideck/Model/DeleteLedgerAccountResponse.cs
 src/Apideck/Model/DeleteLocationResponse.cs
@@ -1404,6 +1422,8 @@ src/Apideck/Model/GetItemResponse.cs
 src/Apideck/Model/GetItemsResponse.cs
 src/Apideck/Model/GetJobResponse.cs
 src/Apideck/Model/GetJobsResponse.cs
+src/Apideck/Model/GetJournalEntriesResponse.cs
+src/Apideck/Model/GetJournalEntryResponse.cs
 src/Apideck/Model/GetLeadResponse.cs
 src/Apideck/Model/GetLeadsResponse.cs
 src/Apideck/Model/GetLedgerAccountResponse.cs
@@ -1473,6 +1493,8 @@ src/Apideck/Model/Job.cs
 src/Apideck/Model/JobSalary.cs
 src/Apideck/Model/JobStatus.cs
 src/Apideck/Model/JobsFilter.cs
+src/Apideck/Model/JournalEntry.cs
+src/Apideck/Model/JournalEntryLineItem.cs
 src/Apideck/Model/Lead.cs
 src/Apideck/Model/LeadEventType.cs
 src/Apideck/Model/LeadsFilter.cs
@@ -1489,6 +1511,7 @@ src/Apideck/Model/LinkedInvoiceItem.cs
 src/Apideck/Model/LinkedLedgerAccount.cs
 src/Apideck/Model/LinkedSupplier.cs
 src/Apideck/Model/LinkedTaxRate.cs
+src/Apideck/Model/LinkedTrackingCategory.cs
 src/Apideck/Model/Links.cs
 src/Apideck/Model/Location.cs
 src/Apideck/Model/Log.cs
@@ -1610,6 +1633,7 @@ src/Apideck/Model/UpdateInvoiceItemsResponse.cs
 src/Apideck/Model/UpdateInvoiceResponse.cs
 src/Apideck/Model/UpdateItemResponse.cs
 src/Apideck/Model/UpdateJobResponse.cs
+src/Apideck/Model/UpdateJournalEntryResponse.cs
 src/Apideck/Model/UpdateLeadResponse.cs
 src/Apideck/Model/UpdateLedgerAccountResponse.cs
 src/Apideck/Model/UpdateLocationResponse.cs
