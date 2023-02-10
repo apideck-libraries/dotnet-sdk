@@ -51,16 +51,22 @@ namespace Apideck.Model
         public enum DisabledReasonEnum
         {
             /// <summary>
+            /// Enum None for value: none
+            /// </summary>
+            [EnumMember(Value = "none")]
+            None = 1,
+
+            /// <summary>
             /// Enum RetryLimit for value: retry_limit
             /// </summary>
             [EnumMember(Value = "retry_limit")]
-            RetryLimit = 1,
+            RetryLimit = 2,
 
             /// <summary>
             /// Enum UsageLimit for value: usage_limit
             /// </summary>
             [EnumMember(Value = "usage_limit")]
-            UsageLimit = 2
+            UsageLimit = 3
 
         }
 
