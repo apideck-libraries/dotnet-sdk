@@ -105,12 +105,12 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'TaxRate'
         }
         /// <summary>
-        /// Test the property 'LinkedTrackingCategory'
+        /// Test the property 'TrackingCategory'
         /// </summary>
         [Fact]
-        public void LinkedTrackingCategoryTest()
+        public void TrackingCategoryTest()
         {
-            // TODO unit test for the property 'LinkedTrackingCategory'
+            // TODO unit test for the property 'TrackingCategory'
         }
         /// <summary>
         /// Test the property 'LedgerAccount'

@@ -72,9 +72,9 @@ namespace Apideck.Model
         /// <param name="totalAmount">Debit entries are considered positive, and credit entries are considered negative. (required).</param>
         /// <param name="type">Debit entries are considered positive, and credit entries are considered negative. (required).</param>
         /// <param name="taxRate">taxRate.</param>
-        /// <param name="linkedTrackingCategory">linkedTrackingCategory.</param>
+        /// <param name="trackingCategory">trackingCategory.</param>
         /// <param name="ledgerAccount">ledgerAccount (required).</param>
-        public JournalEntryLineItem(string description = default(string), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), TypeEnum type = default(TypeEnum), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedLedgerAccount linkedTrackingCategory = default(LinkedLedgerAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount))
+        public JournalEntryLineItem(string description = default(string), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), TypeEnum type = default(TypeEnum), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount))
         {
             // to ensure "totalAmount" is required (not null)
             if (totalAmount == null) {
@@ -90,7 +90,7 @@ namespace Apideck.Model
             this.Description = description;
             this.TaxAmount = taxAmount;
             this.TaxRate = taxRate;
-            this.LinkedTrackingCategory = linkedTrackingCategory;
+            this.TrackingCategory = trackingCategory;
         }
 
         /// <summary>
@@ -136,10 +136,10 @@ namespace Apideck.Model
         public LinkedTaxRate TaxRate { get; set; }
 
         /// <summary>
-        /// Gets or Sets LinkedTrackingCategory
+        /// Gets or Sets TrackingCategory
         /// </summary>
-        [DataMember(Name = "linked_tracking_category", EmitDefaultValue = true)]
-        public LinkedLedgerAccount LinkedTrackingCategory { get; set; }
+        [DataMember(Name = "tracking_category", EmitDefaultValue = true)]
+        public LinkedTrackingCategory TrackingCategory { get; set; }
 
         /// <summary>
         /// Gets or Sets LedgerAccount
@@ -161,7 +161,7 @@ namespace Apideck.Model
             sb.Append("  TotalAmount: ").Append(TotalAmount).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
-            sb.Append("  LinkedTrackingCategory: ").Append(LinkedTrackingCategory).Append("\n");
+            sb.Append("  TrackingCategory: ").Append(TrackingCategory).Append("\n");
             sb.Append("  LedgerAccount: ").Append(LedgerAccount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -228,9 +228,9 @@ namespace Apideck.Model
                     this.TaxRate.Equals(input.TaxRate))
                 ) && 
                 (
-                    this.LinkedTrackingCategory == input.LinkedTrackingCategory ||
-                    (this.LinkedTrackingCategory != null &&
-                    this.LinkedTrackingCategory.Equals(input.LinkedTrackingCategory))
+                    this.TrackingCategory == input.TrackingCategory ||
+                    (this.TrackingCategory != null &&
+                    this.TrackingCategory.Equals(input.TrackingCategory))
                 ) && 
                 (
                     this.LedgerAccount == input.LedgerAccount ||
@@ -269,9 +269,9 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.TaxRate.GetHashCode();
                 }
-                if (this.LinkedTrackingCategory != null)
+                if (this.TrackingCategory != null)
                 {
-                    hashCode = (hashCode * 59) + this.LinkedTrackingCategory.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TrackingCategory.GetHashCode();
                 }
                 if (this.LedgerAccount != null)
                 {
