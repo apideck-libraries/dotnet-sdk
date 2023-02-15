@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="customersall2"></a>
 # **CustomersAll2**
-> GetEcommerceCustomersResponse CustomersAll2 (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetEcommerceCustomersResponse CustomersAll2 (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, EcommerceCustomersFilter filter = null)
 
 List Customers
 
@@ -49,11 +49,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var filter = new EcommerceCustomersFilter(); // EcommerceCustomersFilter | Apply filters (optional) 
 
             try
             {
                 // List Customers
-                GetEcommerceCustomersResponse result = apiInstance.CustomersAll2(raw, consumerId, appId, serviceId, cursor, limit);
+                GetEcommerceCustomersResponse result = apiInstance.CustomersAll2(raw, consumerId, appId, serviceId, cursor, limit, filter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -77,6 +78,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **filter** | [**EcommerceCustomersFilter**](EcommerceCustomersFilter.md)| Apply filters | [optional] 
 
 ### Return type
 
@@ -197,7 +199,7 @@ Name | Type | Description  | Notes
 
 <a name="ordersall"></a>
 # **OrdersAll**
-> GetEcommerceOrdersResponse OrdersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetEcommerceOrdersResponse OrdersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, EcommerceOrdersFilter filter = null)
 
 List Orders
 
@@ -231,11 +233,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var filter = new EcommerceOrdersFilter(); // EcommerceOrdersFilter | Apply filters (optional) 
 
             try
             {
                 // List Orders
-                GetEcommerceOrdersResponse result = apiInstance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetEcommerceOrdersResponse result = apiInstance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -259,6 +262,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **filter** | [**EcommerceOrdersFilter**](EcommerceOrdersFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

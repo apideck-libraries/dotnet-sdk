@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Options** | [**List&lt;EcommerceProductOptions&gt;**](EcommerceProductOptions.md) | An array of options for the product. | [optional] 
 **Variants** | [**List&lt;EcommerceProductVariants&gt;**](EcommerceProductVariants.md) |  | [optional] 
 **Tags** | **List&lt;string&gt;** | An array of tags for the product, used for organization and searching. | [optional] 
-**Categories** | **List&lt;string&gt;** | An array of categories for the product, used for organization and searching. | [optional] 
+**Categories** | [**List&lt;EcommerceProductCategories&gt;**](EcommerceProductCategories.md) | An array of categories for the product, used for organization and searching. | [optional] 
 **CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 

@@ -207,6 +207,7 @@ docs/EcommerceOrderLineItem.md
 docs/EcommerceOrderStatus.md
 docs/EcommerceOrdersFilter.md
 docs/EcommerceProduct.md
+docs/EcommerceProductCategories.md
 docs/EcommerceProductImages.md
 docs/EcommerceProductImages1.md
 docs/EcommerceProductOptions.md
@@ -763,6 +764,7 @@ src/Apideck.Test/Model/EcommerceOrderLineItemTests.cs
 src/Apideck.Test/Model/EcommerceOrderStatusTests.cs
 src/Apideck.Test/Model/EcommerceOrderTests.cs
 src/Apideck.Test/Model/EcommerceOrdersFilterTests.cs
+src/Apideck.Test/Model/EcommerceProductCategoriesTests.cs
 src/Apideck.Test/Model/EcommerceProductImages1Tests.cs
 src/Apideck.Test/Model/EcommerceProductImagesTests.cs
 src/Apideck.Test/Model/EcommerceProductOptions1Tests.cs
@@ -1330,6 +1332,7 @@ src/Apideck/Model/EcommerceOrderLineItem.cs
 src/Apideck/Model/EcommerceOrderStatus.cs
 src/Apideck/Model/EcommerceOrdersFilter.cs
 src/Apideck/Model/EcommerceProduct.cs
+src/Apideck/Model/EcommerceProductCategories.cs
 src/Apideck/Model/EcommerceProductImages.cs
 src/Apideck/Model/EcommerceProductImages1.cs
 src/Apideck/Model/EcommerceProductOptions.cs

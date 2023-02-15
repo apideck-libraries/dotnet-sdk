@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **LastName** | **string** | Last name of the customer | [optional] 
 **CompanyName** | **string** | Company name of the customer | [optional] 
 **Status** | **string** | The current status of the customer | [optional] 
+**Currency** | **Currency** |  | [optional] 
 **Emails** | [**List&lt;Email&gt;**](Email.md) | An array of email addresses for the customer. | [optional] 
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) | An array of phone numbers for the customer. | [optional] 
 **Addresses** | [**List&lt;EcommerceCustomerAddresses&gt;**](EcommerceCustomerAddresses.md) | An array of addresses for the customer. | [optional] 
