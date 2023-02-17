@@ -390,6 +390,7 @@ docs/LinkedEcommerceOrder.md
 docs/LinkedFolder.md
 docs/LinkedInvoiceItem.md
 docs/LinkedLedgerAccount.md
+docs/LinkedParentCustomer.md
 docs/LinkedSupplier.md
 docs/LinkedTaxRate.md
 docs/LinkedTrackingCategory.md
@@ -945,6 +946,7 @@ src/Apideck.Test/Model/LinkedEcommerceOrderTests.cs
 src/Apideck.Test/Model/LinkedFolderTests.cs
 src/Apideck.Test/Model/LinkedInvoiceItemTests.cs
 src/Apideck.Test/Model/LinkedLedgerAccountTests.cs
+src/Apideck.Test/Model/LinkedParentCustomerTests.cs
 src/Apideck.Test/Model/LinkedSupplierTests.cs
 src/Apideck.Test/Model/LinkedTaxRateTests.cs
 src/Apideck.Test/Model/LinkedTrackingCategoryTests.cs
@@ -1512,6 +1514,7 @@ src/Apideck/Model/LinkedEcommerceOrder.cs
 src/Apideck/Model/LinkedFolder.cs
 src/Apideck/Model/LinkedInvoiceItem.cs
 src/Apideck/Model/LinkedLedgerAccount.cs
+src/Apideck/Model/LinkedParentCustomer.cs
 src/Apideck/Model/LinkedSupplier.cs
 src/Apideck/Model/LinkedTaxRate.cs
 src/Apideck/Model/LinkedTrackingCategory.cs

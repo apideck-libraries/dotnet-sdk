@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **TaxRate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **TrackingCategory** | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | 
+**DepartmentId** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**LocationId** | **string** | A unique identifier for an object. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
