@@ -4059,7 +4059,7 @@ Name | Type | Description  | Notes
 
 <a name="suppliersall"></a>
 # **SuppliersAll**
-> GetSuppliersResponse SuppliersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetSuppliersResponse SuppliersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, SuppliersFilter filter = null)
 
 List Suppliers
 
@@ -4093,11 +4093,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var filter = new SuppliersFilter(); // SuppliersFilter | Apply filters (optional) 
 
             try
             {
                 // List Suppliers
-                GetSuppliersResponse result = apiInstance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetSuppliersResponse result = apiInstance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -4121,6 +4122,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **filter** | [**SuppliersFilter**](SuppliersFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

@@ -1353,8 +1353,9 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <returns>GetSuppliersResponse</returns>
-        GetSuppliersResponse SuppliersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+        GetSuppliersResponse SuppliersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter));
 
         /// <summary>
         /// List Suppliers
@@ -1369,8 +1370,9 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <returns>ApiResponse of GetSuppliersResponse</returns>
-        ApiResponse<GetSuppliersResponse> SuppliersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+        ApiResponse<GetSuppliersResponse> SuppliersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter));
         /// <summary>
         /// Delete Supplier
         /// </summary>
@@ -3035,9 +3037,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSuppliersResponse</returns>
-        System.Threading.Tasks.Task<GetSuppliersResponse> SuppliersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetSuppliersResponse> SuppliersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Suppliers
@@ -3052,9 +3055,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSuppliersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetSuppliersResponse>> SuppliersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetSuppliersResponse>> SuppliersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Supplier
         /// </summary>
@@ -12180,10 +12184,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <returns>GetSuppliersResponse</returns>
-        public GetSuppliersResponse SuppliersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        public GetSuppliersResponse SuppliersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter))
         {
-            Apideck.Client.ApiResponse<GetSuppliersResponse> localVarResponse = SuppliersAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit);
+            Apideck.Client.ApiResponse<GetSuppliersResponse> localVarResponse = SuppliersAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter);
             return localVarResponse.Data;
         }
 
@@ -12197,8 +12202,9 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <returns>ApiResponse of GetSuppliersResponse</returns>
-        public Apideck.Client.ApiResponse<GetSuppliersResponse> SuppliersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        public Apideck.Client.ApiResponse<GetSuppliersResponse> SuppliersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -12233,6 +12239,17 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (filter != null)
+            {
+                if (filter.CompanyName != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[company_name]", filter.CompanyName));
+                }
+                if (filter.Email != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[email]", filter.Email));
+                }
             }
             if (consumerId != null)
             {
@@ -12277,11 +12294,12 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetSuppliersResponse</returns>
-        public async System.Threading.Tasks.Task<GetSuppliersResponse> SuppliersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetSuppliersResponse> SuppliersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetSuppliersResponse> localVarResponse = await SuppliersAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetSuppliersResponse> localVarResponse = await SuppliersAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -12295,9 +12313,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetSuppliersResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetSuppliersResponse>> SuppliersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetSuppliersResponse>> SuppliersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), SuppliersFilter filter = default(SuppliersFilter), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -12333,6 +12352,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (filter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
             }
             if (consumerId != null)
             {

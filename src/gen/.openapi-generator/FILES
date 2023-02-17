@@ -476,6 +476,7 @@ docs/SocialLink.md
 docs/SortDirection.md
 docs/Status.md
 docs/Supplier.md
+docs/SuppliersFilter.md
 docs/SupportedProperty.md
 docs/SupportedPropertyChildProperties.md
 docs/Tax.md
@@ -1030,6 +1031,7 @@ src/Apideck.Test/Model/SocialLinkTests.cs
 src/Apideck.Test/Model/SortDirectionTests.cs
 src/Apideck.Test/Model/StatusTests.cs
 src/Apideck.Test/Model/SupplierTests.cs
+src/Apideck.Test/Model/SuppliersFilterTests.cs
 src/Apideck.Test/Model/SupportedPropertyChildPropertiesTests.cs
 src/Apideck.Test/Model/SupportedPropertyTests.cs
 src/Apideck.Test/Model/TaxRateTests.cs
@@ -1598,6 +1600,7 @@ src/Apideck/Model/SocialLink.cs
 src/Apideck/Model/SortDirection.cs
 src/Apideck/Model/Status.cs
 src/Apideck/Model/Supplier.cs
+src/Apideck/Model/SuppliersFilter.cs
 src/Apideck/Model/SupportedProperty.cs
 src/Apideck/Model/SupportedPropertyChildProperties.cs
 src/Apideck/Model/Tax.cs

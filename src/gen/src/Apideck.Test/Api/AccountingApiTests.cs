@@ -790,7 +790,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //SuppliersFilter filter = null;
+            //var response = instance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
             //Assert.IsType<GetSuppliersResponse>(response);
         }
 
