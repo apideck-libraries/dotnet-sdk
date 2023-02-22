@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Status** | **string** | The current status of the product (active or archived). | [optional] 
 **Price** | **string** | The price of the product. | [optional] 
 **Sku** | **string** | The stock keeping unit of the product. | [optional] 
-**InventoryQuantity** | **int** | The quantity of the product in stock. | [optional] 
+**InventoryQuantity** | **string** | The quantity of the product in stock. | [optional] 
 **Images** | [**List&lt;EcommerceProductImages&gt;**](EcommerceProductImages.md) | An array of image URLs for the product. | [optional] 
 **Weight** | **string** | The weight of the product. | [optional] 
 **WeightUnit** | **string** | The unit of measurement for the weight of the product. | [optional] 

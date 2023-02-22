@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** |  | [optional] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Line1** | **string** | First line of the street address of the customer | [optional] 
 **Line2** | **string** | Second line of the street address of the customer | [optional] 
 **City** | **string** | City of the customer | [optional] 
