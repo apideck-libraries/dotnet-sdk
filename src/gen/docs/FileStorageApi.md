@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**FilesDownload**](FileStorageApi.md#filesdownload) | **GET** /file-storage/files/{id}/download | Download File
 [**FilesOne**](FileStorageApi.md#filesone) | **GET** /file-storage/files/{id} | Get File
 [**FilesSearch**](FileStorageApi.md#filessearch) | **POST** /file-storage/files/search | Search Files
+[**FilesUpdate**](FileStorageApi.md#filesupdate) | **PATCH** /file-storage/files/{id} | Rename or move File
 [**FoldersAdd**](FileStorageApi.md#foldersadd) | **POST** /file-storage/folders | Create Folder
 [**FoldersCopy**](FileStorageApi.md#folderscopy) | **POST** /file-storage/folders/{id}/copy | Copy Folder
 [**FoldersDelete**](FileStorageApi.md#foldersdelete) | **DELETE** /file-storage/folders/{id} | Delete Folder
@@ -1379,6 +1380,98 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetFilesResponse**](GetFilesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Files |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="filesupdate"></a>
+# **FilesUpdate**
+> UpdateFileResponse FilesUpdate (string id, UpdateFileRequest updateFileRequest, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Rename or move File
+
+Rename or move File
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class FilesUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new FileStorageApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var updateFileRequest = new UpdateFileRequest(); // UpdateFileRequest | 
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Rename or move File
+                UpdateFileResponse result = apiInstance.FilesUpdate(id, updateFileRequest, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling FileStorageApi.FilesUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **updateFileRequest** | [**UpdateFileRequest**](UpdateFileRequest.md)|  | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**UpdateFileResponse**](UpdateFileResponse.md)
 
 ### Authorization
 

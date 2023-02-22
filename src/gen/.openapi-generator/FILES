@@ -510,6 +510,7 @@ docs/UpdateDriveResponse.md
 docs/UpdateEcommerceCustomerResponse.md
 docs/UpdateEcommerceOrderResponse.md
 docs/UpdateEmployeeResponse.md
+docs/UpdateFileRequest.md
 docs/UpdateFileResponse.md
 docs/UpdateFolderRequest.md
 docs/UpdateFolderResponse.md
@@ -1065,6 +1066,7 @@ src/Apideck.Test/Model/UpdateDriveResponseTests.cs
 src/Apideck.Test/Model/UpdateEcommerceCustomerResponseTests.cs
 src/Apideck.Test/Model/UpdateEcommerceOrderResponseTests.cs
 src/Apideck.Test/Model/UpdateEmployeeResponseTests.cs
+src/Apideck.Test/Model/UpdateFileRequestTests.cs
 src/Apideck.Test/Model/UpdateFileResponseTests.cs
 src/Apideck.Test/Model/UpdateFolderRequestTests.cs
 src/Apideck.Test/Model/UpdateFolderResponseTests.cs
@@ -1634,6 +1636,7 @@ src/Apideck/Model/UpdateDriveResponse.cs
 src/Apideck/Model/UpdateEcommerceCustomerResponse.cs
 src/Apideck/Model/UpdateEcommerceOrderResponse.cs
 src/Apideck/Model/UpdateEmployeeResponse.cs
+src/Apideck/Model/UpdateFileRequest.cs
 src/Apideck/Model/UpdateFileResponse.cs
 src/Apideck/Model/UpdateFolderRequest.cs
 src/Apideck/Model/UpdateFolderResponse.cs
