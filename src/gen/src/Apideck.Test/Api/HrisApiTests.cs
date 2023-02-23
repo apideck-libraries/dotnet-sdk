@@ -353,39 +353,6 @@ namespace Apideck.Test.Api
         }
 
         /// <summary>
-        /// Test JobsAll
-        /// </summary>
-        [Fact]
-        public void JobsAllTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string employeeId = null;
-            //bool? raw = null;
-            //string consumerId = null;
-            //string appId = null;
-            //string serviceId = null;
-            //var response = instance.JobsAll(employeeId, raw, consumerId, appId, serviceId);
-            //Assert.IsType<GetHrisJobsResponse>(response);
-        }
-
-        /// <summary>
-        /// Test JobsOne
-        /// </summary>
-        [Fact]
-        public void JobsOneTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string jobId = null;
-            //string employeeId = null;
-            //bool? raw = null;
-            //string consumerId = null;
-            //string appId = null;
-            //string serviceId = null;
-            //var response = instance.JobsOne(jobId, employeeId, raw, consumerId, appId, serviceId);
-            //Assert.IsType<GetHrisJobResponse>(response);
-        }
-
-        /// <summary>
         /// Test PayrollsAll
         /// </summary>
         [Fact]
