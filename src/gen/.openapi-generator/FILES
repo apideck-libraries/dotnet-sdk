@@ -28,6 +28,7 @@ docs/Applicant.md
 docs/ApplicantSocialLinks.md
 docs/ApplicantWebsites.md
 docs/ApplicantsFilter.md
+docs/Assignee.md
 docs/AtsActivity.md
 docs/AtsApi.md
 docs/AtsEventType.md
@@ -50,6 +51,11 @@ docs/Bill.md
 docs/BillLineItem.md
 docs/Branch.md
 docs/CashDetails.md
+docs/Collection.md
+docs/CollectionTicketComment.md
+docs/CollectionUser.md
+docs/CollectionsSort.md
+docs/CommentsSort.md
 docs/CompaniesFilter.md
 docs/CompaniesSort.md
 docs/Company.md
@@ -88,6 +94,7 @@ docs/CopyFolderRequest.md
 docs/CreateActivityResponse.md
 docs/CreateApplicantResponse.md
 docs/CreateBillResponse.md
+docs/CreateCommentResponse.md
 docs/CreateCompanyResponse.md
 docs/CreateConnectionResponse.md
 docs/CreateConsumerResponse.md
@@ -132,6 +139,7 @@ docs/CreateSharedLinkResponse.md
 docs/CreateSupplierResponse.md
 docs/CreateTaxRateResponse.md
 docs/CreateTenderResponse.md
+docs/CreateTicketResponse.md
 docs/CreateTimeOffRequestResponse.md
 docs/CreateUploadSessionRequest.md
 docs/CreateUploadSessionResponse.md
@@ -149,6 +157,7 @@ docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
 docs/DeleteBillResponse.md
+docs/DeleteCommentResponse.md
 docs/DeleteCompanyResponse.md
 docs/DeleteConsumerResponse.md
 docs/DeleteContactResponse.md
@@ -187,6 +196,7 @@ docs/DeleteSharedLinkResponse.md
 docs/DeleteSupplierResponse.md
 docs/DeleteTaxRateResponse.md
 docs/DeleteTenderResponse.md
+docs/DeleteTicketResponse.md
 docs/DeleteTimeOffRequestResponse.md
 docs/DeleteUploadSessionResponse.md
 docs/DeleteUserResponse.md
@@ -251,6 +261,12 @@ docs/GetApplicantsResponse.md
 docs/GetBalanceSheetResponse.md
 docs/GetBillResponse.md
 docs/GetBillsResponse.md
+docs/GetCollectionResponse.md
+docs/GetCollectionUserResponse.md
+docs/GetCollectionUsersResponse.md
+docs/GetCollectionsResponse.md
+docs/GetCommentResponse.md
+docs/GetCommentsResponse.md
 docs/GetCompaniesResponse.md
 docs/GetCompanyInfoResponse.md
 docs/GetCompanyResponse.md
@@ -347,6 +363,8 @@ docs/GetTaxRateResponse.md
 docs/GetTaxRatesResponse.md
 docs/GetTenderResponse.md
 docs/GetTendersResponse.md
+docs/GetTicketResponse.md
+docs/GetTicketsResponse.md
 docs/GetTimeOffRequestResponse.md
 docs/GetTimeOffRequestsResponse.md
 docs/GetUploadSessionResponse.md
@@ -361,6 +379,7 @@ docs/HrisEventType.md
 docs/HrisJob.md
 docs/HrisJobLocation.md
 docs/HrisJobs.md
+docs/IntegrationState.md
 docs/Invoice.md
 docs/InvoiceItem.md
 docs/InvoiceItemSalesDetails.md
@@ -368,6 +387,9 @@ docs/InvoiceItemsFilter.md
 docs/InvoiceLineItem.md
 docs/InvoiceResponse.md
 docs/InvoicesSort.md
+docs/IssueTrackingApi.md
+docs/IssueTrackingEventType.md
+docs/IssuesFilter.md
 docs/Item.md
 docs/Job.md
 docs/JobSalary.md
@@ -483,6 +505,8 @@ docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
 docs/Tender.md
+docs/Ticket.md
+docs/TicketsSort.md
 docs/TimeOffRequest.md
 docs/TimeOffRequestNotes.md
 docs/TimeOffRequestsFilter.md
@@ -496,6 +520,7 @@ docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
 docs/UpdateBillResponse.md
+docs/UpdateCommentResponse.md
 docs/UpdateCompanyResponse.md
 docs/UpdateConnectionResponse.md
 docs/UpdateConsumerRequest.md
@@ -539,6 +564,7 @@ docs/UpdateSharedLinkResponse.md
 docs/UpdateSupplierResponse.md
 docs/UpdateTaxRateResponse.md
 docs/UpdateTenderResponse.md
+docs/UpdateTicketResponse.md
 docs/UpdateTimeOffRequestResponse.md
 docs/UpdateUploadSessionResponse.md
 docs/UpdateUserResponse.md
@@ -570,6 +596,7 @@ src/Apideck.Test/Api/CustomerSupportApiTests.cs
 src/Apideck.Test/Api/EcommerceApiTests.cs
 src/Apideck.Test/Api/FileStorageApiTests.cs
 src/Apideck.Test/Api/HrisApiTests.cs
+src/Apideck.Test/Api/IssueTrackingApiTests.cs
 src/Apideck.Test/Api/LeadApiTests.cs
 src/Apideck.Test/Api/PosApiTests.cs
 src/Apideck.Test/Api/SmsApiTests.cs
@@ -594,6 +621,7 @@ src/Apideck.Test/Model/ApplicantSocialLinksTests.cs
 src/Apideck.Test/Model/ApplicantTests.cs
 src/Apideck.Test/Model/ApplicantWebsitesTests.cs
 src/Apideck.Test/Model/ApplicantsFilterTests.cs
+src/Apideck.Test/Model/AssigneeTests.cs
 src/Apideck.Test/Model/AtsActivityTests.cs
 src/Apideck.Test/Model/AtsEventTypeTests.cs
 src/Apideck.Test/Model/AuthTypeTests.cs
@@ -615,6 +643,11 @@ src/Apideck.Test/Model/BillLineItemTests.cs
 src/Apideck.Test/Model/BillTests.cs
 src/Apideck.Test/Model/BranchTests.cs
 src/Apideck.Test/Model/CashDetailsTests.cs
+src/Apideck.Test/Model/CollectionTests.cs
+src/Apideck.Test/Model/CollectionTicketCommentTests.cs
+src/Apideck.Test/Model/CollectionUserTests.cs
+src/Apideck.Test/Model/CollectionsSortTests.cs
+src/Apideck.Test/Model/CommentsSortTests.cs
 src/Apideck.Test/Model/CompaniesFilterTests.cs
 src/Apideck.Test/Model/CompaniesSortTests.cs
 src/Apideck.Test/Model/CompanyInfoTests.cs
@@ -652,6 +685,7 @@ src/Apideck.Test/Model/CopyFolderRequestTests.cs
 src/Apideck.Test/Model/CreateActivityResponseTests.cs
 src/Apideck.Test/Model/CreateApplicantResponseTests.cs
 src/Apideck.Test/Model/CreateBillResponseTests.cs
+src/Apideck.Test/Model/CreateCommentResponseTests.cs
 src/Apideck.Test/Model/CreateCompanyResponseTests.cs
 src/Apideck.Test/Model/CreateConnectionResponseTests.cs
 src/Apideck.Test/Model/CreateConsumerResponseTests.cs
@@ -696,6 +730,7 @@ src/Apideck.Test/Model/CreateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/CreateSupplierResponseTests.cs
 src/Apideck.Test/Model/CreateTaxRateResponseTests.cs
 src/Apideck.Test/Model/CreateTenderResponseTests.cs
+src/Apideck.Test/Model/CreateTicketResponseTests.cs
 src/Apideck.Test/Model/CreateTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/CreateUploadSessionRequestTests.cs
 src/Apideck.Test/Model/CreateUploadSessionResponseTests.cs
@@ -711,6 +746,7 @@ src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
 src/Apideck.Test/Model/DeleteBillResponseTests.cs
+src/Apideck.Test/Model/DeleteCommentResponseTests.cs
 src/Apideck.Test/Model/DeleteCompanyResponseTests.cs
 src/Apideck.Test/Model/DeleteConsumerResponseTests.cs
 src/Apideck.Test/Model/DeleteContactResponseTests.cs
@@ -749,6 +785,7 @@ src/Apideck.Test/Model/DeleteSharedLinkResponseTests.cs
 src/Apideck.Test/Model/DeleteSupplierResponseTests.cs
 src/Apideck.Test/Model/DeleteTaxRateResponseTests.cs
 src/Apideck.Test/Model/DeleteTenderResponseTests.cs
+src/Apideck.Test/Model/DeleteTicketResponseTests.cs
 src/Apideck.Test/Model/DeleteTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/DeleteUploadSessionResponseTests.cs
 src/Apideck.Test/Model/DeleteUserResponseTests.cs
@@ -811,6 +848,12 @@ src/Apideck.Test/Model/GetApplicantsResponseTests.cs
 src/Apideck.Test/Model/GetBalanceSheetResponseTests.cs
 src/Apideck.Test/Model/GetBillResponseTests.cs
 src/Apideck.Test/Model/GetBillsResponseTests.cs
+src/Apideck.Test/Model/GetCollectionResponseTests.cs
+src/Apideck.Test/Model/GetCollectionUserResponseTests.cs
+src/Apideck.Test/Model/GetCollectionUsersResponseTests.cs
+src/Apideck.Test/Model/GetCollectionsResponseTests.cs
+src/Apideck.Test/Model/GetCommentResponseTests.cs
+src/Apideck.Test/Model/GetCommentsResponseTests.cs
 src/Apideck.Test/Model/GetCompaniesResponseTests.cs
 src/Apideck.Test/Model/GetCompanyInfoResponseTests.cs
 src/Apideck.Test/Model/GetCompanyResponseTests.cs
@@ -907,6 +950,8 @@ src/Apideck.Test/Model/GetTaxRateResponseTests.cs
 src/Apideck.Test/Model/GetTaxRatesResponseTests.cs
 src/Apideck.Test/Model/GetTenderResponseTests.cs
 src/Apideck.Test/Model/GetTendersResponseTests.cs
+src/Apideck.Test/Model/GetTicketResponseTests.cs
+src/Apideck.Test/Model/GetTicketsResponseTests.cs
 src/Apideck.Test/Model/GetTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/GetTimeOffRequestsResponseTests.cs
 src/Apideck.Test/Model/GetUploadSessionResponseTests.cs
@@ -920,6 +965,7 @@ src/Apideck.Test/Model/HrisEventTypeTests.cs
 src/Apideck.Test/Model/HrisJobLocationTests.cs
 src/Apideck.Test/Model/HrisJobTests.cs
 src/Apideck.Test/Model/HrisJobsTests.cs
+src/Apideck.Test/Model/IntegrationStateTests.cs
 src/Apideck.Test/Model/InvoiceItemSalesDetailsTests.cs
 src/Apideck.Test/Model/InvoiceItemTests.cs
 src/Apideck.Test/Model/InvoiceItemsFilterTests.cs
@@ -927,6 +973,8 @@ src/Apideck.Test/Model/InvoiceLineItemTests.cs
 src/Apideck.Test/Model/InvoiceResponseTests.cs
 src/Apideck.Test/Model/InvoiceTests.cs
 src/Apideck.Test/Model/InvoicesSortTests.cs
+src/Apideck.Test/Model/IssueTrackingEventTypeTests.cs
+src/Apideck.Test/Model/IssuesFilterTests.cs
 src/Apideck.Test/Model/ItemTests.cs
 src/Apideck.Test/Model/JobSalaryTests.cs
 src/Apideck.Test/Model/JobStatusTests.cs
@@ -1039,6 +1087,8 @@ src/Apideck.Test/Model/TaxRateTests.cs
 src/Apideck.Test/Model/TaxRatesFilterTests.cs
 src/Apideck.Test/Model/TaxTests.cs
 src/Apideck.Test/Model/TenderTests.cs
+src/Apideck.Test/Model/TicketTests.cs
+src/Apideck.Test/Model/TicketsSortTests.cs
 src/Apideck.Test/Model/TimeOffRequestNotesTests.cs
 src/Apideck.Test/Model/TimeOffRequestTests.cs
 src/Apideck.Test/Model/TimeOffRequestsFilterTests.cs
@@ -1052,6 +1102,7 @@ src/Apideck.Test/Model/UnifiedIdTests.cs
 src/Apideck.Test/Model/UnprocessableResponseTests.cs
 src/Apideck.Test/Model/UpdateActivityResponseTests.cs
 src/Apideck.Test/Model/UpdateBillResponseTests.cs
+src/Apideck.Test/Model/UpdateCommentResponseTests.cs
 src/Apideck.Test/Model/UpdateCompanyResponseTests.cs
 src/Apideck.Test/Model/UpdateConnectionResponseTests.cs
 src/Apideck.Test/Model/UpdateConsumerRequestTests.cs
@@ -1095,6 +1146,7 @@ src/Apideck.Test/Model/UpdateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/UpdateSupplierResponseTests.cs
 src/Apideck.Test/Model/UpdateTaxRateResponseTests.cs
 src/Apideck.Test/Model/UpdateTenderResponseTests.cs
+src/Apideck.Test/Model/UpdateTicketResponseTests.cs
 src/Apideck.Test/Model/UpdateTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/UpdateUploadSessionResponseTests.cs
 src/Apideck.Test/Model/UpdateUserResponseTests.cs
@@ -1123,6 +1175,7 @@ src/Apideck/Api/CustomerSupportApi.cs
 src/Apideck/Api/EcommerceApi.cs
 src/Apideck/Api/FileStorageApi.cs
 src/Apideck/Api/HrisApi.cs
+src/Apideck/Api/IssueTrackingApi.cs
 src/Apideck/Api/LeadApi.cs
 src/Apideck/Api/PosApi.cs
 src/Apideck/Api/SmsApi.cs
@@ -1164,6 +1217,7 @@ src/Apideck/Model/Applicant.cs
 src/Apideck/Model/ApplicantSocialLinks.cs
 src/Apideck/Model/ApplicantWebsites.cs
 src/Apideck/Model/ApplicantsFilter.cs
+src/Apideck/Model/Assignee.cs
 src/Apideck/Model/AtsActivity.cs
 src/Apideck/Model/AtsEventType.cs
 src/Apideck/Model/AuthType.cs
@@ -1185,6 +1239,11 @@ src/Apideck/Model/Bill.cs
 src/Apideck/Model/BillLineItem.cs
 src/Apideck/Model/Branch.cs
 src/Apideck/Model/CashDetails.cs
+src/Apideck/Model/Collection.cs
+src/Apideck/Model/CollectionTicketComment.cs
+src/Apideck/Model/CollectionUser.cs
+src/Apideck/Model/CollectionsSort.cs
+src/Apideck/Model/CommentsSort.cs
 src/Apideck/Model/CompaniesFilter.cs
 src/Apideck/Model/CompaniesSort.cs
 src/Apideck/Model/Company.cs
@@ -1222,6 +1281,7 @@ src/Apideck/Model/CopyFolderRequest.cs
 src/Apideck/Model/CreateActivityResponse.cs
 src/Apideck/Model/CreateApplicantResponse.cs
 src/Apideck/Model/CreateBillResponse.cs
+src/Apideck/Model/CreateCommentResponse.cs
 src/Apideck/Model/CreateCompanyResponse.cs
 src/Apideck/Model/CreateConnectionResponse.cs
 src/Apideck/Model/CreateConsumerResponse.cs
@@ -1266,6 +1326,7 @@ src/Apideck/Model/CreateSharedLinkResponse.cs
 src/Apideck/Model/CreateSupplierResponse.cs
 src/Apideck/Model/CreateTaxRateResponse.cs
 src/Apideck/Model/CreateTenderResponse.cs
+src/Apideck/Model/CreateTicketResponse.cs
 src/Apideck/Model/CreateTimeOffRequestResponse.cs
 src/Apideck/Model/CreateUploadSessionRequest.cs
 src/Apideck/Model/CreateUploadSessionResponse.cs
@@ -1281,6 +1342,7 @@ src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs
 src/Apideck/Model/DeleteBillResponse.cs
+src/Apideck/Model/DeleteCommentResponse.cs
 src/Apideck/Model/DeleteCompanyResponse.cs
 src/Apideck/Model/DeleteConsumerResponse.cs
 src/Apideck/Model/DeleteContactResponse.cs
@@ -1319,6 +1381,7 @@ src/Apideck/Model/DeleteSharedLinkResponse.cs
 src/Apideck/Model/DeleteSupplierResponse.cs
 src/Apideck/Model/DeleteTaxRateResponse.cs
 src/Apideck/Model/DeleteTenderResponse.cs
+src/Apideck/Model/DeleteTicketResponse.cs
 src/Apideck/Model/DeleteTimeOffRequestResponse.cs
 src/Apideck/Model/DeleteUploadSessionResponse.cs
 src/Apideck/Model/DeleteUserResponse.cs
@@ -1381,6 +1444,12 @@ src/Apideck/Model/GetApplicantsResponse.cs
 src/Apideck/Model/GetBalanceSheetResponse.cs
 src/Apideck/Model/GetBillResponse.cs
 src/Apideck/Model/GetBillsResponse.cs
+src/Apideck/Model/GetCollectionResponse.cs
+src/Apideck/Model/GetCollectionUserResponse.cs
+src/Apideck/Model/GetCollectionUsersResponse.cs
+src/Apideck/Model/GetCollectionsResponse.cs
+src/Apideck/Model/GetCommentResponse.cs
+src/Apideck/Model/GetCommentsResponse.cs
 src/Apideck/Model/GetCompaniesResponse.cs
 src/Apideck/Model/GetCompanyInfoResponse.cs
 src/Apideck/Model/GetCompanyResponse.cs
@@ -1477,6 +1546,8 @@ src/Apideck/Model/GetTaxRateResponse.cs
 src/Apideck/Model/GetTaxRatesResponse.cs
 src/Apideck/Model/GetTenderResponse.cs
 src/Apideck/Model/GetTendersResponse.cs
+src/Apideck/Model/GetTicketResponse.cs
+src/Apideck/Model/GetTicketsResponse.cs
 src/Apideck/Model/GetTimeOffRequestResponse.cs
 src/Apideck/Model/GetTimeOffRequestsResponse.cs
 src/Apideck/Model/GetUploadSessionResponse.cs
@@ -1490,6 +1561,7 @@ src/Apideck/Model/HrisEventType.cs
 src/Apideck/Model/HrisJob.cs
 src/Apideck/Model/HrisJobLocation.cs
 src/Apideck/Model/HrisJobs.cs
+src/Apideck/Model/IntegrationState.cs
 src/Apideck/Model/Invoice.cs
 src/Apideck/Model/InvoiceItem.cs
 src/Apideck/Model/InvoiceItemSalesDetails.cs
@@ -1497,6 +1569,8 @@ src/Apideck/Model/InvoiceItemsFilter.cs
 src/Apideck/Model/InvoiceLineItem.cs
 src/Apideck/Model/InvoiceResponse.cs
 src/Apideck/Model/InvoicesSort.cs
+src/Apideck/Model/IssueTrackingEventType.cs
+src/Apideck/Model/IssuesFilter.cs
 src/Apideck/Model/Item.cs
 src/Apideck/Model/Job.cs
 src/Apideck/Model/JobSalary.cs
@@ -1609,6 +1683,8 @@ src/Apideck/Model/Tax.cs
 src/Apideck/Model/TaxRate.cs
 src/Apideck/Model/TaxRatesFilter.cs
 src/Apideck/Model/Tender.cs
+src/Apideck/Model/Ticket.cs
+src/Apideck/Model/TicketsSort.cs
 src/Apideck/Model/TimeOffRequest.cs
 src/Apideck/Model/TimeOffRequestNotes.cs
 src/Apideck/Model/TimeOffRequestsFilter.cs
@@ -1622,6 +1698,7 @@ src/Apideck/Model/UnifiedId.cs
 src/Apideck/Model/UnprocessableResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs
 src/Apideck/Model/UpdateBillResponse.cs
+src/Apideck/Model/UpdateCommentResponse.cs
 src/Apideck/Model/UpdateCompanyResponse.cs
 src/Apideck/Model/UpdateConnectionResponse.cs
 src/Apideck/Model/UpdateConsumerRequest.cs
@@ -1665,6 +1742,7 @@ src/Apideck/Model/UpdateSharedLinkResponse.cs
 src/Apideck/Model/UpdateSupplierResponse.cs
 src/Apideck/Model/UpdateTaxRateResponse.cs
 src/Apideck/Model/UpdateTenderResponse.cs
+src/Apideck/Model/UpdateTicketResponse.cs
 src/Apideck/Model/UpdateTimeOffRequestResponse.cs
 src/Apideck/Model/UpdateUploadSessionResponse.cs
 src/Apideck/Model/UpdateUserResponse.cs

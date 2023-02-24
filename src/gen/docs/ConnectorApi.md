@@ -467,7 +467,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var resourceId = "resourceId_example";  // string | ID of the resource you are acting upon.
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var unifiedApi = (UnifiedApiId) "vault";  // UnifiedApiId? | Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs (optional) 
+            var unifiedApi = (UnifiedApiId) "accounting";  // UnifiedApiId? | Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs (optional) 
 
             try
             {
