@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **DueDate** | **DateTime?** | Due date of the ticket | [optional] 
 **CompletedAt** | **DateTime?** | When the ticket was completed | [optional] [readonly] 
-**Tags** | **List&lt;string&gt;** |  | [optional] 
+**Tags** | [**List&lt;CollectionTag&gt;**](CollectionTag.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

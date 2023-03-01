@@ -52,6 +52,7 @@ docs/BillLineItem.md
 docs/Branch.md
 docs/CashDetails.md
 docs/Collection.md
+docs/CollectionTag.md
 docs/CollectionTicketComment.md
 docs/CollectionUser.md
 docs/CollectionsSort.md
@@ -262,6 +263,7 @@ docs/GetBalanceSheetResponse.md
 docs/GetBillResponse.md
 docs/GetBillsResponse.md
 docs/GetCollectionResponse.md
+docs/GetCollectionTagsResponse.md
 docs/GetCollectionUserResponse.md
 docs/GetCollectionUsersResponse.md
 docs/GetCollectionsResponse.md
@@ -643,6 +645,7 @@ src/Apideck.Test/Model/BillLineItemTests.cs
 src/Apideck.Test/Model/BillTests.cs
 src/Apideck.Test/Model/BranchTests.cs
 src/Apideck.Test/Model/CashDetailsTests.cs
+src/Apideck.Test/Model/CollectionTagTests.cs
 src/Apideck.Test/Model/CollectionTests.cs
 src/Apideck.Test/Model/CollectionTicketCommentTests.cs
 src/Apideck.Test/Model/CollectionUserTests.cs
@@ -849,6 +852,7 @@ src/Apideck.Test/Model/GetBalanceSheetResponseTests.cs
 src/Apideck.Test/Model/GetBillResponseTests.cs
 src/Apideck.Test/Model/GetBillsResponseTests.cs
 src/Apideck.Test/Model/GetCollectionResponseTests.cs
+src/Apideck.Test/Model/GetCollectionTagsResponseTests.cs
 src/Apideck.Test/Model/GetCollectionUserResponseTests.cs
 src/Apideck.Test/Model/GetCollectionUsersResponseTests.cs
 src/Apideck.Test/Model/GetCollectionsResponseTests.cs
@@ -1240,6 +1244,7 @@ src/Apideck/Model/BillLineItem.cs
 src/Apideck/Model/Branch.cs
 src/Apideck/Model/CashDetails.cs
 src/Apideck/Model/Collection.cs
+src/Apideck/Model/CollectionTag.cs
 src/Apideck/Model/CollectionTicketComment.cs
 src/Apideck/Model/CollectionUser.cs
 src/Apideck/Model/CollectionsSort.cs
@@ -1445,6 +1450,7 @@ src/Apideck/Model/GetBalanceSheetResponse.cs
 src/Apideck/Model/GetBillResponse.cs
 src/Apideck/Model/GetBillsResponse.cs
 src/Apideck/Model/GetCollectionResponse.cs
+src/Apideck/Model/GetCollectionTagsResponse.cs
 src/Apideck/Model/GetCollectionUserResponse.cs
 src/Apideck/Model/GetCollectionUsersResponse.cs
 src/Apideck/Model/GetCollectionsResponse.cs
