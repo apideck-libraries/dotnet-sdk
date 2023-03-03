@@ -128,6 +128,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'AutoRedirect'
         }
+        /// <summary>
+        /// Test the property 'HideGuides'
+        /// </summary>
+        [Fact]
+        public void HideGuidesTest()
+        {
+            // TODO unit test for the property 'HideGuides'
+        }
 
     }
 

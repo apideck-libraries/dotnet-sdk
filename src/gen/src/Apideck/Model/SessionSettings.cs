@@ -43,7 +43,8 @@ namespace Apideck.Model
         /// <param name="showSuggestions">Configure [Vault](/apis/vault/reference#section/Get-Started) to show the suggestions page. Defaults to &#x60;false&#x60;. (default to false).</param>
         /// <param name="showSidebar">Configure [Vault](/apis/vault/reference#section/Get-Started) to show the sidebar. Defaults to &#x60;true&#x60;. (default to true).</param>
         /// <param name="autoRedirect">Automatically redirect to redirect uri after the connection has been configured as callable. Defaults to &#x60;false&#x60;. (default to false).</param>
-        public SessionSettings(List<UnifiedApiId> unifiedApis = default(List<UnifiedApiId>), bool hideResourceSettings = false, bool sandboxMode = false, bool isolationMode = false, string sessionLength = "1h", bool showLogs = true, bool showSuggestions = false, bool showSidebar = true, bool autoRedirect = false)
+        /// <param name="hideGuides">Hide Apideck connection guides in [Vault](/apis/vault/reference#section/Get-Started). Defaults to &#x60;false&#x60;. (default to false).</param>
+        public SessionSettings(List<UnifiedApiId> unifiedApis = default(List<UnifiedApiId>), bool hideResourceSettings = false, bool sandboxMode = false, bool isolationMode = false, string sessionLength = "1h", bool showLogs = true, bool showSuggestions = false, bool showSidebar = true, bool autoRedirect = false, bool hideGuides = false)
         {
             this.UnifiedApis = unifiedApis;
             this.HideResourceSettings = hideResourceSettings;
@@ -55,6 +56,7 @@ namespace Apideck.Model
             this.ShowSuggestions = showSuggestions;
             this.ShowSidebar = showSidebar;
             this.AutoRedirect = autoRedirect;
+            this.HideGuides = hideGuides;
         }
 
         /// <summary>
@@ -121,6 +123,13 @@ namespace Apideck.Model
         public bool AutoRedirect { get; set; }
 
         /// <summary>
+        /// Hide Apideck connection guides in [Vault](/apis/vault/reference#section/Get-Started). Defaults to &#x60;false&#x60;.
+        /// </summary>
+        /// <value>Hide Apideck connection guides in [Vault](/apis/vault/reference#section/Get-Started). Defaults to &#x60;false&#x60;.</value>
+        [DataMember(Name = "hide_guides", EmitDefaultValue = true)]
+        public bool HideGuides { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -137,6 +146,7 @@ namespace Apideck.Model
             sb.Append("  ShowSuggestions: ").Append(ShowSuggestions).Append("\n");
             sb.Append("  ShowSidebar: ").Append(ShowSidebar).Append("\n");
             sb.Append("  AutoRedirect: ").Append(AutoRedirect).Append("\n");
+            sb.Append("  HideGuides: ").Append(HideGuides).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -210,6 +220,10 @@ namespace Apideck.Model
                 (
                     this.AutoRedirect == input.AutoRedirect ||
                     this.AutoRedirect.Equals(input.AutoRedirect)
+                ) && 
+                (
+                    this.HideGuides == input.HideGuides ||
+                    this.HideGuides.Equals(input.HideGuides)
                 );
         }
 
@@ -237,6 +251,7 @@ namespace Apideck.Model
                 hashCode = (hashCode * 59) + this.ShowSuggestions.GetHashCode();
                 hashCode = (hashCode * 59) + this.ShowSidebar.GetHashCode();
                 hashCode = (hashCode * 59) + this.AutoRedirect.GetHashCode();
+                hashCode = (hashCode * 59) + this.HideGuides.GetHashCode();
                 return hashCode;
             }
         }
