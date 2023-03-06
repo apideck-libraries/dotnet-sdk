@@ -6,6 +6,7 @@ Theming options to change the look and feel of Vault.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Favicon** | **string** | The URL to the favicon to use for Vault. | [optional] 
+**Logo** | **string** | The URL to the logo to use for Vault. | [optional] 
 **PrimaryColor** | **string** | The primary color to use for Vault. | [optional] 
 **SidepanelBackgroundColor** | **string** | The background color to use for the sidebar. | [optional] 
 **SidepanelTextColor** | **string** | The text color to use for the sidebar. | [optional] 

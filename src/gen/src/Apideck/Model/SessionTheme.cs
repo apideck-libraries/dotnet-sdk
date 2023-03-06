@@ -35,15 +35,17 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="SessionTheme" /> class.
         /// </summary>
         /// <param name="favicon">The URL to the favicon to use for Vault..</param>
+        /// <param name="logo">The URL to the logo to use for Vault..</param>
         /// <param name="primaryColor">The primary color to use for Vault..</param>
         /// <param name="sidepanelBackgroundColor">The background color to use for the sidebar..</param>
         /// <param name="sidepanelTextColor">The text color to use for the sidebar..</param>
         /// <param name="vaultName">The name that will be shown in the sidebar..</param>
         /// <param name="privacyUrl">The URL to the privacy policy that will be shown in the sidebar..</param>
         /// <param name="termsUrl">The URL to the terms and conditions that will be shown in the sidebar..</param>
-        public SessionTheme(string favicon = default(string), string primaryColor = default(string), string sidepanelBackgroundColor = default(string), string sidepanelTextColor = default(string), string vaultName = default(string), string privacyUrl = default(string), string termsUrl = default(string))
+        public SessionTheme(string favicon = default(string), string logo = default(string), string primaryColor = default(string), string sidepanelBackgroundColor = default(string), string sidepanelTextColor = default(string), string vaultName = default(string), string privacyUrl = default(string), string termsUrl = default(string))
         {
             this.Favicon = favicon;
+            this.Logo = logo;
             this.PrimaryColor = primaryColor;
             this.SidepanelBackgroundColor = sidepanelBackgroundColor;
             this.SidepanelTextColor = sidepanelTextColor;
@@ -58,6 +60,13 @@ namespace Apideck.Model
         /// <value>The URL to the favicon to use for Vault.</value>
         [DataMember(Name = "favicon", EmitDefaultValue = false)]
         public string Favicon { get; set; }
+
+        /// <summary>
+        /// The URL to the logo to use for Vault.
+        /// </summary>
+        /// <value>The URL to the logo to use for Vault.</value>
+        [DataMember(Name = "logo", EmitDefaultValue = false)]
+        public string Logo { get; set; }
 
         /// <summary>
         /// The primary color to use for Vault.
@@ -110,6 +119,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class SessionTheme {\n");
             sb.Append("  Favicon: ").Append(Favicon).Append("\n");
+            sb.Append("  Logo: ").Append(Logo).Append("\n");
             sb.Append("  PrimaryColor: ").Append(PrimaryColor).Append("\n");
             sb.Append("  SidepanelBackgroundColor: ").Append(SidepanelBackgroundColor).Append("\n");
             sb.Append("  SidepanelTextColor: ").Append(SidepanelTextColor).Append("\n");
@@ -157,6 +167,11 @@ namespace Apideck.Model
                     this.Favicon.Equals(input.Favicon))
                 ) && 
                 (
+                    this.Logo == input.Logo ||
+                    (this.Logo != null &&
+                    this.Logo.Equals(input.Logo))
+                ) && 
+                (
                     this.PrimaryColor == input.PrimaryColor ||
                     (this.PrimaryColor != null &&
                     this.PrimaryColor.Equals(input.PrimaryColor))
@@ -200,6 +215,10 @@ namespace Apideck.Model
                 if (this.Favicon != null)
                 {
                     hashCode = (hashCode * 59) + this.Favicon.GetHashCode();
+                }
+                if (this.Logo != null)
+                {
+                    hashCode = (hashCode * 59) + this.Logo.GetHashCode();
                 }
                 if (this.PrimaryColor != null)
                 {

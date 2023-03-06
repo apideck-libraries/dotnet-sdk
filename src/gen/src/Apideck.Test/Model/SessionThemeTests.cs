@@ -65,6 +65,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Favicon'
         }
         /// <summary>
+        /// Test the property 'Logo'
+        /// </summary>
+        [Fact]
+        public void LogoTest()
+        {
+            // TODO unit test for the property 'Logo'
+        }
+        /// <summary>
         /// Test the property 'PrimaryColor'
         /// </summary>
         [Fact]
