@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of the product or variant associated with the line item. | 
 **Description** | **string** | The description of the product or variant associated with the line item. | [optional] 
 **Options** | **List&lt;Object&gt;** |  | [optional] 
-**Quantity** | **decimal** | The quantity of the product or variant associated with the line item. | 
+**Quantity** | **string** | The quantity of the product or variant associated with the line item. | 
 **UnitPrice** | **string** | The unit price of the product or variant associated with the line item. | [optional] 
 **TaxRate** | **string** | The tax rate applied to the product or variant associated with the line item. | [optional] 
 **TaxAmount** | **string** | The total tax amount applied to the product or variant associated with the line item. | [optional] 

@@ -51,13 +51,17 @@ namespace Apideck.Model
         /// <param name="taxAmount">The total tax amount applied to the product or variant associated with the line item..</param>
         /// <param name="totalAmount">The total amount for the product(s) or variant associated with the line item, including taxes and discounts. (required).</param>
         /// <param name="discounts">discounts.</param>
-        public EcommerceOrderLineItem(string productId = default(string), string variantId = default(string), string sku = default(string), string name = default(string), string description = default(string), List<Object> options = default(List<Object>), decimal quantity = default(decimal), string unitPrice = default(string), string taxRate = default(string), string taxAmount = default(string), string totalAmount = default(string), List<EcommerceDiscount> discounts = default(List<EcommerceDiscount>))
+        public EcommerceOrderLineItem(string productId = default(string), string variantId = default(string), string sku = default(string), string name = default(string), string description = default(string), List<Object> options = default(List<Object>), string quantity = default(string), string unitPrice = default(string), string taxRate = default(string), string taxAmount = default(string), string totalAmount = default(string), List<EcommerceDiscount> discounts = default(List<EcommerceDiscount>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
                 throw new ArgumentNullException("name is a required property for EcommerceOrderLineItem and cannot be null");
             }
             this.Name = name;
+            // to ensure "quantity" is required (not null)
+            if (quantity == null) {
+                throw new ArgumentNullException("quantity is a required property for EcommerceOrderLineItem and cannot be null");
+            }
             this.Quantity = quantity;
             // to ensure "totalAmount" is required (not null)
             if (totalAmount == null) {
@@ -136,7 +140,7 @@ namespace Apideck.Model
         /// </summary>
         /// <value>The quantity of the product or variant associated with the line item.</value>
         [DataMember(Name = "quantity", IsRequired = true, EmitDefaultValue = false)]
-        public decimal Quantity { get; set; }
+        public string Quantity { get; set; }
 
         /// <summary>
         /// The unit price of the product or variant associated with the line item.
@@ -266,7 +270,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Quantity == input.Quantity ||
-                    this.Quantity.Equals(input.Quantity)
+                    (this.Quantity != null &&
+                    this.Quantity.Equals(input.Quantity))
                 ) && 
                 (
                     this.UnitPrice == input.UnitPrice ||
@@ -333,7 +338,10 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Options.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                if (this.Quantity != null)
+                {
+                    hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
+                }
                 if (this.UnitPrice != null)
                 {
                     hashCode = (hashCode * 59) + this.UnitPrice.GetHashCode();

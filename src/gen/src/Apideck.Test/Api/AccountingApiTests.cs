@@ -100,7 +100,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.BillsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //BillsSort sort = null;
+            //var response = instance.BillsAll(raw, consumerId, appId, serviceId, cursor, limit, sort);
             //Assert.IsType<GetBillsResponse>(response);
         }
 
