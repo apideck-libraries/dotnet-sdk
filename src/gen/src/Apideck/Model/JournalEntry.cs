@@ -47,7 +47,8 @@ namespace Apideck.Model
         /// <param name="memo">Reference for the journal entry..</param>
         /// <param name="postedAt">This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated..</param>
         /// <param name="journalSymbol">Journal symbol of the entry. For example IND for indirect costs.</param>
-        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string))
+        /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
+        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string), string rowVersion = default(string))
         {
             this.Title = title;
             this.CurrencyRate = currencyRate;
@@ -56,6 +57,7 @@ namespace Apideck.Model
             this.Memo = memo;
             this.PostedAt = postedAt;
             this.JournalSymbol = journalSymbol;
+            this.RowVersion = rowVersion;
         }
 
         /// <summary>
@@ -176,6 +178,13 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
+        /// </summary>
+        /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
+        [DataMember(Name = "row_version", EmitDefaultValue = true)]
+        public string RowVersion { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -195,6 +204,7 @@ namespace Apideck.Model
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -289,6 +299,11 @@ namespace Apideck.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.RowVersion == input.RowVersion ||
+                    (this.RowVersion != null &&
+                    this.RowVersion.Equals(input.RowVersion))
                 );
         }
 
@@ -345,6 +360,10 @@ namespace Apideck.Model
                 if (this.CreatedAt != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
+                }
+                if (this.RowVersion != null)
+                {
+                    hashCode = (hashCode * 59) + this.RowVersion.GetHashCode();
                 }
                 return hashCode;
             }

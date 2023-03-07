@@ -152,6 +152,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'CreatedAt'
         }
+        /// <summary>
+        /// Test the property 'RowVersion'
+        /// </summary>
+        [Fact]
+        public void RowVersionTest()
+        {
+            // TODO unit test for the property 'RowVersion'
+        }
 
     }
 
