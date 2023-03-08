@@ -35,9 +35,11 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="EcommerceCustomersFilter" /> class.
         /// </summary>
         /// <param name="email">Customer email address to filter on.</param>
-        public EcommerceCustomersFilter(string email = default(string))
+        /// <param name="phoneNumber">Customer phone number to filter on.</param>
+        public EcommerceCustomersFilter(string email = default(string), string phoneNumber = default(string))
         {
             this.Email = email;
+            this.PhoneNumber = phoneNumber;
         }
 
         /// <summary>
@@ -48,6 +50,13 @@ namespace Apideck.Model
         public string Email { get; set; }
 
         /// <summary>
+        /// Customer phone number to filter on
+        /// </summary>
+        /// <value>Customer phone number to filter on</value>
+        [DataMember(Name = "phone_number", EmitDefaultValue = false)]
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -56,6 +65,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class EcommerceCustomersFilter {\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,6 +105,11 @@ namespace Apideck.Model
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
+                ) && 
+                (
+                    this.PhoneNumber == input.PhoneNumber ||
+                    (this.PhoneNumber != null &&
+                    this.PhoneNumber.Equals(input.PhoneNumber))
                 );
         }
 
@@ -110,6 +125,10 @@ namespace Apideck.Model
                 if (this.Email != null)
                 {
                     hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                }
+                if (this.PhoneNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.PhoneNumber.GetHashCode();
                 }
                 return hashCode;
             }
