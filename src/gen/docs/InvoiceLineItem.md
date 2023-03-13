@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **UnitPrice** | **decimal?** |  | [optional] 
 **UnitOfMeasure** | **string** | Description of the unit type the item is sold as, ie: kg, hour. | [optional] 
 **DiscountPercentage** | **decimal?** | Discount percentage applied to the line item when supported downstream. | [optional] 
+**DiscountAmount** | **decimal?** | Discount amount applied to the line item when supported downstream. | [optional] 
 **LocationId** | **string** | Location id | [optional] 
 **DepartmentId** | **string** | Department id | [optional] 
 **Item** | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
