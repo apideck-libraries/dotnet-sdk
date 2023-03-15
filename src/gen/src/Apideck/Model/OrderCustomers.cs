@@ -34,19 +34,27 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderCustomers" /> class.
         /// </summary>
+        /// <param name="id">id.</param>
         /// <param name="firstName">firstName.</param>
         /// <param name="middleName">middleName.</param>
         /// <param name="lastName">lastName.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails.</param>
-        public OrderCustomers(string firstName = default(string), string middleName = default(string), string lastName = default(string), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>))
+        public OrderCustomers(string id = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>))
         {
+            this.Id = id;
             this.FirstName = firstName;
             this.MiddleName = middleName;
             this.LastName = lastName;
             this.PhoneNumbers = phoneNumbers;
             this.Emails = emails;
         }
+
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstName
@@ -86,6 +94,7 @@ namespace Apideck.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class OrderCustomers {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  MiddleName: ").Append(MiddleName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
@@ -127,6 +136,11 @@ namespace Apideck.Model
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.FirstName == input.FirstName ||
                     (this.FirstName != null &&
                     this.FirstName.Equals(input.FirstName))
@@ -164,6 +178,10 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
                 if (this.FirstName != null)
                 {
                     hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
