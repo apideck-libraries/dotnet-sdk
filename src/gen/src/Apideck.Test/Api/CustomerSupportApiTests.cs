@@ -83,7 +83,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetCustomerSupportCustomersResponse>(response);
         }
 
@@ -115,7 +116,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CustomersOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CustomersOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetCustomerSupportCustomerResponse>(response);
         }
 

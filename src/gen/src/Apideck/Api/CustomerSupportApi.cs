@@ -68,8 +68,9 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCustomerSupportCustomersResponse</returns>
-        GetCustomerSupportCustomersResponse CustomersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+        GetCustomerSupportCustomersResponse CustomersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
 
         /// <summary>
         /// List Customer Support Customers
@@ -84,8 +85,9 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCustomerSupportCustomersResponse</returns>
-        ApiResponse<GetCustomerSupportCustomersResponse> CustomersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+        ApiResponse<GetCustomerSupportCustomersResponse> CustomersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
         /// <summary>
         /// Delete Customer Support Customer
         /// </summary>
@@ -127,8 +129,9 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCustomerSupportCustomerResponse</returns>
-        GetCustomerSupportCustomerResponse CustomersOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        GetCustomerSupportCustomerResponse CustomersOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string));
 
         /// <summary>
         /// Get Customer Support Customer
@@ -142,8 +145,9 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCustomerSupportCustomerResponse</returns>
-        ApiResponse<GetCustomerSupportCustomerResponse> CustomersOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        ApiResponse<GetCustomerSupportCustomerResponse> CustomersOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string));
         /// <summary>
         /// Update Customer Support Customer
         /// </summary>
@@ -228,9 +232,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCustomerSupportCustomersResponse</returns>
-        System.Threading.Tasks.Task<GetCustomerSupportCustomersResponse> CustomersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetCustomerSupportCustomersResponse> CustomersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Customer Support Customers
@@ -245,9 +250,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCustomerSupportCustomersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCustomerSupportCustomersResponse>> CustomersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetCustomerSupportCustomersResponse>> CustomersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Customer Support Customer
         /// </summary>
@@ -291,9 +297,10 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCustomerSupportCustomerResponse</returns>
-        System.Threading.Tasks.Task<GetCustomerSupportCustomerResponse> CustomersOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetCustomerSupportCustomerResponse> CustomersOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Customer Support Customer
@@ -307,9 +314,10 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCustomerSupportCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCustomerSupportCustomerResponse>> CustomersOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetCustomerSupportCustomerResponse>> CustomersOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Customer Support Customer
         /// </summary>
@@ -667,10 +675,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCustomerSupportCustomersResponse</returns>
-        public GetCustomerSupportCustomersResponse CustomersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        public GetCustomerSupportCustomersResponse CustomersAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse> localVarResponse = CustomersAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit);
+            Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse> localVarResponse = CustomersAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, fields);
             return localVarResponse.Data;
         }
 
@@ -684,8 +693,9 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCustomerSupportCustomersResponse</returns>
-        public Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse> CustomersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        public Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse> CustomersAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -720,6 +730,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (fields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
             }
             if (consumerId != null)
             {
@@ -764,11 +778,12 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCustomerSupportCustomersResponse</returns>
-        public async System.Threading.Tasks.Task<GetCustomerSupportCustomersResponse> CustomersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetCustomerSupportCustomersResponse> CustomersAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse> localVarResponse = await CustomersAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse> localVarResponse = await CustomersAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -782,9 +797,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCustomerSupportCustomersResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse>> CustomersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCustomerSupportCustomersResponse>> CustomersAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -820,6 +836,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (fields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
             }
             if (consumerId != null)
             {
@@ -1056,10 +1076,11 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCustomerSupportCustomerResponse</returns>
-        public GetCustomerSupportCustomerResponse CustomersOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public GetCustomerSupportCustomerResponse CustomersOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse> localVarResponse = CustomersOneWithHttpInfo(id, consumerId, appId, serviceId, raw);
+            Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse> localVarResponse = CustomersOneWithHttpInfo(id, consumerId, appId, serviceId, raw, fields);
             return localVarResponse.Data;
         }
 
@@ -1072,8 +1093,9 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCustomerSupportCustomerResponse</returns>
-        public Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse> CustomersOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse> CustomersOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1107,6 +1129,10 @@ namespace Apideck.Api
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (fields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
             }
             if (consumerId != null)
             {
@@ -1150,11 +1176,12 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCustomerSupportCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<GetCustomerSupportCustomerResponse> CustomersOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetCustomerSupportCustomerResponse> CustomersOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse> localVarResponse = await CustomersOneWithHttpInfoAsync(id, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse> localVarResponse = await CustomersOneWithHttpInfoAsync(id, consumerId, appId, serviceId, raw, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1167,9 +1194,10 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="fields">This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCustomerSupportCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse>> CustomersOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCustomerSupportCustomerResponse>> CustomersOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1204,6 +1232,10 @@ namespace Apideck.Api
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (fields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
             }
             if (consumerId != null)
             {

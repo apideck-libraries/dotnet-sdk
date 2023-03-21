@@ -113,6 +113,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Department'
         }
         /// <summary>
+        /// Test the property 'IsPrimary'
+        /// </summary>
+        [Fact]
+        public void IsPrimaryTest()
+        {
+            // TODO unit test for the property 'IsPrimary'
+        }
+        /// <summary>
         /// Test the property 'Location'
         /// </summary>
         [Fact]

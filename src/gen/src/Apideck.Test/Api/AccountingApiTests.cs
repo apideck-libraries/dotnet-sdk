@@ -101,7 +101,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //BillsSort sort = null;
-            //var response = instance.BillsAll(raw, consumerId, appId, serviceId, cursor, limit, sort);
+            //string fields = null;
+            //var response = instance.BillsAll(raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
             //Assert.IsType<GetBillsResponse>(response);
         }
 
@@ -133,7 +134,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.BillsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.BillsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetBillResponse>(response);
         }
 
@@ -165,7 +167,8 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.CompanyInfoOne(raw, consumerId, appId, serviceId);
+            //string fields = null;
+            //var response = instance.CompanyInfoOne(raw, consumerId, appId, serviceId, fields);
             //Assert.IsType<GetCompanyInfoResponse>(response);
         }
 
@@ -198,7 +201,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.CreditNotesAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.CreditNotesAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetCreditNotesResponse>(response);
         }
 
@@ -230,7 +234,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CreditNotesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CreditNotesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetCreditNoteResponse>(response);
         }
 
@@ -281,7 +286,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //CustomersFilter filter = null;
-            //var response = instance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetCustomersResponse>(response);
         }
 
@@ -313,7 +319,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CustomersOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CustomersOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetCustomerResponse>(response);
         }
 
@@ -364,7 +371,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //InvoiceItemsFilter filter = null;
-            //var response = instance.InvoiceItemsAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.InvoiceItemsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetInvoiceItemsResponse>(response);
         }
 
@@ -396,7 +404,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.InvoiceItemsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.InvoiceItemsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetInvoiceItemResponse>(response);
         }
 
@@ -447,7 +456,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //InvoicesSort sort = null;
-            //var response = instance.InvoicesAll(raw, consumerId, appId, serviceId, cursor, limit, sort);
+            //string fields = null;
+            //var response = instance.InvoicesAll(raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
             //Assert.IsType<GetInvoicesResponse>(response);
         }
 
@@ -479,7 +489,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.InvoicesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.InvoicesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetInvoiceResponse>(response);
         }
 
@@ -529,7 +540,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetJournalEntriesResponse>(response);
         }
 
@@ -561,7 +573,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.JournalEntriesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.JournalEntriesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetJournalEntryResponse>(response);
         }
 
@@ -611,7 +624,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.LedgerAccountsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.LedgerAccountsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetLedgerAccountsResponse>(response);
         }
 
@@ -643,7 +657,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.LedgerAccountsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.LedgerAccountsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetLedgerAccountResponse>(response);
         }
 
@@ -693,7 +708,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetPaymentsResponse>(response);
         }
 
@@ -725,7 +741,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.PaymentsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.PaymentsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetPaymentResponse>(response);
         }
 
@@ -758,7 +775,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //ProfitAndLossFilter filter = null;
-            //var response = instance.ProfitAndLossOne(raw, consumerId, appId, serviceId, filter);
+            //string fields = null;
+            //var response = instance.ProfitAndLossOne(raw, consumerId, appId, serviceId, filter, fields);
             //Assert.IsType<GetProfitAndLossResponse>(response);
         }
 
@@ -792,7 +810,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //SuppliersFilter filter = null;
-            //var response = instance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetSuppliersResponse>(response);
         }
 
@@ -824,7 +843,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.SuppliersOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.SuppliersOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetSupplierResponse>(response);
         }
 
@@ -875,7 +895,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //TaxRatesFilter filter = null;
-            //var response = instance.TaxRatesAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.TaxRatesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetTaxRatesResponse>(response);
         }
 
@@ -907,7 +928,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.TaxRatesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.TaxRatesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetTaxRateResponse>(response);
         }
 

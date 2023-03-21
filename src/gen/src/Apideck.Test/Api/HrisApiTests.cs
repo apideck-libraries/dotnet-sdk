@@ -83,7 +83,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.CompaniesAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.CompaniesAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetHrisCompaniesResponse>(response);
         }
 
@@ -115,7 +116,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CompaniesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CompaniesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetHrisCompanyResponse>(response);
         }
 
@@ -165,7 +167,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.DepartmentsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.DepartmentsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetDepartmentsResponse>(response);
         }
 
@@ -197,7 +200,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.DepartmentsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.DepartmentsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetDepartmentResponse>(response);
         }
 
@@ -231,7 +235,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //PayrollsFilter filter = null;
-            //var response = instance.EmployeePayrollsAll(employeeId, raw, consumerId, appId, serviceId, filter);
+            //string fields = null;
+            //var response = instance.EmployeePayrollsAll(employeeId, raw, consumerId, appId, serviceId, filter, fields);
             //Assert.IsType<GetEmployeePayrollsResponse>(response);
         }
 
@@ -248,7 +253,8 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.EmployeePayrollsOne(payrollId, employeeId, raw, consumerId, appId, serviceId);
+            //string fields = null;
+            //var response = instance.EmployeePayrollsOne(payrollId, employeeId, raw, consumerId, appId, serviceId, fields);
             //Assert.IsType<GetEmployeePayrollResponse>(response);
         }
 
@@ -264,7 +270,8 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.EmployeeSchedulesAll(employeeId, raw, consumerId, appId, serviceId);
+            //string fields = null;
+            //var response = instance.EmployeeSchedulesAll(employeeId, raw, consumerId, appId, serviceId, fields);
             //Assert.IsType<GetEmployeeSchedulesResponse>(response);
         }
 
@@ -299,7 +306,8 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //EmployeesFilter filter = null;
             //EmployeesSort sort = null;
-            //var response = instance.EmployeesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
+            //string fields = null;
+            //var response = instance.EmployeesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, fields);
             //Assert.IsType<GetEmployeesResponse>(response);
         }
 
@@ -331,7 +339,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.EmployeesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.EmployeesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetEmployeeResponse>(response);
         }
 
@@ -364,7 +373,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //PayrollsFilter filter = null;
-            //var response = instance.PayrollsAll(raw, consumerId, appId, serviceId, filter);
+            //string fields = null;
+            //var response = instance.PayrollsAll(raw, consumerId, appId, serviceId, filter, fields);
             //Assert.IsType<GetPayrollsResponse>(response);
         }
 
@@ -380,7 +390,8 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.PayrollsOne(payrollId, raw, consumerId, appId, serviceId);
+            //string fields = null;
+            //var response = instance.PayrollsOne(payrollId, raw, consumerId, appId, serviceId, fields);
             //Assert.IsType<GetPayrollResponse>(response);
         }
 
@@ -414,7 +425,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //TimeOffRequestsFilter filter = null;
-            //var response = instance.TimeOffRequestsAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.TimeOffRequestsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetTimeOffRequestsResponse>(response);
         }
 
@@ -446,7 +458,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.TimeOffRequestsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.TimeOffRequestsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetTimeOffRequestResponse>(response);
         }
 

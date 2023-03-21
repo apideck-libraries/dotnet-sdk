@@ -84,7 +84,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //DriveGroupsFilter filter = null;
-            //var response = instance.DriveGroupsAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.DriveGroupsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetDriveGroupsResponse>(response);
         }
 
@@ -116,7 +117,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.DriveGroupsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.DriveGroupsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetDriveGroupResponse>(response);
         }
 
@@ -167,7 +169,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //DrivesFilter filter = null;
-            //var response = instance.DrivesAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.DrivesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetDrivesResponse>(response);
         }
 
@@ -199,7 +202,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.DrivesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.DrivesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetDriveResponse>(response);
         }
 
@@ -236,7 +240,8 @@ namespace Apideck.Test.Api
             //FilesFilter filter = null;
             //FilesSort sort = null;
             //Dictionary<string, Object> passThrough = null;
-            //var response = instance.FilesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough);
+            //string fields = null;
+            //var response = instance.FilesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetFilesResponse>(response);
         }
 
@@ -267,7 +272,8 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.FilesDownload(id, consumerId, appId, serviceId);
+            //string fields = null;
+            //var response = instance.FilesDownload(id, consumerId, appId, serviceId, fields);
             //Assert.IsType<System.IO.Stream>(response);
         }
 
@@ -283,7 +289,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.FilesOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.FilesOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetFileResponse>(response);
         }
 
@@ -299,7 +306,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //Dictionary<string, Object> passThrough = null;
-            //var response = instance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough);
+            //string fields = null;
+            //var response = instance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough, fields);
             //Assert.IsType<GetFilesResponse>(response);
         }
 
@@ -332,7 +340,8 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.FoldersAdd(createFolderRequest, raw, consumerId, appId, serviceId);
+            //string fields = null;
+            //var response = instance.FoldersAdd(createFolderRequest, raw, consumerId, appId, serviceId, fields);
             //Assert.IsType<CreateFolderResponse>(response);
         }
 
@@ -349,7 +358,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.FoldersCopy(id, copyFolderRequest, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.FoldersCopy(id, copyFolderRequest, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<UpdateFolderResponse>(response);
         }
 
@@ -381,7 +391,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.FoldersOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.FoldersOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetFolderResponse>(response);
         }
 
@@ -431,7 +442,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.SharedLinksAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.SharedLinksAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetSharedLinksResponse>(response);
         }
 
@@ -463,7 +475,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.SharedLinksOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.SharedLinksOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetSharedLinkResponse>(response);
         }
 
@@ -546,7 +559,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.UploadSessionsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.UploadSessionsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetUploadSessionResponse>(response);
         }
     }

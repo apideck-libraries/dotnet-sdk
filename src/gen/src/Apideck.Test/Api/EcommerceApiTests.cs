@@ -68,7 +68,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //EcommerceCustomersFilter filter = null;
-            //var response = instance.CustomersAll2(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.CustomersAll2(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetEcommerceCustomersResponse>(response);
         }
 
@@ -84,7 +85,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CustomersOne2(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CustomersOne2(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetEcommerceCustomerResponse>(response);
         }
 
@@ -102,7 +104,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //EcommerceOrdersFilter filter = null;
-            //var response = instance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetEcommerceOrdersResponse>(response);
         }
 
@@ -118,7 +121,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.OrdersOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.OrdersOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetEcommerceOrderResponse>(response);
         }
 
@@ -135,7 +139,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.ProductsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.ProductsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetProductsResponse>(response);
         }
 
@@ -151,7 +156,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.ProductsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.ProductsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetProductResponse>(response);
         }
 
@@ -166,7 +172,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.StoresOne(consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.StoresOne(consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetStoreResponse>(response);
         }
     }

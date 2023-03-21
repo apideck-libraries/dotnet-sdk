@@ -68,7 +68,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.CollectionTagsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.CollectionTagsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetCollectionTagsResponse>(response);
         }
 
@@ -106,7 +107,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //CommentsSort sort = null;
-            //var response = instance.CollectionTicketCommentsAll(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort);
+            //string fields = null;
+            //var response = instance.CollectionTicketCommentsAll(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
             //Assert.IsType<GetCommentsResponse>(response);
         }
 
@@ -144,7 +146,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.CollectionTicketCommentsOne(id, collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.CollectionTicketCommentsOne(id, collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetCommentResponse>(response);
         }
 
@@ -200,7 +203,8 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //TicketsSort sort = null;
             //IssuesFilter filter = null;
-            //var response = instance.CollectionTicketsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter);
+            //string fields = null;
+            //var response = instance.CollectionTicketsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter, fields);
             //Assert.IsType<GetTicketsResponse>(response);
         }
 
@@ -234,7 +238,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CollectionTicketsOne(ticketId, collectionId, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CollectionTicketsOne(ticketId, collectionId, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetTicketResponse>(response);
         }
 
@@ -270,7 +275,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.CollectionUsersAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.CollectionUsersAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetCollectionUsersResponse>(response);
         }
 
@@ -287,7 +293,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CollectionUsersOne(collectionId, id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CollectionUsersOne(collectionId, id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetCollectionUserResponse>(response);
         }
 
@@ -305,7 +312,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //CollectionsSort sort = null;
-            //var response = instance.CollectionsAll(raw, consumerId, appId, serviceId, cursor, limit, sort);
+            //string fields = null;
+            //var response = instance.CollectionsAll(raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
             //Assert.IsType<GetCollectionsResponse>(response);
         }
 
@@ -321,7 +329,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CollectionsOne(collectionId, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.CollectionsOne(collectionId, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetCollectionResponse>(response);
         }
     }

@@ -85,7 +85,8 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //LeadsFilter filter = null;
             //LeadsSort sort = null;
-            //var response = instance.LeadsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort);
+            //string fields = null;
+            //var response = instance.LeadsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, fields);
             //Assert.IsType<GetLeadsResponse>(response);
         }
 
@@ -117,7 +118,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.LeadsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.LeadsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetLeadResponse>(response);
         }
 

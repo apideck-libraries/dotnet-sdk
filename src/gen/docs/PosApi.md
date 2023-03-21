@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 <a name="itemsall"></a>
 # **ItemsAll**
-> GetItemsResponse ItemsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetItemsResponse ItemsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Items
 
@@ -178,11 +178,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Items
-                GetItemsResponse result = apiInstance.ItemsAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetItemsResponse result = apiInstance.ItemsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -206,6 +207,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -326,7 +328,7 @@ Name | Type | Description  | Notes
 
 <a name="itemsone"></a>
 # **ItemsOne**
-> GetItemResponse ItemsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetItemResponse ItemsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Item
 
@@ -359,11 +361,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Item
-                GetItemResponse result = apiInstance.ItemsOne(id, consumerId, appId, serviceId, raw);
+                GetItemResponse result = apiInstance.ItemsOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -386,6 +389,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -598,7 +602,7 @@ Name | Type | Description  | Notes
 
 <a name="locationsall"></a>
 # **LocationsAll**
-> GetLocationsResponse LocationsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetLocationsResponse LocationsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Locations
 
@@ -632,11 +636,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Locations
-                GetLocationsResponse result = apiInstance.LocationsAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetLocationsResponse result = apiInstance.LocationsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -660,6 +665,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -780,7 +786,7 @@ Name | Type | Description  | Notes
 
 <a name="locationsone"></a>
 # **LocationsOne**
-> GetLocationResponse LocationsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetLocationResponse LocationsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Location
 
@@ -813,11 +819,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Location
-                GetLocationResponse result = apiInstance.LocationsOne(id, consumerId, appId, serviceId, raw);
+                GetLocationResponse result = apiInstance.LocationsOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -840,6 +847,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -1052,7 +1060,7 @@ Name | Type | Description  | Notes
 
 <a name="merchantsall"></a>
 # **MerchantsAll**
-> GetMerchantsResponse MerchantsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetMerchantsResponse MerchantsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Merchants
 
@@ -1086,11 +1094,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Merchants
-                GetMerchantsResponse result = apiInstance.MerchantsAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetMerchantsResponse result = apiInstance.MerchantsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1114,6 +1123,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -1234,7 +1244,7 @@ Name | Type | Description  | Notes
 
 <a name="merchantsone"></a>
 # **MerchantsOne**
-> GetMerchantResponse MerchantsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetMerchantResponse MerchantsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Merchant
 
@@ -1267,11 +1277,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Merchant
-                GetMerchantResponse result = apiInstance.MerchantsOne(id, consumerId, appId, serviceId, raw);
+                GetMerchantResponse result = apiInstance.MerchantsOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1294,6 +1305,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -1506,7 +1518,7 @@ Name | Type | Description  | Notes
 
 <a name="modifiergroupsall"></a>
 # **ModifierGroupsAll**
-> GetModifierGroupsResponse ModifierGroupsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetModifierGroupsResponse ModifierGroupsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Modifier Groups
 
@@ -1540,11 +1552,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Modifier Groups
-                GetModifierGroupsResponse result = apiInstance.ModifierGroupsAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetModifierGroupsResponse result = apiInstance.ModifierGroupsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1568,6 +1581,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -1688,7 +1702,7 @@ Name | Type | Description  | Notes
 
 <a name="modifiergroupsone"></a>
 # **ModifierGroupsOne**
-> GetModifierGroupResponse ModifierGroupsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetModifierGroupResponse ModifierGroupsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Modifier Group
 
@@ -1721,11 +1735,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Modifier Group
-                GetModifierGroupResponse result = apiInstance.ModifierGroupsOne(id, consumerId, appId, serviceId, raw);
+                GetModifierGroupResponse result = apiInstance.ModifierGroupsOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1748,6 +1763,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -1960,7 +1976,7 @@ Name | Type | Description  | Notes
 
 <a name="modifiersall"></a>
 # **ModifiersAll**
-> GetModifiersResponse ModifiersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetModifiersResponse ModifiersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Modifiers
 
@@ -1994,11 +2010,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Modifiers
-                GetModifiersResponse result = apiInstance.ModifiersAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetModifiersResponse result = apiInstance.ModifiersAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2022,6 +2039,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -2144,7 +2162,7 @@ Name | Type | Description  | Notes
 
 <a name="modifiersone"></a>
 # **ModifiersOne**
-> GetModifierResponse ModifiersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, ModifierGroupFilter filter = null)
+> GetModifierResponse ModifiersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, ModifierGroupFilter filter = null, string fields = null)
 
 Get Modifier
 
@@ -2178,11 +2196,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var filter = new ModifierGroupFilter(); // ModifierGroupFilter | Apply filters (optional) 
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Modifier
-                GetModifierResponse result = apiInstance.ModifiersOne(id, consumerId, appId, serviceId, raw, filter);
+                GetModifierResponse result = apiInstance.ModifiersOne(id, consumerId, appId, serviceId, raw, filter, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2206,6 +2225,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
  **filter** | [**ModifierGroupFilter**](ModifierGroupFilter.md)| Apply filters | [optional] 
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -2418,7 +2438,7 @@ Name | Type | Description  | Notes
 
 <a name="ordertypesall"></a>
 # **OrderTypesAll**
-> GetOrderTypesResponse OrderTypesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetOrderTypesResponse OrderTypesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Order Types
 
@@ -2452,11 +2472,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Order Types
-                GetOrderTypesResponse result = apiInstance.OrderTypesAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetOrderTypesResponse result = apiInstance.OrderTypesAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2480,6 +2501,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -2600,7 +2622,7 @@ Name | Type | Description  | Notes
 
 <a name="ordertypesone"></a>
 # **OrderTypesOne**
-> GetOrderTypeResponse OrderTypesOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetOrderTypeResponse OrderTypesOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Order Type
 
@@ -2633,11 +2655,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Order Type
-                GetOrderTypeResponse result = apiInstance.OrderTypesOne(id, consumerId, appId, serviceId, raw);
+                GetOrderTypeResponse result = apiInstance.OrderTypesOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2660,6 +2683,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -2872,7 +2896,7 @@ Name | Type | Description  | Notes
 
 <a name="ordersall"></a>
 # **OrdersAll**
-> GetOrdersResponse OrdersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string locationId = null)
+> GetOrdersResponse OrdersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string locationId = null, string fields = null)
 
 List Orders
 
@@ -2907,11 +2931,12 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
             var locationId = "locationId_example";  // string | ID of the location. (optional) 
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Orders
-                GetOrdersResponse result = apiInstance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, locationId);
+                GetOrdersResponse result = apiInstance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, locationId, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2936,6 +2961,7 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
  **locationId** | **string**| ID of the location. | [optional] 
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -3056,7 +3082,7 @@ Name | Type | Description  | Notes
 
 <a name="ordersone"></a>
 # **OrdersOne**
-> GetOrderResponse OrdersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetOrderResponse OrdersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Order
 
@@ -3089,11 +3115,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Order
-                GetOrderResponse result = apiInstance.OrdersOne(id, consumerId, appId, serviceId, raw);
+                GetOrderResponse result = apiInstance.OrdersOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3116,6 +3143,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -3146,7 +3174,7 @@ Name | Type | Description  | Notes
 
 <a name="orderspay"></a>
 # **OrdersPay**
-> CreateOrderResponse OrdersPay (string id, Order order, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+> CreateOrderResponse OrdersPay (string id, Order order, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string fields = null)
 
 Pay Order
 
@@ -3180,11 +3208,12 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Pay Order
-                CreateOrderResponse result = apiInstance.OrdersPay(id, order, raw, consumerId, appId, serviceId);
+                CreateOrderResponse result = apiInstance.OrdersPay(id, order, raw, consumerId, appId, serviceId, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3208,6 +3237,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -3420,7 +3450,7 @@ Name | Type | Description  | Notes
 
 <a name="paymentsall"></a>
 # **PaymentsAll**
-> GetPosPaymentsResponse PaymentsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetPosPaymentsResponse PaymentsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Payments
 
@@ -3454,11 +3484,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Payments
-                GetPosPaymentsResponse result = apiInstance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetPosPaymentsResponse result = apiInstance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3482,6 +3513,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -3602,7 +3634,7 @@ Name | Type | Description  | Notes
 
 <a name="paymentsone"></a>
 # **PaymentsOne**
-> GetPosPaymentResponse PaymentsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetPosPaymentResponse PaymentsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Payment
 
@@ -3635,11 +3667,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Payment
-                GetPosPaymentResponse result = apiInstance.PaymentsOne(id, consumerId, appId, serviceId, raw);
+                GetPosPaymentResponse result = apiInstance.PaymentsOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3662,6 +3695,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -3874,7 +3908,7 @@ Name | Type | Description  | Notes
 
 <a name="tendersall"></a>
 # **TendersAll**
-> GetTendersResponse TendersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+> GetTendersResponse TendersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, string fields = null)
 
 List Tenders
 
@@ -3908,11 +3942,12 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Tenders
-                GetTendersResponse result = apiInstance.TendersAll(raw, consumerId, appId, serviceId, cursor, limit);
+                GetTendersResponse result = apiInstance.TendersAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3936,6 +3971,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -4056,7 +4092,7 @@ Name | Type | Description  | Notes
 
 <a name="tendersone"></a>
 # **TendersOne**
-> GetTenderResponse TendersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> GetTenderResponse TendersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Tender
 
@@ -4089,11 +4125,12 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // Get Tender
-                GetTenderResponse result = apiInstance.TendersOne(id, consumerId, appId, serviceId, raw);
+                GetTenderResponse result = apiInstance.TendersOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -4116,6 +4153,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 

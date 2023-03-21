@@ -46,8 +46,9 @@ namespace Apideck.Model
         /// <param name="endDate">endDate.</param>
         /// <param name="employmentStatus">employmentStatus.</param>
         /// <param name="department">Department name.</param>
+        /// <param name="isPrimary">Indicates whether this the employee&#39;s primary job..</param>
         /// <param name="location">location.</param>
-        public HrisJob(string employeeId = default(string), string title = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), EmploymentStatus? employmentStatus = default(EmploymentStatus?), string department = default(string), HrisJobLocation location = default(HrisJobLocation))
+        public HrisJob(string employeeId = default(string), string title = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), EmploymentStatus? employmentStatus = default(EmploymentStatus?), string department = default(string), bool? isPrimary = default(bool?), HrisJobLocation location = default(HrisJobLocation))
         {
             this.EmployeeId = employeeId;
             this.Title = title;
@@ -55,6 +56,7 @@ namespace Apideck.Model
             this.EndDate = endDate;
             this.EmploymentStatus = employmentStatus;
             this.Department = department;
+            this.IsPrimary = isPrimary;
             this.Location = location;
         }
 
@@ -109,6 +111,13 @@ namespace Apideck.Model
         public string Department { get; set; }
 
         /// <summary>
+        /// Indicates whether this the employee&#39;s primary job.
+        /// </summary>
+        /// <value>Indicates whether this the employee&#39;s primary job.</value>
+        [DataMember(Name = "is_primary", EmitDefaultValue = true)]
+        public bool? IsPrimary { get; set; }
+
+        /// <summary>
         /// Gets or Sets Location
         /// </summary>
         [DataMember(Name = "location", EmitDefaultValue = false)]
@@ -129,6 +138,7 @@ namespace Apideck.Model
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  EmploymentStatus: ").Append(EmploymentStatus).Append("\n");
             sb.Append("  Department: ").Append(Department).Append("\n");
+            sb.Append("  IsPrimary: ").Append(IsPrimary).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -200,6 +210,11 @@ namespace Apideck.Model
                     this.Department.Equals(input.Department))
                 ) && 
                 (
+                    this.IsPrimary == input.IsPrimary ||
+                    (this.IsPrimary != null &&
+                    this.IsPrimary.Equals(input.IsPrimary))
+                ) && 
+                (
                     this.Location == input.Location ||
                     (this.Location != null &&
                     this.Location.Equals(input.Location))
@@ -239,6 +254,10 @@ namespace Apideck.Model
                 if (this.Department != null)
                 {
                     hashCode = (hashCode * 59) + this.Department.GetHashCode();
+                }
+                if (this.IsPrimary != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsPrimary.GetHashCode();
                 }
                 if (this.Location != null)
                 {

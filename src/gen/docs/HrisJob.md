@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **EndDate** | **DateTime?** |  | [optional] 
 **EmploymentStatus** | **EmploymentStatus** |  | [optional] 
 **Department** | **string** | Department name | [optional] 
+**IsPrimary** | **bool?** | Indicates whether this the employee&#39;s primary job. | [optional] 
 **Location** | [**HrisJobLocation**](HrisJobLocation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -84,7 +84,8 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //JobsFilter filter = null;
-            //var response = instance.ApplicantsAll(raw, consumerId, appId, serviceId, cursor, limit, filter);
+            //string fields = null;
+            //var response = instance.ApplicantsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
             //Assert.IsType<GetApplicantsResponse>(response);
         }
 
@@ -100,7 +101,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.ApplicantsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.ApplicantsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetApplicantResponse>(response);
         }
 
@@ -117,7 +119,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.JobsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //string fields = null;
+            //var response = instance.JobsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
             //Assert.IsType<GetJobsResponse>(response);
         }
 
@@ -133,7 +136,8 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.JobsOne(id, consumerId, appId, serviceId, raw);
+            //string fields = null;
+            //var response = instance.JobsOne(id, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetJobResponse>(response);
         }
     }
