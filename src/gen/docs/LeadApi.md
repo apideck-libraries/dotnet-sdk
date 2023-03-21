@@ -139,7 +139,7 @@ namespace Example
             var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
             var filter = new LeadsFilter(); // LeadsFilter | Apply filters (optional) 
             var sort = new LeadsSort(); // LeadsSort | Apply sorting (optional) 
-            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
  **limit** | **int?**| Number of records to return | [optional] [default to 20]
  **filter** | [**LeadsFilter**](LeadsFilter.md)| Apply filters | [optional] 
  **sort** | [**LeadsSort**](LeadsSort.md)| Apply sorting | [optional] 
- **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
@@ -324,7 +324,7 @@ namespace Example
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var fields = id,updated_at;  // string | This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields=name,age,email    In the example above, the API will only include the fields \"name\", \"age\", and \"email\" in the response. If any other fields are available, they will be excluded. (optional) 
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
- **fields** | **string**| This parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response.   Example: unify_fields&#x3D;name,age,email    In the example above, the API will only include the fields \&quot;name\&quot;, \&quot;age\&quot;, and \&quot;email\&quot; in the response. If any other fields are available, they will be excluded. | [optional] 
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
 
