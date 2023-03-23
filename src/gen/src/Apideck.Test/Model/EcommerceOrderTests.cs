@@ -185,6 +185,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'ShippingAddress'
         }
         /// <summary>
+        /// Test the property 'Tracking'
+        /// </summary>
+        [Fact]
+        public void TrackingTest()
+        {
+            // TODO unit test for the property 'Tracking'
+        }
+        /// <summary>
         /// Test the property 'LineItems'
         /// </summary>
         [Fact]

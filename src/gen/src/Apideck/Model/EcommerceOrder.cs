@@ -182,9 +182,10 @@ namespace Apideck.Model
         /// <param name="customer">customer.</param>
         /// <param name="billingAddress">billingAddress.</param>
         /// <param name="shippingAddress">shippingAddress.</param>
+        /// <param name="tracking">tracking.</param>
         /// <param name="lineItems">lineItems.</param>
         /// <param name="note">Note for the order..</param>
-        public EcommerceOrder(string orderNumber = default(string), Currency? currency = default(Currency?), List<EcommerceDiscount> discounts = default(List<EcommerceDiscount>), string subTotal = default(string), string shippingCost = default(string), string totalDiscount = default(string), string totalTax = default(string), string totalAmount = default(string), EcommerceOrderStatus? status = default(EcommerceOrderStatus?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), FulfillmentStatusEnum? fulfillmentStatus = default(FulfillmentStatusEnum?), string paymentMethod = default(string), LinkedEcommerceCustomer customer = default(LinkedEcommerceCustomer), EcommerceAddress billingAddress = default(EcommerceAddress), EcommerceAddress shippingAddress = default(EcommerceAddress), List<EcommerceOrderLineItem> lineItems = default(List<EcommerceOrderLineItem>), string note = default(string))
+        public EcommerceOrder(string orderNumber = default(string), Currency? currency = default(Currency?), List<EcommerceDiscount> discounts = default(List<EcommerceDiscount>), string subTotal = default(string), string shippingCost = default(string), string totalDiscount = default(string), string totalTax = default(string), string totalAmount = default(string), EcommerceOrderStatus? status = default(EcommerceOrderStatus?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), FulfillmentStatusEnum? fulfillmentStatus = default(FulfillmentStatusEnum?), string paymentMethod = default(string), LinkedEcommerceCustomer customer = default(LinkedEcommerceCustomer), EcommerceAddress billingAddress = default(EcommerceAddress), EcommerceAddress shippingAddress = default(EcommerceAddress), List<TrackingItem> tracking = default(List<TrackingItem>), List<EcommerceOrderLineItem> lineItems = default(List<EcommerceOrderLineItem>), string note = default(string))
         {
             this.OrderNumber = orderNumber;
             this.Currency = currency;
@@ -201,6 +202,7 @@ namespace Apideck.Model
             this.Customer = customer;
             this.BillingAddress = billingAddress;
             this.ShippingAddress = shippingAddress;
+            this.Tracking = tracking;
             this.LineItems = lineItems;
             this.Note = note;
         }
@@ -294,6 +296,12 @@ namespace Apideck.Model
         public EcommerceAddress ShippingAddress { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tracking
+        /// </summary>
+        [DataMember(Name = "tracking", EmitDefaultValue = false)]
+        public List<TrackingItem> Tracking { get; set; }
+
+        /// <summary>
         /// Gets or Sets LineItems
         /// </summary>
         [DataMember(Name = "line_items", EmitDefaultValue = false)]
@@ -360,6 +368,7 @@ namespace Apideck.Model
             sb.Append("  Customer: ").Append(Customer).Append("\n");
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
+            sb.Append("  Tracking: ").Append(Tracking).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
@@ -477,6 +486,12 @@ namespace Apideck.Model
                     this.ShippingAddress.Equals(input.ShippingAddress))
                 ) && 
                 (
+                    this.Tracking == input.Tracking ||
+                    this.Tracking != null &&
+                    input.Tracking != null &&
+                    this.Tracking.SequenceEqual(input.Tracking)
+                ) && 
+                (
                     this.LineItems == input.LineItems ||
                     this.LineItems != null &&
                     input.LineItems != null &&
@@ -559,6 +574,10 @@ namespace Apideck.Model
                 if (this.ShippingAddress != null)
                 {
                     hashCode = (hashCode * 59) + this.ShippingAddress.GetHashCode();
+                }
+                if (this.Tracking != null)
+                {
+                    hashCode = (hashCode * 59) + this.Tracking.GetHashCode();
                 }
                 if (this.LineItems != null)
                 {

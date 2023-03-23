@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Customer** | [**LinkedEcommerceCustomer**](LinkedEcommerceCustomer.md) |  | [optional] 
 **BillingAddress** | [**EcommerceAddress**](EcommerceAddress.md) |  | [optional] 
 **ShippingAddress** | [**EcommerceAddress**](EcommerceAddress.md) |  | [optional] 
+**Tracking** | [**List&lt;TrackingItem&gt;**](TrackingItem.md) |  | [optional] 
 **LineItems** | [**List&lt;EcommerceOrderLineItem&gt;**](EcommerceOrderLineItem.md) |  | [optional] 
 **Note** | **string** | Note for the order. | [optional] 
 **CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
