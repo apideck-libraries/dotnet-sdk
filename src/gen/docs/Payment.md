@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique identifier representing the entity | [optional] [readonly] 
+**Id** | **string** | Unique identifier representing the entity | [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 

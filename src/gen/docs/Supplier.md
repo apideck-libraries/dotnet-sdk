@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **DisplayId** | **string** | Display ID | [optional] 
 **DisplayName** | **string** | Display name | [optional] 
