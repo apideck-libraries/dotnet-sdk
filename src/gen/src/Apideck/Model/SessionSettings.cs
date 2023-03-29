@@ -32,6 +32,46 @@ namespace Apideck.Model
     public partial class SessionSettings : IEquatable<SessionSettings>, IValidatableObject
     {
         /// <summary>
+        /// Defines AllowActions
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AllowActionsEnum
+        {
+            /// <summary>
+            /// Enum Delete for value: delete
+            /// </summary>
+            [EnumMember(Value = "delete")]
+            Delete = 1,
+
+            /// <summary>
+            /// Enum Disconnect for value: disconnect
+            /// </summary>
+            [EnumMember(Value = "disconnect")]
+            Disconnect = 2,
+
+            /// <summary>
+            /// Enum Reauthorize for value: reauthorize
+            /// </summary>
+            [EnumMember(Value = "reauthorize")]
+            Reauthorize = 3,
+
+            /// <summary>
+            /// Enum Disable for value: disable
+            /// </summary>
+            [EnumMember(Value = "disable")]
+            Disable = 4
+
+        }
+
+
+
+        /// <summary>
+        /// Hide actions from your users in [Vault](/apis/vault/reference#section/Get-Started). Actions in &#x60;allow_actions&#x60; will be shown on a connection in Vault. Available actions are: &#x60;delete&#x60;, &#x60;disconnect&#x60;, &#x60;reauthorize&#x60; and &#x60;disable&#x60;. Empty array will hide all actions. By default all actions are visible.
+        /// </summary>
+        /// <value>Hide actions from your users in [Vault](/apis/vault/reference#section/Get-Started). Actions in &#x60;allow_actions&#x60; will be shown on a connection in Vault. Available actions are: &#x60;delete&#x60;, &#x60;disconnect&#x60;, &#x60;reauthorize&#x60; and &#x60;disable&#x60;. Empty array will hide all actions. By default all actions are visible.</value>
+        [DataMember(Name = "allow_actions", EmitDefaultValue = false)]
+        public List<AllowActionsEnum> AllowActions { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SessionSettings" /> class.
         /// </summary>
         /// <param name="unifiedApis">Provide the IDs of the Unified APIs you want to be visible. Leaving it empty or omitting this field will show all Unified APIs..</param>
@@ -44,7 +84,8 @@ namespace Apideck.Model
         /// <param name="showSidebar">Configure [Vault](/apis/vault/reference#section/Get-Started) to show the sidebar. Defaults to &#x60;true&#x60;. (default to true).</param>
         /// <param name="autoRedirect">Automatically redirect to redirect uri after the connection has been configured as callable. Defaults to &#x60;false&#x60;. (default to false).</param>
         /// <param name="hideGuides">Hide Apideck connection guides in [Vault](/apis/vault/reference#section/Get-Started). Defaults to &#x60;false&#x60;. (default to false).</param>
-        public SessionSettings(List<UnifiedApiId> unifiedApis = default(List<UnifiedApiId>), bool hideResourceSettings = false, bool sandboxMode = false, bool isolationMode = false, string sessionLength = "1h", bool showLogs = true, bool showSuggestions = false, bool showSidebar = true, bool autoRedirect = false, bool hideGuides = false)
+        /// <param name="allowActions">Hide actions from your users in [Vault](/apis/vault/reference#section/Get-Started). Actions in &#x60;allow_actions&#x60; will be shown on a connection in Vault. Available actions are: &#x60;delete&#x60;, &#x60;disconnect&#x60;, &#x60;reauthorize&#x60; and &#x60;disable&#x60;. Empty array will hide all actions. By default all actions are visible..</param>
+        public SessionSettings(List<UnifiedApiId> unifiedApis = default(List<UnifiedApiId>), bool hideResourceSettings = false, bool sandboxMode = false, bool isolationMode = false, string sessionLength = "1h", bool showLogs = true, bool showSuggestions = false, bool showSidebar = true, bool autoRedirect = false, bool hideGuides = false, List<AllowActionsEnum> allowActions = default(List<AllowActionsEnum>))
         {
             this.UnifiedApis = unifiedApis;
             this.HideResourceSettings = hideResourceSettings;
@@ -57,6 +98,7 @@ namespace Apideck.Model
             this.ShowSidebar = showSidebar;
             this.AutoRedirect = autoRedirect;
             this.HideGuides = hideGuides;
+            this.AllowActions = allowActions;
         }
 
         /// <summary>
@@ -147,6 +189,7 @@ namespace Apideck.Model
             sb.Append("  ShowSidebar: ").Append(ShowSidebar).Append("\n");
             sb.Append("  AutoRedirect: ").Append(AutoRedirect).Append("\n");
             sb.Append("  HideGuides: ").Append(HideGuides).Append("\n");
+            sb.Append("  AllowActions: ").Append(AllowActions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -224,6 +267,10 @@ namespace Apideck.Model
                 (
                     this.HideGuides == input.HideGuides ||
                     this.HideGuides.Equals(input.HideGuides)
+                ) && 
+                (
+                    this.AllowActions == input.AllowActions ||
+                    this.AllowActions.SequenceEqual(input.AllowActions)
                 );
         }
 
@@ -252,6 +299,7 @@ namespace Apideck.Model
                 hashCode = (hashCode * 59) + this.ShowSidebar.GetHashCode();
                 hashCode = (hashCode * 59) + this.AutoRedirect.GetHashCode();
                 hashCode = (hashCode * 59) + this.HideGuides.GetHashCode();
+                hashCode = (hashCode * 59) + this.AllowActions.GetHashCode();
                 return hashCode;
             }
         }

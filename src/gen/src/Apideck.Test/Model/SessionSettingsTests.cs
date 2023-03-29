@@ -136,6 +136,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'HideGuides'
         }
+        /// <summary>
+        /// Test the property 'AllowActions'
+        /// </summary>
+        [Fact]
+        public void AllowActionsTest()
+        {
+            // TODO unit test for the property 'AllowActions'
+        }
 
     }
 
