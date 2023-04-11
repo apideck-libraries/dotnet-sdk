@@ -5074,6 +5074,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[email]", filter.Email));
                 }
+                if (filter.CompanyId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[company_id]", filter.CompanyId));
+                }
             }
             if (sort != null)
             {

@@ -37,13 +37,15 @@ namespace Apideck.Model
         /// <param name="name">Name of the contact to filter on.</param>
         /// <param name="firstName">First name of the contact to filter on.</param>
         /// <param name="lastName">Last name of the contact to filter on.</param>
-        /// <param name="email">E-mail of the contact to filter on.</param>
-        public ContactsFilter(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string))
+        /// <param name="email">Email of the contact to filter on.</param>
+        /// <param name="companyId">Unique identifier for the associated company of the contact to filter on.</param>
+        public ContactsFilter(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string companyId = default(string))
         {
             this.Name = name;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
+            this.CompanyId = companyId;
         }
 
         /// <summary>
@@ -68,11 +70,18 @@ namespace Apideck.Model
         public string LastName { get; set; }
 
         /// <summary>
-        /// E-mail of the contact to filter on
+        /// Email of the contact to filter on
         /// </summary>
-        /// <value>E-mail of the contact to filter on</value>
+        /// <value>Email of the contact to filter on</value>
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
+
+        /// <summary>
+        /// Unique identifier for the associated company of the contact to filter on
+        /// </summary>
+        /// <value>Unique identifier for the associated company of the contact to filter on</value>
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        public string CompanyId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,6 +95,7 @@ namespace Apideck.Model
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,6 +150,11 @@ namespace Apideck.Model
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
+                ) && 
+                (
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
                 );
         }
 
@@ -167,6 +182,10 @@ namespace Apideck.Model
                 if (this.Email != null)
                 {
                     hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                }
+                if (this.CompanyId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
                 }
                 return hashCode;
             }
