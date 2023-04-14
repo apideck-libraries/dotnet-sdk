@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Sold** | **bool?** | Item will be available on sales transactions | [optional] 
 **Purchased** | **bool?** | Item is available for purchase transactions | [optional] 
 **Tracked** | **bool?** | Item is inventoried | [optional] 
+**Taxable** | **bool?** | If true, transactions for this item are taxable | [optional] 
 **InventoryDate** | **DateTime?** | The date of opening balance if inventory item is tracked - YYYY-MM-DD. | [optional] 
 **Type** | **string** | Item type | [optional] 
 **SalesDetails** | [**InvoiceItemSalesDetails**](InvoiceItemSalesDetails.md) |  | [optional] 

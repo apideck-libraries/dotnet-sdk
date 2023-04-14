@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **TotalAmount** | **decimal** | Amount of payment | 
 **Reference** | **string** | Optional payment reference message ie: Debit remittance detail. | [optional] 
-**PaymentMethod** | **string** | Payment method | [optional] 
+**PaymentMethod** | **string** | Payment method name | [optional] 
 **PaymentMethodReference** | **string** | Optional reference message returned by payment method on processing | [optional] 
+**PaymentMethodId** | **string** | Unique identifier for the payment method. | [optional] 
 **AccountsReceivableAccountType** | **string** | Type of accounts receivable account. | [optional] 
 **AccountsReceivableAccountId** | **string** | Unique identifier for the account to allocate payment to. | [optional] 
 **Account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
