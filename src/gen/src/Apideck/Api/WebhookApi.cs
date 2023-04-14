@@ -35,7 +35,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <returns>GetWebhookEventLogsResponse</returns>
         GetWebhookEventLogsResponse EventLogsAll(string appId = default(string), string cursor = default(string), int? limit = default(int?), WebhookEventLogsFilter filter = default(WebhookEventLogsFilter));
@@ -49,7 +49,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <returns>ApiResponse of GetWebhookEventLogsResponse</returns>
         ApiResponse<GetWebhookEventLogsResponse> EventLogsAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?), WebhookEventLogsFilter filter = default(WebhookEventLogsFilter));
@@ -85,7 +85,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetWebhooksResponse</returns>
         GetWebhooksResponse WebhooksAll(string appId = default(string), string cursor = default(string), int? limit = default(int?));
 
@@ -98,7 +98,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetWebhooksResponse</returns>
         ApiResponse<GetWebhooksResponse> WebhooksAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?));
         /// <summary>
@@ -190,7 +190,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhookEventLogsResponse</returns>
@@ -205,7 +205,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhookEventLogsResponse)</returns>
@@ -244,7 +244,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhooksResponse</returns>
         System.Threading.Tasks.Task<GetWebhooksResponse> WebhooksAllAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -258,7 +258,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhooksResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWebhooksResponse>> WebhooksAllWithHttpInfoAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -465,7 +465,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <returns>GetWebhookEventLogsResponse</returns>
         public GetWebhookEventLogsResponse EventLogsAll(string appId = default(string), string cursor = default(string), int? limit = default(int?), WebhookEventLogsFilter filter = default(WebhookEventLogsFilter))
@@ -480,7 +480,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <returns>ApiResponse of GetWebhookEventLogsResponse</returns>
         public Apideck.Client.ApiResponse<GetWebhookEventLogsResponse> EventLogsAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?), WebhookEventLogsFilter filter = default(WebhookEventLogsFilter))
@@ -569,7 +569,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhookEventLogsResponse</returns>
@@ -585,7 +585,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhookEventLogsResponse)</returns>
@@ -816,7 +816,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetWebhooksResponse</returns>
         public GetWebhooksResponse WebhooksAll(string appId = default(string), string cursor = default(string), int? limit = default(int?))
         {
@@ -830,7 +830,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetWebhooksResponse</returns>
         public Apideck.Client.ApiResponse<GetWebhooksResponse> WebhooksAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?))
         {
@@ -895,7 +895,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhooksResponse</returns>
         public async System.Threading.Tasks.Task<GetWebhooksResponse> WebhooksAllAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -910,7 +910,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhooksResponse)</returns>
         public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetWebhooksResponse>> WebhooksAllWithHttpInfoAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

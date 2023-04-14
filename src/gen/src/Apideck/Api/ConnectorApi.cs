@@ -85,7 +85,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>GetApisResponse</returns>
         GetApisResponse ApisAll(string appId = default(string), string cursor = default(string), int? limit = default(int?), ApisFilter filter = default(ApisFilter));
@@ -99,7 +99,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>ApiResponse of GetApisResponse</returns>
         ApiResponse<GetApisResponse> ApisAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?), ApisFilter filter = default(ApisFilter));
@@ -187,7 +187,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>GetConnectorsResponse</returns>
         GetConnectorsResponse ConnectorsAll(string appId = default(string), string cursor = default(string), int? limit = default(int?), ConnectorsFilter filter = default(ConnectorsFilter));
@@ -201,7 +201,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>ApiResponse of GetConnectorsResponse</returns>
         ApiResponse<GetConnectorsResponse> ConnectorsAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?), ConnectorsFilter filter = default(ConnectorsFilter));
@@ -300,7 +300,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApisResponse</returns>
@@ -315,7 +315,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApisResponse)</returns>
@@ -410,7 +410,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConnectorsResponse</returns>
@@ -425,7 +425,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConnectorsResponse)</returns>
@@ -929,7 +929,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>GetApisResponse</returns>
         public GetApisResponse ApisAll(string appId = default(string), string cursor = default(string), int? limit = default(int?), ApisFilter filter = default(ApisFilter))
@@ -944,7 +944,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>ApiResponse of GetApisResponse</returns>
         public Apideck.Client.ApiResponse<GetApisResponse> ApisAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?), ApisFilter filter = default(ApisFilter))
@@ -1017,7 +1017,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApisResponse</returns>
@@ -1033,7 +1033,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApisResponse)</returns>
@@ -1624,7 +1624,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>GetConnectorsResponse</returns>
         public GetConnectorsResponse ConnectorsAll(string appId = default(string), string cursor = default(string), int? limit = default(int?), ConnectorsFilter filter = default(ConnectorsFilter))
@@ -1639,7 +1639,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <returns>ApiResponse of GetConnectorsResponse</returns>
         public Apideck.Client.ApiResponse<GetConnectorsResponse> ConnectorsAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?), ConnectorsFilter filter = default(ConnectorsFilter))
@@ -1716,7 +1716,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConnectorsResponse</returns>
@@ -1732,7 +1732,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConnectorsResponse)</returns>

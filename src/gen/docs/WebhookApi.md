@@ -44,7 +44,7 @@ namespace Example
             var apiInstance = new WebhookApi(config);
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
-            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new WebhookEventLogsFilter(); // WebhookEventLogsFilter | Filter results (optional) 
 
             try
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **string**| The ID of your Unify application | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
- **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **filter** | [**WebhookEventLogsFilter**](WebhookEventLogsFilter.md)| Filter results | [optional] 
 
 ### Return type
@@ -216,7 +216,7 @@ namespace Example
             var apiInstance = new WebhookApi(config);
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
-            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
 
             try
             {
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **string**| The ID of your Unify application | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
- **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
 
 ### Return type
 

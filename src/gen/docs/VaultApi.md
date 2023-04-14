@@ -850,7 +850,7 @@ namespace Example
             var apiInstance = new VaultApi(config);
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
-            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
 
             try
             {
@@ -875,7 +875,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **string**| The ID of your Unify application | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
- **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
 
 ### Return type
 
@@ -1192,7 +1192,7 @@ namespace Example
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var filter = new LogsFilter(); // LogsFilter | Filter results (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
-            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
 
             try
             {
@@ -1219,7 +1219,7 @@ Name | Type | Description  | Notes
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **filter** | [**LogsFilter**](LogsFilter.md)| Filter results | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
- **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
 
 ### Return type
 

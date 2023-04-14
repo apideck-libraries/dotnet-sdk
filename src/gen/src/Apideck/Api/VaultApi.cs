@@ -284,7 +284,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetConsumersResponse</returns>
         GetConsumersResponse ConsumersAll(string appId = default(string), string cursor = default(string), int? limit = default(int?));
 
@@ -297,7 +297,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetConsumersResponse</returns>
         ApiResponse<GetConsumersResponse> ConsumersAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?));
         /// <summary>
@@ -382,7 +382,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetLogsResponse</returns>
         GetLogsResponse LogsAll(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?));
 
@@ -397,7 +397,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetLogsResponse</returns>
         ApiResponse<GetLogsResponse> LogsAllWithHttpInfo(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?));
         /// <summary>
@@ -710,7 +710,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConsumersResponse</returns>
         System.Threading.Tasks.Task<GetConsumersResponse> ConsumersAllAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -724,7 +724,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConsumersResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetConsumersResponse>> ConsumersAllWithHttpInfoAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -816,7 +816,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetLogsResponse</returns>
         System.Threading.Tasks.Task<GetLogsResponse> LogsAllAsync(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -832,7 +832,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetLogsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetLogsResponse>> LogsAllWithHttpInfoAsync(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -2723,7 +2723,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetConsumersResponse</returns>
         public GetConsumersResponse ConsumersAll(string appId = default(string), string cursor = default(string), int? limit = default(int?))
         {
@@ -2737,7 +2737,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetConsumersResponse</returns>
         public Apideck.Client.ApiResponse<GetConsumersResponse> ConsumersAllWithHttpInfo(string appId = default(string), string cursor = default(string), int? limit = default(int?))
         {
@@ -2802,7 +2802,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConsumersResponse</returns>
         public async System.Threading.Tasks.Task<GetConsumersResponse> ConsumersAllAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -2817,7 +2817,7 @@ namespace Apideck.Api
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConsumersResponse)</returns>
         public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetConsumersResponse>> ConsumersAllWithHttpInfoAsync(string appId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3375,7 +3375,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetLogsResponse</returns>
         public GetLogsResponse LogsAll(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?))
         {
@@ -3391,7 +3391,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetLogsResponse</returns>
         public Apideck.Client.ApiResponse<GetLogsResponse> LogsAllWithHttpInfo(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?))
         {
@@ -3477,7 +3477,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetLogsResponse</returns>
         public async System.Threading.Tasks.Task<GetLogsResponse> LogsAllAsync(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -3494,7 +3494,7 @@ namespace Apideck.Api
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="filter">Filter results (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
-        /// <param name="limit">Number of records to return (optional, default to 20)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetLogsResponse)</returns>
         public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetLogsResponse>> LogsAllWithHttpInfoAsync(string appId = default(string), string consumerId = default(string), LogsFilter filter = default(LogsFilter), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
