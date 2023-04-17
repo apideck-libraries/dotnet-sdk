@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **TagLine** | **string** |  | [optional] [readonly] 
 **UnifiedApi** | **string** | The unified API category where the connection belongs to. | [optional] [readonly] 
 **State** | **ConnectionState** |  | [optional] 
+**IntegrationState** | **IntegrationState** |  | [optional] 
 **AuthType** | **AuthType** |  | [optional] 
 **OauthGrantType** | **OAuthGrantType** |  | [optional] 
 **Status** | **string** | Status of the connection. | [optional] [readonly] 

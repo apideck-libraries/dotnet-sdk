@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **Type** | **string** | Invoice type | [optional] 
 **Number** | **string** | Invoice number. | [optional] 
@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **TotalTax** | **decimal?** | Total tax amount applied to this invoice. | [optional] 
 **TaxCode** | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 **DiscountPercentage** | **decimal?** | Discount percentage applied to this invoice. | [optional] 
+**DiscountAmount** | **decimal?** | Discount amount applied to this invoice. | [optional] 
 **Total** | **decimal?** | Total amount of invoice, including tax. | [optional] 
 **Balance** | **decimal?** | Balance of invoice due. | [optional] 
 **Deposit** | **decimal?** | Amount of deposit made to this invoice. | [optional] 
@@ -32,11 +33,11 @@ Name | Type | Description | Notes
 **ShippingAddress** | [**Address**](Address.md) |  | [optional] 
 **TemplateId** | **string** | Optional invoice template | [optional] 
 **SourceDocumentUrl** | **string** | URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero. | [optional] 
-**RowVersion** | **string** |  | [optional] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

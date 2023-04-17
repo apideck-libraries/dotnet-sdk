@@ -214,7 +214,7 @@ namespace Example
             var apiInstance = new ConnectorApi(config);
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
-            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new ApisFilter(); // ApisFilter | Apply filters (optional) 
 
             try
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **string**| The ID of your Unify application | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
- **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **filter** | [**ApisFilter**](ApisFilter.md)| Apply filters | [optional] 
 
 ### Return type
@@ -467,7 +467,7 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var resourceId = "resourceId_example";  // string | ID of the resource you are acting upon.
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var unifiedApi = (UnifiedApiId) "vault";  // UnifiedApiId? | Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs (optional) 
+            var unifiedApi = (UnifiedApiId) "accounting";  // UnifiedApiId? | Specify unified API for the connector resource. This is useful when a resource appears in multiple APIs (optional) 
 
             try
             {
@@ -552,7 +552,7 @@ namespace Example
             var apiInstance = new ConnectorApi(config);
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
-            var limit = 20;  // int? | Number of records to return (optional)  (default to 20)
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new ConnectorsFilter(); // ConnectorsFilter | Apply filters (optional) 
 
             try
@@ -578,7 +578,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **string**| The ID of your Unify application | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
- **limit** | **int?**| Number of records to return | [optional] [default to 20]
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **filter** | [**ConnectorsFilter**](ConnectorsFilter.md)| Apply filters | [optional] 
 
 ### Return type

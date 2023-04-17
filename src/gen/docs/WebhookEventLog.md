@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **StatusCode** | **int** | HTTP Status code that was returned. | [optional] 
 **Success** | **bool** | Whether or not the request was successful. | [optional] 
 **ApplicationId** | **string** | ID of your Apideck Application | [optional] 
-**ConsumerId** | **string** | Consumer identifier | [optional] 
+**ConsumerId** | **string** | Unique consumer identifier. You can freely choose a consumer ID yourself. Most of the time, this is an ID of your internal data model that represents a user or account in your system (for example account:12345). If the consumer doesn&#39;t exist yet, Vault will upsert a consumer based on your ID. | [optional] 
 **UnifiedApi** | **UnifiedApiId** |  | [optional] 
 **Service** | [**WebhookEventLogService**](WebhookEventLogService.md) |  | [optional] 
 **Endpoint** | **string** | The URL of the webhook endpoint. | [optional] 

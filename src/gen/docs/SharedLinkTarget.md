@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [readonly] 
+**Id** | **string** | A unique identifier for an object. | [readonly] 
 **Name** | **string** | The name of the file | [optional] 
 **Type** | **FileType** |  | [optional] 
 

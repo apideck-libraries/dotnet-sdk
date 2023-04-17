@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Name** | **string** | Name of the doc. | [optional] 
 **Audience** | **string** | Audience for the doc. | [optional] 
 **Format** | **string** | Format of the doc. | [optional] 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **Name** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Note** | **string** |  | [optional] 
@@ -23,9 +23,9 @@ Name | Type | Description | Notes
 **Card** | [**PaymentCard**](PaymentCard.md) |  | [optional] 
 **CardStatus** | **string** | The status of the card. Only applicable when the tender type is card. | [optional] 
 **CardEntryMethod** | **string** | The entry method of the card. Only applicable when the tender type is card. | [optional] 
-**PaymentId** | **string** |  | [optional] [readonly] 
-**LocationId** | **string** |  | [optional] [readonly] 
-**TransactionId** | **string** |  | [optional] [readonly] 
+**PaymentId** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**LocationId** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**TransactionId** | **string** | A unique identifier for an object. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

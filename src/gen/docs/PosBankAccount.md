@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **TransferType** | **string** | The type of the bank transfer. The type can be &#x60;ACH&#x60; or &#x60;UNKNOWN&#x60;. | [optional] 
 **AccountOwnershipType** | **string** | The ownership type of the bank account performing the transfer. The type can be &#x60;INDIVIDUAL&#x60;, &#x60;COMPANY&#x60;, or &#x60;UNKNOWN&#x60;. | [optional] 
 **Fingerprint** | **string** | Uniquely identifies the bank account for this seller and can be used to determine if payments are from the same bank account. | [optional] 
-**Country** | **string** | country code according to ISO 3166-1 alpha-2. | [optional] 
+**Country** | **string** | Country code according to ISO 3166-1 alpha-2. | [optional] 
 **StatementDescription** | **string** | The statement description as sent to the bank. | [optional] 
 **AchDetails** | [**PosBankAccountAchDetails**](PosBankAccountAchDetails.md) |  | [optional] 
 

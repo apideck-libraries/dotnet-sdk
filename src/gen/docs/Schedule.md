@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [readonly] 
+**Id** | **string** | A unique identifier for an object. | [readonly] 
 **StartDate** | **string** | The start date, inclusive, of the schedule period. | 
 **EndDate** | **string** | The end date, inclusive, of the schedule period. | 
 **WorkPattern** | [**ScheduleWorkPattern**](ScheduleWorkPattern.md) |  | 

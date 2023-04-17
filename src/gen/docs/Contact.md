@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Gender** | **string** |  | [optional] 
 **Birthday** | **string** |  | [optional] 
 **Image** | **string** |  | [optional] 
-**PhotoUrl** | **string** |  | [optional] 
+**PhotoUrl** | **string** | The URL of the photo of a person. | [optional] 
 **LeadSource** | **string** |  | [optional] 
 **Fax** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 

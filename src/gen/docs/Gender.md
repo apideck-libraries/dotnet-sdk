@@ -1,4 +1,5 @@
 # Apideck.Model.Gender
+The gender represents the gender identity of a person.
 
 ## Properties
 

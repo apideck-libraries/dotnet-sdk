@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
+**BillNumber** | **string** |  | [optional] 
 **Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **DueDate** | **DateTime** | The due date is the date on which a payment is scheduled to be received by the supplier - YYYY-MM-DD. | [optional] 
 **PaidDate** | **DateTime?** | The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD. | [optional] 
 **PoNumber** | **string** | A PO Number uniquely identifies a purchase order and is generally defined by the buyer. The buyer will match the PO number in the invoice to the Purchase Order. | [optional] 
-**Reference** | **string** | Optional invoice reference. | [optional] 
+**Reference** | **string** | Optional bill reference. | [optional] 
 **LineItems** | [**List&lt;BillLineItem&gt;**](BillLineItem.md) |  | [optional] 
 **Terms** | **string** | Terms of payment. | [optional] 
 **Balance** | **decimal?** | Balance of bill due. | [optional] 
@@ -26,12 +27,11 @@ Name | Type | Description | Notes
 **Notes** | **string** |  | [optional] 
 **Status** | **string** | Invoice status | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
-**BillNumber** | **string** |  | [optional] 
-**UpdatedBy** | **string** |  | [optional] [readonly] 
-**CreatedBy** | **string** |  | [optional] [readonly] 
-**UpdatedAt** | **DateTime** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
-**RowVersion** | **string** |  | [optional] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

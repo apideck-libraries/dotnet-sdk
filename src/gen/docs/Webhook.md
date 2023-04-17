@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] [readonly] 
-**Description** | **string** |  | [optional] 
+**Description** | **string** | A description of the object. | [optional] 
 **UnifiedApi** | **UnifiedApiId** |  | 
 **Status** | **Status** |  | 
 **DisabledReason** | **string** | Indicates if the webhook has has been disabled as it reached its retry limit or if account is over the usage allocated by it&#39;s plan. | [optional] 
 **DeliveryUrl** | **string** | The delivery url of the webhook endpoint. | 
 **ExecuteBaseUrl** | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | [readonly] 
 **Events** | [**List&lt;WebhookEventType&gt;**](WebhookEventType.md) | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | 
-**UpdatedAt** | **DateTime** |  | [optional] [readonly] 
-**CreatedAt** | **DateTime** |  | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

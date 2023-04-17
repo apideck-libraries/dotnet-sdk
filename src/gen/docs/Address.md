@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **Fax** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Website** | **string** |  | [optional] 
-**RowVersion** | **string** |  | [optional] 
+**RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
