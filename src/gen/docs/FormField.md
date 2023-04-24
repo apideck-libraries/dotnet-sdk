@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **Disabled** | **bool?** | Indicates if the form field is displayed in a “read-only” mode. | [optional] 
 **Hidden** | **bool?** | Indicates if the form field is not displayed but the value that is being stored on the connection. | [optional] 
 **Sensitive** | **bool?** | Indicates if the form field contains sensitive data, which will display the value as a masked input. | [optional] 
+**Prefix** | **string** | Prefix to display in front of the form field. | [optional] 
+**Suffix** | **string** | Suffix to display next to the form field. | [optional] 
 **Options** | [**List&lt;FormFieldOption&gt;**](FormFieldOption.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
