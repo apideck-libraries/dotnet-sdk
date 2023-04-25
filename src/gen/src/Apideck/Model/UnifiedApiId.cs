@@ -186,7 +186,13 @@ namespace Apideck.Model
         /// Enum Vault for value: vault
         /// </summary>
         [EnumMember(Value = "vault")]
-        Vault = 26
+        Vault = 26,
+
+        /// <summary>
+        /// Enum DataWarehouse for value: data-warehouse
+        /// </summary>
+        [EnumMember(Value = "data-warehouse")]
+        DataWarehouse = 27
 
     }
 
