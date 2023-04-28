@@ -55,8 +55,8 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TypeEnum? Type { get; set; }
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        public TypeEnum Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
@@ -92,15 +92,20 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderDiscounts" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected OrderDiscounts() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderDiscounts" /> class.
+        /// </summary>
         /// <param name="name">name.</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">type (required).</param>
         /// <param name="amount">amount.</param>
         /// <param name="currency">currency.</param>
         /// <param name="scope">scope.</param>
-        public OrderDiscounts(string name = default(string), TypeEnum? type = default(TypeEnum?), int amount = default(int), Currency? currency = default(Currency?), ScopeEnum? scope = default(ScopeEnum?))
+        public OrderDiscounts(string name = default(string), TypeEnum type = default(TypeEnum), int amount = default(int), Currency? currency = default(Currency?), ScopeEnum? scope = default(ScopeEnum?))
         {
-            this.Name = name;
             this.Type = type;
+            this.Name = name;
             this.Amount = amount;
             this.Currency = currency;
             this.Scope = scope;

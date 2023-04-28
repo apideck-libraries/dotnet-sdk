@@ -145,6 +145,22 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'TaxIds'
         }
         /// <summary>
+        /// Test the property 'IsRevenue'
+        /// </summary>
+        [Fact]
+        public void IsRevenueTest()
+        {
+            // TODO unit test for the property 'IsRevenue'
+        }
+        /// <summary>
+        /// Test the property 'UseDefaultTaxRates'
+        /// </summary>
+        [Fact]
+        public void UseDefaultTaxRatesTest()
+        {
+            // TODO unit test for the property 'UseDefaultTaxRates'
+        }
+        /// <summary>
         /// Test the property 'AbsentAtLocationIds'
         /// </summary>
         [Fact]
