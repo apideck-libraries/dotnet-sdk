@@ -158,6 +158,7 @@ docs/CustomerSupportCustomer.md
 docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
+docs/DeleteApplicantResponse.md
 docs/DeleteBillResponse.md
 docs/DeleteCommentResponse.md
 docs/DeleteCompanyResponse.md
@@ -524,6 +525,7 @@ docs/UnifiedFile.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
+docs/UpdateApplicantResponse.md
 docs/UpdateBillResponse.md
 docs/UpdateCommentResponse.md
 docs/UpdateCompanyResponse.md
@@ -752,6 +754,7 @@ src/Apideck.Test/Model/CustomerSupportCustomerTests.cs
 src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
+src/Apideck.Test/Model/DeleteApplicantResponseTests.cs
 src/Apideck.Test/Model/DeleteBillResponseTests.cs
 src/Apideck.Test/Model/DeleteCommentResponseTests.cs
 src/Apideck.Test/Model/DeleteCompanyResponseTests.cs
@@ -1111,6 +1114,7 @@ src/Apideck.Test/Model/UnifiedFileTests.cs
 src/Apideck.Test/Model/UnifiedIdTests.cs
 src/Apideck.Test/Model/UnprocessableResponseTests.cs
 src/Apideck.Test/Model/UpdateActivityResponseTests.cs
+src/Apideck.Test/Model/UpdateApplicantResponseTests.cs
 src/Apideck.Test/Model/UpdateBillResponseTests.cs
 src/Apideck.Test/Model/UpdateCommentResponseTests.cs
 src/Apideck.Test/Model/UpdateCompanyResponseTests.cs
@@ -1353,6 +1357,7 @@ src/Apideck/Model/CustomerSupportCustomer.cs
 src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs
+src/Apideck/Model/DeleteApplicantResponse.cs
 src/Apideck/Model/DeleteBillResponse.cs
 src/Apideck/Model/DeleteCommentResponse.cs
 src/Apideck/Model/DeleteCompanyResponse.cs
@@ -1712,6 +1717,7 @@ src/Apideck/Model/UnifiedFile.cs
 src/Apideck/Model/UnifiedId.cs
 src/Apideck/Model/UnprocessableResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs
+src/Apideck/Model/UpdateApplicantResponse.cs
 src/Apideck/Model/UpdateBillResponse.cs
 src/Apideck/Model/UpdateCommentResponse.cs
 src/Apideck/Model/UpdateCompanyResponse.cs
