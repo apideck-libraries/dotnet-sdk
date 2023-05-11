@@ -64,6 +64,21 @@ namespace Apideck.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API
+        /// </summary>
+        /// <value>Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API</value>
+        [DataMember(Name = "auth_only", EmitDefaultValue = true)]
+        public bool AuthOnly { get; private set; }
+
+        /// <summary>
+        /// Returns false as AuthOnly should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeAuthOnly()
+        {
+            return false;
+        }
+        /// <summary>
         /// Gets or Sets OauthScopes
         /// </summary>
         [DataMember(Name = "oauth_scopes", EmitDefaultValue = false)]
@@ -100,6 +115,7 @@ namespace Apideck.Model
             sb.Append("class ConnectorUnifiedApis {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  AuthOnly: ").Append(AuthOnly).Append("\n");
             sb.Append("  OauthScopes: ").Append(OauthScopes).Append("\n");
             sb.Append("  SupportedResources: ").Append(SupportedResources).Append("\n");
             sb.Append("  DownstreamUnsupportedResources: ").Append(DownstreamUnsupportedResources).Append("\n");
@@ -149,6 +165,10 @@ namespace Apideck.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.AuthOnly == input.AuthOnly ||
+                    this.AuthOnly.Equals(input.AuthOnly)
+                ) && 
+                (
                     this.OauthScopes == input.OauthScopes ||
                     this.OauthScopes != null &&
                     input.OauthScopes != null &&
@@ -188,6 +208,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AuthOnly.GetHashCode();
                 if (this.OauthScopes != null)
                 {
                     hashCode = (hashCode * 59) + this.OauthScopes.GetHashCode();

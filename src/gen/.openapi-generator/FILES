@@ -461,6 +461,7 @@ docs/PaymentAllocations.md
 docs/PaymentCard.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
+docs/PaymentsFilter.md
 docs/Payroll.md
 docs/PayrollTotals.md
 docs/PayrollsFilter.md
@@ -1052,6 +1053,7 @@ src/Apideck.Test/Model/PaymentCardTests.cs
 src/Apideck.Test/Model/PaymentRequiredResponseTests.cs
 src/Apideck.Test/Model/PaymentTests.cs
 src/Apideck.Test/Model/PaymentUnitTests.cs
+src/Apideck.Test/Model/PaymentsFilterTests.cs
 src/Apideck.Test/Model/PayrollTests.cs
 src/Apideck.Test/Model/PayrollTotalsTests.cs
 src/Apideck.Test/Model/PayrollsFilterTests.cs
@@ -1655,6 +1657,7 @@ src/Apideck/Model/PaymentAllocations.cs
 src/Apideck/Model/PaymentCard.cs
 src/Apideck/Model/PaymentRequiredResponse.cs
 src/Apideck/Model/PaymentUnit.cs
+src/Apideck/Model/PaymentsFilter.cs
 src/Apideck/Model/Payroll.cs
 src/Apideck/Model/PayrollTotals.cs
 src/Apideck/Model/PayrollsFilter.cs

@@ -73,6 +73,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Name'
         }
         /// <summary>
+        /// Test the property 'AuthOnly'
+        /// </summary>
+        [Fact]
+        public void AuthOnlyTest()
+        {
+            // TODO unit test for the property 'AuthOnly'
+        }
+        /// <summary>
         /// Test the property 'OauthScopes'
         /// </summary>
         [Fact]

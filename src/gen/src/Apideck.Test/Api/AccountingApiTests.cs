@@ -715,9 +715,10 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //PaymentsFilter filter = null;
             //PassThroughQuery passThrough = null;
             //string fields = null;
-            //var response = instance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+            //var response = instance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetPaymentsResponse>(response);
         }
 
