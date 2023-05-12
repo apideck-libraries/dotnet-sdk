@@ -153,6 +153,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'DiscountPercentage'
         }
         /// <summary>
+        /// Test the property 'DiscountAmount'
+        /// </summary>
+        [Fact]
+        public void DiscountAmountTest()
+        {
+            // TODO unit test for the property 'DiscountAmount'
+        }
+        /// <summary>
         /// Test the property 'LocationId'
         /// </summary>
         [Fact]
@@ -177,20 +185,20 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Item'
         }
         /// <summary>
-        /// Test the property 'LedgerAccount'
-        /// </summary>
-        [Fact]
-        public void LedgerAccountTest()
-        {
-            // TODO unit test for the property 'LedgerAccount'
-        }
-        /// <summary>
         /// Test the property 'TaxRate'
         /// </summary>
         [Fact]
         public void TaxRateTest()
         {
             // TODO unit test for the property 'TaxRate'
+        }
+        /// <summary>
+        /// Test the property 'LedgerAccount'
+        /// </summary>
+        [Fact]
+        public void LedgerAccountTest()
+        {
+            // TODO unit test for the property 'LedgerAccount'
         }
         /// <summary>
         /// Test the property 'RowVersion'
