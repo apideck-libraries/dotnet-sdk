@@ -65,7 +65,25 @@ namespace Apideck.Model
         /// Enum ApplicantDeleted for value: ats.applicant.deleted
         /// </summary>
         [EnumMember(Value = "ats.applicant.deleted")]
-        ApplicantDeleted = 6
+        ApplicantDeleted = 6,
+
+        /// <summary>
+        /// Enum ApplicationCreated for value: ats.application.created
+        /// </summary>
+        [EnumMember(Value = "ats.application.created")]
+        ApplicationCreated = 7,
+
+        /// <summary>
+        /// Enum ApplicationUpdated for value: ats.application.updated
+        /// </summary>
+        [EnumMember(Value = "ats.application.updated")]
+        ApplicationUpdated = 8,
+
+        /// <summary>
+        /// Enum ApplicationDeleted for value: ats.application.deleted
+        /// </summary>
+        [EnumMember(Value = "ats.application.deleted")]
+        ApplicationDeleted = 9
 
     }
 

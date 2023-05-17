@@ -140,6 +140,88 @@ namespace Apideck.Test.Api
         }
 
         /// <summary>
+        /// Test ApplicationsAdd
+        /// </summary>
+        [Fact]
+        public void ApplicationsAddTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //Application application = null;
+            //bool? raw = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //var response = instance.ApplicationsAdd(application, raw, consumerId, appId, serviceId);
+            //Assert.IsType<CreateApplicationResponse>(response);
+        }
+
+        /// <summary>
+        /// Test ApplicationsAll
+        /// </summary>
+        [Fact]
+        public void ApplicationsAllTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //bool? raw = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //string cursor = null;
+            //int? limit = null;
+            //var response = instance.ApplicationsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //Assert.IsType<GetApplicationsResponse>(response);
+        }
+
+        /// <summary>
+        /// Test ApplicationsDelete
+        /// </summary>
+        [Fact]
+        public void ApplicationsDeleteTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //var response = instance.ApplicationsDelete(id, consumerId, appId, serviceId, raw);
+            //Assert.IsType<DeleteApplicationResponse>(response);
+        }
+
+        /// <summary>
+        /// Test ApplicationsOne
+        /// </summary>
+        [Fact]
+        public void ApplicationsOneTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //var response = instance.ApplicationsOne(id, consumerId, appId, serviceId, raw);
+            //Assert.IsType<GetApplicationResponse>(response);
+        }
+
+        /// <summary>
+        /// Test ApplicationsUpdate
+        /// </summary>
+        [Fact]
+        public void ApplicationsUpdateTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //Application application = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //var response = instance.ApplicationsUpdate(id, application, consumerId, appId, serviceId, raw);
+            //Assert.IsType<UpdateApplicationResponse>(response);
+        }
+
+        /// <summary>
         /// Test JobsAll
         /// </summary>
         [Fact]

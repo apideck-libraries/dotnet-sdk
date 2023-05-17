@@ -28,6 +28,8 @@ docs/Applicant.md
 docs/ApplicantSocialLinks.md
 docs/ApplicantWebsites.md
 docs/ApplicantsFilter.md
+docs/Application.md
+docs/ApplicationStage.md
 docs/Assignee.md
 docs/AtsActivity.md
 docs/AtsApi.md
@@ -95,6 +97,7 @@ docs/ContactsSort.md
 docs/CopyFolderRequest.md
 docs/CreateActivityResponse.md
 docs/CreateApplicantResponse.md
+docs/CreateApplicationResponse.md
 docs/CreateBillResponse.md
 docs/CreateCommentResponse.md
 docs/CreateCompanyResponse.md
@@ -159,6 +162,7 @@ docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
 docs/DeleteApplicantResponse.md
+docs/DeleteApplicationResponse.md
 docs/DeleteBillResponse.md
 docs/DeleteCommentResponse.md
 docs/DeleteCompanyResponse.md
@@ -261,6 +265,8 @@ docs/GetApiResponse.md
 docs/GetApisResponse.md
 docs/GetApplicantResponse.md
 docs/GetApplicantsResponse.md
+docs/GetApplicationResponse.md
+docs/GetApplicationsResponse.md
 docs/GetBalanceSheetResponse.md
 docs/GetBillResponse.md
 docs/GetBillsResponse.md
@@ -527,6 +533,7 @@ docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
 docs/UpdateApplicantResponse.md
+docs/UpdateApplicationResponse.md
 docs/UpdateBillResponse.md
 docs/UpdateCommentResponse.md
 docs/UpdateCompanyResponse.md
@@ -629,6 +636,8 @@ src/Apideck.Test/Model/ApplicantSocialLinksTests.cs
 src/Apideck.Test/Model/ApplicantTests.cs
 src/Apideck.Test/Model/ApplicantWebsitesTests.cs
 src/Apideck.Test/Model/ApplicantsFilterTests.cs
+src/Apideck.Test/Model/ApplicationStageTests.cs
+src/Apideck.Test/Model/ApplicationTests.cs
 src/Apideck.Test/Model/AssigneeTests.cs
 src/Apideck.Test/Model/AtsActivityTests.cs
 src/Apideck.Test/Model/AtsEventTypeTests.cs
@@ -694,6 +703,7 @@ src/Apideck.Test/Model/ContactsSortTests.cs
 src/Apideck.Test/Model/CopyFolderRequestTests.cs
 src/Apideck.Test/Model/CreateActivityResponseTests.cs
 src/Apideck.Test/Model/CreateApplicantResponseTests.cs
+src/Apideck.Test/Model/CreateApplicationResponseTests.cs
 src/Apideck.Test/Model/CreateBillResponseTests.cs
 src/Apideck.Test/Model/CreateCommentResponseTests.cs
 src/Apideck.Test/Model/CreateCompanyResponseTests.cs
@@ -756,6 +766,7 @@ src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
 src/Apideck.Test/Model/DeleteApplicantResponseTests.cs
+src/Apideck.Test/Model/DeleteApplicationResponseTests.cs
 src/Apideck.Test/Model/DeleteBillResponseTests.cs
 src/Apideck.Test/Model/DeleteCommentResponseTests.cs
 src/Apideck.Test/Model/DeleteCompanyResponseTests.cs
@@ -856,6 +867,8 @@ src/Apideck.Test/Model/GetApiResponseTests.cs
 src/Apideck.Test/Model/GetApisResponseTests.cs
 src/Apideck.Test/Model/GetApplicantResponseTests.cs
 src/Apideck.Test/Model/GetApplicantsResponseTests.cs
+src/Apideck.Test/Model/GetApplicationResponseTests.cs
+src/Apideck.Test/Model/GetApplicationsResponseTests.cs
 src/Apideck.Test/Model/GetBalanceSheetResponseTests.cs
 src/Apideck.Test/Model/GetBillResponseTests.cs
 src/Apideck.Test/Model/GetBillsResponseTests.cs
@@ -1117,6 +1130,7 @@ src/Apideck.Test/Model/UnifiedIdTests.cs
 src/Apideck.Test/Model/UnprocessableResponseTests.cs
 src/Apideck.Test/Model/UpdateActivityResponseTests.cs
 src/Apideck.Test/Model/UpdateApplicantResponseTests.cs
+src/Apideck.Test/Model/UpdateApplicationResponseTests.cs
 src/Apideck.Test/Model/UpdateBillResponseTests.cs
 src/Apideck.Test/Model/UpdateCommentResponseTests.cs
 src/Apideck.Test/Model/UpdateCompanyResponseTests.cs
@@ -1233,6 +1247,8 @@ src/Apideck/Model/Applicant.cs
 src/Apideck/Model/ApplicantSocialLinks.cs
 src/Apideck/Model/ApplicantWebsites.cs
 src/Apideck/Model/ApplicantsFilter.cs
+src/Apideck/Model/Application.cs
+src/Apideck/Model/ApplicationStage.cs
 src/Apideck/Model/Assignee.cs
 src/Apideck/Model/AtsActivity.cs
 src/Apideck/Model/AtsEventType.cs
@@ -1298,6 +1314,7 @@ src/Apideck/Model/ContactsSort.cs
 src/Apideck/Model/CopyFolderRequest.cs
 src/Apideck/Model/CreateActivityResponse.cs
 src/Apideck/Model/CreateApplicantResponse.cs
+src/Apideck/Model/CreateApplicationResponse.cs
 src/Apideck/Model/CreateBillResponse.cs
 src/Apideck/Model/CreateCommentResponse.cs
 src/Apideck/Model/CreateCompanyResponse.cs
@@ -1360,6 +1377,7 @@ src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs
 src/Apideck/Model/DeleteApplicantResponse.cs
+src/Apideck/Model/DeleteApplicationResponse.cs
 src/Apideck/Model/DeleteBillResponse.cs
 src/Apideck/Model/DeleteCommentResponse.cs
 src/Apideck/Model/DeleteCompanyResponse.cs
@@ -1460,6 +1478,8 @@ src/Apideck/Model/GetApiResponse.cs
 src/Apideck/Model/GetApisResponse.cs
 src/Apideck/Model/GetApplicantResponse.cs
 src/Apideck/Model/GetApplicantsResponse.cs
+src/Apideck/Model/GetApplicationResponse.cs
+src/Apideck/Model/GetApplicationsResponse.cs
 src/Apideck/Model/GetBalanceSheetResponse.cs
 src/Apideck/Model/GetBillResponse.cs
 src/Apideck/Model/GetBillsResponse.cs
@@ -1721,6 +1741,7 @@ src/Apideck/Model/UnifiedId.cs
 src/Apideck/Model/UnprocessableResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs
 src/Apideck/Model/UpdateApplicantResponse.cs
+src/Apideck/Model/UpdateApplicationResponse.cs
 src/Apideck/Model/UpdateBillResponse.cs
 src/Apideck/Model/UpdateCommentResponse.cs
 src/Apideck/Model/UpdateCompanyResponse.cs

@@ -667,7 +667,25 @@ namespace Apideck.Model
             /// Enum IssueTrackingTicketDeleted for value: issue-tracking.ticket.deleted
             /// </summary>
             [EnumMember(Value = "issue-tracking.ticket.deleted")]
-            IssueTrackingTicketDeleted = 94
+            IssueTrackingTicketDeleted = 94,
+
+            /// <summary>
+            /// Enum AtsApplicationCreated for value: ats.application.created
+            /// </summary>
+            [EnumMember(Value = "ats.application.created")]
+            AtsApplicationCreated = 95,
+
+            /// <summary>
+            /// Enum AtsApplicationUpdated for value: ats.application.updated
+            /// </summary>
+            [EnumMember(Value = "ats.application.updated")]
+            AtsApplicationUpdated = 96,
+
+            /// <summary>
+            /// Enum AtsApplicationDeleted for value: ats.application.deleted
+            /// </summary>
+            [EnumMember(Value = "ats.application.deleted")]
+            AtsApplicationDeleted = 97
 
         }
 

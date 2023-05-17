@@ -182,6 +182,155 @@ namespace Apideck.Api
         /// <returns>ApiResponse of UpdateApplicantResponse</returns>
         ApiResponse<UpdateApplicantResponse> ApplicantsUpdateWithHttpInfo(string id, Applicant applicant, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
         /// <summary>
+        /// Create Application
+        /// </summary>
+        /// <remarks>
+        /// Create Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>CreateApplicationResponse</returns>
+        CreateApplicationResponse ApplicationsAdd(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+
+        /// <summary>
+        /// Create Application
+        /// </summary>
+        /// <remarks>
+        /// Create Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>ApiResponse of CreateApplicationResponse</returns>
+        ApiResponse<CreateApplicationResponse> ApplicationsAddWithHttpInfo(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        /// <summary>
+        /// List Applications
+        /// </summary>
+        /// <remarks>
+        /// List Applications
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <returns>GetApplicationsResponse</returns>
+        GetApplicationsResponse ApplicationsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+
+        /// <summary>
+        /// List Applications
+        /// </summary>
+        /// <remarks>
+        /// List Applications
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <returns>ApiResponse of GetApplicationsResponse</returns>
+        ApiResponse<GetApplicationsResponse> ApplicationsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+        /// <summary>
+        /// Delete Application
+        /// </summary>
+        /// <remarks>
+        /// Delete Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>DeleteApplicationResponse</returns>
+        DeleteApplicationResponse ApplicationsDelete(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+
+        /// <summary>
+        /// Delete Application
+        /// </summary>
+        /// <remarks>
+        /// Delete Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>ApiResponse of DeleteApplicationResponse</returns>
+        ApiResponse<DeleteApplicationResponse> ApplicationsDeleteWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        /// <summary>
+        /// Get Application
+        /// </summary>
+        /// <remarks>
+        /// Get Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>GetApplicationResponse</returns>
+        GetApplicationResponse ApplicationsOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+
+        /// <summary>
+        /// Get Application
+        /// </summary>
+        /// <remarks>
+        /// Get Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>ApiResponse of GetApplicationResponse</returns>
+        ApiResponse<GetApplicationResponse> ApplicationsOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        /// <summary>
+        /// Update Application
+        /// </summary>
+        /// <remarks>
+        /// Update Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>UpdateApplicationResponse</returns>
+        UpdateApplicationResponse ApplicationsUpdate(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+
+        /// <summary>
+        /// Update Application
+        /// </summary>
+        /// <remarks>
+        /// Update Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>ApiResponse of UpdateApplicationResponse</returns>
+        ApiResponse<UpdateApplicationResponse> ApplicationsUpdateWithHttpInfo(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        /// <summary>
         /// List Jobs
         /// </summary>
         /// <remarks>
@@ -419,6 +568,165 @@ namespace Apideck.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateApplicantResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateApplicantResponse>> ApplicantsUpdateWithHttpInfoAsync(string id, Applicant applicant, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Create Application
+        /// </summary>
+        /// <remarks>
+        /// Create Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateApplicationResponse</returns>
+        System.Threading.Tasks.Task<CreateApplicationResponse> ApplicationsAddAsync(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create Application
+        /// </summary>
+        /// <remarks>
+        /// Create Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateApplicationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateApplicationResponse>> ApplicationsAddWithHttpInfoAsync(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List Applications
+        /// </summary>
+        /// <remarks>
+        /// List Applications
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetApplicationsResponse</returns>
+        System.Threading.Tasks.Task<GetApplicationsResponse> ApplicationsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List Applications
+        /// </summary>
+        /// <remarks>
+        /// List Applications
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetApplicationsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetApplicationsResponse>> ApplicationsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Delete Application
+        /// </summary>
+        /// <remarks>
+        /// Delete Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DeleteApplicationResponse</returns>
+        System.Threading.Tasks.Task<DeleteApplicationResponse> ApplicationsDeleteAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Delete Application
+        /// </summary>
+        /// <remarks>
+        /// Delete Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DeleteApplicationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DeleteApplicationResponse>> ApplicationsDeleteWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get Application
+        /// </summary>
+        /// <remarks>
+        /// Get Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetApplicationResponse</returns>
+        System.Threading.Tasks.Task<GetApplicationResponse> ApplicationsOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get Application
+        /// </summary>
+        /// <remarks>
+        /// Get Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetApplicationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetApplicationResponse>> ApplicationsOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Update Application
+        /// </summary>
+        /// <remarks>
+        /// Update Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UpdateApplicationResponse</returns>
+        System.Threading.Tasks.Task<UpdateApplicationResponse> ApplicationsUpdateAsync(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update Application
+        /// </summary>
+        /// <remarks>
+        /// Update Application
+        /// </remarks>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UpdateApplicationResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateApplicationResponse>> ApplicationsUpdateWithHttpInfoAsync(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Jobs
         /// </summary>
@@ -1625,6 +1933,994 @@ namespace Apideck.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApplicantsUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Application Create Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>CreateApplicationResponse</returns>
+        public CreateApplicationResponse ApplicationsAdd(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        {
+            Apideck.Client.ApiResponse<CreateApplicationResponse> localVarResponse = ApplicationsAddWithHttpInfo(application, raw, consumerId, appId, serviceId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Application Create Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <returns>ApiResponse of CreateApplicationResponse</returns>
+        public Apideck.Client.ApiResponse<CreateApplicationResponse> ApplicationsAddWithHttpInfo(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        {
+            // verify the required parameter 'application' is set
+            if (application == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'application' when calling AtsApi->ApplicationsAdd");
+            }
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+            localVarRequestOptions.Data = application;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CreateApplicationResponse>("/ats/applications", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsAdd", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Application Create Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateApplicationResponse</returns>
+        public async System.Threading.Tasks.Task<CreateApplicationResponse> ApplicationsAddAsync(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Apideck.Client.ApiResponse<CreateApplicationResponse> localVarResponse = await ApplicationsAddWithHttpInfoAsync(application, raw, consumerId, appId, serviceId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Application Create Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="application"></param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateApplicationResponse)</returns>
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<CreateApplicationResponse>> ApplicationsAddWithHttpInfoAsync(Application application, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'application' is set
+            if (application == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'application' when calling AtsApi->ApplicationsAdd");
+            }
+
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+            localVarRequestOptions.Data = application;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateApplicationResponse>("/ats/applications", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsAdd", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Applications List Applications
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <returns>GetApplicationsResponse</returns>
+        public GetApplicationsResponse ApplicationsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        {
+            Apideck.Client.ApiResponse<GetApplicationsResponse> localVarResponse = ApplicationsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Applications List Applications
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <returns>ApiResponse of GetApplicationsResponse</returns>
+        public Apideck.Client.ApiResponse<GetApplicationsResponse> ApplicationsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        {
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (cursor != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetApplicationsResponse>("/ats/applications", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsAll", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Applications List Applications
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetApplicationsResponse</returns>
+        public async System.Threading.Tasks.Task<GetApplicationsResponse> ApplicationsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Apideck.Client.ApiResponse<GetApplicationsResponse> localVarResponse = await ApplicationsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Applications List Applications
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetApplicationsResponse)</returns>
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetApplicationsResponse>> ApplicationsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (cursor != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetApplicationsResponse>("/ats/applications", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsAll", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete Application Delete Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>DeleteApplicationResponse</returns>
+        public DeleteApplicationResponse ApplicationsDelete(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        {
+            Apideck.Client.ApiResponse<DeleteApplicationResponse> localVarResponse = ApplicationsDeleteWithHttpInfo(id, consumerId, appId, serviceId, raw);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete Application Delete Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>ApiResponse of DeleteApplicationResponse</returns>
+        public Apideck.Client.ApiResponse<DeleteApplicationResponse> ApplicationsDeleteWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AtsApi->ApplicationsDelete");
+            }
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<DeleteApplicationResponse>("/ats/applications/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete Application Delete Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DeleteApplicationResponse</returns>
+        public async System.Threading.Tasks.Task<DeleteApplicationResponse> ApplicationsDeleteAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Apideck.Client.ApiResponse<DeleteApplicationResponse> localVarResponse = await ApplicationsDeleteWithHttpInfoAsync(id, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete Application Delete Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DeleteApplicationResponse)</returns>
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<DeleteApplicationResponse>> ApplicationsDeleteWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AtsApi->ApplicationsDelete");
+            }
+
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<DeleteApplicationResponse>("/ats/applications/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsDelete", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Application Get Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>GetApplicationResponse</returns>
+        public GetApplicationResponse ApplicationsOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        {
+            Apideck.Client.ApiResponse<GetApplicationResponse> localVarResponse = ApplicationsOneWithHttpInfo(id, consumerId, appId, serviceId, raw);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Application Get Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>ApiResponse of GetApplicationResponse</returns>
+        public Apideck.Client.ApiResponse<GetApplicationResponse> ApplicationsOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AtsApi->ApplicationsOne");
+            }
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetApplicationResponse>("/ats/applications/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsOne", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Application Get Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetApplicationResponse</returns>
+        public async System.Threading.Tasks.Task<GetApplicationResponse> ApplicationsOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Apideck.Client.ApiResponse<GetApplicationResponse> localVarResponse = await ApplicationsOneWithHttpInfoAsync(id, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Application Get Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetApplicationResponse)</returns>
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetApplicationResponse>> ApplicationsOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AtsApi->ApplicationsOne");
+            }
+
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetApplicationResponse>("/ats/applications/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsOne", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Application Update Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>UpdateApplicationResponse</returns>
+        public UpdateApplicationResponse ApplicationsUpdate(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        {
+            Apideck.Client.ApiResponse<UpdateApplicationResponse> localVarResponse = ApplicationsUpdateWithHttpInfo(id, application, consumerId, appId, serviceId, raw);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Application Update Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <returns>ApiResponse of UpdateApplicationResponse</returns>
+        public Apideck.Client.ApiResponse<UpdateApplicationResponse> ApplicationsUpdateWithHttpInfo(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AtsApi->ApplicationsUpdate");
+            }
+
+            // verify the required parameter 'application' is set
+            if (application == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'application' when calling AtsApi->ApplicationsUpdate");
+            }
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+            localVarRequestOptions.Data = application;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<UpdateApplicationResponse>("/ats/applications/{id}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsUpdate", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Application Update Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UpdateApplicationResponse</returns>
+        public async System.Threading.Tasks.Task<UpdateApplicationResponse> ApplicationsUpdateAsync(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Apideck.Client.ApiResponse<UpdateApplicationResponse> localVarResponse = await ApplicationsUpdateWithHttpInfoAsync(id, application, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Application Update Application
+        /// </summary>
+        /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="application"></param>
+        /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
+        /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
+        /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UpdateApplicationResponse)</returns>
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<UpdateApplicationResponse>> ApplicationsUpdateWithHttpInfoAsync(string id, Application application, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AtsApi->ApplicationsUpdate");
+            }
+
+            // verify the required parameter 'application' is set
+            if (application == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'application' when calling AtsApi->ApplicationsUpdate");
+            }
+
+
+            Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Apideck.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Apideck.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (raw != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
+            }
+            if (consumerId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
+            }
+            if (appId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-app-id", Apideck.Client.ClientUtils.ParameterToString(appId)); // header parameter
+            }
+            if (serviceId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
+            }
+            localVarRequestOptions.Data = application;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateApplicationResponse>("/ats/applications/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApplicationsUpdate", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

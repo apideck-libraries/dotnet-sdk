@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **StageId** | **string** |  | [optional] 
 **RecruiterId** | **string** |  | [optional] 
 **CoordinatorId** | **string** |  | [optional] 
+**ApplicationIds** | **List&lt;string&gt;** |  | [optional] 
 **Applications** | **List&lt;string&gt;** |  | [optional] 
 **Followers** | **List&lt;string&gt;** |  | [optional] 
 **Sources** | **List&lt;string&gt;** |  | [optional] 
