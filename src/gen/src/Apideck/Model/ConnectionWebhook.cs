@@ -616,76 +616,82 @@ namespace Apideck.Model
             HrisEmployeeDeleted = 85,
 
             /// <summary>
+            /// Enum HrisEmployeeTerminated for value: hris.employee.terminated
+            /// </summary>
+            [EnumMember(Value = "hris.employee.terminated")]
+            HrisEmployeeTerminated = 86,
+
+            /// <summary>
             /// Enum HrisCompanyCreated for value: hris.company.created
             /// </summary>
             [EnumMember(Value = "hris.company.created")]
-            HrisCompanyCreated = 86,
+            HrisCompanyCreated = 87,
 
             /// <summary>
             /// Enum HrisCompanyUpdated for value: hris.company.updated
             /// </summary>
             [EnumMember(Value = "hris.company.updated")]
-            HrisCompanyUpdated = 87,
+            HrisCompanyUpdated = 88,
 
             /// <summary>
             /// Enum HrisCompanyDeleted for value: hris.company.deleted
             /// </summary>
             [EnumMember(Value = "hris.company.deleted")]
-            HrisCompanyDeleted = 88,
+            HrisCompanyDeleted = 89,
 
             /// <summary>
             /// Enum FileStorageFileCreated for value: file-storage.file.created
             /// </summary>
             [EnumMember(Value = "file-storage.file.created")]
-            FileStorageFileCreated = 89,
+            FileStorageFileCreated = 90,
 
             /// <summary>
             /// Enum FileStorageFileUpdated for value: file-storage.file.updated
             /// </summary>
             [EnumMember(Value = "file-storage.file.updated")]
-            FileStorageFileUpdated = 90,
+            FileStorageFileUpdated = 91,
 
             /// <summary>
             /// Enum FileStorageFileDeleted for value: file-storage.file.deleted
             /// </summary>
             [EnumMember(Value = "file-storage.file.deleted")]
-            FileStorageFileDeleted = 91,
+            FileStorageFileDeleted = 92,
 
             /// <summary>
             /// Enum IssueTrackingTicketCreated for value: issue-tracking.ticket.created
             /// </summary>
             [EnumMember(Value = "issue-tracking.ticket.created")]
-            IssueTrackingTicketCreated = 92,
+            IssueTrackingTicketCreated = 93,
 
             /// <summary>
             /// Enum IssueTrackingTicketUpdated for value: issue-tracking.ticket.updated
             /// </summary>
             [EnumMember(Value = "issue-tracking.ticket.updated")]
-            IssueTrackingTicketUpdated = 93,
+            IssueTrackingTicketUpdated = 94,
 
             /// <summary>
             /// Enum IssueTrackingTicketDeleted for value: issue-tracking.ticket.deleted
             /// </summary>
             [EnumMember(Value = "issue-tracking.ticket.deleted")]
-            IssueTrackingTicketDeleted = 94,
+            IssueTrackingTicketDeleted = 95,
 
             /// <summary>
             /// Enum AtsApplicationCreated for value: ats.application.created
             /// </summary>
             [EnumMember(Value = "ats.application.created")]
-            AtsApplicationCreated = 95,
+            AtsApplicationCreated = 96,
 
             /// <summary>
             /// Enum AtsApplicationUpdated for value: ats.application.updated
             /// </summary>
             [EnumMember(Value = "ats.application.updated")]
-            AtsApplicationUpdated = 96,
+            AtsApplicationUpdated = 97,
 
             /// <summary>
             /// Enum AtsApplicationDeleted for value: ats.application.deleted
             /// </summary>
             [EnumMember(Value = "ats.application.deleted")]
-            AtsApplicationDeleted = 97
+            AtsApplicationDeleted = 98
 
         }
 
