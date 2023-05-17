@@ -32,58 +32,64 @@ namespace Apideck.Model
     public enum AtsEventType
     {
         /// <summary>
-        /// Enum JobCreated for value: ats.job.created
+        /// Enum Star for value: *
+        /// </summary>
+        [EnumMember(Value = "*")]
+        Star = 1,
+
+        /// <summary>
+        /// Enum AtsJobCreated for value: ats.job.created
         /// </summary>
         [EnumMember(Value = "ats.job.created")]
-        JobCreated = 1,
+        AtsJobCreated = 2,
 
         /// <summary>
-        /// Enum JobUpdated for value: ats.job.updated
+        /// Enum AtsJobUpdated for value: ats.job.updated
         /// </summary>
         [EnumMember(Value = "ats.job.updated")]
-        JobUpdated = 2,
+        AtsJobUpdated = 3,
 
         /// <summary>
-        /// Enum JobDeleted for value: ats.job.deleted
+        /// Enum AtsJobDeleted for value: ats.job.deleted
         /// </summary>
         [EnumMember(Value = "ats.job.deleted")]
-        JobDeleted = 3,
+        AtsJobDeleted = 4,
 
         /// <summary>
-        /// Enum ApplicantCreated for value: ats.applicant.created
+        /// Enum AtsApplicantCreated for value: ats.applicant.created
         /// </summary>
         [EnumMember(Value = "ats.applicant.created")]
-        ApplicantCreated = 4,
+        AtsApplicantCreated = 5,
 
         /// <summary>
-        /// Enum ApplicantUpdated for value: ats.applicant.updated
+        /// Enum AtsApplicantUpdated for value: ats.applicant.updated
         /// </summary>
         [EnumMember(Value = "ats.applicant.updated")]
-        ApplicantUpdated = 5,
+        AtsApplicantUpdated = 6,
 
         /// <summary>
-        /// Enum ApplicantDeleted for value: ats.applicant.deleted
+        /// Enum AtsApplicantDeleted for value: ats.applicant.deleted
         /// </summary>
         [EnumMember(Value = "ats.applicant.deleted")]
-        ApplicantDeleted = 6,
+        AtsApplicantDeleted = 7,
 
         /// <summary>
-        /// Enum ApplicationCreated for value: ats.application.created
+        /// Enum AtsApplicationCreated for value: ats.application.created
         /// </summary>
         [EnumMember(Value = "ats.application.created")]
-        ApplicationCreated = 7,
+        AtsApplicationCreated = 8,
 
         /// <summary>
-        /// Enum ApplicationUpdated for value: ats.application.updated
+        /// Enum AtsApplicationUpdated for value: ats.application.updated
         /// </summary>
         [EnumMember(Value = "ats.application.updated")]
-        ApplicationUpdated = 8,
+        AtsApplicationUpdated = 9,
 
         /// <summary>
-        /// Enum ApplicationDeleted for value: ats.application.deleted
+        /// Enum AtsApplicationDeleted for value: ats.application.deleted
         /// </summary>
         [EnumMember(Value = "ats.application.deleted")]
-        ApplicationDeleted = 9
+        AtsApplicationDeleted = 10
 
     }
 
