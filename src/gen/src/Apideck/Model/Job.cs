@@ -151,6 +151,7 @@ namespace Apideck.Model
         /// <param name="language">language code according to ISO 639-1. For the United States - EN.</param>
         /// <param name="employmentTerms">employmentTerms.</param>
         /// <param name="experience">Level of experience required for the job role..</param>
+        /// <param name="location">Specifies the location for the job posting..</param>
         /// <param name="remote">Specifies whether the posting is for a remote job..</param>
         /// <param name="requisitionId">A job&#39;s Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company&#39;s internal processes..</param>
         /// <param name="department">department.</param>
@@ -171,10 +172,11 @@ namespace Apideck.Model
         /// <param name="availableToEmployees">Specifies whether an employee of the organization can apply for the job..</param>
         /// <param name="tags">tags.</param>
         /// <param name="addresses">addresses.</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="recordUrl">recordUrl.</param>
         /// <param name="deleted">deleted.</param>
         /// <param name="ownerId">ownerId.</param>
-        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<Object> hiringManagers = default(List<Object>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), string recordUrl = default(string), bool? deleted = default(bool?), string ownerId = default(string))
+        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<Object> hiringManagers = default(List<Object>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), string recordUrl = default(string), bool? deleted = default(bool?), string ownerId = default(string))
         {
             this.Slug = slug;
             this.Title = title;
@@ -185,6 +187,7 @@ namespace Apideck.Model
             this.Language = language;
             this.EmploymentTerms = employmentTerms;
             this.Experience = experience;
+            this.Location = location;
             this.Remote = remote;
             this.RequisitionId = requisitionId;
             this.Department = department;
@@ -205,6 +208,7 @@ namespace Apideck.Model
             this.AvailableToEmployees = availableToEmployees;
             this.Tags = tags;
             this.Addresses = addresses;
+            this.CustomFields = customFields;
             this.RecordUrl = recordUrl;
             this.Deleted = deleted;
             this.OwnerId = ownerId;
@@ -265,6 +269,13 @@ namespace Apideck.Model
         /// <value>Level of experience required for the job role.</value>
         [DataMember(Name = "experience", EmitDefaultValue = false)]
         public string Experience { get; set; }
+
+        /// <summary>
+        /// Specifies the location for the job posting.
+        /// </summary>
+        /// <value>Specifies the location for the job posting.</value>
+        [DataMember(Name = "location", EmitDefaultValue = true)]
+        public string Location { get; set; }
 
         /// <summary>
         /// Specifies whether the posting is for a remote job.
@@ -397,6 +408,12 @@ namespace Apideck.Model
         public List<Address> Addresses { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// Gets or Sets RecordUrl
         /// </summary>
         [DataMember(Name = "record_url", EmitDefaultValue = true)]
@@ -506,6 +523,7 @@ namespace Apideck.Model
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  EmploymentTerms: ").Append(EmploymentTerms).Append("\n");
             sb.Append("  Experience: ").Append(Experience).Append("\n");
+            sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("  Remote: ").Append(Remote).Append("\n");
             sb.Append("  RequisitionId: ").Append(RequisitionId).Append("\n");
             sb.Append("  Department: ").Append(Department).Append("\n");
@@ -526,6 +544,7 @@ namespace Apideck.Model
             sb.Append("  AvailableToEmployees: ").Append(AvailableToEmployees).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  RecordUrl: ").Append(RecordUrl).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
@@ -614,6 +633,11 @@ namespace Apideck.Model
                     this.Experience == input.Experience ||
                     (this.Experience != null &&
                     this.Experience.Equals(input.Experience))
+                ) && 
+                (
+                    this.Location == input.Location ||
+                    (this.Location != null &&
+                    this.Location.Equals(input.Location))
                 ) && 
                 (
                     this.Remote == input.Remote ||
@@ -720,6 +744,12 @@ namespace Apideck.Model
                     this.Addresses.SequenceEqual(input.Addresses)
                 ) && 
                 (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
                     this.RecordUrl == input.RecordUrl ||
                     (this.RecordUrl != null &&
                     this.RecordUrl.Equals(input.RecordUrl))
@@ -798,6 +828,10 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Experience.GetHashCode();
                 }
+                if (this.Location != null)
+                {
+                    hashCode = (hashCode * 59) + this.Location.GetHashCode();
+                }
                 if (this.Remote != null)
                 {
                     hashCode = (hashCode * 59) + this.Remote.GetHashCode();
@@ -871,6 +905,10 @@ namespace Apideck.Model
                 if (this.Addresses != null)
                 {
                     hashCode = (hashCode * 59) + this.Addresses.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.RecordUrl != null)
                 {

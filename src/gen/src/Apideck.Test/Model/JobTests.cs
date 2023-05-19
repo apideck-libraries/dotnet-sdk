@@ -137,6 +137,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Experience'
         }
         /// <summary>
+        /// Test the property 'Location'
+        /// </summary>
+        [Fact]
+        public void LocationTest()
+        {
+            // TODO unit test for the property 'Location'
+        }
+        /// <summary>
         /// Test the property 'Remote'
         /// </summary>
         [Fact]
@@ -295,6 +303,14 @@ namespace Apideck.Test.Model
         public void AddressesTest()
         {
             // TODO unit test for the property 'Addresses'
+        }
+        /// <summary>
+        /// Test the property 'CustomFields'
+        /// </summary>
+        [Fact]
+        public void CustomFieldsTest()
+        {
+            // TODO unit test for the property 'CustomFields'
         }
         /// <summary>
         /// Test the property 'RecordUrl'
