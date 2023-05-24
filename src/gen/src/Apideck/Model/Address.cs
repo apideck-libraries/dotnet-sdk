@@ -112,8 +112,9 @@ namespace Apideck.Model
         /// <param name="fax">fax.</param>
         /// <param name="email">email.</param>
         /// <param name="website">website.</param>
+        /// <param name="notes">notes.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Address(string id = default(string), TypeEnum? type = default(TypeEnum?), string _string = default(string), string name = default(string), string line1 = default(string), string line2 = default(string), string line3 = default(string), string line4 = default(string), string streetNumber = default(string), string city = default(string), string state = default(string), string postalCode = default(string), string country = default(string), string latitude = default(string), string longitude = default(string), string county = default(string), string contactName = default(string), string salutation = default(string), string phoneNumber = default(string), string fax = default(string), string email = default(string), string website = default(string), string rowVersion = default(string))
+        public Address(string id = default(string), TypeEnum? type = default(TypeEnum?), string _string = default(string), string name = default(string), string line1 = default(string), string line2 = default(string), string line3 = default(string), string line4 = default(string), string streetNumber = default(string), string city = default(string), string state = default(string), string postalCode = default(string), string country = default(string), string latitude = default(string), string longitude = default(string), string county = default(string), string contactName = default(string), string salutation = default(string), string phoneNumber = default(string), string fax = default(string), string email = default(string), string website = default(string), string notes = default(string), string rowVersion = default(string))
         {
             this.Id = id;
             this.Type = type;
@@ -137,6 +138,7 @@ namespace Apideck.Model
             this.Fax = fax;
             this.Email = email;
             this.Website = website;
+            this.Notes = notes;
             this.RowVersion = rowVersion;
         }
 
@@ -277,6 +279,12 @@ namespace Apideck.Model
         public string Website { get; set; }
 
         /// <summary>
+        /// Gets or Sets Notes
+        /// </summary>
+        [DataMember(Name = "notes", EmitDefaultValue = true)]
+        public string Notes { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -313,6 +321,7 @@ namespace Apideck.Model
             sb.Append("  Fax: ").Append(Fax).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Website: ").Append(Website).Append("\n");
+            sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -459,6 +468,11 @@ namespace Apideck.Model
                     this.Website.Equals(input.Website))
                 ) && 
                 (
+                    this.Notes == input.Notes ||
+                    (this.Notes != null &&
+                    this.Notes.Equals(input.Notes))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -558,6 +572,10 @@ namespace Apideck.Model
                 if (this.Website != null)
                 {
                     hashCode = (hashCode * 59) + this.Website.GetHashCode();
+                }
+                if (this.Notes != null)
+                {
+                    hashCode = (hashCode * 59) + this.Notes.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

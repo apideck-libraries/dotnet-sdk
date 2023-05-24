@@ -791,6 +791,88 @@ namespace Apideck.Test.Api
         }
 
         /// <summary>
+        /// Test PurchaseOrdersAdd
+        /// </summary>
+        [Fact]
+        public void PurchaseOrdersAddTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //PurchaseOrder purchaseOrder = null;
+            //bool? raw = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //var response = instance.PurchaseOrdersAdd(purchaseOrder, raw, consumerId, appId, serviceId);
+            //Assert.IsType<CreatePurchaseOrderResponse>(response);
+        }
+
+        /// <summary>
+        /// Test PurchaseOrdersAll
+        /// </summary>
+        [Fact]
+        public void PurchaseOrdersAllTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //bool? raw = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //string cursor = null;
+            //int? limit = null;
+            //var response = instance.PurchaseOrdersAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //Assert.IsType<GetPurchaseOrdersResponse>(response);
+        }
+
+        /// <summary>
+        /// Test PurchaseOrdersDelete
+        /// </summary>
+        [Fact]
+        public void PurchaseOrdersDeleteTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //var response = instance.PurchaseOrdersDelete(id, consumerId, appId, serviceId, raw);
+            //Assert.IsType<DeletePurchaseOrderResponse>(response);
+        }
+
+        /// <summary>
+        /// Test PurchaseOrdersOne
+        /// </summary>
+        [Fact]
+        public void PurchaseOrdersOneTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //var response = instance.PurchaseOrdersOne(id, consumerId, appId, serviceId, raw);
+            //Assert.IsType<GetPurchaseOrderResponse>(response);
+        }
+
+        /// <summary>
+        /// Test PurchaseOrdersUpdate
+        /// </summary>
+        [Fact]
+        public void PurchaseOrdersUpdateTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string id = null;
+            //PurchaseOrder purchaseOrder = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //var response = instance.PurchaseOrdersUpdate(id, purchaseOrder, consumerId, appId, serviceId, raw);
+            //Assert.IsType<UpdatePurchaseOrderResponse>(response);
+        }
+
+        /// <summary>
         /// Test SuppliersAdd
         /// </summary>
         [Fact]

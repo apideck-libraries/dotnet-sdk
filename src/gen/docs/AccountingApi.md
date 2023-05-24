@@ -47,6 +47,11 @@ Method | HTTP request | Description
 [**PaymentsOne**](AccountingApi.md#paymentsone) | **GET** /accounting/payments/{id} | Get Payment
 [**PaymentsUpdate**](AccountingApi.md#paymentsupdate) | **PATCH** /accounting/payments/{id} | Update Payment
 [**ProfitAndLossOne**](AccountingApi.md#profitandlossone) | **GET** /accounting/profit-and-loss | Get Profit and Loss
+[**PurchaseOrdersAdd**](AccountingApi.md#purchaseordersadd) | **POST** /accounting/purchase-orders | Create Purchase Order
+[**PurchaseOrdersAll**](AccountingApi.md#purchaseordersall) | **GET** /accounting/purchase-orders | List Purchase Orders
+[**PurchaseOrdersDelete**](AccountingApi.md#purchaseordersdelete) | **DELETE** /accounting/purchase-orders/{id} | Delete Purchase Order
+[**PurchaseOrdersOne**](AccountingApi.md#purchaseordersone) | **GET** /accounting/purchase-orders/{id} | Get Purchase Order
+[**PurchaseOrdersUpdate**](AccountingApi.md#purchaseordersupdate) | **PATCH** /accounting/purchase-orders/{id} | Update Purchase Order
 [**SuppliersAdd**](AccountingApi.md#suppliersadd) | **POST** /accounting/suppliers | Create Supplier
 [**SuppliersAll**](AccountingApi.md#suppliersall) | **GET** /accounting/suppliers | List Suppliers
 [**SuppliersDelete**](AccountingApi.md#suppliersdelete) | **DELETE** /accounting/suppliers/{id} | Delete Supplier
@@ -4016,6 +4021,460 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Profit &amp; Loss Report |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="purchaseordersadd"></a>
+# **PurchaseOrdersAdd**
+> CreatePurchaseOrderResponse PurchaseOrdersAdd (PurchaseOrder purchaseOrder, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+
+Create Purchase Order
+
+Create Purchase Order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class PurchaseOrdersAddExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var purchaseOrder = new PurchaseOrder(); // PurchaseOrder | 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+
+            try
+            {
+                // Create Purchase Order
+                CreatePurchaseOrderResponse result = apiInstance.PurchaseOrdersAdd(purchaseOrder, raw, consumerId, appId, serviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.PurchaseOrdersAdd: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **purchaseOrder** | [**PurchaseOrder**](PurchaseOrder.md)|  | 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+
+### Return type
+
+[**CreatePurchaseOrderResponse**](CreatePurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | PurchaseOrders |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="purchaseordersall"></a>
+# **PurchaseOrdersAll**
+> GetPurchaseOrdersResponse PurchaseOrdersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null)
+
+List Purchase Orders
+
+List Purchase Orders
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class PurchaseOrdersAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+
+            try
+            {
+                // List Purchase Orders
+                GetPurchaseOrdersResponse result = apiInstance.PurchaseOrdersAll(raw, consumerId, appId, serviceId, cursor, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.PurchaseOrdersAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+
+### Return type
+
+[**GetPurchaseOrdersResponse**](GetPurchaseOrdersResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | PurchaseOrders |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="purchaseordersdelete"></a>
+# **PurchaseOrdersDelete**
+> DeletePurchaseOrderResponse PurchaseOrdersDelete (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Delete Purchase Order
+
+Delete Purchase Order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class PurchaseOrdersDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Delete Purchase Order
+                DeletePurchaseOrderResponse result = apiInstance.PurchaseOrdersDelete(id, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.PurchaseOrdersDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**DeletePurchaseOrderResponse**](DeletePurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | PurchaseOrders |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="purchaseordersone"></a>
+# **PurchaseOrdersOne**
+> GetPurchaseOrderResponse PurchaseOrdersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Get Purchase Order
+
+Get Purchase Order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class PurchaseOrdersOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Get Purchase Order
+                GetPurchaseOrderResponse result = apiInstance.PurchaseOrdersOne(id, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.PurchaseOrdersOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**GetPurchaseOrderResponse**](GetPurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | PurchaseOrders |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="purchaseordersupdate"></a>
+# **PurchaseOrdersUpdate**
+> UpdatePurchaseOrderResponse PurchaseOrdersUpdate (string id, PurchaseOrder purchaseOrder, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Update Purchase Order
+
+Update Purchase Order
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class PurchaseOrdersUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var purchaseOrder = new PurchaseOrder(); // PurchaseOrder | 
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Update Purchase Order
+                UpdatePurchaseOrderResponse result = apiInstance.PurchaseOrdersUpdate(id, purchaseOrder, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.PurchaseOrdersUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **purchaseOrder** | [**PurchaseOrder**](PurchaseOrder.md)|  | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**UpdatePurchaseOrderResponse**](UpdatePurchaseOrderResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | PurchaseOrders |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |

@@ -137,6 +137,7 @@ docs/CreatePaymentResponse.md
 docs/CreatePipelineResponse.md
 docs/CreatePosPaymentResponse.md
 docs/CreateProductResponse.md
+docs/CreatePurchaseOrderResponse.md
 docs/CreateSessionResponse.md
 docs/CreateSessionResponseData.md
 docs/CreateSharedLinkResponse.md
@@ -195,6 +196,7 @@ docs/DeletePaymentResponse.md
 docs/DeletePipelineResponse.md
 docs/DeletePosPaymentResponse.md
 docs/DeleteProductResponse.md
+docs/DeletePurchaseOrderResponse.md
 docs/DeleteSharedLinkResponse.md
 docs/DeleteSupplierResponse.md
 docs/DeleteTaxRateResponse.md
@@ -357,6 +359,8 @@ docs/GetPosPaymentsResponse.md
 docs/GetProductResponse.md
 docs/GetProductsResponse.md
 docs/GetProfitAndLossResponse.md
+docs/GetPurchaseOrderResponse.md
+docs/GetPurchaseOrdersResponse.md
 docs/GetSharedLinkResponse.md
 docs/GetSharedLinksResponse.md
 docs/GetStoreResponse.md
@@ -485,6 +489,7 @@ docs/ProfitAndLossNetIncome.md
 docs/ProfitAndLossNetOperatingIncome.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossSection.md
+docs/PurchaseOrder.md
 docs/RequestCountAllocation.md
 docs/RequestRate.md
 docs/ResolveWebhookResponse.md
@@ -568,6 +573,7 @@ docs/UpdatePaymentResponse.md
 docs/UpdatePipelineResponse.md
 docs/UpdatePosPaymentResponse.md
 docs/UpdateProductResponse.md
+docs/UpdatePurchaseOrderResponse.md
 docs/UpdateSharedLinkResponse.md
 docs/UpdateSupplierResponse.md
 docs/UpdateTaxRateResponse.md
@@ -735,6 +741,7 @@ src/Apideck.Test/Model/CreatePaymentResponseTests.cs
 src/Apideck.Test/Model/CreatePipelineResponseTests.cs
 src/Apideck.Test/Model/CreatePosPaymentResponseTests.cs
 src/Apideck.Test/Model/CreateProductResponseTests.cs
+src/Apideck.Test/Model/CreatePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/CreateSessionResponseDataTests.cs
 src/Apideck.Test/Model/CreateSessionResponseTests.cs
 src/Apideck.Test/Model/CreateSharedLinkResponseTests.cs
@@ -792,6 +799,7 @@ src/Apideck.Test/Model/DeletePaymentResponseTests.cs
 src/Apideck.Test/Model/DeletePipelineResponseTests.cs
 src/Apideck.Test/Model/DeletePosPaymentResponseTests.cs
 src/Apideck.Test/Model/DeleteProductResponseTests.cs
+src/Apideck.Test/Model/DeletePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/DeleteSharedLinkResponseTests.cs
 src/Apideck.Test/Model/DeleteSupplierResponseTests.cs
 src/Apideck.Test/Model/DeleteTaxRateResponseTests.cs
@@ -952,6 +960,8 @@ src/Apideck.Test/Model/GetPosPaymentsResponseTests.cs
 src/Apideck.Test/Model/GetProductResponseTests.cs
 src/Apideck.Test/Model/GetProductsResponseTests.cs
 src/Apideck.Test/Model/GetProfitAndLossResponseTests.cs
+src/Apideck.Test/Model/GetPurchaseOrderResponseTests.cs
+src/Apideck.Test/Model/GetPurchaseOrdersResponseTests.cs
 src/Apideck.Test/Model/GetSharedLinkResponseTests.cs
 src/Apideck.Test/Model/GetSharedLinksResponseTests.cs
 src/Apideck.Test/Model/GetStoreResponseTests.cs
@@ -1076,6 +1086,7 @@ src/Apideck.Test/Model/ProfitAndLossNetOperatingIncomeTests.cs
 src/Apideck.Test/Model/ProfitAndLossRecordTests.cs
 src/Apideck.Test/Model/ProfitAndLossSectionTests.cs
 src/Apideck.Test/Model/ProfitAndLossTests.cs
+src/Apideck.Test/Model/PurchaseOrderTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
 src/Apideck.Test/Model/RequestRateTests.cs
 src/Apideck.Test/Model/ResolveWebhookResponseTests.cs
@@ -1158,6 +1169,7 @@ src/Apideck.Test/Model/UpdatePaymentResponseTests.cs
 src/Apideck.Test/Model/UpdatePipelineResponseTests.cs
 src/Apideck.Test/Model/UpdatePosPaymentResponseTests.cs
 src/Apideck.Test/Model/UpdateProductResponseTests.cs
+src/Apideck.Test/Model/UpdatePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/UpdateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/UpdateSupplierResponseTests.cs
 src/Apideck.Test/Model/UpdateTaxRateResponseTests.cs
@@ -1339,6 +1351,7 @@ src/Apideck/Model/CreatePaymentResponse.cs
 src/Apideck/Model/CreatePipelineResponse.cs
 src/Apideck/Model/CreatePosPaymentResponse.cs
 src/Apideck/Model/CreateProductResponse.cs
+src/Apideck/Model/CreatePurchaseOrderResponse.cs
 src/Apideck/Model/CreateSessionResponse.cs
 src/Apideck/Model/CreateSessionResponseData.cs
 src/Apideck/Model/CreateSharedLinkResponse.cs
@@ -1396,6 +1409,7 @@ src/Apideck/Model/DeletePaymentResponse.cs
 src/Apideck/Model/DeletePipelineResponse.cs
 src/Apideck/Model/DeletePosPaymentResponse.cs
 src/Apideck/Model/DeleteProductResponse.cs
+src/Apideck/Model/DeletePurchaseOrderResponse.cs
 src/Apideck/Model/DeleteSharedLinkResponse.cs
 src/Apideck/Model/DeleteSupplierResponse.cs
 src/Apideck/Model/DeleteTaxRateResponse.cs
@@ -1556,6 +1570,8 @@ src/Apideck/Model/GetPosPaymentsResponse.cs
 src/Apideck/Model/GetProductResponse.cs
 src/Apideck/Model/GetProductsResponse.cs
 src/Apideck/Model/GetProfitAndLossResponse.cs
+src/Apideck/Model/GetPurchaseOrderResponse.cs
+src/Apideck/Model/GetPurchaseOrdersResponse.cs
 src/Apideck/Model/GetSharedLinkResponse.cs
 src/Apideck/Model/GetSharedLinksResponse.cs
 src/Apideck/Model/GetStoreResponse.cs
@@ -1680,6 +1696,7 @@ src/Apideck/Model/ProfitAndLossNetIncome.cs
 src/Apideck/Model/ProfitAndLossNetOperatingIncome.cs
 src/Apideck/Model/ProfitAndLossRecord.cs
 src/Apideck/Model/ProfitAndLossSection.cs
+src/Apideck/Model/PurchaseOrder.cs
 src/Apideck/Model/RequestCountAllocation.cs
 src/Apideck/Model/RequestRate.cs
 src/Apideck/Model/ResolveWebhookResponse.cs
@@ -1762,6 +1779,7 @@ src/Apideck/Model/UpdatePaymentResponse.cs
 src/Apideck/Model/UpdatePipelineResponse.cs
 src/Apideck/Model/UpdatePosPaymentResponse.cs
 src/Apideck/Model/UpdateProductResponse.cs
+src/Apideck/Model/UpdatePurchaseOrderResponse.cs
 src/Apideck/Model/UpdateSharedLinkResponse.cs
 src/Apideck/Model/UpdateSupplierResponse.cs
 src/Apideck/Model/UpdateTaxRateResponse.cs

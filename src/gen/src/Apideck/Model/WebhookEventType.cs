@@ -380,244 +380,262 @@ namespace Apideck.Model
         AccountingSupplierDeleted = 58,
 
         /// <summary>
+        /// Enum AccountingPurchaseOrderCreated for value: accounting.purchase-order.created
+        /// </summary>
+        [EnumMember(Value = "accounting.purchase-order.created")]
+        AccountingPurchaseOrderCreated = 59,
+
+        /// <summary>
+        /// Enum AccountingPurchaseOrderUpdated for value: accounting.purchase-order.updated
+        /// </summary>
+        [EnumMember(Value = "accounting.purchase-order.updated")]
+        AccountingPurchaseOrderUpdated = 60,
+
+        /// <summary>
+        /// Enum AccountingPurchaseOrderDeleted for value: accounting.purchase-order.deleted
+        /// </summary>
+        [EnumMember(Value = "accounting.purchase-order.deleted")]
+        AccountingPurchaseOrderDeleted = 61,
+
+        /// <summary>
         /// Enum PosOrderCreated for value: pos.order.created
         /// </summary>
         [EnumMember(Value = "pos.order.created")]
-        PosOrderCreated = 59,
+        PosOrderCreated = 62,
 
         /// <summary>
         /// Enum PosOrderUpdated for value: pos.order.updated
         /// </summary>
         [EnumMember(Value = "pos.order.updated")]
-        PosOrderUpdated = 60,
+        PosOrderUpdated = 63,
 
         /// <summary>
         /// Enum PosOrderDeleted for value: pos.order.deleted
         /// </summary>
         [EnumMember(Value = "pos.order.deleted")]
-        PosOrderDeleted = 61,
+        PosOrderDeleted = 64,
 
         /// <summary>
         /// Enum PosProductCreated for value: pos.product.created
         /// </summary>
         [EnumMember(Value = "pos.product.created")]
-        PosProductCreated = 62,
+        PosProductCreated = 65,
 
         /// <summary>
         /// Enum PosProductUpdated for value: pos.product.updated
         /// </summary>
         [EnumMember(Value = "pos.product.updated")]
-        PosProductUpdated = 63,
+        PosProductUpdated = 66,
 
         /// <summary>
         /// Enum PosProductDeleted for value: pos.product.deleted
         /// </summary>
         [EnumMember(Value = "pos.product.deleted")]
-        PosProductDeleted = 64,
+        PosProductDeleted = 67,
 
         /// <summary>
         /// Enum PosPaymentCreated for value: pos.payment.created
         /// </summary>
         [EnumMember(Value = "pos.payment.created")]
-        PosPaymentCreated = 65,
+        PosPaymentCreated = 68,
 
         /// <summary>
         /// Enum PosPaymentUpdated for value: pos.payment.updated
         /// </summary>
         [EnumMember(Value = "pos.payment.updated")]
-        PosPaymentUpdated = 66,
+        PosPaymentUpdated = 69,
 
         /// <summary>
         /// Enum PosPaymentDeleted for value: pos.payment.deleted
         /// </summary>
         [EnumMember(Value = "pos.payment.deleted")]
-        PosPaymentDeleted = 67,
+        PosPaymentDeleted = 70,
 
         /// <summary>
         /// Enum PosMerchantCreated for value: pos.merchant.created
         /// </summary>
         [EnumMember(Value = "pos.merchant.created")]
-        PosMerchantCreated = 68,
+        PosMerchantCreated = 71,
 
         /// <summary>
         /// Enum PosMerchantUpdated for value: pos.merchant.updated
         /// </summary>
         [EnumMember(Value = "pos.merchant.updated")]
-        PosMerchantUpdated = 69,
+        PosMerchantUpdated = 72,
 
         /// <summary>
         /// Enum PosMerchantDeleted for value: pos.merchant.deleted
         /// </summary>
         [EnumMember(Value = "pos.merchant.deleted")]
-        PosMerchantDeleted = 70,
+        PosMerchantDeleted = 73,
 
         /// <summary>
         /// Enum PosLocationCreated for value: pos.location.created
         /// </summary>
         [EnumMember(Value = "pos.location.created")]
-        PosLocationCreated = 71,
+        PosLocationCreated = 74,
 
         /// <summary>
         /// Enum PosLocationUpdated for value: pos.location.updated
         /// </summary>
         [EnumMember(Value = "pos.location.updated")]
-        PosLocationUpdated = 72,
+        PosLocationUpdated = 75,
 
         /// <summary>
         /// Enum PosLocationDeleted for value: pos.location.deleted
         /// </summary>
         [EnumMember(Value = "pos.location.deleted")]
-        PosLocationDeleted = 73,
+        PosLocationDeleted = 76,
 
         /// <summary>
         /// Enum PosItemCreated for value: pos.item.created
         /// </summary>
         [EnumMember(Value = "pos.item.created")]
-        PosItemCreated = 74,
+        PosItemCreated = 77,
 
         /// <summary>
         /// Enum PosItemUpdated for value: pos.item.updated
         /// </summary>
         [EnumMember(Value = "pos.item.updated")]
-        PosItemUpdated = 75,
+        PosItemUpdated = 78,
 
         /// <summary>
         /// Enum PosItemDeleted for value: pos.item.deleted
         /// </summary>
         [EnumMember(Value = "pos.item.deleted")]
-        PosItemDeleted = 76,
+        PosItemDeleted = 79,
 
         /// <summary>
         /// Enum PosModifierCreated for value: pos.modifier.created
         /// </summary>
         [EnumMember(Value = "pos.modifier.created")]
-        PosModifierCreated = 77,
+        PosModifierCreated = 80,
 
         /// <summary>
         /// Enum PosModifierUpdated for value: pos.modifier.updated
         /// </summary>
         [EnumMember(Value = "pos.modifier.updated")]
-        PosModifierUpdated = 78,
+        PosModifierUpdated = 81,
 
         /// <summary>
         /// Enum PosModifierDeleted for value: pos.modifier.deleted
         /// </summary>
         [EnumMember(Value = "pos.modifier.deleted")]
-        PosModifierDeleted = 79,
+        PosModifierDeleted = 82,
 
         /// <summary>
         /// Enum PosModifierGroupCreated for value: pos.modifier-group.created
         /// </summary>
         [EnumMember(Value = "pos.modifier-group.created")]
-        PosModifierGroupCreated = 80,
+        PosModifierGroupCreated = 83,
 
         /// <summary>
         /// Enum PosModifierGroupUpdated for value: pos.modifier-group.updated
         /// </summary>
         [EnumMember(Value = "pos.modifier-group.updated")]
-        PosModifierGroupUpdated = 81,
+        PosModifierGroupUpdated = 84,
 
         /// <summary>
         /// Enum PosModifierGroupDeleted for value: pos.modifier-group.deleted
         /// </summary>
         [EnumMember(Value = "pos.modifier-group.deleted")]
-        PosModifierGroupDeleted = 82,
+        PosModifierGroupDeleted = 85,
 
         /// <summary>
         /// Enum HrisEmployeeCreated for value: hris.employee.created
         /// </summary>
         [EnumMember(Value = "hris.employee.created")]
-        HrisEmployeeCreated = 83,
+        HrisEmployeeCreated = 86,
 
         /// <summary>
         /// Enum HrisEmployeeUpdated for value: hris.employee.updated
         /// </summary>
         [EnumMember(Value = "hris.employee.updated")]
-        HrisEmployeeUpdated = 84,
+        HrisEmployeeUpdated = 87,
 
         /// <summary>
         /// Enum HrisEmployeeDeleted for value: hris.employee.deleted
         /// </summary>
         [EnumMember(Value = "hris.employee.deleted")]
-        HrisEmployeeDeleted = 85,
+        HrisEmployeeDeleted = 88,
 
         /// <summary>
         /// Enum HrisEmployeeTerminated for value: hris.employee.terminated
         /// </summary>
         [EnumMember(Value = "hris.employee.terminated")]
-        HrisEmployeeTerminated = 86,
+        HrisEmployeeTerminated = 89,
 
         /// <summary>
         /// Enum HrisCompanyCreated for value: hris.company.created
         /// </summary>
         [EnumMember(Value = "hris.company.created")]
-        HrisCompanyCreated = 87,
+        HrisCompanyCreated = 90,
 
         /// <summary>
         /// Enum HrisCompanyUpdated for value: hris.company.updated
         /// </summary>
         [EnumMember(Value = "hris.company.updated")]
-        HrisCompanyUpdated = 88,
+        HrisCompanyUpdated = 91,
 
         /// <summary>
         /// Enum HrisCompanyDeleted for value: hris.company.deleted
         /// </summary>
         [EnumMember(Value = "hris.company.deleted")]
-        HrisCompanyDeleted = 89,
+        HrisCompanyDeleted = 92,
 
         /// <summary>
         /// Enum FileStorageFileCreated for value: file-storage.file.created
         /// </summary>
         [EnumMember(Value = "file-storage.file.created")]
-        FileStorageFileCreated = 90,
+        FileStorageFileCreated = 93,
 
         /// <summary>
         /// Enum FileStorageFileUpdated for value: file-storage.file.updated
         /// </summary>
         [EnumMember(Value = "file-storage.file.updated")]
-        FileStorageFileUpdated = 91,
+        FileStorageFileUpdated = 94,
 
         /// <summary>
         /// Enum FileStorageFileDeleted for value: file-storage.file.deleted
         /// </summary>
         [EnumMember(Value = "file-storage.file.deleted")]
-        FileStorageFileDeleted = 92,
+        FileStorageFileDeleted = 95,
 
         /// <summary>
         /// Enum IssueTrackingTicketCreated for value: issue-tracking.ticket.created
         /// </summary>
         [EnumMember(Value = "issue-tracking.ticket.created")]
-        IssueTrackingTicketCreated = 93,
+        IssueTrackingTicketCreated = 96,
 
         /// <summary>
         /// Enum IssueTrackingTicketUpdated for value: issue-tracking.ticket.updated
         /// </summary>
         [EnumMember(Value = "issue-tracking.ticket.updated")]
-        IssueTrackingTicketUpdated = 94,
+        IssueTrackingTicketUpdated = 97,
 
         /// <summary>
         /// Enum IssueTrackingTicketDeleted for value: issue-tracking.ticket.deleted
         /// </summary>
         [EnumMember(Value = "issue-tracking.ticket.deleted")]
-        IssueTrackingTicketDeleted = 95,
+        IssueTrackingTicketDeleted = 98,
 
         /// <summary>
         /// Enum AtsApplicationCreated for value: ats.application.created
         /// </summary>
         [EnumMember(Value = "ats.application.created")]
-        AtsApplicationCreated = 96,
+        AtsApplicationCreated = 99,
 
         /// <summary>
         /// Enum AtsApplicationUpdated for value: ats.application.updated
         /// </summary>
         [EnumMember(Value = "ats.application.updated")]
-        AtsApplicationUpdated = 97,
+        AtsApplicationUpdated = 100,
 
         /// <summary>
         /// Enum AtsApplicationDeleted for value: ats.application.deleted
         /// </summary>
         [EnumMember(Value = "ats.application.deleted")]
-        AtsApplicationDeleted = 98
+        AtsApplicationDeleted = 101
 
     }
 
