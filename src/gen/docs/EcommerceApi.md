@@ -4,8 +4,8 @@ All URIs are relative to *https://unify.apideck.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CustomersAll2**](EcommerceApi.md#customersall2) | **GET** /ecommerce/customers | List Customers
-[**CustomersOne2**](EcommerceApi.md#customersone2) | **GET** /ecommerce/customers/{id} | Get Customer
+[**CustomersAll**](EcommerceApi.md#customersall) | **GET** /ecommerce/customers | List Customers
+[**CustomersOne**](EcommerceApi.md#customersone) | **GET** /ecommerce/customers/{id} | Get Customer
 [**OrdersAll**](EcommerceApi.md#ordersall) | **GET** /ecommerce/orders | List Orders
 [**OrdersOne**](EcommerceApi.md#ordersone) | **GET** /ecommerce/orders/{id} | Get Order
 [**ProductsAll**](EcommerceApi.md#productsall) | **GET** /ecommerce/products | List Products
@@ -13,9 +13,9 @@ Method | HTTP request | Description
 [**StoresOne**](EcommerceApi.md#storesone) | **GET** /ecommerce/store | Get Store
 
 
-<a name="customersall2"></a>
-# **CustomersAll2**
-> GetEcommerceCustomersResponse CustomersAll2 (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, EcommerceCustomersFilter filter = null, string fields = null)
+<a name="customersall"></a>
+# **CustomersAll**
+> GetEcommerceCustomersResponse CustomersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, EcommerceCustomersFilter filter = null, string fields = null)
 
 List Customers
 
@@ -31,7 +31,7 @@ using Apideck.Model;
 
 namespace Example
 {
-    public class CustomersAll2Example
+    public class CustomersAllExample
     {
         public static void Main()
         {
@@ -55,12 +55,12 @@ namespace Example
             try
             {
                 // List Customers
-                GetEcommerceCustomersResponse result = apiInstance.CustomersAll2(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
+                GetEcommerceCustomersResponse result = apiInstance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EcommerceApi.CustomersAll2: " + e.Message );
+                Debug.Print("Exception when calling EcommerceApi.CustomersAll: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -109,9 +109,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="customersone2"></a>
-# **CustomersOne2**
-> GetEcommerceCustomerResponse CustomersOne2 (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
+<a name="customersone"></a>
+# **CustomersOne**
+> GetEcommerceCustomerResponse CustomersOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Customer
 
@@ -127,7 +127,7 @@ using Apideck.Model;
 
 namespace Example
 {
-    public class CustomersOne2Example
+    public class CustomersOneExample
     {
         public static void Main()
         {
@@ -149,12 +149,12 @@ namespace Example
             try
             {
                 // Get Customer
-                GetEcommerceCustomerResponse result = apiInstance.CustomersOne2(id, consumerId, appId, serviceId, raw, fields);
+                GetEcommerceCustomerResponse result = apiInstance.CustomersOne(id, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling EcommerceApi.CustomersOne2: " + e.Message );
+                Debug.Print("Exception when calling EcommerceApi.CustomersOne: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
