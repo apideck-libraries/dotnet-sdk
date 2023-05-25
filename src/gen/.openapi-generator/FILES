@@ -400,6 +400,7 @@ docs/IssueTrackingEventType.md
 docs/IssuesFilter.md
 docs/Item.md
 docs/Job.md
+docs/JobLinks.md
 docs/JobSalary.md
 docs/JobStatus.md
 docs/JobsFilter.md
@@ -998,6 +999,7 @@ src/Apideck.Test/Model/InvoicesSortTests.cs
 src/Apideck.Test/Model/IssueTrackingEventTypeTests.cs
 src/Apideck.Test/Model/IssuesFilterTests.cs
 src/Apideck.Test/Model/ItemTests.cs
+src/Apideck.Test/Model/JobLinksTests.cs
 src/Apideck.Test/Model/JobSalaryTests.cs
 src/Apideck.Test/Model/JobStatusTests.cs
 src/Apideck.Test/Model/JobTests.cs
@@ -1609,6 +1611,7 @@ src/Apideck/Model/IssueTrackingEventType.cs
 src/Apideck/Model/IssuesFilter.cs
 src/Apideck/Model/Item.cs
 src/Apideck/Model/Job.cs
+src/Apideck/Model/JobLinks.cs
 src/Apideck/Model/JobSalary.cs
 src/Apideck/Model/JobStatus.cs
 src/Apideck/Model/JobsFilter.cs

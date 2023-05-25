@@ -168,15 +168,16 @@ namespace Apideck.Model
         /// <param name="salary">salary.</param>
         /// <param name="url">URL of the job description.</param>
         /// <param name="jobPortalUrl">URL of the job portal.</param>
+        /// <param name="recordUrl">recordUrl.</param>
+        /// <param name="links">links.</param>
         /// <param name="confidential">confidential.</param>
         /// <param name="availableToEmployees">Specifies whether an employee of the organization can apply for the job..</param>
         /// <param name="tags">tags.</param>
         /// <param name="addresses">addresses.</param>
         /// <param name="customFields">customFields.</param>
-        /// <param name="recordUrl">recordUrl.</param>
         /// <param name="deleted">deleted.</param>
         /// <param name="ownerId">ownerId.</param>
-        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<Object> hiringManagers = default(List<Object>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), string recordUrl = default(string), bool? deleted = default(bool?), string ownerId = default(string))
+        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<Object> hiringManagers = default(List<Object>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), string recordUrl = default(string), List<JobLinks> links = default(List<JobLinks>), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), bool? deleted = default(bool?), string ownerId = default(string))
         {
             this.Slug = slug;
             this.Title = title;
@@ -204,12 +205,13 @@ namespace Apideck.Model
             this.Salary = salary;
             this.Url = url;
             this.JobPortalUrl = jobPortalUrl;
+            this.RecordUrl = recordUrl;
+            this.Links = links;
             this.Confidential = confidential;
             this.AvailableToEmployees = availableToEmployees;
             this.Tags = tags;
             this.Addresses = addresses;
             this.CustomFields = customFields;
-            this.RecordUrl = recordUrl;
             this.Deleted = deleted;
             this.OwnerId = ownerId;
         }
@@ -373,6 +375,7 @@ namespace Apideck.Model
         /// </summary>
         /// <value>URL of the job description</value>
         [DataMember(Name = "url", EmitDefaultValue = true)]
+        [Obsolete]
         public string Url { get; set; }
 
         /// <summary>
@@ -380,7 +383,21 @@ namespace Apideck.Model
         /// </summary>
         /// <value>URL of the job portal</value>
         [DataMember(Name = "job_portal_url", EmitDefaultValue = true)]
+        [Obsolete]
         public string JobPortalUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RecordUrl
+        /// </summary>
+        [DataMember(Name = "record_url", EmitDefaultValue = true)]
+        [Obsolete]
+        public string RecordUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Links
+        /// </summary>
+        [DataMember(Name = "links", EmitDefaultValue = false)]
+        public List<JobLinks> Links { get; set; }
 
         /// <summary>
         /// Gets or Sets Confidential
@@ -412,12 +429,6 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
         public List<CustomField> CustomFields { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RecordUrl
-        /// </summary>
-        [DataMember(Name = "record_url", EmitDefaultValue = true)]
-        public string RecordUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -540,12 +551,13 @@ namespace Apideck.Model
             sb.Append("  Salary: ").Append(Salary).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  JobPortalUrl: ").Append(JobPortalUrl).Append("\n");
+            sb.Append("  RecordUrl: ").Append(RecordUrl).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Confidential: ").Append(Confidential).Append("\n");
             sb.Append("  AvailableToEmployees: ").Append(AvailableToEmployees).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
-            sb.Append("  RecordUrl: ").Append(RecordUrl).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("  PublishedAt: ").Append(PublishedAt).Append("\n");
@@ -724,6 +736,17 @@ namespace Apideck.Model
                     this.JobPortalUrl.Equals(input.JobPortalUrl))
                 ) && 
                 (
+                    this.RecordUrl == input.RecordUrl ||
+                    (this.RecordUrl != null &&
+                    this.RecordUrl.Equals(input.RecordUrl))
+                ) && 
+                (
+                    this.Links == input.Links ||
+                    this.Links != null &&
+                    input.Links != null &&
+                    this.Links.SequenceEqual(input.Links)
+                ) && 
+                (
                     this.Confidential == input.Confidential ||
                     this.Confidential.Equals(input.Confidential)
                 ) && 
@@ -748,11 +771,6 @@ namespace Apideck.Model
                     this.CustomFields != null &&
                     input.CustomFields != null &&
                     this.CustomFields.SequenceEqual(input.CustomFields)
-                ) && 
-                (
-                    this.RecordUrl == input.RecordUrl ||
-                    (this.RecordUrl != null &&
-                    this.RecordUrl.Equals(input.RecordUrl))
                 ) && 
                 (
                     this.Deleted == input.Deleted ||
@@ -896,6 +914,14 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.JobPortalUrl.GetHashCode();
                 }
+                if (this.RecordUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.RecordUrl.GetHashCode();
+                }
+                if (this.Links != null)
+                {
+                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Confidential.GetHashCode();
                 hashCode = (hashCode * 59) + this.AvailableToEmployees.GetHashCode();
                 if (this.Tags != null)
@@ -909,10 +935,6 @@ namespace Apideck.Model
                 if (this.CustomFields != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
-                }
-                if (this.RecordUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.RecordUrl.GetHashCode();
                 }
                 if (this.Deleted != null)
                 {

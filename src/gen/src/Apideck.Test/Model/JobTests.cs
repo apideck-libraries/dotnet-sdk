@@ -273,6 +273,22 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'JobPortalUrl'
         }
         /// <summary>
+        /// Test the property 'RecordUrl'
+        /// </summary>
+        [Fact]
+        public void RecordUrlTest()
+        {
+            // TODO unit test for the property 'RecordUrl'
+        }
+        /// <summary>
+        /// Test the property 'Links'
+        /// </summary>
+        [Fact]
+        public void LinksTest()
+        {
+            // TODO unit test for the property 'Links'
+        }
+        /// <summary>
         /// Test the property 'Confidential'
         /// </summary>
         [Fact]
@@ -311,14 +327,6 @@ namespace Apideck.Test.Model
         public void CustomFieldsTest()
         {
             // TODO unit test for the property 'CustomFields'
-        }
-        /// <summary>
-        /// Test the property 'RecordUrl'
-        /// </summary>
-        [Fact]
-        public void RecordUrlTest()
-        {
-            // TODO unit test for the property 'RecordUrl'
         }
         /// <summary>
         /// Test the property 'Deleted'
