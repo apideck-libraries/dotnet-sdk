@@ -481,6 +481,7 @@ docs/PosPayment.md
 docs/PosPaymentCardDetails.md
 docs/PosPaymentExternalDetails.md
 docs/Price.md
+docs/ProbationPeriod.md
 docs/ProfitAndLoss.md
 docs/ProfitAndLossExpenses.md
 docs/ProfitAndLossFilter.md
@@ -1079,6 +1080,7 @@ src/Apideck.Test/Model/PosPaymentCardDetailsTests.cs
 src/Apideck.Test/Model/PosPaymentExternalDetailsTests.cs
 src/Apideck.Test/Model/PosPaymentTests.cs
 src/Apideck.Test/Model/PriceTests.cs
+src/Apideck.Test/Model/ProbationPeriodTests.cs
 src/Apideck.Test/Model/ProfitAndLossExpensesTests.cs
 src/Apideck.Test/Model/ProfitAndLossFilterTests.cs
 src/Apideck.Test/Model/ProfitAndLossGrossProfitTests.cs
@@ -1690,6 +1692,7 @@ src/Apideck/Model/PosPayment.cs
 src/Apideck/Model/PosPaymentCardDetails.cs
 src/Apideck/Model/PosPaymentExternalDetails.cs
 src/Apideck/Model/Price.cs
+src/Apideck/Model/ProbationPeriod.cs
 src/Apideck/Model/ProfitAndLoss.cs
 src/Apideck/Model/ProfitAndLossExpenses.cs
 src/Apideck/Model/ProfitAndLossFilter.cs
