@@ -28,6 +28,8 @@ docs/Applicant.md
 docs/ApplicantSocialLinks.md
 docs/ApplicantWebsites.md
 docs/ApplicantsFilter.md
+docs/Application.md
+docs/ApplicationStage.md
 docs/Assignee.md
 docs/AtsActivity.md
 docs/AtsApi.md
@@ -95,6 +97,7 @@ docs/ContactsSort.md
 docs/CopyFolderRequest.md
 docs/CreateActivityResponse.md
 docs/CreateApplicantResponse.md
+docs/CreateApplicationResponse.md
 docs/CreateBillResponse.md
 docs/CreateCommentResponse.md
 docs/CreateCompanyResponse.md
@@ -103,7 +106,6 @@ docs/CreateConsumerResponse.md
 docs/CreateContactResponse.md
 docs/CreateCreditNoteResponse.md
 docs/CreateCustomerResponse.md
-docs/CreateCustomerSupportCustomerResponse.md
 docs/CreateDepartmentResponse.md
 docs/CreateDriveGroupResponse.md
 docs/CreateDriveResponse.md
@@ -135,6 +137,7 @@ docs/CreatePaymentResponse.md
 docs/CreatePipelineResponse.md
 docs/CreatePosPaymentResponse.md
 docs/CreateProductResponse.md
+docs/CreatePurchaseOrderResponse.md
 docs/CreateSessionResponse.md
 docs/CreateSessionResponseData.md
 docs/CreateSharedLinkResponse.md
@@ -153,11 +156,11 @@ docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
 docs/CustomField.md
-docs/CustomerSupportApi.md
-docs/CustomerSupportCustomer.md
 docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
+docs/DeleteApplicantResponse.md
+docs/DeleteApplicationResponse.md
 docs/DeleteBillResponse.md
 docs/DeleteCommentResponse.md
 docs/DeleteCompanyResponse.md
@@ -165,7 +168,6 @@ docs/DeleteConsumerResponse.md
 docs/DeleteContactResponse.md
 docs/DeleteCreditNoteResponse.md
 docs/DeleteCustomerResponse.md
-docs/DeleteCustomerSupportCustomerResponse.md
 docs/DeleteDepartmentResponse.md
 docs/DeleteDriveGroupResponse.md
 docs/DeleteDriveResponse.md
@@ -194,6 +196,7 @@ docs/DeletePaymentResponse.md
 docs/DeletePipelineResponse.md
 docs/DeletePosPaymentResponse.md
 docs/DeleteProductResponse.md
+docs/DeletePurchaseOrderResponse.md
 docs/DeleteSharedLinkResponse.md
 docs/DeleteSupplierResponse.md
 docs/DeleteTaxRateResponse.md
@@ -260,6 +263,8 @@ docs/GetApiResponse.md
 docs/GetApisResponse.md
 docs/GetApplicantResponse.md
 docs/GetApplicantsResponse.md
+docs/GetApplicationResponse.md
+docs/GetApplicationsResponse.md
 docs/GetBalanceSheetResponse.md
 docs/GetBillResponse.md
 docs/GetBillsResponse.md
@@ -286,8 +291,6 @@ docs/GetContactsResponse.md
 docs/GetCreditNoteResponse.md
 docs/GetCreditNotesResponse.md
 docs/GetCustomerResponse.md
-docs/GetCustomerSupportCustomerResponse.md
-docs/GetCustomerSupportCustomersResponse.md
 docs/GetCustomersResponse.md
 docs/GetDepartmentResponse.md
 docs/GetDepartmentsResponse.md
@@ -356,6 +359,8 @@ docs/GetPosPaymentsResponse.md
 docs/GetProductResponse.md
 docs/GetProductsResponse.md
 docs/GetProfitAndLossResponse.md
+docs/GetPurchaseOrderResponse.md
+docs/GetPurchaseOrdersResponse.md
 docs/GetSharedLinkResponse.md
 docs/GetSharedLinksResponse.md
 docs/GetStoreResponse.md
@@ -395,6 +400,7 @@ docs/IssueTrackingEventType.md
 docs/IssuesFilter.md
 docs/Item.md
 docs/Job.md
+docs/JobLinks.md
 docs/JobSalary.md
 docs/JobStatus.md
 docs/JobsFilter.md
@@ -460,6 +466,7 @@ docs/PaymentAllocations.md
 docs/PaymentCard.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
+docs/PaymentsFilter.md
 docs/Payroll.md
 docs/PayrollTotals.md
 docs/PayrollsFilter.md
@@ -483,6 +490,7 @@ docs/ProfitAndLossNetIncome.md
 docs/ProfitAndLossNetOperatingIncome.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossSection.md
+docs/PurchaseOrder.md
 docs/RequestCountAllocation.md
 docs/RequestRate.md
 docs/ResolveWebhookResponse.md
@@ -524,6 +532,8 @@ docs/UnifiedFile.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
+docs/UpdateApplicantResponse.md
+docs/UpdateApplicationResponse.md
 docs/UpdateBillResponse.md
 docs/UpdateCommentResponse.md
 docs/UpdateCompanyResponse.md
@@ -533,7 +543,6 @@ docs/UpdateConsumerResponse.md
 docs/UpdateContactResponse.md
 docs/UpdateCreditNoteResponse.md
 docs/UpdateCustomerResponse.md
-docs/UpdateCustomerSupportCustomerResponse.md
 docs/UpdateDepartmentResponse.md
 docs/UpdateDriveGroupResponse.md
 docs/UpdateDriveResponse.md
@@ -565,6 +574,7 @@ docs/UpdatePaymentResponse.md
 docs/UpdatePipelineResponse.md
 docs/UpdatePosPaymentResponse.md
 docs/UpdateProductResponse.md
+docs/UpdatePurchaseOrderResponse.md
 docs/UpdateSharedLinkResponse.md
 docs/UpdateSupplierResponse.md
 docs/UpdateTaxRateResponse.md
@@ -597,7 +607,6 @@ src/Apideck.Test/Api/AccountingApiTests.cs
 src/Apideck.Test/Api/AtsApiTests.cs
 src/Apideck.Test/Api/ConnectorApiTests.cs
 src/Apideck.Test/Api/CrmApiTests.cs
-src/Apideck.Test/Api/CustomerSupportApiTests.cs
 src/Apideck.Test/Api/EcommerceApiTests.cs
 src/Apideck.Test/Api/FileStorageApiTests.cs
 src/Apideck.Test/Api/HrisApiTests.cs
@@ -626,6 +635,8 @@ src/Apideck.Test/Model/ApplicantSocialLinksTests.cs
 src/Apideck.Test/Model/ApplicantTests.cs
 src/Apideck.Test/Model/ApplicantWebsitesTests.cs
 src/Apideck.Test/Model/ApplicantsFilterTests.cs
+src/Apideck.Test/Model/ApplicationStageTests.cs
+src/Apideck.Test/Model/ApplicationTests.cs
 src/Apideck.Test/Model/AssigneeTests.cs
 src/Apideck.Test/Model/AtsActivityTests.cs
 src/Apideck.Test/Model/AtsEventTypeTests.cs
@@ -691,6 +702,7 @@ src/Apideck.Test/Model/ContactsSortTests.cs
 src/Apideck.Test/Model/CopyFolderRequestTests.cs
 src/Apideck.Test/Model/CreateActivityResponseTests.cs
 src/Apideck.Test/Model/CreateApplicantResponseTests.cs
+src/Apideck.Test/Model/CreateApplicationResponseTests.cs
 src/Apideck.Test/Model/CreateBillResponseTests.cs
 src/Apideck.Test/Model/CreateCommentResponseTests.cs
 src/Apideck.Test/Model/CreateCompanyResponseTests.cs
@@ -699,7 +711,6 @@ src/Apideck.Test/Model/CreateConsumerResponseTests.cs
 src/Apideck.Test/Model/CreateContactResponseTests.cs
 src/Apideck.Test/Model/CreateCreditNoteResponseTests.cs
 src/Apideck.Test/Model/CreateCustomerResponseTests.cs
-src/Apideck.Test/Model/CreateCustomerSupportCustomerResponseTests.cs
 src/Apideck.Test/Model/CreateDepartmentResponseTests.cs
 src/Apideck.Test/Model/CreateDriveGroupResponseTests.cs
 src/Apideck.Test/Model/CreateDriveResponseTests.cs
@@ -731,6 +742,7 @@ src/Apideck.Test/Model/CreatePaymentResponseTests.cs
 src/Apideck.Test/Model/CreatePipelineResponseTests.cs
 src/Apideck.Test/Model/CreatePosPaymentResponseTests.cs
 src/Apideck.Test/Model/CreateProductResponseTests.cs
+src/Apideck.Test/Model/CreatePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/CreateSessionResponseDataTests.cs
 src/Apideck.Test/Model/CreateSessionResponseTests.cs
 src/Apideck.Test/Model/CreateSharedLinkResponseTests.cs
@@ -748,10 +760,11 @@ src/Apideck.Test/Model/CreditNoteTests.cs
 src/Apideck.Test/Model/CrmEventTypeTests.cs
 src/Apideck.Test/Model/CurrencyTests.cs
 src/Apideck.Test/Model/CustomFieldTests.cs
-src/Apideck.Test/Model/CustomerSupportCustomerTests.cs
 src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
+src/Apideck.Test/Model/DeleteApplicantResponseTests.cs
+src/Apideck.Test/Model/DeleteApplicationResponseTests.cs
 src/Apideck.Test/Model/DeleteBillResponseTests.cs
 src/Apideck.Test/Model/DeleteCommentResponseTests.cs
 src/Apideck.Test/Model/DeleteCompanyResponseTests.cs
@@ -759,7 +772,6 @@ src/Apideck.Test/Model/DeleteConsumerResponseTests.cs
 src/Apideck.Test/Model/DeleteContactResponseTests.cs
 src/Apideck.Test/Model/DeleteCreditNoteResponseTests.cs
 src/Apideck.Test/Model/DeleteCustomerResponseTests.cs
-src/Apideck.Test/Model/DeleteCustomerSupportCustomerResponseTests.cs
 src/Apideck.Test/Model/DeleteDepartmentResponseTests.cs
 src/Apideck.Test/Model/DeleteDriveGroupResponseTests.cs
 src/Apideck.Test/Model/DeleteDriveResponseTests.cs
@@ -788,6 +800,7 @@ src/Apideck.Test/Model/DeletePaymentResponseTests.cs
 src/Apideck.Test/Model/DeletePipelineResponseTests.cs
 src/Apideck.Test/Model/DeletePosPaymentResponseTests.cs
 src/Apideck.Test/Model/DeleteProductResponseTests.cs
+src/Apideck.Test/Model/DeletePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/DeleteSharedLinkResponseTests.cs
 src/Apideck.Test/Model/DeleteSupplierResponseTests.cs
 src/Apideck.Test/Model/DeleteTaxRateResponseTests.cs
@@ -852,6 +865,8 @@ src/Apideck.Test/Model/GetApiResponseTests.cs
 src/Apideck.Test/Model/GetApisResponseTests.cs
 src/Apideck.Test/Model/GetApplicantResponseTests.cs
 src/Apideck.Test/Model/GetApplicantsResponseTests.cs
+src/Apideck.Test/Model/GetApplicationResponseTests.cs
+src/Apideck.Test/Model/GetApplicationsResponseTests.cs
 src/Apideck.Test/Model/GetBalanceSheetResponseTests.cs
 src/Apideck.Test/Model/GetBillResponseTests.cs
 src/Apideck.Test/Model/GetBillsResponseTests.cs
@@ -878,8 +893,6 @@ src/Apideck.Test/Model/GetContactsResponseTests.cs
 src/Apideck.Test/Model/GetCreditNoteResponseTests.cs
 src/Apideck.Test/Model/GetCreditNotesResponseTests.cs
 src/Apideck.Test/Model/GetCustomerResponseTests.cs
-src/Apideck.Test/Model/GetCustomerSupportCustomerResponseTests.cs
-src/Apideck.Test/Model/GetCustomerSupportCustomersResponseTests.cs
 src/Apideck.Test/Model/GetCustomersResponseTests.cs
 src/Apideck.Test/Model/GetDepartmentResponseTests.cs
 src/Apideck.Test/Model/GetDepartmentsResponseTests.cs
@@ -948,6 +961,8 @@ src/Apideck.Test/Model/GetPosPaymentsResponseTests.cs
 src/Apideck.Test/Model/GetProductResponseTests.cs
 src/Apideck.Test/Model/GetProductsResponseTests.cs
 src/Apideck.Test/Model/GetProfitAndLossResponseTests.cs
+src/Apideck.Test/Model/GetPurchaseOrderResponseTests.cs
+src/Apideck.Test/Model/GetPurchaseOrdersResponseTests.cs
 src/Apideck.Test/Model/GetSharedLinkResponseTests.cs
 src/Apideck.Test/Model/GetSharedLinksResponseTests.cs
 src/Apideck.Test/Model/GetStoreResponseTests.cs
@@ -984,6 +999,7 @@ src/Apideck.Test/Model/InvoicesSortTests.cs
 src/Apideck.Test/Model/IssueTrackingEventTypeTests.cs
 src/Apideck.Test/Model/IssuesFilterTests.cs
 src/Apideck.Test/Model/ItemTests.cs
+src/Apideck.Test/Model/JobLinksTests.cs
 src/Apideck.Test/Model/JobSalaryTests.cs
 src/Apideck.Test/Model/JobStatusTests.cs
 src/Apideck.Test/Model/JobTests.cs
@@ -1049,6 +1065,7 @@ src/Apideck.Test/Model/PaymentCardTests.cs
 src/Apideck.Test/Model/PaymentRequiredResponseTests.cs
 src/Apideck.Test/Model/PaymentTests.cs
 src/Apideck.Test/Model/PaymentUnitTests.cs
+src/Apideck.Test/Model/PaymentsFilterTests.cs
 src/Apideck.Test/Model/PayrollTests.cs
 src/Apideck.Test/Model/PayrollTotalsTests.cs
 src/Apideck.Test/Model/PayrollsFilterTests.cs
@@ -1071,6 +1088,7 @@ src/Apideck.Test/Model/ProfitAndLossNetOperatingIncomeTests.cs
 src/Apideck.Test/Model/ProfitAndLossRecordTests.cs
 src/Apideck.Test/Model/ProfitAndLossSectionTests.cs
 src/Apideck.Test/Model/ProfitAndLossTests.cs
+src/Apideck.Test/Model/PurchaseOrderTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
 src/Apideck.Test/Model/RequestRateTests.cs
 src/Apideck.Test/Model/ResolveWebhookResponseTests.cs
@@ -1111,6 +1129,8 @@ src/Apideck.Test/Model/UnifiedFileTests.cs
 src/Apideck.Test/Model/UnifiedIdTests.cs
 src/Apideck.Test/Model/UnprocessableResponseTests.cs
 src/Apideck.Test/Model/UpdateActivityResponseTests.cs
+src/Apideck.Test/Model/UpdateApplicantResponseTests.cs
+src/Apideck.Test/Model/UpdateApplicationResponseTests.cs
 src/Apideck.Test/Model/UpdateBillResponseTests.cs
 src/Apideck.Test/Model/UpdateCommentResponseTests.cs
 src/Apideck.Test/Model/UpdateCompanyResponseTests.cs
@@ -1120,7 +1140,6 @@ src/Apideck.Test/Model/UpdateConsumerResponseTests.cs
 src/Apideck.Test/Model/UpdateContactResponseTests.cs
 src/Apideck.Test/Model/UpdateCreditNoteResponseTests.cs
 src/Apideck.Test/Model/UpdateCustomerResponseTests.cs
-src/Apideck.Test/Model/UpdateCustomerSupportCustomerResponseTests.cs
 src/Apideck.Test/Model/UpdateDepartmentResponseTests.cs
 src/Apideck.Test/Model/UpdateDriveGroupResponseTests.cs
 src/Apideck.Test/Model/UpdateDriveResponseTests.cs
@@ -1152,6 +1171,7 @@ src/Apideck.Test/Model/UpdatePaymentResponseTests.cs
 src/Apideck.Test/Model/UpdatePipelineResponseTests.cs
 src/Apideck.Test/Model/UpdatePosPaymentResponseTests.cs
 src/Apideck.Test/Model/UpdateProductResponseTests.cs
+src/Apideck.Test/Model/UpdatePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/UpdateSharedLinkResponseTests.cs
 src/Apideck.Test/Model/UpdateSupplierResponseTests.cs
 src/Apideck.Test/Model/UpdateTaxRateResponseTests.cs
@@ -1181,7 +1201,6 @@ src/Apideck/Api/AccountingApi.cs
 src/Apideck/Api/AtsApi.cs
 src/Apideck/Api/ConnectorApi.cs
 src/Apideck/Api/CrmApi.cs
-src/Apideck/Api/CustomerSupportApi.cs
 src/Apideck/Api/EcommerceApi.cs
 src/Apideck/Api/FileStorageApi.cs
 src/Apideck/Api/HrisApi.cs
@@ -1227,6 +1246,8 @@ src/Apideck/Model/Applicant.cs
 src/Apideck/Model/ApplicantSocialLinks.cs
 src/Apideck/Model/ApplicantWebsites.cs
 src/Apideck/Model/ApplicantsFilter.cs
+src/Apideck/Model/Application.cs
+src/Apideck/Model/ApplicationStage.cs
 src/Apideck/Model/Assignee.cs
 src/Apideck/Model/AtsActivity.cs
 src/Apideck/Model/AtsEventType.cs
@@ -1292,6 +1313,7 @@ src/Apideck/Model/ContactsSort.cs
 src/Apideck/Model/CopyFolderRequest.cs
 src/Apideck/Model/CreateActivityResponse.cs
 src/Apideck/Model/CreateApplicantResponse.cs
+src/Apideck/Model/CreateApplicationResponse.cs
 src/Apideck/Model/CreateBillResponse.cs
 src/Apideck/Model/CreateCommentResponse.cs
 src/Apideck/Model/CreateCompanyResponse.cs
@@ -1300,7 +1322,6 @@ src/Apideck/Model/CreateConsumerResponse.cs
 src/Apideck/Model/CreateContactResponse.cs
 src/Apideck/Model/CreateCreditNoteResponse.cs
 src/Apideck/Model/CreateCustomerResponse.cs
-src/Apideck/Model/CreateCustomerSupportCustomerResponse.cs
 src/Apideck/Model/CreateDepartmentResponse.cs
 src/Apideck/Model/CreateDriveGroupResponse.cs
 src/Apideck/Model/CreateDriveResponse.cs
@@ -1332,6 +1353,7 @@ src/Apideck/Model/CreatePaymentResponse.cs
 src/Apideck/Model/CreatePipelineResponse.cs
 src/Apideck/Model/CreatePosPaymentResponse.cs
 src/Apideck/Model/CreateProductResponse.cs
+src/Apideck/Model/CreatePurchaseOrderResponse.cs
 src/Apideck/Model/CreateSessionResponse.cs
 src/Apideck/Model/CreateSessionResponseData.cs
 src/Apideck/Model/CreateSharedLinkResponse.cs
@@ -1349,10 +1371,11 @@ src/Apideck/Model/CreditNote.cs
 src/Apideck/Model/CrmEventType.cs
 src/Apideck/Model/Currency.cs
 src/Apideck/Model/CustomField.cs
-src/Apideck/Model/CustomerSupportCustomer.cs
 src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs
+src/Apideck/Model/DeleteApplicantResponse.cs
+src/Apideck/Model/DeleteApplicationResponse.cs
 src/Apideck/Model/DeleteBillResponse.cs
 src/Apideck/Model/DeleteCommentResponse.cs
 src/Apideck/Model/DeleteCompanyResponse.cs
@@ -1360,7 +1383,6 @@ src/Apideck/Model/DeleteConsumerResponse.cs
 src/Apideck/Model/DeleteContactResponse.cs
 src/Apideck/Model/DeleteCreditNoteResponse.cs
 src/Apideck/Model/DeleteCustomerResponse.cs
-src/Apideck/Model/DeleteCustomerSupportCustomerResponse.cs
 src/Apideck/Model/DeleteDepartmentResponse.cs
 src/Apideck/Model/DeleteDriveGroupResponse.cs
 src/Apideck/Model/DeleteDriveResponse.cs
@@ -1389,6 +1411,7 @@ src/Apideck/Model/DeletePaymentResponse.cs
 src/Apideck/Model/DeletePipelineResponse.cs
 src/Apideck/Model/DeletePosPaymentResponse.cs
 src/Apideck/Model/DeleteProductResponse.cs
+src/Apideck/Model/DeletePurchaseOrderResponse.cs
 src/Apideck/Model/DeleteSharedLinkResponse.cs
 src/Apideck/Model/DeleteSupplierResponse.cs
 src/Apideck/Model/DeleteTaxRateResponse.cs
@@ -1453,6 +1476,8 @@ src/Apideck/Model/GetApiResponse.cs
 src/Apideck/Model/GetApisResponse.cs
 src/Apideck/Model/GetApplicantResponse.cs
 src/Apideck/Model/GetApplicantsResponse.cs
+src/Apideck/Model/GetApplicationResponse.cs
+src/Apideck/Model/GetApplicationsResponse.cs
 src/Apideck/Model/GetBalanceSheetResponse.cs
 src/Apideck/Model/GetBillResponse.cs
 src/Apideck/Model/GetBillsResponse.cs
@@ -1479,8 +1504,6 @@ src/Apideck/Model/GetContactsResponse.cs
 src/Apideck/Model/GetCreditNoteResponse.cs
 src/Apideck/Model/GetCreditNotesResponse.cs
 src/Apideck/Model/GetCustomerResponse.cs
-src/Apideck/Model/GetCustomerSupportCustomerResponse.cs
-src/Apideck/Model/GetCustomerSupportCustomersResponse.cs
 src/Apideck/Model/GetCustomersResponse.cs
 src/Apideck/Model/GetDepartmentResponse.cs
 src/Apideck/Model/GetDepartmentsResponse.cs
@@ -1549,6 +1572,8 @@ src/Apideck/Model/GetPosPaymentsResponse.cs
 src/Apideck/Model/GetProductResponse.cs
 src/Apideck/Model/GetProductsResponse.cs
 src/Apideck/Model/GetProfitAndLossResponse.cs
+src/Apideck/Model/GetPurchaseOrderResponse.cs
+src/Apideck/Model/GetPurchaseOrdersResponse.cs
 src/Apideck/Model/GetSharedLinkResponse.cs
 src/Apideck/Model/GetSharedLinksResponse.cs
 src/Apideck/Model/GetStoreResponse.cs
@@ -1586,6 +1611,7 @@ src/Apideck/Model/IssueTrackingEventType.cs
 src/Apideck/Model/IssuesFilter.cs
 src/Apideck/Model/Item.cs
 src/Apideck/Model/Job.cs
+src/Apideck/Model/JobLinks.cs
 src/Apideck/Model/JobSalary.cs
 src/Apideck/Model/JobStatus.cs
 src/Apideck/Model/JobsFilter.cs
@@ -1650,6 +1676,7 @@ src/Apideck/Model/PaymentAllocations.cs
 src/Apideck/Model/PaymentCard.cs
 src/Apideck/Model/PaymentRequiredResponse.cs
 src/Apideck/Model/PaymentUnit.cs
+src/Apideck/Model/PaymentsFilter.cs
 src/Apideck/Model/Payroll.cs
 src/Apideck/Model/PayrollTotals.cs
 src/Apideck/Model/PayrollsFilter.cs
@@ -1672,6 +1699,7 @@ src/Apideck/Model/ProfitAndLossNetIncome.cs
 src/Apideck/Model/ProfitAndLossNetOperatingIncome.cs
 src/Apideck/Model/ProfitAndLossRecord.cs
 src/Apideck/Model/ProfitAndLossSection.cs
+src/Apideck/Model/PurchaseOrder.cs
 src/Apideck/Model/RequestCountAllocation.cs
 src/Apideck/Model/RequestRate.cs
 src/Apideck/Model/ResolveWebhookResponse.cs
@@ -1712,6 +1740,8 @@ src/Apideck/Model/UnifiedFile.cs
 src/Apideck/Model/UnifiedId.cs
 src/Apideck/Model/UnprocessableResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs
+src/Apideck/Model/UpdateApplicantResponse.cs
+src/Apideck/Model/UpdateApplicationResponse.cs
 src/Apideck/Model/UpdateBillResponse.cs
 src/Apideck/Model/UpdateCommentResponse.cs
 src/Apideck/Model/UpdateCompanyResponse.cs
@@ -1721,7 +1751,6 @@ src/Apideck/Model/UpdateConsumerResponse.cs
 src/Apideck/Model/UpdateContactResponse.cs
 src/Apideck/Model/UpdateCreditNoteResponse.cs
 src/Apideck/Model/UpdateCustomerResponse.cs
-src/Apideck/Model/UpdateCustomerSupportCustomerResponse.cs
 src/Apideck/Model/UpdateDepartmentResponse.cs
 src/Apideck/Model/UpdateDriveGroupResponse.cs
 src/Apideck/Model/UpdateDriveResponse.cs
@@ -1753,6 +1782,7 @@ src/Apideck/Model/UpdatePaymentResponse.cs
 src/Apideck/Model/UpdatePipelineResponse.cs
 src/Apideck/Model/UpdatePosPaymentResponse.cs
 src/Apideck/Model/UpdateProductResponse.cs
+src/Apideck/Model/UpdatePurchaseOrderResponse.cs
 src/Apideck/Model/UpdateSharedLinkResponse.cs
 src/Apideck/Model/UpdateSupplierResponse.cs
 src/Apideck/Model/UpdateTaxRateResponse.cs

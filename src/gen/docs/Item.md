@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **PriceCurrency** | **Currency** |  | [optional] 
 **Cost** | **decimal** |  | [optional] 
 **TaxIds** | **List&lt;string&gt;** | A list of Tax IDs for the product. | [optional] 
+**IsRevenue** | **bool** | True if this item should be counted as revenue. For example, gift cards and donations would not be counted as revenue. | [optional] 
+**UseDefaultTaxRates** | **bool** |  | [optional] 
 **AbsentAtLocationIds** | **List&lt;string&gt;** | A list of locations where the object is not present, even if present_at_all_locations is true. This can include locations that are deactivated. | [optional] 
 **PresentAtAllLocations** | **bool** |  | [optional] 
 **AvailableForPickup** | **bool** |  | [optional] 
