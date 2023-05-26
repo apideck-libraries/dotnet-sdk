@@ -80,6 +80,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'Currency'
         }
+        /// <summary>
+        /// Test the property 'Interval'
+        /// </summary>
+        [Fact]
+        public void IntervalTest()
+        {
+            // TODO unit test for the property 'Interval'
+        }
 
     }
 
