@@ -39,16 +39,22 @@ namespace Apideck.Model
         public enum VisibilityEnum
         {
             /// <summary>
+            /// Enum Draft for value: draft
+            /// </summary>
+            [EnumMember(Value = "draft")]
+            Draft = 1,
+
+            /// <summary>
             /// Enum Public for value: public
             /// </summary>
             [EnumMember(Value = "public")]
-            Public = 1,
+            Public = 2,
 
             /// <summary>
             /// Enum Internal for value: internal
             /// </summary>
             [EnumMember(Value = "internal")]
-            Internal = 2
+            Internal = 3
 
         }
 
@@ -177,7 +183,7 @@ namespace Apideck.Model
         /// <param name="customFields">customFields.</param>
         /// <param name="deleted">deleted.</param>
         /// <param name="ownerId">ownerId.</param>
-        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<Object> hiringManagers = default(List<Object>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), string recordUrl = default(string), List<JobLinks> links = default(List<JobLinks>), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), bool? deleted = default(bool?), string ownerId = default(string))
+        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<string> hiringManagers = default(List<string>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), string recordUrl = default(string), List<JobLinks> links = default(List<JobLinks>), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), bool? deleted = default(bool?), string ownerId = default(string))
         {
             this.Slug = slug;
             this.Title = title;
@@ -316,7 +322,7 @@ namespace Apideck.Model
         /// Gets or Sets HiringManagers
         /// </summary>
         [DataMember(Name = "hiring_managers", EmitDefaultValue = false)]
-        public List<Object> HiringManagers { get; set; }
+        public List<string> HiringManagers { get; set; }
 
         /// <summary>
         /// Gets or Sets Followers

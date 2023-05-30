@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Department** | [**Department**](Department.md) |  | [optional] 
 **Branch** | [**Branch**](Branch.md) |  | [optional] 
 **Recruiters** | **List&lt;string&gt;** | The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant | [optional] 
-**HiringManagers** | **List&lt;Object&gt;** |  | [optional] 
+**HiringManagers** | **List&lt;string&gt;** |  | [optional] 
 **Followers** | **List&lt;string&gt;** |  | [optional] 
 **Description** | **string** | A description of the object. | [optional] 
 **DescriptionHtml** | **string** | The job description in HTML format | [optional] 
