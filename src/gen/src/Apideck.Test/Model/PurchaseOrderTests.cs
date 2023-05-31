@@ -209,6 +209,62 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'TemplateId'
         }
         /// <summary>
+        /// Test the property 'DiscountPercentage'
+        /// </summary>
+        [Fact]
+        public void DiscountPercentageTest()
+        {
+            // TODO unit test for the property 'DiscountPercentage'
+        }
+        /// <summary>
+        /// Test the property 'BankAccount'
+        /// </summary>
+        [Fact]
+        public void BankAccountTest()
+        {
+            // TODO unit test for the property 'BankAccount'
+        }
+        /// <summary>
+        /// Test the property 'AccountingByRow'
+        /// </summary>
+        [Fact]
+        public void AccountingByRowTest()
+        {
+            // TODO unit test for the property 'AccountingByRow'
+        }
+        /// <summary>
+        /// Test the property 'DueDate'
+        /// </summary>
+        [Fact]
+        public void DueDateTest()
+        {
+            // TODO unit test for the property 'DueDate'
+        }
+        /// <summary>
+        /// Test the property 'PaymentMethod'
+        /// </summary>
+        [Fact]
+        public void PaymentMethodTest()
+        {
+            // TODO unit test for the property 'PaymentMethod'
+        }
+        /// <summary>
+        /// Test the property 'TaxCode'
+        /// </summary>
+        [Fact]
+        public void TaxCodeTest()
+        {
+            // TODO unit test for the property 'TaxCode'
+        }
+        /// <summary>
+        /// Test the property 'Channel'
+        /// </summary>
+        [Fact]
+        public void ChannelTest()
+        {
+            // TODO unit test for the property 'Channel'
+        }
+        /// <summary>
         /// Test the property 'RowVersion'
         /// </summary>
         [Fact]

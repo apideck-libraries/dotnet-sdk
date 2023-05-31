@@ -35,9 +35,13 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="LinkedInvoiceItem" /> class.
         /// </summary>
         /// <param name="id">ID of the linked item. A reference to the [invoice item](https://developers.apideck.com/apis/accounting/reference#tag/Invoice-Items) that was used to create this line item.</param>
-        public LinkedInvoiceItem(string id = default(string))
+        /// <param name="code">User defined item code.</param>
+        /// <param name="name">User defined item name.</param>
+        public LinkedInvoiceItem(string id = default(string), string code = default(string), string name = default(string))
         {
             this.Id = id;
+            this.Code = code;
+            this.Name = name;
         }
 
         /// <summary>
@@ -52,31 +56,15 @@ namespace Apideck.Model
         /// </summary>
         /// <value>User defined item code</value>
         [DataMember(Name = "code", EmitDefaultValue = true)]
-        public string Code { get; private set; }
+        public string Code { get; set; }
 
-        /// <summary>
-        /// Returns false as Code should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCode()
-        {
-            return false;
-        }
         /// <summary>
         /// User defined item name
         /// </summary>
         /// <value>User defined item name</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
-        /// <summary>
-        /// Returns false as Name should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeName()
-        {
-            return false;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

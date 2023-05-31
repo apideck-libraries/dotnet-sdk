@@ -92,7 +92,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="type">type.</param>
-        /// <param name="_string">_string.</param>
+        /// <param name="_string">The address string. Some APIs don&#39;t provide structured address data..</param>
         /// <param name="name">name.</param>
         /// <param name="line1">Line 1 of the address e.g. number, street, suite, apt #, etc..</param>
         /// <param name="line2">Line 2 of the address.</param>
@@ -149,8 +149,9 @@ namespace Apideck.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets String
+        /// The address string. Some APIs don&#39;t provide structured address data.
         /// </summary>
+        /// <value>The address string. Some APIs don&#39;t provide structured address data.</value>
         [DataMember(Name = "string", EmitDefaultValue = true)]
         public string String { get; set; }
 

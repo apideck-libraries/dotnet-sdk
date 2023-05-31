@@ -26,10 +26,10 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// AccountingCustomer
+    /// Customer
     /// </summary>
-    [DataContract(Name = "AccountingCustomer")]
-    public partial class AccountingCustomer : IEquatable<AccountingCustomer>, IValidatableObject
+    [DataContract(Name = "Customer")]
+    public partial class Customer : IEquatable<Customer>, IValidatableObject
     {
 
         /// <summary>
@@ -84,12 +84,12 @@ namespace Apideck.Model
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public StatusEnum? Status { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountingCustomer" /> class.
+        /// Initializes a new instance of the <see cref="Customer" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AccountingCustomer() { }
+        protected Customer() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccountingCustomer" /> class.
+        /// Initializes a new instance of the <see cref="Customer" /> class.
         /// </summary>
         /// <param name="displayId">Display ID.</param>
         /// <param name="displayName">Display name.</param>
@@ -113,8 +113,10 @@ namespace Apideck.Model
         /// <param name="account">account.</param>
         /// <param name="parent">parent.</param>
         /// <param name="status">Customer status.</param>
+        /// <param name="paymentMethod">Payment method used for the transaction, such as cash, credit card, bank transfer, or check.</param>
+        /// <param name="channel">The channel through which the transaction is processed..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public AccountingCustomer(string displayId = default(string), string displayName = default(string), string companyName = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), bool? individual = default(bool?), bool? project = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), string notes = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), LinkedParentCustomer parent = default(LinkedParentCustomer), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string))
+        public Customer(string displayId = default(string), string displayName = default(string), string companyName = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), bool? individual = default(bool?), bool? project = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), string notes = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), LinkedParentCustomer parent = default(LinkedParentCustomer), StatusEnum? status = default(StatusEnum?), string paymentMethod = default(string), string channel = default(string), string rowVersion = default(string))
         {
             this.DisplayId = displayId;
             this.DisplayName = displayName;
@@ -138,6 +140,8 @@ namespace Apideck.Model
             this.Account = account;
             this.Parent = parent;
             this.Status = status;
+            this.PaymentMethod = paymentMethod;
+            this.Channel = channel;
             this.RowVersion = rowVersion;
         }
 
@@ -302,6 +306,20 @@ namespace Apideck.Model
         public LinkedParentCustomer Parent { get; set; }
 
         /// <summary>
+        /// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+        /// </summary>
+        /// <value>Payment method used for the transaction, such as cash, credit card, bank transfer, or check</value>
+        [DataMember(Name = "payment_method", EmitDefaultValue = true)]
+        public string PaymentMethod { get; set; }
+
+        /// <summary>
+        /// The channel through which the transaction is processed.
+        /// </summary>
+        /// <value>The channel through which the transaction is processed.</value>
+        [DataMember(Name = "channel", EmitDefaultValue = true)]
+        public string Channel { get; set; }
+
+        /// <summary>
         /// The user who last updated the object.
         /// </summary>
         /// <value>The user who last updated the object.</value>
@@ -375,7 +393,7 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AccountingCustomer {\n");
+            sb.Append("class Customer {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DownstreamId: ").Append(DownstreamId).Append("\n");
             sb.Append("  DisplayId: ").Append(DisplayId).Append("\n");
@@ -400,6 +418,8 @@ namespace Apideck.Model
             sb.Append("  Account: ").Append(Account).Append("\n");
             sb.Append("  Parent: ").Append(Parent).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -425,15 +445,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AccountingCustomer);
+            return this.Equals(input as Customer);
         }
 
         /// <summary>
-        /// Returns true if AccountingCustomer instances are equal
+        /// Returns true if Customer instances are equal
         /// </summary>
-        /// <param name="input">Instance of AccountingCustomer to be compared</param>
+        /// <param name="input">Instance of Customer to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AccountingCustomer input)
+        public bool Equals(Customer input)
         {
             if (input == null)
             {
@@ -564,6 +584,16 @@ namespace Apideck.Model
                     this.Status.Equals(input.Status)
                 ) && 
                 (
+                    this.PaymentMethod == input.PaymentMethod ||
+                    (this.PaymentMethod != null &&
+                    this.PaymentMethod.Equals(input.PaymentMethod))
+                ) && 
+                (
+                    this.Channel == input.Channel ||
+                    (this.Channel != null &&
+                    this.Channel.Equals(input.Channel))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -689,6 +719,14 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.Parent.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.PaymentMethod != null)
+                {
+                    hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
+                }
+                if (this.Channel != null)
+                {
+                    hashCode = (hashCode * 59) + this.Channel.GetHashCode();
+                }
                 if (this.UpdatedBy != null)
                 {
                     hashCode = (hashCode * 59) + this.UpdatedBy.GetHashCode();

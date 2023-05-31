@@ -107,8 +107,15 @@ namespace Apideck.Model
         /// <param name="shippingAddress">shippingAddress.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
         /// <param name="templateId">Optional purchase order template.</param>
+        /// <param name="discountPercentage">Discount percentage applied to this transaction..</param>
+        /// <param name="bankAccount">bankAccount.</param>
+        /// <param name="accountingByRow">Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row..</param>
+        /// <param name="dueDate">The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD..</param>
+        /// <param name="paymentMethod">Payment method used for the transaction, such as cash, credit card, bank transfer, or check.</param>
+        /// <param name="taxCode">Applicable tax id/code override if tax is not supplied on a line item basis..</param>
+        /// <param name="channel">The channel through which the transaction is processed..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public PurchaseOrder(string poNumber = default(string), string reference = default(string), LinkedSupplier supplier = default(LinkedSupplier), StatusEnum? status = default(StatusEnum?), DateTime? issuedDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), DateTime? expectedArrivalDate = default(DateTime?), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), bool? taxInclusive = default(bool?), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address shippingAddress = default(Address), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string templateId = default(string), string rowVersion = default(string))
+        public PurchaseOrder(string poNumber = default(string), string reference = default(string), LinkedSupplier supplier = default(LinkedSupplier), StatusEnum? status = default(StatusEnum?), DateTime? issuedDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), DateTime? expectedArrivalDate = default(DateTime?), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), bool? taxInclusive = default(bool?), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address shippingAddress = default(Address), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string templateId = default(string), decimal? discountPercentage = default(decimal?), BankAccount bankAccount = default(BankAccount), bool? accountingByRow = default(bool?), DateTime dueDate = default(DateTime), string paymentMethod = default(string), string taxCode = default(string), string channel = default(string), string rowVersion = default(string))
         {
             this.PoNumber = poNumber;
             this.Reference = reference;
@@ -127,6 +134,13 @@ namespace Apideck.Model
             this.ShippingAddress = shippingAddress;
             this.LedgerAccount = ledgerAccount;
             this.TemplateId = templateId;
+            this.DiscountPercentage = discountPercentage;
+            this.BankAccount = bankAccount;
+            this.AccountingByRow = accountingByRow;
+            this.DueDate = dueDate;
+            this.PaymentMethod = paymentMethod;
+            this.TaxCode = taxCode;
+            this.Channel = channel;
             this.RowVersion = rowVersion;
         }
 
@@ -265,6 +279,55 @@ namespace Apideck.Model
         public string TemplateId { get; set; }
 
         /// <summary>
+        /// Discount percentage applied to this transaction.
+        /// </summary>
+        /// <value>Discount percentage applied to this transaction.</value>
+        [DataMember(Name = "discount_percentage", EmitDefaultValue = true)]
+        public decimal? DiscountPercentage { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BankAccount
+        /// </summary>
+        [DataMember(Name = "bank_account", EmitDefaultValue = false)]
+        public BankAccount BankAccount { get; set; }
+
+        /// <summary>
+        /// Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.
+        /// </summary>
+        /// <value>Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.</value>
+        [DataMember(Name = "accounting_by_row", EmitDefaultValue = true)]
+        public bool? AccountingByRow { get; set; }
+
+        /// <summary>
+        /// The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
+        /// </summary>
+        /// <value>The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.</value>
+        [DataMember(Name = "due_date", EmitDefaultValue = false)]
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime DueDate { get; set; }
+
+        /// <summary>
+        /// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+        /// </summary>
+        /// <value>Payment method used for the transaction, such as cash, credit card, bank transfer, or check</value>
+        [DataMember(Name = "payment_method", EmitDefaultValue = true)]
+        public string PaymentMethod { get; set; }
+
+        /// <summary>
+        /// Applicable tax id/code override if tax is not supplied on a line item basis.
+        /// </summary>
+        /// <value>Applicable tax id/code override if tax is not supplied on a line item basis.</value>
+        [DataMember(Name = "tax_code", EmitDefaultValue = true)]
+        public string TaxCode { get; set; }
+
+        /// <summary>
+        /// The channel through which the transaction is processed.
+        /// </summary>
+        /// <value>The channel through which the transaction is processed.</value>
+        [DataMember(Name = "channel", EmitDefaultValue = true)]
+        public string Channel { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -358,6 +421,13 @@ namespace Apideck.Model
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  LedgerAccount: ").Append(LedgerAccount).Append("\n");
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
+            sb.Append("  DiscountPercentage: ").Append(DiscountPercentage).Append("\n");
+            sb.Append("  BankAccount: ").Append(BankAccount).Append("\n");
+            sb.Append("  AccountingByRow: ").Append(AccountingByRow).Append("\n");
+            sb.Append("  DueDate: ").Append(DueDate).Append("\n");
+            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
+            sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -493,6 +563,41 @@ namespace Apideck.Model
                     this.TemplateId.Equals(input.TemplateId))
                 ) && 
                 (
+                    this.DiscountPercentage == input.DiscountPercentage ||
+                    (this.DiscountPercentage != null &&
+                    this.DiscountPercentage.Equals(input.DiscountPercentage))
+                ) && 
+                (
+                    this.BankAccount == input.BankAccount ||
+                    (this.BankAccount != null &&
+                    this.BankAccount.Equals(input.BankAccount))
+                ) && 
+                (
+                    this.AccountingByRow == input.AccountingByRow ||
+                    (this.AccountingByRow != null &&
+                    this.AccountingByRow.Equals(input.AccountingByRow))
+                ) && 
+                (
+                    this.DueDate == input.DueDate ||
+                    (this.DueDate != null &&
+                    this.DueDate.Equals(input.DueDate))
+                ) && 
+                (
+                    this.PaymentMethod == input.PaymentMethod ||
+                    (this.PaymentMethod != null &&
+                    this.PaymentMethod.Equals(input.PaymentMethod))
+                ) && 
+                (
+                    this.TaxCode == input.TaxCode ||
+                    (this.TaxCode != null &&
+                    this.TaxCode.Equals(input.TaxCode))
+                ) && 
+                (
+                    this.Channel == input.Channel ||
+                    (this.Channel != null &&
+                    this.Channel.Equals(input.Channel))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -597,6 +702,34 @@ namespace Apideck.Model
                 if (this.TemplateId != null)
                 {
                     hashCode = (hashCode * 59) + this.TemplateId.GetHashCode();
+                }
+                if (this.DiscountPercentage != null)
+                {
+                    hashCode = (hashCode * 59) + this.DiscountPercentage.GetHashCode();
+                }
+                if (this.BankAccount != null)
+                {
+                    hashCode = (hashCode * 59) + this.BankAccount.GetHashCode();
+                }
+                if (this.AccountingByRow != null)
+                {
+                    hashCode = (hashCode * 59) + this.AccountingByRow.GetHashCode();
+                }
+                if (this.DueDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.DueDate.GetHashCode();
+                }
+                if (this.PaymentMethod != null)
+                {
+                    hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
+                }
+                if (this.TaxCode != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxCode.GetHashCode();
+                }
+                if (this.Channel != null)
+                {
+                    hashCode = (hashCode * 59) + this.Channel.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

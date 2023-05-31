@@ -10,7 +10,6 @@
 Apideck.sln
 appveyor.yml
 docs/AccountingApi.md
-docs/AccountingCustomer.md
 docs/AccountingEventType.md
 docs/ActivitiesFilter.md
 docs/Activity.md
@@ -156,6 +155,7 @@ docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
 docs/CustomField.md
+docs/Customer.md
 docs/CustomersFilter.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
@@ -618,7 +618,6 @@ src/Apideck.Test/Api/SmsApiTests.cs
 src/Apideck.Test/Api/VaultApiTests.cs
 src/Apideck.Test/Api/WebhookApiTests.cs
 src/Apideck.Test/Apideck.Test.csproj
-src/Apideck.Test/Model/AccountingCustomerTests.cs
 src/Apideck.Test/Model/AccountingEventTypeTests.cs
 src/Apideck.Test/Model/ActivitiesFilterTests.cs
 src/Apideck.Test/Model/ActivityAttendeeTests.cs
@@ -761,6 +760,7 @@ src/Apideck.Test/Model/CreditNoteTests.cs
 src/Apideck.Test/Model/CrmEventTypeTests.cs
 src/Apideck.Test/Model/CurrencyTests.cs
 src/Apideck.Test/Model/CustomFieldTests.cs
+src/Apideck.Test/Model/CustomerTests.cs
 src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
@@ -1230,7 +1230,6 @@ src/Apideck/Client/OpenAPIDateConverter.cs
 src/Apideck/Client/RequestOptions.cs
 src/Apideck/Client/RetryConfiguration.cs
 src/Apideck/Model/AbstractOpenAPISchema.cs
-src/Apideck/Model/AccountingCustomer.cs
 src/Apideck/Model/AccountingEventType.cs
 src/Apideck/Model/ActivitiesFilter.cs
 src/Apideck/Model/Activity.cs
@@ -1373,6 +1372,7 @@ src/Apideck/Model/CreditNote.cs
 src/Apideck/Model/CrmEventType.cs
 src/Apideck/Model/Currency.cs
 src/Apideck/Model/CustomField.cs
+src/Apideck/Model/Customer.cs
 src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs

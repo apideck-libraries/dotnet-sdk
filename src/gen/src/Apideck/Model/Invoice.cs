@@ -183,8 +183,13 @@ namespace Apideck.Model
         /// <param name="shippingAddress">shippingAddress.</param>
         /// <param name="templateId">Optional invoice template.</param>
         /// <param name="sourceDocumentUrl">URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero..</param>
+        /// <param name="paymentMethod">Payment method used for the transaction, such as cash, credit card, bank transfer, or check.</param>
+        /// <param name="channel">The channel through which the transaction is processed..</param>
+        /// <param name="language">language code according to ISO 639-1. For the United States - EN.</param>
+        /// <param name="accountingByRow">Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row..</param>
+        /// <param name="bankAccount">bankAccount.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string rowVersion = default(string))
+        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), string rowVersion = default(string))
         {
             this.Type = type;
             this.Number = number;
@@ -213,6 +218,11 @@ namespace Apideck.Model
             this.ShippingAddress = shippingAddress;
             this.TemplateId = templateId;
             this.SourceDocumentUrl = sourceDocumentUrl;
+            this.PaymentMethod = paymentMethod;
+            this.Channel = channel;
+            this.Language = language;
+            this.AccountingByRow = accountingByRow;
+            this.BankAccount = bankAccount;
             this.RowVersion = rowVersion;
         }
 
@@ -413,6 +423,40 @@ namespace Apideck.Model
         public string SourceDocumentUrl { get; set; }
 
         /// <summary>
+        /// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
+        /// </summary>
+        /// <value>Payment method used for the transaction, such as cash, credit card, bank transfer, or check</value>
+        [DataMember(Name = "payment_method", EmitDefaultValue = true)]
+        public string PaymentMethod { get; set; }
+
+        /// <summary>
+        /// The channel through which the transaction is processed.
+        /// </summary>
+        /// <value>The channel through which the transaction is processed.</value>
+        [DataMember(Name = "channel", EmitDefaultValue = true)]
+        public string Channel { get; set; }
+
+        /// <summary>
+        /// language code according to ISO 639-1. For the United States - EN
+        /// </summary>
+        /// <value>language code according to ISO 639-1. For the United States - EN</value>
+        [DataMember(Name = "language", EmitDefaultValue = true)]
+        public string Language { get; set; }
+
+        /// <summary>
+        /// Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.
+        /// </summary>
+        /// <value>Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row.</value>
+        [DataMember(Name = "accounting_by_row", EmitDefaultValue = true)]
+        public bool? AccountingByRow { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BankAccount
+        /// </summary>
+        [DataMember(Name = "bank_account", EmitDefaultValue = false)]
+        public BankAccount BankAccount { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -516,6 +560,11 @@ namespace Apideck.Model
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  TemplateId: ").Append(TemplateId).Append("\n");
             sb.Append("  SourceDocumentUrl: ").Append(SourceDocumentUrl).Append("\n");
+            sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
+            sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  Language: ").Append(Language).Append("\n");
+            sb.Append("  AccountingByRow: ").Append(AccountingByRow).Append("\n");
+            sb.Append("  BankAccount: ").Append(BankAccount).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -699,6 +748,31 @@ namespace Apideck.Model
                     this.SourceDocumentUrl.Equals(input.SourceDocumentUrl))
                 ) && 
                 (
+                    this.PaymentMethod == input.PaymentMethod ||
+                    (this.PaymentMethod != null &&
+                    this.PaymentMethod.Equals(input.PaymentMethod))
+                ) && 
+                (
+                    this.Channel == input.Channel ||
+                    (this.Channel != null &&
+                    this.Channel.Equals(input.Channel))
+                ) && 
+                (
+                    this.Language == input.Language ||
+                    (this.Language != null &&
+                    this.Language.Equals(input.Language))
+                ) && 
+                (
+                    this.AccountingByRow == input.AccountingByRow ||
+                    (this.AccountingByRow != null &&
+                    this.AccountingByRow.Equals(input.AccountingByRow))
+                ) && 
+                (
+                    this.BankAccount == input.BankAccount ||
+                    (this.BankAccount != null &&
+                    this.BankAccount.Equals(input.BankAccount))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -837,6 +911,26 @@ namespace Apideck.Model
                 if (this.SourceDocumentUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.SourceDocumentUrl.GetHashCode();
+                }
+                if (this.PaymentMethod != null)
+                {
+                    hashCode = (hashCode * 59) + this.PaymentMethod.GetHashCode();
+                }
+                if (this.Channel != null)
+                {
+                    hashCode = (hashCode * 59) + this.Channel.GetHashCode();
+                }
+                if (this.Language != null)
+                {
+                    hashCode = (hashCode * 59) + this.Language.GetHashCode();
+                }
+                if (this.AccountingByRow != null)
+                {
+                    hashCode = (hashCode * 59) + this.AccountingByRow.GetHashCode();
+                }
+                if (this.BankAccount != null)
+                {
+                    hashCode = (hashCode * 59) + this.BankAccount.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

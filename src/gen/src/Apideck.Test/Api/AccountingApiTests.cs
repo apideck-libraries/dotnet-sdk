@@ -265,12 +265,12 @@ namespace Apideck.Test.Api
         public void CustomersAddTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //AccountingCustomer accountingCustomer = null;
+            //Customer customer = null;
             //bool? raw = null;
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.CustomersAdd(accountingCustomer, raw, consumerId, appId, serviceId);
+            //var response = instance.CustomersAdd(customer, raw, consumerId, appId, serviceId);
             //Assert.IsType<CreateCustomerResponse>(response);
         }
 
@@ -335,12 +335,12 @@ namespace Apideck.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //AccountingCustomer accountingCustomer = null;
+            //Customer customer = null;
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.CustomersUpdate(id, accountingCustomer, consumerId, appId, serviceId, raw);
+            //var response = instance.CustomersUpdate(id, customer, consumerId, appId, serviceId, raw);
             //Assert.IsType<UpdateCustomerResponse>(response);
         }
 

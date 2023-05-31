@@ -35,9 +35,11 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="LinkedTaxRate" /> class.
         /// </summary>
         /// <param name="id">The ID of the object..</param>
-        public LinkedTaxRate(string id = default(string))
+        /// <param name="rate">Rate of the tax rate.</param>
+        public LinkedTaxRate(string id = default(string), decimal? rate = default(decimal?))
         {
             this.Id = id;
+            this.Rate = rate;
         }
 
         /// <summary>
@@ -82,16 +84,8 @@ namespace Apideck.Model
         /// </summary>
         /// <value>Rate of the tax rate</value>
         [DataMember(Name = "rate", EmitDefaultValue = true)]
-        public decimal? Rate { get; private set; }
+        public decimal? Rate { get; set; }
 
-        /// <summary>
-        /// Returns false as Rate should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeRate()
-        {
-            return false;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

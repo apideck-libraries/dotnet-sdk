@@ -45,7 +45,7 @@ namespace Apideck.Model
         /// <param name="resource">Unified API resource name (required).</param>
         /// <param name="operation">Operation performed (required).</param>
         /// <param name="data">data (required).</param>
-        public GetCustomerResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), AccountingCustomer data = default(AccountingCustomer))
+        public GetCustomerResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), Customer data = default(Customer))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -114,7 +114,7 @@ namespace Apideck.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = false)]
-        public AccountingCustomer Data { get; set; }
+        public Customer Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

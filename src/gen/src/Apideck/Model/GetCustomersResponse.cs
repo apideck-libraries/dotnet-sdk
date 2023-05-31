@@ -47,7 +47,7 @@ namespace Apideck.Model
         /// <param name="data">data (required).</param>
         /// <param name="meta">meta.</param>
         /// <param name="links">links.</param>
-        public GetCustomersResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), List<AccountingCustomer> data = default(List<AccountingCustomer>), Meta meta = default(Meta), Links links = default(Links))
+        public GetCustomersResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), List<Customer> data = default(List<Customer>), Meta meta = default(Meta), Links links = default(Links))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -118,7 +118,7 @@ namespace Apideck.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = false)]
-        public List<AccountingCustomer> Data { get; set; }
+        public List<Customer> Data { get; set; }
 
         /// <summary>
         /// Gets or Sets Meta

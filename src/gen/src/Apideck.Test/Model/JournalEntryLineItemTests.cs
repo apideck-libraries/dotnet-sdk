@@ -81,6 +81,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'TaxAmount'
         }
         /// <summary>
+        /// Test the property 'SubTotal'
+        /// </summary>
+        [Fact]
+        public void SubTotalTest()
+        {
+            // TODO unit test for the property 'SubTotal'
+        }
+        /// <summary>
         /// Test the property 'TotalAmount'
         /// </summary>
         [Fact]

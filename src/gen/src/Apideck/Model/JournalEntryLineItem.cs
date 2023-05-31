@@ -69,18 +69,14 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="description">User defined description.</param>
         /// <param name="taxAmount">Tax amount.</param>
-        /// <param name="totalAmount">Debit entries are considered positive, and credit entries are considered negative. (required).</param>
+        /// <param name="subTotal">Sub-total amount, normally before tax..</param>
+        /// <param name="totalAmount">Debit entries are considered positive, and credit entries are considered negative..</param>
         /// <param name="type">Debit entries are considered positive, and credit entries are considered negative. (required).</param>
         /// <param name="taxRate">taxRate.</param>
         /// <param name="trackingCategory">trackingCategory.</param>
         /// <param name="ledgerAccount">ledgerAccount (required).</param>
-        public JournalEntryLineItem(string description = default(string), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), TypeEnum type = default(TypeEnum), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount))
+        public JournalEntryLineItem(string description = default(string), decimal? taxAmount = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalAmount = default(decimal?), TypeEnum type = default(TypeEnum), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount))
         {
-            // to ensure "totalAmount" is required (not null)
-            if (totalAmount == null) {
-                throw new ArgumentNullException("totalAmount is a required property for JournalEntryLineItem and cannot be null");
-            }
-            this.TotalAmount = totalAmount;
             this.Type = type;
             // to ensure "ledgerAccount" is required (not null)
             if (ledgerAccount == null) {
@@ -89,6 +85,8 @@ namespace Apideck.Model
             this.LedgerAccount = ledgerAccount;
             this.Description = description;
             this.TaxAmount = taxAmount;
+            this.SubTotal = subTotal;
+            this.TotalAmount = totalAmount;
             this.TaxRate = taxRate;
             this.TrackingCategory = trackingCategory;
         }
@@ -123,10 +121,17 @@ namespace Apideck.Model
         public decimal? TaxAmount { get; set; }
 
         /// <summary>
+        /// Sub-total amount, normally before tax.
+        /// </summary>
+        /// <value>Sub-total amount, normally before tax.</value>
+        [DataMember(Name = "sub_total", EmitDefaultValue = true)]
+        public decimal? SubTotal { get; set; }
+
+        /// <summary>
         /// Debit entries are considered positive, and credit entries are considered negative.
         /// </summary>
         /// <value>Debit entries are considered positive, and credit entries are considered negative.</value>
-        [DataMember(Name = "total_amount", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "total_amount", EmitDefaultValue = true)]
         public decimal? TotalAmount { get; set; }
 
         /// <summary>
@@ -188,6 +193,7 @@ namespace Apideck.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
+            sb.Append("  SubTotal: ").Append(SubTotal).Append("\n");
             sb.Append("  TotalAmount: ").Append(TotalAmount).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
@@ -246,6 +252,11 @@ namespace Apideck.Model
                     this.TaxAmount.Equals(input.TaxAmount))
                 ) && 
                 (
+                    this.SubTotal == input.SubTotal ||
+                    (this.SubTotal != null &&
+                    this.SubTotal.Equals(input.SubTotal))
+                ) && 
+                (
                     this.TotalAmount == input.TotalAmount ||
                     (this.TotalAmount != null &&
                     this.TotalAmount.Equals(input.TotalAmount))
@@ -301,6 +312,10 @@ namespace Apideck.Model
                 if (this.TaxAmount != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxAmount.GetHashCode();
+                }
+                if (this.SubTotal != null)
+                {
+                    hashCode = (hashCode * 59) + this.SubTotal.GetHashCode();
                 }
                 if (this.TotalAmount != null)
                 {

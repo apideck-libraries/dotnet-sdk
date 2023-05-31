@@ -405,13 +405,13 @@ namespace Apideck.Api
         /// Create Customer
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>CreateCustomerResponse</returns>
-        CreateCustomerResponse CustomersAdd(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        CreateCustomerResponse CustomersAdd(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
 
         /// <summary>
         /// Create Customer
@@ -420,13 +420,13 @@ namespace Apideck.Api
         /// Create Customer
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>ApiResponse of CreateCustomerResponse</returns>
-        ApiResponse<CreateCustomerResponse> CustomersAddWithHttpInfo(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        ApiResponse<CreateCustomerResponse> CustomersAddWithHttpInfo(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
         /// <summary>
         /// List Customers
         /// </summary>
@@ -532,13 +532,13 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>UpdateCustomerResponse</returns>
-        UpdateCustomerResponse CustomersUpdate(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        UpdateCustomerResponse CustomersUpdate(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
 
         /// <summary>
         /// Update Customer
@@ -548,13 +548,13 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of UpdateCustomerResponse</returns>
-        ApiResponse<UpdateCustomerResponse> CustomersUpdateWithHttpInfo(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        ApiResponse<UpdateCustomerResponse> CustomersUpdateWithHttpInfo(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
         /// <summary>
         /// Create Invoice Item
         /// </summary>
@@ -2244,14 +2244,14 @@ namespace Apideck.Api
         /// Create Customer
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerResponse</returns>
-        System.Threading.Tasks.Task<CreateCustomerResponse> CustomersAddAsync(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateCustomerResponse> CustomersAddAsync(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Customer
@@ -2260,14 +2260,14 @@ namespace Apideck.Api
         /// Create Customer
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateCustomerResponse>> CustomersAddWithHttpInfoAsync(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateCustomerResponse>> CustomersAddWithHttpInfoAsync(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Customers
         /// </summary>
@@ -2379,14 +2379,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerResponse</returns>
-        System.Threading.Tasks.Task<UpdateCustomerResponse> CustomersUpdateAsync(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateCustomerResponse> CustomersUpdateAsync(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Customer
@@ -2396,14 +2396,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerResponse>> CustomersUpdateWithHttpInfoAsync(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomerResponse>> CustomersUpdateWithHttpInfoAsync(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Invoice Item
         /// </summary>
@@ -6354,15 +6354,15 @@ namespace Apideck.Api
         /// Create Customer Create Customer
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>CreateCustomerResponse</returns>
-        public CreateCustomerResponse CustomersAdd(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        public CreateCustomerResponse CustomersAdd(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
         {
-            Apideck.Client.ApiResponse<CreateCustomerResponse> localVarResponse = CustomersAddWithHttpInfo(accountingCustomer, raw, consumerId, appId, serviceId);
+            Apideck.Client.ApiResponse<CreateCustomerResponse> localVarResponse = CustomersAddWithHttpInfo(customer, raw, consumerId, appId, serviceId);
             return localVarResponse.Data;
         }
 
@@ -6370,18 +6370,18 @@ namespace Apideck.Api
         /// Create Customer Create Customer
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>ApiResponse of CreateCustomerResponse</returns>
-        public Apideck.Client.ApiResponse<CreateCustomerResponse> CustomersAddWithHttpInfo(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        public Apideck.Client.ApiResponse<CreateCustomerResponse> CustomersAddWithHttpInfo(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
         {
-            // verify the required parameter 'accountingCustomer' is set
-            if (accountingCustomer == null)
+            // verify the required parameter 'customer' is set
+            if (customer == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'accountingCustomer' when calling AccountingApi->CustomersAdd");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'customer' when calling AccountingApi->CustomersAdd");
             }
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -6423,7 +6423,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = accountingCustomer;
+            localVarRequestOptions.Data = customer;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -6449,16 +6449,16 @@ namespace Apideck.Api
         /// Create Customer Create Customer
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<CreateCustomerResponse> CustomersAddAsync(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateCustomerResponse> CustomersAddAsync(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<CreateCustomerResponse> localVarResponse = await CustomersAddWithHttpInfoAsync(accountingCustomer, raw, consumerId, appId, serviceId, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<CreateCustomerResponse> localVarResponse = await CustomersAddWithHttpInfoAsync(customer, raw, consumerId, appId, serviceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6466,19 +6466,19 @@ namespace Apideck.Api
         /// Create Customer Create Customer
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<CreateCustomerResponse>> CustomersAddWithHttpInfoAsync(AccountingCustomer accountingCustomer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<CreateCustomerResponse>> CustomersAddWithHttpInfoAsync(Customer customer, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'accountingCustomer' is set
-            if (accountingCustomer == null)
+            // verify the required parameter 'customer' is set
+            if (customer == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'accountingCustomer' when calling AccountingApi->CustomersAdd");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'customer' when calling AccountingApi->CustomersAdd");
             }
 
 
@@ -6521,7 +6521,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = accountingCustomer;
+            localVarRequestOptions.Data = customer;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7201,15 +7201,15 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>UpdateCustomerResponse</returns>
-        public UpdateCustomerResponse CustomersUpdate(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public UpdateCustomerResponse CustomersUpdate(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
-            Apideck.Client.ApiResponse<UpdateCustomerResponse> localVarResponse = CustomersUpdateWithHttpInfo(id, accountingCustomer, consumerId, appId, serviceId, raw);
+            Apideck.Client.ApiResponse<UpdateCustomerResponse> localVarResponse = CustomersUpdateWithHttpInfo(id, customer, consumerId, appId, serviceId, raw);
             return localVarResponse.Data;
         }
 
@@ -7218,13 +7218,13 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of UpdateCustomerResponse</returns>
-        public Apideck.Client.ApiResponse<UpdateCustomerResponse> CustomersUpdateWithHttpInfo(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public Apideck.Client.ApiResponse<UpdateCustomerResponse> CustomersUpdateWithHttpInfo(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7232,10 +7232,10 @@ namespace Apideck.Api
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AccountingApi->CustomersUpdate");
             }
 
-            // verify the required parameter 'accountingCustomer' is set
-            if (accountingCustomer == null)
+            // verify the required parameter 'customer' is set
+            if (customer == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'accountingCustomer' when calling AccountingApi->CustomersUpdate");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'customer' when calling AccountingApi->CustomersUpdate");
             }
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -7278,7 +7278,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = accountingCustomer;
+            localVarRequestOptions.Data = customer;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -7305,16 +7305,16 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateCustomerResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateCustomerResponse> CustomersUpdateAsync(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateCustomerResponse> CustomersUpdateAsync(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<UpdateCustomerResponse> localVarResponse = await CustomersUpdateWithHttpInfoAsync(id, accountingCustomer, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<UpdateCustomerResponse> localVarResponse = await CustomersUpdateWithHttpInfoAsync(id, customer, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7323,14 +7323,14 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="accountingCustomer"></param>
+        /// <param name="customer"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateCustomerResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<UpdateCustomerResponse>> CustomersUpdateWithHttpInfoAsync(string id, AccountingCustomer accountingCustomer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<UpdateCustomerResponse>> CustomersUpdateWithHttpInfoAsync(string id, Customer customer, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -7338,10 +7338,10 @@ namespace Apideck.Api
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AccountingApi->CustomersUpdate");
             }
 
-            // verify the required parameter 'accountingCustomer' is set
-            if (accountingCustomer == null)
+            // verify the required parameter 'customer' is set
+            if (customer == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'accountingCustomer' when calling AccountingApi->CustomersUpdate");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'customer' when calling AccountingApi->CustomersUpdate");
             }
 
 
@@ -7385,7 +7385,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = accountingCustomer;
+            localVarRequestOptions.Data = customer;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -14073,6 +14073,18 @@ namespace Apideck.Api
                 if (filter.CompanyName != null)
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[company_name]", filter.CompanyName));
+                }
+                if (filter.DisplayName != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[display_name]", filter.DisplayName));
+                }
+                if (filter.FirstName != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[first_name]", filter.FirstName));
+                }
+                if (filter.LastName != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[last_name]", filter.LastName));
                 }
                 if (filter.Email != null)
                 {

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
-**String** | **string** |  | [optional] 
+**String** | **string** | The address string. Some APIs don&#39;t provide structured address data. | [optional] 
 **Name** | **string** |  | [optional] 
 **Line1** | **string** | Line 1 of the address e.g. number, street, suite, apt #, etc. | [optional] 
 **Line2** | **string** | Line 2 of the address | [optional] 

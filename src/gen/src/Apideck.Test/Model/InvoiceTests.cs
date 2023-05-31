@@ -289,6 +289,46 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'SourceDocumentUrl'
         }
         /// <summary>
+        /// Test the property 'PaymentMethod'
+        /// </summary>
+        [Fact]
+        public void PaymentMethodTest()
+        {
+            // TODO unit test for the property 'PaymentMethod'
+        }
+        /// <summary>
+        /// Test the property 'Channel'
+        /// </summary>
+        [Fact]
+        public void ChannelTest()
+        {
+            // TODO unit test for the property 'Channel'
+        }
+        /// <summary>
+        /// Test the property 'Language'
+        /// </summary>
+        [Fact]
+        public void LanguageTest()
+        {
+            // TODO unit test for the property 'Language'
+        }
+        /// <summary>
+        /// Test the property 'AccountingByRow'
+        /// </summary>
+        [Fact]
+        public void AccountingByRowTest()
+        {
+            // TODO unit test for the property 'AccountingByRow'
+        }
+        /// <summary>
+        /// Test the property 'BankAccount'
+        /// </summary>
+        [Fact]
+        public void BankAccountTest()
+        {
+            // TODO unit test for the property 'BankAccount'
+        }
+        /// <summary>
         /// Test the property 'RowVersion'
         /// </summary>
         [Fact]

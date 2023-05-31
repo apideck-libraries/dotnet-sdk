@@ -121,6 +121,22 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'JournalSymbol'
         }
         /// <summary>
+        /// Test the property 'TaxType'
+        /// </summary>
+        [Fact]
+        public void TaxTypeTest()
+        {
+            // TODO unit test for the property 'TaxType'
+        }
+        /// <summary>
+        /// Test the property 'TaxCode'
+        /// </summary>
+        [Fact]
+        public void TaxCodeTest()
+        {
+            // TODO unit test for the property 'TaxCode'
+        }
+        /// <summary>
         /// Test the property 'UpdatedBy'
         /// </summary>
         [Fact]

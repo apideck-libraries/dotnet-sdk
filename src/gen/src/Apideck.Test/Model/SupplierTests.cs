@@ -233,6 +233,22 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Status'
         }
         /// <summary>
+        /// Test the property 'PaymentMethod'
+        /// </summary>
+        [Fact]
+        public void PaymentMethodTest()
+        {
+            // TODO unit test for the property 'PaymentMethod'
+        }
+        /// <summary>
+        /// Test the property 'Channel'
+        /// </summary>
+        [Fact]
+        public void ChannelTest()
+        {
+            // TODO unit test for the property 'Channel'
+        }
+        /// <summary>
         /// Test the property 'UpdatedBy'
         /// </summary>
         [Fact]
