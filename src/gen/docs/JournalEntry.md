@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **Memo** | **string** | Reference for the journal entry. | [optional] 
 **PostedAt** | **DateTime** | This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated. | [optional] 
 **JournalSymbol** | **string** | Journal symbol of the entry. For example IND for indirect costs | [optional] 
+**TaxType** | **string** | The specific category of tax associated with a transaction like sales or purchase | [optional] 
+**TaxCode** | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 

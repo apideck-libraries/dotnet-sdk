@@ -1170,7 +1170,7 @@ Name | Type | Description  | Notes
 
 <a name="customersadd"></a>
 # **CustomersAdd**
-> CreateCustomerResponse CustomersAdd (AccountingCustomer accountingCustomer, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+> CreateCustomerResponse CustomersAdd (Customer customer, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
 
 Create Customer
 
@@ -1198,7 +1198,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountingApi(config);
-            var accountingCustomer = new AccountingCustomer(); // AccountingCustomer | 
+            var customer = new Customer(); // Customer | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
@@ -1207,7 +1207,7 @@ namespace Example
             try
             {
                 // Create Customer
-                CreateCustomerResponse result = apiInstance.CustomersAdd(accountingCustomer, raw, consumerId, appId, serviceId);
+                CreateCustomerResponse result = apiInstance.CustomersAdd(customer, raw, consumerId, appId, serviceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1225,7 +1225,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountingCustomer** | [**AccountingCustomer**](AccountingCustomer.md)|  | 
+ **customer** | [**Customer**](Customer.md)|  | 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
@@ -1540,7 +1540,7 @@ Name | Type | Description  | Notes
 
 <a name="customersupdate"></a>
 # **CustomersUpdate**
-> UpdateCustomerResponse CustomersUpdate (string id, AccountingCustomer accountingCustomer, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> UpdateCustomerResponse CustomersUpdate (string id, Customer customer, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
 
 Update Customer
 
@@ -1569,7 +1569,7 @@ namespace Example
 
             var apiInstance = new AccountingApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var accountingCustomer = new AccountingCustomer(); // AccountingCustomer | 
+            var customer = new Customer(); // Customer | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
@@ -1578,7 +1578,7 @@ namespace Example
             try
             {
                 // Update Customer
-                UpdateCustomerResponse result = apiInstance.CustomersUpdate(id, accountingCustomer, consumerId, appId, serviceId, raw);
+                UpdateCustomerResponse result = apiInstance.CustomersUpdate(id, customer, consumerId, appId, serviceId, raw);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1597,7 +1597,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of the record you are acting upon. | 
- **accountingCustomer** | [**AccountingCustomer**](AccountingCustomer.md)|  | 
+ **customer** | [**Customer**](Customer.md)|  | 
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 

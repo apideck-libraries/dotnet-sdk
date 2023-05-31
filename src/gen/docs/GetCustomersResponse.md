@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Service** | **string** | Apideck ID of service provider | 
 **Resource** | **string** | Unified API resource name | 
 **Operation** | **string** | Operation performed | 
-**Data** | [**List&lt;AccountingCustomer&gt;**](AccountingCustomer.md) |  | 
+**Data** | [**List&lt;Customer&gt;**](Customer.md) |  | 
 **Meta** | [**Meta**](Meta.md) |  | [optional] 
 **Links** | [**Links**](Links.md) |  | [optional] 
 

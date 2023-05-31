@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 **Currency** | **Currency** |  | [optional] 
 **Account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **Status** | **string** | Supplier status | [optional] 
+**PaymentMethod** | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
+**Channel** | **string** | The channel through which the transaction is processed. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
