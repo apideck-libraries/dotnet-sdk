@@ -40,9 +40,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCollectionTagsResponse</returns>
-        GetCollectionTagsResponse CollectionTagsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
+        GetCollectionTagsResponse CollectionTagsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
 
         /// <summary>
         /// List Tags
@@ -58,9 +59,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCollectionTagsResponse</returns>
-        ApiResponse<GetCollectionTagsResponse> CollectionTagsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
+        ApiResponse<GetCollectionTagsResponse> CollectionTagsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
         /// <summary>
         /// Create Comment
         /// </summary>
@@ -110,9 +112,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCommentsResponse</returns>
-        GetCommentsResponse CollectionTicketCommentsAll(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string));
+        GetCommentsResponse CollectionTicketCommentsAll(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
 
         /// <summary>
         /// List Comments
@@ -130,9 +133,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCommentsResponse</returns>
-        ApiResponse<GetCommentsResponse> CollectionTicketCommentsAllWithHttpInfo(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string));
+        ApiResponse<GetCommentsResponse> CollectionTicketCommentsAllWithHttpInfo(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
         /// <summary>
         /// Delete Comment
         /// </summary>
@@ -287,9 +291,10 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetTicketsResponse</returns>
-        GetTicketsResponse CollectionTicketsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string));
+        GetTicketsResponse CollectionTicketsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
 
         /// <summary>
         /// List Tickets
@@ -307,9 +312,10 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetTicketsResponse</returns>
-        ApiResponse<GetTicketsResponse> CollectionTicketsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string));
+        ApiResponse<GetTicketsResponse> CollectionTicketsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
         /// <summary>
         /// Delete Ticket
         /// </summary>
@@ -421,9 +427,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCollectionUsersResponse</returns>
-        GetCollectionUsersResponse CollectionUsersAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
+        GetCollectionUsersResponse CollectionUsersAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
 
         /// <summary>
         /// List Users
@@ -439,9 +446,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCollectionUsersResponse</returns>
-        ApiResponse<GetCollectionUsersResponse> CollectionUsersAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
+        ApiResponse<GetCollectionUsersResponse> CollectionUsersAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
         /// <summary>
         /// Get user
         /// </summary>
@@ -489,9 +497,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCollectionsResponse</returns>
-        GetCollectionsResponse CollectionsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string));
+        GetCollectionsResponse CollectionsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
 
         /// <summary>
         /// List Collections
@@ -507,9 +516,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCollectionsResponse</returns>
-        ApiResponse<GetCollectionsResponse> CollectionsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string));
+        ApiResponse<GetCollectionsResponse> CollectionsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
         /// <summary>
         /// Get Collection
         /// </summary>
@@ -564,10 +574,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCollectionTagsResponse</returns>
-        System.Threading.Tasks.Task<GetCollectionTagsResponse> CollectionTagsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetCollectionTagsResponse> CollectionTagsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Tags
@@ -583,10 +594,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCollectionTagsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCollectionTagsResponse>> CollectionTagsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetCollectionTagsResponse>> CollectionTagsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Comment
         /// </summary>
@@ -638,10 +650,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCommentsResponse</returns>
-        System.Threading.Tasks.Task<GetCommentsResponse> CollectionTicketCommentsAllAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetCommentsResponse> CollectionTicketCommentsAllAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Comments
@@ -659,10 +672,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCommentsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCommentsResponse>> CollectionTicketCommentsAllWithHttpInfoAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetCommentsResponse>> CollectionTicketCommentsAllWithHttpInfoAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Comment
         /// </summary>
@@ -825,10 +839,11 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTicketsResponse</returns>
-        System.Threading.Tasks.Task<GetTicketsResponse> CollectionTicketsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetTicketsResponse> CollectionTicketsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Tickets
@@ -846,10 +861,11 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTicketsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetTicketsResponse>> CollectionTicketsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetTicketsResponse>> CollectionTicketsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Ticket
         /// </summary>
@@ -967,10 +983,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCollectionUsersResponse</returns>
-        System.Threading.Tasks.Task<GetCollectionUsersResponse> CollectionUsersAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetCollectionUsersResponse> CollectionUsersAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Users
@@ -986,10 +1003,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCollectionUsersResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCollectionUsersResponse>> CollectionUsersAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetCollectionUsersResponse>> CollectionUsersAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get user
         /// </summary>
@@ -1039,10 +1057,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCollectionsResponse</returns>
-        System.Threading.Tasks.Task<GetCollectionsResponse> CollectionsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetCollectionsResponse> CollectionsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Collections
@@ -1058,10 +1077,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCollectionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCollectionsResponse>> CollectionsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetCollectionsResponse>> CollectionsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Collection
         /// </summary>
@@ -1226,11 +1246,12 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCollectionTagsResponse</returns>
-        public GetCollectionTagsResponse CollectionTagsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
+        public GetCollectionTagsResponse CollectionTagsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetCollectionTagsResponse> localVarResponse = CollectionTagsAllWithHttpInfo(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields);
+            Apideck.Client.ApiResponse<GetCollectionTagsResponse> localVarResponse = CollectionTagsAllWithHttpInfo(collectionId, raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -1245,9 +1266,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCollectionTagsResponse</returns>
-        public Apideck.Client.ApiResponse<GetCollectionTagsResponse> CollectionTagsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetCollectionTagsResponse> CollectionTagsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -1289,6 +1311,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -1338,12 +1364,13 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCollectionTagsResponse</returns>
-        public async System.Threading.Tasks.Task<GetCollectionTagsResponse> CollectionTagsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetCollectionTagsResponse> CollectionTagsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetCollectionTagsResponse> localVarResponse = await CollectionTagsAllWithHttpInfoAsync(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetCollectionTagsResponse> localVarResponse = await CollectionTagsAllWithHttpInfoAsync(collectionId, raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1358,10 +1385,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCollectionTagsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCollectionTagsResponse>> CollectionTagsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCollectionTagsResponse>> CollectionTagsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -1404,6 +1432,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -1686,11 +1718,12 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCommentsResponse</returns>
-        public GetCommentsResponse CollectionTicketCommentsAll(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string))
+        public GetCommentsResponse CollectionTicketCommentsAll(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetCommentsResponse> localVarResponse = CollectionTicketCommentsAllWithHttpInfo(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
+            Apideck.Client.ApiResponse<GetCommentsResponse> localVarResponse = CollectionTicketCommentsAllWithHttpInfo(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -1707,9 +1740,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCommentsResponse</returns>
-        public Apideck.Client.ApiResponse<GetCommentsResponse> CollectionTicketCommentsAllWithHttpInfo(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetCommentsResponse> CollectionTicketCommentsAllWithHttpInfo(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -1770,6 +1804,10 @@ namespace Apideck.Api
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort[direction]", sort.Direction));
                 }
             }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
+            }
             if (fields != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
@@ -1820,12 +1858,13 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCommentsResponse</returns>
-        public async System.Threading.Tasks.Task<GetCommentsResponse> CollectionTicketCommentsAllAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetCommentsResponse> CollectionTicketCommentsAllAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetCommentsResponse> localVarResponse = await CollectionTicketCommentsAllWithHttpInfoAsync(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetCommentsResponse> localVarResponse = await CollectionTicketCommentsAllWithHttpInfoAsync(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1842,10 +1881,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCommentsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCommentsResponse>> CollectionTicketCommentsAllWithHttpInfoAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCommentsResponse>> CollectionTicketCommentsAllWithHttpInfoAsync(string collectionId, string ticketId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CommentsSort sort = default(CommentsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -1899,6 +1939,10 @@ namespace Apideck.Api
             if (sort != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -2903,11 +2947,12 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetTicketsResponse</returns>
-        public GetTicketsResponse CollectionTicketsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string))
+        public GetTicketsResponse CollectionTicketsAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetTicketsResponse> localVarResponse = CollectionTicketsAllWithHttpInfo(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter, fields);
+            Apideck.Client.ApiResponse<GetTicketsResponse> localVarResponse = CollectionTicketsAllWithHttpInfo(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -2924,9 +2969,10 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetTicketsResponse</returns>
-        public Apideck.Client.ApiResponse<GetTicketsResponse> CollectionTicketsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetTicketsResponse> CollectionTicketsAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -2995,6 +3041,10 @@ namespace Apideck.Api
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[assignee_id]", filter.AssigneeId));
                 }
             }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
+            }
             if (fields != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "fields", fields));
@@ -3045,12 +3095,13 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTicketsResponse</returns>
-        public async System.Threading.Tasks.Task<GetTicketsResponse> CollectionTicketsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetTicketsResponse> CollectionTicketsAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetTicketsResponse> localVarResponse = await CollectionTicketsAllWithHttpInfoAsync(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetTicketsResponse> localVarResponse = await CollectionTicketsAllWithHttpInfoAsync(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3067,10 +3118,11 @@ namespace Apideck.Api
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTicketsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetTicketsResponse>> CollectionTicketsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetTicketsResponse>> CollectionTicketsAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), TicketsSort sort = default(TicketsSort), IssuesFilter filter = default(IssuesFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -3121,6 +3173,10 @@ namespace Apideck.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -3833,11 +3889,12 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCollectionUsersResponse</returns>
-        public GetCollectionUsersResponse CollectionUsersAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
+        public GetCollectionUsersResponse CollectionUsersAll(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetCollectionUsersResponse> localVarResponse = CollectionUsersAllWithHttpInfo(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields);
+            Apideck.Client.ApiResponse<GetCollectionUsersResponse> localVarResponse = CollectionUsersAllWithHttpInfo(collectionId, raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -3852,9 +3909,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCollectionUsersResponse</returns>
-        public Apideck.Client.ApiResponse<GetCollectionUsersResponse> CollectionUsersAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetCollectionUsersResponse> CollectionUsersAllWithHttpInfo(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -3896,6 +3954,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -3945,12 +4007,13 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCollectionUsersResponse</returns>
-        public async System.Threading.Tasks.Task<GetCollectionUsersResponse> CollectionUsersAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetCollectionUsersResponse> CollectionUsersAllAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetCollectionUsersResponse> localVarResponse = await CollectionUsersAllWithHttpInfoAsync(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetCollectionUsersResponse> localVarResponse = await CollectionUsersAllWithHttpInfoAsync(collectionId, raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3965,10 +4028,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCollectionUsersResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCollectionUsersResponse>> CollectionUsersAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCollectionUsersResponse>> CollectionUsersAllWithHttpInfoAsync(string collectionId, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'collectionId' is set
             if (collectionId == null)
@@ -4011,6 +4075,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -4283,11 +4351,12 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetCollectionsResponse</returns>
-        public GetCollectionsResponse CollectionsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string))
+        public GetCollectionsResponse CollectionsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetCollectionsResponse> localVarResponse = CollectionsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
+            Apideck.Client.ApiResponse<GetCollectionsResponse> localVarResponse = CollectionsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -4302,9 +4371,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetCollectionsResponse</returns>
-        public Apideck.Client.ApiResponse<GetCollectionsResponse> CollectionsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetCollectionsResponse> CollectionsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -4350,6 +4420,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort[direction]", sort.Direction));
                 }
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -4399,12 +4473,13 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCollectionsResponse</returns>
-        public async System.Threading.Tasks.Task<GetCollectionsResponse> CollectionsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetCollectionsResponse> CollectionsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetCollectionsResponse> localVarResponse = await CollectionsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, sort, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetCollectionsResponse> localVarResponse = await CollectionsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4419,10 +4494,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="sort">Apply sorting (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCollectionsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCollectionsResponse>> CollectionsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCollectionsResponse>> CollectionsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), CollectionsSort sort = default(CollectionsSort), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -4462,6 +4538,10 @@ namespace Apideck.Api
             if (sort != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (fields != null)
             {

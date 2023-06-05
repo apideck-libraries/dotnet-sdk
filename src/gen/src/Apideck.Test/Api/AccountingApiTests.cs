@@ -64,7 +64,7 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //BalanceSheetFilter filter = null;
             //bool? raw = null;
             //var response = instance.BalanceSheetOne(consumerId, appId, serviceId, passThrough, filter, raw);
@@ -101,7 +101,7 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //BillsSort sort = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.BillsAll(raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
             //Assert.IsType<GetBillsResponse>(response);
@@ -202,7 +202,7 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.CreditNotesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetCreditNotesResponse>(response);
@@ -288,7 +288,7 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //CustomersFilter filter = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetCustomersResponse>(response);
@@ -374,7 +374,7 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //InvoiceItemsFilter filter = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.InvoiceItemsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetInvoiceItemsResponse>(response);
@@ -460,7 +460,7 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //InvoicesSort sort = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.InvoicesAll(raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
             //Assert.IsType<GetInvoicesResponse>(response);
@@ -545,7 +545,7 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetJournalEntriesResponse>(response);
@@ -630,7 +630,7 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.LedgerAccountsAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetLedgerAccountsResponse>(response);
@@ -716,7 +716,7 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //PaymentsFilter filter = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetPaymentsResponse>(response);
@@ -784,7 +784,7 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //ProfitAndLossFilter filter = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.ProfitAndLossOne(raw, consumerId, appId, serviceId, filter, passThrough, fields);
             //Assert.IsType<GetProfitAndLossResponse>(response);
@@ -818,8 +818,9 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //string cursor = null;
+            //Dictionary<string, Object> passThrough = null;
             //int? limit = null;
-            //var response = instance.PurchaseOrdersAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //var response = instance.PurchaseOrdersAll(raw, consumerId, appId, serviceId, cursor, passThrough, limit);
             //Assert.IsType<GetPurchaseOrdersResponse>(response);
         }
 
@@ -902,7 +903,7 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //SuppliersFilter filter = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetSuppliersResponse>(response);
@@ -988,7 +989,7 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //TaxRatesFilter filter = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.TaxRatesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetTaxRatesResponse>(response);

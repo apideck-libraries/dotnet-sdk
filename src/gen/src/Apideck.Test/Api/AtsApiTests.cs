@@ -83,9 +83,10 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
-            //JobsFilter filter = null;
+            //ApplicantsFilter filter = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.ApplicantsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
+            //var response = instance.ApplicantsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetApplicantsResponse>(response);
         }
 
@@ -167,8 +168,9 @@ namespace Apideck.Test.Api
             //string appId = null;
             //string serviceId = null;
             //string cursor = null;
+            //Dictionary<string, Object> passThrough = null;
             //int? limit = null;
-            //var response = instance.ApplicationsAll(raw, consumerId, appId, serviceId, cursor, limit);
+            //var response = instance.ApplicationsAll(raw, consumerId, appId, serviceId, cursor, passThrough, limit);
             //Assert.IsType<GetApplicationsResponse>(response);
         }
 
@@ -234,8 +236,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.JobsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.JobsAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetJobsResponse>(response);
         }
 

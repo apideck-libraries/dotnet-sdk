@@ -84,8 +84,9 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //DriveGroupsFilter filter = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.DriveGroupsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
+            //var response = instance.DriveGroupsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetDriveGroupsResponse>(response);
         }
 
@@ -239,7 +240,7 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //FilesFilter filter = null;
             //FilesSort sort = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.FilesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetFilesResponse>(response);
@@ -305,7 +306,7 @@ namespace Apideck.Test.Api
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //PassThroughQuery passThrough = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
             //var response = instance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough, fields);
             //Assert.IsType<GetFilesResponse>(response);
@@ -442,8 +443,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.SharedLinksAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.SharedLinksAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetSharedLinksResponse>(response);
         }
 

@@ -68,8 +68,9 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //EcommerceCustomersFilter filter = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
+            //var response = instance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetEcommerceCustomersResponse>(response);
         }
 
@@ -104,8 +105,9 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //EcommerceOrdersFilter filter = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
+            //var response = instance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetEcommerceOrdersResponse>(response);
         }
 
@@ -139,8 +141,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.ProductsAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.ProductsAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetProductsResponse>(response);
         }
 

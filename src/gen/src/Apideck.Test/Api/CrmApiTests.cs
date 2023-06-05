@@ -84,8 +84,9 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //ActivitiesFilter filter = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.ActivitiesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
+            //var response = instance.ActivitiesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             //Assert.IsType<GetActivitiesResponse>(response);
         }
 
@@ -170,8 +171,9 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //CompaniesFilter filter = null;
             //CompaniesSort sort = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.CompaniesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, fields);
+            //var response = instance.CompaniesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetCompaniesResponse>(response);
         }
 
@@ -256,8 +258,9 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //ContactsFilter filter = null;
             //ContactsSort sort = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.ContactsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, fields);
+            //var response = instance.ContactsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetContactsResponse>(response);
         }
 
@@ -342,8 +345,9 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //LeadsFilter filter = null;
             //LeadsSort sort = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.LeadsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, fields);
+            //var response = instance.LeadsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetLeadsResponse>(response);
         }
 
@@ -426,8 +430,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.NotesAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.NotesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetNotesResponse>(response);
         }
 
@@ -512,8 +517,9 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //OpportunitiesFilter filter = null;
             //OpportunitiesSort sort = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.OpportunitiesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, fields);
+            //var response = instance.OpportunitiesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetOpportunitiesResponse>(response);
         }
 
@@ -596,8 +602,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.PipelinesAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.PipelinesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetPipelinesResponse>(response);
         }
 
@@ -680,8 +687,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.UsersAll(raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.UsersAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetUsersResponse>(response);
         }
 

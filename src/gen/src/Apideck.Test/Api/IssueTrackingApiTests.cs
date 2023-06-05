@@ -68,8 +68,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.CollectionTagsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.CollectionTagsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetCollectionTagsResponse>(response);
         }
 
@@ -107,8 +108,9 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //CommentsSort sort = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.CollectionTicketCommentsAll(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
+            //var response = instance.CollectionTicketCommentsAll(collectionId, ticketId, raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
             //Assert.IsType<GetCommentsResponse>(response);
         }
 
@@ -203,8 +205,9 @@ namespace Apideck.Test.Api
             //int? limit = null;
             //TicketsSort sort = null;
             //IssuesFilter filter = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.CollectionTicketsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter, fields);
+            //var response = instance.CollectionTicketsAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, sort, filter, passThrough, fields);
             //Assert.IsType<GetTicketsResponse>(response);
         }
 
@@ -275,8 +278,9 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.CollectionUsersAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //var response = instance.CollectionUsersAll(collectionId, raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             //Assert.IsType<GetCollectionUsersResponse>(response);
         }
 
@@ -312,8 +316,9 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //CollectionsSort sort = null;
+            //Dictionary<string, Object> passThrough = null;
             //string fields = null;
-            //var response = instance.CollectionsAll(raw, consumerId, appId, serviceId, cursor, limit, sort, fields);
+            //var response = instance.CollectionsAll(raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
             //Assert.IsType<GetCollectionsResponse>(response);
         }
 

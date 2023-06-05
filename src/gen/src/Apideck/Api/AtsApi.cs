@@ -69,9 +69,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetApplicantsResponse</returns>
-        GetApplicantsResponse ApplicantsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string));
+        GetApplicantsResponse ApplicantsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
 
         /// <summary>
         /// List Applicants
@@ -87,9 +88,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetApplicantsResponse</returns>
-        ApiResponse<GetApplicantsResponse> ApplicantsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string));
+        ApiResponse<GetApplicantsResponse> ApplicantsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
         /// <summary>
         /// Delete Applicant
         /// </summary>
@@ -222,9 +224,10 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetApplicationsResponse</returns>
-        GetApplicationsResponse ApplicationsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+        GetApplicationsResponse ApplicationsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?));
 
         /// <summary>
         /// List Applications
@@ -238,9 +241,10 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetApplicationsResponse</returns>
-        ApiResponse<GetApplicationsResponse> ApplicationsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?));
+        ApiResponse<GetApplicationsResponse> ApplicationsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?));
         /// <summary>
         /// Delete Application
         /// </summary>
@@ -343,9 +347,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetJobsResponse</returns>
-        GetJobsResponse JobsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
+        GetJobsResponse JobsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
 
         /// <summary>
         /// List Jobs
@@ -360,9 +365,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetJobsResponse</returns>
-        ApiResponse<GetJobsResponse> JobsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string));
+        ApiResponse<GetJobsResponse> JobsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string));
         /// <summary>
         /// Get Job
         /// </summary>
@@ -448,10 +454,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApplicantsResponse</returns>
-        System.Threading.Tasks.Task<GetApplicantsResponse> ApplicantsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetApplicantsResponse> ApplicantsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Applicants
@@ -467,10 +474,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApplicantsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetApplicantsResponse>> ApplicantsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetApplicantsResponse>> ApplicantsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Applicant
         /// </summary>
@@ -611,10 +619,11 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApplicationsResponse</returns>
-        System.Threading.Tasks.Task<GetApplicationsResponse> ApplicationsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetApplicationsResponse> ApplicationsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Applications
@@ -628,10 +637,11 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApplicationsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetApplicationsResponse>> ApplicationsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetApplicationsResponse>> ApplicationsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete Application
         /// </summary>
@@ -740,10 +750,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetJobsResponse</returns>
-        System.Threading.Tasks.Task<GetJobsResponse> JobsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetJobsResponse> JobsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Jobs
@@ -758,10 +769,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetJobsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetJobsResponse>> JobsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetJobsResponse>> JobsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Job
         /// </summary>
@@ -1120,11 +1132,12 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetApplicantsResponse</returns>
-        public GetApplicantsResponse ApplicantsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string))
+        public GetApplicantsResponse ApplicantsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetApplicantsResponse> localVarResponse = ApplicantsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter, fields);
+            Apideck.Client.ApiResponse<GetApplicantsResponse> localVarResponse = ApplicantsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -1139,9 +1152,10 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetApplicantsResponse</returns>
-        public Apideck.Client.ApiResponse<GetApplicantsResponse> ApplicantsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetApplicantsResponse> ApplicantsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -1183,6 +1197,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[job_id]", filter.JobId));
                 }
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -1232,12 +1250,13 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApplicantsResponse</returns>
-        public async System.Threading.Tasks.Task<GetApplicantsResponse> ApplicantsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetApplicantsResponse> ApplicantsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetApplicantsResponse> localVarResponse = await ApplicantsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetApplicantsResponse> localVarResponse = await ApplicantsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1252,10 +1271,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApplicantsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetApplicantsResponse>> ApplicantsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), JobsFilter filter = default(JobsFilter), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetApplicantsResponse>> ApplicantsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ApplicantsFilter filter = default(ApplicantsFilter), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -1295,6 +1315,10 @@ namespace Apideck.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -2145,11 +2169,12 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>GetApplicationsResponse</returns>
-        public GetApplicationsResponse ApplicationsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        public GetApplicationsResponse ApplicationsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?))
         {
-            Apideck.Client.ApiResponse<GetApplicationsResponse> localVarResponse = ApplicationsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit);
+            Apideck.Client.ApiResponse<GetApplicationsResponse> localVarResponse = ApplicationsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, passThrough, limit);
             return localVarResponse.Data;
         }
 
@@ -2162,9 +2187,10 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <returns>ApiResponse of GetApplicationsResponse</returns>
-        public Apideck.Client.ApiResponse<GetApplicationsResponse> ApplicationsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?))
+        public Apideck.Client.ApiResponse<GetApplicationsResponse> ApplicationsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -2195,6 +2221,10 @@ namespace Apideck.Api
             if (cursor != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
             }
             if (limit != null)
             {
@@ -2242,12 +2272,13 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetApplicationsResponse</returns>
-        public async System.Threading.Tasks.Task<GetApplicationsResponse> ApplicationsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetApplicationsResponse> ApplicationsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetApplicationsResponse> localVarResponse = await ApplicationsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetApplicationsResponse> localVarResponse = await ApplicationsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, passThrough, limit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2260,10 +2291,11 @@ namespace Apideck.Api
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetApplicationsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetApplicationsResponse>> ApplicationsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetApplicationsResponse>> ApplicationsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), int? limit = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -2295,6 +2327,10 @@ namespace Apideck.Api
             if (cursor != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (limit != null)
             {
@@ -2940,11 +2976,12 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetJobsResponse</returns>
-        public GetJobsResponse JobsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
+        public GetJobsResponse JobsAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetJobsResponse> localVarResponse = JobsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, fields);
+            Apideck.Client.ApiResponse<GetJobsResponse> localVarResponse = JobsAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -2958,9 +2995,10 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetJobsResponse</returns>
-        public Apideck.Client.ApiResponse<GetJobsResponse> JobsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetJobsResponse> JobsAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -2995,6 +3033,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("deepObject", "pass_through", passThrough));
             }
             if (fields != null)
             {
@@ -3043,12 +3085,13 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetJobsResponse</returns>
-        public async System.Threading.Tasks.Task<GetJobsResponse> JobsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetJobsResponse> JobsAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetJobsResponse> localVarResponse = await JobsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetJobsResponse> localVarResponse = await JobsAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3062,10 +3105,11 @@ namespace Apideck.Api
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
+        /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetJobsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetJobsResponse>> JobsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetJobsResponse>> JobsAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), Dictionary<string, Object> passThrough = default(Dictionary<string, Object>), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -3101,6 +3145,10 @@ namespace Apideck.Api
             if (limit != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (passThrough != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "pass_through", passThrough));
             }
             if (fields != null)
             {
