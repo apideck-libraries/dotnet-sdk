@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 <a name="collectiontagsall"></a>
 # **CollectionTagsAll**
-> GetCollectionTagsResponse CollectionTagsAll (string collectionId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, Dictionary<string, Object> passThrough = null, string fields = null)
+> GetCollectionTagsResponse CollectionTagsAll (string collectionId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Tags
 
@@ -58,7 +58,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
-            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
- **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 <a name="collectionticketcommentsall"></a>
 # **CollectionTicketCommentsAll**
-> GetCommentsResponse CollectionTicketCommentsAll (string collectionId, string ticketId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CommentsSort sort = null, Dictionary<string, Object> passThrough = null, string fields = null)
+> GetCommentsResponse CollectionTicketCommentsAll (string collectionId, string ticketId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CommentsSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Comments
 
@@ -252,7 +252,7 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var sort = new CommentsSort(); // CommentsSort | Apply sorting (optional) 
-            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **sort** | [**CommentsSort**](CommentsSort.md)| Apply sorting | [optional] 
- **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 <a name="collectionticketsall"></a>
 # **CollectionTicketsAll**
-> GetTicketsResponse CollectionTicketsAll (string collectionId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, TicketsSort sort = null, IssuesFilter filter = null, Dictionary<string, Object> passThrough = null, string fields = null)
+> GetTicketsResponse CollectionTicketsAll (string collectionId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, TicketsSort sort = null, IssuesFilter filter = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Tickets
 
@@ -736,7 +736,7 @@ namespace Example
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var sort = new TicketsSort(); // TicketsSort | Apply sorting (optional) 
             var filter = new IssuesFilter(); // IssuesFilter | Apply filters (optional) 
-            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -769,7 +769,7 @@ Name | Type | Description  | Notes
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **sort** | [**TicketsSort**](TicketsSort.md)| Apply sorting | [optional] 
  **filter** | [**IssuesFilter**](IssuesFilter.md)| Apply filters | [optional] 
- **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
@@ -1081,7 +1081,7 @@ Name | Type | Description  | Notes
 
 <a name="collectionusersall"></a>
 # **CollectionUsersAll**
-> GetCollectionUsersResponse CollectionUsersAll (string collectionId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, Dictionary<string, Object> passThrough = null, string fields = null)
+> GetCollectionUsersResponse CollectionUsersAll (string collectionId, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Users
 
@@ -1116,7 +1116,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
-            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -1147,7 +1147,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
- **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
@@ -1273,7 +1273,7 @@ Name | Type | Description  | Notes
 
 <a name="collectionsall"></a>
 # **CollectionsAll**
-> GetCollectionsResponse CollectionsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CollectionsSort sort = null, Dictionary<string, Object> passThrough = null, string fields = null)
+> GetCollectionsResponse CollectionsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CollectionsSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Collections
 
@@ -1308,7 +1308,7 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var sort = new CollectionsSort(); // CollectionsSort | Apply sorting (optional) 
-            var passThrough = new Dictionary<string, Object>(); // Dictionary<string, Object> | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -1339,7 +1339,7 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **sort** | [**CollectionsSort**](CollectionsSort.md)| Apply sorting | [optional] 
- **passThrough** | [**Dictionary&lt;string, Object&gt;**](Object.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
 ### Return type
