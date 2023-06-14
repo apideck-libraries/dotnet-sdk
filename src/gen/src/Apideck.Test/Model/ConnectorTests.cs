@@ -121,6 +121,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'SignupUrl'
         }
         /// <summary>
+        /// Test the property 'PartnerSignupUrl'
+        /// </summary>
+        [Fact]
+        public void PartnerSignupUrlTest()
+        {
+            // TODO unit test for the property 'PartnerSignupUrl'
+        }
+        /// <summary>
         /// Test the property 'FreeTrialAvailable'
         /// </summary>
         [Fact]

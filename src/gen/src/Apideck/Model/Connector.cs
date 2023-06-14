@@ -182,6 +182,7 @@ namespace Apideck.Model
         /// <param name="logoUrl">Link to the full logo for the connector..</param>
         /// <param name="websiteUrl">Link to the connector&#39;s website..</param>
         /// <param name="signupUrl">Link to the connector&#39;s signup page..</param>
+        /// <param name="partnerSignupUrl">Link to the connector&#39;s partner program signup page..</param>
         /// <param name="freeTrialAvailable">Set to &#x60;true&#x60; when the connector offers a free trial. Use &#x60;signup_url&#x60; to sign up for a free trial.</param>
         /// <param name="oauthScopes">List of OAuth Scopes available for this connector..</param>
         /// <param name="hasSandboxCredentials">Indicates whether Apideck Sandbox OAuth credentials are available..</param>
@@ -194,7 +195,7 @@ namespace Apideck.Model
         /// <param name="webhookSupport">webhookSupport.</param>
         /// <param name="docs">docs.</param>
         /// <param name="tlsSupport">tlsSupport.</param>
-        public Connector(string name = default(string), ConnectorStatus? status = default(ConnectorStatus?), string description = default(string), string iconUrl = default(string), string logoUrl = default(string), string websiteUrl = default(string), string signupUrl = default(string), bool freeTrialAvailable = default(bool), List<ConnectorOauthScopes> oauthScopes = default(List<ConnectorOauthScopes>), bool hasSandboxCredentials = default(bool), List<ConnectorSetting> settings = default(List<ConnectorSetting>), string serviceId = default(string), List<ConnectorUnifiedApis> unifiedApis = default(List<ConnectorUnifiedApis>), List<LinkedConnectorResource> supportedResources = default(List<LinkedConnectorResource>), List<string> configurableResources = default(List<string>), List<ConnectorEvent> supportedEvents = default(List<ConnectorEvent>), WebhookSupport webhookSupport = default(WebhookSupport), List<ConnectorDoc> docs = default(List<ConnectorDoc>), ConnectorTlsSupport tlsSupport = default(ConnectorTlsSupport))
+        public Connector(string name = default(string), ConnectorStatus? status = default(ConnectorStatus?), string description = default(string), string iconUrl = default(string), string logoUrl = default(string), string websiteUrl = default(string), string signupUrl = default(string), string partnerSignupUrl = default(string), bool freeTrialAvailable = default(bool), List<ConnectorOauthScopes> oauthScopes = default(List<ConnectorOauthScopes>), bool hasSandboxCredentials = default(bool), List<ConnectorSetting> settings = default(List<ConnectorSetting>), string serviceId = default(string), List<ConnectorUnifiedApis> unifiedApis = default(List<ConnectorUnifiedApis>), List<LinkedConnectorResource> supportedResources = default(List<LinkedConnectorResource>), List<string> configurableResources = default(List<string>), List<ConnectorEvent> supportedEvents = default(List<ConnectorEvent>), WebhookSupport webhookSupport = default(WebhookSupport), List<ConnectorDoc> docs = default(List<ConnectorDoc>), ConnectorTlsSupport tlsSupport = default(ConnectorTlsSupport))
         {
             this.Name = name;
             this.Status = status;
@@ -203,6 +204,7 @@ namespace Apideck.Model
             this.LogoUrl = logoUrl;
             this.WebsiteUrl = websiteUrl;
             this.SignupUrl = signupUrl;
+            this.PartnerSignupUrl = partnerSignupUrl;
             this.FreeTrialAvailable = freeTrialAvailable;
             this.OauthScopes = oauthScopes;
             this.HasSandboxCredentials = hasSandboxCredentials;
@@ -273,6 +275,13 @@ namespace Apideck.Model
         /// <value>Link to the connector&#39;s signup page.</value>
         [DataMember(Name = "signup_url", EmitDefaultValue = false)]
         public string SignupUrl { get; set; }
+
+        /// <summary>
+        /// Link to the connector&#39;s partner program signup page.
+        /// </summary>
+        /// <value>Link to the connector&#39;s partner program signup page.</value>
+        [DataMember(Name = "partner_signup_url", EmitDefaultValue = false)]
+        public string PartnerSignupUrl { get; set; }
 
         /// <summary>
         /// Set to &#x60;true&#x60; when the connector offers a free trial. Use &#x60;signup_url&#x60; to sign up for a free trial
@@ -415,6 +424,7 @@ namespace Apideck.Model
             sb.Append("  LogoUrl: ").Append(LogoUrl).Append("\n");
             sb.Append("  WebsiteUrl: ").Append(WebsiteUrl).Append("\n");
             sb.Append("  SignupUrl: ").Append(SignupUrl).Append("\n");
+            sb.Append("  PartnerSignupUrl: ").Append(PartnerSignupUrl).Append("\n");
             sb.Append("  FreeTrialAvailable: ").Append(FreeTrialAvailable).Append("\n");
             sb.Append("  AuthType: ").Append(AuthType).Append("\n");
             sb.Append("  AuthOnly: ").Append(AuthOnly).Append("\n");
@@ -506,6 +516,11 @@ namespace Apideck.Model
                     this.SignupUrl == input.SignupUrl ||
                     (this.SignupUrl != null &&
                     this.SignupUrl.Equals(input.SignupUrl))
+                ) && 
+                (
+                    this.PartnerSignupUrl == input.PartnerSignupUrl ||
+                    (this.PartnerSignupUrl != null &&
+                    this.PartnerSignupUrl.Equals(input.PartnerSignupUrl))
                 ) && 
                 (
                     this.FreeTrialAvailable == input.FreeTrialAvailable ||
@@ -635,6 +650,10 @@ namespace Apideck.Model
                 if (this.SignupUrl != null)
                 {
                     hashCode = (hashCode * 59) + this.SignupUrl.GetHashCode();
+                }
+                if (this.PartnerSignupUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.PartnerSignupUrl.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.FreeTrialAvailable.GetHashCode();
                 hashCode = (hashCode * 59) + this.AuthType.GetHashCode();
