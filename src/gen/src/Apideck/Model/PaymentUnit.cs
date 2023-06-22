@@ -60,7 +60,13 @@ namespace Apideck.Model
         /// Enum Paycheck for value: paycheck
         /// </summary>
         [EnumMember(Value = "paycheck")]
-        Paycheck = 5
+        Paycheck = 5,
+
+        /// <summary>
+        /// Enum Other for value: other
+        /// </summary>
+        [EnumMember(Value = "other")]
+        Other = 6
 
     }
 

@@ -28,198 +28,46 @@ namespace Apideck.Model
     /// <summary>
     /// Job
     /// </summary>
-    [DataContract(Name = "Job")]
+    [DataContract(Name = "job")]
     public partial class Job : IEquatable<Job>, IValidatableObject
     {
-        /// <summary>
-        /// The visibility of the job
-        /// </summary>
-        /// <value>The visibility of the job</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum VisibilityEnum
-        {
-            /// <summary>
-            /// Enum Draft for value: draft
-            /// </summary>
-            [EnumMember(Value = "draft")]
-            Draft = 1,
-
-            /// <summary>
-            /// Enum Public for value: public
-            /// </summary>
-            [EnumMember(Value = "public")]
-            Public = 2,
-
-            /// <summary>
-            /// Enum Internal for value: internal
-            /// </summary>
-            [EnumMember(Value = "internal")]
-            Internal = 3
-
-        }
-
 
         /// <summary>
-        /// The visibility of the job
+        /// Gets or Sets Currency
         /// </summary>
-        /// <value>The visibility of the job</value>
-        [DataMember(Name = "visibility", EmitDefaultValue = false)]
-        public VisibilityEnum? Visibility { get; set; }
+        [DataMember(Name = "currency", EmitDefaultValue = true)]
+        public Currency? Currency { get; set; }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Gets or Sets PaymentUnit
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public JobStatus? Status { get; set; }
-        /// <summary>
-        /// Defines EmploymentTerms
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum EmploymentTermsEnum
-        {
-            /// <summary>
-            /// Enum FullTime for value: full-time
-            /// </summary>
-            [EnumMember(Value = "full-time")]
-            FullTime = 1,
-
-            /// <summary>
-            /// Enum PartTime for value: part-time
-            /// </summary>
-            [EnumMember(Value = "part-time")]
-            PartTime = 2,
-
-            /// <summary>
-            /// Enum Internship for value: internship
-            /// </summary>
-            [EnumMember(Value = "internship")]
-            Internship = 3,
-
-            /// <summary>
-            /// Enum Contractor for value: contractor
-            /// </summary>
-            [EnumMember(Value = "contractor")]
-            Contractor = 4,
-
-            /// <summary>
-            /// Enum Employee for value: employee
-            /// </summary>
-            [EnumMember(Value = "employee")]
-            Employee = 5,
-
-            /// <summary>
-            /// Enum Freelance for value: freelance
-            /// </summary>
-            [EnumMember(Value = "freelance")]
-            Freelance = 6,
-
-            /// <summary>
-            /// Enum Temp for value: temp
-            /// </summary>
-            [EnumMember(Value = "temp")]
-            Temp = 7,
-
-            /// <summary>
-            /// Enum Seasonal for value: seasonal
-            /// </summary>
-            [EnumMember(Value = "seasonal")]
-            Seasonal = 8,
-
-            /// <summary>
-            /// Enum Volunteer for value: volunteer
-            /// </summary>
-            [EnumMember(Value = "volunteer")]
-            Volunteer = 9,
-
-            /// <summary>
-            /// Enum Other for value: other
-            /// </summary>
-            [EnumMember(Value = "other")]
-            Other = 10
-
-        }
-
-
-        /// <summary>
-        /// Gets or Sets EmploymentTerms
-        /// </summary>
-        [DataMember(Name = "employment_terms", EmitDefaultValue = true)]
-        public EmploymentTermsEnum? EmploymentTerms { get; set; }
+        [DataMember(Name = "payment_unit", EmitDefaultValue = false)]
+        public PaymentUnit? PaymentUnit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Job" /> class.
         /// </summary>
-        /// <param name="slug">slug.</param>
         /// <param name="title">The job title of the person..</param>
-        /// <param name="sequence">Sequence in relation to other jobs..</param>
-        /// <param name="visibility">The visibility of the job.</param>
-        /// <param name="status">status.</param>
-        /// <param name="code">The code of the job..</param>
-        /// <param name="language">language code according to ISO 639-1. For the United States - EN.</param>
-        /// <param name="employmentTerms">employmentTerms.</param>
-        /// <param name="experience">Level of experience required for the job role..</param>
-        /// <param name="location">Specifies the location for the job posting..</param>
-        /// <param name="remote">Specifies whether the posting is for a remote job..</param>
-        /// <param name="requisitionId">A job&#39;s Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company&#39;s internal processes..</param>
-        /// <param name="department">department.</param>
-        /// <param name="branch">branch.</param>
-        /// <param name="recruiters">The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant.</param>
-        /// <param name="hiringManagers">hiringManagers.</param>
-        /// <param name="followers">followers.</param>
-        /// <param name="description">A description of the object..</param>
-        /// <param name="descriptionHtml">The job description in HTML format.</param>
-        /// <param name="blocks">blocks.</param>
-        /// <param name="closing">closing.</param>
-        /// <param name="closingHtml">The closing section of the job description in HTML format.</param>
-        /// <param name="closingDate">closingDate.</param>
-        /// <param name="salary">salary.</param>
-        /// <param name="url">URL of the job description.</param>
-        /// <param name="jobPortalUrl">URL of the job portal.</param>
-        /// <param name="recordUrl">recordUrl.</param>
-        /// <param name="links">links.</param>
-        /// <param name="confidential">confidential.</param>
-        /// <param name="availableToEmployees">Specifies whether an employee of the organization can apply for the job..</param>
-        /// <param name="tags">tags.</param>
-        /// <param name="addresses">addresses.</param>
-        /// <param name="customFields">customFields.</param>
-        /// <param name="deleted">deleted.</param>
-        /// <param name="ownerId">ownerId.</param>
-        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<string> hiringManagers = default(List<string>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), string recordUrl = default(string), List<JobLinks> links = default(List<JobLinks>), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), bool? deleted = default(bool?), string ownerId = default(string))
+        /// <param name="role">The position and responsibilities of the person within the organization..</param>
+        /// <param name="startDate">The date on which the employee starts working in their current job role..</param>
+        /// <param name="endDate">The date on which the employee leaves or is expected to leave their current job role..</param>
+        /// <param name="compensationRate">The rate of pay for the employee in their current job role..</param>
+        /// <param name="currency">currency.</param>
+        /// <param name="paymentUnit">paymentUnit.</param>
+        /// <param name="hiredAt">The date on which the employee was hired by the organization.</param>
+        /// <param name="isPrimary">Indicates whether this the employee&#39;s primary job..</param>
+        /// <param name="location">location.</param>
+        public Job(string title = default(string), string role = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), decimal compensationRate = default(decimal), Currency? currency = default(Currency?), PaymentUnit? paymentUnit = default(PaymentUnit?), DateTime? hiredAt = default(DateTime?), bool? isPrimary = default(bool?), Address location = default(Address))
         {
-            this.Slug = slug;
             this.Title = title;
-            this.Sequence = sequence;
-            this.Visibility = visibility;
-            this.Status = status;
-            this.Code = code;
-            this.Language = language;
-            this.EmploymentTerms = employmentTerms;
-            this.Experience = experience;
+            this.Role = role;
+            this.StartDate = startDate;
+            this.EndDate = endDate;
+            this.CompensationRate = compensationRate;
+            this.Currency = currency;
+            this.PaymentUnit = paymentUnit;
+            this.HiredAt = hiredAt;
+            this.IsPrimary = isPrimary;
             this.Location = location;
-            this.Remote = remote;
-            this.RequisitionId = requisitionId;
-            this.Department = department;
-            this.Branch = branch;
-            this.Recruiters = recruiters;
-            this.HiringManagers = hiringManagers;
-            this.Followers = followers;
-            this.Description = description;
-            this.DescriptionHtml = descriptionHtml;
-            this.Blocks = blocks;
-            this.Closing = closing;
-            this.ClosingHtml = closingHtml;
-            this.ClosingDate = closingDate;
-            this.Salary = salary;
-            this.Url = url;
-            this.JobPortalUrl = jobPortalUrl;
-            this.RecordUrl = recordUrl;
-            this.Links = links;
-            this.Confidential = confidential;
-            this.AvailableToEmployees = availableToEmployees;
-            this.Tags = tags;
-            this.Addresses = addresses;
-            this.CustomFields = customFields;
-            this.Deleted = deleted;
-            this.OwnerId = ownerId;
         }
 
         /// <summary>
@@ -238,11 +86,20 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Slug
+        /// A unique identifier for an object.
         /// </summary>
-        [DataMember(Name = "slug", EmitDefaultValue = true)]
-        public string Slug { get; set; }
+        /// <value>A unique identifier for an object.</value>
+        [DataMember(Name = "employee_id", EmitDefaultValue = false)]
+        public string EmployeeId { get; private set; }
 
+        /// <summary>
+        /// Returns false as EmployeeId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeEmployeeId()
+        {
+            return false;
+        }
         /// <summary>
         /// The job title of the person.
         /// </summary>
@@ -251,277 +108,56 @@ namespace Apideck.Model
         public string Title { get; set; }
 
         /// <summary>
-        /// Sequence in relation to other jobs.
+        /// The position and responsibilities of the person within the organization.
         /// </summary>
-        /// <value>Sequence in relation to other jobs.</value>
-        [DataMember(Name = "sequence", EmitDefaultValue = false)]
-        public int Sequence { get; set; }
+        /// <value>The position and responsibilities of the person within the organization.</value>
+        [DataMember(Name = "role", EmitDefaultValue = true)]
+        public string Role { get; set; }
 
         /// <summary>
-        /// The code of the job.
+        /// The date on which the employee starts working in their current job role.
         /// </summary>
-        /// <value>The code of the job.</value>
-        [DataMember(Name = "code", EmitDefaultValue = false)]
-        public string Code { get; set; }
-
-        /// <summary>
-        /// language code according to ISO 639-1. For the United States - EN
-        /// </summary>
-        /// <value>language code according to ISO 639-1. For the United States - EN</value>
-        [DataMember(Name = "language", EmitDefaultValue = true)]
-        public string Language { get; set; }
-
-        /// <summary>
-        /// Level of experience required for the job role.
-        /// </summary>
-        /// <value>Level of experience required for the job role.</value>
-        [DataMember(Name = "experience", EmitDefaultValue = false)]
-        public string Experience { get; set; }
-
-        /// <summary>
-        /// Specifies the location for the job posting.
-        /// </summary>
-        /// <value>Specifies the location for the job posting.</value>
-        [DataMember(Name = "location", EmitDefaultValue = true)]
-        public string Location { get; set; }
-
-        /// <summary>
-        /// Specifies whether the posting is for a remote job.
-        /// </summary>
-        /// <value>Specifies whether the posting is for a remote job.</value>
-        [DataMember(Name = "remote", EmitDefaultValue = true)]
-        public bool? Remote { get; set; }
-
-        /// <summary>
-        /// A job&#39;s Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company&#39;s internal processes.
-        /// </summary>
-        /// <value>A job&#39;s Requisition ID (Req ID) allows your organization to identify and track a job based on alphanumeric naming conventions unique to your company&#39;s internal processes.</value>
-        [DataMember(Name = "requisition_id", EmitDefaultValue = false)]
-        public string RequisitionId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Department
-        /// </summary>
-        [DataMember(Name = "department", EmitDefaultValue = false)]
-        public Department Department { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Branch
-        /// </summary>
-        [DataMember(Name = "branch", EmitDefaultValue = false)]
-        public Branch Branch { get; set; }
-
-        /// <summary>
-        /// The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant
-        /// </summary>
-        /// <value>The recruiter is generally someone who is tasked to help the hiring manager find and screen qualified applicant</value>
-        [DataMember(Name = "recruiters", EmitDefaultValue = true)]
-        public List<string> Recruiters { get; set; }
-
-        /// <summary>
-        /// Gets or Sets HiringManagers
-        /// </summary>
-        [DataMember(Name = "hiring_managers", EmitDefaultValue = false)]
-        public List<string> HiringManagers { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Followers
-        /// </summary>
-        [DataMember(Name = "followers", EmitDefaultValue = true)]
-        public List<string> Followers { get; set; }
-
-        /// <summary>
-        /// A description of the object.
-        /// </summary>
-        /// <value>A description of the object.</value>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// The job description in HTML format
-        /// </summary>
-        /// <value>The job description in HTML format</value>
-        [DataMember(Name = "description_html", EmitDefaultValue = true)]
-        public string DescriptionHtml { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Blocks
-        /// </summary>
-        [DataMember(Name = "blocks", EmitDefaultValue = false)]
-        public List<Object> Blocks { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Closing
-        /// </summary>
-        [DataMember(Name = "closing", EmitDefaultValue = true)]
-        public string Closing { get; set; }
-
-        /// <summary>
-        /// The closing section of the job description in HTML format
-        /// </summary>
-        /// <value>The closing section of the job description in HTML format</value>
-        [DataMember(Name = "closing_html", EmitDefaultValue = true)]
-        public string ClosingHtml { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ClosingDate
-        /// </summary>
-        [DataMember(Name = "closing_date", EmitDefaultValue = true)]
+        /// <value>The date on which the employee starts working in their current job role.</value>
+        [DataMember(Name = "start_date", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime? ClosingDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Salary
+        /// The date on which the employee leaves or is expected to leave their current job role.
         /// </summary>
-        [DataMember(Name = "salary", EmitDefaultValue = false)]
-        public JobSalary Salary { get; set; }
+        /// <value>The date on which the employee leaves or is expected to leave their current job role.</value>
+        [DataMember(Name = "end_date", EmitDefaultValue = true)]
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// URL of the job description
+        /// The rate of pay for the employee in their current job role.
         /// </summary>
-        /// <value>URL of the job description</value>
-        [DataMember(Name = "url", EmitDefaultValue = true)]
-        [Obsolete]
-        public string Url { get; set; }
+        /// <value>The rate of pay for the employee in their current job role.</value>
+        [DataMember(Name = "compensation_rate", EmitDefaultValue = false)]
+        public decimal CompensationRate { get; set; }
 
         /// <summary>
-        /// URL of the job portal
+        /// The date on which the employee was hired by the organization
         /// </summary>
-        /// <value>URL of the job portal</value>
-        [DataMember(Name = "job_portal_url", EmitDefaultValue = true)]
-        [Obsolete]
-        public string JobPortalUrl { get; set; }
+        /// <value>The date on which the employee was hired by the organization</value>
+        [DataMember(Name = "hired_at", EmitDefaultValue = true)]
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime? HiredAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets RecordUrl
+        /// Indicates whether this the employee&#39;s primary job.
         /// </summary>
-        [DataMember(Name = "record_url", EmitDefaultValue = true)]
-        [Obsolete]
-        public string RecordUrl { get; set; }
+        /// <value>Indicates whether this the employee&#39;s primary job.</value>
+        [DataMember(Name = "is_primary", EmitDefaultValue = true)]
+        public bool? IsPrimary { get; set; }
 
         /// <summary>
-        /// Gets or Sets Links
+        /// Gets or Sets Location
         /// </summary>
-        [DataMember(Name = "links", EmitDefaultValue = false)]
-        public List<JobLinks> Links { get; set; }
+        [DataMember(Name = "location", EmitDefaultValue = false)]
+        public Address Location { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Confidential
-        /// </summary>
-        [DataMember(Name = "confidential", EmitDefaultValue = true)]
-        public bool Confidential { get; set; }
-
-        /// <summary>
-        /// Specifies whether an employee of the organization can apply for the job.
-        /// </summary>
-        /// <value>Specifies whether an employee of the organization can apply for the job.</value>
-        [DataMember(Name = "available_to_employees", EmitDefaultValue = true)]
-        public bool AvailableToEmployees { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Tags
-        /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = false)]
-        public List<string> Tags { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Addresses
-        /// </summary>
-        [DataMember(Name = "addresses", EmitDefaultValue = false)]
-        public List<Address> Addresses { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CustomFields
-        /// </summary>
-        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
-        public List<CustomField> CustomFields { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Deleted
-        /// </summary>
-        [DataMember(Name = "deleted", EmitDefaultValue = true)]
-        public bool? Deleted { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OwnerId
-        /// </summary>
-        [DataMember(Name = "owner_id", EmitDefaultValue = false)]
-        public string OwnerId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PublishedAt
-        /// </summary>
-        [DataMember(Name = "published_at", EmitDefaultValue = false)]
-        public DateTime PublishedAt { get; private set; }
-
-        /// <summary>
-        /// Returns false as PublishedAt should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializePublishedAt()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The user who last updated the object.
-        /// </summary>
-        /// <value>The user who last updated the object.</value>
-        [DataMember(Name = "updated_by", EmitDefaultValue = true)]
-        public string UpdatedBy { get; private set; }
-
-        /// <summary>
-        /// Returns false as UpdatedBy should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUpdatedBy()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The user who created the object.
-        /// </summary>
-        /// <value>The user who created the object.</value>
-        [DataMember(Name = "created_by", EmitDefaultValue = true)]
-        public string CreatedBy { get; private set; }
-
-        /// <summary>
-        /// Returns false as CreatedBy should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCreatedBy()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The date and time when the object was last updated.
-        /// </summary>
-        /// <value>The date and time when the object was last updated.</value>
-        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
-        public DateTime? UpdatedAt { get; private set; }
-
-        /// <summary>
-        /// Returns false as UpdatedAt should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUpdatedAt()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The date and time when the object was created.
-        /// </summary>
-        /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
-
-        /// <summary>
-        /// Returns false as CreatedAt should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCreatedAt()
-        {
-            return false;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -531,46 +167,17 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Job {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Slug: ").Append(Slug).Append("\n");
+            sb.Append("  EmployeeId: ").Append(EmployeeId).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
-            sb.Append("  Sequence: ").Append(Sequence).Append("\n");
-            sb.Append("  Visibility: ").Append(Visibility).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
-            sb.Append("  EmploymentTerms: ").Append(EmploymentTerms).Append("\n");
-            sb.Append("  Experience: ").Append(Experience).Append("\n");
+            sb.Append("  Role: ").Append(Role).Append("\n");
+            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
+            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  CompensationRate: ").Append(CompensationRate).Append("\n");
+            sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("  PaymentUnit: ").Append(PaymentUnit).Append("\n");
+            sb.Append("  HiredAt: ").Append(HiredAt).Append("\n");
+            sb.Append("  IsPrimary: ").Append(IsPrimary).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
-            sb.Append("  Remote: ").Append(Remote).Append("\n");
-            sb.Append("  RequisitionId: ").Append(RequisitionId).Append("\n");
-            sb.Append("  Department: ").Append(Department).Append("\n");
-            sb.Append("  Branch: ").Append(Branch).Append("\n");
-            sb.Append("  Recruiters: ").Append(Recruiters).Append("\n");
-            sb.Append("  HiringManagers: ").Append(HiringManagers).Append("\n");
-            sb.Append("  Followers: ").Append(Followers).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  DescriptionHtml: ").Append(DescriptionHtml).Append("\n");
-            sb.Append("  Blocks: ").Append(Blocks).Append("\n");
-            sb.Append("  Closing: ").Append(Closing).Append("\n");
-            sb.Append("  ClosingHtml: ").Append(ClosingHtml).Append("\n");
-            sb.Append("  ClosingDate: ").Append(ClosingDate).Append("\n");
-            sb.Append("  Salary: ").Append(Salary).Append("\n");
-            sb.Append("  Url: ").Append(Url).Append("\n");
-            sb.Append("  JobPortalUrl: ").Append(JobPortalUrl).Append("\n");
-            sb.Append("  RecordUrl: ").Append(RecordUrl).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
-            sb.Append("  Confidential: ").Append(Confidential).Append("\n");
-            sb.Append("  AvailableToEmployees: ").Append(AvailableToEmployees).Append("\n");
-            sb.Append("  Tags: ").Append(Tags).Append("\n");
-            sb.Append("  Addresses: ").Append(Addresses).Append("\n");
-            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
-            sb.Append("  Deleted: ").Append(Deleted).Append("\n");
-            sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
-            sb.Append("  PublishedAt: ").Append(PublishedAt).Append("\n");
-            sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
-            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
-            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -612,9 +219,9 @@ namespace Apideck.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Slug == input.Slug ||
-                    (this.Slug != null &&
-                    this.Slug.Equals(input.Slug))
+                    this.EmployeeId == input.EmployeeId ||
+                    (this.EmployeeId != null &&
+                    this.EmployeeId.Equals(input.EmployeeId))
                 ) && 
                 (
                     this.Title == input.Title ||
@@ -622,196 +229,46 @@ namespace Apideck.Model
                     this.Title.Equals(input.Title))
                 ) && 
                 (
-                    this.Sequence == input.Sequence ||
-                    this.Sequence.Equals(input.Sequence)
+                    this.Role == input.Role ||
+                    (this.Role != null &&
+                    this.Role.Equals(input.Role))
                 ) && 
                 (
-                    this.Visibility == input.Visibility ||
-                    this.Visibility.Equals(input.Visibility)
+                    this.StartDate == input.StartDate ||
+                    (this.StartDate != null &&
+                    this.StartDate.Equals(input.StartDate))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
+                    this.EndDate == input.EndDate ||
+                    (this.EndDate != null &&
+                    this.EndDate.Equals(input.EndDate))
                 ) && 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
+                    this.CompensationRate == input.CompensationRate ||
+                    this.CompensationRate.Equals(input.CompensationRate)
                 ) && 
                 (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
+                    this.Currency == input.Currency ||
+                    this.Currency.Equals(input.Currency)
                 ) && 
                 (
-                    this.EmploymentTerms == input.EmploymentTerms ||
-                    this.EmploymentTerms.Equals(input.EmploymentTerms)
+                    this.PaymentUnit == input.PaymentUnit ||
+                    this.PaymentUnit.Equals(input.PaymentUnit)
                 ) && 
                 (
-                    this.Experience == input.Experience ||
-                    (this.Experience != null &&
-                    this.Experience.Equals(input.Experience))
+                    this.HiredAt == input.HiredAt ||
+                    (this.HiredAt != null &&
+                    this.HiredAt.Equals(input.HiredAt))
+                ) && 
+                (
+                    this.IsPrimary == input.IsPrimary ||
+                    (this.IsPrimary != null &&
+                    this.IsPrimary.Equals(input.IsPrimary))
                 ) && 
                 (
                     this.Location == input.Location ||
                     (this.Location != null &&
                     this.Location.Equals(input.Location))
-                ) && 
-                (
-                    this.Remote == input.Remote ||
-                    (this.Remote != null &&
-                    this.Remote.Equals(input.Remote))
-                ) && 
-                (
-                    this.RequisitionId == input.RequisitionId ||
-                    (this.RequisitionId != null &&
-                    this.RequisitionId.Equals(input.RequisitionId))
-                ) && 
-                (
-                    this.Department == input.Department ||
-                    (this.Department != null &&
-                    this.Department.Equals(input.Department))
-                ) && 
-                (
-                    this.Branch == input.Branch ||
-                    (this.Branch != null &&
-                    this.Branch.Equals(input.Branch))
-                ) && 
-                (
-                    this.Recruiters == input.Recruiters ||
-                    this.Recruiters != null &&
-                    input.Recruiters != null &&
-                    this.Recruiters.SequenceEqual(input.Recruiters)
-                ) && 
-                (
-                    this.HiringManagers == input.HiringManagers ||
-                    this.HiringManagers != null &&
-                    input.HiringManagers != null &&
-                    this.HiringManagers.SequenceEqual(input.HiringManagers)
-                ) && 
-                (
-                    this.Followers == input.Followers ||
-                    this.Followers != null &&
-                    input.Followers != null &&
-                    this.Followers.SequenceEqual(input.Followers)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.DescriptionHtml == input.DescriptionHtml ||
-                    (this.DescriptionHtml != null &&
-                    this.DescriptionHtml.Equals(input.DescriptionHtml))
-                ) && 
-                (
-                    this.Blocks == input.Blocks ||
-                    this.Blocks != null &&
-                    input.Blocks != null &&
-                    this.Blocks.SequenceEqual(input.Blocks)
-                ) && 
-                (
-                    this.Closing == input.Closing ||
-                    (this.Closing != null &&
-                    this.Closing.Equals(input.Closing))
-                ) && 
-                (
-                    this.ClosingHtml == input.ClosingHtml ||
-                    (this.ClosingHtml != null &&
-                    this.ClosingHtml.Equals(input.ClosingHtml))
-                ) && 
-                (
-                    this.ClosingDate == input.ClosingDate ||
-                    (this.ClosingDate != null &&
-                    this.ClosingDate.Equals(input.ClosingDate))
-                ) && 
-                (
-                    this.Salary == input.Salary ||
-                    (this.Salary != null &&
-                    this.Salary.Equals(input.Salary))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.JobPortalUrl == input.JobPortalUrl ||
-                    (this.JobPortalUrl != null &&
-                    this.JobPortalUrl.Equals(input.JobPortalUrl))
-                ) && 
-                (
-                    this.RecordUrl == input.RecordUrl ||
-                    (this.RecordUrl != null &&
-                    this.RecordUrl.Equals(input.RecordUrl))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.Confidential == input.Confidential ||
-                    this.Confidential.Equals(input.Confidential)
-                ) && 
-                (
-                    this.AvailableToEmployees == input.AvailableToEmployees ||
-                    this.AvailableToEmployees.Equals(input.AvailableToEmployees)
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Addresses == input.Addresses ||
-                    this.Addresses != null &&
-                    input.Addresses != null &&
-                    this.Addresses.SequenceEqual(input.Addresses)
-                ) && 
-                (
-                    this.CustomFields == input.CustomFields ||
-                    this.CustomFields != null &&
-                    input.CustomFields != null &&
-                    this.CustomFields.SequenceEqual(input.CustomFields)
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                ) && 
-                (
-                    this.OwnerId == input.OwnerId ||
-                    (this.OwnerId != null &&
-                    this.OwnerId.Equals(input.OwnerId))
-                ) && 
-                (
-                    this.PublishedAt == input.PublishedAt ||
-                    (this.PublishedAt != null &&
-                    this.PublishedAt.Equals(input.PublishedAt))
-                ) && 
-                (
-                    this.UpdatedBy == input.UpdatedBy ||
-                    (this.UpdatedBy != null &&
-                    this.UpdatedBy.Equals(input.UpdatedBy))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
                 );
         }
 
@@ -828,147 +285,40 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                if (this.Slug != null)
+                if (this.EmployeeId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Slug.GetHashCode();
+                    hashCode = (hashCode * 59) + this.EmployeeId.GetHashCode();
                 }
                 if (this.Title != null)
                 {
                     hashCode = (hashCode * 59) + this.Title.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Sequence.GetHashCode();
-                hashCode = (hashCode * 59) + this.Visibility.GetHashCode();
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                if (this.Code != null)
+                if (this.Role != null)
                 {
-                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Role.GetHashCode();
                 }
-                if (this.Language != null)
+                if (this.StartDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.Language.GetHashCode();
+                    hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.EmploymentTerms.GetHashCode();
-                if (this.Experience != null)
+                if (this.EndDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.Experience.GetHashCode();
+                    hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.CompensationRate.GetHashCode();
+                hashCode = (hashCode * 59) + this.Currency.GetHashCode();
+                hashCode = (hashCode * 59) + this.PaymentUnit.GetHashCode();
+                if (this.HiredAt != null)
+                {
+                    hashCode = (hashCode * 59) + this.HiredAt.GetHashCode();
+                }
+                if (this.IsPrimary != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsPrimary.GetHashCode();
                 }
                 if (this.Location != null)
                 {
                     hashCode = (hashCode * 59) + this.Location.GetHashCode();
-                }
-                if (this.Remote != null)
-                {
-                    hashCode = (hashCode * 59) + this.Remote.GetHashCode();
-                }
-                if (this.RequisitionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.RequisitionId.GetHashCode();
-                }
-                if (this.Department != null)
-                {
-                    hashCode = (hashCode * 59) + this.Department.GetHashCode();
-                }
-                if (this.Branch != null)
-                {
-                    hashCode = (hashCode * 59) + this.Branch.GetHashCode();
-                }
-                if (this.Recruiters != null)
-                {
-                    hashCode = (hashCode * 59) + this.Recruiters.GetHashCode();
-                }
-                if (this.HiringManagers != null)
-                {
-                    hashCode = (hashCode * 59) + this.HiringManagers.GetHashCode();
-                }
-                if (this.Followers != null)
-                {
-                    hashCode = (hashCode * 59) + this.Followers.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.DescriptionHtml != null)
-                {
-                    hashCode = (hashCode * 59) + this.DescriptionHtml.GetHashCode();
-                }
-                if (this.Blocks != null)
-                {
-                    hashCode = (hashCode * 59) + this.Blocks.GetHashCode();
-                }
-                if (this.Closing != null)
-                {
-                    hashCode = (hashCode * 59) + this.Closing.GetHashCode();
-                }
-                if (this.ClosingHtml != null)
-                {
-                    hashCode = (hashCode * 59) + this.ClosingHtml.GetHashCode();
-                }
-                if (this.ClosingDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.ClosingDate.GetHashCode();
-                }
-                if (this.Salary != null)
-                {
-                    hashCode = (hashCode * 59) + this.Salary.GetHashCode();
-                }
-                if (this.Url != null)
-                {
-                    hashCode = (hashCode * 59) + this.Url.GetHashCode();
-                }
-                if (this.JobPortalUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.JobPortalUrl.GetHashCode();
-                }
-                if (this.RecordUrl != null)
-                {
-                    hashCode = (hashCode * 59) + this.RecordUrl.GetHashCode();
-                }
-                if (this.Links != null)
-                {
-                    hashCode = (hashCode * 59) + this.Links.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Confidential.GetHashCode();
-                hashCode = (hashCode * 59) + this.AvailableToEmployees.GetHashCode();
-                if (this.Tags != null)
-                {
-                    hashCode = (hashCode * 59) + this.Tags.GetHashCode();
-                }
-                if (this.Addresses != null)
-                {
-                    hashCode = (hashCode * 59) + this.Addresses.GetHashCode();
-                }
-                if (this.CustomFields != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
-                }
-                if (this.Deleted != null)
-                {
-                    hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
-                }
-                if (this.OwnerId != null)
-                {
-                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
-                }
-                if (this.PublishedAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.PublishedAt.GetHashCode();
-                }
-                if (this.UpdatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdatedBy.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.UpdatedAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
-                }
-                if (this.CreatedAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
                 }
                 return hashCode;
             }

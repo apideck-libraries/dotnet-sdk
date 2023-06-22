@@ -28,80 +28,121 @@ namespace Apideck.Model
     /// <summary>
     /// Compensation
     /// </summary>
-    [DataContract(Name = "Compensation")]
+    [DataContract(Name = "compensation")]
     public partial class Compensation : IEquatable<Compensation>, IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="Compensation" /> class.
+        /// Gets or Sets PaymentUnit
         /// </summary>
-        [JsonConstructorAttribute]
-        protected Compensation() { }
+        [DataMember(Name = "payment_unit", EmitDefaultValue = false)]
+        public PaymentUnit? PaymentUnit { get; set; }
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="Compensation" /> class.
+        /// Gets or Sets Currency
         /// </summary>
-        /// <param name="netPay">The employee&#39;s net pay. Only available when payroll has been processed.</param>
-        /// <param name="grossPay">The employee&#39;s gross pay. Only available when payroll has been processed.</param>
-        /// <param name="taxes">An array of employer and employee taxes for the pay period..</param>
-        /// <param name="deductions">An array of employee deductions for the pay period..</param>
-        /// <param name="benefits">An array of employee benefits for the pay period..</param>
-        public Compensation(decimal netPay = default(decimal), decimal grossPay = default(decimal), List<Tax> taxes = default(List<Tax>), List<Deduction> deductions = default(List<Deduction>), List<Benefit> benefits = default(List<Benefit>))
+        [DataMember(Name = "currency", EmitDefaultValue = true)]
+        public Currency? Currency { get; set; }
+        /// <summary>
+        /// The FLSA status for this compensation.
+        /// </summary>
+        /// <value>The FLSA status for this compensation.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum FlsaStatusEnum
         {
-            this.NetPay = netPay;
-            this.GrossPay = grossPay;
-            this.Taxes = taxes;
-            this.Deductions = deductions;
-            this.Benefits = benefits;
+            /// <summary>
+            /// Enum Exempt for value: exempt
+            /// </summary>
+            [EnumMember(Value = "exempt")]
+            Exempt = 1,
+
+            /// <summary>
+            /// Enum SalariedNonexempt for value: salaried-nonexempt
+            /// </summary>
+            [EnumMember(Value = "salaried-nonexempt")]
+            SalariedNonexempt = 2,
+
+            /// <summary>
+            /// Enum Nonexempt for value: nonexempt
+            /// </summary>
+            [EnumMember(Value = "nonexempt")]
+            Nonexempt = 3,
+
+            /// <summary>
+            /// Enum Owner for value: owner
+            /// </summary>
+            [EnumMember(Value = "owner")]
+            Owner = 4
+
+        }
+
+
+        /// <summary>
+        /// The FLSA status for this compensation.
+        /// </summary>
+        /// <value>The FLSA status for this compensation.</value>
+        [DataMember(Name = "flsa_status", EmitDefaultValue = false)]
+        public FlsaStatusEnum? FlsaStatus { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Compensation" /> class.
+        /// </summary>
+        /// <param name="rate">The amount paid per payment unit..</param>
+        /// <param name="paymentUnit">paymentUnit.</param>
+        /// <param name="currency">currency.</param>
+        /// <param name="flsaStatus">The FLSA status for this compensation..</param>
+        /// <param name="effectiveDate">The date on which a change to an employee&#39;s compensation takes effect..</param>
+        public Compensation(decimal rate = default(decimal), PaymentUnit? paymentUnit = default(PaymentUnit?), Currency? currency = default(Currency?), FlsaStatusEnum? flsaStatus = default(FlsaStatusEnum?), string effectiveDate = default(string))
+        {
+            this.Rate = rate;
+            this.PaymentUnit = paymentUnit;
+            this.Currency = currency;
+            this.FlsaStatus = flsaStatus;
+            this.EffectiveDate = effectiveDate;
         }
 
         /// <summary>
         /// A unique identifier for an object.
         /// </summary>
         /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "employee_id", IsRequired = true, EmitDefaultValue = false)]
-        public string EmployeeId { get; private set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; private set; }
 
         /// <summary>
-        /// Returns false as EmployeeId should not be serialized given that it's read-only.
+        /// Returns false as Id should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEmployeeId()
+        public bool ShouldSerializeId()
         {
             return false;
         }
         /// <summary>
-        /// The employee&#39;s net pay. Only available when payroll has been processed
+        /// The ID of the job to which the compensation belongs.
         /// </summary>
-        /// <value>The employee&#39;s net pay. Only available when payroll has been processed</value>
-        [DataMember(Name = "net_pay", EmitDefaultValue = false)]
-        public decimal NetPay { get; set; }
+        /// <value>The ID of the job to which the compensation belongs.</value>
+        [DataMember(Name = "job_id", EmitDefaultValue = false)]
+        public string JobId { get; private set; }
 
         /// <summary>
-        /// The employee&#39;s gross pay. Only available when payroll has been processed
+        /// Returns false as JobId should not be serialized given that it's read-only.
         /// </summary>
-        /// <value>The employee&#39;s gross pay. Only available when payroll has been processed</value>
-        [DataMember(Name = "gross_pay", EmitDefaultValue = false)]
-        public decimal GrossPay { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeJobId()
+        {
+            return false;
+        }
+        /// <summary>
+        /// The amount paid per payment unit.
+        /// </summary>
+        /// <value>The amount paid per payment unit.</value>
+        [DataMember(Name = "rate", EmitDefaultValue = false)]
+        public decimal Rate { get; set; }
 
         /// <summary>
-        /// An array of employer and employee taxes for the pay period.
+        /// The date on which a change to an employee&#39;s compensation takes effect.
         /// </summary>
-        /// <value>An array of employer and employee taxes for the pay period.</value>
-        [DataMember(Name = "taxes", EmitDefaultValue = false)]
-        public List<Tax> Taxes { get; set; }
-
-        /// <summary>
-        /// An array of employee deductions for the pay period.
-        /// </summary>
-        /// <value>An array of employee deductions for the pay period.</value>
-        [DataMember(Name = "deductions", EmitDefaultValue = false)]
-        public List<Deduction> Deductions { get; set; }
-
-        /// <summary>
-        /// An array of employee benefits for the pay period.
-        /// </summary>
-        /// <value>An array of employee benefits for the pay period.</value>
-        [DataMember(Name = "benefits", EmitDefaultValue = false)]
-        public List<Benefit> Benefits { get; set; }
+        /// <value>The date on which a change to an employee&#39;s compensation takes effect.</value>
+        [DataMember(Name = "effective_date", EmitDefaultValue = false)]
+        public string EffectiveDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -111,12 +152,13 @@ namespace Apideck.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Compensation {\n");
-            sb.Append("  EmployeeId: ").Append(EmployeeId).Append("\n");
-            sb.Append("  NetPay: ").Append(NetPay).Append("\n");
-            sb.Append("  GrossPay: ").Append(GrossPay).Append("\n");
-            sb.Append("  Taxes: ").Append(Taxes).Append("\n");
-            sb.Append("  Deductions: ").Append(Deductions).Append("\n");
-            sb.Append("  Benefits: ").Append(Benefits).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  JobId: ").Append(JobId).Append("\n");
+            sb.Append("  Rate: ").Append(Rate).Append("\n");
+            sb.Append("  PaymentUnit: ").Append(PaymentUnit).Append("\n");
+            sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("  FlsaStatus: ").Append(FlsaStatus).Append("\n");
+            sb.Append("  EffectiveDate: ").Append(EffectiveDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,35 +195,35 @@ namespace Apideck.Model
             }
             return 
                 (
-                    this.EmployeeId == input.EmployeeId ||
-                    (this.EmployeeId != null &&
-                    this.EmployeeId.Equals(input.EmployeeId))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.NetPay == input.NetPay ||
-                    this.NetPay.Equals(input.NetPay)
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 ) && 
                 (
-                    this.GrossPay == input.GrossPay ||
-                    this.GrossPay.Equals(input.GrossPay)
+                    this.Rate == input.Rate ||
+                    this.Rate.Equals(input.Rate)
                 ) && 
                 (
-                    this.Taxes == input.Taxes ||
-                    this.Taxes != null &&
-                    input.Taxes != null &&
-                    this.Taxes.SequenceEqual(input.Taxes)
+                    this.PaymentUnit == input.PaymentUnit ||
+                    this.PaymentUnit.Equals(input.PaymentUnit)
                 ) && 
                 (
-                    this.Deductions == input.Deductions ||
-                    this.Deductions != null &&
-                    input.Deductions != null &&
-                    this.Deductions.SequenceEqual(input.Deductions)
+                    this.Currency == input.Currency ||
+                    this.Currency.Equals(input.Currency)
                 ) && 
                 (
-                    this.Benefits == input.Benefits ||
-                    this.Benefits != null &&
-                    input.Benefits != null &&
-                    this.Benefits.SequenceEqual(input.Benefits)
+                    this.FlsaStatus == input.FlsaStatus ||
+                    this.FlsaStatus.Equals(input.FlsaStatus)
+                ) && 
+                (
+                    this.EffectiveDate == input.EffectiveDate ||
+                    (this.EffectiveDate != null &&
+                    this.EffectiveDate.Equals(input.EffectiveDate))
                 );
         }
 
@@ -194,23 +236,21 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EmployeeId != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.EmployeeId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.NetPay.GetHashCode();
-                hashCode = (hashCode * 59) + this.GrossPay.GetHashCode();
-                if (this.Taxes != null)
+                if (this.JobId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Taxes.GetHashCode();
+                    hashCode = (hashCode * 59) + this.JobId.GetHashCode();
                 }
-                if (this.Deductions != null)
+                hashCode = (hashCode * 59) + this.Rate.GetHashCode();
+                hashCode = (hashCode * 59) + this.PaymentUnit.GetHashCode();
+                hashCode = (hashCode * 59) + this.Currency.GetHashCode();
+                hashCode = (hashCode * 59) + this.FlsaStatus.GetHashCode();
+                if (this.EffectiveDate != null)
                 {
-                    hashCode = (hashCode * 59) + this.Deductions.GetHashCode();
-                }
-                if (this.Benefits != null)
-                {
-                    hashCode = (hashCode * 59) + this.Benefits.GetHashCode();
+                    hashCode = (hashCode * 59) + this.EffectiveDate.GetHashCode();
                 }
                 return hashCode;
             }

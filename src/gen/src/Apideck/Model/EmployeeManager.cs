@@ -40,13 +40,15 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeManager" /> class.
         /// </summary>
+        /// <param name="id">A unique identifier for an object..</param>
         /// <param name="name">The name of the manager, often a combination of their first and last names..</param>
         /// <param name="firstName">The first name of the person..</param>
         /// <param name="lastName">The last name of the person..</param>
         /// <param name="email">The email address of the manager..</param>
         /// <param name="employmentStatus">employmentStatus.</param>
-        public EmployeeManager(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?))
+        public EmployeeManager(string id = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?))
         {
+            this.Id = id;
             this.Name = name;
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -59,16 +61,8 @@ namespace Apideck.Model
         /// </summary>
         /// <value>A unique identifier for an object.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; private set; }
+        public string Id { get; set; }
 
-        /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
-        {
-            return false;
-        }
         /// <summary>
         /// The name of the manager, often a combination of their first and last names.
         /// </summary>
