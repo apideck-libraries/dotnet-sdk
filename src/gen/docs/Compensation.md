@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Currency** | **Currency** |  | [optional] 
 **FlsaStatus** | **string** | The FLSA status for this compensation. | [optional] 
 **EffectiveDate** | **string** | The date on which a change to an employee&#39;s compensation takes effect. | [optional] 
+**PaymentFrequency** | **string** | Frequency of employee compensation. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
