@@ -106,7 +106,13 @@ namespace Apideck.Model
             /// Enum Hourly for value: hourly
             /// </summary>
             [EnumMember(Value = "hourly")]
-            Hourly = 3
+            Hourly = 3,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 4
 
         }
 
