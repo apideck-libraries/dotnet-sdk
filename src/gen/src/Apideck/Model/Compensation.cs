@@ -72,7 +72,13 @@ namespace Apideck.Model
             /// Enum Owner for value: owner
             /// </summary>
             [EnumMember(Value = "owner")]
-            Owner = 4
+            Owner = 4,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 5
 
         }
 
