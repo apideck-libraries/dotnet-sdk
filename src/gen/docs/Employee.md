@@ -54,6 +54,7 @@ Name | Type | Description | Notes
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **SocialLinks** | [**List&lt;ApplicantSocialLinks&gt;**](ApplicantSocialLinks.md) |  | [optional] 
+**BankAccounts** | [**List&lt;EmployeeBankAccounts&gt;**](EmployeeBankAccounts.md) |  | [optional] 
 **TaxCode** | **string** |  | [optional] 
 **TaxId** | **string** |  | [optional] 
 **DietaryPreference** | **string** | Indicate the employee&#39;s dietary preference. | [optional] 
