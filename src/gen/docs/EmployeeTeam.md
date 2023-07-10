@@ -1,4 +1,4 @@
-# Apideck.Model.Team
+# Apideck.Model.EmployeeTeam
 The team the person is currently in.
 
 ## Properties

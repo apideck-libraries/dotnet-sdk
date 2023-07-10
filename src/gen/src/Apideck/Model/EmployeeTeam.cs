@@ -28,15 +28,15 @@ namespace Apideck.Model
     /// <summary>
     /// The team the person is currently in.
     /// </summary>
-    [DataContract(Name = "Team")]
-    public partial class Team : IEquatable<Team>, IValidatableObject
+    [DataContract(Name = "Employee_team")]
+    public partial class EmployeeTeam : IEquatable<EmployeeTeam>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Team" /> class.
+        /// Initializes a new instance of the <see cref="EmployeeTeam" /> class.
         /// </summary>
         /// <param name="id">The unique identifier of the team..</param>
         /// <param name="name">The name of the team..</param>
-        public Team(string id = default(string), string name = default(string))
+        public EmployeeTeam(string id = default(string), string name = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -63,7 +63,7 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Team {\n");
+            sb.Append("class EmployeeTeam {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
@@ -86,15 +86,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Team);
+            return this.Equals(input as EmployeeTeam);
         }
 
         /// <summary>
-        /// Returns true if Team instances are equal
+        /// Returns true if EmployeeTeam instances are equal
         /// </summary>
-        /// <param name="input">Instance of Team to be compared</param>
+        /// <param name="input">Instance of EmployeeTeam to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Team input)
+        public bool Equals(EmployeeTeam input)
         {
             if (input == null)
             {
