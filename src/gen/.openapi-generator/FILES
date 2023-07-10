@@ -237,7 +237,6 @@ docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
 docs/EmployeeSchedules.md
-docs/EmployeeTeam.md
 docs/EmployeesFilter.md
 docs/EmployeesSort.md
 docs/EmploymentStatus.md
@@ -515,6 +514,7 @@ docs/SupportedPropertyChildProperties.md
 docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
+docs/Team.md
 docs/Tender.md
 docs/Ticket.md
 docs/TicketsSort.md
@@ -838,7 +838,6 @@ src/Apideck.Test/Model/EmployeeManagerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
 src/Apideck.Test/Model/EmployeePayrollsTests.cs
 src/Apideck.Test/Model/EmployeeSchedulesTests.cs
-src/Apideck.Test/Model/EmployeeTeamTests.cs
 src/Apideck.Test/Model/EmployeeTests.cs
 src/Apideck.Test/Model/EmployeesFilterTests.cs
 src/Apideck.Test/Model/EmployeesSortTests.cs
@@ -1111,6 +1110,7 @@ src/Apideck.Test/Model/SupportedPropertyTests.cs
 src/Apideck.Test/Model/TaxRateTests.cs
 src/Apideck.Test/Model/TaxRatesFilterTests.cs
 src/Apideck.Test/Model/TaxTests.cs
+src/Apideck.Test/Model/TeamTests.cs
 src/Apideck.Test/Model/TenderTests.cs
 src/Apideck.Test/Model/TicketTests.cs
 src/Apideck.Test/Model/TicketsSortTests.cs
@@ -1449,7 +1449,6 @@ src/Apideck/Model/EmployeeManager.cs
 src/Apideck/Model/EmployeePayroll.cs
 src/Apideck/Model/EmployeePayrolls.cs
 src/Apideck/Model/EmployeeSchedules.cs
-src/Apideck/Model/EmployeeTeam.cs
 src/Apideck/Model/EmployeesFilter.cs
 src/Apideck/Model/EmployeesSort.cs
 src/Apideck/Model/EmploymentStatus.cs
@@ -1721,6 +1720,7 @@ src/Apideck/Model/SupportedPropertyChildProperties.cs
 src/Apideck/Model/Tax.cs
 src/Apideck/Model/TaxRate.cs
 src/Apideck/Model/TaxRatesFilter.cs
+src/Apideck/Model/Team.cs
 src/Apideck/Model/Tender.cs
 src/Apideck/Model/Ticket.cs
 src/Apideck/Model/TicketsSort.cs

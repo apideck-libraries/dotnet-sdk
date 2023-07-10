@@ -193,6 +193,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Team'
         }
         /// <summary>
+        /// Test the property 'Teams'
+        /// </summary>
+        [Fact]
+        public void TeamsTest()
+        {
+            // TODO unit test for the property 'Teams'
+        }
+        /// <summary>
         /// Test the property 'CompanyId'
         /// </summary>
         [Fact]

@@ -107,6 +107,7 @@ namespace Apideck.Model
         /// <param name="departmentId">Unique identifier of the department ID this employee belongs to..</param>
         /// <param name="departmentName">Name of the department this employee belongs to..</param>
         /// <param name="team">team.</param>
+        /// <param name="teams">teams.</param>
         /// <param name="companyId">The unique identifier of the company..</param>
         /// <param name="companyName">The name of the company..</param>
         /// <param name="employmentStartDate">A Start Date is the date that the employee started working at the company.</param>
@@ -149,7 +150,7 @@ namespace Apideck.Model
         /// <param name="tags">tags.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="deleted">deleted.</param>
-        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), EmployeeTeam team = default(EmployeeTeam), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<Job> jobs = default(List<Job>), List<Compensation> compensations = default(List<Compensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), List<EmployeeBankAccounts> bankAccounts = default(List<EmployeeBankAccounts>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
+        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), List<Team> teams = default(List<Team>), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<Job> jobs = default(List<Job>), List<Compensation> compensations = default(List<Compensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), List<EmployeeBankAccounts> bankAccounts = default(List<EmployeeBankAccounts>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -167,6 +168,7 @@ namespace Apideck.Model
             this.DepartmentId = departmentId;
             this.DepartmentName = departmentName;
             this.Team = team;
+            this.Teams = teams;
             this.CompanyId = companyId;
             this.CompanyName = companyName;
             this.EmploymentStartDate = employmentStartDate;
@@ -335,7 +337,13 @@ namespace Apideck.Model
         /// Gets or Sets Team
         /// </summary>
         [DataMember(Name = "team", EmitDefaultValue = true)]
-        public EmployeeTeam Team { get; set; }
+        public Team Team { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Teams
+        /// </summary>
+        [DataMember(Name = "teams", EmitDefaultValue = false)]
+        public List<Team> Teams { get; set; }
 
         /// <summary>
         /// The unique identifier of the company.
@@ -679,6 +687,7 @@ namespace Apideck.Model
             sb.Append("  DepartmentId: ").Append(DepartmentId).Append("\n");
             sb.Append("  DepartmentName: ").Append(DepartmentName).Append("\n");
             sb.Append("  Team: ").Append(Team).Append("\n");
+            sb.Append("  Teams: ").Append(Teams).Append("\n");
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("  CompanyName: ").Append(CompanyName).Append("\n");
             sb.Append("  EmploymentStartDate: ").Append(EmploymentStartDate).Append("\n");
@@ -844,6 +853,12 @@ namespace Apideck.Model
                     this.Team == input.Team ||
                     (this.Team != null &&
                     this.Team.Equals(input.Team))
+                ) && 
+                (
+                    this.Teams == input.Teams ||
+                    this.Teams != null &&
+                    input.Teams != null &&
+                    this.Teams.SequenceEqual(input.Teams)
                 ) && 
                 (
                     this.CompanyId == input.CompanyId ||
@@ -1163,6 +1178,10 @@ namespace Apideck.Model
                 if (this.Team != null)
                 {
                     hashCode = (hashCode * 59) + this.Team.GetHashCode();
+                }
+                if (this.Teams != null)
+                {
+                    hashCode = (hashCode * 59) + this.Teams.GetHashCode();
                 }
                 if (this.CompanyId != null)
                 {
