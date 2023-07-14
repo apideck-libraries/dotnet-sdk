@@ -54,8 +54,11 @@ namespace Apideck.Model
         /// <param name="size">The size of the file in bytes.</param>
         /// <param name="owner">owner.</param>
         /// <param name="parentFolders">The parent folders of the file, starting from the root.</param>
-        /// <param name="parentFoldersComplete">Whether the list of parent folder is complete. Some connectors only return the direct parent of a file.</param>
-        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int size = default(int), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool))
+        /// <param name="parentFoldersComplete">Whether the list of parent folders is complete. Some connectors only return the direct parent of a file.</param>
+        /// <param name="permissions">permissions.</param>
+        /// <param name="exportable">Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper..</param>
+        /// <param name="exportFormats">The available file formats when exporting this file..</param>
+        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int size = default(int), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool), UnifiedFilePermissions permissions = default(UnifiedFilePermissions), bool exportable = default(bool), List<string> exportFormats = default(List<string>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -71,6 +74,9 @@ namespace Apideck.Model
             this.Owner = owner;
             this.ParentFolders = parentFolders;
             this.ParentFoldersComplete = parentFoldersComplete;
+            this.Permissions = permissions;
+            this.Exportable = exportable;
+            this.ExportFormats = exportFormats;
         }
 
         /// <summary>
@@ -159,11 +165,31 @@ namespace Apideck.Model
         public List<LinkedFolder> ParentFolders { get; set; }
 
         /// <summary>
-        /// Whether the list of parent folder is complete. Some connectors only return the direct parent of a file
+        /// Whether the list of parent folders is complete. Some connectors only return the direct parent of a file
         /// </summary>
-        /// <value>Whether the list of parent folder is complete. Some connectors only return the direct parent of a file</value>
+        /// <value>Whether the list of parent folders is complete. Some connectors only return the direct parent of a file</value>
         [DataMember(Name = "parent_folders_complete", EmitDefaultValue = true)]
         public bool ParentFoldersComplete { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Permissions
+        /// </summary>
+        [DataMember(Name = "permissions", EmitDefaultValue = false)]
+        public UnifiedFilePermissions Permissions { get; set; }
+
+        /// <summary>
+        /// Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper.
+        /// </summary>
+        /// <value>Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper.</value>
+        [DataMember(Name = "exportable", EmitDefaultValue = true)]
+        public bool Exportable { get; set; }
+
+        /// <summary>
+        /// The available file formats when exporting this file.
+        /// </summary>
+        /// <value>The available file formats when exporting this file.</value>
+        [DataMember(Name = "export_formats", EmitDefaultValue = false)]
+        public List<string> ExportFormats { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -245,6 +271,9 @@ namespace Apideck.Model
             sb.Append("  Owner: ").Append(Owner).Append("\n");
             sb.Append("  ParentFolders: ").Append(ParentFolders).Append("\n");
             sb.Append("  ParentFoldersComplete: ").Append(ParentFoldersComplete).Append("\n");
+            sb.Append("  Permissions: ").Append(Permissions).Append("\n");
+            sb.Append("  Exportable: ").Append(Exportable).Append("\n");
+            sb.Append("  ExportFormats: ").Append(ExportFormats).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -342,6 +371,21 @@ namespace Apideck.Model
                     this.ParentFoldersComplete.Equals(input.ParentFoldersComplete)
                 ) && 
                 (
+                    this.Permissions == input.Permissions ||
+                    (this.Permissions != null &&
+                    this.Permissions.Equals(input.Permissions))
+                ) && 
+                (
+                    this.Exportable == input.Exportable ||
+                    this.Exportable.Equals(input.Exportable)
+                ) && 
+                (
+                    this.ExportFormats == input.ExportFormats ||
+                    this.ExportFormats != null &&
+                    input.ExportFormats != null &&
+                    this.ExportFormats.SequenceEqual(input.ExportFormats)
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -408,6 +452,15 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.ParentFolders.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.ParentFoldersComplete.GetHashCode();
+                if (this.Permissions != null)
+                {
+                    hashCode = (hashCode * 59) + this.Permissions.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Exportable.GetHashCode();
+                if (this.ExportFormats != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExportFormats.GetHashCode();
+                }
                 if (this.UpdatedBy != null)
                 {
                     hashCode = (hashCode * 59) + this.UpdatedBy.GetHashCode();

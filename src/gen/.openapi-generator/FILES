@@ -528,6 +528,7 @@ docs/UnauthorizedResponse.md
 docs/UnexpectedErrorResponse.md
 docs/UnifiedApiId.md
 docs/UnifiedFile.md
+docs/UnifiedFilePermissions.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
@@ -1123,6 +1124,7 @@ src/Apideck.Test/Model/TrackingItemTests.cs
 src/Apideck.Test/Model/UnauthorizedResponseTests.cs
 src/Apideck.Test/Model/UnexpectedErrorResponseTests.cs
 src/Apideck.Test/Model/UnifiedApiIdTests.cs
+src/Apideck.Test/Model/UnifiedFilePermissionsTests.cs
 src/Apideck.Test/Model/UnifiedFileTests.cs
 src/Apideck.Test/Model/UnifiedIdTests.cs
 src/Apideck.Test/Model/UnprocessableResponseTests.cs
@@ -1734,6 +1736,7 @@ src/Apideck/Model/UnauthorizedResponse.cs
 src/Apideck/Model/UnexpectedErrorResponse.cs
 src/Apideck/Model/UnifiedApiId.cs
 src/Apideck/Model/UnifiedFile.cs
+src/Apideck/Model/UnifiedFilePermissions.cs
 src/Apideck/Model/UnifiedId.cs
 src/Apideck/Model/UnprocessableResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs

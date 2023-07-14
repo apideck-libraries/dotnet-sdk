@@ -153,6 +153,30 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'ParentFoldersComplete'
         }
         /// <summary>
+        /// Test the property 'Permissions'
+        /// </summary>
+        [Fact]
+        public void PermissionsTest()
+        {
+            // TODO unit test for the property 'Permissions'
+        }
+        /// <summary>
+        /// Test the property 'Exportable'
+        /// </summary>
+        [Fact]
+        public void ExportableTest()
+        {
+            // TODO unit test for the property 'Exportable'
+        }
+        /// <summary>
+        /// Test the property 'ExportFormats'
+        /// </summary>
+        [Fact]
+        public void ExportFormatsTest()
+        {
+            // TODO unit test for the property 'ExportFormats'
+        }
+        /// <summary>
         /// Test the property 'UpdatedBy'
         /// </summary>
         [Fact]
