@@ -231,9 +231,8 @@ docs/EcommerceProductVariants.md
 docs/EcommerceStore.md
 docs/Email.md
 docs/Employee.md
-docs/EmployeeCompensations.md
+docs/EmployeeBankAccounts.md
 docs/EmployeeEmploymentRole.md
-docs/EmployeeJobs.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
@@ -403,7 +402,6 @@ docs/Job.md
 docs/JobLinks.md
 docs/JobSalary.md
 docs/JobStatus.md
-docs/JobsFilter.md
 docs/JournalEntry.md
 docs/JournalEntryLineItem.md
 docs/Lead.md
@@ -530,6 +528,7 @@ docs/UnauthorizedResponse.md
 docs/UnexpectedErrorResponse.md
 docs/UnifiedApiId.md
 docs/UnifiedFile.md
+docs/UnifiedFilePermissions.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
 docs/UpdateActivityResponse.md
@@ -834,9 +833,8 @@ src/Apideck.Test/Model/EcommerceProductTests.cs
 src/Apideck.Test/Model/EcommerceProductVariantsTests.cs
 src/Apideck.Test/Model/EcommerceStoreTests.cs
 src/Apideck.Test/Model/EmailTests.cs
-src/Apideck.Test/Model/EmployeeCompensationsTests.cs
+src/Apideck.Test/Model/EmployeeBankAccountsTests.cs
 src/Apideck.Test/Model/EmployeeEmploymentRoleTests.cs
-src/Apideck.Test/Model/EmployeeJobsTests.cs
 src/Apideck.Test/Model/EmployeeManagerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
 src/Apideck.Test/Model/EmployeePayrollsTests.cs
@@ -1004,7 +1002,6 @@ src/Apideck.Test/Model/JobLinksTests.cs
 src/Apideck.Test/Model/JobSalaryTests.cs
 src/Apideck.Test/Model/JobStatusTests.cs
 src/Apideck.Test/Model/JobTests.cs
-src/Apideck.Test/Model/JobsFilterTests.cs
 src/Apideck.Test/Model/JournalEntryLineItemTests.cs
 src/Apideck.Test/Model/JournalEntryTests.cs
 src/Apideck.Test/Model/LeadEventTypeTests.cs
@@ -1127,6 +1124,7 @@ src/Apideck.Test/Model/TrackingItemTests.cs
 src/Apideck.Test/Model/UnauthorizedResponseTests.cs
 src/Apideck.Test/Model/UnexpectedErrorResponseTests.cs
 src/Apideck.Test/Model/UnifiedApiIdTests.cs
+src/Apideck.Test/Model/UnifiedFilePermissionsTests.cs
 src/Apideck.Test/Model/UnifiedFileTests.cs
 src/Apideck.Test/Model/UnifiedIdTests.cs
 src/Apideck.Test/Model/UnprocessableResponseTests.cs
@@ -1447,9 +1445,8 @@ src/Apideck/Model/EcommerceProductVariants.cs
 src/Apideck/Model/EcommerceStore.cs
 src/Apideck/Model/Email.cs
 src/Apideck/Model/Employee.cs
-src/Apideck/Model/EmployeeCompensations.cs
+src/Apideck/Model/EmployeeBankAccounts.cs
 src/Apideck/Model/EmployeeEmploymentRole.cs
-src/Apideck/Model/EmployeeJobs.cs
 src/Apideck/Model/EmployeeManager.cs
 src/Apideck/Model/EmployeePayroll.cs
 src/Apideck/Model/EmployeePayrolls.cs
@@ -1616,7 +1613,6 @@ src/Apideck/Model/Job.cs
 src/Apideck/Model/JobLinks.cs
 src/Apideck/Model/JobSalary.cs
 src/Apideck/Model/JobStatus.cs
-src/Apideck/Model/JobsFilter.cs
 src/Apideck/Model/JournalEntry.cs
 src/Apideck/Model/JournalEntryLineItem.cs
 src/Apideck/Model/Lead.cs
@@ -1740,6 +1736,7 @@ src/Apideck/Model/UnauthorizedResponse.cs
 src/Apideck/Model/UnexpectedErrorResponse.cs
 src/Apideck/Model/UnifiedApiId.cs
 src/Apideck/Model/UnifiedFile.cs
+src/Apideck/Model/UnifiedFilePermissions.cs
 src/Apideck/Model/UnifiedId.cs
 src/Apideck/Model/UnprocessableResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **LogoUrl** | **string** | Link to the full logo for the connector. | [optional] 
 **WebsiteUrl** | **string** | Link to the connector&#39;s website. | [optional] 
 **SignupUrl** | **string** | Link to the connector&#39;s signup page. | [optional] 
+**PartnerSignupUrl** | **string** | Link to the connector&#39;s partner program signup page. | [optional] 
 **FreeTrialAvailable** | **bool** | Set to &#x60;true&#x60; when the connector offers a free trial. Use &#x60;signup_url&#x60; to sign up for a free trial | [optional] 
 **AuthType** | **string** | Type of authorization used by the connector | [optional] [readonly] 
 **AuthOnly** | **bool** | Indicates whether a connector only supports authentication. In this case the connector is not mapped to a Unified API, but can be used with the Proxy API | [optional] [readonly] 

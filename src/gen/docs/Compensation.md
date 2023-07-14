@@ -4,12 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmployeeId** | **string** | A unique identifier for an object. | [readonly] 
-**NetPay** | **decimal** | The employee&#39;s net pay. Only available when payroll has been processed | [optional] 
-**GrossPay** | **decimal** | The employee&#39;s gross pay. Only available when payroll has been processed | [optional] 
-**Taxes** | [**List&lt;Tax&gt;**](Tax.md) | An array of employer and employee taxes for the pay period. | [optional] 
-**Deductions** | [**List&lt;Deduction&gt;**](Deduction.md) | An array of employee deductions for the pay period. | [optional] 
-**Benefits** | [**List&lt;Benefit&gt;**](Benefit.md) | An array of employee benefits for the pay period. | [optional] 
+**Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**JobId** | **string** | The ID of the job to which the compensation belongs. | [optional] [readonly] 
+**Rate** | **decimal** | The amount paid per payment unit. | [optional] 
+**PaymentUnit** | **PaymentUnit** |  | [optional] 
+**Currency** | **Currency** |  | [optional] 
+**FlsaStatus** | **string** | The FLSA status for this compensation. | [optional] 
+**EffectiveDate** | **string** | The date on which a change to an employee&#39;s compensation takes effect. | [optional] 
+**PaymentFrequency** | **string** | Frequency of employee compensation. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
