@@ -48,9 +48,30 @@ $ nuget install Apideck
 The module supports all Apideck API endpoints. For complete information about the API, head
 to the [docs][2].
 
+### Create new project
 
-## Example
+1. Open your preferred integrated development environment (IDE), such as Visual Studio or Visual Studio Code.
 
+2. Create a new .NET project:
+
+- In Visual Studio: Go to "File" -> "New" -> "Project". Select the appropriate project template (e.g., Console App, Web App, etc.), provide a name for your project, and click "Create".
+- In Visual Studio Code: Open a terminal and navigate to the desired directory where you want to create your project. Use the following command: `dotnet new console -n YourProjectName`, replacing "YourProjectName" with the desired name for your project.
+
+3. Once the project is created, you need to add the required NuGet packages. You can do this using the NuGet Package Manager in Visual Studio or by running the following commands in the terminal (in the project directory):
+
+```bash
+dotnet add package Apideck
+```
+
+or install with Nuget
+
+```bash
+nuget install Apideck
+```
+
+4. After adding the packages, you can replace the default code in the automatically generated Program.cs file with the desired code:
+
+Example:
 Retrieving a list of all companies.
 
 ### Example
@@ -59,40 +80,46 @@ using Apideck.Api;
 using Apideck.Client;
 using Apideck.Model;
 
-namespace Example
-{
-    public class CompaniesAllExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            // Configure API key authorization: apiKey
-            config.AddApiKey("Authorization", "API_KEY");
-            config.AddApiKeyPrefix("Authorization", "Bearer");
+namespace Example {
+  public class CompaniesAllExample   {
+    public static void Main()   {
+      Configuration config = new Configuration();
+      // Configure API key authorization: apiKey
+      config.AddApiKey("Authorization", "API_KEY");
+      config.AddApiKeyPrefix("Authorization", "Bearer");
 
-            var apiInstance = new CrmApi(config);
-            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "CONSUMER_ID";  // string | ID of the consumer which you want to get or push data from (optional)
-            var appId = "APP_ID";  // string | The ID of your Unify application (optional)
-            var serviceId = "salesforce";  // string | Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
+      var apiInstance = new CrmApi(config);
+      var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+      var consumerId = "CONSUMER_ID";  // string | ID of the consumer which you want to get or push data from (optional)
+      var appId = "APP_ID";  // string | The ID of your Unify application (optional)
+      var serviceId = "salesforce";  // string | Provide the service id you want to call (e.g., pipedrive). [See the full list in the connector section.](#section/Connectors) Only needed when a consumer has activated multiple integrations for a Unified API. (optional)
 
-            try
-            {
-                Console.WriteLine("Calling Apideck");
-                // List companies
-                GetCompaniesResponse result = apiInstance.CompaniesAll(raw, consumerId, appId, serviceId);
-                Console.WriteLine("Success", result);
-            }
-            catch (ApiException e)
-            {
-                Console.WriteLine("Exception when calling CrmApi.CompaniesAll: " + e.Message);
-                Console.WriteLine("Status Code: " + e.ErrorCode);
-                Console.WriteLine("Detail: " + e.ErrorContent);
-            }
-        }
+      try {
+        Console.WriteLine("Calling Apideck");
+        // List companies
+        GetCompaniesResponse result = apiInstance.CompaniesAll(raw, consumerId, appId, serviceId);
+        Console.WriteLine("Success", result);
+      }
+      catch (ApiException e) {
+        Console.WriteLine("Exception when calling CrmApi.CompaniesAll: " + e.Message);
+        Console.WriteLine("Status Code: " + e.ErrorCode);
+        Console.WriteLine("Detail: " + e.ErrorContent);
+      }
     }
+  }
 }
 ```
+
+- In Visual Studio: Open the Program.cs file in the Solution Explorer and replace its content with the code you provided.
+- In Visual Studio Code: Open the Program.cs file and replace its content with the code you provided.
+
+5. Make sure to replace "API_KEY", "CONSUMER_ID", "APP_ID", and "salesforce" with the actual values provided by Apideck.
+The API key represents your authentication credentials, while the other variables provide additional context for the API calls.
+
+6. Once you've updated the code, you can build and run your project. In Visual Studio, you can simply press F5 or click the "Start" button. In Visual Studio Code, use the following command in the terminal: dotnet run.
+
+7. The application will execute, and the output will be displayed in the console window. If successful, you should see the message "Calling Apideck" and, upon completion, a success message or an exception message if an error occurs.
+
 
 <a name="documentation-for-api-endpoints"></a>
 ## Apideck Unified Apis

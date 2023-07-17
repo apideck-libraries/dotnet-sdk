@@ -220,7 +220,13 @@ namespace Apideck.Model
             /// Enum OtherLiability for value: other_liability
             /// </summary>
             [EnumMember(Value = "other_liability")]
-            OtherLiability = 19
+            OtherLiability = 19,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 20
 
         }
 
