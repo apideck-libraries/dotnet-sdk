@@ -116,7 +116,7 @@ namespace Apideck.Model
         /// <param name="employmentStatus">employmentStatus.</param>
         /// <param name="employmentRole">employmentRole.</param>
         /// <param name="manager">manager.</param>
-        /// <param name="directReports">The direct reports refer to the individuals who report directly to a person in the organizational hierarchy..</param>
+        /// <param name="directReports">Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee..</param>
         /// <param name="socialSecurityNumber">A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions..</param>
         /// <param name="birthday">The date of birth of the person..</param>
         /// <param name="deceasedOn">The date the person deceased..</param>
@@ -385,9 +385,9 @@ namespace Apideck.Model
         public EmployeeManager Manager { get; set; }
 
         /// <summary>
-        /// The direct reports refer to the individuals who report directly to a person in the organizational hierarchy.
+        /// Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee.
         /// </summary>
-        /// <value>The direct reports refer to the individuals who report directly to a person in the organizational hierarchy.</value>
+        /// <value>Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee.</value>
         [DataMember(Name = "direct_reports", EmitDefaultValue = true)]
         public List<string> DirectReports { get; set; }
 
