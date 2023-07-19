@@ -57,68 +57,52 @@ namespace Apideck.Test.Model
 
 
         /// <summary>
-        /// Test the property 'Id'
+        /// Test the property 'EmployeeId'
         /// </summary>
         [Fact]
-        public void IdTest()
+        public void EmployeeIdTest()
         {
-            // TODO unit test for the property 'Id'
+            // TODO unit test for the property 'EmployeeId'
         }
         /// <summary>
-        /// Test the property 'JobId'
+        /// Test the property 'NetPay'
         /// </summary>
         [Fact]
-        public void JobIdTest()
+        public void NetPayTest()
         {
-            // TODO unit test for the property 'JobId'
+            // TODO unit test for the property 'NetPay'
         }
         /// <summary>
-        /// Test the property 'Rate'
+        /// Test the property 'GrossPay'
         /// </summary>
         [Fact]
-        public void RateTest()
+        public void GrossPayTest()
         {
-            // TODO unit test for the property 'Rate'
+            // TODO unit test for the property 'GrossPay'
         }
         /// <summary>
-        /// Test the property 'PaymentUnit'
+        /// Test the property 'Taxes'
         /// </summary>
         [Fact]
-        public void PaymentUnitTest()
+        public void TaxesTest()
         {
-            // TODO unit test for the property 'PaymentUnit'
+            // TODO unit test for the property 'Taxes'
         }
         /// <summary>
-        /// Test the property 'Currency'
+        /// Test the property 'Deductions'
         /// </summary>
         [Fact]
-        public void CurrencyTest()
+        public void DeductionsTest()
         {
-            // TODO unit test for the property 'Currency'
+            // TODO unit test for the property 'Deductions'
         }
         /// <summary>
-        /// Test the property 'FlsaStatus'
+        /// Test the property 'Benefits'
         /// </summary>
         [Fact]
-        public void FlsaStatusTest()
+        public void BenefitsTest()
         {
-            // TODO unit test for the property 'FlsaStatus'
-        }
-        /// <summary>
-        /// Test the property 'EffectiveDate'
-        /// </summary>
-        [Fact]
-        public void EffectiveDateTest()
-        {
-            // TODO unit test for the property 'EffectiveDate'
-        }
-        /// <summary>
-        /// Test the property 'PaymentFrequency'
-        /// </summary>
-        [Fact]
-        public void PaymentFrequencyTest()
-        {
-            // TODO unit test for the property 'PaymentFrequency'
+            // TODO unit test for the property 'Benefits'
         }
 
     }

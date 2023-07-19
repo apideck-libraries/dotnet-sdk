@@ -149,7 +149,7 @@ namespace Apideck.Model
         /// <param name="tags">tags.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="deleted">deleted.</param>
-        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), EmployeeTeam team = default(EmployeeTeam), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<Job> jobs = default(List<Job>), List<Compensation> compensations = default(List<Compensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), List<EmployeeBankAccounts> bankAccounts = default(List<EmployeeBankAccounts>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
+        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -335,7 +335,7 @@ namespace Apideck.Model
         /// Gets or Sets Team
         /// </summary>
         [DataMember(Name = "team", EmitDefaultValue = true)]
-        public EmployeeTeam Team { get; set; }
+        public Team Team { get; set; }
 
         /// <summary>
         /// The unique identifier of the company.
@@ -492,13 +492,13 @@ namespace Apideck.Model
         /// Gets or Sets Jobs
         /// </summary>
         [DataMember(Name = "jobs", EmitDefaultValue = false)]
-        public List<Job> Jobs { get; set; }
+        public List<EmployeeJob> Jobs { get; set; }
 
         /// <summary>
         /// Gets or Sets Compensations
         /// </summary>
         [DataMember(Name = "compensations", EmitDefaultValue = false)]
-        public List<Compensation> Compensations { get; set; }
+        public List<EmployeeCompensation> Compensations { get; set; }
 
         /// <summary>
         /// Indicates if the employee works from a remote location.
@@ -535,13 +535,13 @@ namespace Apideck.Model
         /// Gets or Sets SocialLinks
         /// </summary>
         [DataMember(Name = "social_links", EmitDefaultValue = false)]
-        public List<ApplicantSocialLinks> SocialLinks { get; set; }
+        public List<SocialLink> SocialLinks { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAccounts
         /// </summary>
         [DataMember(Name = "bank_accounts", EmitDefaultValue = false)]
-        public List<EmployeeBankAccounts> BankAccounts { get; set; }
+        public List<BankAccount> BankAccounts { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxCode
