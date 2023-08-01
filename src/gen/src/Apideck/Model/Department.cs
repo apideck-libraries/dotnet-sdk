@@ -63,7 +63,7 @@ namespace Apideck.Model
         /// Parent ID
         /// </summary>
         /// <value>Parent ID</value>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        [DataMember(Name = "parent_id", EmitDefaultValue = true)]
         public string ParentId { get; private set; }
 
         /// <summary>

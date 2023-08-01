@@ -51,7 +51,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Schedules
         /// </summary>
-        [DataMember(Name = "schedules", EmitDefaultValue = false)]
+        [DataMember(Name = "schedules", EmitDefaultValue = true)]
         public List<Schedule> Schedules { get; set; }
 
         /// <summary>

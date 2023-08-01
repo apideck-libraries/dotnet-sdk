@@ -79,7 +79,7 @@ namespace Apideck.Model
         /// Id of the employee
         /// </summary>
         /// <value>Id of the employee</value>
-        [DataMember(Name = "employee_id", EmitDefaultValue = false)]
+        [DataMember(Name = "employee_id", EmitDefaultValue = true)]
         public string EmployeeId { get; set; }
 
         /// <summary>

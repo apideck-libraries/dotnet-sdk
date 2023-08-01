@@ -43,7 +43,7 @@ namespace Apideck.Model
         /// <param name="employeeTaxes">The total amount of employee paid taxes for the payroll..</param>
         /// <param name="employerBenefitContributions">The total amount of company contributed benefits for the payroll..</param>
         /// <param name="employeeBenefitDeductions">The total amount of employee deducted benefits for the payroll..</param>
-        public PayrollTotals(decimal companyDebit = default(decimal), decimal taxDebit = default(decimal), decimal checkAmount = default(decimal), decimal netPay = default(decimal), decimal grossPay = default(decimal), decimal employerTaxes = default(decimal), decimal employeeTaxes = default(decimal), decimal employerBenefitContributions = default(decimal), decimal employeeBenefitDeductions = default(decimal))
+        public PayrollTotals(decimal? companyDebit = default(decimal?), decimal? taxDebit = default(decimal?), decimal? checkAmount = default(decimal?), decimal? netPay = default(decimal?), decimal grossPay = default(decimal), decimal? employerTaxes = default(decimal?), decimal? employeeTaxes = default(decimal?), decimal? employerBenefitContributions = default(decimal?), decimal? employeeBenefitDeductions = default(decimal?))
         {
             this.CompanyDebit = companyDebit;
             this.TaxDebit = taxDebit;
@@ -60,29 +60,29 @@ namespace Apideck.Model
         /// The total company debit for the payroll.
         /// </summary>
         /// <value>The total company debit for the payroll.</value>
-        [DataMember(Name = "company_debit", EmitDefaultValue = false)]
-        public decimal CompanyDebit { get; set; }
+        [DataMember(Name = "company_debit", EmitDefaultValue = true)]
+        public decimal? CompanyDebit { get; set; }
 
         /// <summary>
         /// The total tax debit for the payroll.
         /// </summary>
         /// <value>The total tax debit for the payroll.</value>
-        [DataMember(Name = "tax_debit", EmitDefaultValue = false)]
-        public decimal TaxDebit { get; set; }
+        [DataMember(Name = "tax_debit", EmitDefaultValue = true)]
+        public decimal? TaxDebit { get; set; }
 
         /// <summary>
         /// The total check amount for the payroll.
         /// </summary>
         /// <value>The total check amount for the payroll.</value>
-        [DataMember(Name = "check_amount", EmitDefaultValue = false)]
-        public decimal CheckAmount { get; set; }
+        [DataMember(Name = "check_amount", EmitDefaultValue = true)]
+        public decimal? CheckAmount { get; set; }
 
         /// <summary>
         /// The net pay amount for the payroll.
         /// </summary>
         /// <value>The net pay amount for the payroll.</value>
-        [DataMember(Name = "net_pay", EmitDefaultValue = false)]
-        public decimal NetPay { get; set; }
+        [DataMember(Name = "net_pay", EmitDefaultValue = true)]
+        public decimal? NetPay { get; set; }
 
         /// <summary>
         /// The gross pay amount for the payroll.
@@ -95,29 +95,29 @@ namespace Apideck.Model
         /// The total amount of employer paid taxes for the payroll.
         /// </summary>
         /// <value>The total amount of employer paid taxes for the payroll.</value>
-        [DataMember(Name = "employer_taxes", EmitDefaultValue = false)]
-        public decimal EmployerTaxes { get; set; }
+        [DataMember(Name = "employer_taxes", EmitDefaultValue = true)]
+        public decimal? EmployerTaxes { get; set; }
 
         /// <summary>
         /// The total amount of employee paid taxes for the payroll.
         /// </summary>
         /// <value>The total amount of employee paid taxes for the payroll.</value>
-        [DataMember(Name = "employee_taxes", EmitDefaultValue = false)]
-        public decimal EmployeeTaxes { get; set; }
+        [DataMember(Name = "employee_taxes", EmitDefaultValue = true)]
+        public decimal? EmployeeTaxes { get; set; }
 
         /// <summary>
         /// The total amount of company contributed benefits for the payroll.
         /// </summary>
         /// <value>The total amount of company contributed benefits for the payroll.</value>
-        [DataMember(Name = "employer_benefit_contributions", EmitDefaultValue = false)]
-        public decimal EmployerBenefitContributions { get; set; }
+        [DataMember(Name = "employer_benefit_contributions", EmitDefaultValue = true)]
+        public decimal? EmployerBenefitContributions { get; set; }
 
         /// <summary>
         /// The total amount of employee deducted benefits for the payroll.
         /// </summary>
         /// <value>The total amount of employee deducted benefits for the payroll.</value>
-        [DataMember(Name = "employee_benefit_deductions", EmitDefaultValue = false)]
-        public decimal EmployeeBenefitDeductions { get; set; }
+        [DataMember(Name = "employee_benefit_deductions", EmitDefaultValue = true)]
+        public decimal? EmployeeBenefitDeductions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -173,19 +173,23 @@ namespace Apideck.Model
             return 
                 (
                     this.CompanyDebit == input.CompanyDebit ||
-                    this.CompanyDebit.Equals(input.CompanyDebit)
+                    (this.CompanyDebit != null &&
+                    this.CompanyDebit.Equals(input.CompanyDebit))
                 ) && 
                 (
                     this.TaxDebit == input.TaxDebit ||
-                    this.TaxDebit.Equals(input.TaxDebit)
+                    (this.TaxDebit != null &&
+                    this.TaxDebit.Equals(input.TaxDebit))
                 ) && 
                 (
                     this.CheckAmount == input.CheckAmount ||
-                    this.CheckAmount.Equals(input.CheckAmount)
+                    (this.CheckAmount != null &&
+                    this.CheckAmount.Equals(input.CheckAmount))
                 ) && 
                 (
                     this.NetPay == input.NetPay ||
-                    this.NetPay.Equals(input.NetPay)
+                    (this.NetPay != null &&
+                    this.NetPay.Equals(input.NetPay))
                 ) && 
                 (
                     this.GrossPay == input.GrossPay ||
@@ -193,19 +197,23 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.EmployerTaxes == input.EmployerTaxes ||
-                    this.EmployerTaxes.Equals(input.EmployerTaxes)
+                    (this.EmployerTaxes != null &&
+                    this.EmployerTaxes.Equals(input.EmployerTaxes))
                 ) && 
                 (
                     this.EmployeeTaxes == input.EmployeeTaxes ||
-                    this.EmployeeTaxes.Equals(input.EmployeeTaxes)
+                    (this.EmployeeTaxes != null &&
+                    this.EmployeeTaxes.Equals(input.EmployeeTaxes))
                 ) && 
                 (
                     this.EmployerBenefitContributions == input.EmployerBenefitContributions ||
-                    this.EmployerBenefitContributions.Equals(input.EmployerBenefitContributions)
+                    (this.EmployerBenefitContributions != null &&
+                    this.EmployerBenefitContributions.Equals(input.EmployerBenefitContributions))
                 ) && 
                 (
                     this.EmployeeBenefitDeductions == input.EmployeeBenefitDeductions ||
-                    this.EmployeeBenefitDeductions.Equals(input.EmployeeBenefitDeductions)
+                    (this.EmployeeBenefitDeductions != null &&
+                    this.EmployeeBenefitDeductions.Equals(input.EmployeeBenefitDeductions))
                 );
         }
 
@@ -218,15 +226,39 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.CompanyDebit.GetHashCode();
-                hashCode = (hashCode * 59) + this.TaxDebit.GetHashCode();
-                hashCode = (hashCode * 59) + this.CheckAmount.GetHashCode();
-                hashCode = (hashCode * 59) + this.NetPay.GetHashCode();
+                if (this.CompanyDebit != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyDebit.GetHashCode();
+                }
+                if (this.TaxDebit != null)
+                {
+                    hashCode = (hashCode * 59) + this.TaxDebit.GetHashCode();
+                }
+                if (this.CheckAmount != null)
+                {
+                    hashCode = (hashCode * 59) + this.CheckAmount.GetHashCode();
+                }
+                if (this.NetPay != null)
+                {
+                    hashCode = (hashCode * 59) + this.NetPay.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.GrossPay.GetHashCode();
-                hashCode = (hashCode * 59) + this.EmployerTaxes.GetHashCode();
-                hashCode = (hashCode * 59) + this.EmployeeTaxes.GetHashCode();
-                hashCode = (hashCode * 59) + this.EmployerBenefitContributions.GetHashCode();
-                hashCode = (hashCode * 59) + this.EmployeeBenefitDeductions.GetHashCode();
+                if (this.EmployerTaxes != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployerTaxes.GetHashCode();
+                }
+                if (this.EmployeeTaxes != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployeeTaxes.GetHashCode();
+                }
+                if (this.EmployerBenefitContributions != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployerBenefitContributions.GetHashCode();
+                }
+                if (this.EmployeeBenefitDeductions != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployeeBenefitDeductions.GetHashCode();
+                }
                 return hashCode;
             }
         }

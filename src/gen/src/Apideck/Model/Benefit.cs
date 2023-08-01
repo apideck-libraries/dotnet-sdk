@@ -37,7 +37,7 @@ namespace Apideck.Model
         /// <param name="name">The name of the benefit..</param>
         /// <param name="employeeDeduction">The amount deducted for benefit..</param>
         /// <param name="employerContribution">The amount of employer contribution..</param>
-        public Benefit(string name = default(string), decimal employeeDeduction = default(decimal), decimal employerContribution = default(decimal))
+        public Benefit(string name = default(string), decimal? employeeDeduction = default(decimal?), decimal? employerContribution = default(decimal?))
         {
             this.Name = name;
             this.EmployeeDeduction = employeeDeduction;
@@ -48,22 +48,22 @@ namespace Apideck.Model
         /// The name of the benefit.
         /// </summary>
         /// <value>The name of the benefit.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// The amount deducted for benefit.
         /// </summary>
         /// <value>The amount deducted for benefit.</value>
-        [DataMember(Name = "employee_deduction", EmitDefaultValue = false)]
-        public decimal EmployeeDeduction { get; set; }
+        [DataMember(Name = "employee_deduction", EmitDefaultValue = true)]
+        public decimal? EmployeeDeduction { get; set; }
 
         /// <summary>
         /// The amount of employer contribution.
         /// </summary>
         /// <value>The amount of employer contribution.</value>
-        [DataMember(Name = "employer_contribution", EmitDefaultValue = false)]
-        public decimal EmployerContribution { get; set; }
+        [DataMember(Name = "employer_contribution", EmitDefaultValue = true)]
+        public decimal? EmployerContribution { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -118,11 +118,13 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.EmployeeDeduction == input.EmployeeDeduction ||
-                    this.EmployeeDeduction.Equals(input.EmployeeDeduction)
+                    (this.EmployeeDeduction != null &&
+                    this.EmployeeDeduction.Equals(input.EmployeeDeduction))
                 ) && 
                 (
                     this.EmployerContribution == input.EmployerContribution ||
-                    this.EmployerContribution.Equals(input.EmployerContribution)
+                    (this.EmployerContribution != null &&
+                    this.EmployerContribution.Equals(input.EmployerContribution))
                 );
         }
 
@@ -139,8 +141,14 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.EmployeeDeduction.GetHashCode();
-                hashCode = (hashCode * 59) + this.EmployerContribution.GetHashCode();
+                if (this.EmployeeDeduction != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployeeDeduction.GetHashCode();
+                }
+                if (this.EmployerContribution != null)
+                {
+                    hashCode = (hashCode * 59) + this.EmployerContribution.GetHashCode();
+                }
                 return hashCode;
             }
         }

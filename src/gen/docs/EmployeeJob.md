@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Role** | **string** | The position and responsibilities of the person within the organization. | [optional] 
 **StartDate** | **DateTime?** | The date on which the employee starts working in their current job role. | [optional] 
 **EndDate** | **DateTime?** | The date on which the employee leaves or is expected to leave their current job role. | [optional] 
-**CompensationRate** | **decimal** | The rate of pay for the employee in their current job role. | [optional] 
+**CompensationRate** | **decimal?** | The rate of pay for the employee in their current job role. | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **PaymentUnit** | **PaymentUnit** |  | [optional] 
 **HiredAt** | **DateTime?** | The date on which the employee was hired by the organization | [optional] 

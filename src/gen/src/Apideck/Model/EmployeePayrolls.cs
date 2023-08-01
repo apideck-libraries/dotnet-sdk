@@ -51,7 +51,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Payrolls
         /// </summary>
-        [DataMember(Name = "payrolls", EmitDefaultValue = false)]
+        [DataMember(Name = "payrolls", EmitDefaultValue = true)]
         public List<Payroll> Payrolls { get; set; }
 
         /// <summary>

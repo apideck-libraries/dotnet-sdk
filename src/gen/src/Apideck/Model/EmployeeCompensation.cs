@@ -87,7 +87,7 @@ namespace Apideck.Model
         /// The FLSA status for this compensation.
         /// </summary>
         /// <value>The FLSA status for this compensation.</value>
-        [DataMember(Name = "flsa_status", EmitDefaultValue = false)]
+        [DataMember(Name = "flsa_status", EmitDefaultValue = true)]
         public FlsaStatusEnum? FlsaStatus { get; set; }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Apideck.Model
         /// <param name="flsaStatus">The FLSA status for this compensation..</param>
         /// <param name="effectiveDate">The date on which a change to an employee&#39;s compensation takes effect..</param>
         /// <param name="paymentFrequency">paymentFrequency.</param>
-        public EmployeeCompensation(decimal rate = default(decimal), PaymentUnit? paymentUnit = default(PaymentUnit?), Currency? currency = default(Currency?), FlsaStatusEnum? flsaStatus = default(FlsaStatusEnum?), string effectiveDate = default(string), PaymentFrequency? paymentFrequency = default(PaymentFrequency?))
+        public EmployeeCompensation(decimal? rate = default(decimal?), PaymentUnit? paymentUnit = default(PaymentUnit?), Currency? currency = default(Currency?), FlsaStatusEnum? flsaStatus = default(FlsaStatusEnum?), string effectiveDate = default(string), PaymentFrequency? paymentFrequency = default(PaymentFrequency?))
         {
             this.Rate = rate;
             this.PaymentUnit = paymentUnit;
@@ -133,7 +133,7 @@ namespace Apideck.Model
         /// The ID of the job to which the compensation belongs.
         /// </summary>
         /// <value>The ID of the job to which the compensation belongs.</value>
-        [DataMember(Name = "job_id", EmitDefaultValue = false)]
+        [DataMember(Name = "job_id", EmitDefaultValue = true)]
         public string JobId { get; private set; }
 
         /// <summary>
@@ -148,14 +148,14 @@ namespace Apideck.Model
         /// The amount paid per payment unit.
         /// </summary>
         /// <value>The amount paid per payment unit.</value>
-        [DataMember(Name = "rate", EmitDefaultValue = false)]
-        public decimal Rate { get; set; }
+        [DataMember(Name = "rate", EmitDefaultValue = true)]
+        public decimal? Rate { get; set; }
 
         /// <summary>
         /// The date on which a change to an employee&#39;s compensation takes effect.
         /// </summary>
         /// <value>The date on which a change to an employee&#39;s compensation takes effect.</value>
-        [DataMember(Name = "effective_date", EmitDefaultValue = false)]
+        [DataMember(Name = "effective_date", EmitDefaultValue = true)]
         public string EffectiveDate { get; set; }
 
         /// <summary>
@@ -221,7 +221,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Rate == input.Rate ||
-                    this.Rate.Equals(input.Rate)
+                    (this.Rate != null &&
+                    this.Rate.Equals(input.Rate))
                 ) && 
                 (
                     this.PaymentUnit == input.PaymentUnit ||
@@ -263,7 +264,10 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.JobId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Rate.GetHashCode();
+                if (this.Rate != null)
+                {
+                    hashCode = (hashCode * 59) + this.Rate.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.PaymentUnit.GetHashCode();
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 hashCode = (hashCode * 59) + this.FlsaStatus.GetHashCode();

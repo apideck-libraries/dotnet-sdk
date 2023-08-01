@@ -44,7 +44,7 @@ namespace Apideck.Model
         /// <param name="taxes">An array of employer and employee taxes for the pay period..</param>
         /// <param name="deductions">An array of employee deductions for the pay period..</param>
         /// <param name="benefits">An array of employee benefits for the pay period..</param>
-        public Compensation(decimal netPay = default(decimal), decimal grossPay = default(decimal), List<Tax> taxes = default(List<Tax>), List<Deduction> deductions = default(List<Deduction>), List<Benefit> benefits = default(List<Benefit>))
+        public Compensation(decimal? netPay = default(decimal?), decimal? grossPay = default(decimal?), List<Tax> taxes = default(List<Tax>), List<Deduction> deductions = default(List<Deduction>), List<Benefit> benefits = default(List<Benefit>))
         {
             this.NetPay = netPay;
             this.GrossPay = grossPay;
@@ -72,35 +72,35 @@ namespace Apideck.Model
         /// The employee&#39;s net pay. Only available when payroll has been processed
         /// </summary>
         /// <value>The employee&#39;s net pay. Only available when payroll has been processed</value>
-        [DataMember(Name = "net_pay", EmitDefaultValue = false)]
-        public decimal NetPay { get; set; }
+        [DataMember(Name = "net_pay", EmitDefaultValue = true)]
+        public decimal? NetPay { get; set; }
 
         /// <summary>
         /// The employee&#39;s gross pay. Only available when payroll has been processed
         /// </summary>
         /// <value>The employee&#39;s gross pay. Only available when payroll has been processed</value>
-        [DataMember(Name = "gross_pay", EmitDefaultValue = false)]
-        public decimal GrossPay { get; set; }
+        [DataMember(Name = "gross_pay", EmitDefaultValue = true)]
+        public decimal? GrossPay { get; set; }
 
         /// <summary>
         /// An array of employer and employee taxes for the pay period.
         /// </summary>
         /// <value>An array of employer and employee taxes for the pay period.</value>
-        [DataMember(Name = "taxes", EmitDefaultValue = false)]
+        [DataMember(Name = "taxes", EmitDefaultValue = true)]
         public List<Tax> Taxes { get; set; }
 
         /// <summary>
         /// An array of employee deductions for the pay period.
         /// </summary>
         /// <value>An array of employee deductions for the pay period.</value>
-        [DataMember(Name = "deductions", EmitDefaultValue = false)]
+        [DataMember(Name = "deductions", EmitDefaultValue = true)]
         public List<Deduction> Deductions { get; set; }
 
         /// <summary>
         /// An array of employee benefits for the pay period.
         /// </summary>
         /// <value>An array of employee benefits for the pay period.</value>
-        [DataMember(Name = "benefits", EmitDefaultValue = false)]
+        [DataMember(Name = "benefits", EmitDefaultValue = true)]
         public List<Benefit> Benefits { get; set; }
 
         /// <summary>
@@ -159,11 +159,13 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.NetPay == input.NetPay ||
-                    this.NetPay.Equals(input.NetPay)
+                    (this.NetPay != null &&
+                    this.NetPay.Equals(input.NetPay))
                 ) && 
                 (
                     this.GrossPay == input.GrossPay ||
-                    this.GrossPay.Equals(input.GrossPay)
+                    (this.GrossPay != null &&
+                    this.GrossPay.Equals(input.GrossPay))
                 ) && 
                 (
                     this.Taxes == input.Taxes ||
@@ -198,8 +200,14 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.EmployeeId.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.NetPay.GetHashCode();
-                hashCode = (hashCode * 59) + this.GrossPay.GetHashCode();
+                if (this.NetPay != null)
+                {
+                    hashCode = (hashCode * 59) + this.NetPay.GetHashCode();
+                }
+                if (this.GrossPay != null)
+                {
+                    hashCode = (hashCode * 59) + this.GrossPay.GetHashCode();
+                }
                 if (this.Taxes != null)
                 {
                     hashCode = (hashCode * 59) + this.Taxes.GetHashCode();

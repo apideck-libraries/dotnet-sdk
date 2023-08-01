@@ -491,13 +491,13 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Jobs
         /// </summary>
-        [DataMember(Name = "jobs", EmitDefaultValue = false)]
+        [DataMember(Name = "jobs", EmitDefaultValue = true)]
         public List<EmployeeJob> Jobs { get; set; }
 
         /// <summary>
         /// Gets or Sets Compensations
         /// </summary>
-        [DataMember(Name = "compensations", EmitDefaultValue = false)]
+        [DataMember(Name = "compensations", EmitDefaultValue = true)]
         public List<EmployeeCompensation> Compensations { get; set; }
 
         /// <summary>

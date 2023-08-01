@@ -51,7 +51,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Jobs
         /// </summary>
-        [DataMember(Name = "jobs", EmitDefaultValue = false)]
+        [DataMember(Name = "jobs", EmitDefaultValue = true)]
         public List<HrisJob> Jobs { get; set; }
 
         /// <summary>

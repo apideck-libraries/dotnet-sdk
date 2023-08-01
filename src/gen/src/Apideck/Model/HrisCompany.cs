@@ -123,19 +123,19 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets LegalName
         /// </summary>
-        [DataMember(Name = "legal_name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "legal_name", IsRequired = true, EmitDefaultValue = true)]
         public string LegalName { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplayName
         /// </summary>
-        [DataMember(Name = "display_name", EmitDefaultValue = false)]
+        [DataMember(Name = "display_name", EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets Subdomain
         /// </summary>
-        [DataMember(Name = "subdomain", EmitDefaultValue = false)]
+        [DataMember(Name = "subdomain", EmitDefaultValue = true)]
         public string Subdomain { get; set; }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets DebtorId
         /// </summary>
-        [DataMember(Name = "debtor_id", EmitDefaultValue = false)]
+        [DataMember(Name = "debtor_id", EmitDefaultValue = true)]
         public string DebtorId { get; set; }
 
         /// <summary>

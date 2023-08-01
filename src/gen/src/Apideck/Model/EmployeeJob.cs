@@ -56,7 +56,7 @@ namespace Apideck.Model
         /// <param name="hiredAt">The date on which the employee was hired by the organization.</param>
         /// <param name="isPrimary">Indicates whether this the employee&#39;s primary job..</param>
         /// <param name="location">location.</param>
-        public EmployeeJob(string title = default(string), string role = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), decimal compensationRate = default(decimal), Currency? currency = default(Currency?), PaymentUnit? paymentUnit = default(PaymentUnit?), DateTime? hiredAt = default(DateTime?), bool? isPrimary = default(bool?), Address location = default(Address))
+        public EmployeeJob(string title = default(string), string role = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), decimal? compensationRate = default(decimal?), Currency? currency = default(Currency?), PaymentUnit? paymentUnit = default(PaymentUnit?), DateTime? hiredAt = default(DateTime?), bool? isPrimary = default(bool?), Address location = default(Address))
         {
             this.Title = title;
             this.Role = role;
@@ -134,8 +134,8 @@ namespace Apideck.Model
         /// The rate of pay for the employee in their current job role.
         /// </summary>
         /// <value>The rate of pay for the employee in their current job role.</value>
-        [DataMember(Name = "compensation_rate", EmitDefaultValue = false)]
-        public decimal CompensationRate { get; set; }
+        [DataMember(Name = "compensation_rate", EmitDefaultValue = true)]
+        public decimal? CompensationRate { get; set; }
 
         /// <summary>
         /// The date on which the employee was hired by the organization
@@ -245,7 +245,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.CompensationRate == input.CompensationRate ||
-                    this.CompensationRate.Equals(input.CompensationRate)
+                    (this.CompensationRate != null &&
+                    this.CompensationRate.Equals(input.CompensationRate))
                 ) && 
                 (
                     this.Currency == input.Currency ||
@@ -305,7 +306,10 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.CompensationRate.GetHashCode();
+                if (this.CompensationRate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompensationRate.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 hashCode = (hashCode * 59) + this.PaymentUnit.GetHashCode();
                 if (this.HiredAt != null)
