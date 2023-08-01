@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **Language** | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 **AccountingByRow** | **bool?** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
 **BankAccount** | [**BankAccount**](BankAccount.md) |  | [optional] 
+**LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

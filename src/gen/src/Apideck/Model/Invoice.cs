@@ -188,8 +188,9 @@ namespace Apideck.Model
         /// <param name="language">language code according to ISO 639-1. For the United States - EN.</param>
         /// <param name="accountingByRow">Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row..</param>
         /// <param name="bankAccount">bankAccount.</param>
+        /// <param name="ledgerAccount">ledgerAccount.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), string rowVersion = default(string))
+        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
         {
             this.Type = type;
             this.Number = number;
@@ -223,6 +224,7 @@ namespace Apideck.Model
             this.Language = language;
             this.AccountingByRow = accountingByRow;
             this.BankAccount = bankAccount;
+            this.LedgerAccount = ledgerAccount;
             this.RowVersion = rowVersion;
         }
 
@@ -457,6 +459,12 @@ namespace Apideck.Model
         public BankAccount BankAccount { get; set; }
 
         /// <summary>
+        /// Gets or Sets LedgerAccount
+        /// </summary>
+        [DataMember(Name = "ledger_account", EmitDefaultValue = true)]
+        public LinkedLedgerAccount LedgerAccount { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -565,6 +573,7 @@ namespace Apideck.Model
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  AccountingByRow: ").Append(AccountingByRow).Append("\n");
             sb.Append("  BankAccount: ").Append(BankAccount).Append("\n");
+            sb.Append("  LedgerAccount: ").Append(LedgerAccount).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -773,6 +782,11 @@ namespace Apideck.Model
                     this.BankAccount.Equals(input.BankAccount))
                 ) && 
                 (
+                    this.LedgerAccount == input.LedgerAccount ||
+                    (this.LedgerAccount != null &&
+                    this.LedgerAccount.Equals(input.LedgerAccount))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -931,6 +945,10 @@ namespace Apideck.Model
                 if (this.BankAccount != null)
                 {
                     hashCode = (hashCode * 59) + this.BankAccount.GetHashCode();
+                }
+                if (this.LedgerAccount != null)
+                {
+                    hashCode = (hashCode * 59) + this.LedgerAccount.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

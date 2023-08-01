@@ -329,6 +329,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'BankAccount'
         }
         /// <summary>
+        /// Test the property 'LedgerAccount'
+        /// </summary>
+        [Fact]
+        public void LedgerAccountTest()
+        {
+            // TODO unit test for the property 'LedgerAccount'
+        }
+        /// <summary>
         /// Test the property 'RowVersion'
         /// </summary>
         [Fact]
