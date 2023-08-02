@@ -193,6 +193,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'ExpenseAccount'
         }
         /// <summary>
+        /// Test the property 'TrackingCategory'
+        /// </summary>
+        [Fact]
+        public void TrackingCategoryTest()
+        {
+            // TODO unit test for the property 'TrackingCategory'
+        }
+        /// <summary>
         /// Test the property 'Active'
         /// </summary>
         [Fact]

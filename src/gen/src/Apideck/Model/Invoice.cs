@@ -178,6 +178,7 @@ namespace Apideck.Model
         /// <param name="balance">Balance of invoice due..</param>
         /// <param name="deposit">Amount of deposit made to this invoice..</param>
         /// <param name="customerMemo">Customer memo.</param>
+        /// <param name="trackingCategory">trackingCategory.</param>
         /// <param name="lineItems">lineItems.</param>
         /// <param name="billingAddress">billingAddress.</param>
         /// <param name="shippingAddress">shippingAddress.</param>
@@ -190,7 +191,7 @@ namespace Apideck.Model
         /// <param name="bankAccount">bankAccount.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
+        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
         {
             this.Type = type;
             this.Number = number;
@@ -214,6 +215,7 @@ namespace Apideck.Model
             this.Balance = balance;
             this.Deposit = deposit;
             this.CustomerMemo = customerMemo;
+            this.TrackingCategory = trackingCategory;
             this.LineItems = lineItems;
             this.BillingAddress = billingAddress;
             this.ShippingAddress = shippingAddress;
@@ -393,6 +395,12 @@ namespace Apideck.Model
         public string CustomerMemo { get; set; }
 
         /// <summary>
+        /// Gets or Sets TrackingCategory
+        /// </summary>
+        [DataMember(Name = "tracking_category", EmitDefaultValue = true)]
+        public LinkedTrackingCategory TrackingCategory { get; set; }
+
+        /// <summary>
         /// Gets or Sets LineItems
         /// </summary>
         [DataMember(Name = "line_items", EmitDefaultValue = false)]
@@ -563,6 +571,7 @@ namespace Apideck.Model
             sb.Append("  Balance: ").Append(Balance).Append("\n");
             sb.Append("  Deposit: ").Append(Deposit).Append("\n");
             sb.Append("  CustomerMemo: ").Append(CustomerMemo).Append("\n");
+            sb.Append("  TrackingCategory: ").Append(TrackingCategory).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
@@ -729,6 +738,11 @@ namespace Apideck.Model
                     this.CustomerMemo == input.CustomerMemo ||
                     (this.CustomerMemo != null &&
                     this.CustomerMemo.Equals(input.CustomerMemo))
+                ) && 
+                (
+                    this.TrackingCategory == input.TrackingCategory ||
+                    (this.TrackingCategory != null &&
+                    this.TrackingCategory.Equals(input.TrackingCategory))
                 ) && 
                 (
                     this.LineItems == input.LineItems ||
@@ -905,6 +919,10 @@ namespace Apideck.Model
                 if (this.CustomerMemo != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomerMemo.GetHashCode();
+                }
+                if (this.TrackingCategory != null)
+                {
+                    hashCode = (hashCode * 59) + this.TrackingCategory.GetHashCode();
                 }
                 if (this.LineItems != null)
                 {

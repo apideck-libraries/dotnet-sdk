@@ -249,6 +249,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'CustomerMemo'
         }
         /// <summary>
+        /// Test the property 'TrackingCategory'
+        /// </summary>
+        [Fact]
+        public void TrackingCategoryTest()
+        {
+            // TODO unit test for the property 'TrackingCategory'
+        }
+        /// <summary>
         /// Test the property 'LineItems'
         /// </summary>
         [Fact]

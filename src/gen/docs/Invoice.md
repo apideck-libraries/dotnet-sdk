@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **Balance** | **decimal?** | Balance of invoice due. | [optional] 
 **Deposit** | **decimal?** | Amount of deposit made to this invoice. | [optional] 
 **CustomerMemo** | **string** | Customer memo | [optional] 
+**TrackingCategory** | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
 **LineItems** | [**List&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 **BillingAddress** | [**Address**](Address.md) |  | [optional] 
 **ShippingAddress** | [**Address**](Address.md) |  | [optional] 
