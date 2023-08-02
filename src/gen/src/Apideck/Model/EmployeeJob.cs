@@ -41,7 +41,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets PaymentUnit
         /// </summary>
-        [DataMember(Name = "payment_unit", EmitDefaultValue = false)]
+        [DataMember(Name = "payment_unit", EmitDefaultValue = true)]
         public PaymentUnit? PaymentUnit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeeJob" /> class.
