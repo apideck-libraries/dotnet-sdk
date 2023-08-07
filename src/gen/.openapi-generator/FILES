@@ -231,13 +231,13 @@ docs/EcommerceProductVariants.md
 docs/EcommerceStore.md
 docs/Email.md
 docs/Employee.md
-docs/EmployeeBankAccounts.md
+docs/EmployeeCompensation.md
 docs/EmployeeEmploymentRole.md
+docs/EmployeeJob.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
 docs/EmployeeSchedules.md
-docs/EmployeeTeam.md
 docs/EmployeesFilter.md
 docs/EmployeesSort.md
 docs/EmploymentStatus.md
@@ -462,6 +462,7 @@ docs/PassThroughQuery.md
 docs/Payment.md
 docs/PaymentAllocations.md
 docs/PaymentCard.md
+docs/PaymentFrequency.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
 docs/PaymentsFilter.md
@@ -515,6 +516,7 @@ docs/SupportedPropertyChildProperties.md
 docs/Tax.md
 docs/TaxRate.md
 docs/TaxRatesFilter.md
+docs/Team.md
 docs/Tender.md
 docs/Ticket.md
 docs/TicketsSort.md
@@ -593,6 +595,7 @@ docs/VirtualWebhooks.md
 docs/WalletDetails.md
 docs/Webhook.md
 docs/WebhookApi.md
+docs/WebhookEvent.md
 docs/WebhookEventLog.md
 docs/WebhookEventLogAttempts.md
 docs/WebhookEventLogService.md
@@ -833,13 +836,13 @@ src/Apideck.Test/Model/EcommerceProductTests.cs
 src/Apideck.Test/Model/EcommerceProductVariantsTests.cs
 src/Apideck.Test/Model/EcommerceStoreTests.cs
 src/Apideck.Test/Model/EmailTests.cs
-src/Apideck.Test/Model/EmployeeBankAccountsTests.cs
+src/Apideck.Test/Model/EmployeeCompensationTests.cs
 src/Apideck.Test/Model/EmployeeEmploymentRoleTests.cs
+src/Apideck.Test/Model/EmployeeJobTests.cs
 src/Apideck.Test/Model/EmployeeManagerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
 src/Apideck.Test/Model/EmployeePayrollsTests.cs
 src/Apideck.Test/Model/EmployeeSchedulesTests.cs
-src/Apideck.Test/Model/EmployeeTeamTests.cs
 src/Apideck.Test/Model/EmployeeTests.cs
 src/Apideck.Test/Model/EmployeesFilterTests.cs
 src/Apideck.Test/Model/EmployeesSortTests.cs
@@ -1060,6 +1063,7 @@ src/Apideck.Test/Model/PaginationCoverageTests.cs
 src/Apideck.Test/Model/PassThroughQueryTests.cs
 src/Apideck.Test/Model/PaymentAllocationsTests.cs
 src/Apideck.Test/Model/PaymentCardTests.cs
+src/Apideck.Test/Model/PaymentFrequencyTests.cs
 src/Apideck.Test/Model/PaymentRequiredResponseTests.cs
 src/Apideck.Test/Model/PaymentTests.cs
 src/Apideck.Test/Model/PaymentUnitTests.cs
@@ -1112,6 +1116,7 @@ src/Apideck.Test/Model/SupportedPropertyTests.cs
 src/Apideck.Test/Model/TaxRateTests.cs
 src/Apideck.Test/Model/TaxRatesFilterTests.cs
 src/Apideck.Test/Model/TaxTests.cs
+src/Apideck.Test/Model/TeamTests.cs
 src/Apideck.Test/Model/TenderTests.cs
 src/Apideck.Test/Model/TicketTests.cs
 src/Apideck.Test/Model/TicketsSortTests.cs
@@ -1192,6 +1197,7 @@ src/Apideck.Test/Model/WebhookEventLogServiceTests.cs
 src/Apideck.Test/Model/WebhookEventLogTests.cs
 src/Apideck.Test/Model/WebhookEventLogsFilterServiceTests.cs
 src/Apideck.Test/Model/WebhookEventLogsFilterTests.cs
+src/Apideck.Test/Model/WebhookEventTests.cs
 src/Apideck.Test/Model/WebhookEventTypeTests.cs
 src/Apideck.Test/Model/WebhookSubscriptionTests.cs
 src/Apideck.Test/Model/WebhookSupportTests.cs
@@ -1445,13 +1451,13 @@ src/Apideck/Model/EcommerceProductVariants.cs
 src/Apideck/Model/EcommerceStore.cs
 src/Apideck/Model/Email.cs
 src/Apideck/Model/Employee.cs
-src/Apideck/Model/EmployeeBankAccounts.cs
+src/Apideck/Model/EmployeeCompensation.cs
 src/Apideck/Model/EmployeeEmploymentRole.cs
+src/Apideck/Model/EmployeeJob.cs
 src/Apideck/Model/EmployeeManager.cs
 src/Apideck/Model/EmployeePayroll.cs
 src/Apideck/Model/EmployeePayrolls.cs
 src/Apideck/Model/EmployeeSchedules.cs
-src/Apideck/Model/EmployeeTeam.cs
 src/Apideck/Model/EmployeesFilter.cs
 src/Apideck/Model/EmployeesSort.cs
 src/Apideck/Model/EmploymentStatus.cs
@@ -1672,6 +1678,7 @@ src/Apideck/Model/PassThroughQuery.cs
 src/Apideck/Model/Payment.cs
 src/Apideck/Model/PaymentAllocations.cs
 src/Apideck/Model/PaymentCard.cs
+src/Apideck/Model/PaymentFrequency.cs
 src/Apideck/Model/PaymentRequiredResponse.cs
 src/Apideck/Model/PaymentUnit.cs
 src/Apideck/Model/PaymentsFilter.cs
@@ -1723,6 +1730,7 @@ src/Apideck/Model/SupportedPropertyChildProperties.cs
 src/Apideck/Model/Tax.cs
 src/Apideck/Model/TaxRate.cs
 src/Apideck/Model/TaxRatesFilter.cs
+src/Apideck/Model/Team.cs
 src/Apideck/Model/Tender.cs
 src/Apideck/Model/Ticket.cs
 src/Apideck/Model/TicketsSort.cs
@@ -1799,6 +1807,7 @@ src/Apideck/Model/VaultEventType.cs
 src/Apideck/Model/VirtualWebhooks.cs
 src/Apideck/Model/WalletDetails.cs
 src/Apideck/Model/Webhook.cs
+src/Apideck/Model/WebhookEvent.cs
 src/Apideck/Model/WebhookEventLog.cs
 src/Apideck/Model/WebhookEventLogAttempts.cs
 src/Apideck/Model/WebhookEventLogService.cs
