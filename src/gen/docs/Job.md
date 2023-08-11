@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** |  | [optional] 
 **Addresses** | [**List&lt;Address&gt;**](Address.md) |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-**Deleted** | **bool?** |  | [optional] 
+**Deleted** | **bool?** | Flag to indicate if the object is deleted. | [optional] 
 **OwnerId** | **string** |  | [optional] 
 **PublishedAt** | **DateTime?** |  | [optional] [readonly] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 

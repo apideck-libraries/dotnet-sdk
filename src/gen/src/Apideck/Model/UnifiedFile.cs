@@ -35,7 +35,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public FileType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UnifiedFile" /> class.
@@ -113,7 +113,7 @@ namespace Apideck.Model
         /// The name of the file
         /// </summary>
         /// <value>The name of the file</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Apideck.Model
         /// The full path of the file or folder (includes the file name)
         /// </summary>
         /// <value>The full path of the file or folder (includes the file name)</value>
-        [DataMember(Name = "path", EmitDefaultValue = false)]
+        [DataMember(Name = "path", EmitDefaultValue = true)]
         public string Path { get; set; }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Apideck.Model
         /// The available file formats when exporting this file.
         /// </summary>
         /// <value>The available file formats when exporting this file.</value>
-        [DataMember(Name = "export_formats", EmitDefaultValue = false)]
+        [DataMember(Name = "export_formats", EmitDefaultValue = true)]
         public List<string> ExportFormats { get; set; }
 
         /// <summary>

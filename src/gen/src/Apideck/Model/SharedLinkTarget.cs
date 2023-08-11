@@ -35,7 +35,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public FileType? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedLinkTarget" /> class.
@@ -72,7 +72,7 @@ namespace Apideck.Model
         /// The name of the file
         /// </summary>
         /// <value>The name of the file</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

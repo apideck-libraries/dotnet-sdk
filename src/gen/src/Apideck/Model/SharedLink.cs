@@ -57,7 +57,7 @@ namespace Apideck.Model
         /// The scope of the shared link.
         /// </summary>
         /// <value>The scope of the shared link.</value>
-        [DataMember(Name = "scope", EmitDefaultValue = false)]
+        [DataMember(Name = "scope", EmitDefaultValue = true)]
         public ScopeEnum? Scope { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedLink" /> class.
@@ -89,7 +89,7 @@ namespace Apideck.Model
         /// The URL that can be used to view the file.
         /// </summary>
         /// <value>The URL that can be used to view the file.</value>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", EmitDefaultValue = true)]
         public string Url { get; private set; }
 
         /// <summary>
@@ -104,14 +104,14 @@ namespace Apideck.Model
         /// The URL that can be used to download the file.
         /// </summary>
         /// <value>The URL that can be used to download the file.</value>
-        [DataMember(Name = "download_url", EmitDefaultValue = false)]
+        [DataMember(Name = "download_url", EmitDefaultValue = true)]
         public string DownloadUrl { get; set; }
 
         /// <summary>
         /// The ID of the file or folder to link.
         /// </summary>
         /// <value>The ID of the file or folder to link.</value>
-        [DataMember(Name = "target_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "target_id", IsRequired = true, EmitDefaultValue = true)]
         public string TargetId { get; set; }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Apideck.Model
         /// </summary>
         /// <value>Indicated if the shared link is password protected.</value>
         [DataMember(Name = "password_protected", EmitDefaultValue = true)]
-        public bool PasswordProtected { get; private set; }
+        public bool? PasswordProtected { get; private set; }
 
         /// <summary>
         /// Returns false as PasswordProtected should not be serialized given that it's read-only.
@@ -265,7 +265,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.PasswordProtected == input.PasswordProtected ||
-                    this.PasswordProtected.Equals(input.PasswordProtected)
+                    (this.PasswordProtected != null &&
+                    this.PasswordProtected.Equals(input.PasswordProtected))
                 ) && 
                 (
                     this.Password == input.Password ||
@@ -315,7 +316,10 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.Target.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Scope.GetHashCode();
-                hashCode = (hashCode * 59) + this.PasswordProtected.GetHashCode();
+                if (this.PasswordProtected != null)
+                {
+                    hashCode = (hashCode * 59) + this.PasswordProtected.GetHashCode();
+                }
                 if (this.Password != null)
                 {
                     hashCode = (hashCode * 59) + this.Password.GetHashCode();

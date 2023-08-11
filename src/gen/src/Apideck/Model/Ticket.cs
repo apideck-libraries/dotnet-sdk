@@ -69,7 +69,7 @@ namespace Apideck.Model
         /// Priority of the ticket
         /// </summary>
         /// <value>Priority of the ticket</value>
-        [DataMember(Name = "priority", EmitDefaultValue = false)]
+        [DataMember(Name = "priority", EmitDefaultValue = true)]
         public PriorityEnum? Priority { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Ticket" /> class.
@@ -120,14 +120,14 @@ namespace Apideck.Model
         /// The ticket&#39;s parent ID
         /// </summary>
         /// <value>The ticket&#39;s parent ID</value>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        [DataMember(Name = "parent_id", EmitDefaultValue = true)]
         public string ParentId { get; set; }
 
         /// <summary>
         /// The ticket&#39;s collection ID
         /// </summary>
         /// <value>The ticket&#39;s collection ID</value>
-        [DataMember(Name = "collection_id", EmitDefaultValue = false)]
+        [DataMember(Name = "collection_id", EmitDefaultValue = true)]
         public string CollectionId { get; private set; }
 
         /// <summary>
@@ -142,21 +142,21 @@ namespace Apideck.Model
         /// The ticket&#39;s type
         /// </summary>
         /// <value>The ticket&#39;s type</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Subject of the ticket
         /// </summary>
         /// <value>Subject of the ticket</value>
-        [DataMember(Name = "subject", EmitDefaultValue = false)]
+        [DataMember(Name = "subject", EmitDefaultValue = true)]
         public string Subject { get; set; }
 
         /// <summary>
         /// The ticket&#39;s description. HTML version of description is mapped if supported by the third-party platform
         /// </summary>
         /// <value>The ticket&#39;s description. HTML version of description is mapped if supported by the third-party platform</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>

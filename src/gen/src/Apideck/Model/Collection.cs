@@ -70,28 +70,28 @@ namespace Apideck.Model
         /// The collections&#39;s parent ID
         /// </summary>
         /// <value>The collections&#39;s parent ID</value>
-        [DataMember(Name = "parent_id", EmitDefaultValue = false)]
+        [DataMember(Name = "parent_id", EmitDefaultValue = true)]
         public string ParentId { get; set; }
 
         /// <summary>
         /// The collections&#39;s type
         /// </summary>
         /// <value>The collections&#39;s type</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Name of the collection
         /// </summary>
         /// <value>Name of the collection</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Description of the collection
         /// </summary>
         /// <value>Description of the collection</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>

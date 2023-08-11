@@ -39,8 +39,8 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="User" /> class.
         /// </summary>
-        /// <param name="parentId">parentId.</param>
-        /// <param name="username">username.</param>
+        /// <param name="parentId">The parent user id.</param>
+        /// <param name="username">The username of the user.</param>
         /// <param name="firstName">The first name of the person..</param>
         /// <param name="lastName">The last name of the person..</param>
         /// <param name="title">The job title of the person..</param>
@@ -49,10 +49,10 @@ namespace Apideck.Model
         /// <param name="companyName">The name of the company..</param>
         /// <param name="employeeNumber">An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company..</param>
         /// <param name="description">A description of the object..</param>
-        /// <param name="image">image.</param>
+        /// <param name="image">The URL of the user&#39;s avatar.</param>
         /// <param name="language">language code according to ISO 639-1. For the United States - EN.</param>
-        /// <param name="status">status.</param>
-        /// <param name="password">password.</param>
+        /// <param name="status">The status of the user.</param>
+        /// <param name="password">The password of the user.</param>
         /// <param name="addresses">addresses.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails (required).</param>
@@ -82,8 +82,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The unique identifier for the user
         /// </summary>
+        /// <value>The unique identifier for the user</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -96,14 +97,16 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets ParentId
+        /// The parent user id
         /// </summary>
+        /// <value>The parent user id</value>
         [DataMember(Name = "parent_id", EmitDefaultValue = true)]
         public string ParentId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Username
+        /// The username of the user
         /// </summary>
+        /// <value>The username of the user</value>
         [DataMember(Name = "username", EmitDefaultValue = true)]
         public string Username { get; set; }
 
@@ -165,8 +168,9 @@ namespace Apideck.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Image
+        /// The URL of the user&#39;s avatar
         /// </summary>
+        /// <value>The URL of the user&#39;s avatar</value>
         [DataMember(Name = "image", EmitDefaultValue = true)]
         public string Image { get; set; }
 
@@ -178,15 +182,17 @@ namespace Apideck.Model
         public string Language { get; set; }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// The status of the user
         /// </summary>
+        /// <value>The status of the user</value>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets Password
+        /// The password of the user
         /// </summary>
-        [DataMember(Name = "password", EmitDefaultValue = false)]
+        /// <value>The password of the user</value>
+        [DataMember(Name = "password", EmitDefaultValue = true)]
         public string Password { get; set; }
 
         /// <summary>
@@ -208,8 +214,9 @@ namespace Apideck.Model
         public List<Email> Emails { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the user was last updated.
         /// </summary>
+        /// <value>The date and time when the user was last updated.</value>
         [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public string UpdatedAt { get; private set; }
 
@@ -222,8 +229,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the user was created.
         /// </summary>
+        /// <value>The date and time when the user was created.</value>
         [DataMember(Name = "created_at", EmitDefaultValue = true)]
         public string CreatedAt { get; private set; }
 

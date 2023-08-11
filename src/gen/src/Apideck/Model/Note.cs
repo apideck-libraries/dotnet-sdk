@@ -34,14 +34,14 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Note" /> class.
         /// </summary>
-        /// <param name="title">title.</param>
-        /// <param name="content">content.</param>
-        /// <param name="ownerId">ownerId.</param>
-        /// <param name="contactId">contactId.</param>
-        /// <param name="companyId">companyId.</param>
-        /// <param name="opportunityId">opportunityId.</param>
-        /// <param name="leadId">leadId.</param>
-        /// <param name="active">active.</param>
+        /// <param name="title">The title of the note.</param>
+        /// <param name="content">The content of the note..</param>
+        /// <param name="ownerId">The user that owns the note..</param>
+        /// <param name="contactId">The contact that is related to the note..</param>
+        /// <param name="companyId">The company that is related to the note..</param>
+        /// <param name="opportunityId">The opportunity that is related to the note..</param>
+        /// <param name="leadId">The lead that is related to the note..</param>
+        /// <param name="active">Whether the Note is active or not..</param>
         public Note(string title = default(string), string content = default(string), string ownerId = default(string), string contactId = default(string), string companyId = default(string), string opportunityId = default(string), string leadId = default(string), bool? active = default(bool?))
         {
             this.Title = title;
@@ -55,8 +55,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The unique identifier of the note
         /// </summary>
+        /// <value>The unique identifier of the note</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -69,56 +70,65 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Title
+        /// The title of the note
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        /// <value>The title of the note</value>
+        [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets Content
+        /// The content of the note.
         /// </summary>
-        [DataMember(Name = "content", EmitDefaultValue = false)]
+        /// <value>The content of the note.</value>
+        [DataMember(Name = "content", EmitDefaultValue = true)]
         public string Content { get; set; }
 
         /// <summary>
-        /// Gets or Sets OwnerId
+        /// The user that owns the note.
         /// </summary>
-        [DataMember(Name = "owner_id", EmitDefaultValue = false)]
+        /// <value>The user that owns the note.</value>
+        [DataMember(Name = "owner_id", EmitDefaultValue = true)]
         public string OwnerId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContactId
+        /// The contact that is related to the note.
         /// </summary>
+        /// <value>The contact that is related to the note.</value>
         [DataMember(Name = "contact_id", EmitDefaultValue = true)]
         public string ContactId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompanyId
+        /// The company that is related to the note.
         /// </summary>
+        /// <value>The company that is related to the note.</value>
         [DataMember(Name = "company_id", EmitDefaultValue = true)]
         public string CompanyId { get; set; }
 
         /// <summary>
-        /// Gets or Sets OpportunityId
+        /// The opportunity that is related to the note.
         /// </summary>
+        /// <value>The opportunity that is related to the note.</value>
         [DataMember(Name = "opportunity_id", EmitDefaultValue = true)]
         public string OpportunityId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LeadId
+        /// The lead that is related to the note.
         /// </summary>
+        /// <value>The lead that is related to the note.</value>
         [DataMember(Name = "lead_id", EmitDefaultValue = true)]
         public string LeadId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Active
+        /// Whether the Note is active or not.
         /// </summary>
+        /// <value>Whether the Note is active or not.</value>
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool? Active { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedBy
+        /// The user that last updated the note.
         /// </summary>
+        /// <value>The user that last updated the note.</value>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
         public string UpdatedBy { get; private set; }
 
@@ -131,8 +141,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// The user that created the note.
         /// </summary>
+        /// <value>The user that created the note.</value>
         [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; private set; }
 
@@ -145,9 +156,10 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The timestamp when the note was last updated
         /// </summary>
-        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
+        /// <value>The timestamp when the note was last updated</value>
+        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public string UpdatedAt { get; private set; }
 
         /// <summary>
@@ -159,9 +171,10 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The timestamp when the note was created
         /// </summary>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        /// <value>The timestamp when the note was created</value>
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
         public string CreatedAt { get; private set; }
 
         /// <summary>

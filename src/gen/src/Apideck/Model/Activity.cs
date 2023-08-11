@@ -32,8 +32,9 @@ namespace Apideck.Model
     public partial class Activity : IEquatable<Activity>, IValidatableObject
     {
         /// <summary>
-        /// Defines Type
+        /// The type of the activity
         /// </summary>
+        /// <value>The type of the activity</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -95,9 +96,10 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Gets or Sets Type
+        /// The type of the activity
         /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>The type of the activity</value>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public TypeEnum Type { get; set; }
         /// <summary>
         /// Defines ShowAs
@@ -123,7 +125,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets ShowAs
         /// </summary>
-        [DataMember(Name = "show_as", EmitDefaultValue = false)]
+        [DataMember(Name = "show_as", EmitDefaultValue = true)]
         public ShowAsEnum? ShowAs { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Activity" /> class.
@@ -133,50 +135,50 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Activity" /> class.
         /// </summary>
-        /// <param name="activityDatetime">activityDatetime.</param>
-        /// <param name="durationSeconds">durationSeconds.</param>
-        /// <param name="userId">userId.</param>
-        /// <param name="accountId">accountId.</param>
-        /// <param name="contactId">contactId.</param>
-        /// <param name="companyId">companyId.</param>
-        /// <param name="opportunityId">opportunityId.</param>
-        /// <param name="leadId">leadId.</param>
-        /// <param name="ownerId">ownerId.</param>
-        /// <param name="campaignId">campaignId.</param>
-        /// <param name="caseId">caseId.</param>
-        /// <param name="assetId">assetId.</param>
-        /// <param name="contractId">contractId.</param>
-        /// <param name="productId">productId.</param>
-        /// <param name="solutionId">solutionId.</param>
-        /// <param name="customObjectId">customObjectId.</param>
-        /// <param name="type">type (required).</param>
-        /// <param name="title">title.</param>
-        /// <param name="description">description.</param>
-        /// <param name="note">note.</param>
-        /// <param name="location">location.</param>
+        /// <param name="activityDatetime">The date and time of the activity.</param>
+        /// <param name="durationSeconds">The duration of the activity in seconds.</param>
+        /// <param name="userId">The user related to the activity.</param>
+        /// <param name="accountId">The account related to the activity.</param>
+        /// <param name="contactId">The contact related to the activity.</param>
+        /// <param name="companyId">The company related to the activity.</param>
+        /// <param name="opportunityId">The opportunity related to the activity.</param>
+        /// <param name="leadId">The lead related to the activity.</param>
+        /// <param name="ownerId">The owner of the activity.</param>
+        /// <param name="campaignId">The campaign related to the activity.</param>
+        /// <param name="caseId">The case related to the activity.</param>
+        /// <param name="assetId">The asset related to the activity.</param>
+        /// <param name="contractId">The contract related to the activity.</param>
+        /// <param name="productId">The product related to the activity.</param>
+        /// <param name="solutionId">The solution related to the activity.</param>
+        /// <param name="customObjectId">The custom object related to the activity.</param>
+        /// <param name="type">The type of the activity (required).</param>
+        /// <param name="title">The title of the activity.</param>
+        /// <param name="description">A description of the activity.</param>
+        /// <param name="note">An internal note about the activity.</param>
+        /// <param name="location">The location of the activity.</param>
         /// <param name="locationAddress">locationAddress.</param>
-        /// <param name="allDayEvent">allDayEvent.</param>
-        /// <param name="_private">_private.</param>
-        /// <param name="groupEvent">groupEvent.</param>
-        /// <param name="eventSubType">eventSubType.</param>
-        /// <param name="groupEventType">groupEventType.</param>
-        /// <param name="child">child.</param>
-        /// <param name="archived">archived.</param>
-        /// <param name="deleted">deleted.</param>
+        /// <param name="allDayEvent">Whether the Activity is an all day event or not.</param>
+        /// <param name="_private">Whether the Activity is private or not.</param>
+        /// <param name="groupEvent">Whether the Activity is a group event or not.</param>
+        /// <param name="eventSubType">The sub type of the group event.</param>
+        /// <param name="groupEventType">The type of the group event.</param>
+        /// <param name="child">Whether the activity is a child of another activity or not.</param>
+        /// <param name="archived">Whether the activity is archived or not.</param>
+        /// <param name="deleted">Whether the activity is deleted or not.</param>
         /// <param name="showAs">showAs.</param>
         /// <param name="done">Whether the Activity is done or not.</param>
-        /// <param name="startDatetime">startDatetime.</param>
-        /// <param name="endDatetime">endDatetime.</param>
-        /// <param name="activityDate">activityDate.</param>
-        /// <param name="endDate">endDate.</param>
-        /// <param name="recurrent">recurrent.</param>
-        /// <param name="reminderDatetime">reminderDatetime.</param>
-        /// <param name="reminderSet">reminderSet.</param>
-        /// <param name="videoConferenceUrl">videoConferenceUrl.</param>
-        /// <param name="videoConferenceId">videoConferenceId.</param>
-        /// <param name="customFields">customFields.</param>
+        /// <param name="startDatetime">The start date and time of the activity.</param>
+        /// <param name="endDatetime">The end date and time of the activity.</param>
+        /// <param name="activityDate">The date of the activity.</param>
+        /// <param name="endDate">The end date of the activity.</param>
+        /// <param name="recurrent">Whether the activity is recurrent or not.</param>
+        /// <param name="reminderDatetime">The date and time of the reminder.</param>
+        /// <param name="reminderSet">Whether the reminder is set or not.</param>
+        /// <param name="videoConferenceUrl">The URL of the video conference.</param>
+        /// <param name="videoConferenceId">The ID of the video conference.</param>
+        /// <param name="customFields">Custom fields of the activity.</param>
         /// <param name="attendees">attendees.</param>
-        public Activity(string activityDatetime = default(string), int? durationSeconds = default(int?), string userId = default(string), string accountId = default(string), string contactId = default(string), string companyId = default(string), string opportunityId = default(string), string leadId = default(string), string ownerId = default(string), string campaignId = default(string), string caseId = default(string), string assetId = default(string), string contractId = default(string), string productId = default(string), string solutionId = default(string), string customObjectId = default(string), TypeEnum type = default(TypeEnum), string title = default(string), string description = default(string), string note = default(string), string location = default(string), Address locationAddress = default(Address), bool allDayEvent = default(bool), bool _private = default(bool), bool groupEvent = default(bool), string eventSubType = default(string), string groupEventType = default(string), bool child = default(bool), bool archived = default(bool), bool deleted = default(bool), ShowAsEnum? showAs = default(ShowAsEnum?), bool done = default(bool), string startDatetime = default(string), string endDatetime = default(string), string activityDate = default(string), string endDate = default(string), bool recurrent = default(bool), string reminderDatetime = default(string), bool? reminderSet = default(bool?), string videoConferenceUrl = default(string), string videoConferenceId = default(string), List<CustomField> customFields = default(List<CustomField>), List<ActivityAttendee> attendees = default(List<ActivityAttendee>))
+        public Activity(string activityDatetime = default(string), int? durationSeconds = default(int?), string userId = default(string), string accountId = default(string), string contactId = default(string), string companyId = default(string), string opportunityId = default(string), string leadId = default(string), string ownerId = default(string), string campaignId = default(string), string caseId = default(string), string assetId = default(string), string contractId = default(string), string productId = default(string), string solutionId = default(string), string customObjectId = default(string), TypeEnum type = default(TypeEnum), string title = default(string), string description = default(string), string note = default(string), string location = default(string), Address locationAddress = default(Address), bool? allDayEvent = default(bool?), bool? _private = default(bool?), bool? groupEvent = default(bool?), string eventSubType = default(string), string groupEventType = default(string), bool? child = default(bool?), bool? archived = default(bool?), bool? deleted = default(bool?), ShowAsEnum? showAs = default(ShowAsEnum?), bool? done = default(bool?), string startDatetime = default(string), string endDatetime = default(string), string activityDate = default(string), string endDate = default(string), bool recurrent = default(bool), string reminderDatetime = default(string), bool? reminderSet = default(bool?), string videoConferenceUrl = default(string), string videoConferenceId = default(string), List<CustomField> customFields = default(List<CustomField>), List<ActivityAttendee> attendees = default(List<ActivityAttendee>))
         {
             this.Type = type;
             this.ActivityDatetime = activityDatetime;
@@ -224,8 +226,9 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The unique identifier of the activity
         /// </summary>
+        /// <value>The unique identifier of the activity</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
@@ -253,122 +256,142 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets ActivityDatetime
+        /// The date and time of the activity
         /// </summary>
+        /// <value>The date and time of the activity</value>
         [DataMember(Name = "activity_datetime", EmitDefaultValue = true)]
         public string ActivityDatetime { get; set; }
 
         /// <summary>
-        /// Gets or Sets DurationSeconds
+        /// The duration of the activity in seconds
         /// </summary>
+        /// <value>The duration of the activity in seconds</value>
         [DataMember(Name = "duration_seconds", EmitDefaultValue = true)]
         public int? DurationSeconds { get; set; }
 
         /// <summary>
-        /// Gets or Sets UserId
+        /// The user related to the activity
         /// </summary>
+        /// <value>The user related to the activity</value>
         [DataMember(Name = "user_id", EmitDefaultValue = true)]
         public string UserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountId
+        /// The account related to the activity
         /// </summary>
+        /// <value>The account related to the activity</value>
         [DataMember(Name = "account_id", EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContactId
+        /// The contact related to the activity
         /// </summary>
+        /// <value>The contact related to the activity</value>
         [DataMember(Name = "contact_id", EmitDefaultValue = true)]
         public string ContactId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CompanyId
+        /// The company related to the activity
         /// </summary>
+        /// <value>The company related to the activity</value>
         [DataMember(Name = "company_id", EmitDefaultValue = true)]
         public string CompanyId { get; set; }
 
         /// <summary>
-        /// Gets or Sets OpportunityId
+        /// The opportunity related to the activity
         /// </summary>
+        /// <value>The opportunity related to the activity</value>
         [DataMember(Name = "opportunity_id", EmitDefaultValue = true)]
         public string OpportunityId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LeadId
+        /// The lead related to the activity
         /// </summary>
+        /// <value>The lead related to the activity</value>
         [DataMember(Name = "lead_id", EmitDefaultValue = true)]
         public string LeadId { get; set; }
 
         /// <summary>
-        /// Gets or Sets OwnerId
+        /// The owner of the activity
         /// </summary>
+        /// <value>The owner of the activity</value>
         [DataMember(Name = "owner_id", EmitDefaultValue = true)]
         public string OwnerId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CampaignId
+        /// The campaign related to the activity
         /// </summary>
+        /// <value>The campaign related to the activity</value>
         [DataMember(Name = "campaign_id", EmitDefaultValue = true)]
         public string CampaignId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CaseId
+        /// The case related to the activity
         /// </summary>
+        /// <value>The case related to the activity</value>
         [DataMember(Name = "case_id", EmitDefaultValue = true)]
         public string CaseId { get; set; }
 
         /// <summary>
-        /// Gets or Sets AssetId
+        /// The asset related to the activity
         /// </summary>
+        /// <value>The asset related to the activity</value>
         [DataMember(Name = "asset_id", EmitDefaultValue = true)]
         public string AssetId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContractId
+        /// The contract related to the activity
         /// </summary>
+        /// <value>The contract related to the activity</value>
         [DataMember(Name = "contract_id", EmitDefaultValue = true)]
         public string ContractId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ProductId
+        /// The product related to the activity
         /// </summary>
+        /// <value>The product related to the activity</value>
         [DataMember(Name = "product_id", EmitDefaultValue = true)]
         public string ProductId { get; set; }
 
         /// <summary>
-        /// Gets or Sets SolutionId
+        /// The solution related to the activity
         /// </summary>
+        /// <value>The solution related to the activity</value>
         [DataMember(Name = "solution_id", EmitDefaultValue = true)]
         public string SolutionId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomObjectId
+        /// The custom object related to the activity
         /// </summary>
+        /// <value>The custom object related to the activity</value>
         [DataMember(Name = "custom_object_id", EmitDefaultValue = true)]
         public string CustomObjectId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// The title of the activity
         /// </summary>
+        /// <value>The title of the activity</value>
         [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// A description of the activity
         /// </summary>
+        /// <value>A description of the activity</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Note
+        /// An internal note about the activity
         /// </summary>
+        /// <value>An internal note about the activity</value>
         [DataMember(Name = "note", EmitDefaultValue = true)]
         public string Note { get; set; }
 
         /// <summary>
-        /// Gets or Sets Location
+        /// The location of the activity
         /// </summary>
+        /// <value>The location of the activity</value>
         [DataMember(Name = "location", EmitDefaultValue = true)]
         public string Location { get; set; }
 
@@ -379,75 +402,86 @@ namespace Apideck.Model
         public Address LocationAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets AllDayEvent
+        /// Whether the Activity is an all day event or not
         /// </summary>
+        /// <value>Whether the Activity is an all day event or not</value>
         [DataMember(Name = "all_day_event", EmitDefaultValue = true)]
-        public bool AllDayEvent { get; set; }
+        public bool? AllDayEvent { get; set; }
 
         /// <summary>
-        /// Gets or Sets Private
+        /// Whether the Activity is private or not
         /// </summary>
+        /// <value>Whether the Activity is private or not</value>
         [DataMember(Name = "private", EmitDefaultValue = true)]
-        public bool Private { get; set; }
+        public bool? Private { get; set; }
 
         /// <summary>
-        /// Gets or Sets GroupEvent
+        /// Whether the Activity is a group event or not
         /// </summary>
+        /// <value>Whether the Activity is a group event or not</value>
         [DataMember(Name = "group_event", EmitDefaultValue = true)]
-        public bool GroupEvent { get; set; }
+        public bool? GroupEvent { get; set; }
 
         /// <summary>
-        /// Gets or Sets EventSubType
+        /// The sub type of the group event
         /// </summary>
+        /// <value>The sub type of the group event</value>
         [DataMember(Name = "event_sub_type", EmitDefaultValue = true)]
         public string EventSubType { get; set; }
 
         /// <summary>
-        /// Gets or Sets GroupEventType
+        /// The type of the group event
         /// </summary>
+        /// <value>The type of the group event</value>
         [DataMember(Name = "group_event_type", EmitDefaultValue = true)]
         public string GroupEventType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Child
+        /// Whether the activity is a child of another activity or not
         /// </summary>
+        /// <value>Whether the activity is a child of another activity or not</value>
         [DataMember(Name = "child", EmitDefaultValue = true)]
-        public bool Child { get; set; }
+        public bool? Child { get; set; }
 
         /// <summary>
-        /// Gets or Sets Archived
+        /// Whether the activity is archived or not
         /// </summary>
+        /// <value>Whether the activity is archived or not</value>
         [DataMember(Name = "archived", EmitDefaultValue = true)]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
-        /// Gets or Sets Deleted
+        /// Whether the activity is deleted or not
         /// </summary>
+        /// <value>Whether the activity is deleted or not</value>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
-        public bool Deleted { get; set; }
+        public bool? Deleted { get; set; }
 
         /// <summary>
         /// Whether the Activity is done or not
         /// </summary>
         /// <value>Whether the Activity is done or not</value>
         [DataMember(Name = "done", EmitDefaultValue = true)]
-        public bool Done { get; set; }
+        public bool? Done { get; set; }
 
         /// <summary>
-        /// Gets or Sets StartDatetime
+        /// The start date and time of the activity
         /// </summary>
+        /// <value>The start date and time of the activity</value>
         [DataMember(Name = "start_datetime", EmitDefaultValue = true)]
         public string StartDatetime { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDatetime
+        /// The end date and time of the activity
         /// </summary>
+        /// <value>The end date and time of the activity</value>
         [DataMember(Name = "end_datetime", EmitDefaultValue = true)]
         public string EndDatetime { get; set; }
 
         /// <summary>
-        /// Gets or Sets DurationMinutes
+        /// The duration of the activity in minutes
         /// </summary>
+        /// <value>The duration of the activity in minutes</value>
         [DataMember(Name = "duration_minutes", EmitDefaultValue = true)]
         public int? DurationMinutes { get; private set; }
 
@@ -460,50 +494,58 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets ActivityDate
+        /// The date of the activity
         /// </summary>
+        /// <value>The date of the activity</value>
         [DataMember(Name = "activity_date", EmitDefaultValue = true)]
         public string ActivityDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets EndDate
+        /// The end date of the activity
         /// </summary>
+        /// <value>The end date of the activity</value>
         [DataMember(Name = "end_date", EmitDefaultValue = true)]
         public string EndDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets Recurrent
+        /// Whether the activity is recurrent or not
         /// </summary>
+        /// <value>Whether the activity is recurrent or not</value>
         [DataMember(Name = "recurrent", EmitDefaultValue = true)]
         public bool Recurrent { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReminderDatetime
+        /// The date and time of the reminder
         /// </summary>
+        /// <value>The date and time of the reminder</value>
         [DataMember(Name = "reminder_datetime", EmitDefaultValue = true)]
         public string ReminderDatetime { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReminderSet
+        /// Whether the reminder is set or not
         /// </summary>
+        /// <value>Whether the reminder is set or not</value>
         [DataMember(Name = "reminder_set", EmitDefaultValue = true)]
         public bool? ReminderSet { get; set; }
 
         /// <summary>
-        /// Gets or Sets VideoConferenceUrl
+        /// The URL of the video conference
         /// </summary>
-        [DataMember(Name = "video_conference_url", EmitDefaultValue = false)]
+        /// <value>The URL of the video conference</value>
+        [DataMember(Name = "video_conference_url", EmitDefaultValue = true)]
         public string VideoConferenceUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets VideoConferenceId
+        /// The ID of the video conference
         /// </summary>
-        [DataMember(Name = "video_conference_id", EmitDefaultValue = false)]
+        /// <value>The ID of the video conference</value>
+        [DataMember(Name = "video_conference_id", EmitDefaultValue = true)]
         public string VideoConferenceId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomFields
+        /// Custom fields of the activity
         /// </summary>
+        /// <value>Custom fields of the activity</value>
         [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
         public List<CustomField> CustomFields { get; set; }
 
@@ -514,8 +556,9 @@ namespace Apideck.Model
         public List<ActivityAttendee> Attendees { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedBy
+        /// The user who last updated the activity
         /// </summary>
+        /// <value>The user who last updated the activity</value>
         [DataMember(Name = "updated_by", EmitDefaultValue = true)]
         public string UpdatedBy { get; private set; }
 
@@ -528,8 +571,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedBy
+        /// The user who created the activity
         /// </summary>
+        /// <value>The user who created the activity</value>
         [DataMember(Name = "created_by", EmitDefaultValue = true)]
         public string CreatedBy { get; private set; }
 
@@ -542,9 +586,10 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The date and time when the activity was last updated
         /// </summary>
-        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
+        /// <value>The date and time when the activity was last updated</value>
+        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public string UpdatedAt { get; private set; }
 
         /// <summary>
@@ -556,9 +601,10 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The date and time when the activity was created
         /// </summary>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        /// <value>The date and time when the activity was created</value>
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
         public string CreatedAt { get; private set; }
 
         /// <summary>
@@ -783,15 +829,18 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.AllDayEvent == input.AllDayEvent ||
-                    this.AllDayEvent.Equals(input.AllDayEvent)
+                    (this.AllDayEvent != null &&
+                    this.AllDayEvent.Equals(input.AllDayEvent))
                 ) && 
                 (
                     this.Private == input.Private ||
-                    this.Private.Equals(input.Private)
+                    (this.Private != null &&
+                    this.Private.Equals(input.Private))
                 ) && 
                 (
                     this.GroupEvent == input.GroupEvent ||
-                    this.GroupEvent.Equals(input.GroupEvent)
+                    (this.GroupEvent != null &&
+                    this.GroupEvent.Equals(input.GroupEvent))
                 ) && 
                 (
                     this.EventSubType == input.EventSubType ||
@@ -805,15 +854,18 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Child == input.Child ||
-                    this.Child.Equals(input.Child)
+                    (this.Child != null &&
+                    this.Child.Equals(input.Child))
                 ) && 
                 (
                     this.Archived == input.Archived ||
-                    this.Archived.Equals(input.Archived)
+                    (this.Archived != null &&
+                    this.Archived.Equals(input.Archived))
                 ) && 
                 (
                     this.Deleted == input.Deleted ||
-                    this.Deleted.Equals(input.Deleted)
+                    (this.Deleted != null &&
+                    this.Deleted.Equals(input.Deleted))
                 ) && 
                 (
                     this.ShowAs == input.ShowAs ||
@@ -821,7 +873,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Done == input.Done ||
-                    this.Done.Equals(input.Done)
+                    (this.Done != null &&
+                    this.Done.Equals(input.Done))
                 ) && 
                 (
                     this.StartDatetime == input.StartDatetime ||
@@ -1008,9 +1061,18 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.LocationAddress.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.AllDayEvent.GetHashCode();
-                hashCode = (hashCode * 59) + this.Private.GetHashCode();
-                hashCode = (hashCode * 59) + this.GroupEvent.GetHashCode();
+                if (this.AllDayEvent != null)
+                {
+                    hashCode = (hashCode * 59) + this.AllDayEvent.GetHashCode();
+                }
+                if (this.Private != null)
+                {
+                    hashCode = (hashCode * 59) + this.Private.GetHashCode();
+                }
+                if (this.GroupEvent != null)
+                {
+                    hashCode = (hashCode * 59) + this.GroupEvent.GetHashCode();
+                }
                 if (this.EventSubType != null)
                 {
                     hashCode = (hashCode * 59) + this.EventSubType.GetHashCode();
@@ -1019,11 +1081,23 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.GroupEventType.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Child.GetHashCode();
-                hashCode = (hashCode * 59) + this.Archived.GetHashCode();
-                hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
+                if (this.Child != null)
+                {
+                    hashCode = (hashCode * 59) + this.Child.GetHashCode();
+                }
+                if (this.Archived != null)
+                {
+                    hashCode = (hashCode * 59) + this.Archived.GetHashCode();
+                }
+                if (this.Deleted != null)
+                {
+                    hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.ShowAs.GetHashCode();
-                hashCode = (hashCode * 59) + this.Done.GetHashCode();
+                if (this.Done != null)
+                {
+                    hashCode = (hashCode * 59) + this.Done.GetHashCode();
+                }
                 if (this.StartDatetime != null)
                 {
                     hashCode = (hashCode * 59) + this.StartDatetime.GetHashCode();

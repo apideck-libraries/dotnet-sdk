@@ -455,8 +455,8 @@ namespace Apideck.Model
         /// The date and time when the opportunity was last updated.
         /// </summary>
         /// <value>The date and time when the opportunity was last updated.</value>
-        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
-        public DateTime UpdatedAt { get; private set; }
+        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
+        public DateTime? UpdatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as UpdatedAt should not be serialized given that it's read-only.
@@ -470,8 +470,8 @@ namespace Apideck.Model
         /// The date and time when the opportunity was created.
         /// </summary>
         /// <value>The date and time when the opportunity was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.

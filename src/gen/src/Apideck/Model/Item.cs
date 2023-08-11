@@ -134,7 +134,7 @@ namespace Apideck.Model
         /// <param name="modifierGroups">modifierGroups.</param>
         /// <param name="available">available.</param>
         /// <param name="hidden">hidden.</param>
-        /// <param name="deleted">deleted.</param>
+        /// <param name="deleted">Flag to indicate if the object is deleted..</param>
         public Item(string id = default(string), string idempotencyKey = default(string), string name = default(string), string description = default(string), string abbreviation = default(string), ProductTypeEnum? productType = default(ProductTypeEnum?), decimal priceAmount = default(decimal), PricingTypeEnum? pricingType = default(PricingTypeEnum?), Currency? priceCurrency = default(Currency?), decimal cost = default(decimal), List<string> taxIds = default(List<string>), bool isRevenue = default(bool), bool useDefaultTaxRates = default(bool), List<string> absentAtLocationIds = default(List<string>), bool presentAtAllLocations = default(bool), bool availableForPickup = default(bool), bool availableOnline = default(bool), string sku = default(string), string code = default(string), List<Object> categories = default(List<Object>), List<Object> options = default(List<Object>), List<Object> variations = default(List<Object>), List<Object> modifierGroups = default(List<Object>), bool? available = default(bool?), bool? hidden = default(bool?), bool? deleted = default(bool?))
         {
             // to ensure "name" is required (not null)
@@ -324,8 +324,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Deleted
+        /// Flag to indicate if the object is deleted.
         /// </summary>
+        /// <value>Flag to indicate if the object is deleted.</value>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool? Deleted { get; set; }
 

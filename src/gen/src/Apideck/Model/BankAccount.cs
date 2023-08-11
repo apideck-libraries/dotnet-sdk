@@ -78,8 +78,8 @@ namespace Apideck.Model
         /// <param name="accountNumber">A bank account number is a number that is tied to your bank account. If you have several bank accounts, such as personal, joint, business (and so on), each account will have a different account number..</param>
         /// <param name="accountName">The name which you used in opening your bank account..</param>
         /// <param name="accountType">The type of bank account..</param>
-        /// <param name="iban">iban.</param>
-        /// <param name="bic">bic.</param>
+        /// <param name="iban">The International Bank Account Number (IBAN)..</param>
+        /// <param name="bic">The Bank Identifier Code (BIC)..</param>
         /// <param name="routingNumber">A routing number is a nine-digit code used to identify a financial institution in the United States..</param>
         /// <param name="bsbNumber">A BSB is a 6 digit numeric code used for identifying the branch of an Australian or New Zealand bank or financial institution..</param>
         /// <param name="branchIdentifier">A branch identifier is a unique identifier for a branch of a bank or financial institution..</param>
@@ -122,14 +122,16 @@ namespace Apideck.Model
         public string AccountName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Iban
+        /// The International Bank Account Number (IBAN).
         /// </summary>
+        /// <value>The International Bank Account Number (IBAN).</value>
         [DataMember(Name = "iban", EmitDefaultValue = true)]
         public string Iban { get; set; }
 
         /// <summary>
-        /// Gets or Sets Bic
+        /// The Bank Identifier Code (BIC).
         /// </summary>
+        /// <value>The Bank Identifier Code (BIC).</value>
         [DataMember(Name = "bic", EmitDefaultValue = true)]
         public string Bic { get; set; }
 

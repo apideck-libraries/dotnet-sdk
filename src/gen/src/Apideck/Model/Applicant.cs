@@ -64,8 +64,8 @@ namespace Apideck.Model
         /// <param name="archived">archived.</param>
         /// <param name="ownerId">ownerId.</param>
         /// <param name="recordUrl">recordUrl.</param>
-        /// <param name="deleted">deleted.</param>
-        public Applicant(string positionId = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applicationIds = default(List<string>), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool archived = default(bool), string ownerId = default(string), string recordUrl = default(string), bool? deleted = default(bool?))
+        /// <param name="deleted">Flag to indicate if the object is deleted..</param>
+        public Applicant(string positionId = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applicationIds = default(List<string>), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool? archived = default(bool?), string ownerId = default(string), string recordUrl = default(string), bool? deleted = default(bool?))
         {
             this.PositionId = positionId;
             this.Name = name;
@@ -320,7 +320,7 @@ namespace Apideck.Model
         /// Gets or Sets Archived
         /// </summary>
         [DataMember(Name = "archived", EmitDefaultValue = true)]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// Gets or Sets LastInteractionAt
@@ -391,8 +391,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Deleted
+        /// Flag to indicate if the object is deleted.
         /// </summary>
+        /// <value>Flag to indicate if the object is deleted.</value>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool? Deleted { get; set; }
 
@@ -734,7 +735,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Archived == input.Archived ||
-                    this.Archived.Equals(input.Archived)
+                    (this.Archived != null &&
+                    this.Archived.Equals(input.Archived))
                 ) && 
                 (
                     this.LastInteractionAt == input.LastInteractionAt ||
@@ -926,7 +928,10 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Tags.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Archived.GetHashCode();
+                if (this.Archived != null)
+                {
+                    hashCode = (hashCode * 59) + this.Archived.GetHashCode();
+                }
                 if (this.LastInteractionAt != null)
                 {
                     hashCode = (hashCode * 59) + this.LastInteractionAt.GetHashCode();

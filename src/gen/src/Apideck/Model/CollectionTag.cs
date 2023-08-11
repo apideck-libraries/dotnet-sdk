@@ -53,13 +53,14 @@ namespace Apideck.Model
         /// A unique identifier for an object.
         /// </summary>
         /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the tag.
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        /// <value>The name of the tag.</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; private set; }
 
         /// <summary>

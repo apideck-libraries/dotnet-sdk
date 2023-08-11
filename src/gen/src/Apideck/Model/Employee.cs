@@ -148,7 +148,7 @@ namespace Apideck.Model
         /// <param name="probationPeriod">probationPeriod.</param>
         /// <param name="tags">tags.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        /// <param name="deleted">deleted.</param>
+        /// <param name="deleted">Flag to indicate if the object is deleted..</param>
         public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
         {
             this.FirstName = firstName;
@@ -589,8 +589,9 @@ namespace Apideck.Model
         public string RowVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets Deleted
+        /// Flag to indicate if the object is deleted.
         /// </summary>
+        /// <value>Flag to indicate if the object is deleted.</value>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool? Deleted { get; set; }
 

@@ -32,8 +32,9 @@ namespace Apideck.Model
     public partial class ApplicantWebsites : IEquatable<ApplicantWebsites>, IValidatableObject
     {
         /// <summary>
-        /// Defines Type
+        /// The type of website
         /// </summary>
+        /// <value>The type of website</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -71,9 +72,10 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Gets or Sets Type
+        /// The type of website
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        /// <value>The type of website</value>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicantWebsites" /> class.
@@ -83,9 +85,9 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicantWebsites" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="url">url (required).</param>
-        /// <param name="type">type.</param>
+        /// <param name="id">Unique identifier for the website.</param>
+        /// <param name="url">The website URL (required).</param>
+        /// <param name="type">The type of website.</param>
         public ApplicantWebsites(string id = default(string), string url = default(string), TypeEnum? type = default(TypeEnum?))
         {
             // to ensure "url" is required (not null)
@@ -98,14 +100,16 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique identifier for the website
         /// </summary>
+        /// <value>Unique identifier for the website</value>
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Url
+        /// The website URL
         /// </summary>
+        /// <value>The website URL</value>
         [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = false)]
         public string Url { get; set; }
 

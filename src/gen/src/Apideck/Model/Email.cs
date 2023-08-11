@@ -81,7 +81,7 @@ namespace Apideck.Model
         /// Email type
         /// </summary>
         /// <value>Email type</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Email" /> class.

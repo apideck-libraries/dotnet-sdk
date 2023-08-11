@@ -59,7 +59,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
-        [DataMember(Name = "username", EmitDefaultValue = false)]
+        [DataMember(Name = "username", EmitDefaultValue = true)]
         public string Username { get; private set; }
 
         /// <summary>

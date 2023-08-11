@@ -59,7 +59,7 @@ namespace Apideck.Model
         /// Body of the comment
         /// </summary>
         /// <value>Body of the comment</value>
-        [DataMember(Name = "body", EmitDefaultValue = false)]
+        [DataMember(Name = "body", EmitDefaultValue = true)]
         public string Body { get; set; }
 
         /// <summary>

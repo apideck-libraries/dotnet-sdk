@@ -34,11 +34,11 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PipelineStages" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="value">value.</param>
+        /// <param name="name">The name of the Pipeline Stage..</param>
+        /// <param name="value">The value of the Pipeline Stage..</param>
         /// <param name="winProbability">The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100]..</param>
-        /// <param name="displayOrder">displayOrder.</param>
-        public PipelineStages(string name = default(string), string value = default(string), int winProbability = default(int), int displayOrder = default(int))
+        /// <param name="displayOrder">The order in which the Pipeline Stage is displayed in the UI..</param>
+        public PipelineStages(string name = default(string), string value = default(string), int? winProbability = default(int?), int? displayOrder = default(int?))
         {
             this.Name = name;
             this.Value = value;
@@ -47,9 +47,10 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The unique identifier of the Pipeline Stage.
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>The unique identifier of the Pipeline Stage.</value>
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; private set; }
 
         /// <summary>
@@ -61,29 +62,32 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the Pipeline Stage.
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        /// <value>The name of the Pipeline Stage.</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// The value of the Pipeline Stage.
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        /// <value>The value of the Pipeline Stage.</value>
+        [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>
         /// The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].
         /// </summary>
         /// <value>The expected probability of winning an Opportunity in this Pipeline Stage. Valid values are [0-100].</value>
-        [DataMember(Name = "win_probability", EmitDefaultValue = false)]
-        public int WinProbability { get; set; }
+        [DataMember(Name = "win_probability", EmitDefaultValue = true)]
+        public int? WinProbability { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisplayOrder
+        /// The order in which the Pipeline Stage is displayed in the UI.
         /// </summary>
-        [DataMember(Name = "display_order", EmitDefaultValue = false)]
-        public int DisplayOrder { get; set; }
+        /// <value>The order in which the Pipeline Stage is displayed in the UI.</value>
+        [DataMember(Name = "display_order", EmitDefaultValue = true)]
+        public int? DisplayOrder { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -150,11 +154,13 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.WinProbability == input.WinProbability ||
-                    this.WinProbability.Equals(input.WinProbability)
+                    (this.WinProbability != null &&
+                    this.WinProbability.Equals(input.WinProbability))
                 ) && 
                 (
                     this.DisplayOrder == input.DisplayOrder ||
-                    this.DisplayOrder.Equals(input.DisplayOrder)
+                    (this.DisplayOrder != null &&
+                    this.DisplayOrder.Equals(input.DisplayOrder))
                 );
         }
 
@@ -179,8 +185,14 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.WinProbability.GetHashCode();
-                hashCode = (hashCode * 59) + this.DisplayOrder.GetHashCode();
+                if (this.WinProbability != null)
+                {
+                    hashCode = (hashCode * 59) + this.WinProbability.GetHashCode();
+                }
+                if (this.DisplayOrder != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayOrder.GetHashCode();
+                }
                 return hashCode;
             }
         }

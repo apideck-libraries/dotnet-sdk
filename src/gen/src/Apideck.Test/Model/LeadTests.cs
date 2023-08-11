@@ -97,12 +97,12 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'CompanyId'
         }
         /// <summary>
-        /// Test the property 'ContactId'
+        /// Test the property 'LeadId'
         /// </summary>
         [Fact]
-        public void ContactIdTest()
+        public void LeadIdTest()
         {
-            // TODO unit test for the property 'ContactId'
+            // TODO unit test for the property 'LeadId'
         }
         /// <summary>
         /// Test the property 'LeadSource'

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SelectionType** | **string** |  | [optional] 
 **PresentAtAllLocations** | **bool** |  | [optional] 
 **Modifiers** | **List&lt;Object&gt;** |  | [optional] 
-**Deleted** | **bool?** |  | [optional] 
+**Deleted** | **bool?** | Flag to indicate if the object is deleted. | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

@@ -67,7 +67,7 @@ namespace Apideck.Model
         /// <param name="selectionType">selectionType.</param>
         /// <param name="presentAtAllLocations">presentAtAllLocations.</param>
         /// <param name="modifiers">modifiers.</param>
-        /// <param name="deleted">deleted.</param>
+        /// <param name="deleted">Flag to indicate if the object is deleted..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         public ModifierGroup(string name = default(string), string alternateName = default(string), int minimumRequired = default(int), int maximumAllowed = default(int), SelectionTypeEnum? selectionType = default(SelectionTypeEnum?), bool presentAtAllLocations = default(bool), List<Object> modifiers = default(List<Object>), bool? deleted = default(bool?), string rowVersion = default(string))
         {
@@ -134,8 +134,9 @@ namespace Apideck.Model
         public List<Object> Modifiers { get; set; }
 
         /// <summary>
-        /// Gets or Sets Deleted
+        /// Flag to indicate if the object is deleted.
         /// </summary>
+        /// <value>Flag to indicate if the object is deleted.</value>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool? Deleted { get; set; }
 

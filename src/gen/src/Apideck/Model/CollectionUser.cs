@@ -34,10 +34,10 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CollectionUser" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="email">email.</param>
+        /// <param name="name">Full name of the user.</param>
+        /// <param name="firstName">First name of the user.</param>
+        /// <param name="lastName">Last name of the user.</param>
+        /// <param name="email">Email address of the user.</param>
         /// <param name="photoUrl">The URL of the photo of a person..</param>
         public CollectionUser(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string photoUrl = default(string))
         {
@@ -52,7 +52,7 @@ namespace Apideck.Model
         /// A unique identifier for an object.
         /// </summary>
         /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; private set; }
 
         /// <summary>
@@ -64,26 +64,30 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Name
+        /// Full name of the user
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        /// <value>Full name of the user</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// First name of the user
         /// </summary>
+        /// <value>First name of the user</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// Last name of the user
         /// </summary>
+        /// <value>Last name of the user</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Email
+        /// Email address of the user
         /// </summary>
+        /// <value>Email address of the user</value>
         [DataMember(Name = "email", EmitDefaultValue = true)]
         public string Email { get; set; }
 

@@ -45,14 +45,14 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Pipeline" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="id">The unique identifier of the Pipeline..</param>
+        /// <param name="name">The name of the Pipeline. (required).</param>
         /// <param name="currency">currency.</param>
-        /// <param name="archived">archived.</param>
-        /// <param name="active">active.</param>
-        /// <param name="displayOrder">displayOrder.</param>
-        /// <param name="winProbabilityEnabled">winProbabilityEnabled.</param>
-        /// <param name="stages">stages.</param>
+        /// <param name="archived">Whether the Pipeline is archived or not..</param>
+        /// <param name="active">Whether the Pipeline is active or not..</param>
+        /// <param name="displayOrder">The order in which the Pipeline is displayed in the UI..</param>
+        /// <param name="winProbabilityEnabled">Whether the Pipeline has win probability enabled or not..</param>
+        /// <param name="stages">The Pipeline Stages..</param>
         public Pipeline(string id = default(string), string name = default(string), Currency? currency = default(Currency?), bool archived = default(bool), bool active = default(bool), int? displayOrder = default(int?), bool winProbabilityEnabled = default(bool), List<PipelineStages> stages = default(List<PipelineStages>))
         {
             // to ensure "name" is required (not null)
@@ -70,44 +70,51 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The unique identifier of the Pipeline.
         /// </summary>
+        /// <value>The unique identifier of the Pipeline.</value>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the Pipeline.
         /// </summary>
+        /// <value>The name of the Pipeline.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Archived
+        /// Whether the Pipeline is archived or not.
         /// </summary>
+        /// <value>Whether the Pipeline is archived or not.</value>
         [DataMember(Name = "archived", EmitDefaultValue = true)]
         public bool Archived { get; set; }
 
         /// <summary>
-        /// Gets or Sets Active
+        /// Whether the Pipeline is active or not.
         /// </summary>
+        /// <value>Whether the Pipeline is active or not.</value>
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool Active { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisplayOrder
+        /// The order in which the Pipeline is displayed in the UI.
         /// </summary>
+        /// <value>The order in which the Pipeline is displayed in the UI.</value>
         [DataMember(Name = "display_order", EmitDefaultValue = true)]
         public int? DisplayOrder { get; set; }
 
         /// <summary>
-        /// Gets or Sets WinProbabilityEnabled
+        /// Whether the Pipeline has win probability enabled or not.
         /// </summary>
+        /// <value>Whether the Pipeline has win probability enabled or not.</value>
         [DataMember(Name = "win_probability_enabled", EmitDefaultValue = true)]
         public bool WinProbabilityEnabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets Stages
+        /// The Pipeline Stages.
         /// </summary>
+        /// <value>The Pipeline Stages.</value>
         [DataMember(Name = "stages", EmitDefaultValue = false)]
         public List<PipelineStages> Stages { get; set; }
 

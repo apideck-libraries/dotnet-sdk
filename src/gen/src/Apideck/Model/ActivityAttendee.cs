@@ -32,8 +32,9 @@ namespace Apideck.Model
     public partial class ActivityAttendee : IEquatable<ActivityAttendee>, IValidatableObject
     {
         /// <summary>
-        /// Defines Status
+        /// Status of the attendee
         /// </summary>
+        /// <value>Status of the attendee</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -59,22 +60,23 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Status of the attendee
         /// </summary>
+        /// <value>Status of the attendee</value>
         [DataMember(Name = "status", EmitDefaultValue = true)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ActivityAttendee" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="middleName">middleName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="prefix">prefix.</param>
-        /// <param name="suffix">suffix.</param>
-        /// <param name="emailAddress">emailAddress.</param>
-        /// <param name="isOrganizer">isOrganizer.</param>
-        /// <param name="status">status.</param>
+        /// <param name="name">Full name of the attendee.</param>
+        /// <param name="firstName">First name of the attendee.</param>
+        /// <param name="middleName">Middle name of the attendee.</param>
+        /// <param name="lastName">Last name of the attendee.</param>
+        /// <param name="prefix">Prefix of the attendee.</param>
+        /// <param name="suffix">Suffix of the attendee.</param>
+        /// <param name="emailAddress">Email address of the attendee.</param>
+        /// <param name="isOrganizer">Whether the attendee is the organizer of the activity.</param>
+        /// <param name="status">Status of the attendee.</param>
         public ActivityAttendee(string name = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string prefix = default(string), string suffix = default(string), string emailAddress = default(string), bool? isOrganizer = default(bool?), StatusEnum? status = default(StatusEnum?))
         {
             this.Name = name;
@@ -89,9 +91,10 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique identifier for the attendee
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>Unique identifier for the attendee</value>
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; private set; }
 
         /// <summary>
@@ -103,57 +106,66 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Name
+        /// Full name of the attendee
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        /// <value>Full name of the attendee</value>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// First name of the attendee
         /// </summary>
+        /// <value>First name of the attendee</value>
         [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets MiddleName
+        /// Middle name of the attendee
         /// </summary>
+        /// <value>Middle name of the attendee</value>
         [DataMember(Name = "middle_name", EmitDefaultValue = true)]
         public string MiddleName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// Last name of the attendee
         /// </summary>
+        /// <value>Last name of the attendee</value>
         [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Prefix
+        /// Prefix of the attendee
         /// </summary>
+        /// <value>Prefix of the attendee</value>
         [DataMember(Name = "prefix", EmitDefaultValue = true)]
         public string Prefix { get; set; }
 
         /// <summary>
-        /// Gets or Sets Suffix
+        /// Suffix of the attendee
         /// </summary>
+        /// <value>Suffix of the attendee</value>
         [DataMember(Name = "suffix", EmitDefaultValue = true)]
         public string Suffix { get; set; }
 
         /// <summary>
-        /// Gets or Sets EmailAddress
+        /// Email address of the attendee
         /// </summary>
+        /// <value>Email address of the attendee</value>
         [DataMember(Name = "email_address", EmitDefaultValue = true)]
         public string EmailAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsOrganizer
+        /// Whether the attendee is the organizer of the activity
         /// </summary>
+        /// <value>Whether the attendee is the organizer of the activity</value>
         [DataMember(Name = "is_organizer", EmitDefaultValue = true)]
         public bool? IsOrganizer { get; set; }
 
         /// <summary>
-        /// Gets or Sets UserId
+        /// The identifier for a related user
         /// </summary>
-        [DataMember(Name = "user_id", EmitDefaultValue = false)]
+        /// <value>The identifier for a related user</value>
+        [DataMember(Name = "user_id", EmitDefaultValue = true)]
         public string UserId { get; private set; }
 
         /// <summary>
@@ -165,9 +177,10 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets ContactId
+        /// The identifier for a related contact
         /// </summary>
-        [DataMember(Name = "contact_id", EmitDefaultValue = false)]
+        /// <value>The identifier for a related contact</value>
+        [DataMember(Name = "contact_id", EmitDefaultValue = true)]
         public string ContactId { get; private set; }
 
         /// <summary>
@@ -179,10 +192,11 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// The last time the attendee was updated (ISO 8601)
         /// </summary>
-        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
-        public DateTime UpdatedAt { get; private set; }
+        /// <value>The last time the attendee was updated (ISO 8601)</value>
+        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
+        public DateTime? UpdatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as UpdatedAt should not be serialized given that it's read-only.
@@ -193,10 +207,11 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// The time the attendee was created (ISO 8601)
         /// </summary>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        /// <value>The time the attendee was created (ISO 8601)</value>
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.
