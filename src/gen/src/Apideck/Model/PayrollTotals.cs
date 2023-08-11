@@ -43,7 +43,7 @@ namespace Apideck.Model
         /// <param name="employeeTaxes">The total amount of employee paid taxes for the payroll..</param>
         /// <param name="employerBenefitContributions">The total amount of company contributed benefits for the payroll..</param>
         /// <param name="employeeBenefitDeductions">The total amount of employee deducted benefits for the payroll..</param>
-        public PayrollTotals(decimal? companyDebit = default(decimal?), decimal? taxDebit = default(decimal?), decimal? checkAmount = default(decimal?), decimal? netPay = default(decimal?), decimal grossPay = default(decimal), decimal? employerTaxes = default(decimal?), decimal? employeeTaxes = default(decimal?), decimal? employerBenefitContributions = default(decimal?), decimal? employeeBenefitDeductions = default(decimal?))
+        public PayrollTotals(decimal? companyDebit = default(decimal?), decimal? taxDebit = default(decimal?), decimal? checkAmount = default(decimal?), decimal? netPay = default(decimal?), decimal? grossPay = default(decimal?), decimal? employerTaxes = default(decimal?), decimal? employeeTaxes = default(decimal?), decimal? employerBenefitContributions = default(decimal?), decimal? employeeBenefitDeductions = default(decimal?))
         {
             this.CompanyDebit = companyDebit;
             this.TaxDebit = taxDebit;
@@ -88,8 +88,8 @@ namespace Apideck.Model
         /// The gross pay amount for the payroll.
         /// </summary>
         /// <value>The gross pay amount for the payroll.</value>
-        [DataMember(Name = "gross_pay", EmitDefaultValue = false)]
-        public decimal GrossPay { get; set; }
+        [DataMember(Name = "gross_pay", EmitDefaultValue = true)]
+        public decimal? GrossPay { get; set; }
 
         /// <summary>
         /// The total amount of employer paid taxes for the payroll.
@@ -193,7 +193,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.GrossPay == input.GrossPay ||
-                    this.GrossPay.Equals(input.GrossPay)
+                    (this.GrossPay != null &&
+                    this.GrossPay.Equals(input.GrossPay))
                 ) && 
                 (
                     this.EmployerTaxes == input.EmployerTaxes ||
@@ -242,7 +243,10 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.NetPay.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.GrossPay.GetHashCode();
+                if (this.GrossPay != null)
+                {
+                    hashCode = (hashCode * 59) + this.GrossPay.GetHashCode();
+                }
                 if (this.EmployerTaxes != null)
                 {
                     hashCode = (hashCode * 59) + this.EmployerTaxes.GetHashCode();

@@ -117,8 +117,8 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets ExpiresAt
         /// </summary>
-        [DataMember(Name = "expires_at", EmitDefaultValue = false)]
-        public DateTime ExpiresAt { get; private set; }
+        [DataMember(Name = "expires_at", EmitDefaultValue = true)]
+        public DateTime? ExpiresAt { get; private set; }
 
         /// <summary>
         /// Returns false as ExpiresAt should not be serialized given that it's read-only.

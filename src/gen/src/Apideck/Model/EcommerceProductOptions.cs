@@ -48,14 +48,14 @@ namespace Apideck.Model
         /// A unique identifier for the option of the product.
         /// </summary>
         /// <value>A unique identifier for the option of the product.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// The name of the option for the product.
         /// </summary>
         /// <value>The name of the option for the product.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

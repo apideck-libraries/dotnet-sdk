@@ -35,7 +35,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public EcommerceOrderStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkedEcommerceOrder" /> class.
@@ -67,7 +67,7 @@ namespace Apideck.Model
         /// The total amount of the order.
         /// </summary>
         /// <value>The total amount of the order.</value>
-        [DataMember(Name = "total", EmitDefaultValue = false)]
+        [DataMember(Name = "total", EmitDefaultValue = true)]
         public string Total { get; set; }
 
         /// <summary>

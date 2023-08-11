@@ -60,49 +60,49 @@ namespace Apideck.Model
         /// A unique identifier for the variant of the product.
         /// </summary>
         /// <value>A unique identifier for the variant of the product.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// The name for the variant, used for displaying to customers.
         /// </summary>
         /// <value>The name for the variant, used for displaying to customers.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// The price of the variant.
         /// </summary>
         /// <value>The price of the variant.</value>
-        [DataMember(Name = "price", EmitDefaultValue = false)]
+        [DataMember(Name = "price", EmitDefaultValue = true)]
         public string Price { get; set; }
 
         /// <summary>
         /// The stock keeping unit of the variant.
         /// </summary>
         /// <value>The stock keeping unit of the variant.</value>
-        [DataMember(Name = "sku", EmitDefaultValue = false)]
+        [DataMember(Name = "sku", EmitDefaultValue = true)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The quantity of the variant in stock.
         /// </summary>
         /// <value>The quantity of the variant in stock.</value>
-        [DataMember(Name = "inventory_quantity", EmitDefaultValue = false)]
+        [DataMember(Name = "inventory_quantity", EmitDefaultValue = true)]
         public string InventoryQuantity { get; set; }
 
         /// <summary>
         /// The weight of the variant.
         /// </summary>
         /// <value>The weight of the variant.</value>
-        [DataMember(Name = "weight", EmitDefaultValue = false)]
+        [DataMember(Name = "weight", EmitDefaultValue = true)]
         public string Weight { get; set; }
 
         /// <summary>
         /// The unit of measurement for the weight of the variant.
         /// </summary>
         /// <value>The unit of measurement for the weight of the variant.</value>
-        [DataMember(Name = "weight_unit", EmitDefaultValue = false)]
+        [DataMember(Name = "weight_unit", EmitDefaultValue = true)]
         public string WeightUnit { get; set; }
 
         /// <summary>

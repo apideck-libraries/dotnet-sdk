@@ -53,7 +53,7 @@ namespace Apideck.Model
         /// <param name="displayOrder">displayOrder.</param>
         /// <param name="winProbabilityEnabled">winProbabilityEnabled.</param>
         /// <param name="stages">stages.</param>
-        public Pipeline(string id = default(string), string name = default(string), Currency? currency = default(Currency?), bool archived = default(bool), bool active = default(bool), int displayOrder = default(int), bool winProbabilityEnabled = default(bool), List<PipelineStages> stages = default(List<PipelineStages>))
+        public Pipeline(string id = default(string), string name = default(string), Currency? currency = default(Currency?), bool archived = default(bool), bool active = default(bool), int? displayOrder = default(int?), bool winProbabilityEnabled = default(bool), List<PipelineStages> stages = default(List<PipelineStages>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -96,8 +96,8 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets DisplayOrder
         /// </summary>
-        [DataMember(Name = "display_order", EmitDefaultValue = false)]
-        public int DisplayOrder { get; set; }
+        [DataMember(Name = "display_order", EmitDefaultValue = true)]
+        public int? DisplayOrder { get; set; }
 
         /// <summary>
         /// Gets or Sets WinProbabilityEnabled
@@ -130,8 +130,8 @@ namespace Apideck.Model
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.
@@ -218,7 +218,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.DisplayOrder == input.DisplayOrder ||
-                    this.DisplayOrder.Equals(input.DisplayOrder)
+                    (this.DisplayOrder != null &&
+                    this.DisplayOrder.Equals(input.DisplayOrder))
                 ) && 
                 (
                     this.WinProbabilityEnabled == input.WinProbabilityEnabled ||
@@ -262,7 +263,10 @@ namespace Apideck.Model
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 hashCode = (hashCode * 59) + this.Archived.GetHashCode();
                 hashCode = (hashCode * 59) + this.Active.GetHashCode();
-                hashCode = (hashCode * 59) + this.DisplayOrder.GetHashCode();
+                if (this.DisplayOrder != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayOrder.GetHashCode();
+                }
                 hashCode = (hashCode * 59) + this.WinProbabilityEnabled.GetHashCode();
                 if (this.Stages != null)
                 {

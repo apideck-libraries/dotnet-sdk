@@ -58,7 +58,7 @@ namespace Apideck.Model
         /// Email of the owner
         /// </summary>
         /// <value>Email of the owner</value>
-        [DataMember(Name = "email", EmitDefaultValue = false)]
+        [DataMember(Name = "email", EmitDefaultValue = true)]
         public string Email { get; private set; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Apideck.Model
         /// Name of the owner
         /// </summary>
         /// <value>Name of the owner</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; private set; }
 
         /// <summary>

@@ -56,49 +56,49 @@ namespace Apideck.Model
         /// Address line 1 of the billing address.
         /// </summary>
         /// <value>Address line 1 of the billing address.</value>
-        [DataMember(Name = "line1", EmitDefaultValue = false)]
+        [DataMember(Name = "line1", EmitDefaultValue = true)]
         public string Line1 { get; set; }
 
         /// <summary>
         /// Address line 2 of the billing address.
         /// </summary>
         /// <value>Address line 2 of the billing address.</value>
-        [DataMember(Name = "line2", EmitDefaultValue = false)]
+        [DataMember(Name = "line2", EmitDefaultValue = true)]
         public string Line2 { get; set; }
 
         /// <summary>
         /// Company name of the customer
         /// </summary>
         /// <value>Company name of the customer</value>
-        [DataMember(Name = "company_name", EmitDefaultValue = false)]
+        [DataMember(Name = "company_name", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// City of the billing address.
         /// </summary>
         /// <value>City of the billing address.</value>
-        [DataMember(Name = "city", EmitDefaultValue = false)]
+        [DataMember(Name = "city", EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
         /// State/province of the billing address.
         /// </summary>
         /// <value>State/province of the billing address.</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
+        [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
         /// Postal/ZIP code of the billing address.
         /// </summary>
         /// <value>Postal/ZIP code of the billing address.</value>
-        [DataMember(Name = "postal_code", EmitDefaultValue = false)]
+        [DataMember(Name = "postal_code", EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Country of the billing address.
         /// </summary>
         /// <value>Country of the billing address.</value>
-        [DataMember(Name = "country", EmitDefaultValue = false)]
+        [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>

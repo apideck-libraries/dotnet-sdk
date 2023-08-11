@@ -39,7 +39,7 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomField" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
+        /// <param name="id">Unique identifier for the custom field. (required).</param>
         /// <param name="name">Name of the custom field..</param>
         /// <param name="description">More information about the custom field.</param>
         /// <param name="value">value.</param>
@@ -56,23 +56,24 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique identifier for the custom field.
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Unique identifier for the custom field.</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Name of the custom field.
         /// </summary>
         /// <value>Name of the custom field.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// More information about the custom field
         /// </summary>
         /// <value>More information about the custom field</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>

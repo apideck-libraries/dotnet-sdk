@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **Anonymized** | **bool** |  | [optional] 
 **Tags** | **List&lt;string&gt;** |  | [optional] 
 **Archived** | **bool** |  | [optional] 
-**LastInteractionAt** | **DateTime** |  | [optional] [readonly] 
+**LastInteractionAt** | **DateTime?** |  | [optional] [readonly] 
 **OwnerId** | **string** |  | [optional] 
 **SourcedBy** | **string** |  | [optional] [readonly] 
 **CvUrl** | **string** |  | [optional] [readonly] 
@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

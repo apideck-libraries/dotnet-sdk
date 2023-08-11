@@ -41,7 +41,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public EcommerceOrderStatus? Status { get; set; }
         /// <summary>
         /// Current payment status of the order.
@@ -99,7 +99,7 @@ namespace Apideck.Model
         /// Current payment status of the order.
         /// </summary>
         /// <value>Current payment status of the order.</value>
-        [DataMember(Name = "payment_status", EmitDefaultValue = false)]
+        [DataMember(Name = "payment_status", EmitDefaultValue = true)]
         public PaymentStatusEnum? PaymentStatus { get; set; }
         /// <summary>
         /// Current fulfillment status of the order.
@@ -157,7 +157,7 @@ namespace Apideck.Model
         /// Current fulfillment status of the order.
         /// </summary>
         /// <value>Current fulfillment status of the order.</value>
-        [DataMember(Name = "fulfillment_status", EmitDefaultValue = false)]
+        [DataMember(Name = "fulfillment_status", EmitDefaultValue = true)]
         public FulfillmentStatusEnum? FulfillmentStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EcommerceOrder" /> class.
@@ -226,7 +226,7 @@ namespace Apideck.Model
         /// Order number, if any.
         /// </summary>
         /// <value>Order number, if any.</value>
-        [DataMember(Name = "order_number", EmitDefaultValue = false)]
+        [DataMember(Name = "order_number", EmitDefaultValue = true)]
         public string OrderNumber { get; set; }
 
         /// <summary>
@@ -239,42 +239,42 @@ namespace Apideck.Model
         /// Sub-total amount, normally before tax.
         /// </summary>
         /// <value>Sub-total amount, normally before tax.</value>
-        [DataMember(Name = "sub_total", EmitDefaultValue = false)]
+        [DataMember(Name = "sub_total", EmitDefaultValue = true)]
         public string SubTotal { get; set; }
 
         /// <summary>
         /// Shipping cost, if any.
         /// </summary>
         /// <value>Shipping cost, if any.</value>
-        [DataMember(Name = "shipping_cost", EmitDefaultValue = false)]
+        [DataMember(Name = "shipping_cost", EmitDefaultValue = true)]
         public string ShippingCost { get; set; }
 
         /// <summary>
         /// Total discount, if any.
         /// </summary>
         /// <value>Total discount, if any.</value>
-        [DataMember(Name = "total_discount", EmitDefaultValue = false)]
+        [DataMember(Name = "total_discount", EmitDefaultValue = true)]
         public string TotalDiscount { get; set; }
 
         /// <summary>
         /// Total tax, if any.
         /// </summary>
         /// <value>Total tax, if any.</value>
-        [DataMember(Name = "total_tax", EmitDefaultValue = false)]
+        [DataMember(Name = "total_tax", EmitDefaultValue = true)]
         public string TotalTax { get; set; }
 
         /// <summary>
         /// Total amount due.
         /// </summary>
         /// <value>Total amount due.</value>
-        [DataMember(Name = "total_amount", EmitDefaultValue = false)]
+        [DataMember(Name = "total_amount", EmitDefaultValue = true)]
         public string TotalAmount { get; set; }
 
         /// <summary>
         /// Payment method used for this order.
         /// </summary>
         /// <value>Payment method used for this order.</value>
-        [DataMember(Name = "payment_method", EmitDefaultValue = false)]
+        [DataMember(Name = "payment_method", EmitDefaultValue = true)]
         public string PaymentMethod { get; set; }
 
         /// <summary>
@@ -311,15 +311,15 @@ namespace Apideck.Model
         /// Note for the order.
         /// </summary>
         /// <value>Note for the order.</value>
-        [DataMember(Name = "note", EmitDefaultValue = false)]
+        [DataMember(Name = "note", EmitDefaultValue = true)]
         public string Note { get; set; }
 
         /// <summary>
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.

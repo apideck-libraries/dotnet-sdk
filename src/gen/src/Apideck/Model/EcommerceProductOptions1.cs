@@ -48,21 +48,21 @@ namespace Apideck.Model
         /// A unique identifier for the option of the variant.
         /// </summary>
         /// <value>A unique identifier for the option of the variant.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// The name of the option for the variant.
         /// </summary>
         /// <value>The name of the option for the variant.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// The value of the option for the variant.
         /// </summary>
         /// <value>The value of the option for the variant.</value>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
+        [DataMember(Name = "value", EmitDefaultValue = true)]
         public string Value { get; set; }
 
         /// <summary>

@@ -421,7 +421,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = false)]
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<string> Tags { get; set; }
 
         /// <summary>
@@ -445,14 +445,14 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets OwnerId
         /// </summary>
-        [DataMember(Name = "owner_id", EmitDefaultValue = false)]
+        [DataMember(Name = "owner_id", EmitDefaultValue = true)]
         public string OwnerId { get; set; }
 
         /// <summary>
         /// Gets or Sets PublishedAt
         /// </summary>
-        [DataMember(Name = "published_at", EmitDefaultValue = false)]
-        public DateTime PublishedAt { get; private set; }
+        [DataMember(Name = "published_at", EmitDefaultValue = true)]
+        public DateTime? PublishedAt { get; private set; }
 
         /// <summary>
         /// Returns false as PublishedAt should not be serialized given that it's read-only.
@@ -511,8 +511,8 @@ namespace Apideck.Model
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.

@@ -15,12 +15,12 @@ Name | Type | Description | Notes
 **RequestType** | **string** | The type of request | [optional] 
 **ApprovalDate** | **string** | The date the request was approved | [optional] 
 **Units** | **string** | The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;. | [optional] 
-**Amount** | **decimal** | The amount of time off requested. | [optional] 
+**Amount** | **decimal?** | The amount of time off requested. | [optional] 
 **Notes** | [**TimeOffRequestNotes**](TimeOffRequestNotes.md) |  | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

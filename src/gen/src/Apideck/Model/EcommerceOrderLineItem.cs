@@ -83,7 +83,7 @@ namespace Apideck.Model
         /// A unique identifier for an object.
         /// </summary>
         /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; private set; }
 
         /// <summary>
@@ -98,35 +98,35 @@ namespace Apideck.Model
         /// A unique identifier for the product associated with the line item.
         /// </summary>
         /// <value>A unique identifier for the product associated with the line item.</value>
-        [DataMember(Name = "product_id", EmitDefaultValue = false)]
+        [DataMember(Name = "product_id", EmitDefaultValue = true)]
         public string ProductId { get; set; }
 
         /// <summary>
         /// A unique identifier for the variant of the product associated with the line item, if applicable.
         /// </summary>
         /// <value>A unique identifier for the variant of the product associated with the line item, if applicable.</value>
-        [DataMember(Name = "variant_id", EmitDefaultValue = false)]
+        [DataMember(Name = "variant_id", EmitDefaultValue = true)]
         public string VariantId { get; set; }
 
         /// <summary>
         /// The SKU of the product or variant associated with the line item.
         /// </summary>
         /// <value>The SKU of the product or variant associated with the line item.</value>
-        [DataMember(Name = "sku", EmitDefaultValue = false)]
+        [DataMember(Name = "sku", EmitDefaultValue = true)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The name of the product or variant associated with the line item.
         /// </summary>
         /// <value>The name of the product or variant associated with the line item.</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// The description of the product or variant associated with the line item.
         /// </summary>
         /// <value>The description of the product or variant associated with the line item.</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -139,35 +139,35 @@ namespace Apideck.Model
         /// The quantity of the product or variant associated with the line item.
         /// </summary>
         /// <value>The quantity of the product or variant associated with the line item.</value>
-        [DataMember(Name = "quantity", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "quantity", IsRequired = true, EmitDefaultValue = true)]
         public string Quantity { get; set; }
 
         /// <summary>
         /// The unit price of the product or variant associated with the line item.
         /// </summary>
         /// <value>The unit price of the product or variant associated with the line item.</value>
-        [DataMember(Name = "unit_price", EmitDefaultValue = false)]
+        [DataMember(Name = "unit_price", EmitDefaultValue = true)]
         public string UnitPrice { get; set; }
 
         /// <summary>
         /// The tax rate applied to the product or variant associated with the line item.
         /// </summary>
         /// <value>The tax rate applied to the product or variant associated with the line item.</value>
-        [DataMember(Name = "tax_rate", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_rate", EmitDefaultValue = true)]
         public string TaxRate { get; set; }
 
         /// <summary>
         /// The total tax amount applied to the product or variant associated with the line item.
         /// </summary>
         /// <value>The total tax amount applied to the product or variant associated with the line item.</value>
-        [DataMember(Name = "tax_amount", EmitDefaultValue = false)]
+        [DataMember(Name = "tax_amount", EmitDefaultValue = true)]
         public string TaxAmount { get; set; }
 
         /// <summary>
         /// The total amount for the product(s) or variant associated with the line item, including taxes and discounts.
         /// </summary>
         /// <value>The total amount for the product(s) or variant associated with the line item, including taxes and discounts.</value>
-        [DataMember(Name = "total_amount", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "total_amount", IsRequired = true, EmitDefaultValue = true)]
         public string TotalAmount { get; set; }
 
         /// <summary>

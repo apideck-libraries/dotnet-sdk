@@ -210,7 +210,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
-        [DataMember(Name = "updated_at", EmitDefaultValue = false)]
+        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
         public string UpdatedAt { get; private set; }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
         public string CreatedAt { get; private set; }
 
         /// <summary>

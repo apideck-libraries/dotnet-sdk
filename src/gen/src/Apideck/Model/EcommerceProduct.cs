@@ -57,7 +57,7 @@ namespace Apideck.Model
         /// The current status of the product (active or archived).
         /// </summary>
         /// <value>The current status of the product (active or archived).</value>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EcommerceProduct" /> class.
@@ -116,56 +116,56 @@ namespace Apideck.Model
         /// The name of the product as it should be displayed to customers.
         /// </summary>
         /// <value>The name of the product as it should be displayed to customers.</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// A detailed description of the product.
         /// </summary>
         /// <value>A detailed description of the product.</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// The price of the product.
         /// </summary>
         /// <value>The price of the product.</value>
-        [DataMember(Name = "price", EmitDefaultValue = false)]
+        [DataMember(Name = "price", EmitDefaultValue = true)]
         public string Price { get; set; }
 
         /// <summary>
         /// The stock keeping unit of the product.
         /// </summary>
         /// <value>The stock keeping unit of the product.</value>
-        [DataMember(Name = "sku", EmitDefaultValue = false)]
+        [DataMember(Name = "sku", EmitDefaultValue = true)]
         public string Sku { get; set; }
 
         /// <summary>
         /// The quantity of the product in stock.
         /// </summary>
         /// <value>The quantity of the product in stock.</value>
-        [DataMember(Name = "inventory_quantity", EmitDefaultValue = false)]
+        [DataMember(Name = "inventory_quantity", EmitDefaultValue = true)]
         public string InventoryQuantity { get; set; }
 
         /// <summary>
         /// An array of image URLs for the product.
         /// </summary>
         /// <value>An array of image URLs for the product.</value>
-        [DataMember(Name = "images", EmitDefaultValue = false)]
+        [DataMember(Name = "images", EmitDefaultValue = true)]
         public List<EcommerceProductImages> Images { get; set; }
 
         /// <summary>
         /// The weight of the product.
         /// </summary>
         /// <value>The weight of the product.</value>
-        [DataMember(Name = "weight", EmitDefaultValue = false)]
+        [DataMember(Name = "weight", EmitDefaultValue = true)]
         public string Weight { get; set; }
 
         /// <summary>
         /// The unit of measurement for the weight of the product.
         /// </summary>
         /// <value>The unit of measurement for the weight of the product.</value>
-        [DataMember(Name = "weight_unit", EmitDefaultValue = false)]
+        [DataMember(Name = "weight_unit", EmitDefaultValue = true)]
         public string WeightUnit { get; set; }
 
         /// <summary>
@@ -199,8 +199,8 @@ namespace Apideck.Model
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.

@@ -57,7 +57,7 @@ namespace Apideck.Model
         /// A unique identifier for an object.
         /// </summary>
         /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "employee_id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "employee_id", IsRequired = true, EmitDefaultValue = true)]
         public string EmployeeId { get; private set; }
 
         /// <summary>

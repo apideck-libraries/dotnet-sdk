@@ -32,8 +32,9 @@ namespace Apideck.Model
     public partial class Email : IEquatable<Email>, IValidatableObject
     {
         /// <summary>
-        /// Defines Type
+        /// Email type
         /// </summary>
+        /// <value>Email type</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -77,8 +78,9 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Email type
         /// </summary>
+        /// <value>Email type</value>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
@@ -89,9 +91,9 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Email" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="email">email (required).</param>
-        /// <param name="type">type.</param>
+        /// <param name="id">Unique identifier for the email address.</param>
+        /// <param name="email">Email address (required).</param>
+        /// <param name="type">Email type.</param>
         public Email(string id = default(string), string email = default(string), TypeEnum? type = default(TypeEnum?))
         {
             // to ensure "email" is required (not null)
@@ -104,15 +106,17 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Unique identifier for the email address
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        /// <value>Unique identifier for the email address</value>
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets _Email
+        /// Email address
         /// </summary>
-        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>Email address</value>
+        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string _Email { get; set; }
 
         /// <summary>

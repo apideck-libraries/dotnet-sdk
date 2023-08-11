@@ -81,7 +81,7 @@ namespace Apideck.Model
         /// The status of the time off request.
         /// </summary>
         /// <value>The status of the time off request.</value>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// The type of request
@@ -139,7 +139,7 @@ namespace Apideck.Model
         /// The type of request
         /// </summary>
         /// <value>The type of request</value>
-        [DataMember(Name = "request_type", EmitDefaultValue = false)]
+        [DataMember(Name = "request_type", EmitDefaultValue = true)]
         public RequestTypeEnum? RequestType { get; set; }
         /// <summary>
         /// The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;.
@@ -173,7 +173,7 @@ namespace Apideck.Model
         /// The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;.
         /// </summary>
         /// <value>The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;.</value>
-        [DataMember(Name = "units", EmitDefaultValue = false)]
+        [DataMember(Name = "units", EmitDefaultValue = true)]
         public UnitsEnum? Units { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeOffRequest" /> class.
@@ -190,7 +190,7 @@ namespace Apideck.Model
         /// <param name="units">The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;..</param>
         /// <param name="amount">The amount of time off requested..</param>
         /// <param name="notes">notes.</param>
-        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal amount = default(decimal), TimeOffRequestNotes notes = default(TimeOffRequestNotes))
+        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal? amount = default(decimal?), TimeOffRequestNotes notes = default(TimeOffRequestNotes))
         {
             this.EmployeeId = employeeId;
             this.PolicyId = policyId;
@@ -225,57 +225,57 @@ namespace Apideck.Model
         /// ID of the employee
         /// </summary>
         /// <value>ID of the employee</value>
-        [DataMember(Name = "employee_id", EmitDefaultValue = false)]
+        [DataMember(Name = "employee_id", EmitDefaultValue = true)]
         public string EmployeeId { get; set; }
 
         /// <summary>
         /// ID of the policy
         /// </summary>
         /// <value>ID of the policy</value>
-        [DataMember(Name = "policy_id", EmitDefaultValue = false)]
+        [DataMember(Name = "policy_id", EmitDefaultValue = true)]
         public string PolicyId { get; set; }
 
         /// <summary>
         /// Description of the time off request.
         /// </summary>
         /// <value>Description of the time off request.</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// The start date of the time off request.
         /// </summary>
         /// <value>The start date of the time off request.</value>
-        [DataMember(Name = "start_date", EmitDefaultValue = false)]
+        [DataMember(Name = "start_date", EmitDefaultValue = true)]
         public string StartDate { get; set; }
 
         /// <summary>
         /// The end date of the time off request.
         /// </summary>
         /// <value>The end date of the time off request.</value>
-        [DataMember(Name = "end_date", EmitDefaultValue = false)]
+        [DataMember(Name = "end_date", EmitDefaultValue = true)]
         public string EndDate { get; set; }
 
         /// <summary>
         /// The date the request was made.
         /// </summary>
         /// <value>The date the request was made.</value>
-        [DataMember(Name = "request_date", EmitDefaultValue = false)]
+        [DataMember(Name = "request_date", EmitDefaultValue = true)]
         public string RequestDate { get; set; }
 
         /// <summary>
         /// The date the request was approved
         /// </summary>
         /// <value>The date the request was approved</value>
-        [DataMember(Name = "approval_date", EmitDefaultValue = false)]
+        [DataMember(Name = "approval_date", EmitDefaultValue = true)]
         public string ApprovalDate { get; set; }
 
         /// <summary>
         /// The amount of time off requested.
         /// </summary>
         /// <value>The amount of time off requested.</value>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        [DataMember(Name = "amount", EmitDefaultValue = true)]
+        public decimal? Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets Notes
@@ -332,8 +332,8 @@ namespace Apideck.Model
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.
@@ -457,7 +457,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Amount == input.Amount ||
-                    this.Amount.Equals(input.Amount)
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
                 ) && 
                 (
                     this.Notes == input.Notes ||
@@ -530,7 +531,10 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.ApprovalDate.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Units.GetHashCode();
-                hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                if (this.Amount != null)
+                {
+                    hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                }
                 if (this.Notes != null)
                 {
                     hashCode = (hashCode * 59) + this.Notes.GetHashCode();

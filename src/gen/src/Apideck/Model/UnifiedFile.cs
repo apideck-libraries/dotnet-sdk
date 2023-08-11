@@ -58,7 +58,7 @@ namespace Apideck.Model
         /// <param name="permissions">permissions.</param>
         /// <param name="exportable">Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper..</param>
         /// <param name="exportFormats">The available file formats when exporting this file..</param>
-        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int size = default(int), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool), UnifiedFilePermissions permissions = default(UnifiedFilePermissions), bool exportable = default(bool), List<string> exportFormats = default(List<string>))
+        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int? size = default(int?), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool), UnifiedFilePermissions permissions = default(UnifiedFilePermissions), bool exportable = default(bool), List<string> exportFormats = default(List<string>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -120,7 +120,7 @@ namespace Apideck.Model
         /// Optional description of the file
         /// </summary>
         /// <value>Optional description of the file</value>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Apideck.Model
         /// The MIME type of the file.
         /// </summary>
         /// <value>The MIME type of the file.</value>
-        [DataMember(Name = "mime_type", EmitDefaultValue = false)]
+        [DataMember(Name = "mime_type", EmitDefaultValue = true)]
         public string MimeType { get; set; }
 
         /// <summary>
@@ -148,8 +148,8 @@ namespace Apideck.Model
         /// The size of the file in bytes
         /// </summary>
         /// <value>The size of the file in bytes</value>
-        [DataMember(Name = "size", EmitDefaultValue = false)]
-        public int Size { get; set; }
+        [DataMember(Name = "size", EmitDefaultValue = true)]
+        public int? Size { get; set; }
 
         /// <summary>
         /// Gets or Sets Owner
@@ -240,8 +240,8 @@ namespace Apideck.Model
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.
@@ -353,7 +353,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Size == input.Size ||
-                    this.Size.Equals(input.Size)
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
                 ) && 
                 (
                     this.Owner == input.Owner ||
@@ -442,7 +443,10 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.MimeType.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Downloadable.GetHashCode();
-                hashCode = (hashCode * 59) + this.Size.GetHashCode();
+                if (this.Size != null)
+                {
+                    hashCode = (hashCode * 59) + this.Size.GetHashCode();
+                }
                 if (this.Owner != null)
                 {
                     hashCode = (hashCode * 59) + this.Owner.GetHashCode();

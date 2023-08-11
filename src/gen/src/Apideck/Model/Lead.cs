@@ -132,7 +132,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets OwnerId
         /// </summary>
-        [DataMember(Name = "owner_id", EmitDefaultValue = false)]
+        [DataMember(Name = "owner_id", EmitDefaultValue = true)]
         public string OwnerId { get; set; }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name = "tags", EmitDefaultValue = false)]
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<string> Tags { get; set; }
 
         /// <summary>

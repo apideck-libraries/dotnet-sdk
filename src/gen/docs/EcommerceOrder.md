@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **Tracking** | [**List&lt;TrackingItem&gt;**](TrackingItem.md) |  | [optional] 
 **LineItems** | [**List&lt;EcommerceOrderLineItem&gt;**](EcommerceOrderLineItem.md) |  | [optional] 
 **Note** | **string** | Note for the order. | [optional] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -57,7 +57,7 @@ namespace Apideck.Model
         /// The current status of the customer
         /// </summary>
         /// <value>The current status of the customer</value>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public StatusEnum? Status { get; set; }
 
         /// <summary>
@@ -116,42 +116,42 @@ namespace Apideck.Model
         /// Full name of the customer
         /// </summary>
         /// <value>Full name of the customer</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// First name of the customer
         /// </summary>
         /// <value>First name of the customer</value>
-        [DataMember(Name = "first_name", EmitDefaultValue = false)]
+        [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Last name of the customer
         /// </summary>
         /// <value>Last name of the customer</value>
-        [DataMember(Name = "last_name", EmitDefaultValue = false)]
+        [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Company name of the customer
         /// </summary>
         /// <value>Company name of the customer</value>
-        [DataMember(Name = "company_name", EmitDefaultValue = false)]
+        [DataMember(Name = "company_name", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// An array of email addresses for the customer.
         /// </summary>
         /// <value>An array of email addresses for the customer.</value>
-        [DataMember(Name = "emails", EmitDefaultValue = false)]
+        [DataMember(Name = "emails", EmitDefaultValue = true)]
         public List<Email> Emails { get; set; }
 
         /// <summary>
         /// An array of phone numbers for the customer.
         /// </summary>
         /// <value>An array of phone numbers for the customer.</value>
-        [DataMember(Name = "phone_numbers", EmitDefaultValue = false)]
+        [DataMember(Name = "phone_numbers", EmitDefaultValue = true)]
         public List<PhoneNumber> PhoneNumbers { get; set; }
 
         /// <summary>
@@ -171,8 +171,8 @@ namespace Apideck.Model
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; private set; }
+        [DataMember(Name = "created_at", EmitDefaultValue = true)]
+        public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Returns false as CreatedAt should not be serialized given that it's read-only.

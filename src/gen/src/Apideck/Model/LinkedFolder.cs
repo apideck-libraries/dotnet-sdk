@@ -64,7 +64,7 @@ namespace Apideck.Model
         /// The name of the folder
         /// </summary>
         /// <value>The name of the folder</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

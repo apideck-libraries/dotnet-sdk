@@ -48,21 +48,21 @@ namespace Apideck.Model
         /// The code used to apply the discount.
         /// </summary>
         /// <value>The code used to apply the discount.</value>
-        [DataMember(Name = "code", EmitDefaultValue = false)]
+        [DataMember(Name = "code", EmitDefaultValue = true)]
         public string Code { get; set; }
 
         /// <summary>
         /// The fixed amount of the discount.
         /// </summary>
         /// <value>The fixed amount of the discount.</value>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        [DataMember(Name = "amount", EmitDefaultValue = true)]
         public string Amount { get; set; }
 
         /// <summary>
         /// The percentage of the discount.
         /// </summary>
         /// <value>The percentage of the discount.</value>
-        [DataMember(Name = "percentage", EmitDefaultValue = false)]
+        [DataMember(Name = "percentage", EmitDefaultValue = true)]
         public string Percentage { get; set; }
 
         /// <summary>

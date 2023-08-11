@@ -65,35 +65,35 @@ namespace Apideck.Model
         /// The ID of the customer this entity is linked to.
         /// </summary>
         /// <value>The ID of the customer this entity is linked to.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Full name of the customer
         /// </summary>
         /// <value>Full name of the customer</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// First name of the customer
         /// </summary>
         /// <value>First name of the customer</value>
-        [DataMember(Name = "first_name", EmitDefaultValue = false)]
+        [DataMember(Name = "first_name", EmitDefaultValue = true)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Last name of the customer
         /// </summary>
         /// <value>Last name of the customer</value>
-        [DataMember(Name = "last_name", EmitDefaultValue = false)]
+        [DataMember(Name = "last_name", EmitDefaultValue = true)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Company name of the customer
         /// </summary>
         /// <value>Company name of the customer</value>
-        [DataMember(Name = "company_name", EmitDefaultValue = false)]
+        [DataMember(Name = "company_name", EmitDefaultValue = true)]
         public string CompanyName { get; set; }
 
         /// <summary>

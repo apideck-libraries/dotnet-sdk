@@ -88,7 +88,7 @@ namespace Apideck.Model
         /// A unique identifier for an object.
         /// </summary>
         /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; private set; }
 
         /// <summary>
@@ -103,42 +103,42 @@ namespace Apideck.Model
         /// First line of the street address of the customer
         /// </summary>
         /// <value>First line of the street address of the customer</value>
-        [DataMember(Name = "line1", EmitDefaultValue = false)]
+        [DataMember(Name = "line1", EmitDefaultValue = true)]
         public string Line1 { get; set; }
 
         /// <summary>
         /// Second line of the street address of the customer
         /// </summary>
         /// <value>Second line of the street address of the customer</value>
-        [DataMember(Name = "line2", EmitDefaultValue = false)]
+        [DataMember(Name = "line2", EmitDefaultValue = true)]
         public string Line2 { get; set; }
 
         /// <summary>
         /// City of the customer
         /// </summary>
         /// <value>City of the customer</value>
-        [DataMember(Name = "city", EmitDefaultValue = false)]
+        [DataMember(Name = "city", EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
         /// State of the customer
         /// </summary>
         /// <value>State of the customer</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
+        [DataMember(Name = "state", EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
         /// Postal code of the customer
         /// </summary>
         /// <value>Postal code of the customer</value>
-        [DataMember(Name = "postal_code", EmitDefaultValue = false)]
+        [DataMember(Name = "postal_code", EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Country of the customer
         /// </summary>
         /// <value>Country of the customer</value>
-        [DataMember(Name = "country", EmitDefaultValue = false)]
+        [DataMember(Name = "country", EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>

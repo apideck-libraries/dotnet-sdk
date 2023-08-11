@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) | An array of phone numbers for the customer. | [optional] 
 **Addresses** | [**List&lt;EcommerceCustomerAddresses&gt;**](EcommerceCustomerAddresses.md) | An array of addresses for the customer. | [optional] 
 **Orders** | [**List&lt;LinkedEcommerceOrder&gt;**](LinkedEcommerceOrder.md) |  | [optional] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

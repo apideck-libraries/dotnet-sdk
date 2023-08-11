@@ -45,13 +45,13 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Employee
         /// </summary>
-        [DataMember(Name = "employee", EmitDefaultValue = false)]
+        [DataMember(Name = "employee", EmitDefaultValue = true)]
         public string Employee { get; set; }
 
         /// <summary>
         /// Gets or Sets Manager
         /// </summary>
-        [DataMember(Name = "manager", EmitDefaultValue = false)]
+        [DataMember(Name = "manager", EmitDefaultValue = true)]
         public string Manager { get; set; }
 
         /// <summary>
