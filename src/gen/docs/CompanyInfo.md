@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SalesTaxNumber** | **string** |  | [optional] 
 **AutomatedSalesTax** | **bool** | Whether sales tax is calculated automatically for the company | [optional] 
 **SalesTaxEnabled** | **bool** | Whether sales tax is enabled for the company | [optional] 
-**DefaultSalesTax** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
+**DefaultSalesTax** | [**TaxRate**](TaxRate.md) |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **Language** | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 **FiscalYearStartMonth** | **string** | The start month of fiscal year. | [optional] 
