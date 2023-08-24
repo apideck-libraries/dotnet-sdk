@@ -30,11 +30,11 @@ Name | Type | Description | Notes
 **Available** | **bool?** |  | [optional] 
 **Hidden** | **bool?** |  | [optional] 
 **_Version** | **string** | The user who last updated the object. | [optional] [readonly] 
-**Deleted** | **bool?** |  | [optional] 
+**Deleted** | **bool?** | Flag to indicate if the object is deleted. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

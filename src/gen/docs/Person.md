@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **LastName** | **string** | The last name of the person. | [optional] 
 **MiddleName** | **string** | Middle name of the person. | [optional] 
 **Gender** | **Gender** |  | [optional] 
-**Initials** | **string** |  | [optional] 
-**Birthday** | **DateTime?** |  | [optional] 
-**DeceasedOn** | **DateTime?** |  | [optional] 
+**Initials** | **string** | Initials of the person | [optional] 
+**Birthday** | **DateTime?** | Date of birth | [optional] 
+**DeceasedOn** | **DateTime?** | Date of death | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

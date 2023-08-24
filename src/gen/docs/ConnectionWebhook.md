@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ExecuteBaseUrl** | **string** | The Unify Base URL events from connectors will be sent to after service id is appended. | [readonly] 
 **Events** | **List&lt;string&gt;** | The list of subscribed events for this webhook. [&#x60;*&#x60;] indicates that all events are enabled. | 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **TaxDebit** | **decimal?** | The total tax debit for the payroll. | [optional] 
 **CheckAmount** | **decimal?** | The total check amount for the payroll. | [optional] 
 **NetPay** | **decimal?** | The net pay amount for the payroll. | [optional] 
-**GrossPay** | **decimal** | The gross pay amount for the payroll. | [optional] 
+**GrossPay** | **decimal?** | The gross pay amount for the payroll. | [optional] 
 **EmployerTaxes** | **decimal?** | The total amount of employer paid taxes for the payroll. | [optional] 
 **EmployeeTaxes** | **decimal?** | The total amount of employee paid taxes for the payroll. | [optional] 
 **EmployerBenefitContributions** | **decimal?** | The total amount of company contributed benefits for the payroll. | [optional] 

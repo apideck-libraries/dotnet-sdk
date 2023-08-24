@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
+**Id** | **string** | Unique identifier for the custom field. | 
 **Name** | **string** | Name of the custom field. | [optional] 
 **Description** | **string** | More information about the custom field | [optional] 
 **Value** | [**AnyOfstringnumberbooleanobjectarray**](AnyOfstringnumberbooleanobjectarray.md) |  | [optional] 

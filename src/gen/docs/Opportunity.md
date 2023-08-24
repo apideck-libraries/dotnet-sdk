@@ -42,8 +42,8 @@ Name | Type | Description | Notes
 **DateLeadCreated** | **DateTime?** | The date and time when the lead associated with the opportunity was created. | [optional] [readonly] 
 **UpdatedBy** | **string** | The unique identifier of the user who last updated the opportunity. | [optional] [readonly] 
 **CreatedBy** | **string** | The unique identifier of the user who created the opportunity. | [optional] [readonly] 
-**UpdatedAt** | **DateTime** | The date and time when the opportunity was last updated. | [optional] [readonly] 
-**CreatedAt** | **DateTime** | The date and time when the opportunity was created. | [optional] [readonly] 
+**UpdatedAt** | **DateTime?** | The date and time when the opportunity was last updated. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the opportunity was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

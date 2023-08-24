@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] 
-**Name** | **string** |  | 
+**Id** | **string** | The unique identifier of the Pipeline. | [optional] 
+**Name** | **string** | The name of the Pipeline. | 
 **Currency** | **Currency** |  | [optional] 
-**Archived** | **bool** |  | [optional] 
-**Active** | **bool** |  | [optional] 
-**DisplayOrder** | **int** |  | [optional] 
-**WinProbabilityEnabled** | **bool** |  | [optional] 
-**Stages** | [**List&lt;PipelineStages&gt;**](PipelineStages.md) |  | [optional] 
+**Archived** | **bool** | Whether the Pipeline is archived or not. | [optional] 
+**Active** | **bool** | Whether the Pipeline is active or not. | [optional] 
+**DisplayOrder** | **int?** | The order in which the Pipeline is displayed in the UI. | [optional] 
+**WinProbabilityEnabled** | **bool** | Whether the Pipeline has win probability enabled or not. | [optional] 
+**Stages** | [**List&lt;PipelineStages&gt;**](PipelineStages.md) | The Pipeline Stages. | [optional] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

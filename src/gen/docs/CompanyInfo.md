@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SalesTaxNumber** | **string** |  | [optional] 
 **AutomatedSalesTax** | **bool** | Whether sales tax is calculated automatically for the company | [optional] 
 **SalesTaxEnabled** | **bool** | Whether sales tax is enabled for the company | [optional] 
-**DefaultSalesTax** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
+**DefaultSalesTax** | [**TaxRate**](TaxRate.md) |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **Language** | **string** | language code according to ISO 639-1. For the United States - EN | [optional] 
 **FiscalYearStartMonth** | **string** | The start month of fiscal year. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
-**CreatedAt** | **DateTime** | The date and time when the object was created. | [optional] [readonly] 
+**CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
