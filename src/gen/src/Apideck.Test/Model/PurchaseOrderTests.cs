@@ -265,6 +265,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Channel'
         }
         /// <summary>
+        /// Test the property 'Memo'
+        /// </summary>
+        [Fact]
+        public void MemoTest()
+        {
+            // TODO unit test for the property 'Memo'
+        }
+        /// <summary>
         /// Test the property 'RowVersion'
         /// </summary>
         [Fact]
