@@ -234,6 +234,7 @@ docs/Employee.md
 docs/EmployeeCompensation.md
 docs/EmployeeEmploymentRole.md
 docs/EmployeeJob.md
+docs/EmployeeList.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
 docs/EmployeePayrolls.md
@@ -839,6 +840,7 @@ src/Apideck.Test/Model/EmailTests.cs
 src/Apideck.Test/Model/EmployeeCompensationTests.cs
 src/Apideck.Test/Model/EmployeeEmploymentRoleTests.cs
 src/Apideck.Test/Model/EmployeeJobTests.cs
+src/Apideck.Test/Model/EmployeeListTests.cs
 src/Apideck.Test/Model/EmployeeManagerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
 src/Apideck.Test/Model/EmployeePayrollsTests.cs
@@ -1454,6 +1456,7 @@ src/Apideck/Model/Employee.cs
 src/Apideck/Model/EmployeeCompensation.cs
 src/Apideck/Model/EmployeeEmploymentRole.cs
 src/Apideck/Model/EmployeeJob.cs
+src/Apideck/Model/EmployeeList.cs
 src/Apideck/Model/EmployeeManager.cs
 src/Apideck/Model/EmployeePayroll.cs
 src/Apideck/Model/EmployeePayrolls.cs

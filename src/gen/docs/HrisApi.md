@@ -1331,7 +1331,7 @@ Name | Type | Description  | Notes
 
 List Employees
 
-List Employees
+Apideck operates as a stateless Unified API, which means that the list endpoint only provides a portion of the employee model. This is due to the fact that most HRIS systems do not readily provide all data in every call. However, you can access the complete employee model through an employee detail call.
 
 ### Example
 ```csharp
