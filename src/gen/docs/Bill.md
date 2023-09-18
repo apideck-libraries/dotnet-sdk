@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
-**BillNumber** | **string** |  | [optional] 
+**BillNumber** | **string** | Reference to supplier bill number | [optional] 
 **Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 

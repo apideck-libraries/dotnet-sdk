@@ -104,7 +104,7 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Bill" /> class.
         /// </summary>
-        /// <param name="billNumber">billNumber.</param>
+        /// <param name="billNumber">Reference to supplier bill number.</param>
         /// <param name="supplier">supplier.</param>
         /// <param name="currency">currency.</param>
         /// <param name="currencyRate">Currency Exchange Rate at the time entity was recorded/generated..</param>
@@ -195,8 +195,9 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets BillNumber
+        /// Reference to supplier bill number
         /// </summary>
+        /// <value>Reference to supplier bill number</value>
         [DataMember(Name = "bill_number", EmitDefaultValue = true)]
         public string BillNumber { get; set; }
 
