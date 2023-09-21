@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Service** | **string** | Apideck ID of service provider | 
 **Resource** | **string** | Unified API resource name | 
 **Operation** | **string** | Operation performed | 
-**Data** | [**EmployeePayrolls**](EmployeePayrolls.md) |  | 
+**Data** | [**List&lt;EmployeePayroll&gt;**](EmployeePayroll.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

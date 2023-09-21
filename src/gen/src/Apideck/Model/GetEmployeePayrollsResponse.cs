@@ -45,7 +45,7 @@ namespace Apideck.Model
         /// <param name="resource">Unified API resource name (required).</param>
         /// <param name="operation">Operation performed (required).</param>
         /// <param name="data">data (required).</param>
-        public GetEmployeePayrollsResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), EmployeePayrolls data = default(EmployeePayrolls))
+        public GetEmployeePayrollsResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), List<EmployeePayroll> data = default(List<EmployeePayroll>))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -114,7 +114,7 @@ namespace Apideck.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = false)]
-        public EmployeePayrolls Data { get; set; }
+        public List<EmployeePayroll> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -191,8 +191,9 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Data != null &&
+                    input.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 );
         }
 

@@ -237,7 +237,6 @@ docs/EmployeeJob.md
 docs/EmployeeList.md
 docs/EmployeeManager.md
 docs/EmployeePayroll.md
-docs/EmployeePayrolls.md
 docs/EmployeeSchedules.md
 docs/EmployeesFilter.md
 docs/EmployeesSort.md
@@ -843,7 +842,6 @@ src/Apideck.Test/Model/EmployeeJobTests.cs
 src/Apideck.Test/Model/EmployeeListTests.cs
 src/Apideck.Test/Model/EmployeeManagerTests.cs
 src/Apideck.Test/Model/EmployeePayrollTests.cs
-src/Apideck.Test/Model/EmployeePayrollsTests.cs
 src/Apideck.Test/Model/EmployeeSchedulesTests.cs
 src/Apideck.Test/Model/EmployeeTests.cs
 src/Apideck.Test/Model/EmployeesFilterTests.cs
@@ -1459,7 +1457,6 @@ src/Apideck/Model/EmployeeJob.cs
 src/Apideck/Model/EmployeeList.cs
 src/Apideck/Model/EmployeeManager.cs
 src/Apideck/Model/EmployeePayroll.cs
-src/Apideck/Model/EmployeePayrolls.cs
 src/Apideck/Model/EmployeeSchedules.cs
 src/Apideck/Model/EmployeesFilter.cs
 src/Apideck/Model/EmployeesSort.cs
