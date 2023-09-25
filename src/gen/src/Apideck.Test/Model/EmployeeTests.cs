@@ -257,6 +257,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'EmploymentRole'
         }
         /// <summary>
+        /// Test the property 'Ethnicity'
+        /// </summary>
+        [Fact]
+        public void EthnicityTest()
+        {
+            // TODO unit test for the property 'Ethnicity'
+        }
+        /// <summary>
         /// Test the property 'Manager'
         /// </summary>
         [Fact]

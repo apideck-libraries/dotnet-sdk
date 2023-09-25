@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **EmployeeNumber** | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 **EmploymentStatus** | **EmploymentStatus** |  | [optional] 
 **EmploymentRole** | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 
+**Ethnicity** | **string** | The ethnicity of the employee | [optional] 
 **Manager** | [**EmployeeManager**](EmployeeManager.md) |  | [optional] 
 **DirectReports** | **List&lt;string&gt;** | Direct reports is an array of ids that reflect the individuals in an organizational hierarchy who are directly supervised by this specific employee. | [optional] 
 **SocialSecurityNumber** | **string** | A unique identifier assigned by the government. This field is considered sensitive information and may be subject to special security and privacy restrictions. | [optional] 
