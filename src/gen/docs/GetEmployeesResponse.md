@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Service** | **string** | Apideck ID of service provider | 
 **Resource** | **string** | Unified API resource name | 
 **Operation** | **string** | Operation performed | 
-**Data** | [**List&lt;EmployeeList&gt;**](EmployeeList.md) |  | 
+**Data** | [**List&lt;Employee&gt;**](Employee.md) |  | 
 **Meta** | [**Meta**](Meta.md) |  | [optional] 
 **Links** | [**Links**](Links.md) |  | [optional] 
 
