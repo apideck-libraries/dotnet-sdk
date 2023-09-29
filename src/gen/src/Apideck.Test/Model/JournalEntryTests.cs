@@ -137,6 +137,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'TaxCode'
         }
         /// <summary>
+        /// Test the property 'Number'
+        /// </summary>
+        [Fact]
+        public void NumberTest()
+        {
+            // TODO unit test for the property 'Number'
+        }
+        /// <summary>
         /// Test the property 'UpdatedBy'
         /// </summary>
         [Fact]

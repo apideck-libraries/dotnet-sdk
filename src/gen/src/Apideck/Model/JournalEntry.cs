@@ -49,8 +49,9 @@ namespace Apideck.Model
         /// <param name="journalSymbol">Journal symbol of the entry. For example IND for indirect costs.</param>
         /// <param name="taxType">The specific category of tax associated with a transaction like sales or purchase.</param>
         /// <param name="taxCode">Applicable tax id/code override if tax is not supplied on a line item basis..</param>
+        /// <param name="number">Journal entry number..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string), string taxType = default(string), string taxCode = default(string), string rowVersion = default(string))
+        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string), string taxType = default(string), string taxCode = default(string), string number = default(string), string rowVersion = default(string))
         {
             this.Title = title;
             this.CurrencyRate = currencyRate;
@@ -61,6 +62,7 @@ namespace Apideck.Model
             this.JournalSymbol = journalSymbol;
             this.TaxType = taxType;
             this.TaxCode = taxCode;
+            this.Number = number;
             this.RowVersion = rowVersion;
         }
 
@@ -134,6 +136,13 @@ namespace Apideck.Model
         /// <value>Applicable tax id/code override if tax is not supplied on a line item basis.</value>
         [DataMember(Name = "tax_code", EmitDefaultValue = true)]
         public string TaxCode { get; set; }
+
+        /// <summary>
+        /// Journal entry number.
+        /// </summary>
+        /// <value>Journal entry number.</value>
+        [DataMember(Name = "number", EmitDefaultValue = true)]
+        public string Number { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -220,6 +229,7 @@ namespace Apideck.Model
             sb.Append("  JournalSymbol: ").Append(JournalSymbol).Append("\n");
             sb.Append("  TaxType: ").Append(TaxType).Append("\n");
             sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -311,6 +321,11 @@ namespace Apideck.Model
                     this.TaxCode.Equals(input.TaxCode))
                 ) && 
                 (
+                    this.Number == input.Number ||
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -382,6 +397,10 @@ namespace Apideck.Model
                 if (this.TaxCode != null)
                 {
                     hashCode = (hashCode * 59) + this.TaxCode.GetHashCode();
+                }
+                if (this.Number != null)
+                {
+                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

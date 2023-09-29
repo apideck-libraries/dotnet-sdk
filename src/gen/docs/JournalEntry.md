@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **JournalSymbol** | **string** | Journal symbol of the entry. For example IND for indirect costs | [optional] 
 **TaxType** | **string** | The specific category of tax associated with a transaction like sales or purchase | [optional] 
 **TaxCode** | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
+**Number** | **string** | Journal entry number. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
