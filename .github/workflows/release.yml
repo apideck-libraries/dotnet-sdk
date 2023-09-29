@@ -9,7 +9,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_VERSION: 1.8.1
+      PACKAGE_VERSION: 1.8.2
     steps:
       - uses: actions/checkout@v3
 
