@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **TaxRate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **TrackingCategory** | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | 
+**Customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+**Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 **DepartmentId** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **LocationId** | **string** | A unique identifier for an object. | [optional] [readonly] 
 
