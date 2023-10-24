@@ -42,7 +42,8 @@ namespace Apideck.Model
         /// <param name="name">The name of the drive group (required).</param>
         /// <param name="displayName">The display name of the drive group.</param>
         /// <param name="description">A description of the object..</param>
-        public DriveGroup(string name = default(string), string displayName = default(string), string description = default(string))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public DriveGroup(string name = default(string), string displayName = default(string), string description = default(string), Object customMappings = default(Object))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -51,6 +52,7 @@ namespace Apideck.Model
             this.Name = name;
             this.DisplayName = displayName;
             this.Description = description;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -88,6 +90,13 @@ namespace Apideck.Model
         /// <value>A description of the object.</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -161,6 +170,7 @@ namespace Apideck.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -221,6 +231,11 @@ namespace Apideck.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -266,6 +281,10 @@ namespace Apideck.Model
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

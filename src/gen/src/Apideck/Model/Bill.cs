@@ -132,7 +132,8 @@ namespace Apideck.Model
         /// <param name="bankAccount">bankAccount.</param>
         /// <param name="discountPercentage">Discount percentage applied to this transaction..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), string rowVersion = default(string))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), string rowVersion = default(string), Object customMappings = default(Object))
         {
             this.BillNumber = billNumber;
             this.Supplier = supplier;
@@ -162,6 +163,7 @@ namespace Apideck.Model
             this.BankAccount = bankAccount;
             this.DiscountPercentage = discountPercentage;
             this.RowVersion = rowVersion;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -435,6 +437,13 @@ namespace Apideck.Model
         public string RowVersion { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -476,6 +485,7 @@ namespace Apideck.Model
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -679,6 +689,11 @@ namespace Apideck.Model
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
+                ) && 
+                (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
                 );
         }
 
@@ -820,6 +835,10 @@ namespace Apideck.Model
                 if (this.RowVersion != null)
                 {
                     hashCode = (hashCode * 59) + this.RowVersion.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 return hashCode;
             }

@@ -381,7 +381,7 @@ namespace Example
 
             var apiInstance = new ConnectorApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var docId = "docId_example";  // string | ID of the Doc
+            var docId = application_owner+oauth_credentials;  // string | ID of the Doc
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try

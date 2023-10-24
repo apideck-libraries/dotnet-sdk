@@ -115,8 +115,9 @@ namespace Apideck.Model
         /// <param name="status">Customer status.</param>
         /// <param name="paymentMethod">Payment method used for the transaction, such as cash, credit card, bank transfer, or check.</param>
         /// <param name="channel">The channel through which the transaction is processed..</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Customer(string displayId = default(string), string displayName = default(string), string companyName = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), bool? individual = default(bool?), bool? project = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), string notes = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), LinkedParentCustomer parent = default(LinkedParentCustomer), StatusEnum? status = default(StatusEnum?), string paymentMethod = default(string), string channel = default(string), string rowVersion = default(string))
+        public Customer(string displayId = default(string), string displayName = default(string), string companyName = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), bool? individual = default(bool?), bool? project = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), string notes = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), LinkedParentCustomer parent = default(LinkedParentCustomer), StatusEnum? status = default(StatusEnum?), string paymentMethod = default(string), string channel = default(string), Object customMappings = default(Object), string rowVersion = default(string))
         {
             this.DisplayId = displayId;
             this.DisplayName = displayName;
@@ -142,6 +143,7 @@ namespace Apideck.Model
             this.Status = status;
             this.PaymentMethod = paymentMethod;
             this.Channel = channel;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -320,6 +322,13 @@ namespace Apideck.Model
         public string Channel { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// The user who last updated the object.
         /// </summary>
         /// <value>The user who last updated the object.</value>
@@ -420,6 +429,7 @@ namespace Apideck.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -594,6 +604,11 @@ namespace Apideck.Model
                     this.Channel.Equals(input.Channel))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -726,6 +741,10 @@ namespace Apideck.Model
                 if (this.Channel != null)
                 {
                     hashCode = (hashCode * 59) + this.Channel.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

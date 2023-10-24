@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **ConfigurableResources** | **List&lt;string&gt;** | List of resources that have settings that can be configured. | [optional] 
 **SupportedEvents** | [**List&lt;ConnectorEvent&gt;**](ConnectorEvent.md) | List of events that are supported on the connector across all Unified APIs. | [optional] 
 **WebhookSupport** | [**WebhookSupport**](WebhookSupport.md) |  | [optional] 
+**SchemaSupport** | [**SchemaSupport**](SchemaSupport.md) |  | [optional] 
 **Docs** | [**List&lt;ConnectorDoc&gt;**](ConnectorDoc.md) |  | [optional] 
 **TlsSupport** | [**ConnectorTlsSupport**](ConnectorTlsSupport.md) |  | [optional] 
 

@@ -68,8 +68,9 @@ namespace Apideck.Model
         /// <param name="presentAtAllLocations">presentAtAllLocations.</param>
         /// <param name="modifiers">modifiers.</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public ModifierGroup(string name = default(string), string alternateName = default(string), int minimumRequired = default(int), int maximumAllowed = default(int), SelectionTypeEnum? selectionType = default(SelectionTypeEnum?), bool presentAtAllLocations = default(bool), List<Object> modifiers = default(List<Object>), bool? deleted = default(bool?), string rowVersion = default(string))
+        public ModifierGroup(string name = default(string), string alternateName = default(string), int minimumRequired = default(int), int maximumAllowed = default(int), SelectionTypeEnum? selectionType = default(SelectionTypeEnum?), bool presentAtAllLocations = default(bool), List<Object> modifiers = default(List<Object>), bool? deleted = default(bool?), Object customMappings = default(Object), string rowVersion = default(string))
         {
             this.Name = name;
             this.AlternateName = alternateName;
@@ -79,6 +80,7 @@ namespace Apideck.Model
             this.PresentAtAllLocations = presentAtAllLocations;
             this.Modifiers = modifiers;
             this.Deleted = deleted;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -139,6 +141,13 @@ namespace Apideck.Model
         /// <value>Flag to indicate if the object is deleted.</value>
         [DataMember(Name = "deleted", EmitDefaultValue = true)]
         public bool? Deleted { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -224,6 +233,7 @@ namespace Apideck.Model
             sb.Append("  PresentAtAllLocations: ").Append(PresentAtAllLocations).Append("\n");
             sb.Append("  Modifiers: ").Append(Modifiers).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -307,6 +317,11 @@ namespace Apideck.Model
                     this.Deleted.Equals(input.Deleted))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -365,6 +380,10 @@ namespace Apideck.Model
                 if (this.Deleted != null)
                 {
                     hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

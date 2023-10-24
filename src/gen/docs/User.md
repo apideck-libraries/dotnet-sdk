@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **Addresses** | [**List&lt;Address&gt;**](Address.md) |  | [optional] 
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) |  | [optional] 
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **UpdatedAt** | **string** | The date and time when the user was last updated. | [optional] [readonly] 
 **CreatedAt** | **string** | The date and time when the user was created. | [optional] [readonly] 
 

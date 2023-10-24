@@ -193,9 +193,10 @@ namespace Apideck.Model
         /// <param name="configurableResources">List of resources that have settings that can be configured..</param>
         /// <param name="supportedEvents">List of events that are supported on the connector across all Unified APIs..</param>
         /// <param name="webhookSupport">webhookSupport.</param>
+        /// <param name="schemaSupport">schemaSupport.</param>
         /// <param name="docs">docs.</param>
         /// <param name="tlsSupport">tlsSupport.</param>
-        public Connector(string name = default(string), ConnectorStatus? status = default(ConnectorStatus?), string description = default(string), string iconUrl = default(string), string logoUrl = default(string), string websiteUrl = default(string), string signupUrl = default(string), string partnerSignupUrl = default(string), bool freeTrialAvailable = default(bool), List<ConnectorOauthScopes> oauthScopes = default(List<ConnectorOauthScopes>), bool hasSandboxCredentials = default(bool), List<ConnectorSetting> settings = default(List<ConnectorSetting>), string serviceId = default(string), List<ConnectorUnifiedApis> unifiedApis = default(List<ConnectorUnifiedApis>), List<LinkedConnectorResource> supportedResources = default(List<LinkedConnectorResource>), List<string> configurableResources = default(List<string>), List<ConnectorEvent> supportedEvents = default(List<ConnectorEvent>), WebhookSupport webhookSupport = default(WebhookSupport), List<ConnectorDoc> docs = default(List<ConnectorDoc>), ConnectorTlsSupport tlsSupport = default(ConnectorTlsSupport))
+        public Connector(string name = default(string), ConnectorStatus? status = default(ConnectorStatus?), string description = default(string), string iconUrl = default(string), string logoUrl = default(string), string websiteUrl = default(string), string signupUrl = default(string), string partnerSignupUrl = default(string), bool freeTrialAvailable = default(bool), List<ConnectorOauthScopes> oauthScopes = default(List<ConnectorOauthScopes>), bool hasSandboxCredentials = default(bool), List<ConnectorSetting> settings = default(List<ConnectorSetting>), string serviceId = default(string), List<ConnectorUnifiedApis> unifiedApis = default(List<ConnectorUnifiedApis>), List<LinkedConnectorResource> supportedResources = default(List<LinkedConnectorResource>), List<string> configurableResources = default(List<string>), List<ConnectorEvent> supportedEvents = default(List<ConnectorEvent>), WebhookSupport webhookSupport = default(WebhookSupport), SchemaSupport schemaSupport = default(SchemaSupport), List<ConnectorDoc> docs = default(List<ConnectorDoc>), ConnectorTlsSupport tlsSupport = default(ConnectorTlsSupport))
         {
             this.Name = name;
             this.Status = status;
@@ -215,6 +216,7 @@ namespace Apideck.Model
             this.ConfigurableResources = configurableResources;
             this.SupportedEvents = supportedEvents;
             this.WebhookSupport = webhookSupport;
+            this.SchemaSupport = schemaSupport;
             this.Docs = docs;
             this.TlsSupport = tlsSupport;
         }
@@ -397,6 +399,12 @@ namespace Apideck.Model
         public WebhookSupport WebhookSupport { get; set; }
 
         /// <summary>
+        /// Gets or Sets SchemaSupport
+        /// </summary>
+        [DataMember(Name = "schema_support", EmitDefaultValue = false)]
+        public SchemaSupport SchemaSupport { get; set; }
+
+        /// <summary>
         /// Gets or Sets Docs
         /// </summary>
         [DataMember(Name = "docs", EmitDefaultValue = false)]
@@ -441,6 +449,7 @@ namespace Apideck.Model
             sb.Append("  ConfigurableResources: ").Append(ConfigurableResources).Append("\n");
             sb.Append("  SupportedEvents: ").Append(SupportedEvents).Append("\n");
             sb.Append("  WebhookSupport: ").Append(WebhookSupport).Append("\n");
+            sb.Append("  SchemaSupport: ").Append(SchemaSupport).Append("\n");
             sb.Append("  Docs: ").Append(Docs).Append("\n");
             sb.Append("  TlsSupport: ").Append(TlsSupport).Append("\n");
             sb.Append("}\n");
@@ -601,6 +610,11 @@ namespace Apideck.Model
                     this.WebhookSupport.Equals(input.WebhookSupport))
                 ) && 
                 (
+                    this.SchemaSupport == input.SchemaSupport ||
+                    (this.SchemaSupport != null &&
+                    this.SchemaSupport.Equals(input.SchemaSupport))
+                ) && 
+                (
                     this.Docs == input.Docs ||
                     this.Docs != null &&
                     input.Docs != null &&
@@ -694,6 +708,10 @@ namespace Apideck.Model
                 if (this.WebhookSupport != null)
                 {
                     hashCode = (hashCode * 59) + this.WebhookSupport.GetHashCode();
+                }
+                if (this.SchemaSupport != null)
+                {
+                    hashCode = (hashCode * 59) + this.SchemaSupport.GetHashCode();
                 }
                 if (this.Docs != null)
                 {

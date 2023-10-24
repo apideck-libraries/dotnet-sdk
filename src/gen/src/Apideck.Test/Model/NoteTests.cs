@@ -129,6 +129,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Active'
         }
         /// <summary>
+        /// Test the property 'CustomMappings'
+        /// </summary>
+        [Fact]
+        public void CustomMappingsTest()
+        {
+            // TODO unit test for the property 'CustomMappings'
+        }
+        /// <summary>
         /// Test the property 'UpdatedBy'
         /// </summary>
         [Fact]

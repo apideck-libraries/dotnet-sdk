@@ -257,6 +257,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'WebhookSupport'
         }
         /// <summary>
+        /// Test the property 'SchemaSupport'
+        /// </summary>
+        [Fact]
+        public void SchemaSupportTest()
+        {
+            // TODO unit test for the property 'SchemaSupport'
+        }
+        /// <summary>
         /// Test the property 'Docs'
         /// </summary>
         [Fact]

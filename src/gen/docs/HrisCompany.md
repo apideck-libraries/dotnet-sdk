@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
 **Websites** | [**List&lt;Website&gt;**](Website.md) |  | [optional] 
 **DebtorId** | **string** |  | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **Deleted** | **bool** |  | [optional] [readonly] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

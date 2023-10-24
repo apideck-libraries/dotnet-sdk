@@ -47,7 +47,8 @@ namespace Apideck.Model
         /// <param name="initials">Initials of the person.</param>
         /// <param name="birthday">Date of birth.</param>
         /// <param name="deceasedOn">Date of death.</param>
-        public Person(string firstName = default(string), string lastName = default(string), string middleName = default(string), Gender? gender = default(Gender?), string initials = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Person(string firstName = default(string), string lastName = default(string), string middleName = default(string), Gender? gender = default(Gender?), string initials = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), Object customMappings = default(Object))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -56,6 +57,7 @@ namespace Apideck.Model
             this.Initials = initials;
             this.Birthday = birthday;
             this.DeceasedOn = deceasedOn;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -118,6 +120,13 @@ namespace Apideck.Model
         public DateTime? DeceasedOn { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -133,6 +142,7 @@ namespace Apideck.Model
             sb.Append("  Initials: ").Append(Initials).Append("\n");
             sb.Append("  Birthday: ").Append(Birthday).Append("\n");
             sb.Append("  DeceasedOn: ").Append(DeceasedOn).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -206,6 +216,11 @@ namespace Apideck.Model
                     this.DeceasedOn == input.DeceasedOn ||
                     (this.DeceasedOn != null &&
                     this.DeceasedOn.Equals(input.DeceasedOn))
+                ) && 
+                (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
                 );
         }
 
@@ -246,6 +261,10 @@ namespace Apideck.Model
                 if (this.DeceasedOn != null)
                 {
                     hashCode = (hashCode * 59) + this.DeceasedOn.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 return hashCode;
             }

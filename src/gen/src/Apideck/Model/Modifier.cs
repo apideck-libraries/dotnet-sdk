@@ -52,7 +52,8 @@ namespace Apideck.Model
         /// <param name="currency">currency.</param>
         /// <param name="modifierGroupId">modifierGroupId (required).</param>
         /// <param name="available">available.</param>
-        public Modifier(string idempotencyKey = default(string), string name = default(string), string alternateName = default(string), decimal priceAmount = default(decimal), Currency? currency = default(Currency?), string modifierGroupId = default(string), bool? available = default(bool?))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Modifier(string idempotencyKey = default(string), string name = default(string), string alternateName = default(string), decimal priceAmount = default(decimal), Currency? currency = default(Currency?), string modifierGroupId = default(string), bool? available = default(bool?), Object customMappings = default(Object))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -69,6 +70,7 @@ namespace Apideck.Model
             this.PriceAmount = priceAmount;
             this.Currency = currency;
             this.Available = available;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -122,6 +124,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "available", EmitDefaultValue = true)]
         public bool? Available { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -199,6 +208,7 @@ namespace Apideck.Model
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  ModifierGroupId: ").Append(ModifierGroupId).Append("\n");
             sb.Append("  Available: ").Append(Available).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -277,6 +287,11 @@ namespace Apideck.Model
                     this.Available.Equals(input.Available))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -332,6 +347,10 @@ namespace Apideck.Model
                 if (this.Available != null)
                 {
                     hashCode = (hashCode * 59) + this.Available.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

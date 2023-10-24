@@ -190,7 +190,8 @@ namespace Apideck.Model
         /// <param name="units">The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;..</param>
         /// <param name="amount">The amount of time off requested..</param>
         /// <param name="notes">notes.</param>
-        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal? amount = default(decimal?), TimeOffRequestNotes notes = default(TimeOffRequestNotes))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal? amount = default(decimal?), TimeOffRequestNotes notes = default(TimeOffRequestNotes), Object customMappings = default(Object))
         {
             this.EmployeeId = employeeId;
             this.PolicyId = policyId;
@@ -204,6 +205,7 @@ namespace Apideck.Model
             this.Units = units;
             this.Amount = amount;
             this.Notes = notes;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -282,6 +284,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "notes", EmitDefaultValue = false)]
         public TimeOffRequestNotes Notes { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -364,6 +373,7 @@ namespace Apideck.Model
             sb.Append("  Units: ").Append(Units).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -466,6 +476,11 @@ namespace Apideck.Model
                     this.Notes.Equals(input.Notes))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -538,6 +553,10 @@ namespace Apideck.Model
                 if (this.Notes != null)
                 {
                     hashCode = (hashCode * 59) + this.Notes.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

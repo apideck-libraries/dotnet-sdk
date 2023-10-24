@@ -145,7 +145,8 @@ namespace Apideck.Model
         /// <param name="emailDomain">emailDomain.</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="tags">tags.</param>
-        public Contact(string name = default(string), string ownerId = default(string), TypeEnum? type = default(TypeEnum?), string companyId = default(string), string companyName = default(string), string leadId = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string prefix = default(string), string suffix = default(string), string title = default(string), string department = default(string), string language = default(string), GenderEnum? gender = default(GenderEnum?), string birthday = default(string), string image = default(string), string photoUrl = default(string), string leadSource = default(string), string fax = default(string), string description = default(string), decimal? currentBalance = default(decimal?), string status = default(string), bool? active = default(bool?), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), string emailDomain = default(string), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Contact(string name = default(string), string ownerId = default(string), TypeEnum? type = default(TypeEnum?), string companyId = default(string), string companyName = default(string), string leadId = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string prefix = default(string), string suffix = default(string), string title = default(string), string department = default(string), string language = default(string), GenderEnum? gender = default(GenderEnum?), string birthday = default(string), string image = default(string), string photoUrl = default(string), string leadSource = default(string), string fax = default(string), string description = default(string), decimal? currentBalance = default(decimal?), string status = default(string), bool? active = default(bool?), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), string emailDomain = default(string), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>), Object customMappings = default(Object))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -183,6 +184,7 @@ namespace Apideck.Model
             this.EmailDomain = emailDomain;
             this.CustomFields = customFields;
             this.Tags = tags;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -448,6 +450,13 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// The last update date of the contact.
         /// </summary>
         /// <value>The last update date of the contact.</value>
@@ -521,6 +530,7 @@ namespace Apideck.Model
             sb.Append("  FirstCallAt: ").Append(FirstCallAt).Append("\n");
             sb.Append("  FirstEmailAt: ").Append(FirstEmailAt).Append("\n");
             sb.Append("  LastActivityAt: ").Append(LastActivityAt).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
@@ -744,6 +754,11 @@ namespace Apideck.Model
                     this.LastActivityAt.Equals(input.LastActivityAt))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
@@ -901,6 +916,10 @@ namespace Apideck.Model
                 if (this.LastActivityAt != null)
                 {
                     hashCode = (hashCode * 59) + this.LastActivityAt.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedAt != null)
                 {

@@ -50,8 +50,9 @@ namespace Apideck.Model
         /// <param name="taxType">The specific category of tax associated with a transaction like sales or purchase.</param>
         /// <param name="taxCode">Applicable tax id/code override if tax is not supplied on a line item basis..</param>
         /// <param name="number">Journal entry number..</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string), string taxType = default(string), string taxCode = default(string), string number = default(string), string rowVersion = default(string))
+        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string), string taxType = default(string), string taxCode = default(string), string number = default(string), Object customMappings = default(Object), string rowVersion = default(string))
         {
             this.Title = title;
             this.CurrencyRate = currencyRate;
@@ -63,6 +64,7 @@ namespace Apideck.Model
             this.TaxType = taxType;
             this.TaxCode = taxCode;
             this.Number = number;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -143,6 +145,13 @@ namespace Apideck.Model
         /// <value>Journal entry number.</value>
         [DataMember(Name = "number", EmitDefaultValue = true)]
         public string Number { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -230,6 +239,7 @@ namespace Apideck.Model
             sb.Append("  TaxType: ").Append(TaxType).Append("\n");
             sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -326,6 +336,11 @@ namespace Apideck.Model
                     this.Number.Equals(input.Number))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -401,6 +416,10 @@ namespace Apideck.Model
                 if (this.Number != null)
                 {
                     hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

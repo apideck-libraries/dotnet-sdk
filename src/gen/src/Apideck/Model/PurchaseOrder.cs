@@ -115,8 +115,9 @@ namespace Apideck.Model
         /// <param name="taxCode">Applicable tax id/code override if tax is not supplied on a line item basis..</param>
         /// <param name="channel">The channel through which the transaction is processed..</param>
         /// <param name="memo">Message for the supplier. This text appears on the Purchase Order..</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public PurchaseOrder(string poNumber = default(string), string reference = default(string), LinkedSupplier supplier = default(LinkedSupplier), StatusEnum? status = default(StatusEnum?), DateTime? issuedDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), DateTime? expectedArrivalDate = default(DateTime?), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), bool? taxInclusive = default(bool?), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address shippingAddress = default(Address), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string templateId = default(string), decimal? discountPercentage = default(decimal?), BankAccount bankAccount = default(BankAccount), bool? accountingByRow = default(bool?), DateTime dueDate = default(DateTime), string paymentMethod = default(string), string taxCode = default(string), string channel = default(string), string memo = default(string), string rowVersion = default(string))
+        public PurchaseOrder(string poNumber = default(string), string reference = default(string), LinkedSupplier supplier = default(LinkedSupplier), StatusEnum? status = default(StatusEnum?), DateTime? issuedDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), DateTime? expectedArrivalDate = default(DateTime?), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), bool? taxInclusive = default(bool?), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address shippingAddress = default(Address), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string templateId = default(string), decimal? discountPercentage = default(decimal?), BankAccount bankAccount = default(BankAccount), bool? accountingByRow = default(bool?), DateTime dueDate = default(DateTime), string paymentMethod = default(string), string taxCode = default(string), string channel = default(string), string memo = default(string), Object customMappings = default(Object), string rowVersion = default(string))
         {
             this.PoNumber = poNumber;
             this.Reference = reference;
@@ -143,6 +144,7 @@ namespace Apideck.Model
             this.TaxCode = taxCode;
             this.Channel = channel;
             this.Memo = memo;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -337,6 +339,13 @@ namespace Apideck.Model
         public string Memo { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -438,6 +447,7 @@ namespace Apideck.Model
             sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  Memo: ").Append(Memo).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -613,6 +623,11 @@ namespace Apideck.Model
                     this.Memo.Equals(input.Memo))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -749,6 +764,10 @@ namespace Apideck.Model
                 if (this.Memo != null)
                 {
                     hashCode = (hashCode * 59) + this.Memo.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **CvUrl** | **string** |  | [optional] [readonly] 
 **RecordUrl** | **string** |  | [optional] 
 **RejectedAt** | **DateTime?** |  | [optional] [readonly] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **Deleted** | **bool?** | Flag to indicate if the object is deleted. | [optional] 
 **DeletedBy** | **string** | The user who deleted the object. | [optional] [readonly] 
 **DeletedAt** | **DateTime?** | The time at which the object was deleted. | [optional] [readonly] 

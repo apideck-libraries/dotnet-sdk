@@ -43,12 +43,14 @@ namespace Apideck.Model
         /// <param name="type">The collections&#39;s type.</param>
         /// <param name="name">Name of the collection.</param>
         /// <param name="description">Description of the collection.</param>
-        public Collection(string parentId = default(string), string type = default(string), string name = default(string), string description = default(string))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Collection(string parentId = default(string), string type = default(string), string name = default(string), string description = default(string), Object customMappings = default(Object))
         {
             this.ParentId = parentId;
             this.Type = type;
             this.Name = name;
             this.Description = description;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -95,6 +97,13 @@ namespace Apideck.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// The date and time when the object was last updated.
         /// </summary>
         /// <value>The date and time when the object was last updated.</value>
@@ -137,6 +146,7 @@ namespace Apideck.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
@@ -200,6 +210,11 @@ namespace Apideck.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
@@ -239,6 +254,10 @@ namespace Apideck.Model
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedAt != null)
                 {

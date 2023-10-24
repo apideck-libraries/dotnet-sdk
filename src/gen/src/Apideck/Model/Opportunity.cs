@@ -73,7 +73,8 @@ namespace Apideck.Model
         /// <param name="tags">tags.</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="stageLastChangedAt">The date and time when the stage of the opportunity was last changed..</param>
-        public Opportunity(string title = default(string), string primaryContactId = default(string), string description = default(string), string type = default(string), decimal? monetaryAmount = default(decimal?), Currency? currency = default(Currency?), decimal? winProbability = default(decimal?), DateTime? closeDate = default(DateTime?), string lossReasonId = default(string), string lossReason = default(string), string wonReasonId = default(string), string wonReason = default(string), string pipelineId = default(string), string pipelineStageId = default(string), string sourceId = default(string), string leadId = default(string), string leadSource = default(string), string contactId = default(string), List<string> contactIds = default(List<string>), string companyId = default(string), string companyName = default(string), string ownerId = default(string), string priority = default(string), string status = default(string), string statusId = default(string), List<string> tags = default(List<string>), List<CustomField> customFields = default(List<CustomField>), DateTime? stageLastChangedAt = default(DateTime?))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Opportunity(string title = default(string), string primaryContactId = default(string), string description = default(string), string type = default(string), decimal? monetaryAmount = default(decimal?), Currency? currency = default(Currency?), decimal? winProbability = default(decimal?), DateTime? closeDate = default(DateTime?), string lossReasonId = default(string), string lossReason = default(string), string wonReasonId = default(string), string wonReason = default(string), string pipelineId = default(string), string pipelineStageId = default(string), string sourceId = default(string), string leadId = default(string), string leadSource = default(string), string contactId = default(string), List<string> contactIds = default(List<string>), string companyId = default(string), string companyName = default(string), string ownerId = default(string), string priority = default(string), string status = default(string), string statusId = default(string), List<string> tags = default(List<string>), List<CustomField> customFields = default(List<CustomField>), DateTime? stageLastChangedAt = default(DateTime?), Object customMappings = default(Object))
         {
             // to ensure "title" is required (not null)
             if (title == null) {
@@ -111,6 +112,7 @@ namespace Apideck.Model
             this.Tags = tags;
             this.CustomFields = customFields;
             this.StageLastChangedAt = stageLastChangedAt;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -422,6 +424,13 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// The unique identifier of the user who last updated the opportunity.
         /// </summary>
         /// <value>The unique identifier of the user who last updated the opportunity.</value>
@@ -525,6 +534,7 @@ namespace Apideck.Model
             sb.Append("  DateStageChanged: ").Append(DateStageChanged).Append("\n");
             sb.Append("  DateLastContacted: ").Append(DateLastContacted).Append("\n");
             sb.Append("  DateLeadCreated: ").Append(DateLeadCreated).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -746,6 +756,11 @@ namespace Apideck.Model
                     this.DateLeadCreated.Equals(input.DateLeadCreated))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -913,6 +928,10 @@ namespace Apideck.Model
                 if (this.DateLeadCreated != null)
                 {
                     hashCode = (hashCode * 59) + this.DateLeadCreated.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

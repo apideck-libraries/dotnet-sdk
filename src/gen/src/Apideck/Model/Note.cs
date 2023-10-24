@@ -42,7 +42,8 @@ namespace Apideck.Model
         /// <param name="opportunityId">The opportunity that is related to the note..</param>
         /// <param name="leadId">The lead that is related to the note..</param>
         /// <param name="active">Whether the Note is active or not..</param>
-        public Note(string title = default(string), string content = default(string), string ownerId = default(string), string contactId = default(string), string companyId = default(string), string opportunityId = default(string), string leadId = default(string), bool? active = default(bool?))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Note(string title = default(string), string content = default(string), string ownerId = default(string), string contactId = default(string), string companyId = default(string), string opportunityId = default(string), string leadId = default(string), bool? active = default(bool?), Object customMappings = default(Object))
         {
             this.Title = title;
             this.Content = content;
@@ -52,6 +53,7 @@ namespace Apideck.Model
             this.OpportunityId = opportunityId;
             this.LeadId = leadId;
             this.Active = active;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -124,6 +126,13 @@ namespace Apideck.Model
         /// <value>Whether the Note is active or not.</value>
         [DataMember(Name = "active", EmitDefaultValue = true)]
         public bool? Active { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// The user that last updated the note.
@@ -202,6 +211,7 @@ namespace Apideck.Model
             sb.Append("  OpportunityId: ").Append(OpportunityId).Append("\n");
             sb.Append("  LeadId: ").Append(LeadId).Append("\n");
             sb.Append("  Active: ").Append(Active).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -287,6 +297,11 @@ namespace Apideck.Model
                     this.Active.Equals(input.Active))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -352,6 +367,10 @@ namespace Apideck.Model
                 if (this.Active != null)
                 {
                     hashCode = (hashCode * 59) + this.Active.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

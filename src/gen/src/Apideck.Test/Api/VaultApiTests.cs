@@ -246,6 +246,22 @@ namespace Apideck.Test.Api
         }
 
         /// <summary>
+        /// Test CustomFieldsAll
+        /// </summary>
+        [Fact]
+        public void CustomFieldsAllTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string unifiedApi = null;
+            //string serviceId = null;
+            //string resource = null;
+            //string consumerId = null;
+            //string appId = null;
+            //var response = instance.CustomFieldsAll(unifiedApi, serviceId, resource, consumerId, appId);
+            //Assert.IsType<GetCustomFieldsResponse>(response);
+        }
+
+        /// <summary>
         /// Test LogsAll
         /// </summary>
         [Fact]

@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **Source** | **string** | Source of order. Indicates the way that the order was placed. | [optional] [readonly] 
 **Voided** | **bool** |  | [optional] 
 **VoidedAt** | **DateTime** |  | [optional] [readonly] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **_Version** | **string** |  | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

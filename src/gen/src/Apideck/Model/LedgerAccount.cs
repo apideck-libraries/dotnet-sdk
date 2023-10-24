@@ -302,8 +302,9 @@ namespace Apideck.Model
         /// <param name="parentAccount">parentAccount.</param>
         /// <param name="subAccount">Whether the account is a sub account or not..</param>
         /// <param name="lastReconciliationDate">Reconciliation Date means the last calendar day of each Reconciliation Period..</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public LedgerAccount(string displayId = default(string), string nominalCode = default(string), string code = default(string), ClassificationEnum? classification = default(ClassificationEnum?), TypeEnum? type = default(TypeEnum?), string subType = default(string), string name = default(string), string fullyQualifiedName = default(string), string description = default(string), decimal? openingBalance = default(decimal?), decimal? currentBalance = default(decimal?), Currency? currency = default(Currency?), string taxType = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), decimal? level = default(decimal?), bool? active = default(bool?), StatusEnum? status = default(StatusEnum?), bool? header = default(bool?), BankAccount bankAccount = default(BankAccount), LedgerAccountParentAccount parentAccount = default(LedgerAccountParentAccount), bool? subAccount = default(bool?), DateTime? lastReconciliationDate = default(DateTime?), string rowVersion = default(string)) : base()
+        public LedgerAccount(string displayId = default(string), string nominalCode = default(string), string code = default(string), ClassificationEnum? classification = default(ClassificationEnum?), TypeEnum? type = default(TypeEnum?), string subType = default(string), string name = default(string), string fullyQualifiedName = default(string), string description = default(string), decimal? openingBalance = default(decimal?), decimal? currentBalance = default(decimal?), Currency? currency = default(Currency?), string taxType = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), decimal? level = default(decimal?), bool? active = default(bool?), StatusEnum? status = default(StatusEnum?), bool? header = default(bool?), BankAccount bankAccount = default(BankAccount), LedgerAccountParentAccount parentAccount = default(LedgerAccountParentAccount), bool? subAccount = default(bool?), DateTime? lastReconciliationDate = default(DateTime?), Object customMappings = default(Object), string rowVersion = default(string)) : base()
         {
             this.DisplayId = displayId;
             this.NominalCode = nominalCode;
@@ -327,6 +328,7 @@ namespace Apideck.Model
             this.ParentAccount = parentAccount;
             this.SubAccount = subAccount;
             this.LastReconciliationDate = lastReconciliationDate;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -501,6 +503,13 @@ namespace Apideck.Model
         public DateTime? LastReconciliationDate { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -607,6 +616,7 @@ namespace Apideck.Model
             sb.Append("  SubAccount: ").Append(SubAccount).Append("\n");
             sb.Append("  SubAccounts: ").Append(SubAccounts).Append("\n");
             sb.Append("  LastReconciliationDate: ").Append(LastReconciliationDate).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -772,6 +782,11 @@ namespace Apideck.Model
                     this.LastReconciliationDate.Equals(input.LastReconciliationDate))
                 ) && base.Equals(input) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && base.Equals(input) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -895,6 +910,10 @@ namespace Apideck.Model
                 if (this.LastReconciliationDate != null)
                 {
                     hashCode = (hashCode * 59) + this.LastReconciliationDate.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

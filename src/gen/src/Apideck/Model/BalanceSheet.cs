@@ -45,7 +45,8 @@ namespace Apideck.Model
         /// <param name="assets">assets (required).</param>
         /// <param name="liabilities">liabilities (required).</param>
         /// <param name="equity">equity (required).</param>
-        public BalanceSheet(string reportName = default(string), string startDate = default(string), string endDate = default(string), BalanceSheetAssets assets = default(BalanceSheetAssets), BalanceSheetLiabilities liabilities = default(BalanceSheetLiabilities), BalanceSheetEquity equity = default(BalanceSheetEquity))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public BalanceSheet(string reportName = default(string), string startDate = default(string), string endDate = default(string), BalanceSheetAssets assets = default(BalanceSheetAssets), BalanceSheetLiabilities liabilities = default(BalanceSheetLiabilities), BalanceSheetEquity equity = default(BalanceSheetEquity), Object customMappings = default(Object))
         {
             // to ensure "reportName" is required (not null)
             if (reportName == null) {
@@ -73,6 +74,7 @@ namespace Apideck.Model
             }
             this.Equity = equity;
             this.EndDate = endDate;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -128,6 +130,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "equity", IsRequired = true, EmitDefaultValue = false)]
         public BalanceSheetEquity Equity { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -204,6 +213,7 @@ namespace Apideck.Model
             sb.Append("  Assets: ").Append(Assets).Append("\n");
             sb.Append("  Liabilities: ").Append(Liabilities).Append("\n");
             sb.Append("  Equity: ").Append(Equity).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -279,6 +289,11 @@ namespace Apideck.Model
                     this.Equity.Equals(input.Equity))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -336,6 +351,10 @@ namespace Apideck.Model
                 if (this.Equity != null)
                 {
                     hashCode = (hashCode * 59) + this.Equity.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

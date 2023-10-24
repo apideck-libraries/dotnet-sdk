@@ -249,6 +249,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'ValidationSupport'
         }
         /// <summary>
+        /// Test the property 'SchemaSupport'
+        /// </summary>
+        [Fact]
+        public void SchemaSupportTest()
+        {
+            // TODO unit test for the property 'SchemaSupport'
+        }
+        /// <summary>
         /// Test the property 'SettingsRequiredForAuthorization'
         /// </summary>
         [Fact]
@@ -279,6 +287,14 @@ namespace Apideck.Test.Model
         public void CreatedAtTest()
         {
             // TODO unit test for the property 'CreatedAt'
+        }
+        /// <summary>
+        /// Test the property 'CustomMappings'
+        /// </summary>
+        [Fact]
+        public void CustomMappingsTest()
+        {
+            // TODO unit test for the property 'CustomMappings'
         }
         /// <summary>
         /// Test the property 'UpdatedAt'

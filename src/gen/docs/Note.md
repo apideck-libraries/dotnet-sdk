@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **OpportunityId** | **string** | The opportunity that is related to the note. | [optional] 
 **LeadId** | **string** | The lead that is related to the note. | [optional] 
 **Active** | **bool?** | Whether the Note is active or not. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **UpdatedBy** | **string** | The user that last updated the note. | [optional] [readonly] 
 **CreatedBy** | **string** | The user that created the note. | [optional] [readonly] 
 **UpdatedAt** | **string** | The timestamp when the note was last updated | [optional] [readonly] 

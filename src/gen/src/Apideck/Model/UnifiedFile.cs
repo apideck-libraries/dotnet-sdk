@@ -58,7 +58,8 @@ namespace Apideck.Model
         /// <param name="permissions">permissions.</param>
         /// <param name="exportable">Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper..</param>
         /// <param name="exportFormats">The available file formats when exporting this file..</param>
-        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int? size = default(int?), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool), UnifiedFilePermissions permissions = default(UnifiedFilePermissions), bool exportable = default(bool), List<string> exportFormats = default(List<string>))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int? size = default(int?), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool), UnifiedFilePermissions permissions = default(UnifiedFilePermissions), bool exportable = default(bool), List<string> exportFormats = default(List<string>), Object customMappings = default(Object))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -77,6 +78,7 @@ namespace Apideck.Model
             this.Permissions = permissions;
             this.Exportable = exportable;
             this.ExportFormats = exportFormats;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -192,6 +194,13 @@ namespace Apideck.Model
         public List<string> ExportFormats { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// The user who last updated the object.
         /// </summary>
         /// <value>The user who last updated the object.</value>
@@ -274,6 +283,7 @@ namespace Apideck.Model
             sb.Append("  Permissions: ").Append(Permissions).Append("\n");
             sb.Append("  Exportable: ").Append(Exportable).Append("\n");
             sb.Append("  ExportFormats: ").Append(ExportFormats).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -387,6 +397,11 @@ namespace Apideck.Model
                     this.ExportFormats.SequenceEqual(input.ExportFormats)
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -464,6 +479,10 @@ namespace Apideck.Model
                 if (this.ExportFormats != null)
                 {
                     hashCode = (hashCode * 59) + this.ExportFormats.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

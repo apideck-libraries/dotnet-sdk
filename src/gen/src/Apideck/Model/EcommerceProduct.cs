@@ -80,7 +80,8 @@ namespace Apideck.Model
         /// <param name="variants">variants.</param>
         /// <param name="tags">An array of tags for the product, used for organization and searching..</param>
         /// <param name="categories">An array of categories for the product, used for organization and searching..</param>
-        public EcommerceProduct(string name = default(string), string description = default(string), StatusEnum? status = default(StatusEnum?), string price = default(string), string sku = default(string), string inventoryQuantity = default(string), List<EcommerceProductImages> images = default(List<EcommerceProductImages>), string weight = default(string), string weightUnit = default(string), List<EcommerceProductOptions> options = default(List<EcommerceProductOptions>), List<EcommerceProductVariants> variants = default(List<EcommerceProductVariants>), List<string> tags = default(List<string>), List<EcommerceProductCategories> categories = default(List<EcommerceProductCategories>))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public EcommerceProduct(string name = default(string), string description = default(string), StatusEnum? status = default(StatusEnum?), string price = default(string), string sku = default(string), string inventoryQuantity = default(string), List<EcommerceProductImages> images = default(List<EcommerceProductImages>), string weight = default(string), string weightUnit = default(string), List<EcommerceProductOptions> options = default(List<EcommerceProductOptions>), List<EcommerceProductVariants> variants = default(List<EcommerceProductVariants>), List<string> tags = default(List<string>), List<EcommerceProductCategories> categories = default(List<EcommerceProductCategories>), Object customMappings = default(Object))
         {
             this.Name = name;
             this.Description = description;
@@ -95,6 +96,7 @@ namespace Apideck.Model
             this.Variants = variants;
             this.Tags = tags;
             this.Categories = categories;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -196,6 +198,13 @@ namespace Apideck.Model
         public List<EcommerceProductCategories> Categories { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// The date and time when the object was created.
         /// </summary>
         /// <value>The date and time when the object was created.</value>
@@ -247,6 +256,7 @@ namespace Apideck.Model
             sb.Append("  Variants: ").Append(Variants).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  Categories: ").Append(Categories).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -359,6 +369,11 @@ namespace Apideck.Model
                     this.Categories.SequenceEqual(input.Categories)
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
@@ -431,6 +446,10 @@ namespace Apideck.Model
                 if (this.Categories != null)
                 {
                     hashCode = (hashCode * 59) + this.Categories.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.CreatedAt != null)
                 {

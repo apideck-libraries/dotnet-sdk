@@ -28,10 +28,12 @@ Name | Type | Description | Notes
 **ResourceSchemaSupport** | **List&lt;string&gt;** |  | [optional] [readonly] 
 **ResourceSettingsSupport** | **List&lt;string&gt;** |  | [optional] [readonly] 
 **ValidationSupport** | **bool** |  | [optional] [readonly] 
+**SchemaSupport** | **bool** |  | [optional] [readonly] 
 **SettingsRequiredForAuthorization** | **List&lt;string&gt;** | List of settings that are required to be configured on integration before authorization can occur | [optional] [readonly] 
 **Subscriptions** | [**List&lt;WebhookSubscription&gt;**](WebhookSubscription.md) |  | [optional] [readonly] 
 **HasGuide** | **bool** | Whether the connector has a guide available in the developer docs or not (https://docs.apideck.com/connectors/{service_id}/docs/consumer+connection). | [optional] [readonly] 
 **CreatedAt** | **decimal** |  | [optional] [readonly] 
+**CustomMappings** | [**List&lt;CustomMapping&gt;**](CustomMapping.md) | List of custom mappings configured for this connection | [optional] 
 **UpdatedAt** | **decimal?** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

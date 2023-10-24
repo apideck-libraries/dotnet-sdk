@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **DueDate** | **DateTime?** | Due date of the ticket | [optional] 
 **CompletedAt** | **DateTime?** | When the ticket was completed | [optional] [readonly] 
 **Tags** | [**List&lt;CollectionTag&gt;**](CollectionTag.md) |  | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

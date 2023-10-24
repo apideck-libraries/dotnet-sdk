@@ -76,7 +76,8 @@ namespace Apideck.Model
         /// <param name="readOnly">Whether the company is read-only or not.</param>
         /// <param name="salutation">A formal salutation for the person. For example, &#39;Mr&#39;, &#39;Mrs&#39;.</param>
         /// <param name="birthday">The date of birth of the person..</param>
-        public Company(string name = default(string), string ownerId = default(string), string image = default(string), string description = default(string), string vatNumber = default(string), Currency? currency = default(Currency?), string status = default(string), string fax = default(string), string annualRevenue = default(string), string numberOfEmployees = default(string), string industry = default(string), string ownership = default(string), string salesTaxNumber = default(string), string payeeNumber = default(string), string abnOrTfn = default(string), string abnBranch = default(string), string acn = default(string), string firstName = default(string), string lastName = default(string), List<BankAccount> bankAccounts = default(List<BankAccount>), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), CompanyRowType rowType = default(CompanyRowType), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>), bool? readOnly = default(bool?), string salutation = default(string), DateTime? birthday = default(DateTime?))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Company(string name = default(string), string ownerId = default(string), string image = default(string), string description = default(string), string vatNumber = default(string), Currency? currency = default(Currency?), string status = default(string), string fax = default(string), string annualRevenue = default(string), string numberOfEmployees = default(string), string industry = default(string), string ownership = default(string), string salesTaxNumber = default(string), string payeeNumber = default(string), string abnOrTfn = default(string), string abnBranch = default(string), string acn = default(string), string firstName = default(string), string lastName = default(string), List<BankAccount> bankAccounts = default(List<BankAccount>), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), CompanyRowType rowType = default(CompanyRowType), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>), bool? readOnly = default(bool?), string salutation = default(string), DateTime? birthday = default(DateTime?), Object customMappings = default(Object))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -113,6 +114,7 @@ namespace Apideck.Model
             this.ReadOnly = readOnly;
             this.Salutation = salutation;
             this.Birthday = birthday;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -393,6 +395,13 @@ namespace Apideck.Model
         public DateTime? Birthday { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// Updated by user ID
         /// </summary>
         /// <value>Updated by user ID</value>
@@ -496,6 +505,7 @@ namespace Apideck.Model
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  Salutation: ").Append(Salutation).Append("\n");
             sb.Append("  Birthday: ").Append(Birthday).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -722,6 +732,11 @@ namespace Apideck.Model
                     this.Birthday.Equals(input.Birthday))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -889,6 +904,10 @@ namespace Apideck.Model
                 if (this.Birthday != null)
                 {
                     hashCode = (hashCode * 59) + this.Birthday.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

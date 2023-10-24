@@ -37,11 +37,13 @@ namespace Apideck.Model
         /// <param name="name">Department name.</param>
         /// <param name="code">code.</param>
         /// <param name="description">description.</param>
-        public Department(string name = default(string), string code = default(string), string description = default(string))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Department(string name = default(string), string code = default(string), string description = default(string), Object customMappings = default(Object))
         {
             this.Name = name;
             this.Code = code;
             this.Description = description;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -92,6 +94,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -166,6 +175,7 @@ namespace Apideck.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -231,6 +241,11 @@ namespace Apideck.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -280,6 +295,10 @@ namespace Apideck.Model
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

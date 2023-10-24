@@ -190,8 +190,9 @@ namespace Apideck.Model
         /// <param name="accountingByRow">Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row..</param>
         /// <param name="bankAccount">bankAccount.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
+        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), Object customMappings = default(Object), string rowVersion = default(string))
         {
             this.Type = type;
             this.Number = number;
@@ -227,6 +228,7 @@ namespace Apideck.Model
             this.AccountingByRow = accountingByRow;
             this.BankAccount = bankAccount;
             this.LedgerAccount = ledgerAccount;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -473,6 +475,13 @@ namespace Apideck.Model
         public LinkedLedgerAccount LedgerAccount { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -583,6 +592,7 @@ namespace Apideck.Model
             sb.Append("  AccountingByRow: ").Append(AccountingByRow).Append("\n");
             sb.Append("  BankAccount: ").Append(BankAccount).Append("\n");
             sb.Append("  LedgerAccount: ").Append(LedgerAccount).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -801,6 +811,11 @@ namespace Apideck.Model
                     this.LedgerAccount.Equals(input.LedgerAccount))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -967,6 +982,10 @@ namespace Apideck.Model
                 if (this.LedgerAccount != null)
                 {
                     hashCode = (hashCode * 59) + this.LedgerAccount.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

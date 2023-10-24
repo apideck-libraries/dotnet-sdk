@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **Available** | **bool?** |  | [optional] 
 **Hidden** | **bool?** |  | [optional] 
 **_Version** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **Deleted** | **bool?** | Flag to indicate if the object is deleted. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

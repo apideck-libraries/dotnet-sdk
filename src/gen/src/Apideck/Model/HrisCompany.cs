@@ -94,7 +94,8 @@ namespace Apideck.Model
         /// <param name="emails">emails.</param>
         /// <param name="websites">websites.</param>
         /// <param name="debtorId">debtorId.</param>
-        public HrisCompany(string legalName = default(string), string displayName = default(string), string subdomain = default(string), StatusEnum? status = default(StatusEnum?), string companyNumber = default(string), Currency? currency = default(Currency?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), string debtorId = default(string))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public HrisCompany(string legalName = default(string), string displayName = default(string), string subdomain = default(string), StatusEnum? status = default(StatusEnum?), string companyNumber = default(string), Currency? currency = default(Currency?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), string debtorId = default(string), Object customMappings = default(Object))
         {
             // to ensure "legalName" is required (not null)
             if (legalName == null) {
@@ -111,6 +112,7 @@ namespace Apideck.Model
             this.Emails = emails;
             this.Websites = websites;
             this.DebtorId = debtorId;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -182,6 +184,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "debtor_id", EmitDefaultValue = true)]
         public string DebtorId { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// Gets or Sets Deleted
@@ -277,6 +286,7 @@ namespace Apideck.Model
             sb.Append("  Emails: ").Append(Emails).Append("\n");
             sb.Append("  Websites: ").Append(Websites).Append("\n");
             sb.Append("  DebtorId: ").Append(DebtorId).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -380,6 +390,11 @@ namespace Apideck.Model
                     this.DebtorId.Equals(input.DebtorId))
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.Deleted == input.Deleted ||
                     this.Deleted.Equals(input.Deleted)
                 ) && 
@@ -455,6 +470,10 @@ namespace Apideck.Model
                 if (this.DebtorId != null)
                 {
                     hashCode = (hashCode * 59) + this.DebtorId.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Deleted.GetHashCode();
                 if (this.UpdatedBy != null)

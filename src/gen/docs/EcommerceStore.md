@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The store&#39;s name | [optional] 
 **StoreUrl** | **string** | The store&#39;s website URL | [optional] 
 **AdminUrl** | **string** | The store&#39;s admin login URL | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 

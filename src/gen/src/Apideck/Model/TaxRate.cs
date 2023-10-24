@@ -81,8 +81,9 @@ namespace Apideck.Model
         /// <param name="reportTaxType">Report Tax type to aggregate tax collected or paid for reporting purposes.</param>
         /// <param name="originalTaxRateId">ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities..</param>
         /// <param name="status">Tax rate status.</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public TaxRate(string id = default(string), string name = default(string), string code = default(string), string description = default(string), decimal? effectiveTaxRate = default(decimal?), decimal? totalTaxRate = default(decimal?), string taxPayableAccountId = default(string), string taxRemittedAccountId = default(string), List<Object> components = default(List<Object>), string type = default(string), string reportTaxType = default(string), string originalTaxRateId = default(string), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string))
+        public TaxRate(string id = default(string), string name = default(string), string code = default(string), string description = default(string), decimal? effectiveTaxRate = default(decimal?), decimal? totalTaxRate = default(decimal?), string taxPayableAccountId = default(string), string taxRemittedAccountId = default(string), List<Object> components = default(List<Object>), string type = default(string), string reportTaxType = default(string), string originalTaxRateId = default(string), StatusEnum? status = default(StatusEnum?), Object customMappings = default(Object), string rowVersion = default(string))
         {
             this.Id = id;
             this.Name = name;
@@ -97,6 +98,7 @@ namespace Apideck.Model
             this.ReportTaxType = reportTaxType;
             this.OriginalTaxRateId = originalTaxRateId;
             this.Status = status;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -182,6 +184,13 @@ namespace Apideck.Model
         /// <value>ID of the original tax rate from which the new tax rate is derived. Helps to understand the relationship between corresponding tax rate entities.</value>
         [DataMember(Name = "original_tax_rate_id", EmitDefaultValue = true)]
         public string OriginalTaxRateId { get; set; }
+
+        /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
 
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
@@ -271,6 +280,7 @@ namespace Apideck.Model
             sb.Append("  ReportTaxType: ").Append(ReportTaxType).Append("\n");
             sb.Append("  OriginalTaxRateId: ").Append(OriginalTaxRateId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -377,6 +387,11 @@ namespace Apideck.Model
                     this.Status.Equals(input.Status)
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -461,6 +476,10 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.OriginalTaxRateId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
+                }
                 if (this.RowVersion != null)
                 {
                     hashCode = (hashCode * 59) + this.RowVersion.GetHashCode();

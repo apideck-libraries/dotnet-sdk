@@ -68,7 +68,8 @@ namespace Apideck.Model
         /// <param name="emails">emails.</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="tags">tags.</param>
-        public Lead(string name = default(string), string companyName = default(string), string ownerId = default(string), string companyId = default(string), string leadId = default(string), string leadSource = default(string), string firstName = default(string), string lastName = default(string), string description = default(string), string prefix = default(string), string title = default(string), string language = default(string), string status = default(string), decimal? monetaryAmount = default(decimal?), Currency? currency = default(Currency?), string fax = default(string), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>))
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
+        public Lead(string name = default(string), string companyName = default(string), string ownerId = default(string), string companyId = default(string), string leadId = default(string), string leadSource = default(string), string firstName = default(string), string lastName = default(string), string description = default(string), string prefix = default(string), string title = default(string), string language = default(string), string status = default(string), decimal? monetaryAmount = default(decimal?), Currency? currency = default(Currency?), string fax = default(string), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>), Object customMappings = default(Object))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -101,6 +102,7 @@ namespace Apideck.Model
             this.Emails = emails;
             this.CustomFields = customFields;
             this.Tags = tags;
+            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -265,6 +267,13 @@ namespace Apideck.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// Date updated in ISO 8601 format
         /// </summary>
         /// <value>Date updated in ISO 8601 format</value>
@@ -326,6 +335,7 @@ namespace Apideck.Model
             sb.Append("  Emails: ").Append(Emails).Append("\n");
             sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
@@ -490,6 +500,11 @@ namespace Apideck.Model
                     this.Tags.SequenceEqual(input.Tags)
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
@@ -602,6 +617,10 @@ namespace Apideck.Model
                 if (this.Tags != null)
                 {
                     hashCode = (hashCode * 59) + this.Tags.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.UpdatedAt != null)
                 {

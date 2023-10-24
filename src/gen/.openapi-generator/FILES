@@ -104,6 +104,8 @@ docs/CreateConnectionResponse.md
 docs/CreateConsumerResponse.md
 docs/CreateContactResponse.md
 docs/CreateCreditNoteResponse.md
+docs/CreateCustomMappingRequest.md
+docs/CreateCustomMappingResponse.md
 docs/CreateCustomerResponse.md
 docs/CreateDepartmentResponse.md
 docs/CreateDriveGroupResponse.md
@@ -155,6 +157,8 @@ docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
 docs/CustomField.md
+docs/CustomFieldFinder.md
+docs/CustomMapping.md
 docs/Customer.md
 docs/CustomersFilter.md
 docs/Deduction.md
@@ -279,7 +283,10 @@ docs/GetCompanyInfoResponse.md
 docs/GetCompanyResponse.md
 docs/GetConnectionResponse.md
 docs/GetConnectionsResponse.md
+docs/GetConnectorResourceExampleResponse.md
+docs/GetConnectorResourceExampleResponseData.md
 docs/GetConnectorResourceResponse.md
+docs/GetConnectorResourceSchemaResponse.md
 docs/GetConnectorResponse.md
 docs/GetConnectorsResponse.md
 docs/GetConsumerResponse.md
@@ -289,6 +296,8 @@ docs/GetContactResponse.md
 docs/GetContactsResponse.md
 docs/GetCreditNoteResponse.md
 docs/GetCreditNotesResponse.md
+docs/GetCustomFieldsResponse.md
+docs/GetCustomMappingResponse.md
 docs/GetCustomerResponse.md
 docs/GetCustomersResponse.md
 docs/GetDepartmentResponse.md
@@ -360,6 +369,8 @@ docs/GetProductsResponse.md
 docs/GetProfitAndLossResponse.md
 docs/GetPurchaseOrderResponse.md
 docs/GetPurchaseOrdersResponse.md
+docs/GetResourceExampleResponse.md
+docs/GetResourceSchemaResponse.md
 docs/GetSharedLinkResponse.md
 docs/GetSharedLinksResponse.md
 docs/GetStoreResponse.md
@@ -494,10 +505,12 @@ docs/PurchaseOrder.md
 docs/RequestCountAllocation.md
 docs/RequestRate.md
 docs/ResolveWebhookResponse.md
+docs/ResourceExample.md
 docs/ResourceStatus.md
 docs/Schedule.md
 docs/ScheduleWorkPattern.md
 docs/ScheduleWorkPatternOddWeeks.md
+docs/SchemaSupport.md
 docs/ServiceCharge.md
 docs/Session.md
 docs/SessionSettings.md
@@ -544,6 +557,8 @@ docs/UpdateConsumerRequest.md
 docs/UpdateConsumerResponse.md
 docs/UpdateContactResponse.md
 docs/UpdateCreditNoteResponse.md
+docs/UpdateCustomMappingRequest.md
+docs/UpdateCustomMappingResponse.md
 docs/UpdateCustomerResponse.md
 docs/UpdateDepartmentResponse.md
 docs/UpdateDriveGroupResponse.md
@@ -712,6 +727,8 @@ src/Apideck.Test/Model/CreateConnectionResponseTests.cs
 src/Apideck.Test/Model/CreateConsumerResponseTests.cs
 src/Apideck.Test/Model/CreateContactResponseTests.cs
 src/Apideck.Test/Model/CreateCreditNoteResponseTests.cs
+src/Apideck.Test/Model/CreateCustomMappingRequestTests.cs
+src/Apideck.Test/Model/CreateCustomMappingResponseTests.cs
 src/Apideck.Test/Model/CreateCustomerResponseTests.cs
 src/Apideck.Test/Model/CreateDepartmentResponseTests.cs
 src/Apideck.Test/Model/CreateDriveGroupResponseTests.cs
@@ -761,7 +778,9 @@ src/Apideck.Test/Model/CreateWebhookResponseTests.cs
 src/Apideck.Test/Model/CreditNoteTests.cs
 src/Apideck.Test/Model/CrmEventTypeTests.cs
 src/Apideck.Test/Model/CurrencyTests.cs
+src/Apideck.Test/Model/CustomFieldFinderTests.cs
 src/Apideck.Test/Model/CustomFieldTests.cs
+src/Apideck.Test/Model/CustomMappingTests.cs
 src/Apideck.Test/Model/CustomerTests.cs
 src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
@@ -884,7 +903,10 @@ src/Apideck.Test/Model/GetCompanyInfoResponseTests.cs
 src/Apideck.Test/Model/GetCompanyResponseTests.cs
 src/Apideck.Test/Model/GetConnectionResponseTests.cs
 src/Apideck.Test/Model/GetConnectionsResponseTests.cs
+src/Apideck.Test/Model/GetConnectorResourceExampleResponseDataTests.cs
+src/Apideck.Test/Model/GetConnectorResourceExampleResponseTests.cs
 src/Apideck.Test/Model/GetConnectorResourceResponseTests.cs
+src/Apideck.Test/Model/GetConnectorResourceSchemaResponseTests.cs
 src/Apideck.Test/Model/GetConnectorResponseTests.cs
 src/Apideck.Test/Model/GetConnectorsResponseTests.cs
 src/Apideck.Test/Model/GetConsumerResponseTests.cs
@@ -894,6 +916,8 @@ src/Apideck.Test/Model/GetContactResponseTests.cs
 src/Apideck.Test/Model/GetContactsResponseTests.cs
 src/Apideck.Test/Model/GetCreditNoteResponseTests.cs
 src/Apideck.Test/Model/GetCreditNotesResponseTests.cs
+src/Apideck.Test/Model/GetCustomFieldsResponseTests.cs
+src/Apideck.Test/Model/GetCustomMappingResponseTests.cs
 src/Apideck.Test/Model/GetCustomerResponseTests.cs
 src/Apideck.Test/Model/GetCustomersResponseTests.cs
 src/Apideck.Test/Model/GetDepartmentResponseTests.cs
@@ -965,6 +989,8 @@ src/Apideck.Test/Model/GetProductsResponseTests.cs
 src/Apideck.Test/Model/GetProfitAndLossResponseTests.cs
 src/Apideck.Test/Model/GetPurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/GetPurchaseOrdersResponseTests.cs
+src/Apideck.Test/Model/GetResourceExampleResponseTests.cs
+src/Apideck.Test/Model/GetResourceSchemaResponseTests.cs
 src/Apideck.Test/Model/GetSharedLinkResponseTests.cs
 src/Apideck.Test/Model/GetSharedLinksResponseTests.cs
 src/Apideck.Test/Model/GetStoreResponseTests.cs
@@ -1095,10 +1121,12 @@ src/Apideck.Test/Model/PurchaseOrderTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
 src/Apideck.Test/Model/RequestRateTests.cs
 src/Apideck.Test/Model/ResolveWebhookResponseTests.cs
+src/Apideck.Test/Model/ResourceExampleTests.cs
 src/Apideck.Test/Model/ResourceStatusTests.cs
 src/Apideck.Test/Model/ScheduleTests.cs
 src/Apideck.Test/Model/ScheduleWorkPatternOddWeeksTests.cs
 src/Apideck.Test/Model/ScheduleWorkPatternTests.cs
+src/Apideck.Test/Model/SchemaSupportTests.cs
 src/Apideck.Test/Model/ServiceChargeTests.cs
 src/Apideck.Test/Model/SessionSettingsTests.cs
 src/Apideck.Test/Model/SessionTests.cs
@@ -1144,6 +1172,8 @@ src/Apideck.Test/Model/UpdateConsumerRequestTests.cs
 src/Apideck.Test/Model/UpdateConsumerResponseTests.cs
 src/Apideck.Test/Model/UpdateContactResponseTests.cs
 src/Apideck.Test/Model/UpdateCreditNoteResponseTests.cs
+src/Apideck.Test/Model/UpdateCustomMappingRequestTests.cs
+src/Apideck.Test/Model/UpdateCustomMappingResponseTests.cs
 src/Apideck.Test/Model/UpdateCustomerResponseTests.cs
 src/Apideck.Test/Model/UpdateDepartmentResponseTests.cs
 src/Apideck.Test/Model/UpdateDriveGroupResponseTests.cs
@@ -1326,6 +1356,8 @@ src/Apideck/Model/CreateConnectionResponse.cs
 src/Apideck/Model/CreateConsumerResponse.cs
 src/Apideck/Model/CreateContactResponse.cs
 src/Apideck/Model/CreateCreditNoteResponse.cs
+src/Apideck/Model/CreateCustomMappingRequest.cs
+src/Apideck/Model/CreateCustomMappingResponse.cs
 src/Apideck/Model/CreateCustomerResponse.cs
 src/Apideck/Model/CreateDepartmentResponse.cs
 src/Apideck/Model/CreateDriveGroupResponse.cs
@@ -1376,6 +1408,8 @@ src/Apideck/Model/CreditNote.cs
 src/Apideck/Model/CrmEventType.cs
 src/Apideck/Model/Currency.cs
 src/Apideck/Model/CustomField.cs
+src/Apideck/Model/CustomFieldFinder.cs
+src/Apideck/Model/CustomMapping.cs
 src/Apideck/Model/Customer.cs
 src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/Deduction.cs
@@ -1498,7 +1532,10 @@ src/Apideck/Model/GetCompanyInfoResponse.cs
 src/Apideck/Model/GetCompanyResponse.cs
 src/Apideck/Model/GetConnectionResponse.cs
 src/Apideck/Model/GetConnectionsResponse.cs
+src/Apideck/Model/GetConnectorResourceExampleResponse.cs
+src/Apideck/Model/GetConnectorResourceExampleResponseData.cs
 src/Apideck/Model/GetConnectorResourceResponse.cs
+src/Apideck/Model/GetConnectorResourceSchemaResponse.cs
 src/Apideck/Model/GetConnectorResponse.cs
 src/Apideck/Model/GetConnectorsResponse.cs
 src/Apideck/Model/GetConsumerResponse.cs
@@ -1508,6 +1545,8 @@ src/Apideck/Model/GetContactResponse.cs
 src/Apideck/Model/GetContactsResponse.cs
 src/Apideck/Model/GetCreditNoteResponse.cs
 src/Apideck/Model/GetCreditNotesResponse.cs
+src/Apideck/Model/GetCustomFieldsResponse.cs
+src/Apideck/Model/GetCustomMappingResponse.cs
 src/Apideck/Model/GetCustomerResponse.cs
 src/Apideck/Model/GetCustomersResponse.cs
 src/Apideck/Model/GetDepartmentResponse.cs
@@ -1579,6 +1618,8 @@ src/Apideck/Model/GetProductsResponse.cs
 src/Apideck/Model/GetProfitAndLossResponse.cs
 src/Apideck/Model/GetPurchaseOrderResponse.cs
 src/Apideck/Model/GetPurchaseOrdersResponse.cs
+src/Apideck/Model/GetResourceExampleResponse.cs
+src/Apideck/Model/GetResourceSchemaResponse.cs
 src/Apideck/Model/GetSharedLinkResponse.cs
 src/Apideck/Model/GetSharedLinksResponse.cs
 src/Apideck/Model/GetStoreResponse.cs
@@ -1709,10 +1750,12 @@ src/Apideck/Model/PurchaseOrder.cs
 src/Apideck/Model/RequestCountAllocation.cs
 src/Apideck/Model/RequestRate.cs
 src/Apideck/Model/ResolveWebhookResponse.cs
+src/Apideck/Model/ResourceExample.cs
 src/Apideck/Model/ResourceStatus.cs
 src/Apideck/Model/Schedule.cs
 src/Apideck/Model/ScheduleWorkPattern.cs
 src/Apideck/Model/ScheduleWorkPatternOddWeeks.cs
+src/Apideck/Model/SchemaSupport.cs
 src/Apideck/Model/ServiceCharge.cs
 src/Apideck/Model/Session.cs
 src/Apideck/Model/SessionSettings.cs
@@ -1758,6 +1801,8 @@ src/Apideck/Model/UpdateConsumerRequest.cs
 src/Apideck/Model/UpdateConsumerResponse.cs
 src/Apideck/Model/UpdateContactResponse.cs
 src/Apideck/Model/UpdateCreditNoteResponse.cs
+src/Apideck/Model/UpdateCustomMappingRequest.cs
+src/Apideck/Model/UpdateCustomMappingResponse.cs
 src/Apideck/Model/UpdateCustomerResponse.cs
 src/Apideck/Model/UpdateDepartmentResponse.cs
 src/Apideck/Model/UpdateDriveGroupResponse.cs

@@ -171,8 +171,9 @@ namespace Apideck.Model
         /// <param name="addresses">addresses.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails.</param>
+        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public CompanyInfo(string companyName = default(string), StatusEnum? status = default(StatusEnum?), string legalName = default(string), string country = default(string), string salesTaxNumber = default(string), bool automatedSalesTax = default(bool), bool salesTaxEnabled = default(bool), TaxRate defaultSalesTax = default(TaxRate), Currency? currency = default(Currency?), string language = default(string), FiscalYearStartMonthEnum? fiscalYearStartMonth = default(FiscalYearStartMonthEnum?), DateTime companyStartDate = default(DateTime), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), string rowVersion = default(string))
+        public CompanyInfo(string companyName = default(string), StatusEnum? status = default(StatusEnum?), string legalName = default(string), string country = default(string), string salesTaxNumber = default(string), bool automatedSalesTax = default(bool), bool salesTaxEnabled = default(bool), TaxRate defaultSalesTax = default(TaxRate), Currency? currency = default(Currency?), string language = default(string), FiscalYearStartMonthEnum? fiscalYearStartMonth = default(FiscalYearStartMonthEnum?), DateTime companyStartDate = default(DateTime), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), Object customMappings = default(Object), string rowVersion = default(string))
         {
             this.CompanyName = companyName;
             this.Status = status;
@@ -189,6 +190,7 @@ namespace Apideck.Model
             this.Addresses = addresses;
             this.PhoneNumbers = phoneNumbers;
             this.Emails = emails;
+            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -288,6 +290,13 @@ namespace Apideck.Model
         public List<Email> Emails { get; set; }
 
         /// <summary>
+        /// When custom mappings are configured on the resource, the result is included here.
+        /// </summary>
+        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
+        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
+        public Object CustomMappings { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -378,6 +387,7 @@ namespace Apideck.Model
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
             sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
             sb.Append("  Emails: ").Append(Emails).Append("\n");
+            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -497,6 +507,11 @@ namespace Apideck.Model
                     this.Emails.SequenceEqual(input.Emails)
                 ) && 
                 (
+                    this.CustomMappings == input.CustomMappings ||
+                    (this.CustomMappings != null &&
+                    this.CustomMappings.Equals(input.CustomMappings))
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -580,6 +595,10 @@ namespace Apideck.Model
                 if (this.Emails != null)
                 {
                     hashCode = (hashCode * 59) + this.Emails.GetHashCode();
+                }
+                if (this.CustomMappings != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {
