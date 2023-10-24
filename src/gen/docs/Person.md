@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Initials** | **string** | Initials of the person | [optional] 
 **Birthday** | **DateTime?** | Date of birth | [optional] 
 **DeceasedOn** | **DateTime?** | Date of death | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

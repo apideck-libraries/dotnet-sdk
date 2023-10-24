@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Permissions** | [**UnifiedFilePermissions**](UnifiedFilePermissions.md) |  | [optional] 
 **Exportable** | **bool** | Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper. | [optional] 
 **ExportFormats** | **List&lt;string&gt;** | The available file formats when exporting this file. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 

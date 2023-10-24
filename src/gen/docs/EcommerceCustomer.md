@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **PhoneNumbers** | [**List&lt;PhoneNumber&gt;**](PhoneNumber.md) | An array of phone numbers for the customer. | [optional] 
 **Addresses** | [**List&lt;EcommerceCustomerAddresses&gt;**](EcommerceCustomerAddresses.md) | An array of addresses for the customer. | [optional] 
 **Orders** | [**List&lt;LinkedEcommerceOrder&gt;**](LinkedEcommerceOrder.md) |  | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 

@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Allocations** | **List&lt;Object&gt;** |  | [optional] 
 **Note** | **string** | Optional note to be associated with the credit note. | [optional] 
 **Terms** | **string** | Optional terms to be associated with the credit note. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

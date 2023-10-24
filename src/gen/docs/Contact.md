@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **FirstCallAt** | **DateTime?** | The first call date of the contact. | [optional] [readonly] 
 **FirstEmailAt** | **DateTime?** | The first email date of the contact. | [optional] [readonly] 
 **LastActivityAt** | **DateTime?** | The last activity date of the contact. | [optional] [readonly] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **UpdatedAt** | **DateTime?** | The last update date of the contact. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The creation date of the contact. | [optional] [readonly] 
 

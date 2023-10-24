@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Units** | **string** | The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;. | [optional] 
 **Amount** | **decimal?** | The amount of time off requested. | [optional] 
 **Notes** | [**TimeOffRequestNotes**](TimeOffRequestNotes.md) |  | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
