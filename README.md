@@ -190,4 +190,4 @@ Open an [issue][3]!
 [1]: https://apideck.com
 [2]: https://developers.apideck.com/
 [3]: https://github.com/apideck-libraries/dotnet-sdk/issues/new
-[4]: https://github.com/apideck-libraries/dotnet-sdk/blob/master/LICENSE
+[4]: https://github.com/apideck-libraries/dotnet-sdk/blob/main/LICENSE
