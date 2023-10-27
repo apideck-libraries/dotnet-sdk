@@ -49,8 +49,7 @@ namespace Apideck.Model
         /// <param name="netIncome">netIncome.</param>
         /// <param name="netOperatingIncome">netOperatingIncome.</param>
         /// <param name="grossProfit">grossProfit.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public ProfitAndLoss(string reportName = default(string), string startDate = default(string), string endDate = default(string), string currency = default(string), string customerId = default(string), ProfitAndLossIncome income = default(ProfitAndLossIncome), ProfitAndLossExpenses expenses = default(ProfitAndLossExpenses), ProfitAndLossNetIncome netIncome = default(ProfitAndLossNetIncome), ProfitAndLossNetOperatingIncome netOperatingIncome = default(ProfitAndLossNetOperatingIncome), ProfitAndLossGrossProfit grossProfit = default(ProfitAndLossGrossProfit), Object customMappings = default(Object))
+        public ProfitAndLoss(string reportName = default(string), string startDate = default(string), string endDate = default(string), string currency = default(string), string customerId = default(string), ProfitAndLossIncome income = default(ProfitAndLossIncome), ProfitAndLossExpenses expenses = default(ProfitAndLossExpenses), ProfitAndLossNetIncome netIncome = default(ProfitAndLossNetIncome), ProfitAndLossNetOperatingIncome netOperatingIncome = default(ProfitAndLossNetOperatingIncome), ProfitAndLossGrossProfit grossProfit = default(ProfitAndLossGrossProfit))
         {
             // to ensure "reportName" is required (not null)
             if (reportName == null) {
@@ -78,7 +77,6 @@ namespace Apideck.Model
             this.NetIncome = netIncome;
             this.NetOperatingIncome = netOperatingIncome;
             this.GrossProfit = grossProfit;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -165,8 +163,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

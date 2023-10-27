@@ -58,8 +58,7 @@ namespace Apideck.Model
         /// <param name="permissions">permissions.</param>
         /// <param name="exportable">Whether the current file is exportable to other file formats. This property is relevant for proprietary file formats such as Google Docs or Dropbox Paper..</param>
         /// <param name="exportFormats">The available file formats when exporting this file..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int? size = default(int?), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool), UnifiedFilePermissions permissions = default(UnifiedFilePermissions), bool exportable = default(bool), List<string> exportFormats = default(List<string>), Object customMappings = default(Object))
+        public UnifiedFile(string name = default(string), string description = default(string), FileType type = default(FileType), string path = default(string), string mimeType = default(string), bool downloadable = default(bool), int? size = default(int?), Owner owner = default(Owner), List<LinkedFolder> parentFolders = default(List<LinkedFolder>), bool parentFoldersComplete = default(bool), UnifiedFilePermissions permissions = default(UnifiedFilePermissions), bool exportable = default(bool), List<string> exportFormats = default(List<string>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -78,7 +77,6 @@ namespace Apideck.Model
             this.Permissions = permissions;
             this.Exportable = exportable;
             this.ExportFormats = exportFormats;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -198,8 +196,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

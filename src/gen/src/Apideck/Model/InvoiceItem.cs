@@ -86,9 +86,8 @@ namespace Apideck.Model
         /// <param name="expenseAccount">expenseAccount.</param>
         /// <param name="trackingCategory">trackingCategory.</param>
         /// <param name="active">active.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public InvoiceItem(string name = default(string), string description = default(string), string code = default(string), bool? sold = default(bool?), bool? purchased = default(bool?), bool? tracked = default(bool?), bool? taxable = default(bool?), DateTime? inventoryDate = default(DateTime?), TypeEnum? type = default(TypeEnum?), InvoiceItemSalesDetails salesDetails = default(InvoiceItemSalesDetails), InvoiceItemSalesDetails purchaseDetails = default(InvoiceItemSalesDetails), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), LinkedLedgerAccount assetAccount = default(LinkedLedgerAccount), LinkedLedgerAccount incomeAccount = default(LinkedLedgerAccount), LinkedLedgerAccount expenseAccount = default(LinkedLedgerAccount), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), bool? active = default(bool?), Object customMappings = default(Object), string rowVersion = default(string))
+        public InvoiceItem(string name = default(string), string description = default(string), string code = default(string), bool? sold = default(bool?), bool? purchased = default(bool?), bool? tracked = default(bool?), bool? taxable = default(bool?), DateTime? inventoryDate = default(DateTime?), TypeEnum? type = default(TypeEnum?), InvoiceItemSalesDetails salesDetails = default(InvoiceItemSalesDetails), InvoiceItemSalesDetails purchaseDetails = default(InvoiceItemSalesDetails), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), LinkedLedgerAccount assetAccount = default(LinkedLedgerAccount), LinkedLedgerAccount incomeAccount = default(LinkedLedgerAccount), LinkedLedgerAccount expenseAccount = default(LinkedLedgerAccount), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), bool? active = default(bool?), string rowVersion = default(string))
         {
             this.Name = name;
             this.Description = description;
@@ -108,7 +107,6 @@ namespace Apideck.Model
             this.ExpenseAccount = expenseAccount;
             this.TrackingCategory = trackingCategory;
             this.Active = active;
-            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -243,8 +241,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>

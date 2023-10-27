@@ -268,9 +268,8 @@ namespace Apideck.Model
         /// <param name="discounts">discounts.</param>
         /// <param name="tenders">tenders.</param>
         /// <param name="voided">voided.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="version">version.</param>
-        public Order(string idempotencyKey = default(string), string orderNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? closedDate = default(DateTime?), string referenceId = default(string), StatusEnum? status = default(StatusEnum?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), Currency? currency = default(Currency?), string title = default(string), string note = default(string), string merchantId = default(string), string customerId = default(string), string employeeId = default(string), string locationId = default(string), string orderTypeId = default(string), string table = default(string), string seat = default(string), int? totalAmount = default(int?), int? totalTip = default(int?), int? totalTax = default(int?), int? totalDiscount = default(int?), int? totalRefund = default(int?), int? totalServiceCharge = default(int?), bool refunded = default(bool), List<OrderCustomers> customers = default(List<OrderCustomers>), List<OrderFulfillments> fulfillments = default(List<OrderFulfillments>), List<OrderLineItems> lineItems = default(List<OrderLineItems>), List<OrderPayments> payments = default(List<OrderPayments>), List<ServiceCharge> serviceCharges = default(List<ServiceCharge>), List<OrderRefunds> refunds = default(List<OrderRefunds>), List<Object> taxes = default(List<Object>), List<OrderDiscounts> discounts = default(List<OrderDiscounts>), List<OrderTenders> tenders = default(List<OrderTenders>), bool voided = default(bool), Object customMappings = default(Object), string version = default(string))
+        public Order(string idempotencyKey = default(string), string orderNumber = default(string), DateTime? orderDate = default(DateTime?), DateTime? closedDate = default(DateTime?), string referenceId = default(string), StatusEnum? status = default(StatusEnum?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), Currency? currency = default(Currency?), string title = default(string), string note = default(string), string merchantId = default(string), string customerId = default(string), string employeeId = default(string), string locationId = default(string), string orderTypeId = default(string), string table = default(string), string seat = default(string), int? totalAmount = default(int?), int? totalTip = default(int?), int? totalTax = default(int?), int? totalDiscount = default(int?), int? totalRefund = default(int?), int? totalServiceCharge = default(int?), bool refunded = default(bool), List<OrderCustomers> customers = default(List<OrderCustomers>), List<OrderFulfillments> fulfillments = default(List<OrderFulfillments>), List<OrderLineItems> lineItems = default(List<OrderLineItems>), List<OrderPayments> payments = default(List<OrderPayments>), List<ServiceCharge> serviceCharges = default(List<ServiceCharge>), List<OrderRefunds> refunds = default(List<OrderRefunds>), List<Object> taxes = default(List<Object>), List<OrderDiscounts> discounts = default(List<OrderDiscounts>), List<OrderTenders> tenders = default(List<OrderTenders>), bool voided = default(bool), string version = default(string))
         {
             // to ensure "merchantId" is required (not null)
             if (merchantId == null) {
@@ -314,7 +313,6 @@ namespace Apideck.Model
             this.Discounts = discounts;
             this.Tenders = tenders;
             this.Voided = voided;
-            this.CustomMappings = customMappings;
             this._Version = version;
         }
 
@@ -544,8 +542,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets _Version
         /// </summary>

@@ -64,9 +64,8 @@ namespace Apideck.Model
         /// <param name="archived">archived.</param>
         /// <param name="ownerId">ownerId.</param>
         /// <param name="recordUrl">recordUrl.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
-        public Applicant(string positionId = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applicationIds = default(List<string>), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool? archived = default(bool?), string ownerId = default(string), string recordUrl = default(string), Object customMappings = default(Object), bool? deleted = default(bool?))
+        public Applicant(string positionId = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applicationIds = default(List<string>), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool? archived = default(bool?), string ownerId = default(string), string recordUrl = default(string), bool? deleted = default(bool?))
         {
             this.PositionId = positionId;
             this.Name = name;
@@ -98,7 +97,6 @@ namespace Apideck.Model
             this.Archived = archived;
             this.OwnerId = ownerId;
             this.RecordUrl = recordUrl;
-            this.CustomMappings = customMappings;
             this.Deleted = deleted;
         }
 
@@ -397,8 +395,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Flag to indicate if the object is deleted.
         /// </summary>

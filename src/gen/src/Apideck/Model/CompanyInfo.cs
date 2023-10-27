@@ -171,9 +171,8 @@ namespace Apideck.Model
         /// <param name="addresses">addresses.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public CompanyInfo(string companyName = default(string), StatusEnum? status = default(StatusEnum?), string legalName = default(string), string country = default(string), string salesTaxNumber = default(string), bool automatedSalesTax = default(bool), bool salesTaxEnabled = default(bool), TaxRate defaultSalesTax = default(TaxRate), Currency? currency = default(Currency?), string language = default(string), FiscalYearStartMonthEnum? fiscalYearStartMonth = default(FiscalYearStartMonthEnum?), DateTime companyStartDate = default(DateTime), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), Object customMappings = default(Object), string rowVersion = default(string))
+        public CompanyInfo(string companyName = default(string), StatusEnum? status = default(StatusEnum?), string legalName = default(string), string country = default(string), string salesTaxNumber = default(string), bool automatedSalesTax = default(bool), bool salesTaxEnabled = default(bool), TaxRate defaultSalesTax = default(TaxRate), Currency? currency = default(Currency?), string language = default(string), FiscalYearStartMonthEnum? fiscalYearStartMonth = default(FiscalYearStartMonthEnum?), DateTime companyStartDate = default(DateTime), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), string rowVersion = default(string))
         {
             this.CompanyName = companyName;
             this.Status = status;
@@ -190,7 +189,6 @@ namespace Apideck.Model
             this.Addresses = addresses;
             this.PhoneNumbers = phoneNumbers;
             this.Emails = emails;
-            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -294,8 +292,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>

@@ -35,11 +35,9 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="Offer" /> class.
         /// </summary>
         /// <param name="applicationId">applicationId.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Offer(string applicationId = default(string), Object customMappings = default(Object))
+        public Offer(string applicationId = default(string))
         {
             this.ApplicationId = applicationId;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -68,8 +66,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

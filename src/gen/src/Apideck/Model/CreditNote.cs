@@ -140,9 +140,8 @@ namespace Apideck.Model
         /// <param name="allocations">allocations.</param>
         /// <param name="note">Optional note to be associated with the credit note..</param>
         /// <param name="terms">Optional terms to be associated with the credit note..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Object> allocations = default(List<Object>), string note = default(string), string terms = default(string), Object customMappings = default(Object), string rowVersion = default(string))
+        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Object> allocations = default(List<Object>), string note = default(string), string terms = default(string), string rowVersion = default(string))
         {
             this.TotalAmount = totalAmount;
             this.Number = number;
@@ -165,7 +164,6 @@ namespace Apideck.Model
             this.Allocations = allocations;
             this.Note = note;
             this.Terms = terms;
-            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -311,8 +309,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>

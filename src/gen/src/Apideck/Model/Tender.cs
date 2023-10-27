@@ -41,8 +41,7 @@ namespace Apideck.Model
         /// <param name="editable">editable.</param>
         /// <param name="opensCashDrawer">If this tender opens the cash drawer (default to true).</param>
         /// <param name="allowsTipping">Allow tipping on payment from tender (default to true).</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Tender(string key = default(string), string label = default(string), bool? active = default(bool?), bool? hidden = default(bool?), bool? editable = default(bool?), bool opensCashDrawer = true, bool allowsTipping = true, Object customMappings = default(Object))
+        public Tender(string key = default(string), string label = default(string), bool? active = default(bool?), bool? hidden = default(bool?), bool? editable = default(bool?), bool opensCashDrawer = true, bool allowsTipping = true)
         {
             this.Key = key;
             this.Label = label;
@@ -51,7 +50,6 @@ namespace Apideck.Model
             this.Editable = editable;
             this.OpensCashDrawer = opensCashDrawer;
             this.AllowsTipping = allowsTipping;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -118,8 +116,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

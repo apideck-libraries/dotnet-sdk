@@ -87,8 +87,7 @@ namespace Apideck.Model
         /// <param name="jobId">jobId (required).</param>
         /// <param name="status">status.</param>
         /// <param name="stage">stage.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Application(string applicantId = default(string), string jobId = default(string), StatusEnum? status = default(StatusEnum?), ApplicationStage stage = default(ApplicationStage), Object customMappings = default(Object))
+        public Application(string applicantId = default(string), string jobId = default(string), StatusEnum? status = default(StatusEnum?), ApplicationStage stage = default(ApplicationStage))
         {
             // to ensure "applicantId" is required (not null)
             if (applicantId == null) {
@@ -102,7 +101,6 @@ namespace Apideck.Model
             this.JobId = jobId;
             this.Status = status;
             this.Stage = stage;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -143,8 +141,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

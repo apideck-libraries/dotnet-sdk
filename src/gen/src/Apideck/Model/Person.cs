@@ -47,8 +47,7 @@ namespace Apideck.Model
         /// <param name="initials">Initials of the person.</param>
         /// <param name="birthday">Date of birth.</param>
         /// <param name="deceasedOn">Date of death.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Person(string firstName = default(string), string lastName = default(string), string middleName = default(string), Gender? gender = default(Gender?), string initials = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), Object customMappings = default(Object))
+        public Person(string firstName = default(string), string lastName = default(string), string middleName = default(string), Gender? gender = default(Gender?), string initials = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -57,7 +56,6 @@ namespace Apideck.Model
             this.Initials = initials;
             this.Birthday = birthday;
             this.DeceasedOn = deceasedOn;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -124,8 +122,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

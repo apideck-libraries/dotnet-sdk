@@ -47,8 +47,7 @@ namespace Apideck.Model
         /// <param name="endDate">The end date, inclusive, of the pay period. (required).</param>
         /// <param name="totals">totals.</param>
         /// <param name="compensations">An array of compensations for the payroll..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Payroll(string companyId = default(string), bool? processed = default(bool?), string processedDate = default(string), string checkDate = default(string), string startDate = default(string), string endDate = default(string), PayrollTotals totals = default(PayrollTotals), List<Compensation> compensations = default(List<Compensation>), Object customMappings = default(Object))
+        public Payroll(string companyId = default(string), bool? processed = default(bool?), string processedDate = default(string), string checkDate = default(string), string startDate = default(string), string endDate = default(string), PayrollTotals totals = default(PayrollTotals), List<Compensation> compensations = default(List<Compensation>))
         {
             // to ensure "processed" is required (not null)
             if (processed == null) {
@@ -74,7 +73,6 @@ namespace Apideck.Model
             this.ProcessedDate = processedDate;
             this.Totals = totals;
             this.Compensations = compensations;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -152,8 +150,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

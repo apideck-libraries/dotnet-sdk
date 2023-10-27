@@ -190,9 +190,8 @@ namespace Apideck.Model
         /// <param name="accountingByRow">Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row..</param>
         /// <param name="bankAccount">bankAccount.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), Object customMappings = default(Object), string rowVersion = default(string))
+        public Invoice(TypeEnum? type = default(TypeEnum?), string number = default(string), LinkedCustomer customer = default(LinkedCustomer), DateTime? invoiceDate = default(DateTime?), DateTime? dueDate = default(DateTime?), string terms = default(string), string poNumber = default(string), string reference = default(string), StatusEnum? status = default(StatusEnum?), bool invoiceSent = default(bool), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), decimal? total = default(decimal?), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), string customerMemo = default(string), LinkedTrackingCategory trackingCategory = default(LinkedTrackingCategory), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address billingAddress = default(Address), Address shippingAddress = default(Address), string templateId = default(string), string sourceDocumentUrl = default(string), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
         {
             this.Type = type;
             this.Number = number;
@@ -228,7 +227,6 @@ namespace Apideck.Model
             this.AccountingByRow = accountingByRow;
             this.BankAccount = bankAccount;
             this.LedgerAccount = ledgerAccount;
-            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -479,8 +477,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>

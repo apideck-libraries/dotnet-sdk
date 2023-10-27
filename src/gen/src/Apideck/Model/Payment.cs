@@ -169,8 +169,7 @@ namespace Apideck.Model
         /// <param name="note">Optional note to be associated with the payment..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="displayId">Payment id to be displayed..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string paymentMethodId = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string rowVersion = default(string), string displayId = default(string), Object customMappings = default(Object))
+        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string paymentMethodId = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string rowVersion = default(string), string displayId = default(string))
         {
             this.TotalAmount = totalAmount;
             this.TransactionDate = transactionDate;
@@ -192,7 +191,6 @@ namespace Apideck.Model
             this.Note = note;
             this.RowVersion = rowVersion;
             this.DisplayId = displayId;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -347,8 +345,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

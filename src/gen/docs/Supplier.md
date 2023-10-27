@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **Status** | **string** | Supplier status | [optional] 
 **PaymentMethod** | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 **Channel** | **string** | The channel through which the transaction is processed. | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 

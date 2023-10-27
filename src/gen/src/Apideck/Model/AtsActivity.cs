@@ -34,10 +34,9 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AtsActivity" /> class.
         /// </summary>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public AtsActivity(Object customMappings = default(Object))
+        [JsonConstructorAttribute]
+        public AtsActivity()
         {
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -60,8 +59,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

@@ -52,8 +52,7 @@ namespace Apideck.Model
         /// <param name="currency">currency.</param>
         /// <param name="modifierGroupId">modifierGroupId (required).</param>
         /// <param name="available">available.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Modifier(string idempotencyKey = default(string), string name = default(string), string alternateName = default(string), decimal priceAmount = default(decimal), Currency? currency = default(Currency?), string modifierGroupId = default(string), bool? available = default(bool?), Object customMappings = default(Object))
+        public Modifier(string idempotencyKey = default(string), string name = default(string), string alternateName = default(string), decimal priceAmount = default(decimal), Currency? currency = default(Currency?), string modifierGroupId = default(string), bool? available = default(bool?))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -70,7 +69,6 @@ namespace Apideck.Model
             this.PriceAmount = priceAmount;
             this.Currency = currency;
             this.Available = available;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -130,8 +128,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

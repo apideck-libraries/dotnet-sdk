@@ -134,9 +134,8 @@ namespace Apideck.Model
         /// <param name="modifierGroups">modifierGroups.</param>
         /// <param name="available">available.</param>
         /// <param name="hidden">hidden.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
-        public Item(string id = default(string), string idempotencyKey = default(string), string name = default(string), string description = default(string), string abbreviation = default(string), ProductTypeEnum? productType = default(ProductTypeEnum?), decimal priceAmount = default(decimal), PricingTypeEnum? pricingType = default(PricingTypeEnum?), Currency? priceCurrency = default(Currency?), decimal cost = default(decimal), List<string> taxIds = default(List<string>), bool isRevenue = default(bool), bool useDefaultTaxRates = default(bool), List<string> absentAtLocationIds = default(List<string>), bool presentAtAllLocations = default(bool), bool availableForPickup = default(bool), bool availableOnline = default(bool), string sku = default(string), string code = default(string), List<Object> categories = default(List<Object>), List<Object> options = default(List<Object>), List<Object> variations = default(List<Object>), List<Object> modifierGroups = default(List<Object>), bool? available = default(bool?), bool? hidden = default(bool?), Object customMappings = default(Object), bool? deleted = default(bool?))
+        public Item(string id = default(string), string idempotencyKey = default(string), string name = default(string), string description = default(string), string abbreviation = default(string), ProductTypeEnum? productType = default(ProductTypeEnum?), decimal priceAmount = default(decimal), PricingTypeEnum? pricingType = default(PricingTypeEnum?), Currency? priceCurrency = default(Currency?), decimal cost = default(decimal), List<string> taxIds = default(List<string>), bool isRevenue = default(bool), bool useDefaultTaxRates = default(bool), List<string> absentAtLocationIds = default(List<string>), bool presentAtAllLocations = default(bool), bool availableForPickup = default(bool), bool availableOnline = default(bool), string sku = default(string), string code = default(string), List<Object> categories = default(List<Object>), List<Object> options = default(List<Object>), List<Object> variations = default(List<Object>), List<Object> modifierGroups = default(List<Object>), bool? available = default(bool?), bool? hidden = default(bool?), bool? deleted = default(bool?))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -167,7 +166,6 @@ namespace Apideck.Model
             this.ModifierGroups = modifierGroups;
             this.Available = available;
             this.Hidden = hidden;
-            this.CustomMappings = customMappings;
             this.Deleted = deleted;
         }
 
@@ -330,8 +328,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Flag to indicate if the object is deleted.
         /// </summary>

@@ -148,10 +148,9 @@ namespace Apideck.Model
         /// <param name="foodAllergies">Indicate the employee&#39;s food allergies..</param>
         /// <param name="probationPeriod">probationPeriod.</param>
         /// <param name="tags">tags.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
-        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), string ethnicity = default(string), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), Object customMappings = default(Object), string rowVersion = default(string), bool? deleted = default(bool?))
+        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), string ethnicity = default(string), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -210,7 +209,6 @@ namespace Apideck.Model
             this.FoodAllergies = foodAllergies;
             this.ProbationPeriod = probationPeriod;
             this.Tags = tags;
-            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
             this.Deleted = deleted;
         }
@@ -597,8 +595,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>

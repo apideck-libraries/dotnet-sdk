@@ -45,8 +45,7 @@ namespace Apideck.Model
         /// <param name="assets">assets (required).</param>
         /// <param name="liabilities">liabilities (required).</param>
         /// <param name="equity">equity (required).</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public BalanceSheet(string reportName = default(string), string startDate = default(string), string endDate = default(string), BalanceSheetAssets assets = default(BalanceSheetAssets), BalanceSheetLiabilities liabilities = default(BalanceSheetLiabilities), BalanceSheetEquity equity = default(BalanceSheetEquity), Object customMappings = default(Object))
+        public BalanceSheet(string reportName = default(string), string startDate = default(string), string endDate = default(string), BalanceSheetAssets assets = default(BalanceSheetAssets), BalanceSheetLiabilities liabilities = default(BalanceSheetLiabilities), BalanceSheetEquity equity = default(BalanceSheetEquity))
         {
             // to ensure "reportName" is required (not null)
             if (reportName == null) {
@@ -74,7 +73,6 @@ namespace Apideck.Model
             }
             this.Equity = equity;
             this.EndDate = endDate;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -136,8 +134,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

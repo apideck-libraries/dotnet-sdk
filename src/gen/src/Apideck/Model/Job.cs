@@ -183,8 +183,7 @@ namespace Apideck.Model
         /// <param name="customFields">customFields.</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
         /// <param name="ownerId">ownerId.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<string> hiringManagers = default(List<string>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), string recordUrl = default(string), List<JobLinks> links = default(List<JobLinks>), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), bool? deleted = default(bool?), string ownerId = default(string), Object customMappings = default(Object))
+        public Job(string slug = default(string), string title = default(string), int sequence = default(int), VisibilityEnum? visibility = default(VisibilityEnum?), JobStatus? status = default(JobStatus?), string code = default(string), string language = default(string), EmploymentTermsEnum? employmentTerms = default(EmploymentTermsEnum?), string experience = default(string), string location = default(string), bool? remote = default(bool?), string requisitionId = default(string), Department department = default(Department), Branch branch = default(Branch), List<string> recruiters = default(List<string>), List<string> hiringManagers = default(List<string>), List<string> followers = default(List<string>), string description = default(string), string descriptionHtml = default(string), List<Object> blocks = default(List<Object>), string closing = default(string), string closingHtml = default(string), DateTime? closingDate = default(DateTime?), JobSalary salary = default(JobSalary), string url = default(string), string jobPortalUrl = default(string), string recordUrl = default(string), List<JobLinks> links = default(List<JobLinks>), bool confidential = default(bool), bool availableToEmployees = default(bool), List<string> tags = default(List<string>), List<Address> addresses = default(List<Address>), List<CustomField> customFields = default(List<CustomField>), bool? deleted = default(bool?), string ownerId = default(string))
         {
             this.Slug = slug;
             this.Title = title;
@@ -221,7 +220,6 @@ namespace Apideck.Model
             this.CustomFields = customFields;
             this.Deleted = deleted;
             this.OwnerId = ownerId;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -470,8 +468,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

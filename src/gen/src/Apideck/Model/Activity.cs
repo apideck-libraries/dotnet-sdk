@@ -178,8 +178,7 @@ namespace Apideck.Model
         /// <param name="videoConferenceId">The ID of the video conference.</param>
         /// <param name="customFields">Custom fields of the activity.</param>
         /// <param name="attendees">attendees.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Activity(string activityDatetime = default(string), int? durationSeconds = default(int?), string userId = default(string), string accountId = default(string), string contactId = default(string), string companyId = default(string), string opportunityId = default(string), string leadId = default(string), string ownerId = default(string), string campaignId = default(string), string caseId = default(string), string assetId = default(string), string contractId = default(string), string productId = default(string), string solutionId = default(string), string customObjectId = default(string), TypeEnum type = default(TypeEnum), string title = default(string), string description = default(string), string note = default(string), string location = default(string), Address locationAddress = default(Address), bool? allDayEvent = default(bool?), bool? _private = default(bool?), bool? groupEvent = default(bool?), string eventSubType = default(string), string groupEventType = default(string), bool? child = default(bool?), bool? archived = default(bool?), bool? deleted = default(bool?), ShowAsEnum? showAs = default(ShowAsEnum?), bool? done = default(bool?), string startDatetime = default(string), string endDatetime = default(string), string activityDate = default(string), string endDate = default(string), bool recurrent = default(bool), string reminderDatetime = default(string), bool? reminderSet = default(bool?), string videoConferenceUrl = default(string), string videoConferenceId = default(string), List<CustomField> customFields = default(List<CustomField>), List<ActivityAttendee> attendees = default(List<ActivityAttendee>), Object customMappings = default(Object))
+        public Activity(string activityDatetime = default(string), int? durationSeconds = default(int?), string userId = default(string), string accountId = default(string), string contactId = default(string), string companyId = default(string), string opportunityId = default(string), string leadId = default(string), string ownerId = default(string), string campaignId = default(string), string caseId = default(string), string assetId = default(string), string contractId = default(string), string productId = default(string), string solutionId = default(string), string customObjectId = default(string), TypeEnum type = default(TypeEnum), string title = default(string), string description = default(string), string note = default(string), string location = default(string), Address locationAddress = default(Address), bool? allDayEvent = default(bool?), bool? _private = default(bool?), bool? groupEvent = default(bool?), string eventSubType = default(string), string groupEventType = default(string), bool? child = default(bool?), bool? archived = default(bool?), bool? deleted = default(bool?), ShowAsEnum? showAs = default(ShowAsEnum?), bool? done = default(bool?), string startDatetime = default(string), string endDatetime = default(string), string activityDate = default(string), string endDate = default(string), bool recurrent = default(bool), string reminderDatetime = default(string), bool? reminderSet = default(bool?), string videoConferenceUrl = default(string), string videoConferenceId = default(string), List<CustomField> customFields = default(List<CustomField>), List<ActivityAttendee> attendees = default(List<ActivityAttendee>))
         {
             this.Type = type;
             this.ActivityDatetime = activityDatetime;
@@ -224,7 +223,6 @@ namespace Apideck.Model
             this.VideoConferenceId = videoConferenceId;
             this.CustomFields = customFields;
             this.Attendees = attendees;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -562,8 +560,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the activity
         /// </summary>

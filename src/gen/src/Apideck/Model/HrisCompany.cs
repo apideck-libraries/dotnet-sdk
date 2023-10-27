@@ -94,8 +94,7 @@ namespace Apideck.Model
         /// <param name="emails">emails.</param>
         /// <param name="websites">websites.</param>
         /// <param name="debtorId">debtorId.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public HrisCompany(string legalName = default(string), string displayName = default(string), string subdomain = default(string), StatusEnum? status = default(StatusEnum?), string companyNumber = default(string), Currency? currency = default(Currency?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), string debtorId = default(string), Object customMappings = default(Object))
+        public HrisCompany(string legalName = default(string), string displayName = default(string), string subdomain = default(string), StatusEnum? status = default(StatusEnum?), string companyNumber = default(string), Currency? currency = default(Currency?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), string debtorId = default(string))
         {
             // to ensure "legalName" is required (not null)
             if (legalName == null) {
@@ -112,7 +111,6 @@ namespace Apideck.Model
             this.Emails = emails;
             this.Websites = websites;
             this.DebtorId = debtorId;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -190,8 +188,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Deleted
         /// </summary>

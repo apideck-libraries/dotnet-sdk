@@ -56,8 +56,7 @@ namespace Apideck.Model
         /// <param name="addresses">addresses.</param>
         /// <param name="phoneNumbers">phoneNumbers.</param>
         /// <param name="emails">emails (required).</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public User(string parentId = default(string), string username = default(string), string firstName = default(string), string lastName = default(string), string title = default(string), string division = default(string), string department = default(string), string companyName = default(string), string employeeNumber = default(string), string description = default(string), string image = default(string), string language = default(string), string status = default(string), string password = default(string), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), Object customMappings = default(Object))
+        public User(string parentId = default(string), string username = default(string), string firstName = default(string), string lastName = default(string), string title = default(string), string division = default(string), string department = default(string), string companyName = default(string), string employeeNumber = default(string), string description = default(string), string image = default(string), string language = default(string), string status = default(string), string password = default(string), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>))
         {
             // to ensure "emails" is required (not null)
             if (emails == null) {
@@ -80,7 +79,6 @@ namespace Apideck.Model
             this.Password = password;
             this.Addresses = addresses;
             this.PhoneNumbers = phoneNumbers;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -220,8 +218,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The date and time when the user was last updated.
         /// </summary>

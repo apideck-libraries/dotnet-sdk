@@ -185,8 +185,7 @@ namespace Apideck.Model
         /// <param name="tracking">tracking.</param>
         /// <param name="lineItems">lineItems.</param>
         /// <param name="note">Note for the order..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public EcommerceOrder(string orderNumber = default(string), Currency? currency = default(Currency?), List<EcommerceDiscount> discounts = default(List<EcommerceDiscount>), string subTotal = default(string), string shippingCost = default(string), string totalDiscount = default(string), string totalTax = default(string), string totalAmount = default(string), EcommerceOrderStatus? status = default(EcommerceOrderStatus?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), FulfillmentStatusEnum? fulfillmentStatus = default(FulfillmentStatusEnum?), string paymentMethod = default(string), LinkedEcommerceCustomer customer = default(LinkedEcommerceCustomer), EcommerceAddress billingAddress = default(EcommerceAddress), EcommerceAddress shippingAddress = default(EcommerceAddress), List<TrackingItem> tracking = default(List<TrackingItem>), List<EcommerceOrderLineItem> lineItems = default(List<EcommerceOrderLineItem>), string note = default(string), Object customMappings = default(Object))
+        public EcommerceOrder(string orderNumber = default(string), Currency? currency = default(Currency?), List<EcommerceDiscount> discounts = default(List<EcommerceDiscount>), string subTotal = default(string), string shippingCost = default(string), string totalDiscount = default(string), string totalTax = default(string), string totalAmount = default(string), EcommerceOrderStatus? status = default(EcommerceOrderStatus?), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), FulfillmentStatusEnum? fulfillmentStatus = default(FulfillmentStatusEnum?), string paymentMethod = default(string), LinkedEcommerceCustomer customer = default(LinkedEcommerceCustomer), EcommerceAddress billingAddress = default(EcommerceAddress), EcommerceAddress shippingAddress = default(EcommerceAddress), List<TrackingItem> tracking = default(List<TrackingItem>), List<EcommerceOrderLineItem> lineItems = default(List<EcommerceOrderLineItem>), string note = default(string))
         {
             this.OrderNumber = orderNumber;
             this.Currency = currency;
@@ -206,7 +205,6 @@ namespace Apideck.Model
             this.Tracking = tracking;
             this.LineItems = lineItems;
             this.Note = note;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -321,8 +319,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The date and time when the object was created.
         /// </summary>

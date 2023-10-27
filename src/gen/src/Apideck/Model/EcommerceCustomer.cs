@@ -83,8 +83,7 @@ namespace Apideck.Model
         /// <param name="phoneNumbers">An array of phone numbers for the customer..</param>
         /// <param name="addresses">An array of addresses for the customer..</param>
         /// <param name="orders">orders.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public EcommerceCustomer(string name = default(string), string firstName = default(string), string lastName = default(string), string companyName = default(string), StatusEnum? status = default(StatusEnum?), Currency? currency = default(Currency?), List<Email> emails = default(List<Email>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<EcommerceCustomerAddresses> addresses = default(List<EcommerceCustomerAddresses>), List<LinkedEcommerceOrder> orders = default(List<LinkedEcommerceOrder>), Object customMappings = default(Object))
+        public EcommerceCustomer(string name = default(string), string firstName = default(string), string lastName = default(string), string companyName = default(string), StatusEnum? status = default(StatusEnum?), Currency? currency = default(Currency?), List<Email> emails = default(List<Email>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<EcommerceCustomerAddresses> addresses = default(List<EcommerceCustomerAddresses>), List<LinkedEcommerceOrder> orders = default(List<LinkedEcommerceOrder>))
         {
             this.Name = name;
             this.FirstName = firstName;
@@ -96,7 +95,6 @@ namespace Apideck.Model
             this.PhoneNumbers = phoneNumbers;
             this.Addresses = addresses;
             this.Orders = orders;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -174,8 +172,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The date and time when the object was created.
         /// </summary>

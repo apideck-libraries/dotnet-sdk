@@ -230,8 +230,7 @@ namespace Apideck.Model
         /// <param name="price">price.</param>
         /// <param name="error">error.</param>
         /// <param name="messagingServiceId">The ID of the Messaging Service used with the message. In case of Plivo this links to the Powerpack ID..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Message(string from = default(string), string to = default(string), string subject = default(string), string body = default(string), TypeEnum? type = default(TypeEnum?), DateTime scheduledAt = default(DateTime), string webhookUrl = default(string), string reference = default(string), Price price = default(Price), Error error = default(Error), string messagingServiceId = default(string), Object customMappings = default(Object))
+        public Message(string from = default(string), string to = default(string), string subject = default(string), string body = default(string), TypeEnum? type = default(TypeEnum?), DateTime scheduledAt = default(DateTime), string webhookUrl = default(string), string reference = default(string), Price price = default(Price), Error error = default(Error), string messagingServiceId = default(string))
         {
             // to ensure "from" is required (not null)
             if (from == null) {
@@ -256,7 +255,6 @@ namespace Apideck.Model
             this.Price = price;
             this.Error = error;
             this.MessagingServiceId = messagingServiceId;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -391,8 +389,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

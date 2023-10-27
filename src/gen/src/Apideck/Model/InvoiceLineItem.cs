@@ -91,9 +91,8 @@ namespace Apideck.Model
         /// <param name="item">item.</param>
         /// <param name="taxRate">taxRate.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public InvoiceLineItem(string rowId = default(string), string code = default(string), int? lineNumber = default(int?), string description = default(string), TypeEnum? type = default(TypeEnum?), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), string unitOfMeasure = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), string locationId = default(string), string departmentId = default(string), LinkedInvoiceItem item = default(LinkedInvoiceItem), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), Object customMappings = default(Object), string rowVersion = default(string))
+        public InvoiceLineItem(string rowId = default(string), string code = default(string), int? lineNumber = default(int?), string description = default(string), TypeEnum? type = default(TypeEnum?), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), string unitOfMeasure = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), string locationId = default(string), string departmentId = default(string), LinkedInvoiceItem item = default(LinkedInvoiceItem), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
         {
             this.RowId = rowId;
             this.Code = code;
@@ -112,7 +111,6 @@ namespace Apideck.Model
             this.Item = item;
             this.TaxRate = taxRate;
             this.LedgerAccount = ledgerAccount;
-            this.CustomMappings = customMappings;
             this.RowVersion = rowVersion;
         }
 
@@ -243,8 +241,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>

@@ -82,8 +82,7 @@ namespace Apideck.Model
         /// <param name="serviceCharges">serviceCharges.</param>
         /// <param name="language">language code according to ISO 639-1. For the United States - EN.</param>
         /// <param name="currency">currency.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Merchant(string name = default(string), Address address = default(Address), string ownerId = default(string), string mainLocationId = default(string), StatusEnum? status = default(StatusEnum?), List<ServiceCharge> serviceCharges = default(List<ServiceCharge>), string language = default(string), Currency? currency = default(Currency?), Object customMappings = default(Object))
+        public Merchant(string name = default(string), Address address = default(Address), string ownerId = default(string), string mainLocationId = default(string), StatusEnum? status = default(StatusEnum?), List<ServiceCharge> serviceCharges = default(List<ServiceCharge>), string language = default(string), Currency? currency = default(Currency?))
         {
             this.Name = name;
             this.Address = address;
@@ -93,7 +92,6 @@ namespace Apideck.Model
             this.ServiceCharges = serviceCharges;
             this.Language = language;
             this.Currency = currency;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -155,8 +153,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

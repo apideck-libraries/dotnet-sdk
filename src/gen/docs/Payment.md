@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **Note** | **string** | Optional note to be associated with the payment. | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **DisplayId** | **string** | Payment id to be displayed. | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 

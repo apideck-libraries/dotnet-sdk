@@ -42,8 +42,7 @@ namespace Apideck.Model
         /// <param name="name">The name of the drive group (required).</param>
         /// <param name="displayName">The display name of the drive group.</param>
         /// <param name="description">A description of the object..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public DriveGroup(string name = default(string), string displayName = default(string), string description = default(string), Object customMappings = default(Object))
+        public DriveGroup(string name = default(string), string displayName = default(string), string description = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -52,7 +51,6 @@ namespace Apideck.Model
             this.Name = name;
             this.DisplayName = displayName;
             this.Description = description;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -96,8 +94,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

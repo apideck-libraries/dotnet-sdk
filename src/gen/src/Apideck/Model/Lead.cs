@@ -68,8 +68,7 @@ namespace Apideck.Model
         /// <param name="emails">emails.</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="tags">tags.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public Lead(string name = default(string), string companyName = default(string), string ownerId = default(string), string companyId = default(string), string leadId = default(string), string leadSource = default(string), string firstName = default(string), string lastName = default(string), string description = default(string), string prefix = default(string), string title = default(string), string language = default(string), string status = default(string), decimal? monetaryAmount = default(decimal?), Currency? currency = default(Currency?), string fax = default(string), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>), Object customMappings = default(Object))
+        public Lead(string name = default(string), string companyName = default(string), string ownerId = default(string), string companyId = default(string), string leadId = default(string), string leadSource = default(string), string firstName = default(string), string lastName = default(string), string description = default(string), string prefix = default(string), string title = default(string), string language = default(string), string status = default(string), decimal? monetaryAmount = default(decimal?), Currency? currency = default(Currency?), string fax = default(string), List<Website> websites = default(List<Website>), List<Address> addresses = default(List<Address>), List<SocialLink> socialLinks = default(List<SocialLink>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<string> tags = default(List<string>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -102,7 +101,6 @@ namespace Apideck.Model
             this.Emails = emails;
             this.CustomFields = customFields;
             this.Tags = tags;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -271,8 +269,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// Date updated in ISO 8601 format
         /// </summary>

@@ -39,15 +39,13 @@ namespace Apideck.Model
         /// <param name="lastName">Last name of the user.</param>
         /// <param name="email">Email address of the user.</param>
         /// <param name="photoUrl">The URL of the photo of a person..</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public CollectionUser(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string photoUrl = default(string), Object customMappings = default(Object))
+        public CollectionUser(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string photoUrl = default(string))
         {
             this.Name = name;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
             this.PhotoUrl = photoUrl;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -105,8 +103,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The date and time when the object was last updated.
         /// </summary>

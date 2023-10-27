@@ -190,8 +190,7 @@ namespace Apideck.Model
         /// <param name="units">The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;..</param>
         /// <param name="amount">The amount of time off requested..</param>
         /// <param name="notes">notes.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal? amount = default(decimal?), TimeOffRequestNotes notes = default(TimeOffRequestNotes), Object customMappings = default(Object))
+        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal? amount = default(decimal?), TimeOffRequestNotes notes = default(TimeOffRequestNotes))
         {
             this.EmployeeId = employeeId;
             this.PolicyId = policyId;
@@ -205,7 +204,6 @@ namespace Apideck.Model
             this.Units = units;
             this.Amount = amount;
             this.Notes = notes;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -290,8 +288,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who last updated the object.
         /// </summary>

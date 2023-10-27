@@ -35,11 +35,9 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="CollectionTicketComment" /> class.
         /// </summary>
         /// <param name="body">Body of the comment.</param>
-        /// <param name="customMappings">When custom mappings are configured on the resource, the result is included here..</param>
-        public CollectionTicketComment(string body = default(string), Object customMappings = default(Object))
+        public CollectionTicketComment(string body = default(string))
         {
             this.Body = body;
-            this.CustomMappings = customMappings;
         }
 
         /// <summary>
@@ -69,8 +67,16 @@ namespace Apideck.Model
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
         [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; set; }
+        public Object CustomMappings { get; private set; }
 
+        /// <summary>
+        /// Returns false as CustomMappings should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCustomMappings()
+        {
+            return false;
+        }
         /// <summary>
         /// The user who created the object.
         /// </summary>

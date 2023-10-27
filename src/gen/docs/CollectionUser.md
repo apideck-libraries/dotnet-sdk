@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **LastName** | **string** | Last name of the user | [optional] 
 **Email** | **string** | Email address of the user | [optional] 
 **PhotoUrl** | **string** | The URL of the photo of a person. | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 
