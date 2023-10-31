@@ -9,7 +9,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_VERSION: 2.0.0
+      PACKAGE_VERSION: 2.0.1
     steps:
       - uses: actions/checkout@v3
 
