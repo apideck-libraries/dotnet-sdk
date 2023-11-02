@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **Tags** | **List&lt;string&gt;** |  | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedAt** | **string** | Date updated in ISO 8601 format | [optional] [readonly] 
 **CreatedAt** | **string** | Date created in ISO 8601 format | [optional] [readonly] 
 

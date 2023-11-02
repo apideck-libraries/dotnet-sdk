@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **Deleted** | **bool** | Whether the company is deleted or not | [optional] [readonly] 
 **Salutation** | **string** | A formal salutation for the person. For example, &#39;Mr&#39;, &#39;Mrs&#39; | [optional] 
 **Birthday** | **DateTime?** | The date of birth of the person. | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedBy** | **string** | Updated by user ID | [optional] [readonly] 
 **CreatedBy** | **string** | Created by user ID | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | Last updated date | [optional] [readonly] 

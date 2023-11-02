@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **DateStageChanged** | **DateTime?** | The date and time when the stage of the opportunity was last changed. | [optional] [readonly] 
 **DateLastContacted** | **DateTime?** | The date and time when the opportunity was last contacted. | [optional] [readonly] 
 **DateLeadCreated** | **DateTime?** | The date and time when the lead associated with the opportunity was created. | [optional] [readonly] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedBy** | **string** | The unique identifier of the user who last updated the opportunity. | [optional] [readonly] 
 **CreatedBy** | **string** | The unique identifier of the user who created the opportunity. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the opportunity was last updated. | [optional] [readonly] 

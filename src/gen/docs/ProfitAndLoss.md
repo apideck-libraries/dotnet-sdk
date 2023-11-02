@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **NetIncome** | [**ProfitAndLossNetIncome**](ProfitAndLossNetIncome.md) |  | [optional] 
 **NetOperatingIncome** | [**ProfitAndLossNetOperatingIncome**](ProfitAndLossNetOperatingIncome.md) |  | [optional] 
 **GrossProfit** | [**ProfitAndLossGrossProfit**](ProfitAndLossGrossProfit.md) |  | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

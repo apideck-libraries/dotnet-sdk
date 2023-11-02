@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of the drive group | 
 **DisplayName** | **string** | The display name of the drive group | [optional] 
 **Description** | **string** | A description of the object. | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 

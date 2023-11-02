@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Department** | **string** | Department name | [optional] 
 **IsPrimary** | **bool?** | Indicates whether this the employee&#39;s primary job. | [optional] 
 **Location** | [**HrisJobLocation**](HrisJobLocation.md) |  | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] 
+**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
