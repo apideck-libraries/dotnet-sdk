@@ -136,11 +136,12 @@ namespace Apideck.Model
         /// <param name="allowCustomValues">Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list. (default to false).</param>
         /// <param name="disabled">Indicates if the form field is displayed in a “read-only” mode..</param>
         /// <param name="hidden">Indicates if the form field is not displayed but the value that is being stored on the connection..</param>
+        /// <param name="deprecated">When the setting is deprecated, it should be hidden from the user interface. The value will still be stored on the connection for the sake of backwards compatibility..</param>
         /// <param name="sensitive">Indicates if the form field contains sensitive data, which will display the value as a masked input..</param>
         /// <param name="prefix">Prefix to display in front of the form field..</param>
         /// <param name="suffix">Suffix to display next to the form field..</param>
         /// <param name="options">options.</param>
-        public FormField(string id = default(string), string label = default(string), string placeholder = default(string), string description = default(string), TypeEnum? type = default(TypeEnum?), bool required = default(bool), bool customField = default(bool), bool allowCustomValues = false, bool? disabled = default(bool?), bool? hidden = default(bool?), bool? sensitive = default(bool?), string prefix = default(string), string suffix = default(string), List<FormFieldOption> options = default(List<FormFieldOption>))
+        public FormField(string id = default(string), string label = default(string), string placeholder = default(string), string description = default(string), TypeEnum? type = default(TypeEnum?), bool required = default(bool), bool customField = default(bool), bool allowCustomValues = false, bool? disabled = default(bool?), bool? hidden = default(bool?), bool? deprecated = default(bool?), bool? sensitive = default(bool?), string prefix = default(string), string suffix = default(string), List<FormFieldOption> options = default(List<FormFieldOption>))
         {
             this.Id = id;
             this.Label = label;
@@ -152,6 +153,7 @@ namespace Apideck.Model
             this.AllowCustomValues = allowCustomValues;
             this.Disabled = disabled;
             this.Hidden = hidden;
+            this.Deprecated = deprecated;
             this.Sensitive = sensitive;
             this.Prefix = prefix;
             this.Suffix = suffix;
@@ -221,6 +223,13 @@ namespace Apideck.Model
         public bool? Hidden { get; set; }
 
         /// <summary>
+        /// When the setting is deprecated, it should be hidden from the user interface. The value will still be stored on the connection for the sake of backwards compatibility.
+        /// </summary>
+        /// <value>When the setting is deprecated, it should be hidden from the user interface. The value will still be stored on the connection for the sake of backwards compatibility.</value>
+        [DataMember(Name = "deprecated", EmitDefaultValue = true)]
+        public bool? Deprecated { get; set; }
+
+        /// <summary>
         /// Indicates if the form field contains sensitive data, which will display the value as a masked input.
         /// </summary>
         /// <value>Indicates if the form field contains sensitive data, which will display the value as a masked input.</value>
@@ -265,6 +274,7 @@ namespace Apideck.Model
             sb.Append("  AllowCustomValues: ").Append(AllowCustomValues).Append("\n");
             sb.Append("  Disabled: ").Append(Disabled).Append("\n");
             sb.Append("  Hidden: ").Append(Hidden).Append("\n");
+            sb.Append("  Deprecated: ").Append(Deprecated).Append("\n");
             sb.Append("  Sensitive: ").Append(Sensitive).Append("\n");
             sb.Append("  Prefix: ").Append(Prefix).Append("\n");
             sb.Append("  Suffix: ").Append(Suffix).Append("\n");
@@ -351,6 +361,11 @@ namespace Apideck.Model
                     this.Hidden.Equals(input.Hidden))
                 ) && 
                 (
+                    this.Deprecated == input.Deprecated ||
+                    (this.Deprecated != null &&
+                    this.Deprecated.Equals(input.Deprecated))
+                ) && 
+                (
                     this.Sensitive == input.Sensitive ||
                     (this.Sensitive != null &&
                     this.Sensitive.Equals(input.Sensitive))
@@ -409,6 +424,10 @@ namespace Apideck.Model
                 if (this.Hidden != null)
                 {
                     hashCode = (hashCode * 59) + this.Hidden.GetHashCode();
+                }
+                if (this.Deprecated != null)
+                {
+                    hashCode = (hashCode * 59) + this.Deprecated.GetHashCode();
                 }
                 if (this.Sensitive != null)
                 {

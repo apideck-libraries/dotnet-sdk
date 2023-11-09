@@ -137,6 +137,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Hidden'
         }
         /// <summary>
+        /// Test the property 'Deprecated'
+        /// </summary>
+        [Fact]
+        public void DeprecatedTest()
+        {
+            // TODO unit test for the property 'Deprecated'
+        }
+        /// <summary>
         /// Test the property 'Sensitive'
         /// </summary>
         [Fact]

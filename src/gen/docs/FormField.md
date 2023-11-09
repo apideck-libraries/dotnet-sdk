@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **AllowCustomValues** | **bool** | Only applicable to select fields. Allow the user to add a custom value though the option select if the desired value is not in the option select list. | [optional] [default to false]
 **Disabled** | **bool?** | Indicates if the form field is displayed in a “read-only” mode. | [optional] 
 **Hidden** | **bool?** | Indicates if the form field is not displayed but the value that is being stored on the connection. | [optional] 
+**Deprecated** | **bool?** | When the setting is deprecated, it should be hidden from the user interface. The value will still be stored on the connection for the sake of backwards compatibility. | [optional] 
 **Sensitive** | **bool?** | Indicates if the form field contains sensitive data, which will display the value as a masked input. | [optional] 
 **Prefix** | **string** | Prefix to display in front of the form field. | [optional] 
 **Suffix** | **string** | Suffix to display next to the form field. | [optional] 
