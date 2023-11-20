@@ -50,6 +50,7 @@ docs/BankAccount.md
 docs/Benefit.md
 docs/Bill.md
 docs/BillLineItem.md
+docs/BillsFilter.md
 docs/BillsSort.md
 docs/Branch.md
 docs/CashDetails.md
@@ -153,6 +154,8 @@ docs/CreateUserResponse.md
 docs/CreateWebhookRequest.md
 docs/CreateWebhookResponse.md
 docs/CreditNote.md
+docs/CreditNotesFilter.md
+docs/CreditNotesSort.md
 docs/CrmApi.md
 docs/CrmEventType.md
 docs/Currency.md
@@ -161,6 +164,7 @@ docs/CustomFieldFinder.md
 docs/CustomMapping.md
 docs/Customer.md
 docs/CustomersFilter.md
+docs/CustomersSort.md
 docs/Deduction.md
 docs/DeleteActivityResponse.md
 docs/DeleteApplicantResponse.md
@@ -404,6 +408,7 @@ docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
 docs/InvoiceLineItem.md
 docs/InvoiceResponse.md
+docs/InvoicesFilter.md
 docs/InvoicesSort.md
 docs/IssueTrackingApi.md
 docs/IssueTrackingEventType.md
@@ -423,6 +428,8 @@ docs/LeadsSort.md
 docs/LedgerAccount.md
 docs/LedgerAccountCategories.md
 docs/LedgerAccountParentAccount.md
+docs/LedgerAccountsFilter.md
+docs/LedgerAccountsSort.md
 docs/LinkedConnectorResource.md
 docs/LinkedCustomer.md
 docs/LinkedEcommerceCustomer.md
@@ -502,6 +509,8 @@ docs/ProfitAndLossNetOperatingIncome.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossSection.md
 docs/PurchaseOrder.md
+docs/PurchaseOrdersFilter.md
+docs/PurchaseOrdersSort.md
 docs/RequestCountAllocation.md
 docs/RequestRate.md
 docs/ResolveWebhookResponse.md
@@ -524,6 +533,7 @@ docs/SortDirection.md
 docs/Status.md
 docs/Supplier.md
 docs/SuppliersFilter.md
+docs/SuppliersSort.md
 docs/SupportedProperty.md
 docs/SupportedPropertyChildProperties.md
 docs/Tax.md
@@ -674,6 +684,7 @@ src/Apideck.Test/Model/BankAccountTests.cs
 src/Apideck.Test/Model/BenefitTests.cs
 src/Apideck.Test/Model/BillLineItemTests.cs
 src/Apideck.Test/Model/BillTests.cs
+src/Apideck.Test/Model/BillsFilterTests.cs
 src/Apideck.Test/Model/BillsSortTests.cs
 src/Apideck.Test/Model/BranchTests.cs
 src/Apideck.Test/Model/CashDetailsTests.cs
@@ -776,6 +787,8 @@ src/Apideck.Test/Model/CreateUserResponseTests.cs
 src/Apideck.Test/Model/CreateWebhookRequestTests.cs
 src/Apideck.Test/Model/CreateWebhookResponseTests.cs
 src/Apideck.Test/Model/CreditNoteTests.cs
+src/Apideck.Test/Model/CreditNotesFilterTests.cs
+src/Apideck.Test/Model/CreditNotesSortTests.cs
 src/Apideck.Test/Model/CrmEventTypeTests.cs
 src/Apideck.Test/Model/CurrencyTests.cs
 src/Apideck.Test/Model/CustomFieldFinderTests.cs
@@ -783,6 +796,7 @@ src/Apideck.Test/Model/CustomFieldTests.cs
 src/Apideck.Test/Model/CustomMappingTests.cs
 src/Apideck.Test/Model/CustomerTests.cs
 src/Apideck.Test/Model/CustomersFilterTests.cs
+src/Apideck.Test/Model/CustomersSortTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
 src/Apideck.Test/Model/DeleteApplicantResponseTests.cs
@@ -1023,6 +1037,7 @@ src/Apideck.Test/Model/InvoiceItemsFilterTests.cs
 src/Apideck.Test/Model/InvoiceLineItemTests.cs
 src/Apideck.Test/Model/InvoiceResponseTests.cs
 src/Apideck.Test/Model/InvoiceTests.cs
+src/Apideck.Test/Model/InvoicesFilterTests.cs
 src/Apideck.Test/Model/InvoicesSortTests.cs
 src/Apideck.Test/Model/IssueTrackingEventTypeTests.cs
 src/Apideck.Test/Model/IssuesFilterTests.cs
@@ -1040,6 +1055,8 @@ src/Apideck.Test/Model/LeadsSortTests.cs
 src/Apideck.Test/Model/LedgerAccountCategoriesTests.cs
 src/Apideck.Test/Model/LedgerAccountParentAccountTests.cs
 src/Apideck.Test/Model/LedgerAccountTests.cs
+src/Apideck.Test/Model/LedgerAccountsFilterTests.cs
+src/Apideck.Test/Model/LedgerAccountsSortTests.cs
 src/Apideck.Test/Model/LinkedConnectorResourceTests.cs
 src/Apideck.Test/Model/LinkedCustomerTests.cs
 src/Apideck.Test/Model/LinkedEcommerceCustomerTests.cs
@@ -1118,6 +1135,8 @@ src/Apideck.Test/Model/ProfitAndLossRecordTests.cs
 src/Apideck.Test/Model/ProfitAndLossSectionTests.cs
 src/Apideck.Test/Model/ProfitAndLossTests.cs
 src/Apideck.Test/Model/PurchaseOrderTests.cs
+src/Apideck.Test/Model/PurchaseOrdersFilterTests.cs
+src/Apideck.Test/Model/PurchaseOrdersSortTests.cs
 src/Apideck.Test/Model/RequestCountAllocationTests.cs
 src/Apideck.Test/Model/RequestRateTests.cs
 src/Apideck.Test/Model/ResolveWebhookResponseTests.cs
@@ -1139,6 +1158,7 @@ src/Apideck.Test/Model/SortDirectionTests.cs
 src/Apideck.Test/Model/StatusTests.cs
 src/Apideck.Test/Model/SupplierTests.cs
 src/Apideck.Test/Model/SuppliersFilterTests.cs
+src/Apideck.Test/Model/SuppliersSortTests.cs
 src/Apideck.Test/Model/SupportedPropertyChildPropertiesTests.cs
 src/Apideck.Test/Model/SupportedPropertyTests.cs
 src/Apideck.Test/Model/TaxRateTests.cs
@@ -1303,6 +1323,7 @@ src/Apideck/Model/BankAccount.cs
 src/Apideck/Model/Benefit.cs
 src/Apideck/Model/Bill.cs
 src/Apideck/Model/BillLineItem.cs
+src/Apideck/Model/BillsFilter.cs
 src/Apideck/Model/BillsSort.cs
 src/Apideck/Model/Branch.cs
 src/Apideck/Model/CashDetails.cs
@@ -1405,6 +1426,8 @@ src/Apideck/Model/CreateUserResponse.cs
 src/Apideck/Model/CreateWebhookRequest.cs
 src/Apideck/Model/CreateWebhookResponse.cs
 src/Apideck/Model/CreditNote.cs
+src/Apideck/Model/CreditNotesFilter.cs
+src/Apideck/Model/CreditNotesSort.cs
 src/Apideck/Model/CrmEventType.cs
 src/Apideck/Model/Currency.cs
 src/Apideck/Model/CustomField.cs
@@ -1412,6 +1435,7 @@ src/Apideck/Model/CustomFieldFinder.cs
 src/Apideck/Model/CustomMapping.cs
 src/Apideck/Model/Customer.cs
 src/Apideck/Model/CustomersFilter.cs
+src/Apideck/Model/CustomersSort.cs
 src/Apideck/Model/Deduction.cs
 src/Apideck/Model/DeleteActivityResponse.cs
 src/Apideck/Model/DeleteApplicantResponse.cs
@@ -1652,6 +1676,7 @@ src/Apideck/Model/InvoiceItemSalesDetails.cs
 src/Apideck/Model/InvoiceItemsFilter.cs
 src/Apideck/Model/InvoiceLineItem.cs
 src/Apideck/Model/InvoiceResponse.cs
+src/Apideck/Model/InvoicesFilter.cs
 src/Apideck/Model/InvoicesSort.cs
 src/Apideck/Model/IssueTrackingEventType.cs
 src/Apideck/Model/IssuesFilter.cs
@@ -1669,6 +1694,8 @@ src/Apideck/Model/LeadsSort.cs
 src/Apideck/Model/LedgerAccount.cs
 src/Apideck/Model/LedgerAccountCategories.cs
 src/Apideck/Model/LedgerAccountParentAccount.cs
+src/Apideck/Model/LedgerAccountsFilter.cs
+src/Apideck/Model/LedgerAccountsSort.cs
 src/Apideck/Model/LinkedConnectorResource.cs
 src/Apideck/Model/LinkedCustomer.cs
 src/Apideck/Model/LinkedEcommerceCustomer.cs
@@ -1747,6 +1774,8 @@ src/Apideck/Model/ProfitAndLossNetOperatingIncome.cs
 src/Apideck/Model/ProfitAndLossRecord.cs
 src/Apideck/Model/ProfitAndLossSection.cs
 src/Apideck/Model/PurchaseOrder.cs
+src/Apideck/Model/PurchaseOrdersFilter.cs
+src/Apideck/Model/PurchaseOrdersSort.cs
 src/Apideck/Model/RequestCountAllocation.cs
 src/Apideck/Model/RequestRate.cs
 src/Apideck/Model/ResolveWebhookResponse.cs
@@ -1768,6 +1797,7 @@ src/Apideck/Model/SortDirection.cs
 src/Apideck/Model/Status.cs
 src/Apideck/Model/Supplier.cs
 src/Apideck/Model/SuppliersFilter.cs
+src/Apideck/Model/SuppliersSort.cs
 src/Apideck/Model/SupportedProperty.cs
 src/Apideck/Model/SupportedPropertyChildProperties.cs
 src/Apideck/Model/Tax.cs

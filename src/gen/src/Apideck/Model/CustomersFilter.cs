@@ -80,7 +80,8 @@ namespace Apideck.Model
         /// <param name="lastName">Last name of customer to search for.</param>
         /// <param name="email">Email of customer to search for.</param>
         /// <param name="status">Status of customer to filter on.</param>
-        public CustomersFilter(string companyName = default(string), string displayName = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), StatusEnum? status = default(StatusEnum?))
+        /// <param name="updatedSince">updatedSince.</param>
+        public CustomersFilter(string companyName = default(string), string displayName = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), StatusEnum? status = default(StatusEnum?), DateTime updatedSince = default(DateTime))
         {
             this.CompanyName = companyName;
             this.DisplayName = displayName;
@@ -88,6 +89,7 @@ namespace Apideck.Model
             this.LastName = lastName;
             this.Email = email;
             this.Status = status;
+            this.UpdatedSince = updatedSince;
         }
 
         /// <summary>
@@ -126,6 +128,12 @@ namespace Apideck.Model
         public string Email { get; set; }
 
         /// <summary>
+        /// Gets or Sets UpdatedSince
+        /// </summary>
+        [DataMember(Name = "updated_since", EmitDefaultValue = false)]
+        public DateTime UpdatedSince { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -139,6 +147,7 @@ namespace Apideck.Model
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  UpdatedSince: ").Append(UpdatedSince).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -202,6 +211,11 @@ namespace Apideck.Model
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
+                ) && 
+                (
+                    this.UpdatedSince == input.UpdatedSince ||
+                    (this.UpdatedSince != null &&
+                    this.UpdatedSince.Equals(input.UpdatedSince))
                 );
         }
 
@@ -235,6 +249,10 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.Email.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.UpdatedSince != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdatedSince.GetHashCode();
+                }
                 return hashCode;
             }
         }

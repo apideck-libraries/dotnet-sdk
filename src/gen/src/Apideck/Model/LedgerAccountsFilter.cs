@@ -26,55 +26,25 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// InvoicesSort
+    /// LedgerAccountsFilter
     /// </summary>
-    [DataContract(Name = "InvoicesSort")]
-    public partial class InvoicesSort : IEquatable<InvoicesSort>, IValidatableObject
+    [DataContract(Name = "LedgerAccountsFilter")]
+    public partial class LedgerAccountsFilter : IEquatable<LedgerAccountsFilter>, IValidatableObject
     {
         /// <summary>
-        /// The field on which to sort the Invoices
+        /// Initializes a new instance of the <see cref="LedgerAccountsFilter" /> class.
         /// </summary>
-        /// <value>The field on which to sort the Invoices</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ByEnum
+        /// <param name="updatedSince">updatedSince.</param>
+        public LedgerAccountsFilter(DateTime updatedSince = default(DateTime))
         {
-            /// <summary>
-            /// Enum CreatedAt for value: created_at
-            /// </summary>
-            [EnumMember(Value = "created_at")]
-            CreatedAt = 1,
-
-            /// <summary>
-            /// Enum UpdatedAt for value: updated_at
-            /// </summary>
-            [EnumMember(Value = "updated_at")]
-            UpdatedAt = 2
-
+            this.UpdatedSince = updatedSince;
         }
 
-
         /// <summary>
-        /// The field on which to sort the Invoices
+        /// Gets or Sets UpdatedSince
         /// </summary>
-        /// <value>The field on which to sort the Invoices</value>
-        [DataMember(Name = "by", EmitDefaultValue = false)]
-        public ByEnum? By { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Direction
-        /// </summary>
-        [DataMember(Name = "direction", EmitDefaultValue = false)]
-        public SortDirection? Direction { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InvoicesSort" /> class.
-        /// </summary>
-        /// <param name="by">The field on which to sort the Invoices.</param>
-        /// <param name="direction">direction.</param>
-        public InvoicesSort(ByEnum? by = default(ByEnum?), SortDirection? direction = default(SortDirection?))
-        {
-            this.By = by;
-            this.Direction = direction;
-        }
+        [DataMember(Name = "updated_since", EmitDefaultValue = false)]
+        public DateTime UpdatedSince { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -83,9 +53,8 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class InvoicesSort {\n");
-            sb.Append("  By: ").Append(By).Append("\n");
-            sb.Append("  Direction: ").Append(Direction).Append("\n");
+            sb.Append("class LedgerAccountsFilter {\n");
+            sb.Append("  UpdatedSince: ").Append(UpdatedSince).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,15 +75,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InvoicesSort);
+            return this.Equals(input as LedgerAccountsFilter);
         }
 
         /// <summary>
-        /// Returns true if InvoicesSort instances are equal
+        /// Returns true if LedgerAccountsFilter instances are equal
         /// </summary>
-        /// <param name="input">Instance of InvoicesSort to be compared</param>
+        /// <param name="input">Instance of LedgerAccountsFilter to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InvoicesSort input)
+        public bool Equals(LedgerAccountsFilter input)
         {
             if (input == null)
             {
@@ -122,12 +91,9 @@ namespace Apideck.Model
             }
             return 
                 (
-                    this.By == input.By ||
-                    this.By.Equals(input.By)
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    this.Direction.Equals(input.Direction)
+                    this.UpdatedSince == input.UpdatedSince ||
+                    (this.UpdatedSince != null &&
+                    this.UpdatedSince.Equals(input.UpdatedSince))
                 );
         }
 
@@ -140,8 +106,10 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.By.GetHashCode();
-                hashCode = (hashCode * 59) + this.Direction.GetHashCode();
+                if (this.UpdatedSince != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdatedSince.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -26,15 +26,15 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// InvoicesSort
+    /// CreditNotesSort
     /// </summary>
-    [DataContract(Name = "InvoicesSort")]
-    public partial class InvoicesSort : IEquatable<InvoicesSort>, IValidatableObject
+    [DataContract(Name = "CreditNotesSort")]
+    public partial class CreditNotesSort : IEquatable<CreditNotesSort>, IValidatableObject
     {
         /// <summary>
-        /// The field on which to sort the Invoices
+        /// The field on which to sort the Customers
         /// </summary>
-        /// <value>The field on which to sort the Invoices</value>
+        /// <value>The field on which to sort the Customers</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ByEnum
         {
@@ -54,9 +54,9 @@ namespace Apideck.Model
 
 
         /// <summary>
-        /// The field on which to sort the Invoices
+        /// The field on which to sort the Customers
         /// </summary>
-        /// <value>The field on which to sort the Invoices</value>
+        /// <value>The field on which to sort the Customers</value>
         [DataMember(Name = "by", EmitDefaultValue = false)]
         public ByEnum? By { get; set; }
 
@@ -66,11 +66,11 @@ namespace Apideck.Model
         [DataMember(Name = "direction", EmitDefaultValue = false)]
         public SortDirection? Direction { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InvoicesSort" /> class.
+        /// Initializes a new instance of the <see cref="CreditNotesSort" /> class.
         /// </summary>
-        /// <param name="by">The field on which to sort the Invoices.</param>
+        /// <param name="by">The field on which to sort the Customers.</param>
         /// <param name="direction">direction.</param>
-        public InvoicesSort(ByEnum? by = default(ByEnum?), SortDirection? direction = default(SortDirection?))
+        public CreditNotesSort(ByEnum? by = default(ByEnum?), SortDirection? direction = default(SortDirection?))
         {
             this.By = by;
             this.Direction = direction;
@@ -83,7 +83,7 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class InvoicesSort {\n");
+            sb.Append("class CreditNotesSort {\n");
             sb.Append("  By: ").Append(By).Append("\n");
             sb.Append("  Direction: ").Append(Direction).Append("\n");
             sb.Append("}\n");
@@ -106,15 +106,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InvoicesSort);
+            return this.Equals(input as CreditNotesSort);
         }
 
         /// <summary>
-        /// Returns true if InvoicesSort instances are equal
+        /// Returns true if CreditNotesSort instances are equal
         /// </summary>
-        /// <param name="input">Instance of InvoicesSort to be compared</param>
+        /// <param name="input">Instance of CreditNotesSort to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InvoicesSort input)
+        public bool Equals(CreditNotesSort input)
         {
             if (input == null)
             {

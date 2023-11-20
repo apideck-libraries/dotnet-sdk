@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **LastName** | **string** | Last name of customer to search for | [optional] 
 **Email** | **string** | Email of customer to search for | [optional] 
 **Status** | **string** | Status of customer to filter on | [optional] 
+**UpdatedSince** | **DateTime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
