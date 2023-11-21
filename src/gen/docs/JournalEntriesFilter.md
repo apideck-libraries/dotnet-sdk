@@ -1,4 +1,4 @@
-# Apideck.Model.PaymentsFilter
+# Apideck.Model.JournalEntriesFilter
 
 ## Properties
 

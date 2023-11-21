@@ -26,16 +26,16 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// PaymentsFilter
+    /// JournalEntriesFilter
     /// </summary>
-    [DataContract(Name = "PaymentsFilter")]
-    public partial class PaymentsFilter : IEquatable<PaymentsFilter>, IValidatableObject
+    [DataContract(Name = "JournalEntriesFilter")]
+    public partial class JournalEntriesFilter : IEquatable<JournalEntriesFilter>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentsFilter" /> class.
+        /// Initializes a new instance of the <see cref="JournalEntriesFilter" /> class.
         /// </summary>
         /// <param name="updatedSince">updatedSince.</param>
-        public PaymentsFilter(DateTime updatedSince = default(DateTime))
+        public JournalEntriesFilter(DateTime updatedSince = default(DateTime))
         {
             this.UpdatedSince = updatedSince;
         }
@@ -53,7 +53,7 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PaymentsFilter {\n");
+            sb.Append("class JournalEntriesFilter {\n");
             sb.Append("  UpdatedSince: ").Append(UpdatedSince).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -75,15 +75,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PaymentsFilter);
+            return this.Equals(input as JournalEntriesFilter);
         }
 
         /// <summary>
-        /// Returns true if PaymentsFilter instances are equal
+        /// Returns true if JournalEntriesFilter instances are equal
         /// </summary>
-        /// <param name="input">Instance of PaymentsFilter to be compared</param>
+        /// <param name="input">Instance of JournalEntriesFilter to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PaymentsFilter input)
+        public bool Equals(JournalEntriesFilter input)
         {
             if (input == null)
             {

@@ -42,7 +42,13 @@ namespace Apideck.Model
             /// Enum UpdatedAt for value: updated_at
             /// </summary>
             [EnumMember(Value = "updated_at")]
-            UpdatedAt = 1
+            UpdatedAt = 1,
+
+            /// <summary>
+            /// Enum CreatedAt for value: created_at
+            /// </summary>
+            [EnumMember(Value = "created_at")]
+            CreatedAt = 2
 
         }
 

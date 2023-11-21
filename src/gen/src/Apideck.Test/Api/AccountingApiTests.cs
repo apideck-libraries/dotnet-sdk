@@ -550,9 +550,11 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //string cursor = null;
             //int? limit = null;
+            //JournalEntriesFilter filter = null;
+            //JournalEntriesSort sort = null;
             //PassThroughQuery passThrough = null;
             //string fields = null;
-            //var response = instance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+            //var response = instance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetJournalEntriesResponse>(response);
         }
 
@@ -723,9 +725,10 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //PaymentsFilter filter = null;
+            //PaymentsSort sort = null;
             //PassThroughQuery passThrough = null;
             //string fields = null;
-            //var response = instance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
+            //var response = instance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetPaymentsResponse>(response);
         }
 

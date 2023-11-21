@@ -418,6 +418,8 @@ docs/Job.md
 docs/JobLinks.md
 docs/JobSalary.md
 docs/JobStatus.md
+docs/JournalEntriesFilter.md
+docs/JournalEntriesSort.md
 docs/JournalEntry.md
 docs/JournalEntryLineItem.md
 docs/Lead.md
@@ -484,6 +486,7 @@ docs/PaymentFrequency.md
 docs/PaymentRequiredResponse.md
 docs/PaymentUnit.md
 docs/PaymentsFilter.md
+docs/PaymentsSort.md
 docs/Payroll.md
 docs/PayrollTotals.md
 docs/PayrollsFilter.md
@@ -1046,6 +1049,8 @@ src/Apideck.Test/Model/JobLinksTests.cs
 src/Apideck.Test/Model/JobSalaryTests.cs
 src/Apideck.Test/Model/JobStatusTests.cs
 src/Apideck.Test/Model/JobTests.cs
+src/Apideck.Test/Model/JournalEntriesFilterTests.cs
+src/Apideck.Test/Model/JournalEntriesSortTests.cs
 src/Apideck.Test/Model/JournalEntryLineItemTests.cs
 src/Apideck.Test/Model/JournalEntryTests.cs
 src/Apideck.Test/Model/LeadEventTypeTests.cs
@@ -1111,6 +1116,7 @@ src/Apideck.Test/Model/PaymentRequiredResponseTests.cs
 src/Apideck.Test/Model/PaymentTests.cs
 src/Apideck.Test/Model/PaymentUnitTests.cs
 src/Apideck.Test/Model/PaymentsFilterTests.cs
+src/Apideck.Test/Model/PaymentsSortTests.cs
 src/Apideck.Test/Model/PayrollTests.cs
 src/Apideck.Test/Model/PayrollTotalsTests.cs
 src/Apideck.Test/Model/PayrollsFilterTests.cs
@@ -1685,6 +1691,8 @@ src/Apideck/Model/Job.cs
 src/Apideck/Model/JobLinks.cs
 src/Apideck/Model/JobSalary.cs
 src/Apideck/Model/JobStatus.cs
+src/Apideck/Model/JournalEntriesFilter.cs
+src/Apideck/Model/JournalEntriesSort.cs
 src/Apideck/Model/JournalEntry.cs
 src/Apideck/Model/JournalEntryLineItem.cs
 src/Apideck/Model/Lead.cs
@@ -1750,6 +1758,7 @@ src/Apideck/Model/PaymentFrequency.cs
 src/Apideck/Model/PaymentRequiredResponse.cs
 src/Apideck/Model/PaymentUnit.cs
 src/Apideck/Model/PaymentsFilter.cs
+src/Apideck/Model/PaymentsSort.cs
 src/Apideck/Model/Payroll.cs
 src/Apideck/Model/PayrollTotals.cs
 src/Apideck/Model/PayrollsFilter.cs
