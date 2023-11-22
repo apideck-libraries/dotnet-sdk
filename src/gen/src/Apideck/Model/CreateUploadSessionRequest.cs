@@ -40,7 +40,7 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="CreateUploadSessionRequest" /> class.
         /// </summary>
         /// <param name="name">The name of the file. (required).</param>
-        /// <param name="parentFolderId">The parent folder to create the new file within. (required).</param>
+        /// <param name="parentFolderId">The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas. (required).</param>
         /// <param name="driveId">ID of the drive to upload to..</param>
         /// <param name="size">The size of the file in bytes (required).</param>
         public CreateUploadSessionRequest(string name = default(string), string parentFolderId = default(string), string driveId = default(string), int? size = default(int?))
@@ -71,9 +71,9 @@ namespace Apideck.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// The parent folder to create the new file within.
+        /// The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
         /// </summary>
-        /// <value>The parent folder to create the new file within.</value>
+        /// <value>The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.</value>
         [DataMember(Name = "parent_folder_id", IsRequired = true, EmitDefaultValue = false)]
         public string ParentFolderId { get; set; }
 

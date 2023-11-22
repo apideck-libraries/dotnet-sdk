@@ -40,7 +40,7 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="CopyFolderRequest" /> class.
         /// </summary>
         /// <param name="name">The name of the folder..</param>
-        /// <param name="parentFolderId">The parent folder to create the new file within. (required).</param>
+        /// <param name="parentFolderId">The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas. (required).</param>
         public CopyFolderRequest(string name = default(string), string parentFolderId = default(string))
         {
             // to ensure "parentFolderId" is required (not null)
@@ -74,9 +74,9 @@ namespace Apideck.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// The parent folder to create the new file within.
+        /// The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
         /// </summary>
-        /// <value>The parent folder to create the new file within.</value>
+        /// <value>The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.</value>
         [DataMember(Name = "parent_folder_id", IsRequired = true, EmitDefaultValue = false)]
         public string ParentFolderId { get; set; }
 

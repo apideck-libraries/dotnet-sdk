@@ -36,7 +36,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="name">The name of the folder..</param>
         /// <param name="description">Optional description of the folder..</param>
-        /// <param name="parentFolderId">The parent folder to create the new file within..</param>
+        /// <param name="parentFolderId">The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas..</param>
         public UpdateFolderRequest(string name = default(string), string description = default(string), string parentFolderId = default(string))
         {
             this.Name = name;
@@ -74,9 +74,9 @@ namespace Apideck.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// The parent folder to create the new file within.
+        /// The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.
         /// </summary>
-        /// <value>The parent folder to create the new file within.</value>
+        /// <value>The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas.</value>
         [DataMember(Name = "parent_folder_id", EmitDefaultValue = false)]
         public string ParentFolderId { get; set; }
 
