@@ -84,9 +84,10 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //ActivitiesFilter filter = null;
+            //ActivitiesSort sort = null;
             //PassThroughQuery passThrough = null;
             //string fields = null;
-            //var response = instance.ActivitiesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
+            //var response = instance.ActivitiesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetActivitiesResponse>(response);
         }
 

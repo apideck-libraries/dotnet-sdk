@@ -69,10 +69,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetActivitiesResponse</returns>
-        GetActivitiesResponse ActivitiesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string));
+        GetActivitiesResponse ActivitiesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string));
 
         /// <summary>
         /// List activities
@@ -88,10 +89,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetActivitiesResponse</returns>
-        ApiResponse<GetActivitiesResponse> ActivitiesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string));
+        ApiResponse<GetActivitiesResponse> ActivitiesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string));
         /// <summary>
         /// Delete activity
         /// </summary>
@@ -1338,11 +1340,12 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetActivitiesResponse</returns>
-        System.Threading.Tasks.Task<GetActivitiesResponse> ActivitiesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetActivitiesResponse> ActivitiesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List activities
@@ -1358,11 +1361,12 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetActivitiesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetActivitiesResponse>> ActivitiesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetActivitiesResponse>> ActivitiesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Delete activity
         /// </summary>
@@ -2956,12 +2960,13 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetActivitiesResponse</returns>
-        public GetActivitiesResponse ActivitiesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string))
+        public GetActivitiesResponse ActivitiesAll(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetActivitiesResponse> localVarResponse = ActivitiesAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
+            Apideck.Client.ApiResponse<GetActivitiesResponse> localVarResponse = ActivitiesAllWithHttpInfo(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             return localVarResponse.Data;
         }
 
@@ -2976,10 +2981,11 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetActivitiesResponse</returns>
-        public Apideck.Client.ApiResponse<GetActivitiesResponse> ActivitiesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetActivitiesResponse> ActivitiesAllWithHttpInfo(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string))
         {
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
@@ -3017,9 +3023,32 @@ namespace Apideck.Api
             }
             if (filter != null)
             {
+                if (filter.CompanyId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[company_id]", filter.CompanyId));
+                }
+                if (filter.OwnerId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[owner_id]", filter.OwnerId));
+                }
+                if (filter.ContactId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[contact_id]", filter.ContactId));
+                }
                 if (filter.UpdatedSince != null)
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[updated_since]", filter.UpdatedSince));
+                }
+            }
+            if (sort != null)
+            {
+                if (sort.By != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort[by]", sort.By));
+                }
+                if (sort.Direction != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort[direction]", sort.Direction));
                 }
             }
             if (passThrough != null)
@@ -3077,13 +3106,14 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetActivitiesResponse</returns>
-        public async System.Threading.Tasks.Task<GetActivitiesResponse> ActivitiesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetActivitiesResponse> ActivitiesAllAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetActivitiesResponse> localVarResponse = await ActivitiesAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetActivitiesResponse> localVarResponse = await ActivitiesAllWithHttpInfoAsync(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3098,11 +3128,12 @@ namespace Apideck.Api
         /// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional)</param>
         /// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20 (optional, default to 20)</param>
         /// <param name="filter">Apply filters (optional)</param>
+        /// <param name="sort">Apply sorting (optional)</param>
         /// <param name="passThrough">Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads (optional)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetActivitiesResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetActivitiesResponse>> ActivitiesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetActivitiesResponse>> ActivitiesAllWithHttpInfoAsync(bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), string cursor = default(string), int? limit = default(int?), ActivitiesFilter filter = default(ActivitiesFilter), ActivitiesSort sort = default(ActivitiesSort), PassThroughQuery passThrough = default(PassThroughQuery), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -3142,6 +3173,10 @@ namespace Apideck.Api
             if (filter != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (sort != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "sort", sort));
             }
             if (passThrough != null)
             {
@@ -8318,6 +8353,14 @@ namespace Apideck.Api
                 if (filter.CompanyId != null)
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[company_id]", filter.CompanyId));
+                }
+                if (filter.OwnerId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[owner_id]", filter.OwnerId));
+                }
+                if (filter.PrimaryContactId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[primary_contact_id]", filter.PrimaryContactId));
                 }
             }
             if (sort != null)

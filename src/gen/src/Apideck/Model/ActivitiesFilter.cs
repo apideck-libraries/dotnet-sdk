@@ -34,11 +34,38 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ActivitiesFilter" /> class.
         /// </summary>
+        /// <param name="companyId">Company ID to filter on.</param>
+        /// <param name="ownerId">Owner ID to filter on.</param>
+        /// <param name="contactId">Primary contact ID to filter on.</param>
         /// <param name="updatedSince">updatedSince.</param>
-        public ActivitiesFilter(DateTime updatedSince = default(DateTime))
+        public ActivitiesFilter(string companyId = default(string), string ownerId = default(string), string contactId = default(string), DateTime updatedSince = default(DateTime))
         {
+            this.CompanyId = companyId;
+            this.OwnerId = ownerId;
+            this.ContactId = contactId;
             this.UpdatedSince = updatedSince;
         }
+
+        /// <summary>
+        /// Company ID to filter on
+        /// </summary>
+        /// <value>Company ID to filter on</value>
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        public string CompanyId { get; set; }
+
+        /// <summary>
+        /// Owner ID to filter on
+        /// </summary>
+        /// <value>Owner ID to filter on</value>
+        [DataMember(Name = "owner_id", EmitDefaultValue = false)]
+        public string OwnerId { get; set; }
+
+        /// <summary>
+        /// Primary contact ID to filter on
+        /// </summary>
+        /// <value>Primary contact ID to filter on</value>
+        [DataMember(Name = "contact_id", EmitDefaultValue = false)]
+        public string ContactId { get; set; }
 
         /// <summary>
         /// Gets or Sets UpdatedSince
@@ -54,6 +81,9 @@ namespace Apideck.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class ActivitiesFilter {\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
+            sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
+            sb.Append("  ContactId: ").Append(ContactId).Append("\n");
             sb.Append("  UpdatedSince: ").Append(UpdatedSince).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -91,6 +121,21 @@ namespace Apideck.Model
             }
             return 
                 (
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
+                ) && 
+                (
+                    this.OwnerId == input.OwnerId ||
+                    (this.OwnerId != null &&
+                    this.OwnerId.Equals(input.OwnerId))
+                ) && 
+                (
+                    this.ContactId == input.ContactId ||
+                    (this.ContactId != null &&
+                    this.ContactId.Equals(input.ContactId))
+                ) && 
+                (
                     this.UpdatedSince == input.UpdatedSince ||
                     (this.UpdatedSince != null &&
                     this.UpdatedSince.Equals(input.UpdatedSince))
@@ -106,6 +151,18 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.CompanyId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
+                }
+                if (this.OwnerId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
+                }
+                if (this.ContactId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ContactId.GetHashCode();
+                }
                 if (this.UpdatedSince != null)
                 {
                     hashCode = (hashCode * 59) + this.UpdatedSince.GetHashCode();
