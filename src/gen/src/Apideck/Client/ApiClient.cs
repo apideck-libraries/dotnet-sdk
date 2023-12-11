@@ -50,7 +50,8 @@ namespace Apideck.Client
                 {
                     OverrideSpecifiedNames = false
                 }
-            }
+            },
+            NullValueHandling = NullValueHandling.Ignore
         };
 
         public CustomJsonCodec(IReadableConfiguration configuration)
@@ -198,7 +199,8 @@ namespace Apideck.Client
                 {
                     OverrideSpecifiedNames = false
                 }
-            }
+            },
+            NullValueHandling = NullValueHandling.Ignore
         };
 
         /// <summary>
