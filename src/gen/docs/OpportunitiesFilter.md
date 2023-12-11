@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **MonetaryAmount** | **decimal** | Monetary amount to filter on | [optional] 
 **WinProbability** | **decimal** | Win probability to filter on | [optional] 
 **CompanyId** | **string** | Company ID to filter on | [optional] 
+**OwnerId** | **string** | Owner ID to filter on | [optional] 
+**PrimaryContactId** | **string** | Primary contact ID to filter on | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

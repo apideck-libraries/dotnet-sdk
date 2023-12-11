@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the file. | 
-**ParentFolderId** | **string** | The parent folder to create the new file within. | 
+**ParentFolderId** | **string** | The parent folder to create the new file within. This can be an ID or a path depending on the downstream folder. Please see the connector section below to see downstream specific gotchas. | 
 **DriveId** | **string** | ID of the drive to upload to. | [optional] 
 **Size** | **int?** | The size of the file in bytes | 
 

@@ -5,11 +5,15 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_VERSION: 2.0.1
+      PACKAGE_VERSION: 2.1.0
     steps:
       - uses: actions/checkout@v3
 

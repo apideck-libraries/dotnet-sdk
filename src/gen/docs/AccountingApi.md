@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 <a name="billsall"></a>
 # **BillsAll**
-> GetBillsResponse BillsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, BillsSort sort = null, PassThroughQuery passThrough = null, string fields = null)
+> GetBillsResponse BillsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, BillsFilter filter = null, BillsSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Bills
 
@@ -282,6 +282,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var filter = new BillsFilter(); // BillsFilter | Apply filters (optional) 
             var sort = new BillsSort(); // BillsSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
@@ -289,7 +290,7 @@ namespace Example
             try
             {
                 // List Bills
-                GetBillsResponse result = apiInstance.BillsAll(raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
+                GetBillsResponse result = apiInstance.BillsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -313,6 +314,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **filter** | [**BillsFilter**](BillsFilter.md)| Apply filters | [optional] 
  **sort** | [**BillsSort**](BillsSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
@@ -800,7 +802,7 @@ Name | Type | Description  | Notes
 
 <a name="creditnotesall"></a>
 # **CreditNotesAll**
-> GetCreditNotesResponse CreditNotesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
+> GetCreditNotesResponse CreditNotesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CreditNotesFilter filter = null, CreditNotesSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Credit Notes
 
@@ -834,13 +836,15 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var filter = new CreditNotesFilter(); // CreditNotesFilter | Apply filters (optional) 
+            var sort = new CreditNotesSort(); // CreditNotesSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Credit Notes
-                GetCreditNotesResponse result = apiInstance.CreditNotesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+                GetCreditNotesResponse result = apiInstance.CreditNotesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -864,6 +868,8 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **filter** | [**CreditNotesFilter**](CreditNotesFilter.md)| Apply filters | [optional] 
+ **sort** | [**CreditNotesSort**](CreditNotesSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
@@ -1260,7 +1266,7 @@ Name | Type | Description  | Notes
 
 <a name="customersall"></a>
 # **CustomersAll**
-> GetCustomersResponse CustomersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CustomersFilter filter = null, PassThroughQuery passThrough = null, string fields = null)
+> GetCustomersResponse CustomersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, CustomersFilter filter = null, CustomersSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Customers
 
@@ -1295,13 +1301,14 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new CustomersFilter(); // CustomersFilter | Apply filters (optional) 
+            var sort = new CustomersSort(); // CustomersSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Customers
-                GetCustomersResponse result = apiInstance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
+                GetCustomersResponse result = apiInstance.CustomersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1326,6 +1333,7 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **filter** | [**CustomersFilter**](CustomersFilter.md)| Apply filters | [optional] 
+ **sort** | [**CustomersSort**](CustomersSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
@@ -2184,7 +2192,7 @@ Name | Type | Description  | Notes
 
 <a name="invoicesall"></a>
 # **InvoicesAll**
-> GetInvoicesResponse InvoicesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, InvoicesSort sort = null, PassThroughQuery passThrough = null, string fields = null)
+> GetInvoicesResponse InvoicesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, InvoicesFilter filter = null, InvoicesSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Invoices
 
@@ -2218,6 +2226,7 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var filter = new InvoicesFilter(); // InvoicesFilter | Apply filters (optional) 
             var sort = new InvoicesSort(); // InvoicesSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
@@ -2225,7 +2234,7 @@ namespace Example
             try
             {
                 // List Invoices
-                GetInvoicesResponse result = apiInstance.InvoicesAll(raw, consumerId, appId, serviceId, cursor, limit, sort, passThrough, fields);
+                GetInvoicesResponse result = apiInstance.InvoicesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2249,6 +2258,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **filter** | [**InvoicesFilter**](InvoicesFilter.md)| Apply filters | [optional] 
  **sort** | [**InvoicesSort**](InvoicesSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
@@ -2646,7 +2656,7 @@ Name | Type | Description  | Notes
 
 <a name="journalentriesall"></a>
 # **JournalEntriesAll**
-> GetJournalEntriesResponse JournalEntriesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
+> GetJournalEntriesResponse JournalEntriesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, JournalEntriesFilter filter = null, JournalEntriesSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Journal Entries
 
@@ -2680,13 +2690,15 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var filter = new JournalEntriesFilter(); // JournalEntriesFilter | Apply filters (optional) 
+            var sort = new JournalEntriesSort(); // JournalEntriesSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Journal Entries
-                GetJournalEntriesResponse result = apiInstance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+                GetJournalEntriesResponse result = apiInstance.JournalEntriesAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2710,6 +2722,8 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **filter** | [**JournalEntriesFilter**](JournalEntriesFilter.md)| Apply filters | [optional] 
+ **sort** | [**JournalEntriesSort**](JournalEntriesSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
@@ -3106,7 +3120,7 @@ Name | Type | Description  | Notes
 
 <a name="ledgeraccountsall"></a>
 # **LedgerAccountsAll**
-> GetLedgerAccountsResponse LedgerAccountsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
+> GetLedgerAccountsResponse LedgerAccountsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, LedgerAccountsFilter filter = null, LedgerAccountsSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Ledger Accounts
 
@@ -3140,13 +3154,15 @@ namespace Example
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var filter = new LedgerAccountsFilter(); // LedgerAccountsFilter | Apply filters (optional) 
+            var sort = new LedgerAccountsSort(); // LedgerAccountsSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Ledger Accounts
-                GetLedgerAccountsResponse result = apiInstance.LedgerAccountsAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+                GetLedgerAccountsResponse result = apiInstance.LedgerAccountsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3170,6 +3186,8 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **filter** | [**LedgerAccountsFilter**](LedgerAccountsFilter.md)| Apply filters | [optional] 
+ **sort** | [**LedgerAccountsSort**](LedgerAccountsSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
@@ -3566,7 +3584,7 @@ Name | Type | Description  | Notes
 
 <a name="paymentsall"></a>
 # **PaymentsAll**
-> GetPaymentsResponse PaymentsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PaymentsFilter filter = null, PassThroughQuery passThrough = null, string fields = null)
+> GetPaymentsResponse PaymentsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PaymentsFilter filter = null, PaymentsSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Payments
 
@@ -3601,13 +3619,14 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new PaymentsFilter(); // PaymentsFilter | Apply filters (optional) 
+            var sort = new PaymentsSort(); // PaymentsSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Payments
-                GetPaymentsResponse result = apiInstance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
+                GetPaymentsResponse result = apiInstance.PaymentsAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3632,6 +3651,7 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **filter** | [**PaymentsFilter**](PaymentsFilter.md)| Apply filters | [optional] 
+ **sort** | [**PaymentsSort**](PaymentsSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
@@ -4122,7 +4142,7 @@ Name | Type | Description  | Notes
 
 <a name="purchaseordersall"></a>
 # **PurchaseOrdersAll**
-> GetPurchaseOrdersResponse PurchaseOrdersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, PassThroughQuery passThrough = null, int? limit = null)
+> GetPurchaseOrdersResponse PurchaseOrdersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, PassThroughQuery passThrough = null, int? limit = null, PurchaseOrdersFilter filter = null, PurchaseOrdersSort sort = null)
 
 List Purchase Orders
 
@@ -4157,11 +4177,13 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var filter = new PurchaseOrdersFilter(); // PurchaseOrdersFilter | Apply filters (optional) 
+            var sort = new PurchaseOrdersSort(); // PurchaseOrdersSort | Apply sorting (optional) 
 
             try
             {
                 // List Purchase Orders
-                GetPurchaseOrdersResponse result = apiInstance.PurchaseOrdersAll(raw, consumerId, appId, serviceId, cursor, passThrough, limit);
+                GetPurchaseOrdersResponse result = apiInstance.PurchaseOrdersAll(raw, consumerId, appId, serviceId, cursor, passThrough, limit, filter, sort);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -4186,6 +4208,8 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **filter** | [**PurchaseOrdersFilter**](PurchaseOrdersFilter.md)| Apply filters | [optional] 
+ **sort** | [**PurchaseOrdersSort**](PurchaseOrdersSort.md)| Apply sorting | [optional] 
 
 ### Return type
 
@@ -4578,7 +4602,7 @@ Name | Type | Description  | Notes
 
 <a name="suppliersall"></a>
 # **SuppliersAll**
-> GetSuppliersResponse SuppliersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, SuppliersFilter filter = null, PassThroughQuery passThrough = null, string fields = null)
+> GetSuppliersResponse SuppliersAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, SuppliersFilter filter = null, SuppliersSort sort = null, PassThroughQuery passThrough = null, string fields = null)
 
 List Suppliers
 
@@ -4613,13 +4637,14 @@ namespace Example
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new SuppliersFilter(); // SuppliersFilter | Apply filters (optional) 
+            var sort = new SuppliersSort(); // SuppliersSort | Apply sorting (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
             {
                 // List Suppliers
-                GetSuppliersResponse result = apiInstance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
+                GetSuppliersResponse result = apiInstance.SuppliersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -4644,6 +4669,7 @@ Name | Type | Description  | Notes
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
  **filter** | [**SuppliersFilter**](SuppliersFilter.md)| Apply filters | [optional] 
+ **sort** | [**SuppliersSort**](SuppliersSort.md)| Apply sorting | [optional] 
  **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
 
