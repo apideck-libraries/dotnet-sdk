@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **CompanyName** | **string** | The name of the company. | [optional] 
 **EmploymentStartDate** | **string** | A Start Date is the date that the employee started working at the company | [optional] 
 **EmploymentEndDate** | **string** | An End Date is the date that the employee ended working at the company | [optional] 
-**LeavingReason** | [**OneOfstringnull**](OneOfstringnull.md) |  | [optional] 
+**LeavingReason** | **string** | The reason because the employment ended. | [optional] 
 **EmployeeNumber** | **string** | An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company. | [optional] 
 **EmploymentStatus** | **EmploymentStatus** |  | [optional] 
 **EmploymentRole** | [**EmployeeEmploymentRole**](EmployeeEmploymentRole.md) |  | [optional] 

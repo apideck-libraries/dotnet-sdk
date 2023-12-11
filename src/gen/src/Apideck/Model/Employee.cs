@@ -31,6 +31,46 @@ namespace Apideck.Model
     [DataContract(Name = "Employee")]
     public partial class Employee : IEquatable<Employee>, IValidatableObject
     {
+        /// <summary>
+        /// The reason because the employment ended.
+        /// </summary>
+        /// <value>The reason because the employment ended.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LeavingReasonEnum
+        {
+            /// <summary>
+            /// Enum Dismissed for value: dismissed
+            /// </summary>
+            [EnumMember(Value = "dismissed")]
+            Dismissed = 1,
+
+            /// <summary>
+            /// Enum Resigned for value: resigned
+            /// </summary>
+            [EnumMember(Value = "resigned")]
+            Resigned = 2,
+
+            /// <summary>
+            /// Enum Redundancy for value: redundancy
+            /// </summary>
+            [EnumMember(Value = "redundancy")]
+            Redundancy = 3,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 4
+
+        }
+
+
+        /// <summary>
+        /// The reason because the employment ended.
+        /// </summary>
+        /// <value>The reason because the employment ended.</value>
+        [DataMember(Name = "leaving_reason", EmitDefaultValue = true)]
+        public LeavingReasonEnum? LeavingReason { get; set; }
 
         /// <summary>
         /// Gets or Sets EmploymentStatus
@@ -71,7 +111,7 @@ namespace Apideck.Model
         /// <param name="companyName">The name of the company..</param>
         /// <param name="employmentStartDate">A Start Date is the date that the employee started working at the company.</param>
         /// <param name="employmentEndDate">An End Date is the date that the employee ended working at the company.</param>
-        /// <param name="leavingReason">leavingReason.</param>
+        /// <param name="leavingReason">The reason because the employment ended..</param>
         /// <param name="employeeNumber">An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company..</param>
         /// <param name="employmentStatus">employmentStatus.</param>
         /// <param name="employmentRole">employmentRole.</param>
@@ -110,7 +150,7 @@ namespace Apideck.Model
         /// <param name="tags">tags.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
-        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), OneOfstringnull leavingReason = default(OneOfstringnull), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), string ethnicity = default(string), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
+        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), string ethnicity = default(string), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -326,12 +366,6 @@ namespace Apideck.Model
         /// <value>An End Date is the date that the employee ended working at the company</value>
         [DataMember(Name = "employment_end_date", EmitDefaultValue = true)]
         public string EmploymentEndDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LeavingReason
-        /// </summary>
-        [DataMember(Name = "leaving_reason", EmitDefaultValue = true)]
-        public OneOfstringnull LeavingReason { get; set; }
 
         /// <summary>
         /// An Employee Number, Employee ID or Employee Code, is a unique number that has been assigned to each individual staff member within a company.
@@ -860,8 +894,7 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.LeavingReason == input.LeavingReason ||
-                    (this.LeavingReason != null &&
-                    this.LeavingReason.Equals(input.LeavingReason))
+                    this.LeavingReason.Equals(input.LeavingReason)
                 ) && 
                 (
                     this.EmployeeNumber == input.EmployeeNumber ||
@@ -1184,10 +1217,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.EmploymentEndDate.GetHashCode();
                 }
-                if (this.LeavingReason != null)
-                {
-                    hashCode = (hashCode * 59) + this.LeavingReason.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.LeavingReason.GetHashCode();
                 if (this.EmployeeNumber != null)
                 {
                     hashCode = (hashCode * 59) + this.EmployeeNumber.GetHashCode();
