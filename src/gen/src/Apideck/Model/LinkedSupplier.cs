@@ -34,20 +34,11 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkedSupplier" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected LinkedSupplier() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LinkedSupplier" /> class.
-        /// </summary>
-        /// <param name="id">The ID of the supplier this entity is linked to. (required).</param>
+        /// <param name="id">The ID of the supplier this entity is linked to..</param>
         /// <param name="displayName">The display name of the supplier..</param>
         /// <param name="address">address.</param>
         public LinkedSupplier(string id = default(string), string displayName = default(string), Address address = default(Address))
         {
-            // to ensure "id" is required (not null)
-            if (id == null) {
-                throw new ArgumentNullException("id is a required property for LinkedSupplier and cannot be null");
-            }
             this.Id = id;
             this.DisplayName = displayName;
             this.Address = address;
@@ -57,7 +48,7 @@ namespace Apideck.Model
         /// The ID of the supplier this entity is linked to.
         /// </summary>
         /// <value>The ID of the supplier this entity is linked to.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>

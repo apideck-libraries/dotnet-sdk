@@ -34,20 +34,11 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkedCustomer" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected LinkedCustomer() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LinkedCustomer" /> class.
-        /// </summary>
-        /// <param name="id">The ID of the customer this entity is linked to. (required).</param>
+        /// <param name="id">The ID of the customer this entity is linked to..</param>
         /// <param name="displayName">The display name of the customer..</param>
         /// <param name="name">The name of the customer. Deprecated, use display_name instead..</param>
         public LinkedCustomer(string id = default(string), string displayName = default(string), string name = default(string))
         {
-            // to ensure "id" is required (not null)
-            if (id == null) {
-                throw new ArgumentNullException("id is a required property for LinkedCustomer and cannot be null");
-            }
             this.Id = id;
             this.DisplayName = displayName;
             this.Name = name;
@@ -57,7 +48,7 @@ namespace Apideck.Model
         /// The ID of the customer this entity is linked to.
         /// </summary>
         /// <value>The ID of the customer this entity is linked to.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
         /// <summary>
