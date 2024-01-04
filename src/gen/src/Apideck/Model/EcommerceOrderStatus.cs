@@ -60,7 +60,13 @@ namespace Apideck.Model
         /// Enum Unknown for value: unknown
         /// </summary>
         [EnumMember(Value = "unknown")]
-        Unknown = 5
+        Unknown = 5,
+
+        /// <summary>
+        /// Enum Other for value: other
+        /// </summary>
+        [EnumMember(Value = "other")]
+        Other = 6
 
     }
 
