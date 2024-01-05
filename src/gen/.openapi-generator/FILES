@@ -380,6 +380,8 @@ docs/GetSharedLinkResponse.md
 docs/GetSharedLinksResponse.md
 docs/GetStoreResponse.md
 docs/GetStoresResponse.md
+docs/GetSubsidiariesResponse.md
+docs/GetSubsidiaryResponse.md
 docs/GetSupplierResponse.md
 docs/GetSuppliersResponse.md
 docs/GetTaxRateResponse.md
@@ -535,6 +537,7 @@ docs/SmsApi.md
 docs/SocialLink.md
 docs/SortDirection.md
 docs/Status.md
+docs/Subsidiary.md
 docs/Supplier.md
 docs/SuppliersFilter.md
 docs/SuppliersSort.md
@@ -1013,6 +1016,8 @@ src/Apideck.Test/Model/GetSharedLinkResponseTests.cs
 src/Apideck.Test/Model/GetSharedLinksResponseTests.cs
 src/Apideck.Test/Model/GetStoreResponseTests.cs
 src/Apideck.Test/Model/GetStoresResponseTests.cs
+src/Apideck.Test/Model/GetSubsidiariesResponseTests.cs
+src/Apideck.Test/Model/GetSubsidiaryResponseTests.cs
 src/Apideck.Test/Model/GetSupplierResponseTests.cs
 src/Apideck.Test/Model/GetSuppliersResponseTests.cs
 src/Apideck.Test/Model/GetTaxRateResponseTests.cs
@@ -1163,6 +1168,7 @@ src/Apideck.Test/Model/SimpleFormFieldOptionTests.cs
 src/Apideck.Test/Model/SocialLinkTests.cs
 src/Apideck.Test/Model/SortDirectionTests.cs
 src/Apideck.Test/Model/StatusTests.cs
+src/Apideck.Test/Model/SubsidiaryTests.cs
 src/Apideck.Test/Model/SupplierTests.cs
 src/Apideck.Test/Model/SuppliersFilterTests.cs
 src/Apideck.Test/Model/SuppliersSortTests.cs
@@ -1655,6 +1661,8 @@ src/Apideck/Model/GetSharedLinkResponse.cs
 src/Apideck/Model/GetSharedLinksResponse.cs
 src/Apideck/Model/GetStoreResponse.cs
 src/Apideck/Model/GetStoresResponse.cs
+src/Apideck/Model/GetSubsidiariesResponse.cs
+src/Apideck/Model/GetSubsidiaryResponse.cs
 src/Apideck/Model/GetSupplierResponse.cs
 src/Apideck/Model/GetSuppliersResponse.cs
 src/Apideck/Model/GetTaxRateResponse.cs
@@ -1805,6 +1813,7 @@ src/Apideck/Model/SimpleFormFieldOption.cs
 src/Apideck/Model/SocialLink.cs
 src/Apideck/Model/SortDirection.cs
 src/Apideck/Model/Status.cs
+src/Apideck/Model/Subsidiary.cs
 src/Apideck/Model/Supplier.cs
 src/Apideck/Model/SuppliersFilter.cs
 src/Apideck/Model/SuppliersSort.cs
