@@ -144,6 +144,7 @@ docs/CreatePurchaseOrderResponse.md
 docs/CreateSessionResponse.md
 docs/CreateSessionResponseData.md
 docs/CreateSharedLinkResponse.md
+docs/CreateSubsidiaryResponse.md
 docs/CreateSupplierResponse.md
 docs/CreateTaxRateResponse.md
 docs/CreateTenderResponse.md
@@ -207,6 +208,7 @@ docs/DeletePosPaymentResponse.md
 docs/DeleteProductResponse.md
 docs/DeletePurchaseOrderResponse.md
 docs/DeleteSharedLinkResponse.md
+docs/DeleteSubsidiaryResponse.md
 docs/DeleteSupplierResponse.md
 docs/DeleteTaxRateResponse.md
 docs/DeleteTenderResponse.md
@@ -609,6 +611,7 @@ docs/UpdatePosPaymentResponse.md
 docs/UpdateProductResponse.md
 docs/UpdatePurchaseOrderResponse.md
 docs/UpdateSharedLinkResponse.md
+docs/UpdateSubsidiaryResponse.md
 docs/UpdateSupplierResponse.md
 docs/UpdateTaxRateResponse.md
 docs/UpdateTenderResponse.md
@@ -783,6 +786,7 @@ src/Apideck.Test/Model/CreatePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/CreateSessionResponseDataTests.cs
 src/Apideck.Test/Model/CreateSessionResponseTests.cs
 src/Apideck.Test/Model/CreateSharedLinkResponseTests.cs
+src/Apideck.Test/Model/CreateSubsidiaryResponseTests.cs
 src/Apideck.Test/Model/CreateSupplierResponseTests.cs
 src/Apideck.Test/Model/CreateTaxRateResponseTests.cs
 src/Apideck.Test/Model/CreateTenderResponseTests.cs
@@ -845,6 +849,7 @@ src/Apideck.Test/Model/DeletePosPaymentResponseTests.cs
 src/Apideck.Test/Model/DeleteProductResponseTests.cs
 src/Apideck.Test/Model/DeletePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/DeleteSharedLinkResponseTests.cs
+src/Apideck.Test/Model/DeleteSubsidiaryResponseTests.cs
 src/Apideck.Test/Model/DeleteSupplierResponseTests.cs
 src/Apideck.Test/Model/DeleteTaxRateResponseTests.cs
 src/Apideck.Test/Model/DeleteTenderResponseTests.cs
@@ -1240,6 +1245,7 @@ src/Apideck.Test/Model/UpdatePosPaymentResponseTests.cs
 src/Apideck.Test/Model/UpdateProductResponseTests.cs
 src/Apideck.Test/Model/UpdatePurchaseOrderResponseTests.cs
 src/Apideck.Test/Model/UpdateSharedLinkResponseTests.cs
+src/Apideck.Test/Model/UpdateSubsidiaryResponseTests.cs
 src/Apideck.Test/Model/UpdateSupplierResponseTests.cs
 src/Apideck.Test/Model/UpdateTaxRateResponseTests.cs
 src/Apideck.Test/Model/UpdateTenderResponseTests.cs
@@ -1428,6 +1434,7 @@ src/Apideck/Model/CreatePurchaseOrderResponse.cs
 src/Apideck/Model/CreateSessionResponse.cs
 src/Apideck/Model/CreateSessionResponseData.cs
 src/Apideck/Model/CreateSharedLinkResponse.cs
+src/Apideck/Model/CreateSubsidiaryResponse.cs
 src/Apideck/Model/CreateSupplierResponse.cs
 src/Apideck/Model/CreateTaxRateResponse.cs
 src/Apideck/Model/CreateTenderResponse.cs
@@ -1490,6 +1497,7 @@ src/Apideck/Model/DeletePosPaymentResponse.cs
 src/Apideck/Model/DeleteProductResponse.cs
 src/Apideck/Model/DeletePurchaseOrderResponse.cs
 src/Apideck/Model/DeleteSharedLinkResponse.cs
+src/Apideck/Model/DeleteSubsidiaryResponse.cs
 src/Apideck/Model/DeleteSupplierResponse.cs
 src/Apideck/Model/DeleteTaxRateResponse.cs
 src/Apideck/Model/DeleteTenderResponse.cs
@@ -1885,6 +1893,7 @@ src/Apideck/Model/UpdatePosPaymentResponse.cs
 src/Apideck/Model/UpdateProductResponse.cs
 src/Apideck/Model/UpdatePurchaseOrderResponse.cs
 src/Apideck/Model/UpdateSharedLinkResponse.cs
+src/Apideck/Model/UpdateSubsidiaryResponse.cs
 src/Apideck/Model/UpdateSupplierResponse.cs
 src/Apideck/Model/UpdateTaxRateResponse.cs
 src/Apideck/Model/UpdateTenderResponse.cs

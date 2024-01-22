@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | A unique identifier for an object. | [optional] [readonly] 
-**ParentId** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**ParentId** | **string** | A unique identifier for an object. | [optional] 
 **Name** | **string** | The name of the company. | [optional] 
 **Status** | **string** | Based on the status some functionality is enabled or disabled. | [optional] 
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
