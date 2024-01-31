@@ -10,7 +10,11 @@
 Apideck.sln
 appveyor.yml
 docs/AccountingApi.md
+docs/AccountingDepartment.md
+docs/AccountingDepartmentsFilter.md
 docs/AccountingEventType.md
+docs/AccountingLocation.md
+docs/AccountingLocationsFilter.md
 docs/ActivitiesFilter.md
 docs/ActivitiesSort.md
 docs/Activity.md
@@ -96,6 +100,8 @@ docs/Contact.md
 docs/ContactsFilter.md
 docs/ContactsSort.md
 docs/CopyFolderRequest.md
+docs/CreateAccountingDepartmentResponse.md
+docs/CreateAccountingLocationResponse.md
 docs/CreateActivityResponse.md
 docs/CreateApplicantResponse.md
 docs/CreateApplicationResponse.md
@@ -168,6 +174,8 @@ docs/Customer.md
 docs/CustomersFilter.md
 docs/CustomersSort.md
 docs/Deduction.md
+docs/DeleteAccountingDepartmentResponse.md
+docs/DeleteAccountingLocationResponse.md
 docs/DeleteActivityResponse.md
 docs/DeleteApplicantResponse.md
 docs/DeleteApplicationResponse.md
@@ -265,6 +273,10 @@ docs/FormField.md
 docs/FormFieldOption.md
 docs/FormFieldOptionGroup.md
 docs/Gender.md
+docs/GetAccountingDepartmentResponse.md
+docs/GetAccountingDepartmentsResponse.md
+docs/GetAccountingLocationResponse.md
+docs/GetAccountingLocationsResponse.md
 docs/GetActivitiesResponse.md
 docs/GetActivityResponse.md
 docs/GetApiResourceCoverageResponse.md
@@ -540,6 +552,7 @@ docs/SocialLink.md
 docs/SortDirection.md
 docs/Status.md
 docs/Subsidiary.md
+docs/SubsidiaryReference.md
 docs/Supplier.md
 docs/SuppliersFilter.md
 docs/SuppliersSort.md
@@ -564,6 +577,8 @@ docs/UnifiedFile.md
 docs/UnifiedFilePermissions.md
 docs/UnifiedId.md
 docs/UnprocessableResponse.md
+docs/UpdateAccountingDepartmentResponse.md
+docs/UpdateAccountingLocationResponse.md
 docs/UpdateActivityResponse.md
 docs/UpdateApplicantResponse.md
 docs/UpdateApplicationResponse.md
@@ -654,7 +669,11 @@ src/Apideck.Test/Api/SmsApiTests.cs
 src/Apideck.Test/Api/VaultApiTests.cs
 src/Apideck.Test/Api/WebhookApiTests.cs
 src/Apideck.Test/Apideck.Test.csproj
+src/Apideck.Test/Model/AccountingDepartmentTests.cs
+src/Apideck.Test/Model/AccountingDepartmentsFilterTests.cs
 src/Apideck.Test/Model/AccountingEventTypeTests.cs
+src/Apideck.Test/Model/AccountingLocationTests.cs
+src/Apideck.Test/Model/AccountingLocationsFilterTests.cs
 src/Apideck.Test/Model/ActivitiesFilterTests.cs
 src/Apideck.Test/Model/ActivitiesSortTests.cs
 src/Apideck.Test/Model/ActivityAttendeeTests.cs
@@ -738,6 +757,8 @@ src/Apideck.Test/Model/ContactTests.cs
 src/Apideck.Test/Model/ContactsFilterTests.cs
 src/Apideck.Test/Model/ContactsSortTests.cs
 src/Apideck.Test/Model/CopyFolderRequestTests.cs
+src/Apideck.Test/Model/CreateAccountingDepartmentResponseTests.cs
+src/Apideck.Test/Model/CreateAccountingLocationResponseTests.cs
 src/Apideck.Test/Model/CreateActivityResponseTests.cs
 src/Apideck.Test/Model/CreateApplicantResponseTests.cs
 src/Apideck.Test/Model/CreateApplicationResponseTests.cs
@@ -809,6 +830,8 @@ src/Apideck.Test/Model/CustomerTests.cs
 src/Apideck.Test/Model/CustomersFilterTests.cs
 src/Apideck.Test/Model/CustomersSortTests.cs
 src/Apideck.Test/Model/DeductionTests.cs
+src/Apideck.Test/Model/DeleteAccountingDepartmentResponseTests.cs
+src/Apideck.Test/Model/DeleteAccountingLocationResponseTests.cs
 src/Apideck.Test/Model/DeleteActivityResponseTests.cs
 src/Apideck.Test/Model/DeleteApplicantResponseTests.cs
 src/Apideck.Test/Model/DeleteApplicationResponseTests.cs
@@ -904,6 +927,10 @@ src/Apideck.Test/Model/FormFieldOptionGroupTests.cs
 src/Apideck.Test/Model/FormFieldOptionTests.cs
 src/Apideck.Test/Model/FormFieldTests.cs
 src/Apideck.Test/Model/GenderTests.cs
+src/Apideck.Test/Model/GetAccountingDepartmentResponseTests.cs
+src/Apideck.Test/Model/GetAccountingDepartmentsResponseTests.cs
+src/Apideck.Test/Model/GetAccountingLocationResponseTests.cs
+src/Apideck.Test/Model/GetAccountingLocationsResponseTests.cs
 src/Apideck.Test/Model/GetActivitiesResponseTests.cs
 src/Apideck.Test/Model/GetActivityResponseTests.cs
 src/Apideck.Test/Model/GetApiResourceCoverageResponseTests.cs
@@ -1173,6 +1200,7 @@ src/Apideck.Test/Model/SimpleFormFieldOptionTests.cs
 src/Apideck.Test/Model/SocialLinkTests.cs
 src/Apideck.Test/Model/SortDirectionTests.cs
 src/Apideck.Test/Model/StatusTests.cs
+src/Apideck.Test/Model/SubsidiaryReferenceTests.cs
 src/Apideck.Test/Model/SubsidiaryTests.cs
 src/Apideck.Test/Model/SupplierTests.cs
 src/Apideck.Test/Model/SuppliersFilterTests.cs
@@ -1198,6 +1226,8 @@ src/Apideck.Test/Model/UnifiedFilePermissionsTests.cs
 src/Apideck.Test/Model/UnifiedFileTests.cs
 src/Apideck.Test/Model/UnifiedIdTests.cs
 src/Apideck.Test/Model/UnprocessableResponseTests.cs
+src/Apideck.Test/Model/UpdateAccountingDepartmentResponseTests.cs
+src/Apideck.Test/Model/UpdateAccountingLocationResponseTests.cs
 src/Apideck.Test/Model/UpdateActivityResponseTests.cs
 src/Apideck.Test/Model/UpdateApplicantResponseTests.cs
 src/Apideck.Test/Model/UpdateApplicationResponseTests.cs
@@ -1302,7 +1332,11 @@ src/Apideck/Client/OpenAPIDateConverter.cs
 src/Apideck/Client/RequestOptions.cs
 src/Apideck/Client/RetryConfiguration.cs
 src/Apideck/Model/AbstractOpenAPISchema.cs
+src/Apideck/Model/AccountingDepartment.cs
+src/Apideck/Model/AccountingDepartmentsFilter.cs
 src/Apideck/Model/AccountingEventType.cs
+src/Apideck/Model/AccountingLocation.cs
+src/Apideck/Model/AccountingLocationsFilter.cs
 src/Apideck/Model/ActivitiesFilter.cs
 src/Apideck/Model/ActivitiesSort.cs
 src/Apideck/Model/Activity.cs
@@ -1386,6 +1420,8 @@ src/Apideck/Model/Contact.cs
 src/Apideck/Model/ContactsFilter.cs
 src/Apideck/Model/ContactsSort.cs
 src/Apideck/Model/CopyFolderRequest.cs
+src/Apideck/Model/CreateAccountingDepartmentResponse.cs
+src/Apideck/Model/CreateAccountingLocationResponse.cs
 src/Apideck/Model/CreateActivityResponse.cs
 src/Apideck/Model/CreateApplicantResponse.cs
 src/Apideck/Model/CreateApplicationResponse.cs
@@ -1457,6 +1493,8 @@ src/Apideck/Model/Customer.cs
 src/Apideck/Model/CustomersFilter.cs
 src/Apideck/Model/CustomersSort.cs
 src/Apideck/Model/Deduction.cs
+src/Apideck/Model/DeleteAccountingDepartmentResponse.cs
+src/Apideck/Model/DeleteAccountingLocationResponse.cs
 src/Apideck/Model/DeleteActivityResponse.cs
 src/Apideck/Model/DeleteApplicantResponse.cs
 src/Apideck/Model/DeleteApplicationResponse.cs
@@ -1552,6 +1590,10 @@ src/Apideck/Model/FormField.cs
 src/Apideck/Model/FormFieldOption.cs
 src/Apideck/Model/FormFieldOptionGroup.cs
 src/Apideck/Model/Gender.cs
+src/Apideck/Model/GetAccountingDepartmentResponse.cs
+src/Apideck/Model/GetAccountingDepartmentsResponse.cs
+src/Apideck/Model/GetAccountingLocationResponse.cs
+src/Apideck/Model/GetAccountingLocationsResponse.cs
 src/Apideck/Model/GetActivitiesResponse.cs
 src/Apideck/Model/GetActivityResponse.cs
 src/Apideck/Model/GetApiResourceCoverageResponse.cs
@@ -1822,6 +1864,7 @@ src/Apideck/Model/SocialLink.cs
 src/Apideck/Model/SortDirection.cs
 src/Apideck/Model/Status.cs
 src/Apideck/Model/Subsidiary.cs
+src/Apideck/Model/SubsidiaryReference.cs
 src/Apideck/Model/Supplier.cs
 src/Apideck/Model/SuppliersFilter.cs
 src/Apideck/Model/SuppliersSort.cs
@@ -1846,6 +1889,8 @@ src/Apideck/Model/UnifiedFile.cs
 src/Apideck/Model/UnifiedFilePermissions.cs
 src/Apideck/Model/UnifiedId.cs
 src/Apideck/Model/UnprocessableResponse.cs
+src/Apideck/Model/UpdateAccountingDepartmentResponse.cs
+src/Apideck/Model/UpdateAccountingLocationResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs
 src/Apideck/Model/UpdateApplicantResponse.cs
 src/Apideck/Model/UpdateApplicationResponse.cs
