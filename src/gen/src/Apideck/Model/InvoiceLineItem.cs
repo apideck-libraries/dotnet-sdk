@@ -60,7 +60,13 @@ namespace Apideck.Model
             /// Enum SubTotal for value: sub_total
             /// </summary>
             [EnumMember(Value = "sub_total")]
-            SubTotal = 4
+            SubTotal = 4,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 5
 
         }
 

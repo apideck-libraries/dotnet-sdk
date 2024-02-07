@@ -39,16 +39,22 @@ namespace Apideck.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum Item for value: expense_item
+            /// Enum ExpenseItem for value: expense_item
             /// </summary>
             [EnumMember(Value = "expense_item")]
-            Item = 1,
+            ExpenseItem = 1,
 
             /// <summary>
-            /// Enum Account for value: expense_account
+            /// Enum ExpenseAccount for value: expense_account
             /// </summary>
             [EnumMember(Value = "expense_account")]
-            Account = 2
+            ExpenseAccount = 2,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 3
 
         }
 
