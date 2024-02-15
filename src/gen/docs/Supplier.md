@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DisplayId** | **string** | Display ID | [optional] 
 **DisplayName** | **string** | Display name | [optional] 
 **CompanyName** | **string** | The name of the company. | [optional] 
+**CompanyId** | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 **Title** | **string** | The job title of the person. | [optional] 
 **FirstName** | **string** | The first name of the person. | [optional] 
 **MiddleName** | **string** | Middle name of the person. | [optional] 

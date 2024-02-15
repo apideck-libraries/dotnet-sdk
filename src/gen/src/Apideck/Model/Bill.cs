@@ -106,6 +106,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="billNumber">Reference to supplier bill number.</param>
         /// <param name="supplier">supplier.</param>
+        /// <param name="companyId">The company or subsidiary id the transaction belongs to.</param>
         /// <param name="currency">currency.</param>
         /// <param name="currencyRate">Currency Exchange Rate at the time entity was recorded/generated..</param>
         /// <param name="taxInclusive">Amounts are including tax.</param>
@@ -132,10 +133,11 @@ namespace Apideck.Model
         /// <param name="bankAccount">bankAccount.</param>
         /// <param name="discountPercentage">Discount percentage applied to this transaction..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), string rowVersion = default(string))
+        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), string rowVersion = default(string))
         {
             this.BillNumber = billNumber;
             this.Supplier = supplier;
+            this.CompanyId = companyId;
             this.Currency = currency;
             this.CurrencyRate = currencyRate;
             this.TaxInclusive = taxInclusive;
@@ -206,6 +208,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "supplier", EmitDefaultValue = true)]
         public LinkedSupplier Supplier { get; set; }
+
+        /// <summary>
+        /// The company or subsidiary id the transaction belongs to
+        /// </summary>
+        /// <value>The company or subsidiary id the transaction belongs to</value>
+        [DataMember(Name = "company_id", EmitDefaultValue = true)]
+        public string CompanyId { get; set; }
 
         /// <summary>
         /// Currency Exchange Rate at the time entity was recorded/generated.
@@ -461,6 +470,7 @@ namespace Apideck.Model
             sb.Append("  DownstreamId: ").Append(DownstreamId).Append("\n");
             sb.Append("  BillNumber: ").Append(BillNumber).Append("\n");
             sb.Append("  Supplier: ").Append(Supplier).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  CurrencyRate: ").Append(CurrencyRate).Append("\n");
             sb.Append("  TaxInclusive: ").Append(TaxInclusive).Append("\n");
@@ -546,6 +556,11 @@ namespace Apideck.Model
                     this.Supplier == input.Supplier ||
                     (this.Supplier != null &&
                     this.Supplier.Equals(input.Supplier))
+                ) && 
+                (
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
                 ) && 
                 (
                     this.Currency == input.Currency ||
@@ -727,6 +742,10 @@ namespace Apideck.Model
                 if (this.Supplier != null)
                 {
                     hashCode = (hashCode * 59) + this.Supplier.GetHashCode();
+                }
+                if (this.CompanyId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 if (this.CurrencyRate != null)

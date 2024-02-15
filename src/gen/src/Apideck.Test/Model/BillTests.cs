@@ -89,6 +89,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Supplier'
         }
         /// <summary>
+        /// Test the property 'CompanyId'
+        /// </summary>
+        [Fact]
+        public void CompanyIdTest()
+        {
+            // TODO unit test for the property 'CompanyId'
+        }
+        /// <summary>
         /// Test the property 'Currency'
         /// </summary>
         [Fact]

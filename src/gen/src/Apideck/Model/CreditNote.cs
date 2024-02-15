@@ -121,6 +121,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="number">Credit note number..</param>
         /// <param name="customer">customer.</param>
+        /// <param name="companyId">The company or subsidiary id the transaction belongs to.</param>
         /// <param name="currency">currency.</param>
         /// <param name="currencyRate">Currency Exchange Rate at the time entity was recorded/generated..</param>
         /// <param name="taxInclusive">Amounts are including tax.</param>
@@ -141,11 +142,12 @@ namespace Apideck.Model
         /// <param name="note">Optional note to be associated with the credit note..</param>
         /// <param name="terms">Optional terms to be associated with the credit note..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Object> allocations = default(List<Object>), string note = default(string), string terms = default(string), string rowVersion = default(string))
+        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Object> allocations = default(List<Object>), string note = default(string), string terms = default(string), string rowVersion = default(string))
         {
             this.TotalAmount = totalAmount;
             this.Number = number;
             this.Customer = customer;
+            this.CompanyId = companyId;
             this.Currency = currency;
             this.CurrencyRate = currencyRate;
             this.TaxInclusive = taxInclusive;
@@ -194,6 +196,13 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "customer", EmitDefaultValue = true)]
         public LinkedCustomer Customer { get; set; }
+
+        /// <summary>
+        /// The company or subsidiary id the transaction belongs to
+        /// </summary>
+        /// <value>The company or subsidiary id the transaction belongs to</value>
+        [DataMember(Name = "company_id", EmitDefaultValue = true)]
+        public string CompanyId { get; set; }
 
         /// <summary>
         /// Currency Exchange Rate at the time entity was recorded/generated.
@@ -397,6 +406,7 @@ namespace Apideck.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  Customer: ").Append(Customer).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  CurrencyRate: ").Append(CurrencyRate).Append("\n");
             sb.Append("  TaxInclusive: ").Append(TaxInclusive).Append("\n");
@@ -471,6 +481,11 @@ namespace Apideck.Model
                     this.Customer == input.Customer ||
                     (this.Customer != null &&
                     this.Customer.Equals(input.Customer))
+                ) && 
+                (
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
                 ) && 
                 (
                     this.Currency == input.Currency ||
@@ -617,6 +632,10 @@ namespace Apideck.Model
                 if (this.Customer != null)
                 {
                     hashCode = (hashCode * 59) + this.Customer.GetHashCode();
+                }
+                if (this.CompanyId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 if (this.CurrencyRate != null)
