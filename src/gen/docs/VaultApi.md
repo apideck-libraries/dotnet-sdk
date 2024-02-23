@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**ConnectionsDelete**](VaultApi.md#connectionsdelete) | **DELETE** /vault/connections/{unified_api}/{service_id} | Deletes a connection
 [**ConnectionsImport**](VaultApi.md#connectionsimport) | **POST** /vault/connections/{unified_api}/{service_id}/import | Import connection
 [**ConnectionsOne**](VaultApi.md#connectionsone) | **GET** /vault/connections/{unified_api}/{service_id} | Get connection
+[**ConnectionsToken**](VaultApi.md#connectionstoken) | **POST** /vault/connections/{unified_api}/{service_id}/token | Authorize Access Token
 [**ConnectionsUpdate**](VaultApi.md#connectionsupdate) | **PATCH** /vault/connections/{unified_api}/{service_id} | Update connection
 [**ConsumerRequestCountsAll**](VaultApi.md#consumerrequestcountsall) | **GET** /vault/consumers/{consumer_id}/stats | Consumer request counts
 [**ConsumersAdd**](VaultApi.md#consumersadd) | **POST** /vault/consumers | Create consumer
@@ -541,6 +542,96 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connection |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="connectionstoken"></a>
+# **ConnectionsToken**
+> GetConnectionResponse ConnectionsToken (string serviceId, string unifiedApi, string consumerId = null, string appId = null, Object body = null)
+
+Authorize Access Token
+
+Triggers exchanging persisted connection credentials for an access token and store it in Vault. Currently supported for connections with the `client_credentials` or `password` OAuth grant type.  Note:   - Do not include any credentials in the request body. This operation does not persist changes, but only triggers the exchange of persisted connection credentials for an access token.   - The access token will not be returned in the response. A 200 response code indicates the authorization was successful and that a valid access token was stored on the connection.   - The access token will be used for subsequent API requests. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionsTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var body = null;  // Object |  (optional) 
+
+            try
+            {
+                // Authorize Access Token
+                GetConnectionResponse result = apiInstance.ConnectionsToken(serviceId, unifiedApi, consumerId, appId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionsToken: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **body** | **Object**|  | [optional] 
+
+### Return type
+
+[**GetConnectionResponse**](GetConnectionResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
