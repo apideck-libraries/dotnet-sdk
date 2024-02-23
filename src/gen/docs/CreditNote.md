@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Unique identifier representing the entity | [readonly] 
 **Number** | **string** | Credit note number. | [optional] 
 **Customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
+**CompanyId** | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **TaxInclusive** | **bool?** | Amounts are including tax | [optional] 

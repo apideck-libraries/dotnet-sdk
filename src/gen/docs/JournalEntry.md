@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Title** | **string** | Journal entry title | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **Currency** | **Currency** |  | [optional] 
-**CompanyId** | **string** | The company or subsidiary the journal entry belongs to | [optional] 
+**CompanyId** | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 **LineItems** | [**List&lt;JournalEntryLineItem&gt;**](JournalEntryLineItem.md) | Requires a minimum of 2 line items that sum to 0 | [optional] 
 **Memo** | **string** | Reference for the journal entry. | [optional] 
 **PostedAt** | **DateTime** | This is the date on which the journal entry was added. This can be different from the creation date and can also be backdated. | [optional] 

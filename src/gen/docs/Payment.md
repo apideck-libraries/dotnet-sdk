@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **TransactionDate** | **DateTime** | Date transaction was entered - YYYY:MM::DDThh:mm:ss.sTZD | 
 **Customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 **Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
+**CompanyId** | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 **Reconciled** | **bool** | Payment has been reconciled | [optional] 
 **Status** | **string** | Status of payment | [optional] 
 **Type** | **string** | Type of payment | [optional] 

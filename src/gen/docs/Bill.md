@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **BillNumber** | **string** | Reference to supplier bill number | [optional] 
 **Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
+**CompanyId** | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **TaxInclusive** | **bool?** | Amounts are including tax | [optional] 
