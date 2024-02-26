@@ -412,8 +412,9 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <returns>GetCustomFieldsResponse</returns>
-        GetCustomFieldsResponse CustomFieldsAll(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string));
+        GetCustomFieldsResponse CustomFieldsAll(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string));
 
         /// <summary>
         /// Get resource custom fields
@@ -427,8 +428,9 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <returns>ApiResponse of GetCustomFieldsResponse</returns>
-        ApiResponse<GetCustomFieldsResponse> CustomFieldsAllWithHttpInfo(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string));
+        ApiResponse<GetCustomFieldsResponse> CustomFieldsAllWithHttpInfo(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string));
         /// <summary>
         /// Get all consumer request logs
         /// </summary>
@@ -906,9 +908,10 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCustomFieldsResponse</returns>
-        System.Threading.Tasks.Task<GetCustomFieldsResponse> CustomFieldsAllAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetCustomFieldsResponse> CustomFieldsAllAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get resource custom fields
@@ -922,9 +925,10 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCustomFieldsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetCustomFieldsResponse>> CustomFieldsAllWithHttpInfoAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetCustomFieldsResponse>> CustomFieldsAllWithHttpInfoAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get all consumer request logs
         /// </summary>
@@ -3690,10 +3694,11 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <returns>GetCustomFieldsResponse</returns>
-        public GetCustomFieldsResponse CustomFieldsAll(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string))
+        public GetCustomFieldsResponse CustomFieldsAll(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string))
         {
-            Apideck.Client.ApiResponse<GetCustomFieldsResponse> localVarResponse = CustomFieldsAllWithHttpInfo(unifiedApi, serviceId, resource, consumerId, appId);
+            Apideck.Client.ApiResponse<GetCustomFieldsResponse> localVarResponse = CustomFieldsAllWithHttpInfo(unifiedApi, serviceId, resource, consumerId, appId, resourceId);
             return localVarResponse.Data;
         }
 
@@ -3706,8 +3711,9 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <returns>ApiResponse of GetCustomFieldsResponse</returns>
-        public Apideck.Client.ApiResponse<GetCustomFieldsResponse> CustomFieldsAllWithHttpInfo(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string))
+        public Apideck.Client.ApiResponse<GetCustomFieldsResponse> CustomFieldsAllWithHttpInfo(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string))
         {
             // verify the required parameter 'unifiedApi' is set
             if (unifiedApi == null)
@@ -3752,6 +3758,10 @@ namespace Apideck.Api
             localVarRequestOptions.PathParameters.Add("unified_api", Apideck.Client.ClientUtils.ParameterToString(unifiedApi)); // path parameter
             localVarRequestOptions.PathParameters.Add("service_id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("resource", Apideck.Client.ClientUtils.ParameterToString(resource)); // path parameter
+            if (resourceId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "resource_id", resourceId));
+            }
             if (consumerId != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter
@@ -3790,11 +3800,12 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetCustomFieldsResponse</returns>
-        public async System.Threading.Tasks.Task<GetCustomFieldsResponse> CustomFieldsAllAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetCustomFieldsResponse> CustomFieldsAllAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetCustomFieldsResponse> localVarResponse = await CustomFieldsAllWithHttpInfoAsync(unifiedApi, serviceId, resource, consumerId, appId, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetCustomFieldsResponse> localVarResponse = await CustomFieldsAllWithHttpInfoAsync(unifiedApi, serviceId, resource, consumerId, appId, resourceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3807,9 +3818,10 @@ namespace Apideck.Api
         /// <param name="resource">Name of the resource (plural)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
+        /// <param name="resourceId">This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetCustomFieldsResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCustomFieldsResponse>> CustomFieldsAllWithHttpInfoAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetCustomFieldsResponse>> CustomFieldsAllWithHttpInfoAsync(string unifiedApi, string serviceId, string resource, string consumerId = default(string), string appId = default(string), string resourceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'unifiedApi' is set
             if (unifiedApi == null)
@@ -3855,6 +3867,10 @@ namespace Apideck.Api
             localVarRequestOptions.PathParameters.Add("unified_api", Apideck.Client.ClientUtils.ParameterToString(unifiedApi)); // path parameter
             localVarRequestOptions.PathParameters.Add("service_id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("resource", Apideck.Client.ClientUtils.ParameterToString(resource)); // path parameter
+            if (resourceId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "resource_id", resourceId));
+            }
             if (consumerId != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-consumer-id", Apideck.Client.ClientUtils.ParameterToString(consumerId)); // header parameter

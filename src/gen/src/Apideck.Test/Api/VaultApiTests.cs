@@ -273,7 +273,8 @@ namespace Apideck.Test.Api
             //string resource = null;
             //string consumerId = null;
             //string appId = null;
-            //var response = instance.CustomFieldsAll(unifiedApi, serviceId, resource, consumerId, appId);
+            //string resourceId = null;
+            //var response = instance.CustomFieldsAll(unifiedApi, serviceId, resource, consumerId, appId, resourceId);
             //Assert.IsType<GetCustomFieldsResponse>(response);
         }
 
