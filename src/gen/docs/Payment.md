@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **Type** | **string** | Type of payment | [optional] 
 **Allocations** | [**List&lt;PaymentAllocations&gt;**](PaymentAllocations.md) |  | [optional] 
 **Note** | **string** | Optional note to be associated with the payment. | [optional] 
+**Number** | **string** | Payment number. | [optional] 
+**CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **DisplayId** | **string** | Payment id to be displayed. | [optional] 
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 

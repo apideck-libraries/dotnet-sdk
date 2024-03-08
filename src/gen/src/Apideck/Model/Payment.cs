@@ -168,9 +168,11 @@ namespace Apideck.Model
         /// <param name="type">Type of payment.</param>
         /// <param name="allocations">allocations.</param>
         /// <param name="note">Optional note to be associated with the payment..</param>
+        /// <param name="number">Payment number..</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="displayId">Payment id to be displayed..</param>
-        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string paymentMethodId = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string rowVersion = default(string), string displayId = default(string))
+        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string paymentMethodId = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string number = default(string), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string), string displayId = default(string))
         {
             this.TotalAmount = totalAmount;
             this.TransactionDate = transactionDate;
@@ -191,6 +193,8 @@ namespace Apideck.Model
             this.Type = type;
             this.Allocations = allocations;
             this.Note = note;
+            this.Number = number;
+            this.CustomFields = customFields;
             this.RowVersion = rowVersion;
             this.DisplayId = displayId;
         }
@@ -336,6 +340,19 @@ namespace Apideck.Model
         public string Note { get; set; }
 
         /// <summary>
+        /// Payment number.
+        /// </summary>
+        /// <value>Payment number.</value>
+        [DataMember(Name = "number", EmitDefaultValue = true)]
+        public string Number { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -453,6 +470,8 @@ namespace Apideck.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Allocations: ").Append(Allocations).Append("\n");
             sb.Append("  Note: ").Append(Note).Append("\n");
+            sb.Append("  Number: ").Append(Number).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  DisplayId: ").Append(DisplayId).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
@@ -597,6 +616,17 @@ namespace Apideck.Model
                     this.Note.Equals(input.Note))
                 ) && 
                 (
+                    this.Number == input.Number ||
+                    (this.Number != null &&
+                    this.Number.Equals(input.Number))
+                ) && 
+                (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -710,6 +740,14 @@ namespace Apideck.Model
                 if (this.Note != null)
                 {
                     hashCode = (hashCode * 59) + this.Note.GetHashCode();
+                }
+                if (this.Number != null)
+                {
+                    hashCode = (hashCode * 59) + this.Number.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

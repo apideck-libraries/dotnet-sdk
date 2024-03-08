@@ -241,6 +241,22 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Terms'
         }
         /// <summary>
+        /// Test the property 'BillingAddress'
+        /// </summary>
+        [Fact]
+        public void BillingAddressTest()
+        {
+            // TODO unit test for the property 'BillingAddress'
+        }
+        /// <summary>
+        /// Test the property 'ShippingAddress'
+        /// </summary>
+        [Fact]
+        public void ShippingAddressTest()
+        {
+            // TODO unit test for the property 'ShippingAddress'
+        }
+        /// <summary>
         /// Test the property 'CustomMappings'
         /// </summary>
         [Fact]
