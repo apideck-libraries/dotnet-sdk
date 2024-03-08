@@ -143,8 +143,9 @@ namespace Apideck.Model
         /// <param name="terms">Optional terms to be associated with the credit note..</param>
         /// <param name="billingAddress">billingAddress.</param>
         /// <param name="shippingAddress">shippingAddress.</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Object> allocations = default(List<Object>), string note = default(string), string terms = default(string), Address billingAddress = default(Address), Address shippingAddress = default(Address), string rowVersion = default(string))
+        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Object> allocations = default(List<Object>), string note = default(string), string terms = default(string), Address billingAddress = default(Address), Address shippingAddress = default(Address), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string))
         {
             this.TotalAmount = totalAmount;
             this.Number = number;
@@ -170,6 +171,7 @@ namespace Apideck.Model
             this.Terms = terms;
             this.BillingAddress = billingAddress;
             this.ShippingAddress = shippingAddress;
+            this.CustomFields = customFields;
             this.RowVersion = rowVersion;
         }
 
@@ -345,6 +347,12 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -445,6 +453,7 @@ namespace Apideck.Model
             sb.Append("  BillingAddress: ").Append(BillingAddress).Append("\n");
             sb.Append("  ShippingAddress: ").Append(ShippingAddress).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -614,6 +623,12 @@ namespace Apideck.Model
                     this.CustomMappings.Equals(input.CustomMappings))
                 ) && 
                 (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -740,6 +755,10 @@ namespace Apideck.Model
                 if (this.CustomMappings != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {

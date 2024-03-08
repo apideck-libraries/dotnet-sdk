@@ -201,6 +201,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'LedgerAccount'
         }
         /// <summary>
+        /// Test the property 'CustomFields'
+        /// </summary>
+        [Fact]
+        public void CustomFieldsTest()
+        {
+            // TODO unit test for the property 'CustomFields'
+        }
+        /// <summary>
         /// Test the property 'RowVersion'
         /// </summary>
         [Fact]

@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **Item** | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 **TaxRate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
+**CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

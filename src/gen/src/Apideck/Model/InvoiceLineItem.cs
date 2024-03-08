@@ -97,8 +97,9 @@ namespace Apideck.Model
         /// <param name="item">item.</param>
         /// <param name="taxRate">taxRate.</param>
         /// <param name="ledgerAccount">ledgerAccount.</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public InvoiceLineItem(string rowId = default(string), string code = default(string), int? lineNumber = default(int?), string description = default(string), TypeEnum? type = default(TypeEnum?), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), string unitOfMeasure = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), string locationId = default(string), string departmentId = default(string), LinkedInvoiceItem item = default(LinkedInvoiceItem), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string rowVersion = default(string))
+        public InvoiceLineItem(string rowId = default(string), string code = default(string), int? lineNumber = default(int?), string description = default(string), TypeEnum? type = default(TypeEnum?), decimal? taxAmount = default(decimal?), decimal? totalAmount = default(decimal?), decimal? quantity = default(decimal?), decimal? unitPrice = default(decimal?), string unitOfMeasure = default(string), decimal? discountPercentage = default(decimal?), decimal? discountAmount = default(decimal?), string locationId = default(string), string departmentId = default(string), LinkedInvoiceItem item = default(LinkedInvoiceItem), LinkedTaxRate taxRate = default(LinkedTaxRate), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string))
         {
             this.RowId = rowId;
             this.Code = code;
@@ -117,6 +118,7 @@ namespace Apideck.Model
             this.Item = item;
             this.TaxRate = taxRate;
             this.LedgerAccount = ledgerAccount;
+            this.CustomFields = customFields;
             this.RowVersion = rowVersion;
         }
 
@@ -243,6 +245,12 @@ namespace Apideck.Model
         public LinkedLedgerAccount LedgerAccount { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -335,6 +343,7 @@ namespace Apideck.Model
             sb.Append("  Item: ").Append(Item).Append("\n");
             sb.Append("  TaxRate: ").Append(TaxRate).Append("\n");
             sb.Append("  LedgerAccount: ").Append(LedgerAccount).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -465,6 +474,12 @@ namespace Apideck.Model
                     this.LedgerAccount.Equals(input.LedgerAccount))
                 ) && 
                 (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -568,6 +583,10 @@ namespace Apideck.Model
                 if (this.LedgerAccount != null)
                 {
                     hashCode = (hashCode * 59) + this.LedgerAccount.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {
