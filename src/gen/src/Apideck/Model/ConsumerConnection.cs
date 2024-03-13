@@ -37,50 +37,12 @@ namespace Apideck.Model
         /// </summary>
         [DataMember(Name = "auth_type", EmitDefaultValue = false)]
         public AuthType? AuthType { get; set; }
-        /// <summary>
-        /// Defines State
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StateEnum
-        {
-            /// <summary>
-            /// Enum Available for value: available
-            /// </summary>
-            [EnumMember(Value = "available")]
-            Available = 1,
-
-            /// <summary>
-            /// Enum Callable for value: callable
-            /// </summary>
-            [EnumMember(Value = "callable")]
-            Callable = 2,
-
-            /// <summary>
-            /// Enum Added for value: added
-            /// </summary>
-            [EnumMember(Value = "added")]
-            Added = 3,
-
-            /// <summary>
-            /// Enum Configured for value: configured
-            /// </summary>
-            [EnumMember(Value = "configured")]
-            Configured = 4,
-
-            /// <summary>
-            /// Enum Authorized for value: authorized
-            /// </summary>
-            [EnumMember(Value = "authorized")]
-            Authorized = 5
-
-        }
-
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
         [DataMember(Name = "state", EmitDefaultValue = false)]
-        public StateEnum? State { get; set; }
+        public ConnectionState? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsumerConnection" /> class.
         /// </summary>
@@ -97,7 +59,7 @@ namespace Apideck.Model
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
         /// <param name="state">state.</param>
-        public ConsumerConnection(string name = default(string), string icon = default(string), string logo = default(string), string serviceId = default(string), string unifiedApi = default(string), string consumerId = default(string), AuthType? authType = default(AuthType?), bool enabled = default(bool), Object settings = default(Object), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string createdAt = default(string), string updatedAt = default(string), StateEnum? state = default(StateEnum?))
+        public ConsumerConnection(string name = default(string), string icon = default(string), string logo = default(string), string serviceId = default(string), string unifiedApi = default(string), string consumerId = default(string), AuthType? authType = default(AuthType?), bool enabled = default(bool), Object settings = default(Object), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string createdAt = default(string), string updatedAt = default(string), ConnectionState? state = default(ConnectionState?))
         {
             this.Name = name;
             this.Icon = icon;
