@@ -1200,13 +1200,13 @@ namespace Apideck.Api
         /// Create Ledger Account
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>CreateLedgerAccountResponse</returns>
-        CreateLedgerAccountResponse LedgerAccountsAdd(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        CreateLedgerAccountResponse LedgerAccountsAdd(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
 
         /// <summary>
         /// Create Ledger Account
@@ -1215,13 +1215,13 @@ namespace Apideck.Api
         /// Create Ledger Account
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>ApiResponse of CreateLedgerAccountResponse</returns>
-        ApiResponse<CreateLedgerAccountResponse> LedgerAccountsAddWithHttpInfo(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
+        ApiResponse<CreateLedgerAccountResponse> LedgerAccountsAddWithHttpInfo(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string));
         /// <summary>
         /// List Ledger Accounts
         /// </summary>
@@ -1329,13 +1329,13 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>UpdateLedgerAccountResponse</returns>
-        UpdateLedgerAccountResponse LedgerAccountsUpdate(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        UpdateLedgerAccountResponse LedgerAccountsUpdate(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
 
         /// <summary>
         /// Update Ledger Account
@@ -1345,13 +1345,13 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of UpdateLedgerAccountResponse</returns>
-        ApiResponse<UpdateLedgerAccountResponse> LedgerAccountsUpdateWithHttpInfo(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        ApiResponse<UpdateLedgerAccountResponse> LedgerAccountsUpdateWithHttpInfo(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
         /// <summary>
         /// Create Location
         /// </summary>
@@ -3580,14 +3580,14 @@ namespace Apideck.Api
         /// Create Ledger Account
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateLedgerAccountResponse</returns>
-        System.Threading.Tasks.Task<CreateLedgerAccountResponse> LedgerAccountsAddAsync(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateLedgerAccountResponse> LedgerAccountsAddAsync(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Ledger Account
@@ -3596,14 +3596,14 @@ namespace Apideck.Api
         /// Create Ledger Account
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateLedgerAccountResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateLedgerAccountResponse>> LedgerAccountsAddWithHttpInfoAsync(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateLedgerAccountResponse>> LedgerAccountsAddWithHttpInfoAsync(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Ledger Accounts
         /// </summary>
@@ -3717,14 +3717,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateLedgerAccountResponse</returns>
-        System.Threading.Tasks.Task<UpdateLedgerAccountResponse> LedgerAccountsUpdateAsync(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateLedgerAccountResponse> LedgerAccountsUpdateAsync(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Ledger Account
@@ -3734,14 +3734,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateLedgerAccountResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateLedgerAccountResponse>> LedgerAccountsUpdateWithHttpInfoAsync(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateLedgerAccountResponse>> LedgerAccountsUpdateWithHttpInfoAsync(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Location
         /// </summary>
@@ -12691,15 +12691,15 @@ namespace Apideck.Api
         /// Create Ledger Account Create Ledger Account
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>CreateLedgerAccountResponse</returns>
-        public CreateLedgerAccountResponse LedgerAccountsAdd(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        public CreateLedgerAccountResponse LedgerAccountsAdd(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
         {
-            Apideck.Client.ApiResponse<CreateLedgerAccountResponse> localVarResponse = LedgerAccountsAddWithHttpInfo(requestBody, raw, consumerId, appId, serviceId);
+            Apideck.Client.ApiResponse<CreateLedgerAccountResponse> localVarResponse = LedgerAccountsAddWithHttpInfo(ledgerAccount, raw, consumerId, appId, serviceId);
             return localVarResponse.Data;
         }
 
@@ -12707,18 +12707,18 @@ namespace Apideck.Api
         /// Create Ledger Account Create Ledger Account
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <returns>ApiResponse of CreateLedgerAccountResponse</returns>
-        public Apideck.Client.ApiResponse<CreateLedgerAccountResponse> LedgerAccountsAddWithHttpInfo(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
+        public Apideck.Client.ApiResponse<CreateLedgerAccountResponse> LedgerAccountsAddWithHttpInfo(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string))
         {
-            // verify the required parameter 'requestBody' is set
-            if (requestBody == null)
+            // verify the required parameter 'ledgerAccount' is set
+            if (ledgerAccount == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'requestBody' when calling AccountingApi->LedgerAccountsAdd");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'ledgerAccount' when calling AccountingApi->LedgerAccountsAdd");
             }
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -12760,7 +12760,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = ledgerAccount;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -12786,16 +12786,16 @@ namespace Apideck.Api
         /// Create Ledger Account Create Ledger Account
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateLedgerAccountResponse</returns>
-        public async System.Threading.Tasks.Task<CreateLedgerAccountResponse> LedgerAccountsAddAsync(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateLedgerAccountResponse> LedgerAccountsAddAsync(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<CreateLedgerAccountResponse> localVarResponse = await LedgerAccountsAddWithHttpInfoAsync(requestBody, raw, consumerId, appId, serviceId, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<CreateLedgerAccountResponse> localVarResponse = await LedgerAccountsAddWithHttpInfoAsync(ledgerAccount, raw, consumerId, appId, serviceId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -12803,19 +12803,19 @@ namespace Apideck.Api
         /// Create Ledger Account Create Ledger Account
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateLedgerAccountResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<CreateLedgerAccountResponse>> LedgerAccountsAddWithHttpInfoAsync(Dictionary<string, Object> requestBody, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<CreateLedgerAccountResponse>> LedgerAccountsAddWithHttpInfoAsync(LedgerAccount ledgerAccount, bool? raw = default(bool?), string consumerId = default(string), string appId = default(string), string serviceId = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'requestBody' is set
-            if (requestBody == null)
+            // verify the required parameter 'ledgerAccount' is set
+            if (ledgerAccount == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'requestBody' when calling AccountingApi->LedgerAccountsAdd");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'ledgerAccount' when calling AccountingApi->LedgerAccountsAdd");
             }
 
 
@@ -12858,7 +12858,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = ledgerAccount;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -13541,15 +13541,15 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>UpdateLedgerAccountResponse</returns>
-        public UpdateLedgerAccountResponse LedgerAccountsUpdate(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public UpdateLedgerAccountResponse LedgerAccountsUpdate(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
-            Apideck.Client.ApiResponse<UpdateLedgerAccountResponse> localVarResponse = LedgerAccountsUpdateWithHttpInfo(id, requestBody, consumerId, appId, serviceId, raw);
+            Apideck.Client.ApiResponse<UpdateLedgerAccountResponse> localVarResponse = LedgerAccountsUpdateWithHttpInfo(id, ledgerAccount, consumerId, appId, serviceId, raw);
             return localVarResponse.Data;
         }
 
@@ -13558,13 +13558,13 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of UpdateLedgerAccountResponse</returns>
-        public Apideck.Client.ApiResponse<UpdateLedgerAccountResponse> LedgerAccountsUpdateWithHttpInfo(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public Apideck.Client.ApiResponse<UpdateLedgerAccountResponse> LedgerAccountsUpdateWithHttpInfo(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -13572,10 +13572,10 @@ namespace Apideck.Api
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AccountingApi->LedgerAccountsUpdate");
             }
 
-            // verify the required parameter 'requestBody' is set
-            if (requestBody == null)
+            // verify the required parameter 'ledgerAccount' is set
+            if (ledgerAccount == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'requestBody' when calling AccountingApi->LedgerAccountsUpdate");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'ledgerAccount' when calling AccountingApi->LedgerAccountsUpdate");
             }
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -13618,7 +13618,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = ledgerAccount;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -13645,16 +13645,16 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateLedgerAccountResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateLedgerAccountResponse> LedgerAccountsUpdateAsync(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateLedgerAccountResponse> LedgerAccountsUpdateAsync(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<UpdateLedgerAccountResponse> localVarResponse = await LedgerAccountsUpdateWithHttpInfoAsync(id, requestBody, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<UpdateLedgerAccountResponse> localVarResponse = await LedgerAccountsUpdateWithHttpInfoAsync(id, ledgerAccount, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -13663,14 +13663,14 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
-        /// <param name="requestBody"></param>
+        /// <param name="ledgerAccount"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateLedgerAccountResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<UpdateLedgerAccountResponse>> LedgerAccountsUpdateWithHttpInfoAsync(string id, Dictionary<string, Object> requestBody, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<UpdateLedgerAccountResponse>> LedgerAccountsUpdateWithHttpInfoAsync(string id, LedgerAccount ledgerAccount, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -13678,10 +13678,10 @@ namespace Apideck.Api
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling AccountingApi->LedgerAccountsUpdate");
             }
 
-            // verify the required parameter 'requestBody' is set
-            if (requestBody == null)
+            // verify the required parameter 'ledgerAccount' is set
+            if (ledgerAccount == null)
             {
-                throw new Apideck.Client.ApiException(400, "Missing required parameter 'requestBody' when calling AccountingApi->LedgerAccountsUpdate");
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'ledgerAccount' when calling AccountingApi->LedgerAccountsUpdate");
             }
 
 
@@ -13725,7 +13725,7 @@ namespace Apideck.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("x-apideck-service-id", Apideck.Client.ClientUtils.ParameterToString(serviceId)); // header parameter
             }
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = ledgerAccount;
 
             // authentication (apiKey) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

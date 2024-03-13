@@ -29,7 +29,7 @@ namespace Apideck.Model
     /// LedgerAccount
     /// </summary>
     [DataContract(Name = "LedgerAccount")]
-    public partial class LedgerAccount : Dictionary<String, Object>, IEquatable<LedgerAccount>, IValidatableObject
+    public partial class LedgerAccount : IEquatable<LedgerAccount>, IValidatableObject
     {
         /// <summary>
         /// The classification of account.
@@ -303,7 +303,7 @@ namespace Apideck.Model
         /// <param name="subAccount">Whether the account is a sub account or not..</param>
         /// <param name="lastReconciliationDate">Reconciliation Date means the last calendar day of each Reconciliation Period..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public LedgerAccount(string displayId = default(string), string nominalCode = default(string), string code = default(string), ClassificationEnum? classification = default(ClassificationEnum?), TypeEnum? type = default(TypeEnum?), string subType = default(string), string name = default(string), string fullyQualifiedName = default(string), string description = default(string), decimal? openingBalance = default(decimal?), decimal? currentBalance = default(decimal?), Currency? currency = default(Currency?), string taxType = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), decimal? level = default(decimal?), bool? active = default(bool?), StatusEnum? status = default(StatusEnum?), bool? header = default(bool?), BankAccount bankAccount = default(BankAccount), LedgerAccountParentAccount parentAccount = default(LedgerAccountParentAccount), bool? subAccount = default(bool?), DateTime? lastReconciliationDate = default(DateTime?), string rowVersion = default(string)) : base()
+        public LedgerAccount(string displayId = default(string), string nominalCode = default(string), string code = default(string), ClassificationEnum? classification = default(ClassificationEnum?), TypeEnum? type = default(TypeEnum?), string subType = default(string), string name = default(string), string fullyQualifiedName = default(string), string description = default(string), decimal? openingBalance = default(decimal?), decimal? currentBalance = default(decimal?), Currency? currency = default(Currency?), string taxType = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), decimal? level = default(decimal?), bool? active = default(bool?), StatusEnum? status = default(StatusEnum?), bool? header = default(bool?), BankAccount bankAccount = default(BankAccount), LedgerAccountParentAccount parentAccount = default(LedgerAccountParentAccount), bool? subAccount = default(bool?), DateTime? lastReconciliationDate = default(DateTime?), string rowVersion = default(string))
         {
             this.DisplayId = displayId;
             this.NominalCode = nominalCode;
@@ -328,7 +328,6 @@ namespace Apideck.Model
             this.SubAccount = subAccount;
             this.LastReconciliationDate = lastReconciliationDate;
             this.RowVersion = rowVersion;
-            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -583,12 +582,6 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets additional properties
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalProperties { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -596,7 +589,6 @@ namespace Apideck.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class LedgerAccount {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DisplayId: ").Append(DisplayId).Append("\n");
             sb.Append("  NominalCode: ").Append(NominalCode).Append("\n");
@@ -628,7 +620,6 @@ namespace Apideck.Model
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
-            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -637,7 +628,7 @@ namespace Apideck.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
@@ -663,161 +654,160 @@ namespace Apideck.Model
             {
                 return false;
             }
-            return base.Equals(input) && 
+            return 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.DisplayId == input.DisplayId ||
                     (this.DisplayId != null &&
                     this.DisplayId.Equals(input.DisplayId))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.NominalCode == input.NominalCode ||
                     (this.NominalCode != null &&
                     this.NominalCode.Equals(input.NominalCode))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Code == input.Code ||
                     (this.Code != null &&
                     this.Code.Equals(input.Code))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Classification == input.Classification ||
                     this.Classification.Equals(input.Classification)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.SubType == input.SubType ||
                     (this.SubType != null &&
                     this.SubType.Equals(input.SubType))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.FullyQualifiedName == input.FullyQualifiedName ||
                     (this.FullyQualifiedName != null &&
                     this.FullyQualifiedName.Equals(input.FullyQualifiedName))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.OpeningBalance == input.OpeningBalance ||
                     (this.OpeningBalance != null &&
                     this.OpeningBalance.Equals(input.OpeningBalance))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.CurrentBalance == input.CurrentBalance ||
                     (this.CurrentBalance != null &&
                     this.CurrentBalance.Equals(input.CurrentBalance))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Currency == input.Currency ||
                     this.Currency.Equals(input.Currency)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.TaxType == input.TaxType ||
                     (this.TaxType != null &&
                     this.TaxType.Equals(input.TaxType))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.TaxRate == input.TaxRate ||
                     (this.TaxRate != null &&
                     this.TaxRate.Equals(input.TaxRate))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Level == input.Level ||
                     (this.Level != null &&
                     this.Level.Equals(input.Level))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Active == input.Active ||
                     (this.Active != null &&
                     this.Active.Equals(input.Active))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Status == input.Status ||
                     this.Status.Equals(input.Status)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Header == input.Header ||
                     (this.Header != null &&
                     this.Header.Equals(input.Header))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.BankAccount == input.BankAccount ||
                     (this.BankAccount != null &&
                     this.BankAccount.Equals(input.BankAccount))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.Categories == input.Categories ||
                     this.Categories != null &&
                     input.Categories != null &&
                     this.Categories.SequenceEqual(input.Categories)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.ParentAccount == input.ParentAccount ||
                     (this.ParentAccount != null &&
                     this.ParentAccount.Equals(input.ParentAccount))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.SubAccount == input.SubAccount ||
                     (this.SubAccount != null &&
                     this.SubAccount.Equals(input.SubAccount))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.SubAccounts == input.SubAccounts ||
                     this.SubAccounts != null &&
                     input.SubAccounts != null &&
                     this.SubAccounts.SequenceEqual(input.SubAccounts)
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.LastReconciliationDate == input.LastReconciliationDate ||
                     (this.LastReconciliationDate != null &&
                     this.LastReconciliationDate.Equals(input.LastReconciliationDate))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.CustomMappings == input.CustomMappings ||
                     (this.CustomMappings != null &&
                     this.CustomMappings.Equals(input.CustomMappings))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.CreatedBy == input.CreatedBy ||
                     (this.CreatedBy != null &&
                     this.CreatedBy.Equals(input.CreatedBy))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && base.Equals(input) && 
+                ) && 
                 (
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
-                )
-                && (this.AdditionalProperties.Count == input.AdditionalProperties.Count && !this.AdditionalProperties.Except(input.AdditionalProperties).Any());
+                );
         }
 
         /// <summary>
@@ -828,7 +818,7 @@ namespace Apideck.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
+                int hashCode = 41;
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
@@ -940,10 +930,6 @@ namespace Apideck.Model
                 if (this.CreatedAt != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
-                }
-                if (this.AdditionalProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
                 }
                 return hashCode;
             }

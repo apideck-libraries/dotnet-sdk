@@ -700,12 +700,12 @@ namespace Apideck.Test.Api
         public void LedgerAccountsAddTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //Dictionary<string, Object> requestBody = null;
+            //LedgerAccount ledgerAccount = null;
             //bool? raw = null;
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
-            //var response = instance.LedgerAccountsAdd(requestBody, raw, consumerId, appId, serviceId);
+            //var response = instance.LedgerAccountsAdd(ledgerAccount, raw, consumerId, appId, serviceId);
             //Assert.IsType<CreateLedgerAccountResponse>(response);
         }
 
@@ -771,12 +771,12 @@ namespace Apideck.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
-            //Dictionary<string, Object> requestBody = null;
+            //LedgerAccount ledgerAccount = null;
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.LedgerAccountsUpdate(id, requestBody, consumerId, appId, serviceId, raw);
+            //var response = instance.LedgerAccountsUpdate(id, ledgerAccount, consumerId, appId, serviceId, raw);
             //Assert.IsType<UpdateLedgerAccountResponse>(response);
         }
 
