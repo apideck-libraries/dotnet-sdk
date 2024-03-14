@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **PaymentUnit** | **PaymentUnit** |  | [optional] 
 **HiredAt** | **DateTime?** | The date on which the employee was hired by the organization | [optional] 
 **IsPrimary** | **bool?** | Indicates whether this the employee&#39;s primary job. | [optional] 
+**IsManager** | **bool?** | Indicates whether this the employee has a manager role. | [optional] 
 **Location** | [**Address**](Address.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

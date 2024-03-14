@@ -1252,7 +1252,7 @@ Name | Type | Description  | Notes
 
 <a name="customfieldsall"></a>
 # **CustomFieldsAll**
-> GetCustomFieldsResponse CustomFieldsAll (string unifiedApi, string serviceId, string resource, string consumerId = null, string appId = null)
+> GetCustomFieldsResponse CustomFieldsAll (string unifiedApi, string serviceId, string resource, string consumerId = null, string appId = null, string resourceId = null)
 
 Get resource custom fields
 
@@ -1285,11 +1285,12 @@ namespace Example
             var resource = leads;  // string | Name of the resource (plural)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var resourceId = 1234;  // string | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional) 
 
             try
             {
                 // Get resource custom fields
-                GetCustomFieldsResponse result = apiInstance.CustomFieldsAll(unifiedApi, serviceId, resource, consumerId, appId);
+                GetCustomFieldsResponse result = apiInstance.CustomFieldsAll(unifiedApi, serviceId, resource, consumerId, appId, resourceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1312,6 +1313,7 @@ Name | Type | Description  | Notes
  **resource** | **string**| Name of the resource (plural) | 
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
+ **resourceId** | **string**| This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. | [optional] 
 
 ### Return type
 

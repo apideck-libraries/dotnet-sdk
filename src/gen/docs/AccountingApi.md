@@ -3505,7 +3505,7 @@ Name | Type | Description  | Notes
 
 <a name="ledgeraccountsadd"></a>
 # **LedgerAccountsAdd**
-> CreateLedgerAccountResponse LedgerAccountsAdd (Dictionary<string, Object> requestBody, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+> CreateLedgerAccountResponse LedgerAccountsAdd (LedgerAccount ledgerAccount, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
 
 Create Ledger Account
 
@@ -3533,7 +3533,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new AccountingApi(config);
-            var requestBody = new Dictionary<string, Object>(); // Dictionary<string, Object> | 
+            var ledgerAccount = new LedgerAccount(); // LedgerAccount | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
@@ -3542,7 +3542,7 @@ namespace Example
             try
             {
                 // Create Ledger Account
-                CreateLedgerAccountResponse result = apiInstance.LedgerAccountsAdd(requestBody, raw, consumerId, appId, serviceId);
+                CreateLedgerAccountResponse result = apiInstance.LedgerAccountsAdd(ledgerAccount, raw, consumerId, appId, serviceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3560,7 +3560,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**Dictionary&lt;string, Object&gt;**](Object.md)|  | 
+ **ledgerAccount** | [**LedgerAccount**](LedgerAccount.md)|  | 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
@@ -3877,7 +3877,7 @@ Name | Type | Description  | Notes
 
 <a name="ledgeraccountsupdate"></a>
 # **LedgerAccountsUpdate**
-> UpdateLedgerAccountResponse LedgerAccountsUpdate (string id, Dictionary<string, Object> requestBody, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> UpdateLedgerAccountResponse LedgerAccountsUpdate (string id, LedgerAccount ledgerAccount, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
 
 Update Ledger Account
 
@@ -3906,7 +3906,7 @@ namespace Example
 
             var apiInstance = new AccountingApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var requestBody = new Dictionary<string, Object>(); // Dictionary<string, Object> | 
+            var ledgerAccount = new LedgerAccount(); // LedgerAccount | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
@@ -3915,7 +3915,7 @@ namespace Example
             try
             {
                 // Update Ledger Account
-                UpdateLedgerAccountResponse result = apiInstance.LedgerAccountsUpdate(id, requestBody, consumerId, appId, serviceId, raw);
+                UpdateLedgerAccountResponse result = apiInstance.LedgerAccountsUpdate(id, ledgerAccount, consumerId, appId, serviceId, raw);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3934,7 +3934,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of the record you are acting upon. | 
- **requestBody** | [**Dictionary&lt;string, Object&gt;**](Object.md)|  | 
+ **ledgerAccount** | [**LedgerAccount**](LedgerAccount.md)|  | 
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 

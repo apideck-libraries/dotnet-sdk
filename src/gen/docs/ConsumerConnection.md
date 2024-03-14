@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Metadata** | **Dictionary&lt;string, Object&gt;** | Attach your own consumer specific metadata | [optional] 
 **CreatedAt** | **string** |  | [optional] 
 **UpdatedAt** | **string** |  | [optional] 
-**State** | **string** |  | [optional] 
+**State** | **ConnectionState** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

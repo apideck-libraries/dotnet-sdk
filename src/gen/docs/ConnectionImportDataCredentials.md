@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RefreshToken** | **string** | The refresh token can be used to obtain a new access token. | 
+**RefreshToken** | **string** | The refresh token can be used to obtain a new access token. | [optional] 
 **AccessToken** | **string** | Access token | [optional] 
 **IssuedAt** | **DateTime?** | The datetime at which the token was issued. If omitted the token will be queued for refresh. | [optional] 
 **ExpiresIn** | **int?** | The number of seconds until the token expires. If omitted the token will be queued for refresh. | [optional] 
