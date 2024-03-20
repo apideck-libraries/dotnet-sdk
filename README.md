@@ -11,6 +11,7 @@
 - [Getting started](#getting-started)
 - [Example](#example)
 - [Support](#support)
+- [Known Issues](#known-issues)
 - [License](#license)
 
 ## Installation
@@ -182,6 +183,42 @@ Read the full documentation of the WebhookApi [here](./src/gen/docs/WebhookApi.m
 ## Support
 
 Open an [issue][3]!
+
+## Known Issues
+
+### Async Functionality with Applied Filters
+
+There are known issues with some Async functions from the API when a filter is applied. Asynchronous operations might not behave as expected under these circumstances. We are actively working on resolving this issue and appreciate your patience.
+
+In the meantime, you can use the non-async functions as an alternative. Replace the `Async` suffix with the synchronous counterpart when making API calls with filters. For example:
+
+Replace this asynchronous call:
+```csharp
+await apiInstance.EmployeesAllAsync(
+     raw: raw, 
+     consumerId: consumerId, 
+     appId: appId, 
+     serviceId: serviceId, 
+     filter: new EmployeesFilter(companyId: "56fcfc3c-024a-4077-9759-3931cc73f8a3")
+);
+```
+
+With the synchronous call:
+
+```csharp
+await apiInstance.EmployeesAll(
+     raw: raw, 
+     consumerId: consumerId, 
+     appId: appId, 
+     serviceId: serviceId, 
+     filter: new EmployeesFilter(companyId: "56fcfc3c-024a-4077-9759-3931cc73f8a3")
+);
+```
+
+Please note that this workaround is temporary until the issue with Async functions is resolved.
+
+If you encounter any issues related to Async functions while using filters, please report them by [opening an issue][3].
+
 
 ## License
 
