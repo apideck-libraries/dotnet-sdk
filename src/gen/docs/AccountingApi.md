@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**AttachmentsDelete**](AccountingApi.md#attachmentsdelete) | **DELETE** /accounting/attachments/{reference_type}/{reference_id}/{id} | Delete Attachment
 [**AttachmentsDownload**](AccountingApi.md#attachmentsdownload) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment
 [**AttachmentsOne**](AccountingApi.md#attachmentsone) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment
-[**AttachmentsUpload**](AccountingApi.md#attachmentsupload) | **POST** /accounting/attachments/{reference_type}/{reference_id} | Upload attachment
 [**BalanceSheetOne**](AccountingApi.md#balancesheetone) | **GET** /accounting/balance-sheet | Get BalanceSheet
 [**BillsAdd**](AccountingApi.md#billsadd) | **POST** /accounting/bills | Create Bill
 [**BillsAll**](AccountingApi.md#billsall) | **GET** /accounting/bills | List Bills
@@ -457,102 +456,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Attachments |  -  |
-| **400** | Bad Request |  -  |
-| **401** | Unauthorized |  -  |
-| **402** | Payment Required |  -  |
-| **404** | The specified resource was not found |  -  |
-| **422** | Unprocessable |  -  |
-| **0** | Unexpected error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="attachmentsupload"></a>
-# **AttachmentsUpload**
-> CreateAttachmentResponse AttachmentsUpload (AttachmentReferenceType referenceType, string referenceId, bool? raw = null, CreateAttachmentRequest xApideckMetadata = null, string consumerId = null, string appId = null, string serviceId = null, System.IO.Stream body = null)
-
-Upload attachment
-
-Upload attachment
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Apideck.Api;
-using Apideck.Client;
-using Apideck.Model;
-
-namespace Example
-{
-    public class AttachmentsUploadExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://unify.apideck.com";
-            // Configure API key authorization: apiKey
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new AccountingApi(config);
-            var referenceType = invoice;  // AttachmentReferenceType | The reference type of the document.
-            var referenceId = 123456;  // string | The reference id of the object to retrieve.
-            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var xApideckMetadata = new CreateAttachmentRequest(); // CreateAttachmentRequest | Metadata to attach to the attachment file (optional) 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
-            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
-            var body = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
-
-            try
-            {
-                // Upload attachment
-                CreateAttachmentResponse result = apiInstance.AttachmentsUpload(referenceType, referenceId, raw, xApideckMetadata, consumerId, appId, serviceId, body);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AccountingApi.AttachmentsUpload: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **referenceType** | **AttachmentReferenceType**| The reference type of the document. | 
- **referenceId** | **string**| The reference id of the object to retrieve. | 
- **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
- **xApideckMetadata** | [**CreateAttachmentRequest**](CreateAttachmentRequest.md)| Metadata to attach to the attachment file | [optional] 
- **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
- **appId** | **string**| The ID of your Unify application | [optional] 
- **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
- **body** | **System.IO.Stream****System.IO.Stream**|  | [optional] 
-
-### Return type
-
-[**CreateAttachmentResponse**](CreateAttachmentResponse.md)
-
-### Authorization
-
-[apiKey](../README.md#apiKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Attachments |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |

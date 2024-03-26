@@ -130,25 +130,6 @@ namespace Apideck.Test.Api
         }
 
         /// <summary>
-        /// Test AttachmentsUpload
-        /// </summary>
-        [Fact]
-        public void AttachmentsUploadTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //AttachmentReferenceType referenceType = null;
-            //string referenceId = null;
-            //bool? raw = null;
-            //CreateAttachmentRequest xApideckMetadata = null;
-            //string consumerId = null;
-            //string appId = null;
-            //string serviceId = null;
-            //System.IO.Stream body = null;
-            //var response = instance.AttachmentsUpload(referenceType, referenceId, raw, xApideckMetadata, consumerId, appId, serviceId, body);
-            //Assert.IsType<CreateAttachmentResponse>(response);
-        }
-
-        /// <summary>
         /// Test BalanceSheetOne
         /// </summary>
         [Fact]
