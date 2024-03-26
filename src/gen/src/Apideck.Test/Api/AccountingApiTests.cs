@@ -55,6 +55,100 @@ namespace Apideck.Test.Api
         }
 
         /// <summary>
+        /// Test AttachmentsAll
+        /// </summary>
+        [Fact]
+        public void AttachmentsAllTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AttachmentReferenceType referenceType = null;
+            //string referenceId = null;
+            //bool? raw = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //string cursor = null;
+            //int? limit = null;
+            //string fields = null;
+            //var response = instance.AttachmentsAll(referenceType, referenceId, raw, consumerId, appId, serviceId, cursor, limit, fields);
+            //Assert.IsType<GetAttachmentsResponse>(response);
+        }
+
+        /// <summary>
+        /// Test AttachmentsDelete
+        /// </summary>
+        [Fact]
+        public void AttachmentsDeleteTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AttachmentReferenceType referenceType = null;
+            //string referenceId = null;
+            //string id = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //var response = instance.AttachmentsDelete(referenceType, referenceId, id, consumerId, appId, serviceId, raw);
+            //Assert.IsType<DeleteAttachmentResponse>(response);
+        }
+
+        /// <summary>
+        /// Test AttachmentsDownload
+        /// </summary>
+        [Fact]
+        public void AttachmentsDownloadTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AttachmentReferenceType referenceType = null;
+            //string referenceId = null;
+            //string id = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //string fields = null;
+            //var response = instance.AttachmentsDownload(referenceType, referenceId, id, consumerId, appId, serviceId, fields);
+            //Assert.IsType<System.IO.Stream>(response);
+        }
+
+        /// <summary>
+        /// Test AttachmentsOne
+        /// </summary>
+        [Fact]
+        public void AttachmentsOneTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AttachmentReferenceType referenceType = null;
+            //string referenceId = null;
+            //string id = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //bool? raw = null;
+            //string fields = null;
+            //var response = instance.AttachmentsOne(referenceType, referenceId, id, consumerId, appId, serviceId, raw, fields);
+            //Assert.IsType<GetAttachmentResponse>(response);
+        }
+
+        /// <summary>
+        /// Test AttachmentsUpload
+        /// </summary>
+        [Fact]
+        public void AttachmentsUploadTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //AttachmentReferenceType referenceType = null;
+            //string referenceId = null;
+            //bool? raw = null;
+            //CreateAttachmentRequest xApideckMetadata = null;
+            //string consumerId = null;
+            //string appId = null;
+            //string serviceId = null;
+            //System.IO.Stream body = null;
+            //var response = instance.AttachmentsUpload(referenceType, referenceId, raw, xApideckMetadata, consumerId, appId, serviceId, body);
+            //Assert.IsType<CreateAttachmentResponse>(response);
+        }
+
+        /// <summary>
         /// Test BalanceSheetOne
         /// </summary>
         [Fact]
