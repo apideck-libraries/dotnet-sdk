@@ -327,7 +327,8 @@ namespace Apideck.Test.Api
             //string fields = null;
             //string cursor = null;
             //int? limit = null;
-            //var response = instance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough, fields, cursor, limit);
+            //FilesFilter filter = null;
+            //var response = instance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough, fields, cursor, limit, filter);
             //Assert.IsType<GetFilesResponse>(response);
         }
 
