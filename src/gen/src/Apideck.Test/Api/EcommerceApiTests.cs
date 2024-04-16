@@ -105,9 +105,10 @@ namespace Apideck.Test.Api
             //string cursor = null;
             //int? limit = null;
             //EcommerceOrdersFilter filter = null;
+            //OrdersSort sort = null;
             //PassThroughQuery passThrough = null;
             //string fields = null;
-            //var response = instance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, passThrough, fields);
+            //var response = instance.OrdersAll(raw, consumerId, appId, serviceId, cursor, limit, filter, sort, passThrough, fields);
             //Assert.IsType<GetEcommerceOrdersResponse>(response);
         }
 
