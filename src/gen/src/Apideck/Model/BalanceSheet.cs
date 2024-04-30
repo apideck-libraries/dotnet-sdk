@@ -39,171 +39,22 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BalanceSheet" /> class.
         /// </summary>
-        /// <param name="reportName">The name of the report (required).</param>
-        /// <param name="startDate">The start date of the report (required).</param>
-        /// <param name="endDate">The start date of the report.</param>
-        /// <param name="assets">assets (required).</param>
-        /// <param name="liabilities">liabilities (required).</param>
-        /// <param name="equity">equity (required).</param>
-        public BalanceSheet(string reportName = default(string), string startDate = default(string), string endDate = default(string), BalanceSheetAssets assets = default(BalanceSheetAssets), BalanceSheetLiabilities liabilities = default(BalanceSheetLiabilities), BalanceSheetEquity equity = default(BalanceSheetEquity))
+        /// <param name="reports">reports (required).</param>
+        public BalanceSheet(List<BalanceSheetReports> reports = default(List<BalanceSheetReports>))
         {
-            // to ensure "reportName" is required (not null)
-            if (reportName == null) {
-                throw new ArgumentNullException("reportName is a required property for BalanceSheet and cannot be null");
+            // to ensure "reports" is required (not null)
+            if (reports == null) {
+                throw new ArgumentNullException("reports is a required property for BalanceSheet and cannot be null");
             }
-            this.ReportName = reportName;
-            // to ensure "startDate" is required (not null)
-            if (startDate == null) {
-                throw new ArgumentNullException("startDate is a required property for BalanceSheet and cannot be null");
-            }
-            this.StartDate = startDate;
-            // to ensure "assets" is required (not null)
-            if (assets == null) {
-                throw new ArgumentNullException("assets is a required property for BalanceSheet and cannot be null");
-            }
-            this.Assets = assets;
-            // to ensure "liabilities" is required (not null)
-            if (liabilities == null) {
-                throw new ArgumentNullException("liabilities is a required property for BalanceSheet and cannot be null");
-            }
-            this.Liabilities = liabilities;
-            // to ensure "equity" is required (not null)
-            if (equity == null) {
-                throw new ArgumentNullException("equity is a required property for BalanceSheet and cannot be null");
-            }
-            this.Equity = equity;
-            this.EndDate = endDate;
+            this.Reports = reports;
         }
 
         /// <summary>
-        /// A unique identifier for an object.
+        /// Gets or Sets Reports
         /// </summary>
-        /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; private set; }
+        [DataMember(Name = "reports", IsRequired = true, EmitDefaultValue = false)]
+        public List<BalanceSheetReports> Reports { get; set; }
 
-        /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The name of the report
-        /// </summary>
-        /// <value>The name of the report</value>
-        [DataMember(Name = "report_name", IsRequired = true, EmitDefaultValue = false)]
-        public string ReportName { get; set; }
-
-        /// <summary>
-        /// The start date of the report
-        /// </summary>
-        /// <value>The start date of the report</value>
-        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = false)]
-        public string StartDate { get; set; }
-
-        /// <summary>
-        /// The start date of the report
-        /// </summary>
-        /// <value>The start date of the report</value>
-        [DataMember(Name = "end_date", EmitDefaultValue = false)]
-        public string EndDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Assets
-        /// </summary>
-        [DataMember(Name = "assets", IsRequired = true, EmitDefaultValue = false)]
-        public BalanceSheetAssets Assets { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Liabilities
-        /// </summary>
-        [DataMember(Name = "liabilities", IsRequired = true, EmitDefaultValue = false)]
-        public BalanceSheetLiabilities Liabilities { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Equity
-        /// </summary>
-        [DataMember(Name = "equity", IsRequired = true, EmitDefaultValue = false)]
-        public BalanceSheetEquity Equity { get; set; }
-
-        /// <summary>
-        /// When custom mappings are configured on the resource, the result is included here.
-        /// </summary>
-        /// <value>When custom mappings are configured on the resource, the result is included here.</value>
-        [DataMember(Name = "custom_mappings", EmitDefaultValue = true)]
-        public Object CustomMappings { get; private set; }
-
-        /// <summary>
-        /// Returns false as CustomMappings should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCustomMappings()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The user who last updated the object.
-        /// </summary>
-        /// <value>The user who last updated the object.</value>
-        [DataMember(Name = "updated_by", EmitDefaultValue = true)]
-        public string UpdatedBy { get; private set; }
-
-        /// <summary>
-        /// Returns false as UpdatedBy should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUpdatedBy()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The user who created the object.
-        /// </summary>
-        /// <value>The user who created the object.</value>
-        [DataMember(Name = "created_by", EmitDefaultValue = true)]
-        public string CreatedBy { get; private set; }
-
-        /// <summary>
-        /// Returns false as CreatedBy should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCreatedBy()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The date and time when the object was last updated.
-        /// </summary>
-        /// <value>The date and time when the object was last updated.</value>
-        [DataMember(Name = "updated_at", EmitDefaultValue = true)]
-        public DateTime? UpdatedAt { get; private set; }
-
-        /// <summary>
-        /// Returns false as UpdatedAt should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUpdatedAt()
-        {
-            return false;
-        }
-        /// <summary>
-        /// The date and time when the object was created.
-        /// </summary>
-        /// <value>The date and time when the object was created.</value>
-        [DataMember(Name = "created_at", EmitDefaultValue = true)]
-        public DateTime? CreatedAt { get; private set; }
-
-        /// <summary>
-        /// Returns false as CreatedAt should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCreatedAt()
-        {
-            return false;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -212,18 +63,7 @@ namespace Apideck.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class BalanceSheet {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  ReportName: ").Append(ReportName).Append("\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  Assets: ").Append(Assets).Append("\n");
-            sb.Append("  Liabilities: ").Append(Liabilities).Append("\n");
-            sb.Append("  Equity: ").Append(Equity).Append("\n");
-            sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
-            sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
-            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
-            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
-            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  Reports: ").Append(Reports).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -260,64 +100,10 @@ namespace Apideck.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ReportName == input.ReportName ||
-                    (this.ReportName != null &&
-                    this.ReportName.Equals(input.ReportName))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                ) && 
-                (
-                    this.Assets == input.Assets ||
-                    (this.Assets != null &&
-                    this.Assets.Equals(input.Assets))
-                ) && 
-                (
-                    this.Liabilities == input.Liabilities ||
-                    (this.Liabilities != null &&
-                    this.Liabilities.Equals(input.Liabilities))
-                ) && 
-                (
-                    this.Equity == input.Equity ||
-                    (this.Equity != null &&
-                    this.Equity.Equals(input.Equity))
-                ) && 
-                (
-                    this.CustomMappings == input.CustomMappings ||
-                    (this.CustomMappings != null &&
-                    this.CustomMappings.Equals(input.CustomMappings))
-                ) && 
-                (
-                    this.UpdatedBy == input.UpdatedBy ||
-                    (this.UpdatedBy != null &&
-                    this.UpdatedBy.Equals(input.UpdatedBy))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
+                    this.Reports == input.Reports ||
+                    this.Reports != null &&
+                    input.Reports != null &&
+                    this.Reports.SequenceEqual(input.Reports)
                 );
         }
 
@@ -330,53 +116,9 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.Reports != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.ReportName != null)
-                {
-                    hashCode = (hashCode * 59) + this.ReportName.GetHashCode();
-                }
-                if (this.StartDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
-                }
-                if (this.EndDate != null)
-                {
-                    hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
-                }
-                if (this.Assets != null)
-                {
-                    hashCode = (hashCode * 59) + this.Assets.GetHashCode();
-                }
-                if (this.Liabilities != null)
-                {
-                    hashCode = (hashCode * 59) + this.Liabilities.GetHashCode();
-                }
-                if (this.Equity != null)
-                {
-                    hashCode = (hashCode * 59) + this.Equity.GetHashCode();
-                }
-                if (this.CustomMappings != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
-                }
-                if (this.UpdatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdatedBy.GetHashCode();
-                }
-                if (this.CreatedBy != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedBy.GetHashCode();
-                }
-                if (this.UpdatedAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
-                }
-                if (this.CreatedAt != null)
-                {
-                    hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Reports.GetHashCode();
                 }
                 return hashCode;
             }
@@ -389,20 +131,6 @@ namespace Apideck.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
-            // StartDate (string) pattern
-            Regex regexStartDate = new Regex(@"^\\d{4}-\\d{2}-\\d{2}$", RegexOptions.CultureInvariant);
-            if (false == regexStartDate.Match(this.StartDate).Success)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StartDate, must match a pattern of " + regexStartDate, new [] { "StartDate" });
-            }
-
-            // EndDate (string) pattern
-            Regex regexEndDate = new Regex(@"^\\d{4}-\\d{2}-\\d{2}$", RegexOptions.CultureInvariant);
-            if (false == regexEndDate.Match(this.EndDate).Success)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EndDate, must match a pattern of " + regexEndDate, new [] { "EndDate" });
-            }
-
             yield break;
         }
     }

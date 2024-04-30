@@ -26,48 +26,48 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// BalanceSheetAssetsCurrentAssetsAccounts
+    /// BalanceSheetAccountRecord
     /// </summary>
-    [DataContract(Name = "BalanceSheet_assets_current_assets_accounts")]
-    public partial class BalanceSheetAssetsCurrentAssetsAccounts : IEquatable<BalanceSheetAssetsCurrentAssetsAccounts>, IValidatableObject
+    [DataContract(Name = "BalanceSheetAccountRecord")]
+    public partial class BalanceSheetAccountRecord : IEquatable<BalanceSheetAccountRecord>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BalanceSheetAssetsCurrentAssetsAccounts" /> class.
+        /// Initializes a new instance of the <see cref="BalanceSheetAccountRecord" /> class.
         /// </summary>
-        /// <param name="name">The name of the current asset account.</param>
-        /// <param name="value">The value of the current asset.</param>
-        public BalanceSheetAssetsCurrentAssetsAccounts(string name = default(string), decimal value = default(decimal))
+        /// <param name="name">Name of the report item.</param>
+        /// <param name="value">The value of the account..</param>
+        public BalanceSheetAccountRecord(string name = default(string), decimal value = default(decimal))
         {
             this.Name = name;
             this.Value = value;
         }
 
         /// <summary>
-        /// A unique identifier for an object.
+        /// The unique identifier for the account.
         /// </summary>
-        /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; private set; }
+        /// <value>The unique identifier for the account.</value>
+        [DataMember(Name = "account_id", EmitDefaultValue = false)]
+        public string AccountId { get; private set; }
 
         /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
+        /// Returns false as AccountId should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
+        public bool ShouldSerializeAccountId()
         {
             return false;
         }
         /// <summary>
-        /// The name of the current asset account
+        /// Name of the report item
         /// </summary>
-        /// <value>The name of the current asset account</value>
+        /// <value>Name of the report item</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The value of the current asset
+        /// The value of the account.
         /// </summary>
-        /// <value>The value of the current asset</value>
+        /// <value>The value of the account.</value>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal Value { get; set; }
 
@@ -78,8 +78,8 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BalanceSheetAssetsCurrentAssetsAccounts {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class BalanceSheetAccountRecord {\n");
+            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
@@ -102,15 +102,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BalanceSheetAssetsCurrentAssetsAccounts);
+            return this.Equals(input as BalanceSheetAccountRecord);
         }
 
         /// <summary>
-        /// Returns true if BalanceSheetAssetsCurrentAssetsAccounts instances are equal
+        /// Returns true if BalanceSheetAccountRecord instances are equal
         /// </summary>
-        /// <param name="input">Instance of BalanceSheetAssetsCurrentAssetsAccounts to be compared</param>
+        /// <param name="input">Instance of BalanceSheetAccountRecord to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BalanceSheetAssetsCurrentAssetsAccounts input)
+        public bool Equals(BalanceSheetAccountRecord input)
         {
             if (input == null)
             {
@@ -118,9 +118,9 @@ namespace Apideck.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.AccountId == input.AccountId ||
+                    (this.AccountId != null &&
+                    this.AccountId.Equals(input.AccountId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -142,9 +142,9 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.AccountId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
                 }
                 if (this.Name != null)
                 {

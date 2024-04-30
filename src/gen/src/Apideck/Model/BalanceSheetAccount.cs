@@ -26,50 +26,58 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// BalanceSheetLiabilitiesAccounts
+    /// BalanceSheetAccount
     /// </summary>
-    [DataContract(Name = "BalanceSheet_liabilities_accounts")]
-    public partial class BalanceSheetLiabilitiesAccounts : IEquatable<BalanceSheetLiabilitiesAccounts>, IValidatableObject
+    [DataContract(Name = "BalanceSheetAccount")]
+    public partial class BalanceSheetAccount : IEquatable<BalanceSheetAccount>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BalanceSheetLiabilitiesAccounts" /> class.
+        /// Initializes a new instance of the <see cref="BalanceSheetAccount" /> class.
         /// </summary>
-        /// <param name="name">The name of the liability account.</param>
-        /// <param name="value">The value of the liability.</param>
-        public BalanceSheetLiabilitiesAccounts(string name = default(string), decimal value = default(decimal))
+        /// <param name="name">Name of the report item.</param>
+        /// <param name="value">The value of the account..</param>
+        /// <param name="items">items.</param>
+        public BalanceSheetAccount(string name = default(string), decimal value = default(decimal), List<object> items = default(List<object>))
         {
             this.Name = name;
             this.Value = value;
+            this.Items = items;
         }
 
         /// <summary>
-        /// A unique identifier for an object.
+        /// The unique identifier for the account.
         /// </summary>
-        /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; private set; }
+        /// <value>The unique identifier for the account.</value>
+        [DataMember(Name = "account_id", EmitDefaultValue = false)]
+        public string AccountId { get; private set; }
 
         /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
+        /// Returns false as AccountId should not be serialized given that it's read-only.
         /// </summary>
         /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
+        public bool ShouldSerializeAccountId()
         {
             return false;
         }
         /// <summary>
-        /// The name of the liability account
+        /// Name of the report item
         /// </summary>
-        /// <value>The name of the liability account</value>
+        /// <value>Name of the report item</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The value of the liability
+        /// The value of the account.
         /// </summary>
-        /// <value>The value of the liability</value>
+        /// <value>The value of the account.</value>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public decimal Value { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Items
+        /// </summary>
+        [DataMember(Name = "items", EmitDefaultValue = true)]
+        public List<object> Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,10 +86,11 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BalanceSheetLiabilitiesAccounts {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("class BalanceSheetAccount {\n");
+            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -102,15 +111,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BalanceSheetLiabilitiesAccounts);
+            return this.Equals(input as BalanceSheetAccount);
         }
 
         /// <summary>
-        /// Returns true if BalanceSheetLiabilitiesAccounts instances are equal
+        /// Returns true if BalanceSheetAccount instances are equal
         /// </summary>
-        /// <param name="input">Instance of BalanceSheetLiabilitiesAccounts to be compared</param>
+        /// <param name="input">Instance of BalanceSheetAccount to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BalanceSheetLiabilitiesAccounts input)
+        public bool Equals(BalanceSheetAccount input)
         {
             if (input == null)
             {
@@ -118,9 +127,9 @@ namespace Apideck.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.AccountId == input.AccountId ||
+                    (this.AccountId != null &&
+                    this.AccountId.Equals(input.AccountId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -130,6 +139,12 @@ namespace Apideck.Model
                 (
                     this.Value == input.Value ||
                     this.Value.Equals(input.Value)
+                ) && 
+                (
+                    this.Items == input.Items ||
+                    this.Items != null &&
+                    input.Items != null &&
+                    this.Items.SequenceEqual(input.Items)
                 );
         }
 
@@ -142,15 +157,19 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.AccountId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
                 }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Value.GetHashCode();
+                if (this.Items != null)
+                {
+                    hashCode = (hashCode * 59) + this.Items.GetHashCode();
+                }
                 return hashCode;
             }
         }
