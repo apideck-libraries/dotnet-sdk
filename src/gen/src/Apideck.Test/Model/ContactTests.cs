@@ -368,6 +368,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'CreatedAt'
         }
+        /// <summary>
+        /// Test the property 'OpportunityIds'
+        /// </summary>
+        [Fact]
+        public void OpportunityIdsTest()
+        {
+            // TODO unit test for the property 'OpportunityIds'
+        }
 
     }
 
