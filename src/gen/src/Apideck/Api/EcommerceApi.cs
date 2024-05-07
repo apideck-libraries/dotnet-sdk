@@ -1165,6 +1165,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[customer_id]", filter.CustomerId));
                 }
+                if (filter.UpdatedSince != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[updated_since]", filter.UpdatedSince));
+                }
             }
             if (sort != null)
             {

@@ -36,10 +36,12 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="email">Customer email address to filter on.</param>
         /// <param name="customerId">Customer id to filter on.</param>
-        public EcommerceOrdersFilter(string email = default(string), string customerId = default(string))
+        /// <param name="updatedSince">Minimum date the order was last modified.</param>
+        public EcommerceOrdersFilter(string email = default(string), string customerId = default(string), string updatedSince = default(string))
         {
             this.Email = email;
             this.CustomerId = customerId;
+            this.UpdatedSince = updatedSince;
         }
 
         /// <summary>
@@ -57,6 +59,13 @@ namespace Apideck.Model
         public string CustomerId { get; set; }
 
         /// <summary>
+        /// Minimum date the order was last modified
+        /// </summary>
+        /// <value>Minimum date the order was last modified</value>
+        [DataMember(Name = "updated_since", EmitDefaultValue = false)]
+        public string UpdatedSince { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +75,7 @@ namespace Apideck.Model
             sb.Append("class EcommerceOrdersFilter {\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  UpdatedSince: ").Append(UpdatedSince).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -110,6 +120,11 @@ namespace Apideck.Model
                     this.CustomerId == input.CustomerId ||
                     (this.CustomerId != null &&
                     this.CustomerId.Equals(input.CustomerId))
+                ) && 
+                (
+                    this.UpdatedSince == input.UpdatedSince ||
+                    (this.UpdatedSince != null &&
+                    this.UpdatedSince.Equals(input.UpdatedSince))
                 );
         }
 
@@ -129,6 +144,10 @@ namespace Apideck.Model
                 if (this.CustomerId != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomerId.GetHashCode();
+                }
+                if (this.UpdatedSince != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdatedSince.GetHashCode();
                 }
                 return hashCode;
             }
