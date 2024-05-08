@@ -37,11 +37,13 @@ namespace Apideck.Model
         /// <param name="email">Customer email address to filter on.</param>
         /// <param name="customerId">Customer id to filter on.</param>
         /// <param name="updatedSince">Minimum date the order was last modified.</param>
-        public EcommerceOrdersFilter(string email = default(string), string customerId = default(string), string updatedSince = default(string))
+        /// <param name="createdSince">Minimum date the order was created.</param>
+        public EcommerceOrdersFilter(string email = default(string), string customerId = default(string), string updatedSince = default(string), string createdSince = default(string))
         {
             this.Email = email;
             this.CustomerId = customerId;
             this.UpdatedSince = updatedSince;
+            this.CreatedSince = createdSince;
         }
 
         /// <summary>
@@ -66,6 +68,13 @@ namespace Apideck.Model
         public string UpdatedSince { get; set; }
 
         /// <summary>
+        /// Minimum date the order was created
+        /// </summary>
+        /// <value>Minimum date the order was created</value>
+        [DataMember(Name = "created_since", EmitDefaultValue = false)]
+        public string CreatedSince { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -76,6 +85,7 @@ namespace Apideck.Model
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  UpdatedSince: ").Append(UpdatedSince).Append("\n");
+            sb.Append("  CreatedSince: ").Append(CreatedSince).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -125,6 +135,11 @@ namespace Apideck.Model
                     this.UpdatedSince == input.UpdatedSince ||
                     (this.UpdatedSince != null &&
                     this.UpdatedSince.Equals(input.UpdatedSince))
+                ) && 
+                (
+                    this.CreatedSince == input.CreatedSince ||
+                    (this.CreatedSince != null &&
+                    this.CreatedSince.Equals(input.CreatedSince))
                 );
         }
 
@@ -148,6 +163,10 @@ namespace Apideck.Model
                 if (this.UpdatedSince != null)
                 {
                     hashCode = (hashCode * 59) + this.UpdatedSince.GetHashCode();
+                }
+                if (this.CreatedSince != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedSince.GetHashCode();
                 }
                 return hashCode;
             }

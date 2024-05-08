@@ -80,6 +80,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'UpdatedSince'
         }
+        /// <summary>
+        /// Test the property 'CreatedSince'
+        /// </summary>
+        [Fact]
+        public void CreatedSinceTest()
+        {
+            // TODO unit test for the property 'CreatedSince'
+        }
 
     }
 
