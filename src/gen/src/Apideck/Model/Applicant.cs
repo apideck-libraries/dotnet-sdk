@@ -34,7 +34,6 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Applicant" /> class.
         /// </summary>
-        /// <param name="positionId">The PositionId the applicant applied for..</param>
         /// <param name="name">The name of an applicant..</param>
         /// <param name="firstName">The first name of the person..</param>
         /// <param name="lastName">The last name of the person..</param>
@@ -65,9 +64,8 @@ namespace Apideck.Model
         /// <param name="ownerId">ownerId.</param>
         /// <param name="recordUrl">recordUrl.</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
-        public Applicant(string positionId = default(string), string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applicationIds = default(List<string>), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool? archived = default(bool?), string ownerId = default(string), string recordUrl = default(string), bool? deleted = default(bool?))
+        public Applicant(string name = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string initials = default(string), DateTime? birthday = default(DateTime?), string coverLetter = default(string), string photoUrl = default(string), string headline = default(string), string title = default(string), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Address> addresses = default(List<Address>), List<ApplicantWebsites> websites = default(List<ApplicantWebsites>), List<ApplicantSocialLinks> socialLinks = default(List<ApplicantSocialLinks>), string stageId = default(string), string recruiterId = default(string), string coordinatorId = default(string), List<string> applicationIds = default(List<string>), List<string> applications = default(List<string>), List<string> followers = default(List<string>), List<string> sources = default(List<string>), bool confidential = default(bool), bool anonymized = default(bool), List<string> tags = default(List<string>), bool? archived = default(bool?), string ownerId = default(string), string recordUrl = default(string), bool? deleted = default(bool?))
         {
-            this.PositionId = positionId;
             this.Name = name;
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -115,13 +113,6 @@ namespace Apideck.Model
         {
             return false;
         }
-        /// <summary>
-        /// The PositionId the applicant applied for.
-        /// </summary>
-        /// <value>The PositionId the applicant applied for.</value>
-        [DataMember(Name = "position_id", EmitDefaultValue = false)]
-        public string PositionId { get; set; }
-
         /// <summary>
         /// The name of an applicant.
         /// </summary>
@@ -511,7 +502,6 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Applicant {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  PositionId: ").Append(PositionId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
@@ -594,11 +584,6 @@ namespace Apideck.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PositionId == input.PositionId ||
-                    (this.PositionId != null &&
-                    this.PositionId.Equals(input.PositionId))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -838,10 +823,6 @@ namespace Apideck.Model
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
-                }
-                if (this.PositionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.PositionId.GetHashCode();
                 }
                 if (this.Name != null)
                 {
