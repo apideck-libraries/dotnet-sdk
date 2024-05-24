@@ -145,7 +145,7 @@ namespace Apideck.Model
         /// <param name="shippingAddress">shippingAddress.</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
-        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Object> allocations = default(List<Object>), string note = default(string), string terms = default(string), Address billingAddress = default(Address), Address shippingAddress = default(Address), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string))
+        public CreditNote(string number = default(string), LinkedCustomer customer = default(LinkedCustomer), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), decimal? subTotal = default(decimal?), decimal totalAmount = default(decimal), decimal? totalTax = default(decimal?), string taxCode = default(string), decimal? balance = default(decimal?), decimal? remainingCredit = default(decimal?), StatusEnum? status = default(StatusEnum?), string reference = default(string), DateTime dateIssued = default(DateTime), DateTime? datePaid = default(DateTime?), TypeEnum? type = default(TypeEnum?), LinkedLedgerAccount account = default(LinkedLedgerAccount), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), List<Allocation> allocations = default(List<Allocation>), string note = default(string), string terms = default(string), Address billingAddress = default(Address), Address shippingAddress = default(Address), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string))
         {
             this.TotalAmount = totalAmount;
             this.Number = number;
@@ -303,7 +303,7 @@ namespace Apideck.Model
         /// Gets or Sets Allocations
         /// </summary>
         [DataMember(Name = "allocations", EmitDefaultValue = false)]
-        public List<Object> Allocations { get; set; }
+        public List<Allocation> Allocations { get; set; }
 
         /// <summary>
         /// Optional note to be associated with the credit note.

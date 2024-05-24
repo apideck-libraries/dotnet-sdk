@@ -26,10 +26,10 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// PaymentAllocations
+    /// Allocation
     /// </summary>
-    [DataContract(Name = "Payment_allocations")]
-    public partial class PaymentAllocations : IEquatable<PaymentAllocations>, IValidatableObject
+    [DataContract(Name = "Allocation")]
+    public partial class Allocation : IEquatable<Allocation>, IValidatableObject
     {
         /// <summary>
         /// Type of entity this payment should be attributed to.
@@ -72,7 +72,19 @@ namespace Apideck.Model
             /// Enum PrePayment for value: pre_payment
             /// </summary>
             [EnumMember(Value = "pre_payment")]
-            PrePayment = 6
+            PrePayment = 6,
+
+            /// <summary>
+            /// Enum JournalEntry for value: journal_entry
+            /// </summary>
+            [EnumMember(Value = "journal_entry")]
+            JournalEntry = 7,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 8
 
         }
 
@@ -84,16 +96,18 @@ namespace Apideck.Model
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentAllocations" /> class.
+        /// Initializes a new instance of the <see cref="Allocation" /> class.
         /// </summary>
         /// <param name="id">Unique identifier of entity this payment should be attributed to..</param>
         /// <param name="type">Type of entity this payment should be attributed to..</param>
         /// <param name="amount">Amount of payment that should be attributed to this allocation. If null, the total_amount will be used..</param>
-        public PaymentAllocations(string id = default(string), TypeEnum? type = default(TypeEnum?), decimal? amount = default(decimal?))
+        /// <param name="allocationId">Unique identifier of the allocation.</param>
+        public Allocation(string id = default(string), TypeEnum? type = default(TypeEnum?), decimal? amount = default(decimal?), string allocationId = default(string))
         {
             this.Id = id;
             this.Type = type;
             this.Amount = amount;
+            this.AllocationId = allocationId;
         }
 
         /// <summary>
@@ -125,17 +139,25 @@ namespace Apideck.Model
         public decimal? Amount { get; set; }
 
         /// <summary>
+        /// Unique identifier of the allocation
+        /// </summary>
+        /// <value>Unique identifier of the allocation</value>
+        [DataMember(Name = "allocation_id", EmitDefaultValue = false)]
+        public string AllocationId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PaymentAllocations {\n");
+            sb.Append("class Allocation {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  AllocationId: ").Append(AllocationId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -156,15 +178,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PaymentAllocations);
+            return this.Equals(input as Allocation);
         }
 
         /// <summary>
-        /// Returns true if PaymentAllocations instances are equal
+        /// Returns true if Allocation instances are equal
         /// </summary>
-        /// <param name="input">Instance of PaymentAllocations to be compared</param>
+        /// <param name="input">Instance of Allocation to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PaymentAllocations input)
+        public bool Equals(Allocation input)
         {
             if (input == null)
             {
@@ -189,6 +211,11 @@ namespace Apideck.Model
                     this.Amount == input.Amount ||
                     (this.Amount != null &&
                     this.Amount.Equals(input.Amount))
+                ) && 
+                (
+                    this.AllocationId == input.AllocationId ||
+                    (this.AllocationId != null &&
+                    this.AllocationId.Equals(input.AllocationId))
                 );
         }
 
@@ -213,6 +240,10 @@ namespace Apideck.Model
                 if (this.Amount != null)
                 {
                     hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                }
+                if (this.AllocationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.AllocationId.GetHashCode();
                 }
                 return hashCode;
             }

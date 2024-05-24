@@ -172,7 +172,7 @@ namespace Apideck.Model
         /// <param name="customFields">customFields.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="displayId">Payment id to be displayed..</param>
-        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string paymentMethodId = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<PaymentAllocations> allocations = default(List<PaymentAllocations>), string note = default(string), string number = default(string), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string), string displayId = default(string))
+        public Payment(Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal totalAmount = default(decimal), string reference = default(string), string paymentMethod = default(string), string paymentMethodReference = default(string), string paymentMethodId = default(string), string accountsReceivableAccountType = default(string), string accountsReceivableAccountId = default(string), LinkedLedgerAccount account = default(LinkedLedgerAccount), DateTime transactionDate = default(DateTime), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), bool reconciled = default(bool), StatusEnum? status = default(StatusEnum?), TypeEnum? type = default(TypeEnum?), List<Allocation> allocations = default(List<Allocation>), string note = default(string), string number = default(string), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string), string displayId = default(string))
         {
             this.TotalAmount = totalAmount;
             this.TransactionDate = transactionDate;
@@ -330,7 +330,7 @@ namespace Apideck.Model
         /// Gets or Sets Allocations
         /// </summary>
         [DataMember(Name = "allocations", EmitDefaultValue = false)]
-        public List<PaymentAllocations> Allocations { get; set; }
+        public List<Allocation> Allocations { get; set; }
 
         /// <summary>
         /// Optional note to be associated with the payment.
