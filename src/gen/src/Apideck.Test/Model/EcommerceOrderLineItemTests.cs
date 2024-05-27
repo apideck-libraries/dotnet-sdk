@@ -145,6 +145,38 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'TaxAmount'
         }
         /// <summary>
+        /// Test the property 'IsRefunded'
+        /// </summary>
+        [Fact]
+        public void IsRefundedTest()
+        {
+            // TODO unit test for the property 'IsRefunded'
+        }
+        /// <summary>
+        /// Test the property 'RefundedAmount'
+        /// </summary>
+        [Fact]
+        public void RefundedAmountTest()
+        {
+            // TODO unit test for the property 'RefundedAmount'
+        }
+        /// <summary>
+        /// Test the property 'RefundedQuantity'
+        /// </summary>
+        [Fact]
+        public void RefundedQuantityTest()
+        {
+            // TODO unit test for the property 'RefundedQuantity'
+        }
+        /// <summary>
+        /// Test the property 'SubTotal'
+        /// </summary>
+        [Fact]
+        public void SubTotalTest()
+        {
+            // TODO unit test for the property 'SubTotal'
+        }
+        /// <summary>
         /// Test the property 'TotalAmount'
         /// </summary>
         [Fact]
