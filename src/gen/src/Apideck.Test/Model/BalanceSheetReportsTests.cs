@@ -168,6 +168,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'CreatedAt'
         }
+        /// <summary>
+        /// Test the property 'UncategorizedItems'
+        /// </summary>
+        [Fact]
+        public void UncategorizedItemsTest()
+        {
+            // TODO unit test for the property 'UncategorizedItems'
+        }
 
     }
 

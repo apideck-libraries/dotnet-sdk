@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// BalanceSheetAccount
+    /// A balance sheet account represents the financial position of a company at a specific point in time.
     /// </summary>
     [DataContract(Name = "BalanceSheetAccount")]
     public partial class BalanceSheetAccount : IEquatable<BalanceSheetAccount>, IValidatableObject
