@@ -34,10 +34,12 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BalanceSheetAccountRecord" /> class.
         /// </summary>
+        /// <param name="code">The code of the account..</param>
         /// <param name="name">Name of the report item.</param>
         /// <param name="value">The value of the account..</param>
-        public BalanceSheetAccountRecord(string name = default(string), decimal value = default(decimal))
+        public BalanceSheetAccountRecord(string code = default(string), string name = default(string), decimal value = default(decimal))
         {
+            this.Code = code;
             this.Name = name;
             this.Value = value;
         }
@@ -57,6 +59,13 @@ namespace Apideck.Model
         {
             return false;
         }
+        /// <summary>
+        /// The code of the account.
+        /// </summary>
+        /// <value>The code of the account.</value>
+        [DataMember(Name = "code", EmitDefaultValue = false)]
+        public string Code { get; set; }
+
         /// <summary>
         /// Name of the report item
         /// </summary>
@@ -80,6 +89,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class BalanceSheetAccountRecord {\n");
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
@@ -123,6 +133,11 @@ namespace Apideck.Model
                     this.AccountId.Equals(input.AccountId))
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -145,6 +160,10 @@ namespace Apideck.Model
                 if (this.AccountId != null)
                 {
                     hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 if (this.Name != null)
                 {
