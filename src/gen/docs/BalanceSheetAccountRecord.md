@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountId** | **string** | The unique identifier for the account. | [optional] [readonly] 
+**Code** | **string** | The code of the account. | [optional] 
 **Name** | **string** | Name of the report item | [optional] 
 **Value** | **decimal** | The value of the account. | [optional] 
 

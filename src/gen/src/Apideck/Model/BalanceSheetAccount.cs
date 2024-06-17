@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// BalanceSheetAccount
+    /// A balance sheet account represents the financial position of a company at a specific point in time.
     /// </summary>
     [DataContract(Name = "BalanceSheetAccount")]
     public partial class BalanceSheetAccount : IEquatable<BalanceSheetAccount>, IValidatableObject
@@ -34,11 +34,13 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BalanceSheetAccount" /> class.
         /// </summary>
+        /// <param name="code">The code of the account..</param>
         /// <param name="name">Name of the report item.</param>
         /// <param name="value">The value of the account..</param>
         /// <param name="items">items.</param>
-        public BalanceSheetAccount(string name = default(string), decimal value = default(decimal), List<object> items = default(List<object>))
+        public BalanceSheetAccount(string code = default(string), string name = default(string), decimal value = default(decimal), List<object> items = default(List<object>))
         {
+            this.Code = code;
             this.Name = name;
             this.Value = value;
             this.Items = items;
@@ -59,6 +61,13 @@ namespace Apideck.Model
         {
             return false;
         }
+        /// <summary>
+        /// The code of the account.
+        /// </summary>
+        /// <value>The code of the account.</value>
+        [DataMember(Name = "code", EmitDefaultValue = false)]
+        public string Code { get; set; }
+
         /// <summary>
         /// Name of the report item
         /// </summary>
@@ -88,6 +97,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class BalanceSheetAccount {\n");
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
@@ -132,6 +142,11 @@ namespace Apideck.Model
                     this.AccountId.Equals(input.AccountId))
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -160,6 +175,10 @@ namespace Apideck.Model
                 if (this.AccountId != null)
                 {
                     hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 if (this.Name != null)
                 {

@@ -105,6 +105,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'ShippingCost'
         }
         /// <summary>
+        /// Test the property 'CouponDiscount'
+        /// </summary>
+        [Fact]
+        public void CouponDiscountTest()
+        {
+            // TODO unit test for the property 'CouponDiscount'
+        }
+        /// <summary>
         /// Test the property 'TotalDiscount'
         /// </summary>
         [Fact]
@@ -127,6 +135,14 @@ namespace Apideck.Test.Model
         public void TotalAmountTest()
         {
             // TODO unit test for the property 'TotalAmount'
+        }
+        /// <summary>
+        /// Test the property 'RefundedAmount'
+        /// </summary>
+        [Fact]
+        public void RefundedAmountTest()
+        {
+            // TODO unit test for the property 'RefundedAmount'
         }
         /// <summary>
         /// Test the property 'Status'

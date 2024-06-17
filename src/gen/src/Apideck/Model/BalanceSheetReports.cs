@@ -53,7 +53,8 @@ namespace Apideck.Model
         /// <param name="liabilities">liabilities (required).</param>
         /// <param name="equity">equity (required).</param>
         /// <param name="netAssets">The net assets of the balance sheet.</param>
-        public BalanceSheetReports(string reportName = default(string), string startDate = default(string), string endDate = default(string), Currency? currency = default(Currency?), BalanceSheetAccount assets = default(BalanceSheetAccount), BalanceSheetAccount liabilities = default(BalanceSheetAccount), BalanceSheetAccount equity = default(BalanceSheetAccount), decimal netAssets = default(decimal))
+        /// <param name="uncategorizedItems">Items that are not categorized in the balance sheet.</param>
+        public BalanceSheetReports(string reportName = default(string), string startDate = default(string), string endDate = default(string), Currency? currency = default(Currency?), BalanceSheetAccount assets = default(BalanceSheetAccount), BalanceSheetAccount liabilities = default(BalanceSheetAccount), BalanceSheetAccount equity = default(BalanceSheetAccount), decimal netAssets = default(decimal), List<object> uncategorizedItems = default(List<object>))
         {
             // to ensure "endDate" is required (not null)
             if (endDate == null) {
@@ -79,6 +80,7 @@ namespace Apideck.Model
             this.StartDate = startDate;
             this.Currency = currency;
             this.NetAssets = netAssets;
+            this.UncategorizedItems = uncategorizedItems;
         }
 
         /// <summary>
@@ -218,6 +220,13 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// Items that are not categorized in the balance sheet
+        /// </summary>
+        /// <value>Items that are not categorized in the balance sheet</value>
+        [DataMember(Name = "uncategorized_items", EmitDefaultValue = false)]
+        public List<object> UncategorizedItems { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -239,6 +248,7 @@ namespace Apideck.Model
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  UncategorizedItems: ").Append(UncategorizedItems).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -341,6 +351,12 @@ namespace Apideck.Model
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.UncategorizedItems == input.UncategorizedItems ||
+                    this.UncategorizedItems != null &&
+                    input.UncategorizedItems != null &&
+                    this.UncategorizedItems.SequenceEqual(input.UncategorizedItems)
                 );
         }
 
@@ -402,6 +418,10 @@ namespace Apideck.Model
                 if (this.CreatedAt != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
+                }
+                if (this.UncategorizedItems != null)
+                {
+                    hashCode = (hashCode * 59) + this.UncategorizedItems.GetHashCode();
                 }
                 return hashCode;
             }
