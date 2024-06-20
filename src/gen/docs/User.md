@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedAt** | **string** | The date and time when the user was last updated. | [optional] [readonly] 
 **CreatedAt** | **string** | The date and time when the user was created. | [optional] [readonly] 
+**PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

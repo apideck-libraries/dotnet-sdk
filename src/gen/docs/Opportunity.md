@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **CreatedBy** | **string** | The unique identifier of the user who created the opportunity. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the opportunity was last updated. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the opportunity was created. | [optional] [readonly] 
+**PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
