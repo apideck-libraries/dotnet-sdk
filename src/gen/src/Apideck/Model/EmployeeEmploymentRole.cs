@@ -112,7 +112,13 @@ namespace Apideck.Model
             /// Enum Other for value: other
             /// </summary>
             [EnumMember(Value = "other")]
-            Other = 4
+            Other = 4,
+
+            /// <summary>
+            /// Enum NotSpecified for value: not_specified
+            /// </summary>
+            [EnumMember(Value = "not_specified")]
+            NotSpecified = 5
 
         }
 
