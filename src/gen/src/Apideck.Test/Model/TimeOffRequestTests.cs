@@ -208,6 +208,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'PassThrough'
         }
+        /// <summary>
+        /// Test the property 'PolicyType'
+        /// </summary>
+        [Fact]
+        public void PolicyTypeTest()
+        {
+            // TODO unit test for the property 'PolicyType'
+        }
 
     }
 

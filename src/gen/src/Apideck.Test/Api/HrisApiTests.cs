@@ -446,11 +446,12 @@ namespace Apideck.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
+            //string employeeId = null;
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.TimeOffRequestsDelete(id, consumerId, appId, serviceId, raw);
+            //var response = instance.TimeOffRequestsDelete(id, employeeId, consumerId, appId, serviceId, raw);
             //Assert.IsType<DeleteTimeOffRequestResponse>(response);
         }
 
@@ -462,12 +463,13 @@ namespace Apideck.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
+            //string employeeId = null;
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
             //string fields = null;
-            //var response = instance.TimeOffRequestsOne(id, consumerId, appId, serviceId, raw, fields);
+            //var response = instance.TimeOffRequestsOne(id, employeeId, consumerId, appId, serviceId, raw, fields);
             //Assert.IsType<GetTimeOffRequestResponse>(response);
         }
 
@@ -479,12 +481,13 @@ namespace Apideck.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string id = null;
+            //string employeeId = null;
             //TimeOffRequest timeOffRequest = null;
             //string consumerId = null;
             //string appId = null;
             //string serviceId = null;
             //bool? raw = null;
-            //var response = instance.TimeOffRequestsUpdate(id, timeOffRequest, consumerId, appId, serviceId, raw);
+            //var response = instance.TimeOffRequestsUpdate(id, employeeId, timeOffRequest, consumerId, appId, serviceId, raw);
             //Assert.IsType<UpdateTimeOffRequestResponse>(response);
         }
     }

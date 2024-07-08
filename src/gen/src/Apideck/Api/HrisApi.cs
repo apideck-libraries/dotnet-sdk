@@ -736,12 +736,13 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>DeleteTimeOffRequestResponse</returns>
-        DeleteTimeOffRequestResponse TimeOffRequestsDelete(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        DeleteTimeOffRequestResponse TimeOffRequestsDelete(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
 
         /// <summary>
         /// Delete Time Off Request
@@ -751,12 +752,13 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of DeleteTimeOffRequestResponse</returns>
-        ApiResponse<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        ApiResponse<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteWithHttpInfo(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
         /// <summary>
         /// Get Time Off Request
         /// </summary>
@@ -765,13 +767,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetTimeOffRequestResponse</returns>
-        GetTimeOffRequestResponse TimeOffRequestsOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string));
+        GetTimeOffRequestResponse TimeOffRequestsOne(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string));
 
         /// <summary>
         /// Get Time Off Request
@@ -781,13 +784,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetTimeOffRequestResponse</returns>
-        ApiResponse<GetTimeOffRequestResponse> TimeOffRequestsOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string));
+        ApiResponse<GetTimeOffRequestResponse> TimeOffRequestsOneWithHttpInfo(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string));
         /// <summary>
         /// Update Time Off Request
         /// </summary>
@@ -796,13 +800,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>UpdateTimeOffRequestResponse</returns>
-        UpdateTimeOffRequestResponse TimeOffRequestsUpdate(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        UpdateTimeOffRequestResponse TimeOffRequestsUpdate(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
 
         /// <summary>
         /// Update Time Off Request
@@ -812,13 +817,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of UpdateTimeOffRequestResponse</returns>
-        ApiResponse<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateWithHttpInfo(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
+        ApiResponse<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateWithHttpInfo(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?));
         #endregion Synchronous Operations
     }
 
@@ -1582,13 +1588,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteTimeOffRequestResponse</returns>
-        System.Threading.Tasks.Task<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Time Off Request
@@ -1598,13 +1605,14 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteTimeOffRequestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteTimeOffRequestResponse>> TimeOffRequestsDeleteWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeleteTimeOffRequestResponse>> TimeOffRequestsDeleteWithHttpInfoAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Time Off Request
         /// </summary>
@@ -1613,6 +1621,7 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
@@ -1620,7 +1629,7 @@ namespace Apideck.Api
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTimeOffRequestResponse</returns>
-        System.Threading.Tasks.Task<GetTimeOffRequestResponse> TimeOffRequestsOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GetTimeOffRequestResponse> TimeOffRequestsOneAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Get Time Off Request
@@ -1630,6 +1639,7 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
@@ -1637,7 +1647,7 @@ namespace Apideck.Api
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTimeOffRequestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetTimeOffRequestResponse>> TimeOffRequestsOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GetTimeOffRequestResponse>> TimeOffRequestsOneWithHttpInfoAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Time Off Request
         /// </summary>
@@ -1646,6 +1656,7 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -1653,7 +1664,7 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateTimeOffRequestResponse</returns>
-        System.Threading.Tasks.Task<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateAsync(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateAsync(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Time Off Request
@@ -1663,6 +1674,7 @@ namespace Apideck.Api
         /// </remarks>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -1670,7 +1682,7 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateTimeOffRequestResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateTimeOffRequestResponse>> TimeOffRequestsUpdateWithHttpInfoAsync(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateTimeOffRequestResponse>> TimeOffRequestsUpdateWithHttpInfoAsync(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -6507,14 +6519,15 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>DeleteTimeOffRequestResponse</returns>
-        public DeleteTimeOffRequestResponse TimeOffRequestsDelete(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public DeleteTimeOffRequestResponse TimeOffRequestsDelete(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
-            Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse> localVarResponse = TimeOffRequestsDeleteWithHttpInfo(id, consumerId, appId, serviceId, raw);
+            Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse> localVarResponse = TimeOffRequestsDeleteWithHttpInfo(id, employeeId, consumerId, appId, serviceId, raw);
             return localVarResponse.Data;
         }
 
@@ -6523,17 +6536,24 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of DeleteTimeOffRequestResponse</returns>
-        public Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteWithHttpInfo(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling HrisApi->TimeOffRequestsDelete");
+            }
+
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->TimeOffRequestsDelete");
             }
 
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
@@ -6559,6 +6579,7 @@ namespace Apideck.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
@@ -6583,7 +6604,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<DeleteTimeOffRequestResponse>("/hris/time-off-requests/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<DeleteTimeOffRequestResponse>("/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TimeOffRequestsDelete", localVarResponse);
@@ -6601,15 +6622,16 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteTimeOffRequestResponse</returns>
-        public async System.Threading.Tasks.Task<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeleteTimeOffRequestResponse> TimeOffRequestsDeleteAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse> localVarResponse = await TimeOffRequestsDeleteWithHttpInfoAsync(id, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse> localVarResponse = await TimeOffRequestsDeleteWithHttpInfoAsync(id, employeeId, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6618,18 +6640,25 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteTimeOffRequestResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse>> TimeOffRequestsDeleteWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<DeleteTimeOffRequestResponse>> TimeOffRequestsDeleteWithHttpInfoAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling HrisApi->TimeOffRequestsDelete");
+            }
+
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->TimeOffRequestsDelete");
             }
 
 
@@ -6656,6 +6685,7 @@ namespace Apideck.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
@@ -6680,7 +6710,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<DeleteTimeOffRequestResponse>("/hris/time-off-requests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<DeleteTimeOffRequestResponse>("/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -6699,15 +6729,16 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>GetTimeOffRequestResponse</returns>
-        public GetTimeOffRequestResponse TimeOffRequestsOne(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string))
+        public GetTimeOffRequestResponse TimeOffRequestsOne(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string))
         {
-            Apideck.Client.ApiResponse<GetTimeOffRequestResponse> localVarResponse = TimeOffRequestsOneWithHttpInfo(id, consumerId, appId, serviceId, raw, fields);
+            Apideck.Client.ApiResponse<GetTimeOffRequestResponse> localVarResponse = TimeOffRequestsOneWithHttpInfo(id, employeeId, consumerId, appId, serviceId, raw, fields);
             return localVarResponse.Data;
         }
 
@@ -6716,13 +6747,14 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <returns>ApiResponse of GetTimeOffRequestResponse</returns>
-        public Apideck.Client.ApiResponse<GetTimeOffRequestResponse> TimeOffRequestsOneWithHttpInfo(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string))
+        public Apideck.Client.ApiResponse<GetTimeOffRequestResponse> TimeOffRequestsOneWithHttpInfo(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -6730,6 +6762,12 @@ namespace Apideck.Api
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling HrisApi->TimeOffRequestsOne");
             }
 
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->TimeOffRequestsOne");
+            }
+
             Apideck.Client.RequestOptions localVarRequestOptions = new Apideck.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -6753,6 +6791,7 @@ namespace Apideck.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
@@ -6781,7 +6820,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<GetTimeOffRequestResponse>("/hris/time-off-requests/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetTimeOffRequestResponse>("/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TimeOffRequestsOne", localVarResponse);
@@ -6799,6 +6838,7 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
@@ -6806,9 +6846,9 @@ namespace Apideck.Api
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetTimeOffRequestResponse</returns>
-        public async System.Threading.Tasks.Task<GetTimeOffRequestResponse> TimeOffRequestsOneAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GetTimeOffRequestResponse> TimeOffRequestsOneAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<GetTimeOffRequestResponse> localVarResponse = await TimeOffRequestsOneWithHttpInfoAsync(id, consumerId, appId, serviceId, raw, fields, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<GetTimeOffRequestResponse> localVarResponse = await TimeOffRequestsOneWithHttpInfoAsync(id, employeeId, consumerId, appId, serviceId, raw, fields, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -6817,6 +6857,7 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
@@ -6824,12 +6865,18 @@ namespace Apideck.Api
         /// <param name="fields">The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetTimeOffRequestResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetTimeOffRequestResponse>> TimeOffRequestsOneWithHttpInfoAsync(string id, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<GetTimeOffRequestResponse>> TimeOffRequestsOneWithHttpInfoAsync(string id, string employeeId, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), string fields = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling HrisApi->TimeOffRequestsOne");
+            }
+
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->TimeOffRequestsOne");
             }
 
 
@@ -6856,6 +6903,7 @@ namespace Apideck.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
@@ -6884,7 +6932,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetTimeOffRequestResponse>("/hris/time-off-requests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetTimeOffRequestResponse>("/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -6903,15 +6951,16 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>UpdateTimeOffRequestResponse</returns>
-        public UpdateTimeOffRequestResponse TimeOffRequestsUpdate(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public UpdateTimeOffRequestResponse TimeOffRequestsUpdate(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
-            Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse> localVarResponse = TimeOffRequestsUpdateWithHttpInfo(id, timeOffRequest, consumerId, appId, serviceId, raw);
+            Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse> localVarResponse = TimeOffRequestsUpdateWithHttpInfo(id, employeeId, timeOffRequest, consumerId, appId, serviceId, raw);
             return localVarResponse.Data;
         }
 
@@ -6920,18 +6969,25 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
         /// <param name="serviceId">Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional)</param>
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <returns>ApiResponse of UpdateTimeOffRequestResponse</returns>
-        public Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateWithHttpInfo(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
+        public Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateWithHttpInfo(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling HrisApi->TimeOffRequestsUpdate");
+            }
+
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->TimeOffRequestsUpdate");
             }
 
             // verify the required parameter 'timeOffRequest' is set
@@ -6964,6 +7020,7 @@ namespace Apideck.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
@@ -6989,7 +7046,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<UpdateTimeOffRequestResponse>("/hris/time-off-requests/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<UpdateTimeOffRequestResponse>("/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("TimeOffRequestsUpdate", localVarResponse);
@@ -7007,6 +7064,7 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -7014,9 +7072,9 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateTimeOffRequestResponse</returns>
-        public async System.Threading.Tasks.Task<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateAsync(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateTimeOffRequestResponse> TimeOffRequestsUpdateAsync(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse> localVarResponse = await TimeOffRequestsUpdateWithHttpInfoAsync(id, timeOffRequest, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
+            Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse> localVarResponse = await TimeOffRequestsUpdateWithHttpInfoAsync(id, employeeId, timeOffRequest, consumerId, appId, serviceId, raw, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -7025,6 +7083,7 @@ namespace Apideck.Api
         /// </summary>
         /// <exception cref="Apideck.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">ID of the record you are acting upon.</param>
+        /// <param name="employeeId">ID of the employee you are acting upon.</param>
         /// <param name="timeOffRequest"></param>
         /// <param name="consumerId">ID of the consumer which you want to get or push data from (optional)</param>
         /// <param name="appId">The ID of your Unify application (optional)</param>
@@ -7032,12 +7091,18 @@ namespace Apideck.Api
         /// <param name="raw">Include raw response. Mostly used for debugging purposes (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateTimeOffRequestResponse)</returns>
-        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse>> TimeOffRequestsUpdateWithHttpInfoAsync(string id, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Apideck.Client.ApiResponse<UpdateTimeOffRequestResponse>> TimeOffRequestsUpdateWithHttpInfoAsync(string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = default(string), string appId = default(string), string serviceId = default(string), bool? raw = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
             {
                 throw new Apideck.Client.ApiException(400, "Missing required parameter 'id' when calling HrisApi->TimeOffRequestsUpdate");
+            }
+
+            // verify the required parameter 'employeeId' is set
+            if (employeeId == null)
+            {
+                throw new Apideck.Client.ApiException(400, "Missing required parameter 'employeeId' when calling HrisApi->TimeOffRequestsUpdate");
             }
 
             // verify the required parameter 'timeOffRequest' is set
@@ -7071,6 +7136,7 @@ namespace Apideck.Api
             }
 
             localVarRequestOptions.PathParameters.Add("id", Apideck.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("employee_id", Apideck.Client.ClientUtils.ParameterToString(employeeId)); // path parameter
             if (raw != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "raw", raw));
@@ -7096,7 +7162,7 @@ namespace Apideck.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateTimeOffRequestResponse>("/hris/time-off-requests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateTimeOffRequestResponse>("/hris/time-off-requests/employees/{employee_id}/time-off-requests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
