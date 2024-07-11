@@ -26,9 +26,9 @@ Method | HTTP request | Description
 [**PayrollsOne**](HrisApi.md#payrollsone) | **GET** /hris/payrolls/{payroll_id} | Get Payroll
 [**TimeOffRequestsAdd**](HrisApi.md#timeoffrequestsadd) | **POST** /hris/time-off-requests | Create Time Off Request
 [**TimeOffRequestsAll**](HrisApi.md#timeoffrequestsall) | **GET** /hris/time-off-requests | List Time Off Requests
-[**TimeOffRequestsDelete**](HrisApi.md#timeoffrequestsdelete) | **DELETE** /hris/time-off-requests/{id} | Delete Time Off Request
-[**TimeOffRequestsOne**](HrisApi.md#timeoffrequestsone) | **GET** /hris/time-off-requests/{id} | Get Time Off Request
-[**TimeOffRequestsUpdate**](HrisApi.md#timeoffrequestsupdate) | **PATCH** /hris/time-off-requests/{id} | Update Time Off Request
+[**TimeOffRequestsDelete**](HrisApi.md#timeoffrequestsdelete) | **DELETE** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Delete Time Off Request
+[**TimeOffRequestsOne**](HrisApi.md#timeoffrequestsone) | **GET** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Get Time Off Request
+[**TimeOffRequestsUpdate**](HrisApi.md#timeoffrequestsupdate) | **PATCH** /hris/time-off-requests/employees/{employee_id}/time-off-requests/{id} | Update Time Off Request
 
 
 <a name="companiesadd"></a>
@@ -2077,7 +2077,7 @@ Name | Type | Description  | Notes
 
 <a name="timeoffrequestsdelete"></a>
 # **TimeOffRequestsDelete**
-> DeleteTimeOffRequestResponse TimeOffRequestsDelete (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> DeleteTimeOffRequestResponse TimeOffRequestsDelete (string id, string employeeId, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
 
 Delete Time Off Request
 
@@ -2106,6 +2106,7 @@ namespace Example
 
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
+            var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
@@ -2114,7 +2115,7 @@ namespace Example
             try
             {
                 // Delete Time Off Request
-                DeleteTimeOffRequestResponse result = apiInstance.TimeOffRequestsDelete(id, consumerId, appId, serviceId, raw);
+                DeleteTimeOffRequestResponse result = apiInstance.TimeOffRequestsDelete(id, employeeId, consumerId, appId, serviceId, raw);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2133,6 +2134,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of the record you are acting upon. | 
+ **employeeId** | **string**| ID of the employee you are acting upon. | 
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
@@ -2167,7 +2169,7 @@ Name | Type | Description  | Notes
 
 <a name="timeoffrequestsone"></a>
 # **TimeOffRequestsOne**
-> GetTimeOffRequestResponse TimeOffRequestsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
+> GetTimeOffRequestResponse TimeOffRequestsOne (string id, string employeeId, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
 
 Get Time Off Request
 
@@ -2196,6 +2198,7 @@ namespace Example
 
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
+            var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
@@ -2205,7 +2208,7 @@ namespace Example
             try
             {
                 // Get Time Off Request
-                GetTimeOffRequestResponse result = apiInstance.TimeOffRequestsOne(id, consumerId, appId, serviceId, raw, fields);
+                GetTimeOffRequestResponse result = apiInstance.TimeOffRequestsOne(id, employeeId, consumerId, appId, serviceId, raw, fields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2224,6 +2227,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of the record you are acting upon. | 
+ **employeeId** | **string**| ID of the employee you are acting upon. | 
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
@@ -2259,7 +2263,7 @@ Name | Type | Description  | Notes
 
 <a name="timeoffrequestsupdate"></a>
 # **TimeOffRequestsUpdate**
-> UpdateTimeOffRequestResponse TimeOffRequestsUpdate (string id, TimeOffRequest timeOffRequest, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+> UpdateTimeOffRequestResponse TimeOffRequestsUpdate (string id, string employeeId, TimeOffRequest timeOffRequest, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
 
 Update Time Off Request
 
@@ -2288,6 +2292,7 @@ namespace Example
 
             var apiInstance = new HrisApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
+            var employeeId = "employeeId_example";  // string | ID of the employee you are acting upon.
             var timeOffRequest = new TimeOffRequest(); // TimeOffRequest | 
             var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
@@ -2297,7 +2302,7 @@ namespace Example
             try
             {
                 // Update Time Off Request
-                UpdateTimeOffRequestResponse result = apiInstance.TimeOffRequestsUpdate(id, timeOffRequest, consumerId, appId, serviceId, raw);
+                UpdateTimeOffRequestResponse result = apiInstance.TimeOffRequestsUpdate(id, employeeId, timeOffRequest, consumerId, appId, serviceId, raw);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2316,6 +2321,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of the record you are acting upon. | 
+ **employeeId** | **string**| ID of the employee you are acting upon. | 
  **timeOffRequest** | [**TimeOffRequest**](TimeOffRequest.md)|  | 
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
