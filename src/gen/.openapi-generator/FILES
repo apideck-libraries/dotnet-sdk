@@ -642,6 +642,8 @@ docs/UpdateWebhookRequest.md
 docs/UpdateWebhookResponse.md
 docs/UploadSession.md
 docs/User.md
+docs/ValidateConnectionStateResponse.md
+docs/ValidateConnectionStateResponseData.md
 docs/VaultApi.md
 docs/VaultEventType.md
 docs/VirtualWebhooks.md
@@ -1295,6 +1297,8 @@ src/Apideck.Test/Model/UpdateWebhookRequestTests.cs
 src/Apideck.Test/Model/UpdateWebhookResponseTests.cs
 src/Apideck.Test/Model/UploadSessionTests.cs
 src/Apideck.Test/Model/UserTests.cs
+src/Apideck.Test/Model/ValidateConnectionStateResponseDataTests.cs
+src/Apideck.Test/Model/ValidateConnectionStateResponseTests.cs
 src/Apideck.Test/Model/VaultEventTypeTests.cs
 src/Apideck.Test/Model/VirtualWebhooksTests.cs
 src/Apideck.Test/Model/WalletDetailsTests.cs
@@ -1962,6 +1966,8 @@ src/Apideck/Model/UpdateWebhookRequest.cs
 src/Apideck/Model/UpdateWebhookResponse.cs
 src/Apideck/Model/UploadSession.cs
 src/Apideck/Model/User.cs
+src/Apideck/Model/ValidateConnectionStateResponse.cs
+src/Apideck/Model/ValidateConnectionStateResponseData.cs
 src/Apideck/Model/VaultEventType.cs
 src/Apideck/Model/VirtualWebhooks.cs
 src/Apideck/Model/WalletDetails.cs

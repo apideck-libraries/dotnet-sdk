@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**CustomFieldsAll**](VaultApi.md#customfieldsall) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields
 [**LogsAll**](VaultApi.md#logsall) | **GET** /vault/logs | Get all consumer request logs
 [**SessionsCreate**](VaultApi.md#sessionscreate) | **POST** /vault/sessions | Create Session
+[**ValidateConnectionState**](VaultApi.md#validateconnectionstate) | **POST** /vault/connections/{unified_api}/{service_id}/validate | Validate Connection State
 
 
 <a name="connectionsettingsall"></a>
@@ -1509,6 +1510,96 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Session created |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="validateconnectionstate"></a>
+# **ValidateConnectionState**
+> ValidateConnectionStateResponse ValidateConnectionState (string serviceId, string unifiedApi, string consumerId = null, string appId = null, Object body = null)
+
+Validate Connection State
+
+This endpoint validates the current state of a given connection. This will perform different checks based on the connection auth type. For basic and apiKey auth types, the presence of required fields is checked. For connectors that implement OAuth2, this operation forces the refresh flow for an access token regardless of its expiry.  Note:   - Do not include any credentials in the request body. This operation does not persist changes, but only triggers the validation of connection state.   - If a refresh token flow was performed and successful, the new access token will then be used for subsequent API requests. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ValidateConnectionStateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var body = null;  // Object |  (optional) 
+
+            try
+            {
+                // Validate Connection State
+                ValidateConnectionStateResponse result = apiInstance.ValidateConnectionState(serviceId, unifiedApi, consumerId, appId, body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ValidateConnectionState: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **body** | **Object**|  | [optional] 
+
+### Return type
+
+[**ValidateConnectionStateResponse**](ValidateConnectionStateResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Connection access token refreshed |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |
