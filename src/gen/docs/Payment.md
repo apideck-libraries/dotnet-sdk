@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Allocations** | [**List&lt;Allocation&gt;**](Allocation.md) |  | [optional] 
 **Note** | **string** | Optional note to be associated with the payment. | [optional] 
 **Number** | **string** | Payment number. | [optional] 
+**TrackingCategories** | [**List&lt;LinkedTrackingCategory&gt;**](LinkedTrackingCategory.md) | A list of linked tracking categories. | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **DisplayId** | **string** | Payment id to be displayed. | [optional] 

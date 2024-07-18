@@ -156,6 +156,7 @@ docs/CreateTaxRateResponse.md
 docs/CreateTenderResponse.md
 docs/CreateTicketResponse.md
 docs/CreateTimeOffRequestResponse.md
+docs/CreateTrackingCategoryResponse.md
 docs/CreateUploadSessionRequest.md
 docs/CreateUploadSessionResponse.md
 docs/CreateUserResponse.md
@@ -223,10 +224,12 @@ docs/DeleteTaxRateResponse.md
 docs/DeleteTenderResponse.md
 docs/DeleteTicketResponse.md
 docs/DeleteTimeOffRequestResponse.md
+docs/DeleteTrackingCategoryResponse.md
 docs/DeleteUploadSessionResponse.md
 docs/DeleteUserResponse.md
 docs/DeleteWebhookResponse.md
 docs/Department.md
+docs/DeprecatedLinkedTrackingCategory.md
 docs/Drive.md
 docs/DriveGroup.md
 docs/DriveGroupsFilter.md
@@ -410,6 +413,8 @@ docs/GetTicketResponse.md
 docs/GetTicketsResponse.md
 docs/GetTimeOffRequestResponse.md
 docs/GetTimeOffRequestsResponse.md
+docs/GetTrackingCategoriesResponse.md
+docs/GetTrackingCategoryResponse.md
 docs/GetUploadSessionResponse.md
 docs/GetUserResponse.md
 docs/GetUsersResponse.md
@@ -573,6 +578,7 @@ docs/TimeOffRequestNotes.md
 docs/TimeOffRequestsFilter.md
 docs/TooManyRequestsResponse.md
 docs/TooManyRequestsResponseDetail.md
+docs/TrackingCategory.md
 docs/TrackingItem.md
 docs/UnauthorizedResponse.md
 docs/UnexpectedErrorResponse.md
@@ -636,6 +642,7 @@ docs/UpdateTaxRateResponse.md
 docs/UpdateTenderResponse.md
 docs/UpdateTicketResponse.md
 docs/UpdateTimeOffRequestResponse.md
+docs/UpdateTrackingCategoryResponse.md
 docs/UpdateUploadSessionResponse.md
 docs/UpdateUserResponse.md
 docs/UpdateWebhookRequest.md
@@ -819,6 +826,7 @@ src/Apideck.Test/Model/CreateTaxRateResponseTests.cs
 src/Apideck.Test/Model/CreateTenderResponseTests.cs
 src/Apideck.Test/Model/CreateTicketResponseTests.cs
 src/Apideck.Test/Model/CreateTimeOffRequestResponseTests.cs
+src/Apideck.Test/Model/CreateTrackingCategoryResponseTests.cs
 src/Apideck.Test/Model/CreateUploadSessionRequestTests.cs
 src/Apideck.Test/Model/CreateUploadSessionResponseTests.cs
 src/Apideck.Test/Model/CreateUserResponseTests.cs
@@ -885,10 +893,12 @@ src/Apideck.Test/Model/DeleteTaxRateResponseTests.cs
 src/Apideck.Test/Model/DeleteTenderResponseTests.cs
 src/Apideck.Test/Model/DeleteTicketResponseTests.cs
 src/Apideck.Test/Model/DeleteTimeOffRequestResponseTests.cs
+src/Apideck.Test/Model/DeleteTrackingCategoryResponseTests.cs
 src/Apideck.Test/Model/DeleteUploadSessionResponseTests.cs
 src/Apideck.Test/Model/DeleteUserResponseTests.cs
 src/Apideck.Test/Model/DeleteWebhookResponseTests.cs
 src/Apideck.Test/Model/DepartmentTests.cs
+src/Apideck.Test/Model/DeprecatedLinkedTrackingCategoryTests.cs
 src/Apideck.Test/Model/DriveGroupTests.cs
 src/Apideck.Test/Model/DriveGroupsFilterTests.cs
 src/Apideck.Test/Model/DriveTests.cs
@@ -1070,6 +1080,8 @@ src/Apideck.Test/Model/GetTicketResponseTests.cs
 src/Apideck.Test/Model/GetTicketsResponseTests.cs
 src/Apideck.Test/Model/GetTimeOffRequestResponseTests.cs
 src/Apideck.Test/Model/GetTimeOffRequestsResponseTests.cs
+src/Apideck.Test/Model/GetTrackingCategoriesResponseTests.cs
+src/Apideck.Test/Model/GetTrackingCategoryResponseTests.cs
 src/Apideck.Test/Model/GetUploadSessionResponseTests.cs
 src/Apideck.Test/Model/GetUserResponseTests.cs
 src/Apideck.Test/Model/GetUsersResponseTests.cs
@@ -1228,6 +1240,7 @@ src/Apideck.Test/Model/TimeOffRequestTests.cs
 src/Apideck.Test/Model/TimeOffRequestsFilterTests.cs
 src/Apideck.Test/Model/TooManyRequestsResponseDetailTests.cs
 src/Apideck.Test/Model/TooManyRequestsResponseTests.cs
+src/Apideck.Test/Model/TrackingCategoryTests.cs
 src/Apideck.Test/Model/TrackingItemTests.cs
 src/Apideck.Test/Model/UnauthorizedResponseTests.cs
 src/Apideck.Test/Model/UnexpectedErrorResponseTests.cs
@@ -1291,6 +1304,7 @@ src/Apideck.Test/Model/UpdateTaxRateResponseTests.cs
 src/Apideck.Test/Model/UpdateTenderResponseTests.cs
 src/Apideck.Test/Model/UpdateTicketResponseTests.cs
 src/Apideck.Test/Model/UpdateTimeOffRequestResponseTests.cs
+src/Apideck.Test/Model/UpdateTrackingCategoryResponseTests.cs
 src/Apideck.Test/Model/UpdateUploadSessionResponseTests.cs
 src/Apideck.Test/Model/UpdateUserResponseTests.cs
 src/Apideck.Test/Model/UpdateWebhookRequestTests.cs
@@ -1488,6 +1502,7 @@ src/Apideck/Model/CreateTaxRateResponse.cs
 src/Apideck/Model/CreateTenderResponse.cs
 src/Apideck/Model/CreateTicketResponse.cs
 src/Apideck/Model/CreateTimeOffRequestResponse.cs
+src/Apideck/Model/CreateTrackingCategoryResponse.cs
 src/Apideck/Model/CreateUploadSessionRequest.cs
 src/Apideck/Model/CreateUploadSessionResponse.cs
 src/Apideck/Model/CreateUserResponse.cs
@@ -1554,10 +1569,12 @@ src/Apideck/Model/DeleteTaxRateResponse.cs
 src/Apideck/Model/DeleteTenderResponse.cs
 src/Apideck/Model/DeleteTicketResponse.cs
 src/Apideck/Model/DeleteTimeOffRequestResponse.cs
+src/Apideck/Model/DeleteTrackingCategoryResponse.cs
 src/Apideck/Model/DeleteUploadSessionResponse.cs
 src/Apideck/Model/DeleteUserResponse.cs
 src/Apideck/Model/DeleteWebhookResponse.cs
 src/Apideck/Model/Department.cs
+src/Apideck/Model/DeprecatedLinkedTrackingCategory.cs
 src/Apideck/Model/Drive.cs
 src/Apideck/Model/DriveGroup.cs
 src/Apideck/Model/DriveGroupsFilter.cs
@@ -1739,6 +1756,8 @@ src/Apideck/Model/GetTicketResponse.cs
 src/Apideck/Model/GetTicketsResponse.cs
 src/Apideck/Model/GetTimeOffRequestResponse.cs
 src/Apideck/Model/GetTimeOffRequestsResponse.cs
+src/Apideck/Model/GetTrackingCategoriesResponse.cs
+src/Apideck/Model/GetTrackingCategoryResponse.cs
 src/Apideck/Model/GetUploadSessionResponse.cs
 src/Apideck/Model/GetUserResponse.cs
 src/Apideck/Model/GetUsersResponse.cs
@@ -1897,6 +1916,7 @@ src/Apideck/Model/TimeOffRequestNotes.cs
 src/Apideck/Model/TimeOffRequestsFilter.cs
 src/Apideck/Model/TooManyRequestsResponse.cs
 src/Apideck/Model/TooManyRequestsResponseDetail.cs
+src/Apideck/Model/TrackingCategory.cs
 src/Apideck/Model/TrackingItem.cs
 src/Apideck/Model/UnauthorizedResponse.cs
 src/Apideck/Model/UnexpectedErrorResponse.cs
@@ -1960,6 +1980,7 @@ src/Apideck/Model/UpdateTaxRateResponse.cs
 src/Apideck/Model/UpdateTenderResponse.cs
 src/Apideck/Model/UpdateTicketResponse.cs
 src/Apideck/Model/UpdateTimeOffRequestResponse.cs
+src/Apideck/Model/UpdateTrackingCategoryResponse.cs
 src/Apideck/Model/UpdateUploadSessionResponse.cs
 src/Apideck/Model/UpdateUserResponse.cs
 src/Apideck/Model/UpdateWebhookRequest.cs

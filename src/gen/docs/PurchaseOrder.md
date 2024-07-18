@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **TaxCode** | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 **Channel** | **string** | The channel through which the transaction is processed. | [optional] 
 **Memo** | **string** | Message for the supplier. This text appears on the Purchase Order. | [optional] 
+**TrackingCategories** | [**List&lt;LinkedTrackingCategory&gt;**](LinkedTrackingCategory.md) | A list of linked tracking categories. | [optional] 
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 

@@ -81,6 +81,11 @@ Method | HTTP request | Description
 [**TaxRatesDelete**](AccountingApi.md#taxratesdelete) | **DELETE** /accounting/tax-rates/{id} | Delete Tax Rate
 [**TaxRatesOne**](AccountingApi.md#taxratesone) | **GET** /accounting/tax-rates/{id} | Get Tax Rate
 [**TaxRatesUpdate**](AccountingApi.md#taxratesupdate) | **PATCH** /accounting/tax-rates/{id} | Update Tax Rate
+[**TrackingCategoriesAdd**](AccountingApi.md#trackingcategoriesadd) | **POST** /accounting/tracking-categories | Create Tracking Category
+[**TrackingCategoriesAll**](AccountingApi.md#trackingcategoriesall) | **GET** /accounting/tracking-categories | List Tracking Categories
+[**TrackingCategoriesDelete**](AccountingApi.md#trackingcategoriesdelete) | **DELETE** /accounting/tracking-categories/{id} | Delete Tracking Category
+[**TrackingCategoriesOne**](AccountingApi.md#trackingcategoriesone) | **GET** /accounting/tracking-categories/{id} | Get Tracking Category
+[**TrackingCategoriesUpdate**](AccountingApi.md#trackingcategoriesupdate) | **PATCH** /accounting/tracking-categories/{id} | Update Tracking Category
 
 
 <a name="attachmentsall"></a>
@@ -7206,6 +7211,466 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | TaxRate updated |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackingcategoriesadd"></a>
+# **TrackingCategoriesAdd**
+> CreateTrackingCategoryResponse TrackingCategoriesAdd (TrackingCategory trackingCategory, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+
+Create Tracking Category
+
+Create Tracking Category
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class TrackingCategoriesAddExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var trackingCategory = new TrackingCategory(); // TrackingCategory | 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+
+            try
+            {
+                // Create Tracking Category
+                CreateTrackingCategoryResponse result = apiInstance.TrackingCategoriesAdd(trackingCategory, raw, consumerId, appId, serviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.TrackingCategoriesAdd: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **trackingCategory** | [**TrackingCategory**](TrackingCategory.md)|  | 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+
+### Return type
+
+[**CreateTrackingCategoryResponse**](CreateTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Tracking category created |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackingcategoriesall"></a>
+# **TrackingCategoriesAll**
+> GetTrackingCategoriesResponse TrackingCategoriesAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
+
+List Tracking Categories
+
+List Tracking Categories
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class TrackingCategoriesAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
+
+            try
+            {
+                // List Tracking Categories
+                GetTrackingCategoriesResponse result = apiInstance.TrackingCategoriesAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.TrackingCategoriesAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
+
+### Return type
+
+[**GetTrackingCategoriesResponse**](GetTrackingCategoriesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Tracking categories |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackingcategoriesdelete"></a>
+# **TrackingCategoriesDelete**
+> DeleteTrackingCategoryResponse TrackingCategoriesDelete (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Delete Tracking Category
+
+Delete Tracking Category
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class TrackingCategoriesDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Delete Tracking Category
+                DeleteTrackingCategoryResponse result = apiInstance.TrackingCategoriesDelete(id, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.TrackingCategoriesDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**DeleteTrackingCategoryResponse**](DeleteTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Tracking category deleted |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackingcategoriesone"></a>
+# **TrackingCategoriesOne**
+> GetTrackingCategoryResponse TrackingCategoriesOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
+
+Get Tracking Category
+
+Get Tracking Category
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class TrackingCategoriesOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
+
+            try
+            {
+                // Get Tracking Category
+                GetTrackingCategoryResponse result = apiInstance.TrackingCategoriesOne(id, consumerId, appId, serviceId, raw, fields);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.TrackingCategoriesOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
+
+### Return type
+
+[**GetTrackingCategoryResponse**](GetTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Tracking category |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackingcategoriesupdate"></a>
+# **TrackingCategoriesUpdate**
+> UpdateTrackingCategoryResponse TrackingCategoriesUpdate (string id, TrackingCategory trackingCategory, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Update Tracking Category
+
+Update Tracking Category
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class TrackingCategoriesUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var trackingCategory = new TrackingCategory(); // TrackingCategory | 
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Update Tracking Category
+                UpdateTrackingCategoryResponse result = apiInstance.TrackingCategoriesUpdate(id, trackingCategory, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.TrackingCategoriesUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **trackingCategory** | [**TrackingCategory**](TrackingCategory.md)|  | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**UpdateTrackingCategoryResponse**](UpdateTrackingCategoryResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Tracking category updated |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |
