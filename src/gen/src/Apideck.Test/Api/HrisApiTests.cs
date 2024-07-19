@@ -346,7 +346,8 @@ namespace Apideck.Test.Api
             //bool? raw = null;
             //string fields = null;
             //EmployeesOneFilter filter = null;
-            //var response = instance.EmployeesOne(id, consumerId, appId, serviceId, raw, fields, filter);
+            //PassThroughQuery passThrough = null;
+            //var response = instance.EmployeesOne(id, consumerId, appId, serviceId, raw, fields, filter, passThrough);
             //Assert.IsType<GetEmployeeResponse>(response);
         }
 
