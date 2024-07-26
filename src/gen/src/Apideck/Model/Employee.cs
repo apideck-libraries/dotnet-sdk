@@ -91,6 +91,7 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Employee" /> class.
         /// </summary>
+        /// <param name="id">A unique identifier for an object. (required).</param>
         /// <param name="firstName">The first name of the person..</param>
         /// <param name="lastName">The last name of the person..</param>
         /// <param name="middleName">Middle name of the person..</param>
@@ -151,8 +152,13 @@ namespace Apideck.Model
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="deleted">Flag to indicate if the object is deleted..</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
-        public Employee(string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), string ethnicity = default(string), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?), List<Object> passThrough = default(List<Object>))
+        public Employee(string id = default(string), string firstName = default(string), string lastName = default(string), string middleName = default(string), string displayName = default(string), string preferredName = default(string), string initials = default(string), string salutation = default(string), string title = default(string), string maritalStatus = default(string), Person partner = default(Person), string division = default(string), string divisionId = default(string), string department = default(string), string departmentId = default(string), string departmentName = default(string), Team team = default(Team), string companyId = default(string), string companyName = default(string), string employmentStartDate = default(string), string employmentEndDate = default(string), LeavingReasonEnum? leavingReason = default(LeavingReasonEnum?), string employeeNumber = default(string), EmploymentStatus? employmentStatus = default(EmploymentStatus?), EmployeeEmploymentRole employmentRole = default(EmployeeEmploymentRole), string ethnicity = default(string), EmployeeManager manager = default(EmployeeManager), List<string> directReports = default(List<string>), string socialSecurityNumber = default(string), DateTime? birthday = default(DateTime?), DateTime? deceasedOn = default(DateTime?), string countryOfBirth = default(string), string description = default(string), Gender? gender = default(Gender?), string pronouns = default(string), string preferredLanguage = default(string), List<string> languages = default(List<string>), List<string> nationalities = default(List<string>), string photoUrl = default(string), string timezone = default(string), string source = default(string), string sourceId = default(string), string recordUrl = default(string), List<EmployeeJob> jobs = default(List<EmployeeJob>), List<EmployeeCompensation> compensations = default(List<EmployeeCompensation>), bool? worksRemote = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<CustomField> customFields = default(List<CustomField>), List<SocialLink> socialLinks = default(List<SocialLink>), List<BankAccount> bankAccounts = default(List<BankAccount>), string taxCode = default(string), string taxId = default(string), string dietaryPreference = default(string), List<string> foodAllergies = default(List<string>), ProbationPeriod probationPeriod = default(ProbationPeriod), List<string> tags = default(List<string>), string rowVersion = default(string), bool? deleted = default(bool?), List<Object> passThrough = default(List<Object>))
         {
+            // to ensure "id" is required (not null)
+            if (id == null) {
+                throw new ArgumentNullException("id is a required property for Employee and cannot be null");
+            }
+            this.Id = id;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.MiddleName = middleName;
@@ -219,17 +225,9 @@ namespace Apideck.Model
         /// A unique identifier for an object.
         /// </summary>
         /// <value>A unique identifier for an object.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
-        public string Id { get; private set; }
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
 
-        /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
-        {
-            return false;
-        }
         /// <summary>
         /// The first name of the person.
         /// </summary>
