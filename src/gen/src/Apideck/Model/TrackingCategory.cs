@@ -64,13 +64,15 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="parentId">A unique identifier for an object..</param>
         /// <param name="name">The name of the tracking category..</param>
+        /// <param name="code">The code of the tracking category..</param>
         /// <param name="status">Based on the status some functionality is enabled or disabled..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
-        public TrackingCategory(string parentId = default(string), string name = default(string), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
+        public TrackingCategory(string parentId = default(string), string name = default(string), string code = default(string), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
         {
             this.ParentId = parentId;
             this.Name = name;
+            this.Code = code;
             this.Status = status;
             this.RowVersion = rowVersion;
             this.PassThrough = passThrough;
@@ -104,6 +106,13 @@ namespace Apideck.Model
         /// <value>The name of the tracking category.</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// The code of the tracking category.
+        /// </summary>
+        /// <value>The code of the tracking category.</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
 
         /// <summary>
         /// When custom mappings are configured on the resource, the result is included here.
@@ -205,6 +214,7 @@ namespace Apideck.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
@@ -262,6 +272,11 @@ namespace Apideck.Model
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 ) && 
                 (
                     this.Status == input.Status ||
@@ -325,6 +340,10 @@ namespace Apideck.Model
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.CustomMappings != null)
