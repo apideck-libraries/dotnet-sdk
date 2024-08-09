@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **DepartmentId** | **string** | Department id | [optional] 
 **Item** | [**LinkedInvoiceItem**](LinkedInvoiceItem.md) |  | [optional] 
 **TaxRate** | [**LinkedTaxRate**](LinkedTaxRate.md) |  | [optional] 
+**TrackingCategories** | [**List&lt;LinkedTrackingCategory&gt;**](LinkedTrackingCategory.md) | A list of linked tracking categories. | [optional] 
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 

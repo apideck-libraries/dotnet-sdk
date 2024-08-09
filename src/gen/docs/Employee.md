@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | A unique identifier for an object. | [readonly] 
+**Id** | **string** | A unique identifier for an object. | [optional] 
 **FirstName** | **string** | The first name of the person. | [optional] 
 **LastName** | **string** | The last name of the person. | [optional] 
 **MiddleName** | **string** | Middle name of the person. | [optional] 
