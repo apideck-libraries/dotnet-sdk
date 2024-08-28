@@ -168,6 +168,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'LocationId'
         }
+        /// <summary>
+        /// Test the property 'LineNumber'
+        /// </summary>
+        [Fact]
+        public void LineNumberTest()
+        {
+            // TODO unit test for the property 'LineNumber'
+        }
 
     }
 

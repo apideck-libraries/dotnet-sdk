@@ -83,7 +83,7 @@ namespace Apideck.Model
         /// <param name="id">A unique identifier for an object..</param>
         /// <param name="rowId">Row ID.</param>
         /// <param name="code">User defined item code.</param>
-        /// <param name="lineNumber">Line number in the invoice.</param>
+        /// <param name="lineNumber">Line number of the resource.</param>
         /// <param name="description">User defined description.</param>
         /// <param name="type">Item type.</param>
         /// <param name="taxAmount">Tax amount.</param>
@@ -148,9 +148,9 @@ namespace Apideck.Model
         public string Code { get; set; }
 
         /// <summary>
-        /// Line number in the invoice
+        /// Line number of the resource
         /// </summary>
-        /// <value>Line number in the invoice</value>
+        /// <value>Line number of the resource</value>
         [DataMember(Name = "line_number", EmitDefaultValue = true)]
         public int? LineNumber { get; set; }
 

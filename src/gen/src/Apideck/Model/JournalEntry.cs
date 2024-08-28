@@ -52,9 +52,10 @@ namespace Apideck.Model
         /// <param name="taxCode">Applicable tax id/code override if tax is not supplied on a line item basis..</param>
         /// <param name="number">Journal entry number..</param>
         /// <param name="trackingCategories">A list of linked tracking categories..</param>
+        /// <param name="accountingPeriod">Accounting period.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
-        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), string companyId = default(string), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string), string taxType = default(string), string taxCode = default(string), string number = default(string), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
+        public JournalEntry(string title = default(string), decimal? currencyRate = default(decimal?), Currency? currency = default(Currency?), string companyId = default(string), List<JournalEntryLineItem> lineItems = default(List<JournalEntryLineItem>), string memo = default(string), DateTime postedAt = default(DateTime), string journalSymbol = default(string), string taxType = default(string), string taxCode = default(string), string number = default(string), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string accountingPeriod = default(string), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
         {
             this.Title = title;
             this.CurrencyRate = currencyRate;
@@ -68,6 +69,7 @@ namespace Apideck.Model
             this.TaxCode = taxCode;
             this.Number = number;
             this.TrackingCategories = trackingCategories;
+            this.AccountingPeriod = accountingPeriod;
             this.RowVersion = rowVersion;
             this.PassThrough = passThrough;
         }
@@ -163,6 +165,13 @@ namespace Apideck.Model
         /// <value>A list of linked tracking categories.</value>
         [DataMember(Name = "tracking_categories", EmitDefaultValue = true)]
         public List<LinkedTrackingCategory> TrackingCategories { get; set; }
+
+        /// <summary>
+        /// Accounting period
+        /// </summary>
+        /// <value>Accounting period</value>
+        [DataMember(Name = "accounting_period", EmitDefaultValue = true)]
+        public string AccountingPeriod { get; set; }
 
         /// <summary>
         /// When custom mappings are configured on the resource, the result is included here.
@@ -274,6 +283,7 @@ namespace Apideck.Model
             sb.Append("  TaxCode: ").Append(TaxCode).Append("\n");
             sb.Append("  Number: ").Append(Number).Append("\n");
             sb.Append("  TrackingCategories: ").Append(TrackingCategories).Append("\n");
+            sb.Append("  AccountingPeriod: ").Append(AccountingPeriod).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -383,6 +393,11 @@ namespace Apideck.Model
                     this.TrackingCategories.SequenceEqual(input.TrackingCategories)
                 ) && 
                 (
+                    this.AccountingPeriod == input.AccountingPeriod ||
+                    (this.AccountingPeriod != null &&
+                    this.AccountingPeriod.Equals(input.AccountingPeriod))
+                ) && 
+                (
                     this.CustomMappings == input.CustomMappings ||
                     (this.CustomMappings != null &&
                     this.CustomMappings.Equals(input.CustomMappings))
@@ -477,6 +492,10 @@ namespace Apideck.Model
                 if (this.TrackingCategories != null)
                 {
                     hashCode = (hashCode * 59) + this.TrackingCategories.GetHashCode();
+                }
+                if (this.AccountingPeriod != null)
+                {
+                    hashCode = (hashCode * 59) + this.AccountingPeriod.GetHashCode();
                 }
                 if (this.CustomMappings != null)
                 {

@@ -360,6 +360,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'PassThrough'
         }
+        /// <summary>
+        /// Test the property 'AccountingPeriod'
+        /// </summary>
+        [Fact]
+        public void AccountingPeriodTest()
+        {
+            // TODO unit test for the property 'AccountingPeriod'
+        }
 
     }
 

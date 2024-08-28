@@ -161,6 +161,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'TrackingCategories'
         }
         /// <summary>
+        /// Test the property 'AccountingPeriod'
+        /// </summary>
+        [Fact]
+        public void AccountingPeriodTest()
+        {
+            // TODO unit test for the property 'AccountingPeriod'
+        }
+        /// <summary>
         /// Test the property 'CustomMappings'
         /// </summary>
         [Fact]

@@ -78,7 +78,8 @@ namespace Apideck.Model
         /// <param name="ledgerAccount">ledgerAccount (required).</param>
         /// <param name="customer">customer.</param>
         /// <param name="supplier">supplier.</param>
-        public JournalEntryLineItem(string description = default(string), decimal? taxAmount = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalAmount = default(decimal?), TypeEnum type = default(TypeEnum), LinkedTaxRate taxRate = default(LinkedTaxRate), DeprecatedLinkedTrackingCategory trackingCategory = default(DeprecatedLinkedTrackingCategory), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier))
+        /// <param name="lineNumber">Line number of the resource.</param>
+        public JournalEntryLineItem(string description = default(string), decimal? taxAmount = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalAmount = default(decimal?), TypeEnum type = default(TypeEnum), LinkedTaxRate taxRate = default(LinkedTaxRate), DeprecatedLinkedTrackingCategory trackingCategory = default(DeprecatedLinkedTrackingCategory), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), LinkedCustomer customer = default(LinkedCustomer), LinkedSupplier supplier = default(LinkedSupplier), int? lineNumber = default(int?))
         {
             this.Type = type;
             // to ensure "ledgerAccount" is required (not null)
@@ -95,6 +96,7 @@ namespace Apideck.Model
             this.TrackingCategories = trackingCategories;
             this.Customer = customer;
             this.Supplier = supplier;
+            this.LineNumber = lineNumber;
         }
 
         /// <summary>
@@ -209,6 +211,13 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// Line number of the resource
+        /// </summary>
+        /// <value>Line number of the resource</value>
+        [DataMember(Name = "line_number", EmitDefaultValue = true)]
+        public int? LineNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -230,6 +239,7 @@ namespace Apideck.Model
             sb.Append("  Supplier: ").Append(Supplier).Append("\n");
             sb.Append("  DepartmentId: ").Append(DepartmentId).Append("\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
+            sb.Append("  LineNumber: ").Append(LineNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -334,6 +344,11 @@ namespace Apideck.Model
                     this.LocationId == input.LocationId ||
                     (this.LocationId != null &&
                     this.LocationId.Equals(input.LocationId))
+                ) && 
+                (
+                    this.LineNumber == input.LineNumber ||
+                    (this.LineNumber != null &&
+                    this.LineNumber.Equals(input.LineNumber))
                 );
         }
 
@@ -398,6 +413,10 @@ namespace Apideck.Model
                 if (this.LocationId != null)
                 {
                     hashCode = (hashCode * 59) + this.LocationId.GetHashCode();
+                }
+                if (this.LineNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.LineNumber.GetHashCode();
                 }
                 return hashCode;
             }

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **OwnerId** | **string** | Owner ID to filter on | [optional] 
 **ContactId** | **string** | Primary contact ID to filter on | [optional] 
 **UpdatedSince** | **DateTime** |  | [optional] 
+**Type** | **string** | Type to filter on | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

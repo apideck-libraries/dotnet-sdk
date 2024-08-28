@@ -90,7 +90,13 @@ namespace Apideck.Model
             /// Enum CostsOfSales for value: costs_of_sales
             /// </summary>
             [EnumMember(Value = "costs_of_sales")]
-            CostsOfSales = 9
+            CostsOfSales = 9,
+
+            /// <summary>
+            /// Enum Other for value: other
+            /// </summary>
+            [EnumMember(Value = "other")]
+            Other = 10
 
         }
 

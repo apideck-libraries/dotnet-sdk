@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
 **DepartmentId** | **string** | A unique identifier for an object. | [optional] [readonly] 
 **LocationId** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**LineNumber** | **int?** | Line number of the resource | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
