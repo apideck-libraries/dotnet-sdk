@@ -53,6 +53,7 @@ docs/BankAccount.md
 docs/Benefit.md
 docs/Bill.md
 docs/BillLineItem.md
+docs/BillPayment.md
 docs/BillsFilter.md
 docs/BillsSort.md
 docs/Branch.md
@@ -105,6 +106,7 @@ docs/CreateApplicantResponse.md
 docs/CreateApplicationResponse.md
 docs/CreateAttachmentRequest.md
 docs/CreateAttachmentResponse.md
+docs/CreateBillPaymentResponse.md
 docs/CreateBillResponse.md
 docs/CreateCommentResponse.md
 docs/CreateCompanyResponse.md
@@ -181,6 +183,7 @@ docs/DeleteActivityResponse.md
 docs/DeleteApplicantResponse.md
 docs/DeleteApplicationResponse.md
 docs/DeleteAttachmentResponse.md
+docs/DeleteBillPaymentResponse.md
 docs/DeleteBillResponse.md
 docs/DeleteCommentResponse.md
 docs/DeleteCompanyResponse.md
@@ -229,6 +232,7 @@ docs/DeleteUploadSessionResponse.md
 docs/DeleteUserResponse.md
 docs/DeleteWebhookResponse.md
 docs/Department.md
+docs/DeprecatedLinkedSupplier.md
 docs/DeprecatedLinkedTrackingCategory.md
 docs/Drive.md
 docs/DriveGroup.md
@@ -295,6 +299,8 @@ docs/GetApplicationsResponse.md
 docs/GetAttachmentResponse.md
 docs/GetAttachmentsResponse.md
 docs/GetBalanceSheetResponse.md
+docs/GetBillPaymentResponse.md
+docs/GetBillPaymentsResponse.md
 docs/GetBillResponse.md
 docs/GetBillsResponse.md
 docs/GetCollectionResponse.md
@@ -510,6 +516,8 @@ docs/Payment.md
 docs/PaymentCard.md
 docs/PaymentFrequency.md
 docs/PaymentRequiredResponse.md
+docs/PaymentStatus.md
+docs/PaymentType.md
 docs/PaymentUnit.md
 docs/PaymentsFilter.md
 docs/PaymentsSort.md
@@ -592,6 +600,7 @@ docs/UpdateAccountingLocationResponse.md
 docs/UpdateActivityResponse.md
 docs/UpdateApplicantResponse.md
 docs/UpdateApplicationResponse.md
+docs/UpdateBillPaymentResponse.md
 docs/UpdateBillResponse.md
 docs/UpdateCommentResponse.md
 docs/UpdateCompanyResponse.md
@@ -723,6 +732,7 @@ src/Apideck.Test/Model/BalanceSheetTests.cs
 src/Apideck.Test/Model/BankAccountTests.cs
 src/Apideck.Test/Model/BenefitTests.cs
 src/Apideck.Test/Model/BillLineItemTests.cs
+src/Apideck.Test/Model/BillPaymentTests.cs
 src/Apideck.Test/Model/BillTests.cs
 src/Apideck.Test/Model/BillsFilterTests.cs
 src/Apideck.Test/Model/BillsSortTests.cs
@@ -775,6 +785,7 @@ src/Apideck.Test/Model/CreateApplicantResponseTests.cs
 src/Apideck.Test/Model/CreateApplicationResponseTests.cs
 src/Apideck.Test/Model/CreateAttachmentRequestTests.cs
 src/Apideck.Test/Model/CreateAttachmentResponseTests.cs
+src/Apideck.Test/Model/CreateBillPaymentResponseTests.cs
 src/Apideck.Test/Model/CreateBillResponseTests.cs
 src/Apideck.Test/Model/CreateCommentResponseTests.cs
 src/Apideck.Test/Model/CreateCompanyResponseTests.cs
@@ -850,6 +861,7 @@ src/Apideck.Test/Model/DeleteActivityResponseTests.cs
 src/Apideck.Test/Model/DeleteApplicantResponseTests.cs
 src/Apideck.Test/Model/DeleteApplicationResponseTests.cs
 src/Apideck.Test/Model/DeleteAttachmentResponseTests.cs
+src/Apideck.Test/Model/DeleteBillPaymentResponseTests.cs
 src/Apideck.Test/Model/DeleteBillResponseTests.cs
 src/Apideck.Test/Model/DeleteCommentResponseTests.cs
 src/Apideck.Test/Model/DeleteCompanyResponseTests.cs
@@ -898,6 +910,7 @@ src/Apideck.Test/Model/DeleteUploadSessionResponseTests.cs
 src/Apideck.Test/Model/DeleteUserResponseTests.cs
 src/Apideck.Test/Model/DeleteWebhookResponseTests.cs
 src/Apideck.Test/Model/DepartmentTests.cs
+src/Apideck.Test/Model/DeprecatedLinkedSupplierTests.cs
 src/Apideck.Test/Model/DeprecatedLinkedTrackingCategoryTests.cs
 src/Apideck.Test/Model/DriveGroupTests.cs
 src/Apideck.Test/Model/DriveGroupsFilterTests.cs
@@ -962,6 +975,8 @@ src/Apideck.Test/Model/GetApplicationsResponseTests.cs
 src/Apideck.Test/Model/GetAttachmentResponseTests.cs
 src/Apideck.Test/Model/GetAttachmentsResponseTests.cs
 src/Apideck.Test/Model/GetBalanceSheetResponseTests.cs
+src/Apideck.Test/Model/GetBillPaymentResponseTests.cs
+src/Apideck.Test/Model/GetBillPaymentsResponseTests.cs
 src/Apideck.Test/Model/GetBillResponseTests.cs
 src/Apideck.Test/Model/GetBillsResponseTests.cs
 src/Apideck.Test/Model/GetCollectionResponseTests.cs
@@ -1173,7 +1188,9 @@ src/Apideck.Test/Model/PassThroughQueryTests.cs
 src/Apideck.Test/Model/PaymentCardTests.cs
 src/Apideck.Test/Model/PaymentFrequencyTests.cs
 src/Apideck.Test/Model/PaymentRequiredResponseTests.cs
+src/Apideck.Test/Model/PaymentStatusTests.cs
 src/Apideck.Test/Model/PaymentTests.cs
+src/Apideck.Test/Model/PaymentTypeTests.cs
 src/Apideck.Test/Model/PaymentUnitTests.cs
 src/Apideck.Test/Model/PaymentsFilterTests.cs
 src/Apideck.Test/Model/PaymentsSortTests.cs
@@ -1254,6 +1271,7 @@ src/Apideck.Test/Model/UpdateAccountingLocationResponseTests.cs
 src/Apideck.Test/Model/UpdateActivityResponseTests.cs
 src/Apideck.Test/Model/UpdateApplicantResponseTests.cs
 src/Apideck.Test/Model/UpdateApplicationResponseTests.cs
+src/Apideck.Test/Model/UpdateBillPaymentResponseTests.cs
 src/Apideck.Test/Model/UpdateBillResponseTests.cs
 src/Apideck.Test/Model/UpdateCommentResponseTests.cs
 src/Apideck.Test/Model/UpdateCompanyResponseTests.cs
@@ -1400,6 +1418,7 @@ src/Apideck/Model/BankAccount.cs
 src/Apideck/Model/Benefit.cs
 src/Apideck/Model/Bill.cs
 src/Apideck/Model/BillLineItem.cs
+src/Apideck/Model/BillPayment.cs
 src/Apideck/Model/BillsFilter.cs
 src/Apideck/Model/BillsSort.cs
 src/Apideck/Model/Branch.cs
@@ -1451,6 +1470,7 @@ src/Apideck/Model/CreateApplicantResponse.cs
 src/Apideck/Model/CreateApplicationResponse.cs
 src/Apideck/Model/CreateAttachmentRequest.cs
 src/Apideck/Model/CreateAttachmentResponse.cs
+src/Apideck/Model/CreateBillPaymentResponse.cs
 src/Apideck/Model/CreateBillResponse.cs
 src/Apideck/Model/CreateCommentResponse.cs
 src/Apideck/Model/CreateCompanyResponse.cs
@@ -1526,6 +1546,7 @@ src/Apideck/Model/DeleteActivityResponse.cs
 src/Apideck/Model/DeleteApplicantResponse.cs
 src/Apideck/Model/DeleteApplicationResponse.cs
 src/Apideck/Model/DeleteAttachmentResponse.cs
+src/Apideck/Model/DeleteBillPaymentResponse.cs
 src/Apideck/Model/DeleteBillResponse.cs
 src/Apideck/Model/DeleteCommentResponse.cs
 src/Apideck/Model/DeleteCompanyResponse.cs
@@ -1574,6 +1595,7 @@ src/Apideck/Model/DeleteUploadSessionResponse.cs
 src/Apideck/Model/DeleteUserResponse.cs
 src/Apideck/Model/DeleteWebhookResponse.cs
 src/Apideck/Model/Department.cs
+src/Apideck/Model/DeprecatedLinkedSupplier.cs
 src/Apideck/Model/DeprecatedLinkedTrackingCategory.cs
 src/Apideck/Model/Drive.cs
 src/Apideck/Model/DriveGroup.cs
@@ -1638,6 +1660,8 @@ src/Apideck/Model/GetApplicationsResponse.cs
 src/Apideck/Model/GetAttachmentResponse.cs
 src/Apideck/Model/GetAttachmentsResponse.cs
 src/Apideck/Model/GetBalanceSheetResponse.cs
+src/Apideck/Model/GetBillPaymentResponse.cs
+src/Apideck/Model/GetBillPaymentsResponse.cs
 src/Apideck/Model/GetBillResponse.cs
 src/Apideck/Model/GetBillsResponse.cs
 src/Apideck/Model/GetCollectionResponse.cs
@@ -1850,6 +1874,8 @@ src/Apideck/Model/Payment.cs
 src/Apideck/Model/PaymentCard.cs
 src/Apideck/Model/PaymentFrequency.cs
 src/Apideck/Model/PaymentRequiredResponse.cs
+src/Apideck/Model/PaymentStatus.cs
+src/Apideck/Model/PaymentType.cs
 src/Apideck/Model/PaymentUnit.cs
 src/Apideck/Model/PaymentsFilter.cs
 src/Apideck/Model/PaymentsSort.cs
@@ -1930,6 +1956,7 @@ src/Apideck/Model/UpdateAccountingLocationResponse.cs
 src/Apideck/Model/UpdateActivityResponse.cs
 src/Apideck/Model/UpdateApplicantResponse.cs
 src/Apideck/Model/UpdateApplicationResponse.cs
+src/Apideck/Model/UpdateBillPaymentResponse.cs
 src/Apideck/Model/UpdateBillResponse.cs
 src/Apideck/Model/UpdateCommentResponse.cs
 src/Apideck/Model/UpdateCompanyResponse.cs
