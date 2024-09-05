@@ -38,12 +38,14 @@ namespace Apideck.Model
         /// <param name="firstName">First name of the lead to filter on.</param>
         /// <param name="lastName">Last name of the lead to filter on.</param>
         /// <param name="email">E-mail of the lead to filter on.</param>
-        public LeadsFilter(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string))
+        /// <param name="phoneNumber">Phone number of the lead to filter on.</param>
+        public LeadsFilter(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string phoneNumber = default(string))
         {
             this.Name = name;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
+            this.PhoneNumber = phoneNumber;
         }
 
         /// <summary>
@@ -75,6 +77,13 @@ namespace Apideck.Model
         public string Email { get; set; }
 
         /// <summary>
+        /// Phone number of the lead to filter on
+        /// </summary>
+        /// <value>Phone number of the lead to filter on</value>
+        [DataMember(Name = "phone_number", EmitDefaultValue = false)]
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -86,6 +95,7 @@ namespace Apideck.Model
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
+            sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,6 +150,11 @@ namespace Apideck.Model
                     this.Email == input.Email ||
                     (this.Email != null &&
                     this.Email.Equals(input.Email))
+                ) && 
+                (
+                    this.PhoneNumber == input.PhoneNumber ||
+                    (this.PhoneNumber != null &&
+                    this.PhoneNumber.Equals(input.PhoneNumber))
                 );
         }
 
@@ -167,6 +182,10 @@ namespace Apideck.Model
                 if (this.Email != null)
                 {
                     hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                }
+                if (this.PhoneNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.PhoneNumber.GetHashCode();
                 }
                 return hashCode;
             }

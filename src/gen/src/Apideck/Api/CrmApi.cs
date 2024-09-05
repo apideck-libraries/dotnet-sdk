@@ -6258,6 +6258,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[email]", filter.Email));
                 }
+                if (filter.PhoneNumber != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[phone_number]", filter.PhoneNumber));
+                }
             }
             if (sort != null)
             {
