@@ -41,8 +41,9 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="name">The name of the file (required).</param>
         /// <param name="description">Optional description of the file..</param>
+        /// <param name="parentFolderId">The folder id where this attachment belong to.</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
-        public CreateAttachmentRequest(string name = default(string), string description = default(string), List<Object> passThrough = default(List<Object>))
+        public CreateAttachmentRequest(string name = default(string), string description = default(string), string parentFolderId = default(string), List<Object> passThrough = default(List<Object>))
         {
             // to ensure "name" is required (not null)
             if (name == null) {
@@ -50,6 +51,7 @@ namespace Apideck.Model
             }
             this.Name = name;
             this.Description = description;
+            this.ParentFolderId = parentFolderId;
             this.PassThrough = passThrough;
         }
 
@@ -68,6 +70,13 @@ namespace Apideck.Model
         public string Description { get; set; }
 
         /// <summary>
+        /// The folder id where this attachment belong to
+        /// </summary>
+        /// <value>The folder id where this attachment belong to</value>
+        [DataMember(Name = "parent_folder_id", EmitDefaultValue = false)]
+        public string ParentFolderId { get; set; }
+
+        /// <summary>
         /// The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.
         /// </summary>
         /// <value>The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources.</value>
@@ -84,6 +93,7 @@ namespace Apideck.Model
             sb.Append("class CreateAttachmentRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  ParentFolderId: ").Append(ParentFolderId).Append("\n");
             sb.Append("  PassThrough: ").Append(PassThrough).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -131,6 +141,11 @@ namespace Apideck.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.ParentFolderId == input.ParentFolderId ||
+                    (this.ParentFolderId != null &&
+                    this.ParentFolderId.Equals(input.ParentFolderId))
+                ) && 
+                (
                     this.PassThrough == input.PassThrough ||
                     this.PassThrough != null &&
                     input.PassThrough != null &&
@@ -154,6 +169,10 @@ namespace Apideck.Model
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.ParentFolderId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ParentFolderId.GetHashCode();
                 }
                 if (this.PassThrough != null)
                 {

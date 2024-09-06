@@ -113,6 +113,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Description'
         }
         /// <summary>
+        /// Test the property 'ParentFolderId'
+        /// </summary>
+        [Fact]
+        public void ParentFolderIdTest()
+        {
+            // TODO unit test for the property 'ParentFolderId'
+        }
+        /// <summary>
         /// Test the property 'UpdatedBy'
         /// </summary>
         [Fact]

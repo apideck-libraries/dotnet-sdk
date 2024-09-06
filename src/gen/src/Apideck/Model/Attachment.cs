@@ -40,8 +40,9 @@ namespace Apideck.Model
         /// <param name="size">The size of the file in bytes.</param>
         /// <param name="reference">reference.</param>
         /// <param name="description">Optional description of the file.</param>
+        /// <param name="parentFolderId">The folder id where this attachment belong to.</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
-        public Attachment(string displayId = default(string), string name = default(string), string mimeType = default(string), int? size = default(int?), AttachmentReference reference = default(AttachmentReference), string description = default(string), List<Object> passThrough = default(List<Object>))
+        public Attachment(string displayId = default(string), string name = default(string), string mimeType = default(string), int? size = default(int?), AttachmentReference reference = default(AttachmentReference), string description = default(string), string parentFolderId = default(string), List<Object> passThrough = default(List<Object>))
         {
             this.DisplayId = displayId;
             this.Name = name;
@@ -49,6 +50,7 @@ namespace Apideck.Model
             this.Size = size;
             this.Reference = reference;
             this.Description = description;
+            this.ParentFolderId = parentFolderId;
             this.PassThrough = passThrough;
         }
 
@@ -107,6 +109,13 @@ namespace Apideck.Model
         /// <value>Optional description of the file</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// The folder id where this attachment belong to
+        /// </summary>
+        /// <value>The folder id where this attachment belong to</value>
+        [DataMember(Name = "parent_folder_id", EmitDefaultValue = true)]
+        public string ParentFolderId { get; set; }
 
         /// <summary>
         /// The user who last updated the object.
@@ -190,6 +199,7 @@ namespace Apideck.Model
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("  Reference: ").Append(Reference).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  ParentFolderId: ").Append(ParentFolderId).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -266,6 +276,11 @@ namespace Apideck.Model
                     this.Description.Equals(input.Description))
                 ) && 
                 (
+                    this.ParentFolderId == input.ParentFolderId ||
+                    (this.ParentFolderId != null &&
+                    this.ParentFolderId.Equals(input.ParentFolderId))
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -329,6 +344,10 @@ namespace Apideck.Model
                 if (this.Description != null)
                 {
                     hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                }
+                if (this.ParentFolderId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ParentFolderId.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

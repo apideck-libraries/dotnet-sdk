@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Size** | **int?** | The size of the file in bytes | [optional] 
 **Reference** | [**AttachmentReference**](AttachmentReference.md) |  | [optional] 
 **Description** | **string** | Optional description of the file | [optional] 
+**ParentFolderId** | **string** | The folder id where this attachment belong to | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
