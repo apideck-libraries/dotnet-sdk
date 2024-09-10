@@ -6373,6 +6373,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[time_off_request_status]", filter.TimeOffRequestStatus));
                 }
+                if (filter.CompanyId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[company_id]", filter.CompanyId));
+                }
             }
             if (passThrough != null)
             {

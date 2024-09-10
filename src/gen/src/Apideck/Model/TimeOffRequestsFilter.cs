@@ -91,13 +91,15 @@ namespace Apideck.Model
         /// <param name="updatedSince">Minimum date the time off request was last created or modified.</param>
         /// <param name="employeeId">Employee ID.</param>
         /// <param name="timeOffRequestStatus">Time off request status to filter on.</param>
-        public TimeOffRequestsFilter(string startDate = default(string), string endDate = default(string), string updatedSince = default(string), string employeeId = default(string), TimeOffRequestStatusEnum? timeOffRequestStatus = default(TimeOffRequestStatusEnum?))
+        /// <param name="companyId">Company ID.</param>
+        public TimeOffRequestsFilter(string startDate = default(string), string endDate = default(string), string updatedSince = default(string), string employeeId = default(string), TimeOffRequestStatusEnum? timeOffRequestStatus = default(TimeOffRequestStatusEnum?), string companyId = default(string))
         {
             this.StartDate = startDate;
             this.EndDate = endDate;
             this.UpdatedSince = updatedSince;
             this.EmployeeId = employeeId;
             this.TimeOffRequestStatus = timeOffRequestStatus;
+            this.CompanyId = companyId;
         }
 
         /// <summary>
@@ -129,6 +131,13 @@ namespace Apideck.Model
         public string EmployeeId { get; set; }
 
         /// <summary>
+        /// Company ID
+        /// </summary>
+        /// <value>Company ID</value>
+        [DataMember(Name = "company_id", EmitDefaultValue = false)]
+        public string CompanyId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -141,6 +150,7 @@ namespace Apideck.Model
             sb.Append("  UpdatedSince: ").Append(UpdatedSince).Append("\n");
             sb.Append("  EmployeeId: ").Append(EmployeeId).Append("\n");
             sb.Append("  TimeOffRequestStatus: ").Append(TimeOffRequestStatus).Append("\n");
+            sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,6 +209,11 @@ namespace Apideck.Model
                 (
                     this.TimeOffRequestStatus == input.TimeOffRequestStatus ||
                     this.TimeOffRequestStatus.Equals(input.TimeOffRequestStatus)
+                ) && 
+                (
+                    this.CompanyId == input.CompanyId ||
+                    (this.CompanyId != null &&
+                    this.CompanyId.Equals(input.CompanyId))
                 );
         }
 
@@ -228,6 +243,10 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.EmployeeId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.TimeOffRequestStatus.GetHashCode();
+                if (this.CompanyId != null)
+                {
+                    hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
+                }
                 return hashCode;
             }
         }
