@@ -123,6 +123,7 @@ docs/CreateDriveResponse.md
 docs/CreateEcommerceCustomerResponse.md
 docs/CreateEcommerceOrderResponse.md
 docs/CreateEmployeeResponse.md
+docs/CreateExpenseResponse.md
 docs/CreateFileRequest.md
 docs/CreateFileResponse.md
 docs/CreateFolderRequest.md
@@ -197,6 +198,7 @@ docs/DeleteDriveResponse.md
 docs/DeleteEcommerceCustomerResponse.md
 docs/DeleteEcommerceOrderResponse.md
 docs/DeleteEmployeeResponse.md
+docs/DeleteExpenseResponse.md
 docs/DeleteFileResponse.md
 docs/DeleteFolderResponse.md
 docs/DeleteHrisCompanyResponse.md
@@ -271,6 +273,8 @@ docs/EmployeesSort.md
 docs/EmploymentStatus.md
 docs/Error.md
 docs/ExecuteWebhookResponse.md
+docs/Expense.md
+docs/ExpenseLineItem.md
 docs/FileStorageApi.md
 docs/FileStorageEventType.md
 docs/FileType.md
@@ -347,6 +351,8 @@ docs/GetEmployeePayrollsResponse.md
 docs/GetEmployeeResponse.md
 docs/GetEmployeeSchedulesResponse.md
 docs/GetEmployeesResponse.md
+docs/GetExpenseResponse.md
+docs/GetExpensesResponse.md
 docs/GetFileResponse.md
 docs/GetFilesResponse.md
 docs/GetFolderResponse.md
@@ -618,6 +624,7 @@ docs/UpdateDriveResponse.md
 docs/UpdateEcommerceCustomerResponse.md
 docs/UpdateEcommerceOrderResponse.md
 docs/UpdateEmployeeResponse.md
+docs/UpdateExpenseResponse.md
 docs/UpdateFileRequest.md
 docs/UpdateFileResponse.md
 docs/UpdateFolderRequest.md
@@ -802,6 +809,7 @@ src/Apideck.Test/Model/CreateDriveResponseTests.cs
 src/Apideck.Test/Model/CreateEcommerceCustomerResponseTests.cs
 src/Apideck.Test/Model/CreateEcommerceOrderResponseTests.cs
 src/Apideck.Test/Model/CreateEmployeeResponseTests.cs
+src/Apideck.Test/Model/CreateExpenseResponseTests.cs
 src/Apideck.Test/Model/CreateFileRequestTests.cs
 src/Apideck.Test/Model/CreateFileResponseTests.cs
 src/Apideck.Test/Model/CreateFolderRequestTests.cs
@@ -875,6 +883,7 @@ src/Apideck.Test/Model/DeleteDriveResponseTests.cs
 src/Apideck.Test/Model/DeleteEcommerceCustomerResponseTests.cs
 src/Apideck.Test/Model/DeleteEcommerceOrderResponseTests.cs
 src/Apideck.Test/Model/DeleteEmployeeResponseTests.cs
+src/Apideck.Test/Model/DeleteExpenseResponseTests.cs
 src/Apideck.Test/Model/DeleteFileResponseTests.cs
 src/Apideck.Test/Model/DeleteFolderResponseTests.cs
 src/Apideck.Test/Model/DeleteHrisCompanyResponseTests.cs
@@ -948,6 +957,8 @@ src/Apideck.Test/Model/EmployeesSortTests.cs
 src/Apideck.Test/Model/EmploymentStatusTests.cs
 src/Apideck.Test/Model/ErrorTests.cs
 src/Apideck.Test/Model/ExecuteWebhookResponseTests.cs
+src/Apideck.Test/Model/ExpenseLineItemTests.cs
+src/Apideck.Test/Model/ExpenseTests.cs
 src/Apideck.Test/Model/FileStorageEventTypeTests.cs
 src/Apideck.Test/Model/FileTypeTests.cs
 src/Apideck.Test/Model/FilesFilterTests.cs
@@ -1023,6 +1034,8 @@ src/Apideck.Test/Model/GetEmployeePayrollsResponseTests.cs
 src/Apideck.Test/Model/GetEmployeeResponseTests.cs
 src/Apideck.Test/Model/GetEmployeeSchedulesResponseTests.cs
 src/Apideck.Test/Model/GetEmployeesResponseTests.cs
+src/Apideck.Test/Model/GetExpenseResponseTests.cs
+src/Apideck.Test/Model/GetExpensesResponseTests.cs
 src/Apideck.Test/Model/GetFileResponseTests.cs
 src/Apideck.Test/Model/GetFilesResponseTests.cs
 src/Apideck.Test/Model/GetFolderResponseTests.cs
@@ -1289,6 +1302,7 @@ src/Apideck.Test/Model/UpdateDriveResponseTests.cs
 src/Apideck.Test/Model/UpdateEcommerceCustomerResponseTests.cs
 src/Apideck.Test/Model/UpdateEcommerceOrderResponseTests.cs
 src/Apideck.Test/Model/UpdateEmployeeResponseTests.cs
+src/Apideck.Test/Model/UpdateExpenseResponseTests.cs
 src/Apideck.Test/Model/UpdateFileRequestTests.cs
 src/Apideck.Test/Model/UpdateFileResponseTests.cs
 src/Apideck.Test/Model/UpdateFolderRequestTests.cs
@@ -1487,6 +1501,7 @@ src/Apideck/Model/CreateDriveResponse.cs
 src/Apideck/Model/CreateEcommerceCustomerResponse.cs
 src/Apideck/Model/CreateEcommerceOrderResponse.cs
 src/Apideck/Model/CreateEmployeeResponse.cs
+src/Apideck/Model/CreateExpenseResponse.cs
 src/Apideck/Model/CreateFileRequest.cs
 src/Apideck/Model/CreateFileResponse.cs
 src/Apideck/Model/CreateFolderRequest.cs
@@ -1560,6 +1575,7 @@ src/Apideck/Model/DeleteDriveResponse.cs
 src/Apideck/Model/DeleteEcommerceCustomerResponse.cs
 src/Apideck/Model/DeleteEcommerceOrderResponse.cs
 src/Apideck/Model/DeleteEmployeeResponse.cs
+src/Apideck/Model/DeleteExpenseResponse.cs
 src/Apideck/Model/DeleteFileResponse.cs
 src/Apideck/Model/DeleteFolderResponse.cs
 src/Apideck/Model/DeleteHrisCompanyResponse.cs
@@ -1633,6 +1649,8 @@ src/Apideck/Model/EmployeesSort.cs
 src/Apideck/Model/EmploymentStatus.cs
 src/Apideck/Model/Error.cs
 src/Apideck/Model/ExecuteWebhookResponse.cs
+src/Apideck/Model/Expense.cs
+src/Apideck/Model/ExpenseLineItem.cs
 src/Apideck/Model/FileStorageEventType.cs
 src/Apideck/Model/FileType.cs
 src/Apideck/Model/FilesFilter.cs
@@ -1708,6 +1726,8 @@ src/Apideck/Model/GetEmployeePayrollsResponse.cs
 src/Apideck/Model/GetEmployeeResponse.cs
 src/Apideck/Model/GetEmployeeSchedulesResponse.cs
 src/Apideck/Model/GetEmployeesResponse.cs
+src/Apideck/Model/GetExpenseResponse.cs
+src/Apideck/Model/GetExpensesResponse.cs
 src/Apideck/Model/GetFileResponse.cs
 src/Apideck/Model/GetFilesResponse.cs
 src/Apideck/Model/GetFolderResponse.cs
@@ -1974,6 +1994,7 @@ src/Apideck/Model/UpdateDriveResponse.cs
 src/Apideck/Model/UpdateEcommerceCustomerResponse.cs
 src/Apideck/Model/UpdateEcommerceOrderResponse.cs
 src/Apideck/Model/UpdateEmployeeResponse.cs
+src/Apideck/Model/UpdateExpenseResponse.cs
 src/Apideck/Model/UpdateFileRequest.cs
 src/Apideck/Model/UpdateFileResponse.cs
 src/Apideck/Model/UpdateFolderRequest.cs
