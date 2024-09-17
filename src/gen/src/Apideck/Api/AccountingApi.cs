@@ -13730,6 +13730,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[created_since]", filter.CreatedSince));
                 }
+                if (filter.Number != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[number]", filter.Number));
+                }
             }
             if (sort != null)
             {
