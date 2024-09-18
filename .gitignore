@@ -6,9 +6,11 @@ tmp/*
 .dist
 api_new.yml
 .eslintcache
+.idea
 
 .dist/*
 
 vendor/
 .env
 /out
+.idea

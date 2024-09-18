@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Full name of the lead. | 
 **CompanyName** | **string** | The name of the company the lead is associated with. | 
 **OwnerId** | **string** | The owner of the lead. | [optional] 
+**OwnerName** | **string** | The name of the owner of the lead. | [optional] 
 **CompanyId** | **string** | The company the lead is associated with. | [optional] 
 **LeadId** | **string** | The identifier of the lead. | [optional] 
 **LeadSource** | **string** | The source of the lead. | [optional] 
