@@ -153,6 +153,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Amount'
         }
         /// <summary>
+        /// Test the property 'DayPart'
+        /// </summary>
+        [Fact]
+        public void DayPartTest()
+        {
+            // TODO unit test for the property 'DayPart'
+        }
+        /// <summary>
         /// Test the property 'Notes'
         /// </summary>
         [Fact]

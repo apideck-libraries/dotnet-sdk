@@ -189,10 +189,11 @@ namespace Apideck.Model
         /// <param name="approvalDate">The date the request was approved.</param>
         /// <param name="units">The unit of time off requested. Possible values include: &#x60;hours&#x60;, &#x60;days&#x60;, or &#x60;other&#x60;..</param>
         /// <param name="amount">The amount of time off requested..</param>
+        /// <param name="dayPart">The day part of the time off request..</param>
         /// <param name="notes">notes.</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
         /// <param name="policyType">The policy type of the time off request.</param>
-        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal? amount = default(decimal?), TimeOffRequestNotes notes = default(TimeOffRequestNotes), List<Object> passThrough = default(List<Object>), string policyType = default(string))
+        public TimeOffRequest(string employeeId = default(string), string policyId = default(string), StatusEnum? status = default(StatusEnum?), string description = default(string), string startDate = default(string), string endDate = default(string), string requestDate = default(string), RequestTypeEnum? requestType = default(RequestTypeEnum?), string approvalDate = default(string), UnitsEnum? units = default(UnitsEnum?), decimal? amount = default(decimal?), string dayPart = default(string), TimeOffRequestNotes notes = default(TimeOffRequestNotes), List<Object> passThrough = default(List<Object>), string policyType = default(string))
         {
             this.EmployeeId = employeeId;
             this.PolicyId = policyId;
@@ -205,6 +206,7 @@ namespace Apideck.Model
             this.ApprovalDate = approvalDate;
             this.Units = units;
             this.Amount = amount;
+            this.DayPart = dayPart;
             this.Notes = notes;
             this.PassThrough = passThrough;
             this.PolicyType = policyType;
@@ -280,6 +282,13 @@ namespace Apideck.Model
         /// <value>The amount of time off requested.</value>
         [DataMember(Name = "amount", EmitDefaultValue = true)]
         public decimal? Amount { get; set; }
+
+        /// <summary>
+        /// The day part of the time off request.
+        /// </summary>
+        /// <value>The day part of the time off request.</value>
+        [DataMember(Name = "day_part", EmitDefaultValue = true)]
+        public string DayPart { get; set; }
 
         /// <summary>
         /// Gets or Sets Notes
@@ -396,6 +405,7 @@ namespace Apideck.Model
             sb.Append("  ApprovalDate: ").Append(ApprovalDate).Append("\n");
             sb.Append("  Units: ").Append(Units).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  DayPart: ").Append(DayPart).Append("\n");
             sb.Append("  Notes: ").Append(Notes).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
@@ -497,6 +507,11 @@ namespace Apideck.Model
                     this.Amount.Equals(input.Amount))
                 ) && 
                 (
+                    this.DayPart == input.DayPart ||
+                    (this.DayPart != null &&
+                    this.DayPart.Equals(input.DayPart))
+                ) && 
+                (
                     this.Notes == input.Notes ||
                     (this.Notes != null &&
                     this.Notes.Equals(input.Notes))
@@ -586,6 +601,10 @@ namespace Apideck.Model
                 if (this.Amount != null)
                 {
                     hashCode = (hashCode * 59) + this.Amount.GetHashCode();
+                }
+                if (this.DayPart != null)
+                {
+                    hashCode = (hashCode * 59) + this.DayPart.GetHashCode();
                 }
                 if (this.Notes != null)
                 {
