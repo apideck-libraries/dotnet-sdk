@@ -334,6 +334,7 @@ docs/GetCreditNoteResponse.md
 docs/GetCreditNotesResponse.md
 docs/GetCustomFieldsResponse.md
 docs/GetCustomMappingResponse.md
+docs/GetCustomMappingsResponse.md
 docs/GetCustomerResponse.md
 docs/GetCustomersResponse.md
 docs/GetDepartmentResponse.md
@@ -1017,6 +1018,7 @@ src/Apideck.Test/Model/GetCreditNoteResponseTests.cs
 src/Apideck.Test/Model/GetCreditNotesResponseTests.cs
 src/Apideck.Test/Model/GetCustomFieldsResponseTests.cs
 src/Apideck.Test/Model/GetCustomMappingResponseTests.cs
+src/Apideck.Test/Model/GetCustomMappingsResponseTests.cs
 src/Apideck.Test/Model/GetCustomerResponseTests.cs
 src/Apideck.Test/Model/GetCustomersResponseTests.cs
 src/Apideck.Test/Model/GetDepartmentResponseTests.cs
@@ -1709,6 +1711,7 @@ src/Apideck/Model/GetCreditNoteResponse.cs
 src/Apideck/Model/GetCreditNotesResponse.cs
 src/Apideck/Model/GetCustomFieldsResponse.cs
 src/Apideck/Model/GetCustomMappingResponse.cs
+src/Apideck/Model/GetCustomMappingsResponse.cs
 src/Apideck/Model/GetCustomerResponse.cs
 src/Apideck/Model/GetCustomersResponse.cs
 src/Apideck/Model/GetDepartmentResponse.cs
