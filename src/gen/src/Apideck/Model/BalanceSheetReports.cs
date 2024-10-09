@@ -53,8 +53,8 @@ namespace Apideck.Model
         /// <param name="liabilities">liabilities (required).</param>
         /// <param name="equity">equity (required).</param>
         /// <param name="netAssets">The net assets of the balance sheet.</param>
-        /// <param name="uncategorizedItems">A list of balance sheet accounts.</param>
-        public BalanceSheetReports(string reportName = default(string), string startDate = default(string), string endDate = default(string), Currency? currency = default(Currency?), BalanceSheetAccount assets = default(BalanceSheetAccount), BalanceSheetAccount liabilities = default(BalanceSheetAccount), BalanceSheetAccount equity = default(BalanceSheetAccount), decimal netAssets = default(decimal), List<object> uncategorizedItems = default(List<object>))
+        /// <param name="uncategorizedItems">uncategorizedItems.</param>
+        public BalanceSheetReports(string reportName = default(string), string startDate = default(string), string endDate = default(string), Currency? currency = default(Currency?), BalanceSheetAccount assets = default(BalanceSheetAccount), BalanceSheetAccount liabilities = default(BalanceSheetAccount), BalanceSheetAccount equity = default(BalanceSheetAccount), decimal netAssets = default(decimal), BalanceSheetAccount uncategorizedItems = default(BalanceSheetAccount))
         {
             // to ensure "endDate" is required (not null)
             if (endDate == null) {
@@ -220,11 +220,10 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// A list of balance sheet accounts
+        /// Gets or Sets UncategorizedItems
         /// </summary>
-        /// <value>A list of balance sheet accounts</value>
-        [DataMember(Name = "uncategorized_items", EmitDefaultValue = true)]
-        public List<object> UncategorizedItems { get; set; }
+        [DataMember(Name = "uncategorized_items", EmitDefaultValue = false)]
+        public BalanceSheetAccount UncategorizedItems { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -354,9 +353,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.UncategorizedItems == input.UncategorizedItems ||
-                    this.UncategorizedItems != null &&
-                    input.UncategorizedItems != null &&
-                    this.UncategorizedItems.SequenceEqual(input.UncategorizedItems)
+                    (this.UncategorizedItems != null &&
+                    this.UncategorizedItems.Equals(input.UncategorizedItems))
                 );
         }
 

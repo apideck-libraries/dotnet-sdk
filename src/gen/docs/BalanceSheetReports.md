@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
-**UncategorizedItems** | [**List&lt;AnyOfBalanceSheetAccountBalanceSheetAccountRecord&gt;**](AnyOfBalanceSheetAccountBalanceSheetAccountRecord.md) | A list of balance sheet accounts | [optional] 
+**UncategorizedItems** | [**BalanceSheetAccount**](BalanceSheetAccount.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
