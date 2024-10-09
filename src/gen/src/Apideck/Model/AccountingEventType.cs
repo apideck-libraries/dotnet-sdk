@@ -182,21 +182,21 @@ namespace Apideck.Model
         AccountingSupplierDeleted = 25,
 
         /// <summary>
-        /// Enum AccountingPurchaseOrderCreated for value: accounting.purchase-order.created
+        /// Enum AccountingPurchaseOrderCreated for value: accounting.purchase_order.created
         /// </summary>
-        [EnumMember(Value = "accounting.purchase-order.created")]
+        [EnumMember(Value = "accounting.purchase_order.created")]
         AccountingPurchaseOrderCreated = 26,
 
         /// <summary>
-        /// Enum AccountingPurchaseOrderUpdated for value: accounting.purchase-order.updated
+        /// Enum AccountingPurchaseOrderUpdated for value: accounting.purchase_order.updated
         /// </summary>
-        [EnumMember(Value = "accounting.purchase-order.updated")]
+        [EnumMember(Value = "accounting.purchase_order.updated")]
         AccountingPurchaseOrderUpdated = 27,
 
         /// <summary>
-        /// Enum AccountingPurchaseOrderDeleted for value: accounting.purchase-order.deleted
+        /// Enum AccountingPurchaseOrderDeleted for value: accounting.purchase_order.deleted
         /// </summary>
-        [EnumMember(Value = "accounting.purchase-order.deleted")]
+        [EnumMember(Value = "accounting.purchase_order.deleted")]
         AccountingPurchaseOrderDeleted = 28,
 
         /// <summary>
