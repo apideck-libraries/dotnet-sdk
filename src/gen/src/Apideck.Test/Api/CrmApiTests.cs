@@ -294,7 +294,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //bool? raw = null;
             //string fields = null;
-            //var response = instance.ContactsOne(id, consumerId, appId, serviceId, raw, fields);
+            //ContactsFilter filter = null;
+            //var response = instance.ContactsOne(id, consumerId, appId, serviceId, raw, fields, filter);
             //Assert.IsType<GetContactResponse>(response);
         }
 

@@ -40,7 +40,8 @@ namespace Apideck.Model
         /// <param name="email">Email of the contact to filter on.</param>
         /// <param name="phoneNumber">Phone number of the contact to filter on.</param>
         /// <param name="companyId">Unique identifier for the associated company of the contact to filter on.</param>
-        public ContactsFilter(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string phoneNumber = default(string), string companyId = default(string))
+        /// <param name="ownerId">Unique identifier for the owner of the contact to filter on.</param>
+        public ContactsFilter(string name = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string phoneNumber = default(string), string companyId = default(string), string ownerId = default(string))
         {
             this.Name = name;
             this.FirstName = firstName;
@@ -48,6 +49,7 @@ namespace Apideck.Model
             this.Email = email;
             this.PhoneNumber = phoneNumber;
             this.CompanyId = companyId;
+            this.OwnerId = ownerId;
         }
 
         /// <summary>
@@ -93,6 +95,13 @@ namespace Apideck.Model
         public string CompanyId { get; set; }
 
         /// <summary>
+        /// Unique identifier for the owner of the contact to filter on
+        /// </summary>
+        /// <value>Unique identifier for the owner of the contact to filter on</value>
+        [DataMember(Name = "owner_id", EmitDefaultValue = false)]
+        public string OwnerId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -106,6 +115,7 @@ namespace Apideck.Model
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
+            sb.Append("  OwnerId: ").Append(OwnerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -170,6 +180,11 @@ namespace Apideck.Model
                     this.CompanyId == input.CompanyId ||
                     (this.CompanyId != null &&
                     this.CompanyId.Equals(input.CompanyId))
+                ) && 
+                (
+                    this.OwnerId == input.OwnerId ||
+                    (this.OwnerId != null &&
+                    this.OwnerId.Equals(input.OwnerId))
                 );
         }
 
@@ -205,6 +220,10 @@ namespace Apideck.Model
                 if (this.CompanyId != null)
                 {
                     hashCode = (hashCode * 59) + this.CompanyId.GetHashCode();
+                }
+                if (this.OwnerId != null)
+                {
+                    hashCode = (hashCode * 59) + this.OwnerId.GetHashCode();
                 }
                 return hashCode;
             }
