@@ -54,6 +54,7 @@ docs/Benefit.md
 docs/Bill.md
 docs/BillLineItem.md
 docs/BillPayment.md
+docs/BillPaymentAllocations.md
 docs/BillsFilter.md
 docs/BillsSort.md
 docs/Branch.md
@@ -740,6 +741,7 @@ src/Apideck.Test/Model/BalanceSheetTests.cs
 src/Apideck.Test/Model/BankAccountTests.cs
 src/Apideck.Test/Model/BenefitTests.cs
 src/Apideck.Test/Model/BillLineItemTests.cs
+src/Apideck.Test/Model/BillPaymentAllocationsTests.cs
 src/Apideck.Test/Model/BillPaymentTests.cs
 src/Apideck.Test/Model/BillTests.cs
 src/Apideck.Test/Model/BillsFilterTests.cs
@@ -1435,6 +1437,7 @@ src/Apideck/Model/Benefit.cs
 src/Apideck/Model/Bill.cs
 src/Apideck/Model/BillLineItem.cs
 src/Apideck/Model/BillPayment.cs
+src/Apideck/Model/BillPaymentAllocations.cs
 src/Apideck/Model/BillsFilter.cs
 src/Apideck/Model/BillsSort.cs
 src/Apideck/Model/Branch.cs
