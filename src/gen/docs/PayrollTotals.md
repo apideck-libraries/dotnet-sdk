@@ -1,4 +1,5 @@
 # Apideck.Model.PayrollTotals
+The overview of the payroll totals.
 
 ## Properties
 
