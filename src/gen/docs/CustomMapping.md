@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Required** | **bool** | Target Field Mapping is required | [optional] [readonly] 
 **CustomField** | **bool** | This mapping represents a finder for a custom field | [optional] [readonly] 
 **ConsumerId** | **string** | Consumer ID | [optional] [readonly] 
+**Example** | **string** | Target Field Mapping example value from downstream | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

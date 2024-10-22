@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **SubAccount** | **bool?** | Whether the account is a sub account or not. | [optional] 
 **SubAccounts** | **List&lt;Object&gt;** | The sub accounts of the account. | [optional] [readonly] 
 **LastReconciliationDate** | **DateTime?** | Reconciliation Date means the last calendar day of each Reconciliation Period. | [optional] 
+**Subsidiaries** | **List&lt;Object&gt;** | The subsidiaries the account belongs to. | [optional] 
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **CheckDate** | **string** | The date on which employees will be paid for the payroll. | 
 **StartDate** | **string** | The start date, inclusive, of the pay period. | 
 **EndDate** | **string** | The end date, inclusive, of the pay period. | 
-**Totals** | [**PayrollTotals**](.md) |  | [optional] 
+**Totals** | [**PayrollTotals**](PayrollTotals.md) |  | [optional] 
 **Compensations** | [**List&lt;Compensation&gt;**](Compensation.md) | An array of compensations for the payroll. | [optional] 
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 

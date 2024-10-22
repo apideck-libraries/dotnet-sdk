@@ -4,6 +4,7 @@ All URIs are relative to *https://unify.apideck.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ConnectionCustomMappingsAll**](VaultApi.md#connectioncustommappingsall) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-mappings | List connection custom mappings
 [**ConnectionSettingsAll**](VaultApi.md#connectionsettingsall) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/config | Get resource settings
 [**ConnectionSettingsUpdate**](VaultApi.md#connectionsettingsupdate) | **PATCH** /vault/connections/{unified_api}/{service_id}/{resource}/config | Update settings
 [**ConnectionsAll**](VaultApi.md#connectionsall) | **GET** /vault/connections | Get all connections
@@ -19,10 +20,103 @@ Method | HTTP request | Description
 [**ConsumersOne**](VaultApi.md#consumersone) | **GET** /vault/consumers/{consumer_id} | Get consumer
 [**ConsumersUpdate**](VaultApi.md#consumersupdate) | **PATCH** /vault/consumers/{consumer_id} | Update consumer
 [**CustomFieldsAll**](VaultApi.md#customfieldsall) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields
+[**CustomMappingsAll**](VaultApi.md#custommappingsall) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings
 [**LogsAll**](VaultApi.md#logsall) | **GET** /vault/logs | Get all consumer request logs
 [**SessionsCreate**](VaultApi.md#sessionscreate) | **POST** /vault/sessions | Create Session
 [**ValidateConnectionState**](VaultApi.md#validateconnectionstate) | **POST** /vault/connections/{unified_api}/{service_id}/validate | Validate Connection State
 
+
+<a name="connectioncustommappingsall"></a>
+# **ConnectionCustomMappingsAll**
+> GetCustomMappingsResponse ConnectionCustomMappingsAll (string unifiedApi, string serviceId, string resource, string consumerId = null, string appId = null, string resourceId = null)
+
+List connection custom mappings
+
+This endpoint returns a list of custom mappings for a connection.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class ConnectionCustomMappingsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var unifiedApi = crm;  // string | Unified API
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var resource = leads;  // string | Name of the resource (plural)
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var resourceId = 1234;  // string | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional) 
+
+            try
+            {
+                // List connection custom mappings
+                GetCustomMappingsResponse result = apiInstance.ConnectionCustomMappingsAll(unifiedApi, serviceId, resource, consumerId, appId, resourceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.ConnectionCustomMappingsAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unifiedApi** | **string**| Unified API | 
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **resource** | **string**| Name of the resource (plural) | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **resourceId** | **string**| This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. | [optional] 
+
+### Return type
+
+[**GetCustomMappingsResponse**](GetCustomMappingsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Custom mapping |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="connectionsettingsall"></a>
 # **ConnectionSettingsAll**
@@ -1319,6 +1413,94 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetCustomFieldsResponse**](GetCustomFieldsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Custom mapping |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="custommappingsall"></a>
+# **CustomMappingsAll**
+> GetCustomMappingsResponse CustomMappingsAll (string unifiedApi, string serviceId, string consumerId = null, string appId = null)
+
+List custom mappings
+
+This endpoint returns a list of custom mappings.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class CustomMappingsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var unifiedApi = crm;  // string | Unified API
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // List custom mappings
+                GetCustomMappingsResponse result = apiInstance.CustomMappingsAll(unifiedApi, serviceId, consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.CustomMappingsAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unifiedApi** | **string**| Unified API | 
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**GetCustomMappingsResponse**](GetCustomMappingsResponse.md)
 
 ### Authorization
 
