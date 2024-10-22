@@ -55,7 +55,7 @@ namespace Apideck.Model
         /// <param name="equity">equity (required).</param>
         /// <param name="netAssets">The net assets of the balance sheet.</param>
         /// <param name="uncategorizedItems">uncategorizedItems.</param>
-        public BalanceSheetReports(string reportName = default(string), string startDate = default(string), string endDate = default(string), Currency? currency = default(Currency?), BalanceSheetAccount assets = default(BalanceSheetAccount), BalanceSheetAccount liabilities = default(BalanceSheetAccount), BalanceSheetAccount equity = default(BalanceSheetAccount), decimal netAssets = default(decimal), BalanceSheetAccount uncategorizedItems = default(BalanceSheetAccount))
+        public BalanceSheetReports(string reportName = default(string), string startDate = default(string), string endDate = default(string), Currency? currency = default(Currency?), BalanceSheetAssetsAccount assets = default(BalanceSheetAssetsAccount), BalanceSheetLiabilitiesAccount liabilities = default(BalanceSheetLiabilitiesAccount), BalanceSheetEquityAccount equity = default(BalanceSheetEquityAccount), decimal netAssets = default(decimal), BalanceSheetUncategorizedItemsAccount uncategorizedItems = default(BalanceSheetUncategorizedItemsAccount))
         {
             // to ensure "endDate" is required (not null)
             if (endDate == null) {
@@ -124,19 +124,19 @@ namespace Apideck.Model
         /// Gets or Sets Assets
         /// </summary>
         [DataMember(Name = "assets", IsRequired = true, EmitDefaultValue = false)]
-        public BalanceSheetAccount Assets { get; set; }
+        public BalanceSheetAssetsAccount Assets { get; set; }
 
         /// <summary>
         /// Gets or Sets Liabilities
         /// </summary>
         [DataMember(Name = "liabilities", IsRequired = true, EmitDefaultValue = false)]
-        public BalanceSheetAccount Liabilities { get; set; }
+        public BalanceSheetLiabilitiesAccount Liabilities { get; set; }
 
         /// <summary>
         /// Gets or Sets Equity
         /// </summary>
         [DataMember(Name = "equity", IsRequired = true, EmitDefaultValue = false)]
-        public BalanceSheetAccount Equity { get; set; }
+        public BalanceSheetEquityAccount Equity { get; set; }
 
         /// <summary>
         /// The net assets of the balance sheet
@@ -224,7 +224,7 @@ namespace Apideck.Model
         /// Gets or Sets UncategorizedItems
         /// </summary>
         [DataMember(Name = "uncategorized_items", EmitDefaultValue = false)]
-        public BalanceSheetAccount UncategorizedItems { get; set; }
+        public BalanceSheetUncategorizedItemsAccount UncategorizedItems { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
