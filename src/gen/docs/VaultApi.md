@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**ConsumersDelete**](VaultApi.md#consumersdelete) | **DELETE** /vault/consumers/{consumer_id} | Delete consumer
 [**ConsumersOne**](VaultApi.md#consumersone) | **GET** /vault/consumers/{consumer_id} | Get consumer
 [**ConsumersUpdate**](VaultApi.md#consumersupdate) | **PATCH** /vault/consumers/{consumer_id} | Update consumer
+[**CreateCallbackState**](VaultApi.md#createcallbackstate) | **POST** /vault/connections/{unified_api}/{service_id}/callback-state | Create Callback State
 [**CustomFieldsAll**](VaultApi.md#customfieldsall) | **GET** /vault/connections/{unified_api}/{service_id}/{resource}/custom-fields | Get resource custom fields
 [**CustomMappingsAll**](VaultApi.md#custommappingsall) | **GET** /vault/custom-mappings/{unified_api}/{service_id} | List custom mappings
 [**LogsAll**](VaultApi.md#logsall) | **GET** /vault/logs | Get all consumer request logs
@@ -1336,6 +1337,96 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Consumer updated |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createcallbackstate"></a>
+# **CreateCallbackState**
+> CreateCallbackStateResponse CreateCallbackState (string serviceId, string unifiedApi, CreateCallbackStateData createCallbackStateData, string consumerId = null, string appId = null)
+
+Create Callback State
+
+This endpoint creates a callback state that can be used to issue requests to the callback endpoint. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class CreateCallbackStateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new VaultApi(config);
+            var serviceId = pipedrive;  // string | Service ID of the resource to return
+            var unifiedApi = crm;  // string | Unified API
+            var createCallbackStateData = new CreateCallbackStateData(); // CreateCallbackStateData | Callback state data
+            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+
+            try
+            {
+                // Create Callback State
+                CreateCallbackStateResponse result = apiInstance.CreateCallbackState(serviceId, unifiedApi, createCallbackStateData, consumerId, appId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.CreateCallbackState: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **serviceId** | **string**| Service ID of the resource to return | 
+ **unifiedApi** | **string**| Unified API | 
+ **createCallbackStateData** | [**CreateCallbackStateData**](CreateCallbackStateData.md)| Callback state data | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+
+### Return type
+
+[**CreateCallbackStateResponse**](CreateCallbackStateResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Callback state created |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |
