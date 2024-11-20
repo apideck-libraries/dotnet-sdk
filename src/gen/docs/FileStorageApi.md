@@ -69,9 +69,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var driveGroup = new DriveGroup(); // DriveGroup | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
             {
@@ -158,9 +158,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new DriveGroupsFilter(); // DriveGroupsFilter | Apply filters (optional) 
@@ -256,9 +256,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -346,9 +346,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -439,9 +439,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var driveGroup = new DriveGroup(); // DriveGroup | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -531,9 +531,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var drive = new Drive(); // Drive | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
             {
@@ -620,9 +620,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new DrivesFilter(); // DrivesFilter | Apply filters (optional) 
@@ -716,9 +716,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -806,9 +806,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -899,9 +899,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var drive = new Drive(); // Drive | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -990,9 +990,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var filter = new FilesFilter(); // FilesFilter | Apply filters (optional) 
@@ -1090,9 +1090,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -1180,9 +1180,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -1271,9 +1271,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var format = pdf;  // string | File format to export this file to. A list of available file formats for the current file is available as `export_formats` on the File resource.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -1362,9 +1362,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -1454,9 +1454,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var filesSearch = new FilesSearch(); // FilesSearch | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
@@ -1553,9 +1553,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var updateFileRequest = new UpdateFileRequest(); // UpdateFileRequest | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -1645,9 +1645,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var createFolderRequest = new CreateFolderRequest(); // CreateFolderRequest | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
             try
@@ -1737,9 +1737,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var copyFolderRequest = new CopyFolderRequest(); // CopyFolderRequest | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -1830,9 +1830,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -1920,9 +1920,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -2013,9 +2013,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var updateFolderRequest = new UpdateFolderRequest(); // UpdateFolderRequest | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -2105,9 +2105,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var sharedLink = new SharedLink(); // SharedLink | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
             {
@@ -2194,9 +2194,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
@@ -2290,9 +2290,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -2380,9 +2380,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -2473,9 +2473,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var sharedLink = new SharedLink(); // SharedLink | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -2565,9 +2565,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var createUploadSessionRequest = new CreateUploadSessionRequest(); // CreateUploadSessionRequest | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
             {
@@ -2654,9 +2654,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -2745,9 +2745,9 @@ namespace Example
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var digest = sha=fpRyg5eVQletdZqEKaFlqwBXJzM=;  // string | The RFC3230 message digest of the uploaded part. Only required for the Box connector. More information on the Box API docs [here](https://developer.box.com/reference/put-files-upload-sessions-id/#param-digest) (optional) 
             var body = null;  // Object |  (optional) 
 
@@ -2838,9 +2838,9 @@ namespace Example
 
             var apiInstance = new FileStorageApi(config);
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
