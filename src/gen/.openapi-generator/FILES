@@ -113,7 +113,7 @@ docs/CreateAttachmentRequest.md
 docs/CreateAttachmentResponse.md
 docs/CreateBillPaymentResponse.md
 docs/CreateBillResponse.md
-docs/CreateCallbackStateData.md
+docs/CreateCallbackState.md
 docs/CreateCallbackStateResponse.md
 docs/CreateCallbackStateResponseData.md
 docs/CreateCommentResponse.md
@@ -809,9 +809,9 @@ src/Apideck.Test/Model/CreateAttachmentRequestTests.cs
 src/Apideck.Test/Model/CreateAttachmentResponseTests.cs
 src/Apideck.Test/Model/CreateBillPaymentResponseTests.cs
 src/Apideck.Test/Model/CreateBillResponseTests.cs
-src/Apideck.Test/Model/CreateCallbackStateDataTests.cs
 src/Apideck.Test/Model/CreateCallbackStateResponseDataTests.cs
 src/Apideck.Test/Model/CreateCallbackStateResponseTests.cs
+src/Apideck.Test/Model/CreateCallbackStateTests.cs
 src/Apideck.Test/Model/CreateCommentResponseTests.cs
 src/Apideck.Test/Model/CreateCompanyResponseTests.cs
 src/Apideck.Test/Model/CreateConnectionResponseTests.cs
@@ -1511,7 +1511,7 @@ src/Apideck/Model/CreateAttachmentRequest.cs
 src/Apideck/Model/CreateAttachmentResponse.cs
 src/Apideck/Model/CreateBillPaymentResponse.cs
 src/Apideck/Model/CreateBillResponse.cs
-src/Apideck/Model/CreateCallbackStateData.cs
+src/Apideck/Model/CreateCallbackState.cs
 src/Apideck/Model/CreateCallbackStateResponse.cs
 src/Apideck/Model/CreateCallbackStateResponseData.cs
 src/Apideck/Model/CreateCommentResponse.cs

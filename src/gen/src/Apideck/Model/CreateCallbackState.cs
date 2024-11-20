@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// CreateCallbackStateData
+    /// CreateCallbackState
     /// </summary>
-    [DataContract(Name = "CreateCallbackStateData")]
-    public partial class CreateCallbackStateData : IEquatable<CreateCallbackStateData>, IValidatableObject
+    [DataContract(Name = "CreateCallbackState")]
+    public partial class CreateCallbackState : IEquatable<CreateCallbackState>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateCallbackStateData" /> class.
+        /// Initializes a new instance of the <see cref="CreateCallbackState" /> class.
         /// </summary>
         /// <param name="redirectUri">The redirect URI to be used after the connection is created..</param>
-        public CreateCallbackStateData(string redirectUri = default(string))
+        public CreateCallbackState(string redirectUri = default(string))
         {
             this.RedirectUri = redirectUri;
         }
@@ -55,7 +55,7 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateCallbackStateData {\n");
+            sb.Append("class CreateCallbackState {\n");
             sb.Append("  RedirectUri: ").Append(RedirectUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -77,15 +77,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateCallbackStateData);
+            return this.Equals(input as CreateCallbackState);
         }
 
         /// <summary>
-        /// Returns true if CreateCallbackStateData instances are equal
+        /// Returns true if CreateCallbackState instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateCallbackStateData to be compared</param>
+        /// <param name="input">Instance of CreateCallbackState to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateCallbackStateData input)
+        public bool Equals(CreateCallbackState input)
         {
             if (input == null)
             {

@@ -1,4 +1,4 @@
-# Apideck.Model.CreateCallbackStateData
+# Apideck.Model.CreateCallbackState
 
 ## Properties
 

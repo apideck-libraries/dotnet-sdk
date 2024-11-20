@@ -288,10 +288,10 @@ namespace Apideck.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string serviceId = null;
             //string unifiedApi = null;
-            //CreateCallbackStateData createCallbackStateData = null;
+            //CreateCallbackState createCallbackState = null;
             //string consumerId = null;
             //string appId = null;
-            //var response = instance.CreateCallbackState(serviceId, unifiedApi, createCallbackStateData, consumerId, appId);
+            //var response = instance.CreateCallbackState(serviceId, unifiedApi, createCallbackState, consumerId, appId);
             //Assert.IsType<CreateCallbackStateResponse>(response);
         }
 
