@@ -73,6 +73,22 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'EndDate'
         }
+        /// <summary>
+        /// Test the property 'PeriodCount'
+        /// </summary>
+        [Fact]
+        public void PeriodCountTest()
+        {
+            // TODO unit test for the property 'PeriodCount'
+        }
+        /// <summary>
+        /// Test the property 'PeriodType'
+        /// </summary>
+        [Fact]
+        public void PeriodTypeTest()
+        {
+            // TODO unit test for the property 'PeriodType'
+        }
 
     }
 

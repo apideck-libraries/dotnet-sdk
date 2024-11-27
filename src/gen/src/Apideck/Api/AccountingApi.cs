@@ -7101,6 +7101,14 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[end_date]", filter.EndDate));
                 }
+                if (filter.PeriodCount != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[period_count]", filter.PeriodCount));
+                }
+                if (filter.PeriodType != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[period_type]", filter.PeriodType));
+                }
             }
             if (raw != null)
             {

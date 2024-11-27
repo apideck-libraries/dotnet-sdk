@@ -33,29 +33,74 @@ namespace Apideck.Model
     public partial class BalanceSheetFilter : IEquatable<BalanceSheetFilter>, IValidatableObject
     {
         /// <summary>
+        /// The type of period to include in the resource: month, quarter, year.
+        /// </summary>
+        /// <value>The type of period to include in the resource: month, quarter, year.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PeriodTypeEnum
+        {
+            /// <summary>
+            /// Enum Month for value: month
+            /// </summary>
+            [EnumMember(Value = "month")]
+            Month = 1,
+
+            /// <summary>
+            /// Enum Quarter for value: quarter
+            /// </summary>
+            [EnumMember(Value = "quarter")]
+            Quarter = 2,
+
+            /// <summary>
+            /// Enum Year for value: year
+            /// </summary>
+            [EnumMember(Value = "year")]
+            Year = 3
+
+        }
+
+
+        /// <summary>
+        /// The type of period to include in the resource: month, quarter, year.
+        /// </summary>
+        /// <value>The type of period to include in the resource: month, quarter, year.</value>
+        [DataMember(Name = "period_type", EmitDefaultValue = false)]
+        public PeriodTypeEnum? PeriodType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="BalanceSheetFilter" /> class.
         /// </summary>
-        /// <param name="startDate">Filter by start date. If start date is given, end date is required..</param>
-        /// <param name="endDate">Filter by end date. If end date is given, start date is required..</param>
-        public BalanceSheetFilter(string startDate = default(string), string endDate = default(string))
+        /// <param name="startDate">The start date of the period to include in the resource..</param>
+        /// <param name="endDate">The end date of the period to include in the resource..</param>
+        /// <param name="periodCount">The number of periods to include in the resource..</param>
+        /// <param name="periodType">The type of period to include in the resource: month, quarter, year..</param>
+        public BalanceSheetFilter(string startDate = default(string), string endDate = default(string), int periodCount = default(int), PeriodTypeEnum? periodType = default(PeriodTypeEnum?))
         {
             this.StartDate = startDate;
             this.EndDate = endDate;
+            this.PeriodCount = periodCount;
+            this.PeriodType = periodType;
         }
 
         /// <summary>
-        /// Filter by start date. If start date is given, end date is required.
+        /// The start date of the period to include in the resource.
         /// </summary>
-        /// <value>Filter by start date. If start date is given, end date is required.</value>
+        /// <value>The start date of the period to include in the resource.</value>
         [DataMember(Name = "start_date", EmitDefaultValue = false)]
         public string StartDate { get; set; }
 
         /// <summary>
-        /// Filter by end date. If end date is given, start date is required.
+        /// The end date of the period to include in the resource.
         /// </summary>
-        /// <value>Filter by end date. If end date is given, start date is required.</value>
+        /// <value>The end date of the period to include in the resource.</value>
         [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public string EndDate { get; set; }
+
+        /// <summary>
+        /// The number of periods to include in the resource.
+        /// </summary>
+        /// <value>The number of periods to include in the resource.</value>
+        [DataMember(Name = "period_count", EmitDefaultValue = false)]
+        public int PeriodCount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -67,6 +112,8 @@ namespace Apideck.Model
             sb.Append("class BalanceSheetFilter {\n");
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  PeriodCount: ").Append(PeriodCount).Append("\n");
+            sb.Append("  PeriodType: ").Append(PeriodType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -111,6 +158,14 @@ namespace Apideck.Model
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
+                ) && 
+                (
+                    this.PeriodCount == input.PeriodCount ||
+                    this.PeriodCount.Equals(input.PeriodCount)
+                ) && 
+                (
+                    this.PeriodType == input.PeriodType ||
+                    this.PeriodType.Equals(input.PeriodType)
                 );
         }
 
@@ -131,6 +186,8 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.PeriodCount.GetHashCode();
+                hashCode = (hashCode * 59) + this.PeriodType.GetHashCode();
                 return hashCode;
             }
         }
