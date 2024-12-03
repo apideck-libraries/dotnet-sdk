@@ -27,10 +27,10 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// InvoiceItemsFilter
+    /// InvoiceItemFilter
     /// </summary>
-    [DataContract(Name = "InvoiceItemsFilter")]
-    public partial class InvoiceItemsFilter : IEquatable<InvoiceItemsFilter>, IValidatableObject
+    [DataContract(Name = "InvoiceItemFilter")]
+    public partial class InvoiceItemFilter : IEquatable<InvoiceItemFilter>, IValidatableObject
     {
         /// <summary>
         /// The type of invoice item, indicating whether it is an inventory item, a service, or another type.
@@ -67,22 +67,13 @@ namespace Apideck.Model
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InvoiceItemsFilter" /> class.
+        /// Initializes a new instance of the <see cref="InvoiceItemFilter" /> class.
         /// </summary>
-        /// <param name="name">Name of Invoice Items to search for.</param>
         /// <param name="type">The type of invoice item, indicating whether it is an inventory item, a service, or another type..</param>
-        public InvoiceItemsFilter(string name = default(string), TypeEnum? type = default(TypeEnum?))
+        public InvoiceItemFilter(TypeEnum? type = default(TypeEnum?))
         {
-            this.Name = name;
             this.Type = type;
         }
-
-        /// <summary>
-        /// Name of Invoice Items to search for
-        /// </summary>
-        /// <value>Name of Invoice Items to search for</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,8 +82,7 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class InvoiceItemsFilter {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class InvoiceItemFilter {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -114,26 +104,21 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InvoiceItemsFilter);
+            return this.Equals(input as InvoiceItemFilter);
         }
 
         /// <summary>
-        /// Returns true if InvoiceItemsFilter instances are equal
+        /// Returns true if InvoiceItemFilter instances are equal
         /// </summary>
-        /// <param name="input">Instance of InvoiceItemsFilter to be compared</param>
+        /// <param name="input">Instance of InvoiceItemFilter to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InvoiceItemsFilter input)
+        public bool Equals(InvoiceItemFilter input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
                 (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
@@ -149,10 +134,6 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 return hashCode;
             }

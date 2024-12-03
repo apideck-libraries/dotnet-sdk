@@ -3712,7 +3712,7 @@ Name | Type | Description  | Notes
 
 <a name="invoiceitemsone"></a>
 # **InvoiceItemsOne**
-> GetInvoiceItemResponse InvoiceItemsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
+> GetInvoiceItemResponse InvoiceItemsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null, InvoiceItemFilter filter = null)
 
 Get Invoice Item
 
@@ -3746,11 +3746,12 @@ namespace Example
             var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
+            var filter = new InvoiceItemFilter(); // InvoiceItemFilter | Apply filters (optional) 
 
             try
             {
                 // Get Invoice Item
-                GetInvoiceItemResponse result = apiInstance.InvoiceItemsOne(id, consumerId, appId, serviceId, raw, fields);
+                GetInvoiceItemResponse result = apiInstance.InvoiceItemsOne(id, consumerId, appId, serviceId, raw, fields, filter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -3774,6 +3775,7 @@ Name | Type | Description  | Notes
  **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
  **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
+ **filter** | [**InvoiceItemFilter**](InvoiceItemFilter.md)| Apply filters | [optional] 
 
 ### Return type
 

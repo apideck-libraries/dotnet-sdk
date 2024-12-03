@@ -451,6 +451,7 @@ docs/HrisJobs.md
 docs/IntegrationState.md
 docs/Invoice.md
 docs/InvoiceItem.md
+docs/InvoiceItemFilter.md
 docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
 docs/InvoiceLineItem.md
@@ -1141,6 +1142,7 @@ src/Apideck.Test/Model/HrisJobLocationTests.cs
 src/Apideck.Test/Model/HrisJobTests.cs
 src/Apideck.Test/Model/HrisJobsTests.cs
 src/Apideck.Test/Model/IntegrationStateTests.cs
+src/Apideck.Test/Model/InvoiceItemFilterTests.cs
 src/Apideck.Test/Model/InvoiceItemSalesDetailsTests.cs
 src/Apideck.Test/Model/InvoiceItemTests.cs
 src/Apideck.Test/Model/InvoiceItemsFilterTests.cs
@@ -1845,6 +1847,7 @@ src/Apideck/Model/HrisJobs.cs
 src/Apideck/Model/IntegrationState.cs
 src/Apideck/Model/Invoice.cs
 src/Apideck/Model/InvoiceItem.cs
+src/Apideck/Model/InvoiceItemFilter.cs
 src/Apideck/Model/InvoiceItemSalesDetails.cs
 src/Apideck/Model/InvoiceItemsFilter.cs
 src/Apideck/Model/InvoiceLineItem.cs

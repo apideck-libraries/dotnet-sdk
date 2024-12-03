@@ -743,7 +743,8 @@ namespace Apideck.Test.Api
             //string serviceId = null;
             //bool? raw = null;
             //string fields = null;
-            //var response = instance.InvoiceItemsOne(id, consumerId, appId, serviceId, raw, fields);
+            //InvoiceItemFilter filter = null;
+            //var response = instance.InvoiceItemsOne(id, consumerId, appId, serviceId, raw, fields, filter);
             //Assert.IsType<GetInvoiceItemResponse>(response);
         }
 
