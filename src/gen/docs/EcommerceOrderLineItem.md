@@ -16,6 +16,10 @@ Name | Type | Description | Notes
 **UnitPrice** | **string** | The unit price of the product or variant associated with the line item. | [optional] 
 **TaxRate** | **string** | The tax rate applied to the product or variant associated with the line item. | [optional] 
 **TaxAmount** | **string** | The total tax amount applied to the product or variant associated with the line item. | [optional] 
+**IsRefunded** | **bool?** | Whether the line item has been refunded. | [optional] 
+**RefundedAmount** | **string** | The amount of the line item that has been refunded. | [optional] 
+**RefundedQuantity** | **string** | The quantity of the line item that has been refunded. | [optional] 
+**SubTotal** | **string** | The sub total for the product(s) or variant associated with the line item, excluding taxes and discounts. | [optional] 
 **TotalAmount** | **string** | The total amount for the product(s) or variant associated with the line item, including taxes and discounts. | 
 **Discounts** | [**List&lt;EcommerceDiscount&gt;**](EcommerceDiscount.md) |  | [optional] 
 

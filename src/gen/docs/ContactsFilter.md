@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Email** | **string** | Email of the contact to filter on | [optional] 
 **PhoneNumber** | **string** | Phone number of the contact to filter on | [optional] 
 **CompanyId** | **string** | Unique identifier for the associated company of the contact to filter on | [optional] 
+**OwnerId** | **string** | Unique identifier for the owner of the contact to filter on | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

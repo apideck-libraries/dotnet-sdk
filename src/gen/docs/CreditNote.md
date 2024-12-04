@@ -24,11 +24,12 @@ Name | Type | Description | Notes
 **Type** | **string** | Type of payment | [optional] 
 **Account** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | [optional] 
 **LineItems** | [**List&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
-**Allocations** | **List&lt;Object&gt;** |  | [optional] 
+**Allocations** | [**List&lt;Allocation&gt;**](Allocation.md) |  | [optional] 
 **Note** | **string** | Optional note to be associated with the credit note. | [optional] 
 **Terms** | **string** | Optional terms to be associated with the credit note. | [optional] 
 **BillingAddress** | [**Address**](Address.md) |  | [optional] 
 **ShippingAddress** | [**Address**](Address.md) |  | [optional] 
+**TrackingCategories** | [**List&lt;LinkedTrackingCategory&gt;**](LinkedTrackingCategory.md) | A list of linked tracking categories. | [optional] 
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
@@ -36,6 +37,7 @@ Name | Type | Description | Notes
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
+**PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **CreatedBy** | **string** | The user who created the activity | [optional] [readonly] 
 **UpdatedAt** | **string** | The date and time when the activity was last updated | [optional] [readonly] 
 **CreatedAt** | **string** | The date and time when the activity was created | [optional] [readonly] 
+**PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

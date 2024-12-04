@@ -13,7 +13,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_VERSION: 2.2.1
+      PACKAGE_VERSION: 2.5.3
     steps:
       - uses: actions/checkout@v3
 

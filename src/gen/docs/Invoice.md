@@ -29,7 +29,8 @@ Name | Type | Description | Notes
 **Balance** | **decimal?** | Balance of invoice due. | [optional] 
 **Deposit** | **decimal?** | Amount of deposit made to this invoice. | [optional] 
 **CustomerMemo** | **string** | Customer memo | [optional] 
-**TrackingCategory** | [**LinkedTrackingCategory**](LinkedTrackingCategory.md) |  | [optional] 
+**TrackingCategory** | [**DeprecatedLinkedTrackingCategory**](DeprecatedLinkedTrackingCategory.md) |  | [optional] 
+**TrackingCategories** | [**List&lt;LinkedTrackingCategory&gt;**](LinkedTrackingCategory.md) | A list of linked tracking categories. | [optional] 
 **LineItems** | [**List&lt;InvoiceLineItem&gt;**](InvoiceLineItem.md) |  | [optional] 
 **BillingAddress** | [**Address**](Address.md) |  | [optional] 
 **ShippingAddress** | [**Address**](Address.md) |  | [optional] 
@@ -48,6 +49,7 @@ Name | Type | Description | Notes
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
+**PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
