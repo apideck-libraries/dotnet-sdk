@@ -20,6 +20,9 @@ docs/ActivitiesSort.md
 docs/Activity.md
 docs/ActivityAttendee.md
 docs/Address.md
+docs/AgedCreditors.md
+docs/AgedDebtors.md
+docs/AgedReportFilter.md
 docs/Allocation.md
 docs/Api.md
 docs/ApiResource.md
@@ -44,6 +47,8 @@ docs/AttachmentReference.md
 docs/AttachmentReferenceType.md
 docs/AuthType.md
 docs/BadRequestResponse.md
+docs/BalanceByPeriod.md
+docs/BalanceByTransaction.md
 docs/BalanceSheet.md
 docs/BalanceSheetAccount.md
 docs/BalanceSheetAccountRecord.md
@@ -300,6 +305,8 @@ docs/GetAccountingLocationResponse.md
 docs/GetAccountingLocationsResponse.md
 docs/GetActivitiesResponse.md
 docs/GetActivityResponse.md
+docs/GetAgedCreditorsResponse.md
+docs/GetAgedDebtorsResponse.md
 docs/GetApiResourceCoverageResponse.md
 docs/GetApiResourceResponse.md
 docs/GetApiResponse.md
@@ -525,6 +532,8 @@ docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
 docs/OrdersSort.md
+docs/OutstandingBalance.md
+docs/OutstandingBalanceByCurrency.md
 docs/Owner.md
 docs/PaginationCoverage.md
 docs/PassThroughQuery.md
@@ -719,6 +728,9 @@ src/Apideck.Test/Model/ActivitiesSortTests.cs
 src/Apideck.Test/Model/ActivityAttendeeTests.cs
 src/Apideck.Test/Model/ActivityTests.cs
 src/Apideck.Test/Model/AddressTests.cs
+src/Apideck.Test/Model/AgedCreditorsTests.cs
+src/Apideck.Test/Model/AgedDebtorsTests.cs
+src/Apideck.Test/Model/AgedReportFilterTests.cs
 src/Apideck.Test/Model/AllocationTests.cs
 src/Apideck.Test/Model/ApiResourceCoverageCoverageTests.cs
 src/Apideck.Test/Model/ApiResourceCoverageTests.cs
@@ -742,6 +754,8 @@ src/Apideck.Test/Model/AttachmentReferenceTypeTests.cs
 src/Apideck.Test/Model/AttachmentTests.cs
 src/Apideck.Test/Model/AuthTypeTests.cs
 src/Apideck.Test/Model/BadRequestResponseTests.cs
+src/Apideck.Test/Model/BalanceByPeriodTests.cs
+src/Apideck.Test/Model/BalanceByTransactionTests.cs
 src/Apideck.Test/Model/BalanceSheetAccountRecordTests.cs
 src/Apideck.Test/Model/BalanceSheetAccountTests.cs
 src/Apideck.Test/Model/BalanceSheetAssetsAccountTests.cs
@@ -994,6 +1008,8 @@ src/Apideck.Test/Model/GetAccountingLocationResponseTests.cs
 src/Apideck.Test/Model/GetAccountingLocationsResponseTests.cs
 src/Apideck.Test/Model/GetActivitiesResponseTests.cs
 src/Apideck.Test/Model/GetActivityResponseTests.cs
+src/Apideck.Test/Model/GetAgedCreditorsResponseTests.cs
+src/Apideck.Test/Model/GetAgedDebtorsResponseTests.cs
 src/Apideck.Test/Model/GetApiResourceCoverageResponseTests.cs
 src/Apideck.Test/Model/GetApiResourceResponseTests.cs
 src/Apideck.Test/Model/GetApiResponseTests.cs
@@ -1216,6 +1232,8 @@ src/Apideck.Test/Model/OrderTendersTests.cs
 src/Apideck.Test/Model/OrderTests.cs
 src/Apideck.Test/Model/OrderTypeTests.cs
 src/Apideck.Test/Model/OrdersSortTests.cs
+src/Apideck.Test/Model/OutstandingBalanceByCurrencyTests.cs
+src/Apideck.Test/Model/OutstandingBalanceTests.cs
 src/Apideck.Test/Model/OwnerTests.cs
 src/Apideck.Test/Model/PaginationCoverageTests.cs
 src/Apideck.Test/Model/PassThroughQueryTests.cs
@@ -1422,6 +1440,9 @@ src/Apideck/Model/ActivitiesSort.cs
 src/Apideck/Model/Activity.cs
 src/Apideck/Model/ActivityAttendee.cs
 src/Apideck/Model/Address.cs
+src/Apideck/Model/AgedCreditors.cs
+src/Apideck/Model/AgedDebtors.cs
+src/Apideck/Model/AgedReportFilter.cs
 src/Apideck/Model/Allocation.cs
 src/Apideck/Model/Api.cs
 src/Apideck/Model/ApiResource.cs
@@ -1445,6 +1466,8 @@ src/Apideck/Model/AttachmentReference.cs
 src/Apideck/Model/AttachmentReferenceType.cs
 src/Apideck/Model/AuthType.cs
 src/Apideck/Model/BadRequestResponse.cs
+src/Apideck/Model/BalanceByPeriod.cs
+src/Apideck/Model/BalanceByTransaction.cs
 src/Apideck/Model/BalanceSheet.cs
 src/Apideck/Model/BalanceSheetAccount.cs
 src/Apideck/Model/BalanceSheetAccountRecord.cs
@@ -1697,6 +1720,8 @@ src/Apideck/Model/GetAccountingLocationResponse.cs
 src/Apideck/Model/GetAccountingLocationsResponse.cs
 src/Apideck/Model/GetActivitiesResponse.cs
 src/Apideck/Model/GetActivityResponse.cs
+src/Apideck/Model/GetAgedCreditorsResponse.cs
+src/Apideck/Model/GetAgedDebtorsResponse.cs
 src/Apideck/Model/GetApiResourceCoverageResponse.cs
 src/Apideck/Model/GetApiResourceResponse.cs
 src/Apideck/Model/GetApiResponse.cs
@@ -1919,6 +1944,8 @@ src/Apideck/Model/OrderRefunds.cs
 src/Apideck/Model/OrderTenders.cs
 src/Apideck/Model/OrderType.cs
 src/Apideck/Model/OrdersSort.cs
+src/Apideck/Model/OutstandingBalance.cs
+src/Apideck/Model/OutstandingBalanceByCurrency.cs
 src/Apideck/Model/Owner.cs
 src/Apideck/Model/PaginationCoverage.cs
 src/Apideck/Model/PassThroughQuery.cs
