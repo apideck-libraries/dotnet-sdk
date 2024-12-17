@@ -60,7 +60,7 @@ namespace Example
             var unifiedApi = crm;  // string | Unified API
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var resource = leads;  // string | Name of the resource (plural)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var resourceId = 1234;  // string | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional) 
 
@@ -152,7 +152,7 @@ namespace Example
             var unifiedApi = crm;  // string | Unified API
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var resource = leads;  // string | Name of the resource (plural)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
@@ -243,7 +243,7 @@ namespace Example
             var unifiedApi = crm;  // string | Unified API
             var resource = leads;  // string | Name of the resource (plural)
             var connection = new Connection(); // Connection | Fields that need to be updated on the resource
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
@@ -331,7 +331,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new VaultApi(config);
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var api = crm;  // string | Scope results to Unified API (optional) 
             var configured = true;  // bool? | Scopes results to connections that have been configured or not (optional) 
@@ -421,7 +421,7 @@ namespace Example
             var apiInstance = new VaultApi(config);
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
@@ -509,7 +509,7 @@ namespace Example
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
             var connectionImportData = new ConnectionImportData(); // ConnectionImportData | Fields that need to be persisted on the resource
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
@@ -598,7 +598,7 @@ namespace Example
             var apiInstance = new VaultApi(config);
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
@@ -686,7 +686,7 @@ namespace Example
             var apiInstance = new VaultApi(config);
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var body = null;  // Object |  (optional) 
 
@@ -777,7 +777,7 @@ namespace Example
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
             var connection = new Connection(); // Connection | Fields that need to be updated on the resource
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
@@ -1348,7 +1348,7 @@ Name | Type | Description  | Notes
 
 <a name="createcallbackstate"></a>
 # **CreateCallbackState**
-> CreateCallbackStateResponse CreateCallbackState (string serviceId, string unifiedApi, CreateCallbackStateData createCallbackStateData, string consumerId = null, string appId = null)
+> CreateCallbackStateResponse CreateCallbackState (string serviceId, string unifiedApi, CreateCallbackState createCallbackState, string consumerId = null, string appId = null)
 
 Create Callback State
 
@@ -1378,14 +1378,14 @@ namespace Example
             var apiInstance = new VaultApi(config);
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
-            var createCallbackStateData = new CreateCallbackStateData(); // CreateCallbackStateData | Callback state data
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var createCallbackState = new CreateCallbackState(); // CreateCallbackState | Callback state data
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
             {
                 // Create Callback State
-                CreateCallbackStateResponse result = apiInstance.CreateCallbackState(serviceId, unifiedApi, createCallbackStateData, consumerId, appId);
+                CreateCallbackStateResponse result = apiInstance.CreateCallbackState(serviceId, unifiedApi, createCallbackState, consumerId, appId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1405,7 +1405,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **serviceId** | **string**| Service ID of the resource to return | 
  **unifiedApi** | **string**| Unified API | 
- **createCallbackStateData** | [**CreateCallbackStateData**](CreateCallbackStateData.md)| Callback state data | 
+ **createCallbackState** | [**CreateCallbackState**](CreateCallbackState.md)| Callback state data | 
  **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
  **appId** | **string**| The ID of your Unify application | [optional] 
 
@@ -1469,7 +1469,7 @@ namespace Example
             var unifiedApi = crm;  // string | Unified API
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var resource = leads;  // string | Name of the resource (plural)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var resourceId = 1234;  // string | This is the id of the resource you want to fetch when listing custom fields. For example, if you want to fetch custom fields for a specific contact, you would use the contact id. (optional) 
 
@@ -1560,7 +1560,7 @@ namespace Example
             var apiInstance = new VaultApi(config);
             var unifiedApi = crm;  // string | Unified API
             var serviceId = pipedrive;  // string | Service ID of the resource to return
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
 
             try
@@ -1647,7 +1647,7 @@ namespace Example
 
             var apiInstance = new VaultApi(config);
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var filter = new LogsFilter(); // LogsFilter | Filter results (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
@@ -1736,7 +1736,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new VaultApi(config);
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var session = new Session(); // Session | Additional redirect uri and/or consumer metadata (optional) 
 
@@ -1824,7 +1824,7 @@ namespace Example
             var apiInstance = new VaultApi(config);
             var serviceId = pipedrive;  // string | Service ID of the resource to return
             var unifiedApi = crm;  // string | Unified API
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
             var body = null;  // Object |  (optional) 
 

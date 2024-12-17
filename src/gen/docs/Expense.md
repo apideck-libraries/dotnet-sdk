@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **SupplierId** | **string** | The ID of the supplier this entity is linked to. | [optional] 
 **CompanyId** | **string** | The company or subsidiary id the transaction belongs to | [optional] 
 **DepartmentId** | **string** | The ID of the department this expense is linked to. | [optional] 
+**PaymentType** | **string** | The type of payment for the expense. | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
 **Type** | **string** | The type of expense. | [optional] 
