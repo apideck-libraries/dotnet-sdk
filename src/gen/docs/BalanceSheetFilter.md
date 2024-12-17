@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StartDate** | **string** | Filter by start date. If start date is given, end date is required. | [optional] 
-**EndDate** | **string** | Filter by end date. If end date is given, start date is required. | [optional] 
+**StartDate** | **string** | The start date of the period to include in the resource. | [optional] 
+**EndDate** | **string** | The end date of the period to include in the resource. | [optional] 
+**PeriodCount** | **int** | The number of periods to include in the resource. | [optional] 
+**PeriodType** | **string** | The type of period to include in the resource: month, quarter, year. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

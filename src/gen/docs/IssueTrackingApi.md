@@ -53,9 +53,9 @@ namespace Example
             var apiInstance = new IssueTrackingApi(config);
             var collectionId = apideck-io;  // string | The collection ID
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
@@ -153,9 +153,9 @@ namespace Example
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
             var collectionTicketComment = new CollectionTicketComment(); // CollectionTicketComment | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
             {
@@ -246,9 +246,9 @@ namespace Example
             var collectionId = apideck-io;  // string | The collection ID
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var sort = new CommentsSort(); // CommentsSort | Apply sorting (optional) 
@@ -348,9 +348,9 @@ namespace Example
             var id = "id_example";  // string | ID of the record you are acting upon.
             var collectionId = apideck-io;  // string | The collection ID
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -443,9 +443,9 @@ namespace Example
             var collectionId = apideck-io;  // string | The collection ID
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
@@ -543,9 +543,9 @@ namespace Example
             var collectionId = apideck-io;  // string | The collection ID
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
             var collectionTicketComment = new CollectionTicketComment(); // CollectionTicketComment | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -638,9 +638,9 @@ namespace Example
             var collectionId = apideck-io;  // string | The collection ID
             var ticket = new Ticket(); // Ticket | 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
 
             try
             {
@@ -729,9 +729,9 @@ namespace Example
             var apiInstance = new IssueTrackingApi(config);
             var collectionId = apideck-io;  // string | The collection ID
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var sort = new TicketsSort(); // TicketsSort | Apply sorting (optional) 
@@ -831,9 +831,9 @@ namespace Example
             var apiInstance = new IssueTrackingApi(config);
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
             var collectionId = apideck-io;  // string | The collection ID
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -923,9 +923,9 @@ namespace Example
             var apiInstance = new IssueTrackingApi(config);
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
             var collectionId = apideck-io;  // string | The collection ID
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -1018,9 +1018,9 @@ namespace Example
             var ticketId = "ticketId_example";  // string | ID of the ticket you are acting upon.
             var collectionId = apideck-io;  // string | The collection ID
             var ticket = new Ticket(); // Ticket | 
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
 
             try
@@ -1111,9 +1111,9 @@ namespace Example
             var apiInstance = new IssueTrackingApi(config);
             var collectionId = apideck-io;  // string | The collection ID
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
@@ -1209,9 +1209,9 @@ namespace Example
             var apiInstance = new IssueTrackingApi(config);
             var collectionId = apideck-io;  // string | The collection ID
             var id = "id_example";  // string | ID of the record you are acting upon.
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
@@ -1302,9 +1302,9 @@ namespace Example
 
             var apiInstance = new IssueTrackingApi(config);
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
             var sort = new CollectionsSort(); // CollectionsSort | Apply sorting (optional) 
@@ -1400,9 +1400,9 @@ namespace Example
 
             var apiInstance = new IssueTrackingApi(config);
             var collectionId = apideck-io;  // string | The collection ID
-            var consumerId = "consumerId_example";  // string | ID of the consumer which you want to get or push data from (optional) 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
             var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
-            var serviceId = "serviceId_example";  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
             var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
 
