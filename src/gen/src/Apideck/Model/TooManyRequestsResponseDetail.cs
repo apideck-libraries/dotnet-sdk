@@ -37,7 +37,7 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="context">context.</param>
         /// <param name="error">error.</param>
-        public TooManyRequestsResponseDetail(string context = default(string), Dictionary<string, Object> error = default(Dictionary<string, Object>))
+        public TooManyRequestsResponseDetail(string context = default(string), Object error = default(Object))
         {
             this.Context = context;
             this.Error = error;
@@ -53,7 +53,7 @@ namespace Apideck.Model
         /// Gets or Sets Error
         /// </summary>
         [DataMember(Name = "error", EmitDefaultValue = false)]
-        public Dictionary<string, Object> Error { get; set; }
+        public Object Error { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -107,9 +107,8 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Error == input.Error ||
-                    this.Error != null &&
-                    input.Error != null &&
-                    this.Error.SequenceEqual(input.Error)
+                    (this.Error != null &&
+                    this.Error.Equals(input.Error))
                 );
         }
 
