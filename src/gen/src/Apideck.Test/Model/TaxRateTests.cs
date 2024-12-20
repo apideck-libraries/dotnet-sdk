@@ -225,6 +225,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'Subsidiaries'
         }
+        /// <summary>
+        /// Test the property 'CustomFields'
+        /// </summary>
+        [Fact]
+        public void CustomFieldsTest()
+        {
+            // TODO unit test for the property 'CustomFields'
+        }
 
     }
 

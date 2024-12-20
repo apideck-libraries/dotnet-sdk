@@ -85,7 +85,8 @@ namespace Apideck.Model
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
         /// <param name="subsidiaries">The subsidiaries this belongs to..</param>
-        public TaxRate(string id = default(string), string name = default(string), string code = default(string), string description = default(string), decimal? effectiveTaxRate = default(decimal?), decimal? totalTaxRate = default(decimal?), string taxPayableAccountId = default(string), string taxRemittedAccountId = default(string), List<Object> components = default(List<Object>), string type = default(string), string reportTaxType = default(string), string originalTaxRateId = default(string), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string), List<Object> passThrough = default(List<Object>), List<Object> subsidiaries = default(List<Object>))
+        /// <param name="customFields">customFields.</param>
+        public TaxRate(string id = default(string), string name = default(string), string code = default(string), string description = default(string), decimal? effectiveTaxRate = default(decimal?), decimal? totalTaxRate = default(decimal?), string taxPayableAccountId = default(string), string taxRemittedAccountId = default(string), List<Object> components = default(List<Object>), string type = default(string), string reportTaxType = default(string), string originalTaxRateId = default(string), StatusEnum? status = default(StatusEnum?), string rowVersion = default(string), List<Object> passThrough = default(List<Object>), List<Object> subsidiaries = default(List<Object>), List<CustomField> customFields = default(List<CustomField>))
         {
             this.Id = id;
             this.Name = name;
@@ -103,6 +104,7 @@ namespace Apideck.Model
             this.RowVersion = rowVersion;
             this.PassThrough = passThrough;
             this.Subsidiaries = subsidiaries;
+            this.CustomFields = customFields;
         }
 
         /// <summary>
@@ -285,6 +287,12 @@ namespace Apideck.Model
         public List<Object> Subsidiaries { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -313,6 +321,7 @@ namespace Apideck.Model
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  PassThrough: ").Append(PassThrough).Append("\n");
             sb.Append("  Subsidiaries: ").Append(Subsidiaries).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -454,6 +463,12 @@ namespace Apideck.Model
                     this.Subsidiaries != null &&
                     input.Subsidiaries != null &&
                     this.Subsidiaries.SequenceEqual(input.Subsidiaries)
+                ) && 
+                (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
                 );
         }
 
@@ -546,6 +561,10 @@ namespace Apideck.Model
                 if (this.Subsidiaries != null)
                 {
                     hashCode = (hashCode * 59) + this.Subsidiaries.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 return hashCode;
             }
