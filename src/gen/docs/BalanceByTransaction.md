@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DueDate** | **DateTime** | Due date of the transaction. | [optional] 
 **OriginalAmount** | **decimal** | Original amount of the transaction. | [optional] 
 **OutstandingBalance** | **decimal** | Outstanding balance of the transaction. | [optional] 
+**TransactionNumber** | **string** | Transaction number of the transaction. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

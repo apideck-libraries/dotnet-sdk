@@ -40,7 +40,7 @@ namespace Apideck.Model
         /// <param name="periodCount">Number of aging periods shown in the report. (default to 4).</param>
         /// <param name="periodLength">Length of each aging period in days. (default to 30).</param>
         /// <param name="outstandingBalances">outstandingBalances.</param>
-        public AgedDebtors(DateTime reportGeneratedAt = default(DateTime), DateTime reportAsOfDate = default(DateTime), int periodCount = 4, int periodLength = 30, List<OutstandingBalance> outstandingBalances = default(List<OutstandingBalance>))
+        public AgedDebtors(DateTime reportGeneratedAt = default(DateTime), DateTime reportAsOfDate = default(DateTime), int periodCount = 4, int periodLength = 30, List<OutstandingBalanceByCustomer> outstandingBalances = default(List<OutstandingBalanceByCustomer>))
         {
             this.ReportGeneratedAt = reportGeneratedAt;
             this.ReportAsOfDate = reportAsOfDate;
@@ -82,7 +82,7 @@ namespace Apideck.Model
         /// Gets or Sets OutstandingBalances
         /// </summary>
         [DataMember(Name = "outstanding_balances", EmitDefaultValue = false)]
-        public List<OutstandingBalance> OutstandingBalances { get; set; }
+        public List<OutstandingBalanceByCustomer> OutstandingBalances { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

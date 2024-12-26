@@ -64,9 +64,9 @@ namespace Apideck.Model
             Payment = 4,
 
             /// <summary>
-            /// Enum BillPayment for value: bill-payment
+            /// Enum BillPayment for value: bill_payment
             /// </summary>
-            [EnumMember(Value = "bill-payment")]
+            [EnumMember(Value = "bill_payment")]
             BillPayment = 5
 
         }
@@ -87,7 +87,8 @@ namespace Apideck.Model
         /// <param name="dueDate">Due date of the transaction..</param>
         /// <param name="originalAmount">Original amount of the transaction..</param>
         /// <param name="outstandingBalance">Outstanding balance of the transaction..</param>
-        public BalanceByTransaction(string transactionId = default(string), DateTime transactionDate = default(DateTime), TransactionTypeEnum? transactionType = default(TransactionTypeEnum?), DateTime dueDate = default(DateTime), decimal originalAmount = default(decimal), decimal outstandingBalance = default(decimal))
+        /// <param name="transactionNumber">Transaction number of the transaction..</param>
+        public BalanceByTransaction(string transactionId = default(string), DateTime transactionDate = default(DateTime), TransactionTypeEnum? transactionType = default(TransactionTypeEnum?), DateTime dueDate = default(DateTime), decimal originalAmount = default(decimal), decimal outstandingBalance = default(decimal), string transactionNumber = default(string))
         {
             this.TransactionId = transactionId;
             this.TransactionDate = transactionDate;
@@ -95,6 +96,7 @@ namespace Apideck.Model
             this.DueDate = dueDate;
             this.OriginalAmount = originalAmount;
             this.OutstandingBalance = outstandingBalance;
+            this.TransactionNumber = transactionNumber;
         }
 
         /// <summary>
@@ -135,6 +137,13 @@ namespace Apideck.Model
         public decimal OutstandingBalance { get; set; }
 
         /// <summary>
+        /// Transaction number of the transaction.
+        /// </summary>
+        /// <value>Transaction number of the transaction.</value>
+        [DataMember(Name = "transaction_number", EmitDefaultValue = false)]
+        public string TransactionNumber { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -148,6 +157,7 @@ namespace Apideck.Model
             sb.Append("  DueDate: ").Append(DueDate).Append("\n");
             sb.Append("  OriginalAmount: ").Append(OriginalAmount).Append("\n");
             sb.Append("  OutstandingBalance: ").Append(OutstandingBalance).Append("\n");
+            sb.Append("  TransactionNumber: ").Append(TransactionNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -209,6 +219,11 @@ namespace Apideck.Model
                 (
                     this.OutstandingBalance == input.OutstandingBalance ||
                     this.OutstandingBalance.Equals(input.OutstandingBalance)
+                ) && 
+                (
+                    this.TransactionNumber == input.TransactionNumber ||
+                    (this.TransactionNumber != null &&
+                    this.TransactionNumber.Equals(input.TransactionNumber))
                 );
         }
 
@@ -236,6 +251,10 @@ namespace Apideck.Model
                 }
                 hashCode = (hashCode * 59) + this.OriginalAmount.GetHashCode();
                 hashCode = (hashCode * 59) + this.OutstandingBalance.GetHashCode();
+                if (this.TransactionNumber != null)
+                {
+                    hashCode = (hashCode * 59) + this.TransactionNumber.GetHashCode();
+                }
                 return hashCode;
             }
         }

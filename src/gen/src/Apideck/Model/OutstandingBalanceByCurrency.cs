@@ -42,12 +42,21 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="OutstandingBalanceByCurrency" /> class.
         /// </summary>
         /// <param name="currency">currency.</param>
+        /// <param name="totalAmount">Total amount of the outstanding balance..</param>
         /// <param name="balancesByPeriod">balancesByPeriod.</param>
-        public OutstandingBalanceByCurrency(Currency? currency = default(Currency?), List<BalanceByPeriod> balancesByPeriod = default(List<BalanceByPeriod>))
+        public OutstandingBalanceByCurrency(Currency? currency = default(Currency?), decimal totalAmount = default(decimal), List<BalanceByPeriod> balancesByPeriod = default(List<BalanceByPeriod>))
         {
             this.Currency = currency;
+            this.TotalAmount = totalAmount;
             this.BalancesByPeriod = balancesByPeriod;
         }
+
+        /// <summary>
+        /// Total amount of the outstanding balance.
+        /// </summary>
+        /// <value>Total amount of the outstanding balance.</value>
+        [DataMember(Name = "total_amount", EmitDefaultValue = false)]
+        public decimal TotalAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets BalancesByPeriod
@@ -64,6 +73,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class OutstandingBalanceByCurrency {\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
+            sb.Append("  TotalAmount: ").Append(TotalAmount).Append("\n");
             sb.Append("  BalancesByPeriod: ").Append(BalancesByPeriod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,6 +115,10 @@ namespace Apideck.Model
                     this.Currency.Equals(input.Currency)
                 ) && 
                 (
+                    this.TotalAmount == input.TotalAmount ||
+                    this.TotalAmount.Equals(input.TotalAmount)
+                ) && 
+                (
                     this.BalancesByPeriod == input.BalancesByPeriod ||
                     this.BalancesByPeriod != null &&
                     input.BalancesByPeriod != null &&
@@ -122,6 +136,7 @@ namespace Apideck.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Currency.GetHashCode();
+                hashCode = (hashCode * 59) + this.TotalAmount.GetHashCode();
                 if (this.BalancesByPeriod != null)
                 {
                     hashCode = (hashCode * 59) + this.BalancesByPeriod.GetHashCode();
