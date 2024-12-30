@@ -310,9 +310,10 @@ namespace Apideck.Model
         /// <param name="subAccount">Whether the account is a sub account or not..</param>
         /// <param name="lastReconciliationDate">Reconciliation Date means the last calendar day of each Reconciliation Period..</param>
         /// <param name="subsidiaries">The subsidiaries the account belongs to..</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
-        public LedgerAccount(string displayId = default(string), string nominalCode = default(string), string code = default(string), ClassificationEnum? classification = default(ClassificationEnum?), TypeEnum? type = default(TypeEnum?), string subType = default(string), string name = default(string), string fullyQualifiedName = default(string), string description = default(string), decimal? openingBalance = default(decimal?), decimal? currentBalance = default(decimal?), Currency? currency = default(Currency?), string taxType = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), decimal? level = default(decimal?), bool? active = default(bool?), StatusEnum? status = default(StatusEnum?), bool? header = default(bool?), BankAccount bankAccount = default(BankAccount), LedgerAccountParentAccount parentAccount = default(LedgerAccountParentAccount), bool? subAccount = default(bool?), DateTime? lastReconciliationDate = default(DateTime?), List<Object> subsidiaries = default(List<Object>), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
+        public LedgerAccount(string displayId = default(string), string nominalCode = default(string), string code = default(string), ClassificationEnum? classification = default(ClassificationEnum?), TypeEnum? type = default(TypeEnum?), string subType = default(string), string name = default(string), string fullyQualifiedName = default(string), string description = default(string), decimal? openingBalance = default(decimal?), decimal? currentBalance = default(decimal?), Currency? currency = default(Currency?), string taxType = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), decimal? level = default(decimal?), bool? active = default(bool?), StatusEnum? status = default(StatusEnum?), bool? header = default(bool?), BankAccount bankAccount = default(BankAccount), LedgerAccountParentAccount parentAccount = default(LedgerAccountParentAccount), bool? subAccount = default(bool?), DateTime? lastReconciliationDate = default(DateTime?), List<Object> subsidiaries = default(List<Object>), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
         {
             this.DisplayId = displayId;
             this.NominalCode = nominalCode;
@@ -337,6 +338,7 @@ namespace Apideck.Model
             this.SubAccount = subAccount;
             this.LastReconciliationDate = lastReconciliationDate;
             this.Subsidiaries = subsidiaries;
+            this.CustomFields = customFields;
             this.RowVersion = rowVersion;
             this.PassThrough = passThrough;
         }
@@ -533,6 +535,12 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.
         /// </summary>
         /// <value>A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object.</value>
@@ -641,6 +649,7 @@ namespace Apideck.Model
             sb.Append("  LastReconciliationDate: ").Append(LastReconciliationDate).Append("\n");
             sb.Append("  Subsidiaries: ").Append(Subsidiaries).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -817,6 +826,12 @@ namespace Apideck.Model
                     this.CustomMappings.Equals(input.CustomMappings))
                 ) && 
                 (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
                     this.RowVersion == input.RowVersion ||
                     (this.RowVersion != null &&
                     this.RowVersion.Equals(input.RowVersion))
@@ -953,6 +968,10 @@ namespace Apideck.Model
                 if (this.CustomMappings != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.RowVersion != null)
                 {
