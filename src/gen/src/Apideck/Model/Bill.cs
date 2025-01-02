@@ -135,9 +135,10 @@ namespace Apideck.Model
         /// <param name="discountPercentage">Discount percentage applied to this transaction..</param>
         /// <param name="trackingCategories">A list of linked tracking categories..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
         /// <param name="accountingPeriod">Accounting period.</param>
-        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<Object> passThrough = default(List<Object>), string accountingPeriod = default(string))
+        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<CustomField> customFields = default(List<CustomField>), List<Object> passThrough = default(List<Object>), string accountingPeriod = default(string))
         {
             this.BillNumber = billNumber;
             this.Supplier = supplier;
@@ -169,6 +170,7 @@ namespace Apideck.Model
             this.DiscountPercentage = discountPercentage;
             this.TrackingCategories = trackingCategories;
             this.RowVersion = rowVersion;
+            this.CustomFields = customFields;
             this.PassThrough = passThrough;
             this.AccountingPeriod = accountingPeriod;
         }
@@ -458,6 +460,12 @@ namespace Apideck.Model
         public string RowVersion { get; set; }
 
         /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// When custom mappings are configured on the resource, the result is included here.
         /// </summary>
         /// <value>When custom mappings are configured on the resource, the result is included here.</value>
@@ -530,6 +538,7 @@ namespace Apideck.Model
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  RowVersion: ").Append(RowVersion).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("  PassThrough: ").Append(PassThrough).Append("\n");
             sb.Append("  AccountingPeriod: ").Append(AccountingPeriod).Append("\n");
@@ -749,6 +758,12 @@ namespace Apideck.Model
                     this.RowVersion.Equals(input.RowVersion))
                 ) && 
                 (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
                     this.CustomMappings == input.CustomMappings ||
                     (this.CustomMappings != null &&
                     this.CustomMappings.Equals(input.CustomMappings))
@@ -912,6 +927,10 @@ namespace Apideck.Model
                 if (this.RowVersion != null)
                 {
                     hashCode = (hashCode * 59) + this.RowVersion.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.CustomMappings != null)
                 {

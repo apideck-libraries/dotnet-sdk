@@ -27,37 +27,37 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// OutstandingBalance
+    /// OutstandingBalanceBySupplier
     /// </summary>
-    [DataContract(Name = "OutstandingBalance")]
-    public partial class OutstandingBalance : IEquatable<OutstandingBalance>, IValidatableObject
+    [DataContract(Name = "OutstandingBalanceBySupplier")]
+    public partial class OutstandingBalanceBySupplier : IEquatable<OutstandingBalanceBySupplier>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="OutstandingBalance" /> class.
+        /// Initializes a new instance of the <see cref="OutstandingBalanceBySupplier" /> class.
         /// </summary>
-        /// <param name="customerId">Unique identifier for the customer or supplier..</param>
-        /// <param name="customerName">Full name of the customer or supplier..</param>
+        /// <param name="supplierId">Unique identifier for the supplier..</param>
+        /// <param name="supplierName">Full name of the supplier..</param>
         /// <param name="outstandingBalancesByCurrency">outstandingBalancesByCurrency.</param>
-        public OutstandingBalance(string customerId = default(string), string customerName = default(string), List<OutstandingBalanceByCurrency> outstandingBalancesByCurrency = default(List<OutstandingBalanceByCurrency>))
+        public OutstandingBalanceBySupplier(string supplierId = default(string), string supplierName = default(string), List<OutstandingBalanceByCurrency> outstandingBalancesByCurrency = default(List<OutstandingBalanceByCurrency>))
         {
-            this.CustomerId = customerId;
-            this.CustomerName = customerName;
+            this.SupplierId = supplierId;
+            this.SupplierName = supplierName;
             this.OutstandingBalancesByCurrency = outstandingBalancesByCurrency;
         }
 
         /// <summary>
-        /// Unique identifier for the customer or supplier.
+        /// Unique identifier for the supplier.
         /// </summary>
-        /// <value>Unique identifier for the customer or supplier.</value>
-        [DataMember(Name = "customer_id", EmitDefaultValue = false)]
-        public string CustomerId { get; set; }
+        /// <value>Unique identifier for the supplier.</value>
+        [DataMember(Name = "supplier_id", EmitDefaultValue = false)]
+        public string SupplierId { get; set; }
 
         /// <summary>
-        /// Full name of the customer or supplier.
+        /// Full name of the supplier.
         /// </summary>
-        /// <value>Full name of the customer or supplier.</value>
-        [DataMember(Name = "customer_name", EmitDefaultValue = false)]
-        public string CustomerName { get; set; }
+        /// <value>Full name of the supplier.</value>
+        [DataMember(Name = "supplier_name", EmitDefaultValue = false)]
+        public string SupplierName { get; set; }
 
         /// <summary>
         /// Gets or Sets OutstandingBalancesByCurrency
@@ -72,9 +72,9 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class OutstandingBalance {\n");
-            sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
-            sb.Append("  CustomerName: ").Append(CustomerName).Append("\n");
+            sb.Append("class OutstandingBalanceBySupplier {\n");
+            sb.Append("  SupplierId: ").Append(SupplierId).Append("\n");
+            sb.Append("  SupplierName: ").Append(SupplierName).Append("\n");
             sb.Append("  OutstandingBalancesByCurrency: ").Append(OutstandingBalancesByCurrency).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -96,15 +96,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as OutstandingBalance);
+            return this.Equals(input as OutstandingBalanceBySupplier);
         }
 
         /// <summary>
-        /// Returns true if OutstandingBalance instances are equal
+        /// Returns true if OutstandingBalanceBySupplier instances are equal
         /// </summary>
-        /// <param name="input">Instance of OutstandingBalance to be compared</param>
+        /// <param name="input">Instance of OutstandingBalanceBySupplier to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(OutstandingBalance input)
+        public bool Equals(OutstandingBalanceBySupplier input)
         {
             if (input == null)
             {
@@ -112,14 +112,14 @@ namespace Apideck.Model
             }
             return 
                 (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
+                    this.SupplierId == input.SupplierId ||
+                    (this.SupplierId != null &&
+                    this.SupplierId.Equals(input.SupplierId))
                 ) && 
                 (
-                    this.CustomerName == input.CustomerName ||
-                    (this.CustomerName != null &&
-                    this.CustomerName.Equals(input.CustomerName))
+                    this.SupplierName == input.SupplierName ||
+                    (this.SupplierName != null &&
+                    this.SupplierName.Equals(input.SupplierName))
                 ) && 
                 (
                     this.OutstandingBalancesByCurrency == input.OutstandingBalancesByCurrency ||
@@ -138,13 +138,13 @@ namespace Apideck.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CustomerId != null)
+                if (this.SupplierId != null)
                 {
-                    hashCode = (hashCode * 59) + this.CustomerId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SupplierId.GetHashCode();
                 }
-                if (this.CustomerName != null)
+                if (this.SupplierName != null)
                 {
-                    hashCode = (hashCode * 59) + this.CustomerName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SupplierName.GetHashCode();
                 }
                 if (this.OutstandingBalancesByCurrency != null)
                 {

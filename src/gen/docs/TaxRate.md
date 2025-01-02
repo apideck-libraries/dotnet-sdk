@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 **Subsidiaries** | **List&lt;Object&gt;** | The subsidiaries this belongs to. | [optional] 
+**CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

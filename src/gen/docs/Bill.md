@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 **AccountingPeriod** | **string** | Accounting period | [optional] 

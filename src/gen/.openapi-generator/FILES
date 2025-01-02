@@ -532,8 +532,9 @@ docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
 docs/OrdersSort.md
-docs/OutstandingBalance.md
 docs/OutstandingBalanceByCurrency.md
+docs/OutstandingBalanceByCustomer.md
+docs/OutstandingBalanceBySupplier.md
 docs/Owner.md
 docs/PaginationCoverage.md
 docs/PassThroughQuery.md
@@ -1233,7 +1234,8 @@ src/Apideck.Test/Model/OrderTests.cs
 src/Apideck.Test/Model/OrderTypeTests.cs
 src/Apideck.Test/Model/OrdersSortTests.cs
 src/Apideck.Test/Model/OutstandingBalanceByCurrencyTests.cs
-src/Apideck.Test/Model/OutstandingBalanceTests.cs
+src/Apideck.Test/Model/OutstandingBalanceByCustomerTests.cs
+src/Apideck.Test/Model/OutstandingBalanceBySupplierTests.cs
 src/Apideck.Test/Model/OwnerTests.cs
 src/Apideck.Test/Model/PaginationCoverageTests.cs
 src/Apideck.Test/Model/PassThroughQueryTests.cs
@@ -1944,8 +1946,9 @@ src/Apideck/Model/OrderRefunds.cs
 src/Apideck/Model/OrderTenders.cs
 src/Apideck/Model/OrderType.cs
 src/Apideck/Model/OrdersSort.cs
-src/Apideck/Model/OutstandingBalance.cs
 src/Apideck/Model/OutstandingBalanceByCurrency.cs
+src/Apideck/Model/OutstandingBalanceByCustomer.cs
+src/Apideck/Model/OutstandingBalanceBySupplier.cs
 src/Apideck/Model/Owner.cs
 src/Apideck/Model/PaginationCoverage.cs
 src/Apideck/Model/PassThroughQuery.cs

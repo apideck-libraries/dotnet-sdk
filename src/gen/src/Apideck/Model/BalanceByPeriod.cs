@@ -35,11 +35,11 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BalanceByPeriod" /> class.
         /// </summary>
-        /// <param name="startDate">Start date of the period..</param>
-        /// <param name="endDate">End date of the period..</param>
+        /// <param name="startDate">The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified &#x60;end_date&#x60; are included..</param>
+        /// <param name="endDate">The ending date of the period. If not provided, it represents an open-ended period starting from the &#x60;start_date&#x60;, typically capturing future-dated transactions that are not yet aged..</param>
         /// <param name="totalAmount">Total amount of the period..</param>
         /// <param name="balancesByTransaction">balancesByTransaction.</param>
-        public BalanceByPeriod(DateTime startDate = default(DateTime), DateTime endDate = default(DateTime), decimal totalAmount = default(decimal), List<BalanceByTransaction> balancesByTransaction = default(List<BalanceByTransaction>))
+        public BalanceByPeriod(DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), decimal totalAmount = default(decimal), List<BalanceByTransaction> balancesByTransaction = default(List<BalanceByTransaction>))
         {
             this.StartDate = startDate;
             this.EndDate = endDate;
@@ -48,20 +48,20 @@ namespace Apideck.Model
         }
 
         /// <summary>
-        /// Start date of the period.
+        /// The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified &#x60;end_date&#x60; are included.
         /// </summary>
-        /// <value>Start date of the period.</value>
-        [DataMember(Name = "start_date", EmitDefaultValue = false)]
+        /// <value>The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified &#x60;end_date&#x60; are included.</value>
+        [DataMember(Name = "start_date", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// End date of the period.
+        /// The ending date of the period. If not provided, it represents an open-ended period starting from the &#x60;start_date&#x60;, typically capturing future-dated transactions that are not yet aged.
         /// </summary>
-        /// <value>End date of the period.</value>
-        [DataMember(Name = "end_date", EmitDefaultValue = false)]
+        /// <value>The ending date of the period. If not provided, it represents an open-ended period starting from the &#x60;start_date&#x60;, typically capturing future-dated transactions that are not yet aged.</value>
+        [DataMember(Name = "end_date", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         /// <summary>
         /// Total amount of the period.

@@ -105,6 +105,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'OutstandingBalance'
         }
+        /// <summary>
+        /// Test the property 'TransactionNumber'
+        /// </summary>
+        [Fact]
+        public void TransactionNumberTest()
+        {
+            // TODO unit test for the property 'TransactionNumber'
+        }
 
     }
 
