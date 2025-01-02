@@ -115,10 +115,11 @@ namespace Apideck.Model
         /// <param name="status">Supplier status.</param>
         /// <param name="paymentMethod">Payment method used for the transaction, such as cash, credit card, bank transfer, or check.</param>
         /// <param name="channel">The channel through which the transaction is processed..</param>
+        /// <param name="customFields">customFields.</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
         /// <param name="subsidiaryId">The subsidiary the supplier belongs to..</param>
-        public Supplier(string displayId = default(string), string displayName = default(string), string companyName = default(string), string companyId = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), bool? individual = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), string notes = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), StatusEnum? status = default(StatusEnum?), string paymentMethod = default(string), string channel = default(string), string rowVersion = default(string), List<Object> passThrough = default(List<Object>), string subsidiaryId = default(string))
+        public Supplier(string displayId = default(string), string displayName = default(string), string companyName = default(string), string companyId = default(string), string title = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string suffix = default(string), bool? individual = default(bool?), List<Address> addresses = default(List<Address>), List<PhoneNumber> phoneNumbers = default(List<PhoneNumber>), List<Email> emails = default(List<Email>), List<Website> websites = default(List<Website>), List<BankAccount> bankAccounts = default(List<BankAccount>), string notes = default(string), LinkedTaxRate taxRate = default(LinkedTaxRate), string taxNumber = default(string), Currency? currency = default(Currency?), LinkedLedgerAccount account = default(LinkedLedgerAccount), StatusEnum? status = default(StatusEnum?), string paymentMethod = default(string), string channel = default(string), List<CustomField> customFields = default(List<CustomField>), string rowVersion = default(string), List<Object> passThrough = default(List<Object>), string subsidiaryId = default(string))
         {
             this.DisplayId = displayId;
             this.DisplayName = displayName;
@@ -143,6 +144,7 @@ namespace Apideck.Model
             this.Status = status;
             this.PaymentMethod = paymentMethod;
             this.Channel = channel;
+            this.CustomFields = customFields;
             this.RowVersion = rowVersion;
             this.PassThrough = passThrough;
             this.SubsidiaryId = subsidiaryId;
@@ -332,6 +334,12 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
+        /// Gets or Sets CustomFields
+        /// </summary>
+        [DataMember(Name = "custom_fields", EmitDefaultValue = false)]
+        public List<CustomField> CustomFields { get; set; }
+
+        /// <summary>
         /// The user who last updated the object.
         /// </summary>
         /// <value>The user who last updated the object.</value>
@@ -446,6 +454,7 @@ namespace Apideck.Model
             sb.Append("  PaymentMethod: ").Append(PaymentMethod).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
+            sb.Append("  CustomFields: ").Append(CustomFields).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -622,6 +631,12 @@ namespace Apideck.Model
                     this.CustomMappings.Equals(input.CustomMappings))
                 ) && 
                 (
+                    this.CustomFields == input.CustomFields ||
+                    this.CustomFields != null &&
+                    input.CustomFields != null &&
+                    this.CustomFields.SequenceEqual(input.CustomFields)
+                ) && 
+                (
                     this.UpdatedBy == input.UpdatedBy ||
                     (this.UpdatedBy != null &&
                     this.UpdatedBy.Equals(input.UpdatedBy))
@@ -765,6 +780,10 @@ namespace Apideck.Model
                 if (this.CustomMappings != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomMappings.GetHashCode();
+                }
+                if (this.CustomFields != null)
+                {
+                    hashCode = (hashCode * 59) + this.CustomFields.GetHashCode();
                 }
                 if (this.UpdatedBy != null)
                 {

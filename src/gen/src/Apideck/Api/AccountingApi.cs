@@ -6340,6 +6340,10 @@ namespace Apideck.Api
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[customer_id]", filter.CustomerId));
                 }
+                if (filter.SupplierId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[supplier_id]", filter.SupplierId));
+                }
                 if (filter.ReportAsOfDate != null)
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[report_as_of_date]", filter.ReportAsOfDate));
@@ -6567,6 +6571,10 @@ namespace Apideck.Api
                 if (filter.CustomerId != null)
                 {
                     localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[customer_id]", filter.CustomerId));
+                }
+                if (filter.SupplierId != null)
+                {
+                    localVarRequestOptions.QueryParameters.Add(Apideck.Client.ClientUtils.ParameterToMultiMap("", "filter[supplier_id]", filter.SupplierId));
                 }
                 if (filter.ReportAsOfDate != null)
                 {

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StartDate** | **DateTime** | Start date of the period. | [optional] 
-**EndDate** | **DateTime** | End date of the period. | [optional] 
+**StartDate** | **DateTime?** | The starting date of the period. If not provided, it represents the oldest period, where all transactions due before the specified &#x60;end_date&#x60; are included. | [optional] 
+**EndDate** | **DateTime?** | The ending date of the period. If not provided, it represents an open-ended period starting from the &#x60;start_date&#x60;, typically capturing future-dated transactions that are not yet aged. | [optional] 
 **TotalAmount** | **decimal** | Total amount of the period. | [optional] 
 **BalancesByTransaction** | [**List&lt;BalanceByTransaction&gt;**](BalanceByTransaction.md) |  | [optional] 
 

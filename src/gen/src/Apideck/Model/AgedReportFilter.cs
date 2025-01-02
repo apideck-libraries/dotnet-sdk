@@ -36,12 +36,14 @@ namespace Apideck.Model
         /// Initializes a new instance of the <see cref="AgedReportFilter" /> class.
         /// </summary>
         /// <param name="customerId">Filter by customer id.</param>
+        /// <param name="supplierId">Filter by supplier id.</param>
         /// <param name="reportAsOfDate">The cutoff date for considering transactions.</param>
         /// <param name="periodCount">Number of periods to split the aged creditors report into.</param>
         /// <param name="periodLength">Length of each period in days.</param>
-        public AgedReportFilter(string customerId = default(string), string reportAsOfDate = default(string), int periodCount = default(int), int periodLength = default(int))
+        public AgedReportFilter(string customerId = default(string), string supplierId = default(string), string reportAsOfDate = default(string), int periodCount = default(int), int periodLength = default(int))
         {
             this.CustomerId = customerId;
+            this.SupplierId = supplierId;
             this.ReportAsOfDate = reportAsOfDate;
             this.PeriodCount = periodCount;
             this.PeriodLength = periodLength;
@@ -53,6 +55,13 @@ namespace Apideck.Model
         /// <value>Filter by customer id</value>
         [DataMember(Name = "customer_id", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
+
+        /// <summary>
+        /// Filter by supplier id
+        /// </summary>
+        /// <value>Filter by supplier id</value>
+        [DataMember(Name = "supplier_id", EmitDefaultValue = false)]
+        public string SupplierId { get; set; }
 
         /// <summary>
         /// The cutoff date for considering transactions
@@ -84,6 +93,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class AgedReportFilter {\n");
             sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  SupplierId: ").Append(SupplierId).Append("\n");
             sb.Append("  ReportAsOfDate: ").Append(ReportAsOfDate).Append("\n");
             sb.Append("  PeriodCount: ").Append(PeriodCount).Append("\n");
             sb.Append("  PeriodLength: ").Append(PeriodLength).Append("\n");
@@ -128,6 +138,11 @@ namespace Apideck.Model
                     this.CustomerId.Equals(input.CustomerId))
                 ) && 
                 (
+                    this.SupplierId == input.SupplierId ||
+                    (this.SupplierId != null &&
+                    this.SupplierId.Equals(input.SupplierId))
+                ) && 
+                (
                     this.ReportAsOfDate == input.ReportAsOfDate ||
                     (this.ReportAsOfDate != null &&
                     this.ReportAsOfDate.Equals(input.ReportAsOfDate))
@@ -154,6 +169,10 @@ namespace Apideck.Model
                 if (this.CustomerId != null)
                 {
                     hashCode = (hashCode * 59) + this.CustomerId.GetHashCode();
+                }
+                if (this.SupplierId != null)
+                {
+                    hashCode = (hashCode * 59) + this.SupplierId.GetHashCode();
                 }
                 if (this.ReportAsOfDate != null)
                 {
