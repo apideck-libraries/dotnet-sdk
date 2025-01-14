@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **DiscountPercentage** | **decimal?** | Discount percentage applied to this transaction. | [optional] 
 **BankAccount** | [**BankAccount**](BankAccount.md) |  | [optional] 
 **AccountingByRow** | **bool?** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
-**DueDate** | **DateTime** | The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD. | [optional] 
+**DueDate** | **DateTime?** | The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD. | [optional] 
 **PaymentMethod** | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 **TaxCode** | **string** | Applicable tax id/code override if tax is not supplied on a line item basis. | [optional] 
 **Channel** | **string** | The channel through which the transaction is processed. | [optional] 

@@ -138,7 +138,7 @@ namespace Apideck.Model
         /// <param name="customFields">customFields.</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
         /// <param name="accountingPeriod">Accounting period.</param>
-        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime billDate = default(DateTime), DateTime dueDate = default(DateTime), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<CustomField> customFields = default(List<CustomField>), List<Object> passThrough = default(List<Object>), string accountingPeriod = default(string))
+        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime? billDate = default(DateTime?), DateTime? dueDate = default(DateTime?), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<CustomField> customFields = default(List<CustomField>), List<Object> passThrough = default(List<Object>), string accountingPeriod = default(string))
         {
             this.BillNumber = billNumber;
             this.Supplier = supplier;
@@ -243,17 +243,17 @@ namespace Apideck.Model
         /// Date bill was issued - YYYY-MM-DD.
         /// </summary>
         /// <value>Date bill was issued - YYYY-MM-DD.</value>
-        [DataMember(Name = "bill_date", EmitDefaultValue = false)]
+        [DataMember(Name = "bill_date", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime BillDate { get; set; }
+        public DateTime? BillDate { get; set; }
 
         /// <summary>
         /// The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
         /// </summary>
         /// <value>The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.</value>
-        [DataMember(Name = "due_date", EmitDefaultValue = false)]
+        [DataMember(Name = "due_date", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         /// <summary>
         /// The paid date is the date on which a payment was sent to the supplier - YYYY-MM-DD.

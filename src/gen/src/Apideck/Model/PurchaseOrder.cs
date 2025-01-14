@@ -120,7 +120,7 @@ namespace Apideck.Model
         /// <param name="trackingCategories">A list of linked tracking categories..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
-        public PurchaseOrder(string poNumber = default(string), string reference = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), StatusEnum? status = default(StatusEnum?), DateTime? issuedDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), DateTime? expectedArrivalDate = default(DateTime?), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), bool? taxInclusive = default(bool?), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address shippingAddress = default(Address), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string templateId = default(string), decimal? discountPercentage = default(decimal?), BankAccount bankAccount = default(BankAccount), bool? accountingByRow = default(bool?), DateTime dueDate = default(DateTime), string paymentMethod = default(string), string taxCode = default(string), string channel = default(string), string memo = default(string), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
+        public PurchaseOrder(string poNumber = default(string), string reference = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), StatusEnum? status = default(StatusEnum?), DateTime? issuedDate = default(DateTime?), DateTime? deliveryDate = default(DateTime?), DateTime? expectedArrivalDate = default(DateTime?), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), bool? taxInclusive = default(bool?), List<InvoiceLineItem> lineItems = default(List<InvoiceLineItem>), Address shippingAddress = default(Address), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string templateId = default(string), decimal? discountPercentage = default(decimal?), BankAccount bankAccount = default(BankAccount), bool? accountingByRow = default(bool?), DateTime? dueDate = default(DateTime?), string paymentMethod = default(string), string taxCode = default(string), string channel = default(string), string memo = default(string), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<Object> passThrough = default(List<Object>))
         {
             this.PoNumber = poNumber;
             this.Reference = reference;
@@ -318,9 +318,9 @@ namespace Apideck.Model
         /// The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.
         /// </summary>
         /// <value>The due date is the date on which a payment is scheduled to be received - YYYY-MM-DD.</value>
-        [DataMember(Name = "due_date", EmitDefaultValue = false)]
+        [DataMember(Name = "due_date", EmitDefaultValue = true)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         /// <summary>
         /// Payment method used for the transaction, such as cash, credit card, bank transfer, or check
