@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install ICU packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y icu-devtools
+
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v2
         with:
