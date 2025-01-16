@@ -1,5 +1,8 @@
 # Apideck .NET SDK
 
+> ⚠️ **DEPRECATION NOTICE**: This SDK is deprecated and will be archived on May 31, 2025. Please transition to the [new SDK](https://github.com/apideck-libraries/sdk-csharp) before this date. After May 31, 2025, this repository will be archived and will no longer receive any updates. To support you during this transition please refer to our [migration guide](https://developers.apideck.com/guides/sdk-migration).
+
+
 [![Build](https://github.com/apideck-libraries/dotnet-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/apideck-libraries/dotnet-sdk/actions/workflows/test.yml)
 [![NuGet](https://badge.fury.io/nu/Apideck.svg)](https://badge.fury.io/nu/Apideck)
 [![Apache-2 license](https://img.shields.io/badge/license-Apache2-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0)
