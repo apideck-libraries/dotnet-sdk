@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// UnifiedId
+    /// A object containing a unique identifier for the resource that was created, updated, or deleted.
     /// </summary>
     [DataContract(Name = "UnifiedId")]
     public partial class UnifiedId : IEquatable<UnifiedId>, IValidatableObject
