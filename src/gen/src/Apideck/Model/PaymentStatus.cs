@@ -34,28 +34,40 @@ namespace Apideck.Model
     public enum PaymentStatus
     {
         /// <summary>
+        /// Enum Draft for value: draft
+        /// </summary>
+        [EnumMember(Value = "draft")]
+        Draft = 1,
+
+        /// <summary>
         /// Enum Authorised for value: authorised
         /// </summary>
         [EnumMember(Value = "authorised")]
-        Authorised = 1,
+        Authorised = 2,
+
+        /// <summary>
+        /// Enum Rejected for value: rejected
+        /// </summary>
+        [EnumMember(Value = "rejected")]
+        Rejected = 3,
 
         /// <summary>
         /// Enum Paid for value: paid
         /// </summary>
         [EnumMember(Value = "paid")]
-        Paid = 2,
+        Paid = 4,
 
         /// <summary>
         /// Enum Voided for value: voided
         /// </summary>
         [EnumMember(Value = "voided")]
-        Voided = 3,
+        Voided = 5,
 
         /// <summary>
         /// Enum Deleted for value: deleted
         /// </summary>
         [EnumMember(Value = "deleted")]
-        Deleted = 4
+        Deleted = 6
 
     }
 
