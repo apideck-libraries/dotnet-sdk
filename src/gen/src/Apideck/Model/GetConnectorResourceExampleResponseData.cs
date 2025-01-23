@@ -45,12 +45,14 @@ namespace Apideck.Model
         /// <param name="serviceId">Service provider identifier.</param>
         /// <param name="resource">resource.</param>
         /// <param name="exampleResponse">exampleResponse.</param>
-        public GetConnectorResourceExampleResponseData(UnifiedApiId? unifiedApi = default(UnifiedApiId?), string serviceId = default(string), LinkedConnectorResource resource = default(LinkedConnectorResource), Object exampleResponse = default(Object))
+        /// <param name="workflowExamples">If the resource has a workflow, this will contain the example response for each step.</param>
+        public GetConnectorResourceExampleResponseData(UnifiedApiId? unifiedApi = default(UnifiedApiId?), string serviceId = default(string), LinkedConnectorResource resource = default(LinkedConnectorResource), Object exampleResponse = default(Object), Dictionary<string, Object> workflowExamples = default(Dictionary<string, Object>))
         {
             this.UnifiedApi = unifiedApi;
             this.ServiceId = serviceId;
             this.Resource = resource;
             this.ExampleResponse = exampleResponse;
+            this.WorkflowExamples = workflowExamples;
         }
 
         /// <summary>
@@ -73,6 +75,13 @@ namespace Apideck.Model
         public Object ExampleResponse { get; set; }
 
         /// <summary>
+        /// If the resource has a workflow, this will contain the example response for each step
+        /// </summary>
+        /// <value>If the resource has a workflow, this will contain the example response for each step</value>
+        [DataMember(Name = "workflow_examples", EmitDefaultValue = false)]
+        public Dictionary<string, Object> WorkflowExamples { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +93,7 @@ namespace Apideck.Model
             sb.Append("  ServiceId: ").Append(ServiceId).Append("\n");
             sb.Append("  Resource: ").Append(Resource).Append("\n");
             sb.Append("  ExampleResponse: ").Append(ExampleResponse).Append("\n");
+            sb.Append("  WorkflowExamples: ").Append(WorkflowExamples).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,6 +147,12 @@ namespace Apideck.Model
                     this.ExampleResponse == input.ExampleResponse ||
                     (this.ExampleResponse != null &&
                     this.ExampleResponse.Equals(input.ExampleResponse))
+                ) && 
+                (
+                    this.WorkflowExamples == input.WorkflowExamples ||
+                    this.WorkflowExamples != null &&
+                    input.WorkflowExamples != null &&
+                    this.WorkflowExamples.SequenceEqual(input.WorkflowExamples)
                 );
         }
 
@@ -161,6 +177,10 @@ namespace Apideck.Model
                 if (this.ExampleResponse != null)
                 {
                     hashCode = (hashCode * 59) + this.ExampleResponse.GetHashCode();
+                }
+                if (this.WorkflowExamples != null)
+                {
+                    hashCode = (hashCode * 59) + this.WorkflowExamples.GetHashCode();
                 }
                 return hashCode;
             }
