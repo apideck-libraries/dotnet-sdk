@@ -89,6 +89,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'ExampleResponse'
         }
+        /// <summary>
+        /// Test the property 'WorkflowExamples'
+        /// </summary>
+        [Fact]
+        public void WorkflowExamplesTest()
+        {
+            // TODO unit test for the property 'WorkflowExamples'
+        }
 
     }
 
