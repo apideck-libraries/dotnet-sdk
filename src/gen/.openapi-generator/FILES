@@ -259,6 +259,7 @@ docs/EcommerceCustomer.md
 docs/EcommerceCustomerAddresses.md
 docs/EcommerceCustomersFilter.md
 docs/EcommerceDiscount.md
+docs/EcommerceEventType.md
 docs/EcommerceOrder.md
 docs/EcommerceOrderLineItem.md
 docs/EcommerceOrderStatus.md
@@ -461,6 +462,7 @@ docs/InvoiceItem.md
 docs/InvoiceItemFilter.md
 docs/InvoiceItemSalesDetails.md
 docs/InvoiceItemsFilter.md
+docs/InvoiceItemsSort.md
 docs/InvoiceLineItem.md
 docs/InvoiceResponse.md
 docs/InvoicesFilter.md
@@ -964,6 +966,7 @@ src/Apideck.Test/Model/EcommerceCustomerAddressesTests.cs
 src/Apideck.Test/Model/EcommerceCustomerTests.cs
 src/Apideck.Test/Model/EcommerceCustomersFilterTests.cs
 src/Apideck.Test/Model/EcommerceDiscountTests.cs
+src/Apideck.Test/Model/EcommerceEventTypeTests.cs
 src/Apideck.Test/Model/EcommerceOrderLineItemTests.cs
 src/Apideck.Test/Model/EcommerceOrderStatusTests.cs
 src/Apideck.Test/Model/EcommerceOrderTests.cs
@@ -1163,6 +1166,7 @@ src/Apideck.Test/Model/InvoiceItemFilterTests.cs
 src/Apideck.Test/Model/InvoiceItemSalesDetailsTests.cs
 src/Apideck.Test/Model/InvoiceItemTests.cs
 src/Apideck.Test/Model/InvoiceItemsFilterTests.cs
+src/Apideck.Test/Model/InvoiceItemsSortTests.cs
 src/Apideck.Test/Model/InvoiceLineItemTests.cs
 src/Apideck.Test/Model/InvoiceResponseTests.cs
 src/Apideck.Test/Model/InvoiceTests.cs
@@ -1677,6 +1681,7 @@ src/Apideck/Model/EcommerceCustomer.cs
 src/Apideck/Model/EcommerceCustomerAddresses.cs
 src/Apideck/Model/EcommerceCustomersFilter.cs
 src/Apideck/Model/EcommerceDiscount.cs
+src/Apideck/Model/EcommerceEventType.cs
 src/Apideck/Model/EcommerceOrder.cs
 src/Apideck/Model/EcommerceOrderLineItem.cs
 src/Apideck/Model/EcommerceOrderStatus.cs
@@ -1877,6 +1882,7 @@ src/Apideck/Model/InvoiceItem.cs
 src/Apideck/Model/InvoiceItemFilter.cs
 src/Apideck/Model/InvoiceItemSalesDetails.cs
 src/Apideck/Model/InvoiceItemsFilter.cs
+src/Apideck/Model/InvoiceItemsSort.cs
 src/Apideck/Model/InvoiceLineItem.cs
 src/Apideck/Model/InvoiceResponse.cs
 src/Apideck/Model/InvoicesFilter.cs
