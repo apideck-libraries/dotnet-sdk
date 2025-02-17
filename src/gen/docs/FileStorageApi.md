@@ -1425,7 +1425,7 @@ Name | Type | Description  | Notes
 
 <a name="filessearch"></a>
 # **FilesSearch**
-> GetFilesResponse FilesSearch (FilesSearch filesSearch, string consumerId = null, string appId = null, string serviceId = null, PassThroughQuery passThrough = null, string fields = null, string cursor = null, int? limit = null, FilesFilter filter = null)
+> GetFilesResponse FilesSearch (FilesSearch filesSearch, string consumerId = null, string appId = null, string serviceId = null, PassThroughQuery passThrough = null, string fields = null, string cursor = null, int? limit = null, bool? raw = null, FilesFilter filter = null)
 
 Search Files
 
@@ -1461,12 +1461,13 @@ namespace Example
             var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
             var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
             var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
             var filter = new FilesFilter(); // FilesFilter | Apply filters (optional) 
 
             try
             {
                 // Search Files
-                GetFilesResponse result = apiInstance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough, fields, cursor, limit, filter);
+                GetFilesResponse result = apiInstance.FilesSearch(filesSearch, consumerId, appId, serviceId, passThrough, fields, cursor, limit, raw, filter);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1492,6 +1493,7 @@ Name | Type | Description  | Notes
  **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
  **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
  **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
  **filter** | [**FilesFilter**](FilesFilter.md)| Apply filters | [optional] 
 
 ### Return type
