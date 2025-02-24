@@ -46,9 +46,10 @@ namespace Apideck.Model
         /// <param name="resource">Unified API resource name (required).</param>
         /// <param name="operation">Operation performed (required).</param>
         /// <param name="data">data (required).</param>
+        /// <param name="raw">Raw response from the integration when raw&#x3D;true query param is provided.</param>
         /// <param name="meta">meta.</param>
         /// <param name="links">links.</param>
-        public GetApplicantsResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), List<Applicant> data = default(List<Applicant>), Meta meta = default(Meta), Links links = default(Links))
+        public GetApplicantsResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), List<Applicant> data = default(List<Applicant>), Dictionary<string, Object> raw = default(Dictionary<string, Object>), Meta meta = default(Meta), Links links = default(Links))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -76,6 +77,7 @@ namespace Apideck.Model
                 throw new ArgumentNullException("data is a required property for GetApplicantsResponse and cannot be null");
             }
             this.Data = data;
+            this.Raw = raw;
             this.Meta = meta;
             this.Links = links;
         }
@@ -122,6 +124,13 @@ namespace Apideck.Model
         public List<Applicant> Data { get; set; }
 
         /// <summary>
+        /// Raw response from the integration when raw&#x3D;true query param is provided
+        /// </summary>
+        /// <value>Raw response from the integration when raw&#x3D;true query param is provided</value>
+        [DataMember(Name = "_raw", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Raw { get; set; }
+
+        /// <summary>
         /// Gets or Sets Meta
         /// </summary>
         [DataMember(Name = "meta", EmitDefaultValue = false)]
@@ -147,6 +156,7 @@ namespace Apideck.Model
             sb.Append("  Resource: ").Append(Resource).Append("\n");
             sb.Append("  Operation: ").Append(Operation).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Raw: ").Append(Raw).Append("\n");
             sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
@@ -215,6 +225,12 @@ namespace Apideck.Model
                     this.Data.SequenceEqual(input.Data)
                 ) && 
                 (
+                    this.Raw == input.Raw ||
+                    this.Raw != null &&
+                    input.Raw != null &&
+                    this.Raw.SequenceEqual(input.Raw)
+                ) && 
+                (
                     this.Meta == input.Meta ||
                     (this.Meta != null &&
                     this.Meta.Equals(input.Meta))
@@ -255,6 +271,10 @@ namespace Apideck.Model
                 if (this.Data != null)
                 {
                     hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                }
+                if (this.Raw != null)
+                {
+                    hashCode = (hashCode * 59) + this.Raw.GetHashCode();
                 }
                 if (this.Meta != null)
                 {

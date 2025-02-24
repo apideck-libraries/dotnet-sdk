@@ -43,9 +43,10 @@ namespace Apideck.Model
         /// <param name="statusCode">HTTP Response Status Code (required).</param>
         /// <param name="status">HTTP Response Status (required).</param>
         /// <param name="data">data (required).</param>
+        /// <param name="raw">Raw response from the integration when raw&#x3D;true query param is provided.</param>
         /// <param name="meta">meta.</param>
         /// <param name="links">links.</param>
-        public GetApiResourceCoverageResponse(int statusCode = default(int), string status = default(string), ApiResourceCoverage data = default(ApiResourceCoverage), Meta meta = default(Meta), Links links = default(Links))
+        public GetApiResourceCoverageResponse(int statusCode = default(int), string status = default(string), ApiResourceCoverage data = default(ApiResourceCoverage), Dictionary<string, Object> raw = default(Dictionary<string, Object>), Meta meta = default(Meta), Links links = default(Links))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -58,6 +59,7 @@ namespace Apideck.Model
                 throw new ArgumentNullException("data is a required property for GetApiResourceCoverageResponse and cannot be null");
             }
             this.Data = data;
+            this.Raw = raw;
             this.Meta = meta;
             this.Links = links;
         }
@@ -83,6 +85,13 @@ namespace Apideck.Model
         public ApiResourceCoverage Data { get; set; }
 
         /// <summary>
+        /// Raw response from the integration when raw&#x3D;true query param is provided
+        /// </summary>
+        /// <value>Raw response from the integration when raw&#x3D;true query param is provided</value>
+        [DataMember(Name = "_raw", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Raw { get; set; }
+
+        /// <summary>
         /// Gets or Sets Meta
         /// </summary>
         [DataMember(Name = "meta", EmitDefaultValue = false)]
@@ -105,6 +114,7 @@ namespace Apideck.Model
             sb.Append("  StatusCode: ").Append(StatusCode).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Raw: ").Append(Raw).Append("\n");
             sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("}\n");
@@ -157,6 +167,12 @@ namespace Apideck.Model
                     this.Data.Equals(input.Data))
                 ) && 
                 (
+                    this.Raw == input.Raw ||
+                    this.Raw != null &&
+                    input.Raw != null &&
+                    this.Raw.SequenceEqual(input.Raw)
+                ) && 
+                (
                     this.Meta == input.Meta ||
                     (this.Meta != null &&
                     this.Meta.Equals(input.Meta))
@@ -185,6 +201,10 @@ namespace Apideck.Model
                 if (this.Data != null)
                 {
                     hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                }
+                if (this.Raw != null)
+                {
+                    hashCode = (hashCode * 59) + this.Raw.GetHashCode();
                 }
                 if (this.Meta != null)
                 {

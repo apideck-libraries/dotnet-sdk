@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Resource** | **string** | Unified API resource name | 
 **Operation** | **string** | Operation performed | 
 **Data** | [**Attachment**](Attachment.md) |  | 
+**Raw** | **Dictionary&lt;string, Object&gt;** | Raw response from the integration when raw&#x3D;true query param is provided | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

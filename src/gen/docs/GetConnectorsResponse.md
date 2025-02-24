@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **StatusCode** | **int** | HTTP Response Status Code | 
 **Status** | **string** | HTTP Response Status | 
 **Data** | [**List&lt;Connector&gt;**](Connector.md) |  | 
+**Raw** | **Dictionary&lt;string, Object&gt;** | Raw response from the integration when raw&#x3D;true query param is provided | [optional] 
 **Meta** | [**Meta**](Meta.md) |  | [optional] 
 **Links** | [**Links**](Links.md) |  | [optional] 
 

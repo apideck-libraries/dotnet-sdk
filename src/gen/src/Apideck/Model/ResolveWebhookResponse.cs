@@ -44,7 +44,8 @@ namespace Apideck.Model
         /// <param name="status">HTTP Response Status (required).</param>
         /// <param name="requestId">UUID of the request received.</param>
         /// <param name="timestamp">ISO Datetime webhook event was received.</param>
-        public ResolveWebhookResponse(int statusCode = default(int), string status = default(string), string requestId = default(string), string timestamp = default(string))
+        /// <param name="raw">Raw response from the integration when raw&#x3D;true query param is provided.</param>
+        public ResolveWebhookResponse(int statusCode = default(int), string status = default(string), string requestId = default(string), string timestamp = default(string), Dictionary<string, Object> raw = default(Dictionary<string, Object>))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -54,6 +55,7 @@ namespace Apideck.Model
             this.Status = status;
             this.RequestId = requestId;
             this.Timestamp = timestamp;
+            this.Raw = raw;
         }
 
         /// <summary>
@@ -85,6 +87,13 @@ namespace Apideck.Model
         public string Timestamp { get; set; }
 
         /// <summary>
+        /// Raw response from the integration when raw&#x3D;true query param is provided
+        /// </summary>
+        /// <value>Raw response from the integration when raw&#x3D;true query param is provided</value>
+        [DataMember(Name = "_raw", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Raw { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -96,6 +105,7 @@ namespace Apideck.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  RequestId: ").Append(RequestId).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Raw: ").Append(Raw).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -149,6 +159,12 @@ namespace Apideck.Model
                     this.Timestamp == input.Timestamp ||
                     (this.Timestamp != null &&
                     this.Timestamp.Equals(input.Timestamp))
+                ) && 
+                (
+                    this.Raw == input.Raw ||
+                    this.Raw != null &&
+                    input.Raw != null &&
+                    this.Raw.SequenceEqual(input.Raw)
                 );
         }
 
@@ -173,6 +189,10 @@ namespace Apideck.Model
                 if (this.Timestamp != null)
                 {
                     hashCode = (hashCode * 59) + this.Timestamp.GetHashCode();
+                }
+                if (this.Raw != null)
+                {
+                    hashCode = (hashCode * 59) + this.Raw.GetHashCode();
                 }
                 return hashCode;
             }

@@ -89,6 +89,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'Timestamp'
         }
+        /// <summary>
+        /// Test the property 'Raw'
+        /// </summary>
+        [Fact]
+        public void RawTest()
+        {
+            // TODO unit test for the property 'Raw'
+        }
 
     }
 

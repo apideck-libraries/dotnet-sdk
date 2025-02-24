@@ -45,7 +45,8 @@ namespace Apideck.Model
         /// <param name="data">data (required).</param>
         /// <param name="meta">meta.</param>
         /// <param name="links">links.</param>
-        public GetLogsResponse(int statusCode = default(int), string status = default(string), List<Log> data = default(List<Log>), Meta meta = default(Meta), Links links = default(Links))
+        /// <param name="raw">Raw response from the integration when raw&#x3D;true query param is provided.</param>
+        public GetLogsResponse(int statusCode = default(int), string status = default(string), List<Log> data = default(List<Log>), Meta meta = default(Meta), Links links = default(Links), Dictionary<string, Object> raw = default(Dictionary<string, Object>))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -60,6 +61,7 @@ namespace Apideck.Model
             this.Data = data;
             this.Meta = meta;
             this.Links = links;
+            this.Raw = raw;
         }
 
         /// <summary>
@@ -95,6 +97,13 @@ namespace Apideck.Model
         public Links Links { get; set; }
 
         /// <summary>
+        /// Raw response from the integration when raw&#x3D;true query param is provided
+        /// </summary>
+        /// <value>Raw response from the integration when raw&#x3D;true query param is provided</value>
+        [DataMember(Name = "_raw", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Raw { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,6 +116,7 @@ namespace Apideck.Model
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Raw: ").Append(Raw).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -166,6 +176,12 @@ namespace Apideck.Model
                     this.Links == input.Links ||
                     (this.Links != null &&
                     this.Links.Equals(input.Links))
+                ) && 
+                (
+                    this.Raw == input.Raw ||
+                    this.Raw != null &&
+                    input.Raw != null &&
+                    this.Raw.SequenceEqual(input.Raw)
                 );
         }
 
@@ -194,6 +210,10 @@ namespace Apideck.Model
                 if (this.Links != null)
                 {
                     hashCode = (hashCode * 59) + this.Links.GetHashCode();
+                }
+                if (this.Raw != null)
+                {
+                    hashCode = (hashCode * 59) + this.Raw.GetHashCode();
                 }
                 return hashCode;
             }
