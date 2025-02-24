@@ -46,7 +46,8 @@ namespace Apideck.Model
         /// <param name="resource">Unified API resource name (required).</param>
         /// <param name="operation">Operation performed (required).</param>
         /// <param name="data">data (required).</param>
-        public CreateSupplierResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), UnifiedId data = default(UnifiedId))
+        /// <param name="raw">Raw response from the integration when raw&#x3D;true query param is provided.</param>
+        public CreateSupplierResponse(int statusCode = default(int), string status = default(string), string service = default(string), string resource = default(string), string operation = default(string), UnifiedId data = default(UnifiedId), Dictionary<string, Object> raw = default(Dictionary<string, Object>))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -74,6 +75,7 @@ namespace Apideck.Model
                 throw new ArgumentNullException("data is a required property for CreateSupplierResponse and cannot be null");
             }
             this.Data = data;
+            this.Raw = raw;
         }
 
         /// <summary>
@@ -118,6 +120,13 @@ namespace Apideck.Model
         public UnifiedId Data { get; set; }
 
         /// <summary>
+        /// Raw response from the integration when raw&#x3D;true query param is provided
+        /// </summary>
+        /// <value>Raw response from the integration when raw&#x3D;true query param is provided</value>
+        [DataMember(Name = "_raw", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Raw { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -131,6 +140,7 @@ namespace Apideck.Model
             sb.Append("  Resource: ").Append(Resource).Append("\n");
             sb.Append("  Operation: ").Append(Operation).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Raw: ").Append(Raw).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,6 +204,12 @@ namespace Apideck.Model
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Raw == input.Raw ||
+                    this.Raw != null &&
+                    input.Raw != null &&
+                    this.Raw.SequenceEqual(input.Raw)
                 );
         }
 
@@ -226,6 +242,10 @@ namespace Apideck.Model
                 if (this.Data != null)
                 {
                     hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                }
+                if (this.Raw != null)
+                {
+                    hashCode = (hashCode * 59) + this.Raw.GetHashCode();
                 }
                 return hashCode;
             }

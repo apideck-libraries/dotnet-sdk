@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Resource** | **string** | Unified API resource name | 
 **Operation** | **string** | Operation performed | 
 **Data** | [**List&lt;EcommerceStore&gt;**](EcommerceStore.md) |  | 
+**Raw** | **Dictionary&lt;string, Object&gt;** | Raw response from the integration when raw&#x3D;true query param is provided | [optional] 
 **Meta** | [**Meta**](Meta.md) |  | [optional] 
 **Links** | [**Links**](Links.md) |  | [optional] 
 

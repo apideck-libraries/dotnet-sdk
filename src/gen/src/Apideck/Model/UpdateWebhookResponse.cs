@@ -43,7 +43,8 @@ namespace Apideck.Model
         /// <param name="statusCode">HTTP Response Status Code (required).</param>
         /// <param name="status">HTTP Response Status (required).</param>
         /// <param name="data">data (required).</param>
-        public UpdateWebhookResponse(int statusCode = default(int), string status = default(string), Webhook data = default(Webhook))
+        /// <param name="raw">Raw response from the integration when raw&#x3D;true query param is provided.</param>
+        public UpdateWebhookResponse(int statusCode = default(int), string status = default(string), Webhook data = default(Webhook), Dictionary<string, Object> raw = default(Dictionary<string, Object>))
         {
             this.StatusCode = statusCode;
             // to ensure "status" is required (not null)
@@ -56,6 +57,7 @@ namespace Apideck.Model
                 throw new ArgumentNullException("data is a required property for UpdateWebhookResponse and cannot be null");
             }
             this.Data = data;
+            this.Raw = raw;
         }
 
         /// <summary>
@@ -79,6 +81,13 @@ namespace Apideck.Model
         public Webhook Data { get; set; }
 
         /// <summary>
+        /// Raw response from the integration when raw&#x3D;true query param is provided
+        /// </summary>
+        /// <value>Raw response from the integration when raw&#x3D;true query param is provided</value>
+        [DataMember(Name = "_raw", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Raw { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -89,6 +98,7 @@ namespace Apideck.Model
             sb.Append("  StatusCode: ").Append(StatusCode).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  Raw: ").Append(Raw).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,6 +147,12 @@ namespace Apideck.Model
                     this.Data == input.Data ||
                     (this.Data != null &&
                     this.Data.Equals(input.Data))
+                ) && 
+                (
+                    this.Raw == input.Raw ||
+                    this.Raw != null &&
+                    input.Raw != null &&
+                    this.Raw.SequenceEqual(input.Raw)
                 );
         }
 
@@ -157,6 +173,10 @@ namespace Apideck.Model
                 if (this.Data != null)
                 {
                     hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                }
+                if (this.Raw != null)
+                {
+                    hashCode = (hashCode * 59) + this.Raw.GetHashCode();
                 }
                 return hashCode;
             }
