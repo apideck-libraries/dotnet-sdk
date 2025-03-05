@@ -109,6 +109,7 @@ docs/Contact.md
 docs/ContactsFilter.md
 docs/ContactsSort.md
 docs/CopyFolderRequest.md
+docs/CostOfGoodsSold.md
 docs/CreateAccountingDepartmentResponse.md
 docs/CreateAccountingLocationResponse.md
 docs/CreateActivityResponse.md
@@ -289,6 +290,7 @@ docs/Error.md
 docs/ExecuteWebhookResponse.md
 docs/Expense.md
 docs/ExpenseLineItem.md
+docs/Expenses.md
 docs/FileStorageApi.md
 docs/FileStorageEventType.md
 docs/FileType.md
@@ -456,6 +458,7 @@ docs/HrisEventType.md
 docs/HrisJob.md
 docs/HrisJobLocation.md
 docs/HrisJobs.md
+docs/Income.md
 docs/IntegrationState.md
 docs/Invoice.md
 docs/InvoiceItem.md
@@ -534,6 +537,8 @@ docs/OrderRefunds.md
 docs/OrderTenders.md
 docs/OrderType.md
 docs/OrdersSort.md
+docs/OtherExpenses.md
+docs/OtherIncome.md
 docs/OutstandingBalanceByCurrency.md
 docs/OutstandingBalanceByCustomer.md
 docs/OutstandingBalanceBySupplier.md
@@ -565,14 +570,11 @@ docs/PosPaymentExternalDetails.md
 docs/Price.md
 docs/ProbationPeriod.md
 docs/ProfitAndLoss.md
-docs/ProfitAndLossExpenses.md
 docs/ProfitAndLossFilter.md
-docs/ProfitAndLossGrossProfit.md
-docs/ProfitAndLossIncome.md
-docs/ProfitAndLossNetIncome.md
-docs/ProfitAndLossNetOperatingIncome.md
+docs/ProfitAndLossIndicator.md
 docs/ProfitAndLossRecord.md
 docs/ProfitAndLossSection.md
+docs/ProfitAndLossType.md
 docs/PurchaseOrder.md
 docs/PurchaseOrdersFilter.md
 docs/PurchaseOrdersSort.md
@@ -617,6 +619,7 @@ docs/TooManyRequestsResponseDetail.md
 docs/TrackingCategory.md
 docs/TrackingItem.md
 docs/UnauthorizedResponse.md
+docs/UncategorizedAccounts.md
 docs/UnexpectedErrorResponse.md
 docs/UnifiedApiId.md
 docs/UnifiedFile.md
@@ -818,6 +821,7 @@ src/Apideck.Test/Model/ContactTests.cs
 src/Apideck.Test/Model/ContactsFilterTests.cs
 src/Apideck.Test/Model/ContactsSortTests.cs
 src/Apideck.Test/Model/CopyFolderRequestTests.cs
+src/Apideck.Test/Model/CostOfGoodsSoldTests.cs
 src/Apideck.Test/Model/CreateAccountingDepartmentResponseTests.cs
 src/Apideck.Test/Model/CreateAccountingLocationResponseTests.cs
 src/Apideck.Test/Model/CreateActivityResponseTests.cs
@@ -996,6 +1000,7 @@ src/Apideck.Test/Model/ErrorTests.cs
 src/Apideck.Test/Model/ExecuteWebhookResponseTests.cs
 src/Apideck.Test/Model/ExpenseLineItemTests.cs
 src/Apideck.Test/Model/ExpenseTests.cs
+src/Apideck.Test/Model/ExpensesTests.cs
 src/Apideck.Test/Model/FileStorageEventTypeTests.cs
 src/Apideck.Test/Model/FileTypeTests.cs
 src/Apideck.Test/Model/FilesFilterTests.cs
@@ -1161,6 +1166,7 @@ src/Apideck.Test/Model/HrisEventTypeTests.cs
 src/Apideck.Test/Model/HrisJobLocationTests.cs
 src/Apideck.Test/Model/HrisJobTests.cs
 src/Apideck.Test/Model/HrisJobsTests.cs
+src/Apideck.Test/Model/IncomeTests.cs
 src/Apideck.Test/Model/IntegrationStateTests.cs
 src/Apideck.Test/Model/InvoiceItemFilterTests.cs
 src/Apideck.Test/Model/InvoiceItemSalesDetailsTests.cs
@@ -1237,6 +1243,8 @@ src/Apideck.Test/Model/OrderTendersTests.cs
 src/Apideck.Test/Model/OrderTests.cs
 src/Apideck.Test/Model/OrderTypeTests.cs
 src/Apideck.Test/Model/OrdersSortTests.cs
+src/Apideck.Test/Model/OtherExpensesTests.cs
+src/Apideck.Test/Model/OtherIncomeTests.cs
 src/Apideck.Test/Model/OutstandingBalanceByCurrencyTests.cs
 src/Apideck.Test/Model/OutstandingBalanceByCustomerTests.cs
 src/Apideck.Test/Model/OutstandingBalanceBySupplierTests.cs
@@ -1266,15 +1274,12 @@ src/Apideck.Test/Model/PosPaymentExternalDetailsTests.cs
 src/Apideck.Test/Model/PosPaymentTests.cs
 src/Apideck.Test/Model/PriceTests.cs
 src/Apideck.Test/Model/ProbationPeriodTests.cs
-src/Apideck.Test/Model/ProfitAndLossExpensesTests.cs
 src/Apideck.Test/Model/ProfitAndLossFilterTests.cs
-src/Apideck.Test/Model/ProfitAndLossGrossProfitTests.cs
-src/Apideck.Test/Model/ProfitAndLossIncomeTests.cs
-src/Apideck.Test/Model/ProfitAndLossNetIncomeTests.cs
-src/Apideck.Test/Model/ProfitAndLossNetOperatingIncomeTests.cs
+src/Apideck.Test/Model/ProfitAndLossIndicatorTests.cs
 src/Apideck.Test/Model/ProfitAndLossRecordTests.cs
 src/Apideck.Test/Model/ProfitAndLossSectionTests.cs
 src/Apideck.Test/Model/ProfitAndLossTests.cs
+src/Apideck.Test/Model/ProfitAndLossTypeTests.cs
 src/Apideck.Test/Model/PurchaseOrderTests.cs
 src/Apideck.Test/Model/PurchaseOrdersFilterTests.cs
 src/Apideck.Test/Model/PurchaseOrdersSortTests.cs
@@ -1318,6 +1323,7 @@ src/Apideck.Test/Model/TooManyRequestsResponseTests.cs
 src/Apideck.Test/Model/TrackingCategoryTests.cs
 src/Apideck.Test/Model/TrackingItemTests.cs
 src/Apideck.Test/Model/UnauthorizedResponseTests.cs
+src/Apideck.Test/Model/UncategorizedAccountsTests.cs
 src/Apideck.Test/Model/UnexpectedErrorResponseTests.cs
 src/Apideck.Test/Model/UnifiedApiIdTests.cs
 src/Apideck.Test/Model/UnifiedFilePermissionsTests.cs
@@ -1533,6 +1539,7 @@ src/Apideck/Model/Contact.cs
 src/Apideck/Model/ContactsFilter.cs
 src/Apideck/Model/ContactsSort.cs
 src/Apideck/Model/CopyFolderRequest.cs
+src/Apideck/Model/CostOfGoodsSold.cs
 src/Apideck/Model/CreateAccountingDepartmentResponse.cs
 src/Apideck/Model/CreateAccountingLocationResponse.cs
 src/Apideck/Model/CreateActivityResponse.cs
@@ -1711,6 +1718,7 @@ src/Apideck/Model/Error.cs
 src/Apideck/Model/ExecuteWebhookResponse.cs
 src/Apideck/Model/Expense.cs
 src/Apideck/Model/ExpenseLineItem.cs
+src/Apideck/Model/Expenses.cs
 src/Apideck/Model/FileStorageEventType.cs
 src/Apideck/Model/FileType.cs
 src/Apideck/Model/FilesFilter.cs
@@ -1876,6 +1884,7 @@ src/Apideck/Model/HrisEventType.cs
 src/Apideck/Model/HrisJob.cs
 src/Apideck/Model/HrisJobLocation.cs
 src/Apideck/Model/HrisJobs.cs
+src/Apideck/Model/Income.cs
 src/Apideck/Model/IntegrationState.cs
 src/Apideck/Model/Invoice.cs
 src/Apideck/Model/InvoiceItem.cs
@@ -1952,6 +1961,8 @@ src/Apideck/Model/OrderRefunds.cs
 src/Apideck/Model/OrderTenders.cs
 src/Apideck/Model/OrderType.cs
 src/Apideck/Model/OrdersSort.cs
+src/Apideck/Model/OtherExpenses.cs
+src/Apideck/Model/OtherIncome.cs
 src/Apideck/Model/OutstandingBalanceByCurrency.cs
 src/Apideck/Model/OutstandingBalanceByCustomer.cs
 src/Apideck/Model/OutstandingBalanceBySupplier.cs
@@ -1982,14 +1993,11 @@ src/Apideck/Model/PosPaymentExternalDetails.cs
 src/Apideck/Model/Price.cs
 src/Apideck/Model/ProbationPeriod.cs
 src/Apideck/Model/ProfitAndLoss.cs
-src/Apideck/Model/ProfitAndLossExpenses.cs
 src/Apideck/Model/ProfitAndLossFilter.cs
-src/Apideck/Model/ProfitAndLossGrossProfit.cs
-src/Apideck/Model/ProfitAndLossIncome.cs
-src/Apideck/Model/ProfitAndLossNetIncome.cs
-src/Apideck/Model/ProfitAndLossNetOperatingIncome.cs
+src/Apideck/Model/ProfitAndLossIndicator.cs
 src/Apideck/Model/ProfitAndLossRecord.cs
 src/Apideck/Model/ProfitAndLossSection.cs
+src/Apideck/Model/ProfitAndLossType.cs
 src/Apideck/Model/PurchaseOrder.cs
 src/Apideck/Model/PurchaseOrdersFilter.cs
 src/Apideck/Model/PurchaseOrdersSort.cs
@@ -2033,6 +2041,7 @@ src/Apideck/Model/TooManyRequestsResponseDetail.cs
 src/Apideck/Model/TrackingCategory.cs
 src/Apideck/Model/TrackingItem.cs
 src/Apideck/Model/UnauthorizedResponse.cs
+src/Apideck/Model/UncategorizedAccounts.cs
 src/Apideck/Model/UnexpectedErrorResponse.cs
 src/Apideck/Model/UnifiedApiId.cs
 src/Apideck/Model/UnifiedFile.cs

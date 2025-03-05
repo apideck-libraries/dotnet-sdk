@@ -27,10 +27,10 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// ProfitAndLossRecord
+    /// The other expenses accounts
     /// </summary>
-    [DataContract(Name = "ProfitAndLossRecord")]
-    public partial class ProfitAndLossRecord : IEquatable<ProfitAndLossRecord>, IValidatableObject
+    [DataContract(Name = "Other_Expenses")]
+    public partial class OtherExpenses : IEquatable<OtherExpenses>, IValidatableObject
     {
 
         /// <summary>
@@ -39,25 +39,29 @@ namespace Apideck.Model
         [DataMember(Name = "type", EmitDefaultValue = true)]
         public ProfitAndLossType? Type { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProfitAndLossRecord" /> class.
+        /// Initializes a new instance of the <see cref="OtherExpenses" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ProfitAndLossRecord() { }
+        protected OtherExpenses() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProfitAndLossRecord" /> class.
+        /// Initializes a new instance of the <see cref="OtherExpenses" /> class.
         /// </summary>
         /// <param name="type">type.</param>
-        /// <param name="value">value.</param>
         /// <param name="total">The total amount of the transaction (required).</param>
-        public ProfitAndLossRecord(ProfitAndLossType? type = default(ProfitAndLossType?), decimal value = default(decimal), decimal? total = default(decimal?))
+        /// <param name="records">records (required).</param>
+        public OtherExpenses(ProfitAndLossType? type = default(ProfitAndLossType?), decimal? total = default(decimal?), List<object> records = default(List<object>))
         {
             // to ensure "total" is required (not null)
             if (total == null) {
-                throw new ArgumentNullException("total is a required property for ProfitAndLossRecord and cannot be null");
+                throw new ArgumentNullException("total is a required property for OtherExpenses and cannot be null");
             }
             this.Total = total;
+            // to ensure "records" is required (not null)
+            if (records == null) {
+                throw new ArgumentNullException("records is a required property for OtherExpenses and cannot be null");
+            }
+            this.Records = records;
             this.Type = type;
-            this.Value = value;
         }
 
         /// <summary>
@@ -106,18 +110,17 @@ namespace Apideck.Model
             return false;
         }
         /// <summary>
-        /// Gets or Sets Value
-        /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = false)]
-        [Obsolete]
-        public decimal Value { get; set; }
-
-        /// <summary>
         /// The total amount of the transaction
         /// </summary>
         /// <value>The total amount of the transaction</value>
         [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
         public decimal? Total { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Records
+        /// </summary>
+        [DataMember(Name = "records", IsRequired = true, EmitDefaultValue = true)]
+        public List<object> Records { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -126,13 +129,13 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ProfitAndLossRecord {\n");
+            sb.Append("class OtherExpenses {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
+            sb.Append("  Records: ").Append(Records).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,15 +156,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ProfitAndLossRecord);
+            return this.Equals(input as OtherExpenses);
         }
 
         /// <summary>
-        /// Returns true if ProfitAndLossRecord instances are equal
+        /// Returns true if OtherExpenses instances are equal
         /// </summary>
-        /// <param name="input">Instance of ProfitAndLossRecord to be compared</param>
+        /// <param name="input">Instance of OtherExpenses to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ProfitAndLossRecord input)
+        public bool Equals(OtherExpenses input)
         {
             if (input == null)
             {
@@ -188,13 +191,15 @@ namespace Apideck.Model
                     this.Type.Equals(input.Type)
                 ) && 
                 (
-                    this.Value == input.Value ||
-                    this.Value.Equals(input.Value)
-                ) && 
-                (
                     this.Total == input.Total ||
                     (this.Total != null &&
                     this.Total.Equals(input.Total))
+                ) && 
+                (
+                    this.Records == input.Records ||
+                    this.Records != null &&
+                    input.Records != null &&
+                    this.Records.SequenceEqual(input.Records)
                 );
         }
 
@@ -220,10 +225,13 @@ namespace Apideck.Model
                     hashCode = (hashCode * 59) + this.Title.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 if (this.Total != null)
                 {
                     hashCode = (hashCode * 59) + this.Total.GetHashCode();
+                }
+                if (this.Records != null)
+                {
+                    hashCode = (hashCode * 59) + this.Records.GetHashCode();
                 }
                 return hashCode;
             }

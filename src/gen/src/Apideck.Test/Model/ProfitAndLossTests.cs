@@ -98,20 +98,20 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Currency'
         }
         /// <summary>
-        /// Test the property 'CustomerId'
-        /// </summary>
-        [Fact]
-        public void CustomerIdTest()
-        {
-            // TODO unit test for the property 'CustomerId'
-        }
-        /// <summary>
         /// Test the property 'Income'
         /// </summary>
         [Fact]
         public void IncomeTest()
         {
             // TODO unit test for the property 'Income'
+        }
+        /// <summary>
+        /// Test the property 'CostOfGoodsSold'
+        /// </summary>
+        [Fact]
+        public void CostOfGoodsSoldTest()
+        {
+            // TODO unit test for the property 'CostOfGoodsSold'
         }
         /// <summary>
         /// Test the property 'Expenses'
@@ -122,12 +122,36 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'Expenses'
         }
         /// <summary>
-        /// Test the property 'NetIncome'
+        /// Test the property 'OtherIncome'
         /// </summary>
         [Fact]
-        public void NetIncomeTest()
+        public void OtherIncomeTest()
         {
-            // TODO unit test for the property 'NetIncome'
+            // TODO unit test for the property 'OtherIncome'
+        }
+        /// <summary>
+        /// Test the property 'OtherExpenses'
+        /// </summary>
+        [Fact]
+        public void OtherExpensesTest()
+        {
+            // TODO unit test for the property 'OtherExpenses'
+        }
+        /// <summary>
+        /// Test the property 'UncategorizedAccounts'
+        /// </summary>
+        [Fact]
+        public void UncategorizedAccountsTest()
+        {
+            // TODO unit test for the property 'UncategorizedAccounts'
+        }
+        /// <summary>
+        /// Test the property 'GrossProfit'
+        /// </summary>
+        [Fact]
+        public void GrossProfitTest()
+        {
+            // TODO unit test for the property 'GrossProfit'
         }
         /// <summary>
         /// Test the property 'NetOperatingIncome'
@@ -138,12 +162,12 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'NetOperatingIncome'
         }
         /// <summary>
-        /// Test the property 'GrossProfit'
+        /// Test the property 'NetIncome'
         /// </summary>
         [Fact]
-        public void GrossProfitTest()
+        public void NetIncomeTest()
         {
-            // TODO unit test for the property 'GrossProfit'
+            // TODO unit test for the property 'NetIncome'
         }
         /// <summary>
         /// Test the property 'CustomMappings'

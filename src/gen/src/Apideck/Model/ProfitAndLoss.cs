@@ -32,6 +32,12 @@ namespace Apideck.Model
     [DataContract(Name = "ProfitAndLoss")]
     public partial class ProfitAndLoss : IEquatable<ProfitAndLoss>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Currency
+        /// </summary>
+        [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = true)]
+        public Currency Currency { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfitAndLoss" /> class.
         /// </summary>
@@ -42,25 +48,24 @@ namespace Apideck.Model
         /// </summary>
         /// <param name="reportName">The name of the report (required).</param>
         /// <param name="startDate">The start date of the report.</param>
-        /// <param name="endDate">The start date of the report.</param>
+        /// <param name="endDate">The end date of the report.</param>
         /// <param name="currency">currency (required).</param>
-        /// <param name="customerId">Customer id.</param>
         /// <param name="income">income (required).</param>
+        /// <param name="costOfGoodsSold">costOfGoodsSold.</param>
         /// <param name="expenses">expenses (required).</param>
-        /// <param name="netIncome">netIncome.</param>
-        /// <param name="netOperatingIncome">netOperatingIncome.</param>
+        /// <param name="otherIncome">otherIncome.</param>
+        /// <param name="otherExpenses">otherExpenses.</param>
+        /// <param name="uncategorizedAccounts">uncategorizedAccounts.</param>
         /// <param name="grossProfit">grossProfit.</param>
-        public ProfitAndLoss(string reportName = default(string), string startDate = default(string), string endDate = default(string), string currency = default(string), string customerId = default(string), ProfitAndLossIncome income = default(ProfitAndLossIncome), ProfitAndLossExpenses expenses = default(ProfitAndLossExpenses), ProfitAndLossNetIncome netIncome = default(ProfitAndLossNetIncome), ProfitAndLossNetOperatingIncome netOperatingIncome = default(ProfitAndLossNetOperatingIncome), ProfitAndLossGrossProfit grossProfit = default(ProfitAndLossGrossProfit))
+        /// <param name="netOperatingIncome">netOperatingIncome.</param>
+        /// <param name="netIncome">netIncome.</param>
+        public ProfitAndLoss(string reportName = default(string), string startDate = default(string), string endDate = default(string), Currency currency = default(Currency), Income income = default(Income), CostOfGoodsSold costOfGoodsSold = default(CostOfGoodsSold), Expenses expenses = default(Expenses), OtherIncome otherIncome = default(OtherIncome), OtherExpenses otherExpenses = default(OtherExpenses), UncategorizedAccounts uncategorizedAccounts = default(UncategorizedAccounts), ProfitAndLossIndicator grossProfit = default(ProfitAndLossIndicator), ProfitAndLossIndicator netOperatingIncome = default(ProfitAndLossIndicator), ProfitAndLossIndicator netIncome = default(ProfitAndLossIndicator))
         {
             // to ensure "reportName" is required (not null)
             if (reportName == null) {
                 throw new ArgumentNullException("reportName is a required property for ProfitAndLoss and cannot be null");
             }
             this.ReportName = reportName;
-            // to ensure "currency" is required (not null)
-            if (currency == null) {
-                throw new ArgumentNullException("currency is a required property for ProfitAndLoss and cannot be null");
-            }
             this.Currency = currency;
             // to ensure "income" is required (not null)
             if (income == null) {
@@ -74,10 +79,13 @@ namespace Apideck.Model
             this.Expenses = expenses;
             this.StartDate = startDate;
             this.EndDate = endDate;
-            this.CustomerId = customerId;
-            this.NetIncome = netIncome;
-            this.NetOperatingIncome = netOperatingIncome;
+            this.CostOfGoodsSold = costOfGoodsSold;
+            this.OtherIncome = otherIncome;
+            this.OtherExpenses = otherExpenses;
+            this.UncategorizedAccounts = uncategorizedAccounts;
             this.GrossProfit = grossProfit;
+            this.NetOperatingIncome = netOperatingIncome;
+            this.NetIncome = netIncome;
         }
 
         /// <summary>
@@ -110,54 +118,65 @@ namespace Apideck.Model
         public string StartDate { get; set; }
 
         /// <summary>
-        /// The start date of the report
+        /// The end date of the report
         /// </summary>
-        /// <value>The start date of the report</value>
+        /// <value>The end date of the report</value>
         [DataMember(Name = "end_date", EmitDefaultValue = false)]
         public string EndDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Currency
-        /// </summary>
-        [DataMember(Name = "currency", IsRequired = true, EmitDefaultValue = false)]
-        public string Currency { get; set; }
-
-        /// <summary>
-        /// Customer id
-        /// </summary>
-        /// <value>Customer id</value>
-        [DataMember(Name = "customer_id", EmitDefaultValue = false)]
-        public string CustomerId { get; set; }
 
         /// <summary>
         /// Gets or Sets Income
         /// </summary>
         [DataMember(Name = "income", IsRequired = true, EmitDefaultValue = false)]
-        public ProfitAndLossIncome Income { get; set; }
+        public Income Income { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CostOfGoodsSold
+        /// </summary>
+        [DataMember(Name = "cost_of_goods_sold", EmitDefaultValue = false)]
+        public CostOfGoodsSold CostOfGoodsSold { get; set; }
 
         /// <summary>
         /// Gets or Sets Expenses
         /// </summary>
         [DataMember(Name = "expenses", IsRequired = true, EmitDefaultValue = false)]
-        public ProfitAndLossExpenses Expenses { get; set; }
+        public Expenses Expenses { get; set; }
 
         /// <summary>
-        /// Gets or Sets NetIncome
+        /// Gets or Sets OtherIncome
         /// </summary>
-        [DataMember(Name = "net_income", EmitDefaultValue = true)]
-        public ProfitAndLossNetIncome NetIncome { get; set; }
+        [DataMember(Name = "other_income", EmitDefaultValue = false)]
+        public OtherIncome OtherIncome { get; set; }
 
         /// <summary>
-        /// Gets or Sets NetOperatingIncome
+        /// Gets or Sets OtherExpenses
         /// </summary>
-        [DataMember(Name = "net_operating_income", EmitDefaultValue = true)]
-        public ProfitAndLossNetOperatingIncome NetOperatingIncome { get; set; }
+        [DataMember(Name = "other_expenses", EmitDefaultValue = false)]
+        public OtherExpenses OtherExpenses { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UncategorizedAccounts
+        /// </summary>
+        [DataMember(Name = "uncategorized_accounts", EmitDefaultValue = false)]
+        public UncategorizedAccounts UncategorizedAccounts { get; set; }
 
         /// <summary>
         /// Gets or Sets GrossProfit
         /// </summary>
-        [DataMember(Name = "gross_profit", EmitDefaultValue = true)]
-        public ProfitAndLossGrossProfit GrossProfit { get; set; }
+        [DataMember(Name = "gross_profit", EmitDefaultValue = false)]
+        public ProfitAndLossIndicator GrossProfit { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NetOperatingIncome
+        /// </summary>
+        [DataMember(Name = "net_operating_income", EmitDefaultValue = false)]
+        public ProfitAndLossIndicator NetOperatingIncome { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NetIncome
+        /// </summary>
+        [DataMember(Name = "net_income", EmitDefaultValue = false)]
+        public ProfitAndLossIndicator NetIncome { get; set; }
 
         /// <summary>
         /// When custom mappings are configured on the resource, the result is included here.
@@ -187,12 +206,15 @@ namespace Apideck.Model
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
-            sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  Income: ").Append(Income).Append("\n");
+            sb.Append("  CostOfGoodsSold: ").Append(CostOfGoodsSold).Append("\n");
             sb.Append("  Expenses: ").Append(Expenses).Append("\n");
-            sb.Append("  NetIncome: ").Append(NetIncome).Append("\n");
-            sb.Append("  NetOperatingIncome: ").Append(NetOperatingIncome).Append("\n");
+            sb.Append("  OtherIncome: ").Append(OtherIncome).Append("\n");
+            sb.Append("  OtherExpenses: ").Append(OtherExpenses).Append("\n");
+            sb.Append("  UncategorizedAccounts: ").Append(UncategorizedAccounts).Append("\n");
             sb.Append("  GrossProfit: ").Append(GrossProfit).Append("\n");
+            sb.Append("  NetOperatingIncome: ").Append(NetOperatingIncome).Append("\n");
+            sb.Append("  NetIncome: ").Append(NetIncome).Append("\n");
             sb.Append("  CustomMappings: ").Append(CustomMappings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -251,13 +273,7 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Currency == input.Currency ||
-                    (this.Currency != null &&
-                    this.Currency.Equals(input.Currency))
-                ) && 
-                (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
+                    this.Currency.Equals(input.Currency)
                 ) && 
                 (
                     this.Income == input.Income ||
@@ -265,14 +281,34 @@ namespace Apideck.Model
                     this.Income.Equals(input.Income))
                 ) && 
                 (
+                    this.CostOfGoodsSold == input.CostOfGoodsSold ||
+                    (this.CostOfGoodsSold != null &&
+                    this.CostOfGoodsSold.Equals(input.CostOfGoodsSold))
+                ) && 
+                (
                     this.Expenses == input.Expenses ||
                     (this.Expenses != null &&
                     this.Expenses.Equals(input.Expenses))
                 ) && 
                 (
-                    this.NetIncome == input.NetIncome ||
-                    (this.NetIncome != null &&
-                    this.NetIncome.Equals(input.NetIncome))
+                    this.OtherIncome == input.OtherIncome ||
+                    (this.OtherIncome != null &&
+                    this.OtherIncome.Equals(input.OtherIncome))
+                ) && 
+                (
+                    this.OtherExpenses == input.OtherExpenses ||
+                    (this.OtherExpenses != null &&
+                    this.OtherExpenses.Equals(input.OtherExpenses))
+                ) && 
+                (
+                    this.UncategorizedAccounts == input.UncategorizedAccounts ||
+                    (this.UncategorizedAccounts != null &&
+                    this.UncategorizedAccounts.Equals(input.UncategorizedAccounts))
+                ) && 
+                (
+                    this.GrossProfit == input.GrossProfit ||
+                    (this.GrossProfit != null &&
+                    this.GrossProfit.Equals(input.GrossProfit))
                 ) && 
                 (
                     this.NetOperatingIncome == input.NetOperatingIncome ||
@@ -280,9 +316,9 @@ namespace Apideck.Model
                     this.NetOperatingIncome.Equals(input.NetOperatingIncome))
                 ) && 
                 (
-                    this.GrossProfit == input.GrossProfit ||
-                    (this.GrossProfit != null &&
-                    this.GrossProfit.Equals(input.GrossProfit))
+                    this.NetIncome == input.NetIncome ||
+                    (this.NetIncome != null &&
+                    this.NetIncome.Equals(input.NetIncome))
                 ) && 
                 (
                     this.CustomMappings == input.CustomMappings ||
@@ -316,33 +352,42 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
                 }
-                if (this.Currency != null)
-                {
-                    hashCode = (hashCode * 59) + this.Currency.GetHashCode();
-                }
-                if (this.CustomerId != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomerId.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Currency.GetHashCode();
                 if (this.Income != null)
                 {
                     hashCode = (hashCode * 59) + this.Income.GetHashCode();
+                }
+                if (this.CostOfGoodsSold != null)
+                {
+                    hashCode = (hashCode * 59) + this.CostOfGoodsSold.GetHashCode();
                 }
                 if (this.Expenses != null)
                 {
                     hashCode = (hashCode * 59) + this.Expenses.GetHashCode();
                 }
-                if (this.NetIncome != null)
+                if (this.OtherIncome != null)
                 {
-                    hashCode = (hashCode * 59) + this.NetIncome.GetHashCode();
+                    hashCode = (hashCode * 59) + this.OtherIncome.GetHashCode();
+                }
+                if (this.OtherExpenses != null)
+                {
+                    hashCode = (hashCode * 59) + this.OtherExpenses.GetHashCode();
+                }
+                if (this.UncategorizedAccounts != null)
+                {
+                    hashCode = (hashCode * 59) + this.UncategorizedAccounts.GetHashCode();
+                }
+                if (this.GrossProfit != null)
+                {
+                    hashCode = (hashCode * 59) + this.GrossProfit.GetHashCode();
                 }
                 if (this.NetOperatingIncome != null)
                 {
                     hashCode = (hashCode * 59) + this.NetOperatingIncome.GetHashCode();
                 }
-                if (this.GrossProfit != null)
+                if (this.NetIncome != null)
                 {
-                    hashCode = (hashCode * 59) + this.GrossProfit.GetHashCode();
+                    hashCode = (hashCode * 59) + this.NetIncome.GetHashCode();
                 }
                 if (this.CustomMappings != null)
                 {
