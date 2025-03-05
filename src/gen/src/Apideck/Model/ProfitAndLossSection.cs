@@ -32,6 +32,12 @@ namespace Apideck.Model
     [DataContract(Name = "ProfitAndLossSection")]
     public partial class ProfitAndLossSection : IEquatable<ProfitAndLossSection>, IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", EmitDefaultValue = true)]
+        public ProfitAndLossType? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfitAndLossSection" /> class.
         /// </summary>
@@ -40,46 +46,70 @@ namespace Apideck.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfitAndLossSection" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="title">title.</param>
-        /// <param name="type">type (required).</param>
-        /// <param name="total">total.</param>
+        /// <param name="type">type.</param>
+        /// <param name="total">The total amount of the transaction (required).</param>
         /// <param name="records">records.</param>
-        public ProfitAndLossSection(string id = default(string), string title = default(string), string type = default(string), decimal? total = default(decimal?), List<object> records = default(List<object>))
+        public ProfitAndLossSection(ProfitAndLossType? type = default(ProfitAndLossType?), decimal? total = default(decimal?), List<object> records = default(List<object>))
         {
-            // to ensure "type" is required (not null)
-            if (type == null) {
-                throw new ArgumentNullException("type is a required property for ProfitAndLossSection and cannot be null");
+            // to ensure "total" is required (not null)
+            if (total == null) {
+                throw new ArgumentNullException("total is a required property for ProfitAndLossSection and cannot be null");
             }
-            this.Type = type;
-            this.Id = id;
-            this.Title = title;
             this.Total = total;
+            this.Type = type;
             this.Records = records;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// A unique identifier for an object.
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = true)]
-        public string Id { get; set; }
+        /// <value>A unique identifier for an object.</value>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// Returns false as Id should not be serialized given that it's read-only.
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = true)]
-        public string Title { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeId()
+        {
+            return false;
+        }
+        /// <summary>
+        /// The account code of the account
+        /// </summary>
+        /// <value>The account code of the account</value>
+        [DataMember(Name = "code", EmitDefaultValue = false)]
+        public string Code { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Returns false as Code should not be serialized given that it's read-only.
         /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
-        public string Type { get; set; }
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCode()
+        {
+            return false;
+        }
+        /// <summary>
+        /// The name of the account.
+        /// </summary>
+        /// <value>The name of the account.</value>
+        [DataMember(Name = "title", EmitDefaultValue = false)]
+        public string Title { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Total
+        /// Returns false as Title should not be serialized given that it's read-only.
         /// </summary>
-        [DataMember(Name = "total", EmitDefaultValue = true)]
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeTitle()
+        {
+            return false;
+        }
+        /// <summary>
+        /// The total amount of the transaction
+        /// </summary>
+        /// <value>The total amount of the transaction</value>
+        [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
         public decimal? Total { get; set; }
 
         /// <summary>
@@ -97,6 +127,7 @@ namespace Apideck.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ProfitAndLossSection {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
@@ -142,14 +173,18 @@ namespace Apideck.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
+                ) && 
+                (
                     this.Title == input.Title ||
                     (this.Title != null &&
                     this.Title.Equals(input.Title))
                 ) && 
                 (
                     this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
+                    this.Type.Equals(input.Type)
                 ) && 
                 (
                     this.Total == input.Total ||
@@ -177,14 +212,15 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                }
                 if (this.Title != null)
                 {
                     hashCode = (hashCode * 59) + this.Title.GetHashCode();
                 }
-                if (this.Type != null)
-                {
-                    hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 if (this.Total != null)
                 {
                     hashCode = (hashCode * 59) + this.Total.GetHashCode();

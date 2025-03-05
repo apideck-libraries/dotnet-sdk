@@ -27,47 +27,35 @@ using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
 namespace Apideck.Model
 {
     /// <summary>
-    /// ProfitAndLossNetOperatingIncome
+    /// ProfitAndLossIndicator
     /// </summary>
-    [DataContract(Name = "ProfitAndLoss_net_operating_income")]
-    public partial class ProfitAndLossNetOperatingIncome : IEquatable<ProfitAndLossNetOperatingIncome>, IValidatableObject
+    [DataContract(Name = "ProfitAndLossIndicator")]
+    public partial class ProfitAndLossIndicator : IEquatable<ProfitAndLossIndicator>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProfitAndLossNetOperatingIncome" /> class.
+        /// Initializes a new instance of the <see cref="ProfitAndLossIndicator" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ProfitAndLossNetOperatingIncome() { }
+        protected ProfitAndLossIndicator() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProfitAndLossNetOperatingIncome" /> class.
+        /// Initializes a new instance of the <see cref="ProfitAndLossIndicator" /> class.
         /// </summary>
-        /// <param name="total">Total net operating income (required).</param>
-        /// <param name="records">records (required).</param>
-        public ProfitAndLossNetOperatingIncome(decimal? total = default(decimal?), List<object> records = default(List<object>))
+        /// <param name="total">The total amount of the transaction (required).</param>
+        public ProfitAndLossIndicator(decimal? total = default(decimal?))
         {
             // to ensure "total" is required (not null)
             if (total == null) {
-                throw new ArgumentNullException("total is a required property for ProfitAndLossNetOperatingIncome and cannot be null");
+                throw new ArgumentNullException("total is a required property for ProfitAndLossIndicator and cannot be null");
             }
             this.Total = total;
-            // to ensure "records" is required (not null)
-            if (records == null) {
-                throw new ArgumentNullException("records is a required property for ProfitAndLossNetOperatingIncome and cannot be null");
-            }
-            this.Records = records;
         }
 
         /// <summary>
-        /// Total net operating income
+        /// The total amount of the transaction
         /// </summary>
-        /// <value>Total net operating income</value>
+        /// <value>The total amount of the transaction</value>
         [DataMember(Name = "total", IsRequired = true, EmitDefaultValue = true)]
         public decimal? Total { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Records
-        /// </summary>
-        [DataMember(Name = "records", IsRequired = true, EmitDefaultValue = true)]
-        public List<object> Records { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,9 +64,8 @@ namespace Apideck.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ProfitAndLossNetOperatingIncome {\n");
+            sb.Append("class ProfitAndLossIndicator {\n");
             sb.Append("  Total: ").Append(Total).Append("\n");
-            sb.Append("  Records: ").Append(Records).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -99,15 +86,15 @@ namespace Apideck.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ProfitAndLossNetOperatingIncome);
+            return this.Equals(input as ProfitAndLossIndicator);
         }
 
         /// <summary>
-        /// Returns true if ProfitAndLossNetOperatingIncome instances are equal
+        /// Returns true if ProfitAndLossIndicator instances are equal
         /// </summary>
-        /// <param name="input">Instance of ProfitAndLossNetOperatingIncome to be compared</param>
+        /// <param name="input">Instance of ProfitAndLossIndicator to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ProfitAndLossNetOperatingIncome input)
+        public bool Equals(ProfitAndLossIndicator input)
         {
             if (input == null)
             {
@@ -118,12 +105,6 @@ namespace Apideck.Model
                     this.Total == input.Total ||
                     (this.Total != null &&
                     this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Records == input.Records ||
-                    this.Records != null &&
-                    input.Records != null &&
-                    this.Records.SequenceEqual(input.Records)
                 );
         }
 
@@ -139,10 +120,6 @@ namespace Apideck.Model
                 if (this.Total != null)
                 {
                     hashCode = (hashCode * 59) + this.Total.GetHashCode();
-                }
-                if (this.Records != null)
-                {
-                    hashCode = (hashCode * 59) + this.Records.GetHashCode();
                 }
                 return hashCode;
             }
