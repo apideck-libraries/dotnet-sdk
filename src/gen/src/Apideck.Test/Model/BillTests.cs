@@ -298,6 +298,14 @@ namespace Apideck.Test.Model
             // TODO unit test for the property 'DiscountPercentage'
         }
         /// <summary>
+        /// Test the property 'SourceDocumentUrl'
+        /// </summary>
+        [Fact]
+        public void SourceDocumentUrlTest()
+        {
+            // TODO unit test for the property 'SourceDocumentUrl'
+        }
+        /// <summary>
         /// Test the property 'TrackingCategories'
         /// </summary>
         [Fact]
