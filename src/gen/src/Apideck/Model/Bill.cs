@@ -133,12 +133,13 @@ namespace Apideck.Model
         /// <param name="accountingByRow">Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row..</param>
         /// <param name="bankAccount">bankAccount.</param>
         /// <param name="discountPercentage">Discount percentage applied to this transaction..</param>
+        /// <param name="sourceDocumentUrl">URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero..</param>
         /// <param name="trackingCategories">A list of linked tracking categories..</param>
         /// <param name="rowVersion">A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object..</param>
         /// <param name="customFields">customFields.</param>
         /// <param name="passThrough">The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources..</param>
         /// <param name="accountingPeriod">Accounting period.</param>
-        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime? billDate = default(DateTime?), DateTime? dueDate = default(DateTime?), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<CustomField> customFields = default(List<CustomField>), List<Object> passThrough = default(List<Object>), string accountingPeriod = default(string))
+        public Bill(string billNumber = default(string), LinkedSupplier supplier = default(LinkedSupplier), string companyId = default(string), Currency? currency = default(Currency?), decimal? currencyRate = default(decimal?), bool? taxInclusive = default(bool?), DateTime? billDate = default(DateTime?), DateTime? dueDate = default(DateTime?), DateTime? paidDate = default(DateTime?), string poNumber = default(string), string reference = default(string), List<BillLineItem> lineItems = default(List<BillLineItem>), string terms = default(string), decimal? balance = default(decimal?), decimal? deposit = default(decimal?), decimal? subTotal = default(decimal?), decimal? totalTax = default(decimal?), decimal? total = default(decimal?), string taxCode = default(string), string notes = default(string), StatusEnum? status = default(StatusEnum?), LinkedLedgerAccount ledgerAccount = default(LinkedLedgerAccount), string paymentMethod = default(string), string channel = default(string), string language = default(string), bool? accountingByRow = default(bool?), BankAccount bankAccount = default(BankAccount), decimal? discountPercentage = default(decimal?), string sourceDocumentUrl = default(string), List<LinkedTrackingCategory> trackingCategories = default(List<LinkedTrackingCategory>), string rowVersion = default(string), List<CustomField> customFields = default(List<CustomField>), List<Object> passThrough = default(List<Object>), string accountingPeriod = default(string))
         {
             this.BillNumber = billNumber;
             this.Supplier = supplier;
@@ -168,6 +169,7 @@ namespace Apideck.Model
             this.AccountingByRow = accountingByRow;
             this.BankAccount = bankAccount;
             this.DiscountPercentage = discountPercentage;
+            this.SourceDocumentUrl = sourceDocumentUrl;
             this.TrackingCategories = trackingCategories;
             this.RowVersion = rowVersion;
             this.CustomFields = customFields;
@@ -386,6 +388,13 @@ namespace Apideck.Model
         public decimal? DiscountPercentage { get; set; }
 
         /// <summary>
+        /// URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero.
+        /// </summary>
+        /// <value>URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero.</value>
+        [DataMember(Name = "source_document_url", EmitDefaultValue = true)]
+        public string SourceDocumentUrl { get; set; }
+
+        /// <summary>
         /// A list of linked tracking categories.
         /// </summary>
         /// <value>A list of linked tracking categories.</value>
@@ -532,6 +541,7 @@ namespace Apideck.Model
             sb.Append("  AccountingByRow: ").Append(AccountingByRow).Append("\n");
             sb.Append("  BankAccount: ").Append(BankAccount).Append("\n");
             sb.Append("  DiscountPercentage: ").Append(DiscountPercentage).Append("\n");
+            sb.Append("  SourceDocumentUrl: ").Append(SourceDocumentUrl).Append("\n");
             sb.Append("  TrackingCategories: ").Append(TrackingCategories).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -727,6 +737,11 @@ namespace Apideck.Model
                     this.DiscountPercentage.Equals(input.DiscountPercentage))
                 ) && 
                 (
+                    this.SourceDocumentUrl == input.SourceDocumentUrl ||
+                    (this.SourceDocumentUrl != null &&
+                    this.SourceDocumentUrl.Equals(input.SourceDocumentUrl))
+                ) && 
+                (
                     this.TrackingCategories == input.TrackingCategories ||
                     this.TrackingCategories != null &&
                     input.TrackingCategories != null &&
@@ -903,6 +918,10 @@ namespace Apideck.Model
                 if (this.DiscountPercentage != null)
                 {
                     hashCode = (hashCode * 59) + this.DiscountPercentage.GetHashCode();
+                }
+                if (this.SourceDocumentUrl != null)
+                {
+                    hashCode = (hashCode * 59) + this.SourceDocumentUrl.GetHashCode();
                 }
                 if (this.TrackingCategories != null)
                 {

@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **AccountingByRow** | **bool?** | Indicates if accounting by row is used (true) or not (false). Accounting by row means that a separate ledger transaction is created for each row. | [optional] 
 **BankAccount** | [**BankAccount**](BankAccount.md) |  | [optional] 
 **DiscountPercentage** | **decimal?** | Discount percentage applied to this transaction. | [optional] 
+**SourceDocumentUrl** | **string** | URL link to a source document - shown as &#39;Go to [appName]&#39; in the downstream app. Currently only supported for Xero. | [optional] 
 **TrackingCategories** | [**List&lt;LinkedTrackingCategory&gt;**](LinkedTrackingCategory.md) | A list of linked tracking categories. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
