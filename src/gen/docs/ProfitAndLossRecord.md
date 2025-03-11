@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Title** | **string** | The name of the account. | [optional] [readonly] 
 **Type** | **ProfitAndLossType** |  | [optional] 
 **Value** | **decimal** |  | [optional] 
-**Total** | **decimal?** | The total amount of the transaction | 
+**Total** | **decimal?** | The total amount of the transaction or record | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
-**TotalAmount** | **decimal?** | The total amount of the transaction | 
+**TotalAmount** | **decimal?** | The total amount of the transaction or record | 
 **Reference** | **string** | Optional transaction reference message ie: Debit remittance detail. | [optional] 
 **PaymentMethod** | **string** | Payment method used for the transaction, such as cash, credit card, bank transfer, or check | [optional] 
 **PaymentMethodReference** | **string** | Optional reference message returned by payment method on processing | [optional] 

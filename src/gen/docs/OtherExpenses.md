@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Code** | **string** | The account code of the account | [optional] [readonly] 
 **Title** | **string** | The name of the account. | [optional] [readonly] 
 **Type** | **ProfitAndLossType** |  | [optional] 
-**Total** | **decimal?** | The total amount of the transaction | 
+**Total** | **decimal?** | The aggregated total of all accounts within this category. | 
 **Records** | [**List&lt;AnyOfProfitAndLossSectionProfitAndLossRecord&gt;**](AnyOfProfitAndLossSectionProfitAndLossRecord.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
