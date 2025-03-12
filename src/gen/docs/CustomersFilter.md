@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Email** | **string** | Email of customer to search for | [optional] 
 **Status** | **string** | Status of customer to filter on | [optional] 
 **UpdatedSince** | **DateTime** |  | [optional] 
+**SupplierId** | **string** | Supplier ID of customer to search for | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
