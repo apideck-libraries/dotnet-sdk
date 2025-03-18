@@ -84,7 +84,8 @@ namespace Apideck.Model
         /// <param name="employmentStatus">Employment status to filter on.</param>
         /// <param name="employeeNumber">Employee number to filter on.</param>
         /// <param name="departmentId">ID of the department to filter on.</param>
-        public EmployeesFilter(string companyId = default(string), string email = default(string), string firstName = default(string), string title = default(string), string lastName = default(string), string managerId = default(string), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?), string employeeNumber = default(string), string departmentId = default(string))
+        /// <param name="city">City to filter on.</param>
+        public EmployeesFilter(string companyId = default(string), string email = default(string), string firstName = default(string), string title = default(string), string lastName = default(string), string managerId = default(string), EmploymentStatusEnum? employmentStatus = default(EmploymentStatusEnum?), string employeeNumber = default(string), string departmentId = default(string), string city = default(string))
         {
             this.CompanyId = companyId;
             this.Email = email;
@@ -95,6 +96,7 @@ namespace Apideck.Model
             this.EmploymentStatus = employmentStatus;
             this.EmployeeNumber = employeeNumber;
             this.DepartmentId = departmentId;
+            this.City = city;
         }
 
         /// <summary>
@@ -154,6 +156,13 @@ namespace Apideck.Model
         public string DepartmentId { get; set; }
 
         /// <summary>
+        /// City to filter on
+        /// </summary>
+        /// <value>City to filter on</value>
+        [DataMember(Name = "city", EmitDefaultValue = false)]
+        public string City { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -170,6 +179,7 @@ namespace Apideck.Model
             sb.Append("  EmploymentStatus: ").Append(EmploymentStatus).Append("\n");
             sb.Append("  EmployeeNumber: ").Append(EmployeeNumber).Append("\n");
             sb.Append("  DepartmentId: ").Append(DepartmentId).Append("\n");
+            sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,6 +258,11 @@ namespace Apideck.Model
                     this.DepartmentId == input.DepartmentId ||
                     (this.DepartmentId != null &&
                     this.DepartmentId.Equals(input.DepartmentId))
+                ) && 
+                (
+                    this.City == input.City ||
+                    (this.City != null &&
+                    this.City.Equals(input.City))
                 );
         }
 
@@ -292,6 +307,10 @@ namespace Apideck.Model
                 if (this.DepartmentId != null)
                 {
                     hashCode = (hashCode * 59) + this.DepartmentId.GetHashCode();
+                }
+                if (this.City != null)
+                {
+                    hashCode = (hashCode * 59) + this.City.GetHashCode();
                 }
                 return hashCode;
             }
