@@ -60,7 +60,7 @@ namespace Apideck.Model
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
         /// <param name="state">state.</param>
-        public ConsumerConnection(string name = default(string), string icon = default(string), string logo = default(string), string serviceId = default(string), string unifiedApi = default(string), string consumerId = default(string), AuthType? authType = default(AuthType?), bool enabled = default(bool), Object settings = default(Object), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string createdAt = default(string), string updatedAt = default(string), ConnectionState? state = default(ConnectionState?))
+        public ConsumerConnection(string name = default(string), string icon = default(string), string logo = default(string), string serviceId = default(string), string unifiedApi = default(string), string consumerId = default(string), AuthType? authType = default(AuthType?), bool enabled = default(bool), Dictionary<string, Object> settings = default(Dictionary<string, Object>), Dictionary<string, Object> metadata = default(Dictionary<string, Object>), string createdAt = default(string), string updatedAt = default(string), ConnectionState? state = default(ConnectionState?))
         {
             this.Name = name;
             this.Icon = icon;
@@ -166,7 +166,7 @@ namespace Apideck.Model
         /// </summary>
         /// <value>Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id</value>
         [DataMember(Name = "settings", EmitDefaultValue = true)]
-        public Object Settings { get; set; }
+        public Dictionary<string, Object> Settings { get; set; }
 
         /// <summary>
         /// Attach your own consumer specific metadata
@@ -301,8 +301,9 @@ namespace Apideck.Model
                 ) && 
                 (
                     this.Settings == input.Settings ||
-                    (this.Settings != null &&
-                    this.Settings.Equals(input.Settings))
+                    this.Settings != null &&
+                    input.Settings != null &&
+                    this.Settings.SequenceEqual(input.Settings)
                 ) && 
                 (
                     this.Metadata == input.Metadata ||
