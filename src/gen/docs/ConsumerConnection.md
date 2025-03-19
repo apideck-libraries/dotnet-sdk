@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ConsumerId** | **string** |  | [optional] 
 **AuthType** | **AuthType** |  | [optional] 
 **Enabled** | **bool** |  | [optional] 
-**Settings** | **Object** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
+**Settings** | **Dictionary&lt;string, Object&gt;** | Connection settings. Values will persist to &#x60;form_fields&#x60; with corresponding id | [optional] 
 **Metadata** | **Dictionary&lt;string, Object&gt;** | Attach your own consumer specific metadata | [optional] 
 **CreatedAt** | **string** |  | [optional] 
 **UpdatedAt** | **string** |  | [optional] 
