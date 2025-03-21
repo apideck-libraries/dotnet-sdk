@@ -33,27 +33,58 @@ namespace Apideck.Model
     public partial class SimpleFormFieldOption : IEquatable<SimpleFormFieldOption>, IValidatableObject
     {
         /// <summary>
+        /// Defines OptionType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum OptionTypeEnum
+        {
+            /// <summary>
+            /// Enum Simple for value: simple
+            /// </summary>
+            [EnumMember(Value = "simple")]
+            Simple = 1
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets OptionType
+        /// </summary>
+        [DataMember(Name = "option_type", IsRequired = true, EmitDefaultValue = false)]
+        public OptionTypeEnum OptionType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SimpleFormFieldOption" /> class.
         /// </summary>
-        /// <param name="label">label.</param>
+        [JsonConstructorAttribute]
+        protected SimpleFormFieldOption() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleFormFieldOption" /> class.
+        /// </summary>
+        /// <param name="label">label (required).</param>
         /// <param name="value">value.</param>
-        public SimpleFormFieldOption(string label = default(string), object value = default(object))
+        /// <param name="optionType">optionType (required).</param>
+        public SimpleFormFieldOption(string label = default(string), OneOfstringintegernumberbooleanarray value = default(OneOfstringintegernumberbooleanarray), OptionTypeEnum optionType = default(OptionTypeEnum))
         {
+            // to ensure "label" is required (not null)
+            if (label == null) {
+                throw new ArgumentNullException("label is a required property for SimpleFormFieldOption and cannot be null");
+            }
             this.Label = label;
+            this.OptionType = optionType;
             this.Value = value;
         }
 
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
-        [DataMember(Name = "label", EmitDefaultValue = false)]
+        [DataMember(Name = "label", IsRequired = true, EmitDefaultValue = false)]
         public string Label { get; set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = true)]
-        public object Value { get; set; }
+        public OneOfstringintegernumberbooleanarray Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,6 +96,7 @@ namespace Apideck.Model
             sb.Append("class SimpleFormFieldOption {\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  OptionType: ").Append(OptionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,6 +141,10 @@ namespace Apideck.Model
                     this.Value == input.Value ||
                     (this.Value != null &&
                     this.Value.Equals(input.Value))
+                ) && 
+                (
+                    this.OptionType == input.OptionType ||
+                    this.OptionType.Equals(input.OptionType)
                 );
         }
 
@@ -129,6 +165,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Value.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.OptionType.GetHashCode();
                 return hashCode;
             }
         }
