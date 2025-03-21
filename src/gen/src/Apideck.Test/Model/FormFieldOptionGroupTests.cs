@@ -81,6 +81,14 @@ namespace Apideck.Test.Model
         {
             // TODO unit test for the property 'Options'
         }
+        /// <summary>
+        /// Test the property 'OptionType'
+        /// </summary>
+        [Fact]
+        public void OptionTypeTest()
+        {
+            // TODO unit test for the property 'OptionType'
+        }
 
     }
 

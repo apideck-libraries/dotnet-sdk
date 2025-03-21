@@ -21,8 +21,10 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
+using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Apideck.Client.OpenAPIDateConverter;
+using System.Reflection;
 
 namespace Apideck.Model
 {
@@ -41,7 +43,7 @@ namespace Apideck.Model
         public FormFieldOption(FormFieldOptionGroup actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "anyOf";
+            this.SchemaType= "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -53,7 +55,7 @@ namespace Apideck.Model
         public FormFieldOption(SimpleFormFieldOption actualInstance)
         {
             this.IsNullable = false;
-            this.SchemaType= "anyOf";
+            this.SchemaType= "oneOf";
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
@@ -141,12 +143,22 @@ namespace Apideck.Model
             {
                 return newFormFieldOption;
             }
+            int match = 0;
+            List<string> matchedTypes = new List<string>();
 
             try
             {
-                newFormFieldOption = new FormFieldOption(JsonConvert.DeserializeObject<FormFieldOptionGroup>(jsonString, FormFieldOption.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFormFieldOption;
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(FormFieldOptionGroup).GetProperty("AdditionalProperties") == null)
+                {
+                    newFormFieldOption = new FormFieldOption(JsonConvert.DeserializeObject<FormFieldOptionGroup>(jsonString, FormFieldOption.SerializerSettings));
+                }
+                else
+                {
+                    newFormFieldOption = new FormFieldOption(JsonConvert.DeserializeObject<FormFieldOptionGroup>(jsonString, FormFieldOption.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("FormFieldOptionGroup");
+                match++;
             }
             catch (Exception exception)
             {
@@ -156,9 +168,17 @@ namespace Apideck.Model
 
             try
             {
-                newFormFieldOption = new FormFieldOption(JsonConvert.DeserializeObject<SimpleFormFieldOption>(jsonString, FormFieldOption.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newFormFieldOption;
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(SimpleFormFieldOption).GetProperty("AdditionalProperties") == null)
+                {
+                    newFormFieldOption = new FormFieldOption(JsonConvert.DeserializeObject<SimpleFormFieldOption>(jsonString, FormFieldOption.SerializerSettings));
+                }
+                else
+                {
+                    newFormFieldOption = new FormFieldOption(JsonConvert.DeserializeObject<SimpleFormFieldOption>(jsonString, FormFieldOption.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("SimpleFormFieldOption");
+                match++;
             }
             catch (Exception exception)
             {
@@ -166,8 +186,17 @@ namespace Apideck.Model
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into SimpleFormFieldOption: {1}", jsonString, exception.ToString()));
             }
 
-            // no match found, throw an exception
-            throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
+            if (match == 0)
+            {
+                throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
+            }
+            else if (match > 1)
+            {
+                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + matchedTypes);
+            }
+
+            // deserialization is considered successful at this point if no exception has been thrown.
+            return newFormFieldOption;
         }
 
         /// <summary>

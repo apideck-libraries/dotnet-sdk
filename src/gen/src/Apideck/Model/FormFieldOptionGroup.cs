@@ -33,16 +33,51 @@ namespace Apideck.Model
     public partial class FormFieldOptionGroup : IEquatable<FormFieldOptionGroup>, IValidatableObject
     {
         /// <summary>
+        /// Defines OptionType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum OptionTypeEnum
+        {
+            /// <summary>
+            /// Enum Group for value: group
+            /// </summary>
+            [EnumMember(Value = "group")]
+            Group = 1
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets OptionType
+        /// </summary>
+        [DataMember(Name = "option_type", IsRequired = true, EmitDefaultValue = false)]
+        public OptionTypeEnum OptionType { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FormFieldOptionGroup" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected FormFieldOptionGroup() { }
+        /// <summary>
         /// Initializes a new instance of the <see cref="FormFieldOptionGroup" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="label">label.</param>
-        /// <param name="options">options.</param>
-        public FormFieldOptionGroup(string id = default(string), string label = default(string), List<SimpleFormFieldOption> options = default(List<SimpleFormFieldOption>))
+        /// <param name="label">label (required).</param>
+        /// <param name="options">options (required).</param>
+        /// <param name="optionType">optionType (required).</param>
+        public FormFieldOptionGroup(string id = default(string), string label = default(string), List<SimpleFormFieldOption> options = default(List<SimpleFormFieldOption>), OptionTypeEnum optionType = default(OptionTypeEnum))
         {
-            this.Id = id;
+            // to ensure "label" is required (not null)
+            if (label == null) {
+                throw new ArgumentNullException("label is a required property for FormFieldOptionGroup and cannot be null");
+            }
             this.Label = label;
+            // to ensure "options" is required (not null)
+            if (options == null) {
+                throw new ArgumentNullException("options is a required property for FormFieldOptionGroup and cannot be null");
+            }
             this.Options = options;
+            this.OptionType = optionType;
+            this.Id = id;
         }
 
         /// <summary>
@@ -54,13 +89,13 @@ namespace Apideck.Model
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
-        [DataMember(Name = "label", EmitDefaultValue = false)]
+        [DataMember(Name = "label", IsRequired = true, EmitDefaultValue = false)]
         public string Label { get; set; }
 
         /// <summary>
         /// Gets or Sets Options
         /// </summary>
-        [DataMember(Name = "options", EmitDefaultValue = false)]
+        [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = false)]
         public List<SimpleFormFieldOption> Options { get; set; }
 
         /// <summary>
@@ -74,6 +109,7 @@ namespace Apideck.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Label: ").Append(Label).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
+            sb.Append("  OptionType: ").Append(OptionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +160,10 @@ namespace Apideck.Model
                     this.Options != null &&
                     input.Options != null &&
                     this.Options.SequenceEqual(input.Options)
+                ) && 
+                (
+                    this.OptionType == input.OptionType ||
+                    this.OptionType.Equals(input.OptionType)
                 );
         }
 
@@ -148,6 +188,7 @@ namespace Apideck.Model
                 {
                     hashCode = (hashCode * 59) + this.Options.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.OptionType.GetHashCode();
                 return hashCode;
             }
         }
