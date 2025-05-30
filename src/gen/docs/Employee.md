@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | A unique identifier for an object. | [optional] 
+**DownstreamId** | **string** | The third-party API ID of original entity | [optional] [readonly] 
 **FirstName** | **string** | The first name of the person. | [optional] 
 **LastName** | **string** | The last name of the person. | [optional] 
 **MiddleName** | **string** | Middle name of the person. | [optional] 
@@ -62,7 +63,7 @@ Name | Type | Description | Notes
 **FoodAllergies** | **List&lt;string&gt;** | Indicate the employee&#39;s food allergies. | [optional] 
 **ProbationPeriod** | [**ProbationPeriod**](ProbationPeriod.md) |  | [optional] 
 **Tags** | **List&lt;string&gt;** |  | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**CustomMappings** | **Dictionary&lt;string, Object&gt;** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **Deleted** | **bool?** | Flag to indicate if the object is deleted. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 

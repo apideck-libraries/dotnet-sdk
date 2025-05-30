@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **RefundedAmount** | **string** | The amount of the line item that has been refunded. | [optional] 
 **RefundedQuantity** | **string** | The quantity of the line item that has been refunded. | [optional] 
 **SubTotal** | **string** | The sub total for the product(s) or variant associated with the line item, excluding taxes and discounts. | [optional] 
-**TotalAmount** | **string** | The total amount for the product(s) or variant associated with the line item, including taxes and discounts. | 
+**TotalAmount** | **string** | The total amount for the product(s) or variant associated with the line item, including taxes and discounts. | [optional] 
 **Discounts** | [**List&lt;EcommerceDiscount&gt;**](EcommerceDiscount.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

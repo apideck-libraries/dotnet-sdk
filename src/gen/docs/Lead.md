@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Unique identifier for the contact. | [optional] [readonly] 
 **Name** | **string** | Full name of the lead. | 
-**CompanyName** | **string** | The name of the company the lead is associated with. | 
+**CompanyName** | **string** | The name of the company the lead is associated with. | [optional] 
 **OwnerId** | **string** | The owner of the lead. | [optional] 
 **OwnerName** | **string** | The name of the owner of the lead. | [optional] 
 **CompanyId** | **string** | The company the lead is associated with. | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **Emails** | [**List&lt;Email&gt;**](Email.md) |  | [optional] 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
 **Tags** | **List&lt;string&gt;** |  | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**CustomMappings** | **Dictionary&lt;string, Object&gt;** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedAt** | **string** | Date updated in ISO 8601 format | [optional] [readonly] 
 **CreatedAt** | **string** | Date created in ISO 8601 format | [optional] [readonly] 
 **PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 

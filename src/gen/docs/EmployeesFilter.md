@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **EmployeeNumber** | **string** | Employee number to filter on | [optional] 
 **DepartmentId** | **string** | ID of the department to filter on | [optional] 
 **City** | **string** | City to filter on | [optional] 
+**Country** | **string** | Country to filter on | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

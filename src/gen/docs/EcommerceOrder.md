@@ -25,7 +25,8 @@ Name | Type | Description | Notes
 **Tracking** | [**List&lt;TrackingItem&gt;**](TrackingItem.md) |  | [optional] 
 **LineItems** | [**List&lt;EcommerceOrderLineItem&gt;**](EcommerceOrderLineItem.md) |  | [optional] 
 **Note** | **string** | Note for the order. | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**Refunds** | [**List&lt;EcommerceOrderRefund&gt;**](EcommerceOrderRefund.md) |  | [optional] 
+**CustomMappings** | **Dictionary&lt;string, Object&gt;** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 

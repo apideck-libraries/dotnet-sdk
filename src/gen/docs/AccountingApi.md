@@ -11,6 +11,16 @@ Method | HTTP request | Description
 [**AttachmentsDownload**](AccountingApi.md#attachmentsdownload) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id}/download | Download Attachment
 [**AttachmentsOne**](AccountingApi.md#attachmentsone) | **GET** /accounting/attachments/{reference_type}/{reference_id}/{id} | Get Attachment
 [**BalanceSheetOne**](AccountingApi.md#balancesheetone) | **GET** /accounting/balance-sheet | Get BalanceSheet
+[**BankFeedAccountsAdd**](AccountingApi.md#bankfeedaccountsadd) | **POST** /accounting/bank-feed-accounts | Create Bank Feed Account
+[**BankFeedAccountsAll**](AccountingApi.md#bankfeedaccountsall) | **GET** /accounting/bank-feed-accounts | List Bank Feed Accounts
+[**BankFeedAccountsDelete**](AccountingApi.md#bankfeedaccountsdelete) | **DELETE** /accounting/bank-feed-accounts/{id} | Delete Bank Feed Account
+[**BankFeedAccountsOne**](AccountingApi.md#bankfeedaccountsone) | **GET** /accounting/bank-feed-accounts/{id} | Get Bank Feed Account
+[**BankFeedAccountsUpdate**](AccountingApi.md#bankfeedaccountsupdate) | **PATCH** /accounting/bank-feed-accounts/{id} | Update Bank Feed Account
+[**BankFeedStatementsAdd**](AccountingApi.md#bankfeedstatementsadd) | **POST** /accounting/bank-feed-statements | Create Bank Feed Statement
+[**BankFeedStatementsAll**](AccountingApi.md#bankfeedstatementsall) | **GET** /accounting/bank-feed-statements | List Bank Feed Statements
+[**BankFeedStatementsDelete**](AccountingApi.md#bankfeedstatementsdelete) | **DELETE** /accounting/bank-feed-statements/{id} | Delete Bank Feed Statement
+[**BankFeedStatementsOne**](AccountingApi.md#bankfeedstatementsone) | **GET** /accounting/bank-feed-statements/{id} | Get Bank Feed Statement
+[**BankFeedStatementsUpdate**](AccountingApi.md#bankfeedstatementsupdate) | **PATCH** /accounting/bank-feed-statements/{id} | Update Bank Feed Statement
 [**BillPaymentsAdd**](AccountingApi.md#billpaymentsadd) | **POST** /accounting/bill-payments | Create Bill Payment
 [**BillPaymentsAll**](AccountingApi.md#billpaymentsall) | **GET** /accounting/bill-payments | List Bill Payments
 [**BillPaymentsDelete**](AccountingApi.md#billpaymentsdelete) | **DELETE** /accounting/bill-payments/{id} | Delete Bill Payment
@@ -753,6 +763,926 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | BalanceSheet |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedaccountsadd"></a>
+# **BankFeedAccountsAdd**
+> CreateBankFeedAccountResponse BankFeedAccountsAdd (BankFeedAccount bankFeedAccount, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+
+Create Bank Feed Account
+
+Create Bank Feed Account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedAccountsAddExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var bankFeedAccount = new BankFeedAccount(); // BankFeedAccount | 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+
+            try
+            {
+                // Create Bank Feed Account
+                CreateBankFeedAccountResponse result = apiInstance.BankFeedAccountsAdd(bankFeedAccount, raw, consumerId, appId, serviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedAccountsAdd: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankFeedAccount** | [**BankFeedAccount**](BankFeedAccount.md)|  | 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+
+### Return type
+
+[**CreateBankFeedAccountResponse**](CreateBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Bank Feed Accounts |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedaccountsall"></a>
+# **BankFeedAccountsAll**
+> GetBankFeedAccountsResponse BankFeedAccountsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
+
+List Bank Feed Accounts
+
+List Bank Feed Accounts
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedAccountsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
+
+            try
+            {
+                // List Bank Feed Accounts
+                GetBankFeedAccountsResponse result = apiInstance.BankFeedAccountsAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedAccountsAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
+
+### Return type
+
+[**GetBankFeedAccountsResponse**](GetBankFeedAccountsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Accounts |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedaccountsdelete"></a>
+# **BankFeedAccountsDelete**
+> DeleteBankFeedAccountResponse BankFeedAccountsDelete (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Delete Bank Feed Account
+
+Delete Bank Feed Account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedAccountsDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Delete Bank Feed Account
+                DeleteBankFeedAccountResponse result = apiInstance.BankFeedAccountsDelete(id, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedAccountsDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**DeleteBankFeedAccountResponse**](DeleteBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Accounts |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedaccountsone"></a>
+# **BankFeedAccountsOne**
+> GetBankFeedAccountResponse BankFeedAccountsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
+
+Get Bank Feed Account
+
+Get Bank Feed Account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedAccountsOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
+
+            try
+            {
+                // Get Bank Feed Account
+                GetBankFeedAccountResponse result = apiInstance.BankFeedAccountsOne(id, consumerId, appId, serviceId, raw, fields);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedAccountsOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
+
+### Return type
+
+[**GetBankFeedAccountResponse**](GetBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Accounts |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedaccountsupdate"></a>
+# **BankFeedAccountsUpdate**
+> UpdateBankFeedAccountResponse BankFeedAccountsUpdate (string id, BankFeedAccount bankFeedAccount, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Update Bank Feed Account
+
+Update Bank Feed Account
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedAccountsUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var bankFeedAccount = new BankFeedAccount(); // BankFeedAccount | 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Update Bank Feed Account
+                UpdateBankFeedAccountResponse result = apiInstance.BankFeedAccountsUpdate(id, bankFeedAccount, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedAccountsUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **bankFeedAccount** | [**BankFeedAccount**](BankFeedAccount.md)|  | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**UpdateBankFeedAccountResponse**](UpdateBankFeedAccountResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Accounts |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedstatementsadd"></a>
+# **BankFeedStatementsAdd**
+> CreateBankFeedStatementResponse BankFeedStatementsAdd (BankFeedStatement bankFeedStatement, bool? raw = null, string consumerId = null, string appId = null, string serviceId = null)
+
+Create Bank Feed Statement
+
+Create Bank Feed Statement
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedStatementsAddExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var bankFeedStatement = new BankFeedStatement(); // BankFeedStatement | 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+
+            try
+            {
+                // Create Bank Feed Statement
+                CreateBankFeedStatementResponse result = apiInstance.BankFeedStatementsAdd(bankFeedStatement, raw, consumerId, appId, serviceId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedStatementsAdd: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankFeedStatement** | [**BankFeedStatement**](BankFeedStatement.md)|  | 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+
+### Return type
+
+[**CreateBankFeedStatementResponse**](CreateBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Bank Feed Statements |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedstatementsall"></a>
+# **BankFeedStatementsAll**
+> GetBankFeedStatementsResponse BankFeedStatementsAll (bool? raw = null, string consumerId = null, string appId = null, string serviceId = null, string cursor = null, int? limit = null, PassThroughQuery passThrough = null, string fields = null)
+
+List Bank Feed Statements
+
+List Bank Feed Statements
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedStatementsAllExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var cursor = "cursor_example";  // string | Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. (optional) 
+            var limit = 20;  // int? | Number of results to return. Minimum 1, Maximum 200, Default 20 (optional)  (default to 20)
+            var passThrough = new PassThroughQuery(); // PassThroughQuery | Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads (optional) 
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
+
+            try
+            {
+                // List Bank Feed Statements
+                GetBankFeedStatementsResponse result = apiInstance.BankFeedStatementsAll(raw, consumerId, appId, serviceId, cursor, limit, passThrough, fields);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedStatementsAll: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **cursor** | **string**| Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response. | [optional] 
+ **limit** | **int?**| Number of results to return. Minimum 1, Maximum 200, Default 20 | [optional] [default to 20]
+ **passThrough** | [**PassThroughQuery**](PassThroughQuery.md)| Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]&#x3D;leads becomes ?search&#x3D;leads | [optional] 
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
+
+### Return type
+
+[**GetBankFeedStatementsResponse**](GetBankFeedStatementsResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Statements |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedstatementsdelete"></a>
+# **BankFeedStatementsDelete**
+> DeleteBankFeedStatementResponse BankFeedStatementsDelete (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Delete Bank Feed Statement
+
+Delete Bank Feed Statement
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedStatementsDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Delete Bank Feed Statement
+                DeleteBankFeedStatementResponse result = apiInstance.BankFeedStatementsDelete(id, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedStatementsDelete: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**DeleteBankFeedStatementResponse**](DeleteBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Statements |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedstatementsone"></a>
+# **BankFeedStatementsOne**
+> GetBankFeedStatementResponse BankFeedStatementsOne (string id, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null, string fields = null)
+
+Get Bank Feed Statement
+
+Get Bank Feed Statement
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedStatementsOneExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+            var fields = id,updated_at;  // string | The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields \"name\", \"email\" and \"addresses.city\". If any other fields are available, they will be excluded. (optional) 
+
+            try
+            {
+                // Get Bank Feed Statement
+                GetBankFeedStatementResponse result = apiInstance.BankFeedStatementsOne(id, consumerId, appId, serviceId, raw, fields);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedStatementsOne: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+ **fields** | **string**| The &#39;fields&#39; parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. &lt;br /&gt;&lt;br /&gt;Example: &#x60;fields&#x3D;name,email,addresses.city&#x60;&lt;br /&gt;&lt;br /&gt;In the example above, the response will only include the fields \&quot;name\&quot;, \&quot;email\&quot; and \&quot;addresses.city\&quot;. If any other fields are available, they will be excluded. | [optional] 
+
+### Return type
+
+[**GetBankFeedStatementResponse**](GetBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Statements |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Payment Required |  -  |
+| **404** | The specified resource was not found |  -  |
+| **422** | Unprocessable |  -  |
+| **0** | Unexpected error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="bankfeedstatementsupdate"></a>
+# **BankFeedStatementsUpdate**
+> UpdateBankFeedStatementResponse BankFeedStatementsUpdate (string id, BankFeedStatement bankFeedStatement, string consumerId = null, string appId = null, string serviceId = null, bool? raw = null)
+
+Update Bank Feed Statement
+
+Update Bank Feed Statement
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Apideck.Api;
+using Apideck.Client;
+using Apideck.Model;
+
+namespace Example
+{
+    public class BankFeedStatementsUpdateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://unify.apideck.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new AccountingApi(config);
+            var id = "id_example";  // string | ID of the record you are acting upon.
+            var bankFeedStatement = new BankFeedStatement(); // BankFeedStatement | 
+            var consumerId = test-consumer;  // string | ID of the consumer which you want to get or push data from (optional) 
+            var appId = dSBdXd2H6Mqwfg0atXHXYcysLJE9qyn1VwBtXHX;  // string | The ID of your Unify application (optional) 
+            var serviceId = salesforce;  // string | Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. (optional) 
+            var raw = false;  // bool? | Include raw response. Mostly used for debugging purposes (optional)  (default to false)
+
+            try
+            {
+                // Update Bank Feed Statement
+                UpdateBankFeedStatementResponse result = apiInstance.BankFeedStatementsUpdate(id, bankFeedStatement, consumerId, appId, serviceId, raw);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AccountingApi.BankFeedStatementsUpdate: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the record you are acting upon. | 
+ **bankFeedStatement** | [**BankFeedStatement**](BankFeedStatement.md)|  | 
+ **consumerId** | **string**| ID of the consumer which you want to get or push data from | [optional] 
+ **appId** | **string**| The ID of your Unify application | [optional] 
+ **serviceId** | **string**| Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API. | [optional] 
+ **raw** | **bool?**| Include raw response. Mostly used for debugging purposes | [optional] [default to false]
+
+### Return type
+
+[**UpdateBankFeedStatementResponse**](UpdateBankFeedStatementResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Bank Feed Statements |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **402** | Payment Required |  -  |

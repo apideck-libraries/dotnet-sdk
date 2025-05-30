@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **CustomerId** | **string** | The ID of the customer this entity is linked to. Used for expenses that should be marked as billable to customers. | [optional] 
 **SupplierId** | **string** | The ID of the supplier this entity is linked to. | [optional] 
 **CompanyId** | **string** | The company or subsidiary id the transaction belongs to | [optional] 
-**DepartmentId** | **string** | The ID of the department this expense is linked to. | [optional] 
+**DepartmentId** | **string** | The ID of the department | [optional] 
 **PaymentType** | **string** | The type of payment for the expense. | [optional] 
 **Currency** | **Currency** |  | [optional] 
 **CurrencyRate** | **decimal?** | Currency Exchange Rate at the time entity was recorded/generated. | [optional] 
@@ -21,10 +21,12 @@ Name | Type | Description | Notes
 **TotalAmount** | **decimal?** | The total amount of the expense line item. | [optional] 
 **LineItems** | [**List&lt;ExpenseLineItem&gt;**](ExpenseLineItem.md) | Expense line items linked to this expense. | 
 **CustomFields** | [**List&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**CustomMappings** | **Dictionary&lt;string, Object&gt;** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **UpdatedAt** | **DateTime?** | The date and time when the object was last updated. | [optional] [readonly] 
 **CreatedAt** | **DateTime?** | The date and time when the object was created. | [optional] [readonly] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
+**UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
+**CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 
 **PassThrough** | **List&lt;Object&gt;** | The pass_through property allows passing service-specific, custom data or structured modifications in request body when creating or updating resources. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
