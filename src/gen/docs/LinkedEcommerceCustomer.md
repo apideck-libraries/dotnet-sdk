@@ -5,7 +5,7 @@ The customer this entity is linked to.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The ID of the customer this entity is linked to. | 
+**Id** | **string** | The ID of the customer this entity is linked to. | [optional] 
 **Name** | **string** | Full name of the customer | [optional] 
 **FirstName** | **string** | First name of the customer | [optional] 
 **LastName** | **string** | Last name of the customer | [optional] 

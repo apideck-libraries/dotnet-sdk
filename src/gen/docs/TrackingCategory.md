@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of the tracking category. | [optional] 
 **Code** | **string** | The code of the tracking category. | [optional] 
 **Status** | **string** | Based on the status some functionality is enabled or disabled. | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**CustomMappings** | **Dictionary&lt;string, Object&gt;** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **RowVersion** | **string** | A binary value used to detect updates to a object and prevent data conflicts. It is incremented each time an update is made to the object. | [optional] 
 **UpdatedBy** | **string** | The user who last updated the object. | [optional] [readonly] 
 **CreatedBy** | **string** | The user who created the object. | [optional] [readonly] 

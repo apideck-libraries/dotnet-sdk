@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **GrossProfit** | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
 **NetOperatingIncome** | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
 **NetIncome** | [**ProfitAndLossIndicator**](ProfitAndLossIndicator.md) |  | [optional] 
-**CustomMappings** | **Object** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
+**CustomMappings** | **Dictionary&lt;string, Object&gt;** | When custom mappings are configured on the resource, the result is included here. | [optional] [readonly] 
 **Customer** | **string** | The customer id | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

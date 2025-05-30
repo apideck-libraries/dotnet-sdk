@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **LedgerAccount** | [**LinkedLedgerAccount**](LinkedLedgerAccount.md) |  | 
 **Customer** | [**LinkedCustomer**](LinkedCustomer.md) |  | [optional] 
 **Supplier** | [**LinkedSupplier**](LinkedSupplier.md) |  | [optional] 
-**DepartmentId** | **string** | A unique identifier for an object. | [optional] [readonly] 
-**LocationId** | **string** | A unique identifier for an object. | [optional] [readonly] 
+**DepartmentId** | **string** | The ID of the department | [optional] 
+**LocationId** | **string** | The ID of the location | [optional] 
 **LineNumber** | **int?** | Line number of the resource | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
